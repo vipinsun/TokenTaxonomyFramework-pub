@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package mintable;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "TTF.Tokens.tokens";
+option java_package = "org.tokentaxonomyinitiative.tokens";
+option java_multiple_files = true;
+
+message MintRequest {
+    tokens.MessageHeader header = 1;
+    bytes quantity = 2;
+}
+
+message MintResponse{
+    tokens.MessageHeader header = 1;
+    tokens.TransactionConfirmation transaction_confirmation = 2;
+}
+
+message MintToRequest {
+    tokens.MessageHeader header = 1;
+    bytes quantity = 2;
+    string to_account_id = 3;
+}
+
+message MintToResponse {
+    tokens.MessageHeader header = 1;
+    tokens.TransactionConfirmation transaction_confirmation = 2;
+}

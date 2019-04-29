@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head
+    data-tokenArtifactType="token-definition"
+    data-tokenArtifactName="Log Token"
+    data-tokenArtifactAliases="Logging, Event Recorder"
+    data-tokenTaxonomyVisualSymbol=""
+    data-tokenTaxonomyToolingSymbol=""
+    data-tokenTaxonomyVisualDefinition="&tau<sub>N</sub>{t', d', b, s, r, l}"
+    data-tokenTaxonomyToolingDefinition="tN{t', d', b, s, r, l}"
+    data-tokenBehaviorIsExternal="false"
+    data-tokenControlUri=""
+    data-tokenArtifactDescription="Log token serves as a trusted log that is used to record event data for some shared process, application or other type of context specific log data that is of interest to multiple parties."
+   >
+</head>
+
+<body>
+    <h1>Token Taxonomy Artifact</h1>
+    <h2>Log Token</h2>
+    <h3>Alternate names: Logging, Event Recorder, Simple Audit</h3>
+    <p>Log, is a non-fungible token that serves as a trusted log that is used to record event data for some shared process, application or other type of context specific log data that is of interest to multiple parties.</p>
+    <p>This token is owned by some shared source and viewable by parties that are members of a LogViewer role.</p>
+    <p>This token is useful when the owner of the token must record periodic data that multiple parties may want to monitor or audit.</p>
+    <h2>Token Behaviors:</h2>
+    <p>Non-transferable - This token is owned by the logging entity and cannot be transferred to another entity.</p>
+    <p>Singleton - There will only be a single token.</p>
+    <p>Non-subdividable - The single token is the smallest ownable unit.</p>
+    <p>Burnable - The token can be retired or made permanently inactive not able to record any more events, but is still available for audit.</p>
+    <p>Roles - A LogViewer role should hold parties that are allow to read the log.</p>
+    <p>Loggable - Log entries can be sent to be recorded as a single event or as a series or group of events.
+     These events can be queried by their EntryId, or by their SeriesId.  If you want to be able to query by other properties, the properties must be defined individually and added to the query invocation as a property of the behavior.</p>p>
+    <h2>Token Properties:</h2>
+    <p>No specific non-behavioral properties are required in addition to the base token properties.  Some property values for this token are optional like Symbol.</p>
+    
+    <h2>Comments</h2>
+</body>

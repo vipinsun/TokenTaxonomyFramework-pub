@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head
+    data-tokenArtifactType="behavior-definition"
+    data-tokenArtifactName="Encumberable"
+    data-tokenArtifactAliases=""
+    data-tokenTaxonomyVisualSymbol="<i>e</i>"
+    data-tokenTaxonomyToolingSymbol="e"
+    data-tokenBehaviorIsExternal="true"
+    data-tokenControlUri="encumberable.proto"
+    data-tokenArtifactDescription="Encumberable behavior definition"
+   >
+</head>
+<body>
+    <h1>Token Taxonomy Artifact</h1>
+    <h2>Encumberable Behavior</h2>
+    <p>A token class that implements this behavior will have restrictions preventing certain behaviors like transferable, burnable, etc. from working while it is encumbered.</p>
+    <p>For example, a property title's owner may have obtained a loan from a bank to purchase the property. The loan represents a contract between the owner of the property and the bank, this loan encumbers the property title preventing the owner from being able to sell the property, transferable, to another party until the loan is paid off. Paying off the loan will remove the encumber, which will allow transferable to be invoked.</p>
+    <p>The encumbering party should make a request to encumber, the owner should be notified about the request, and accept the request, which will finalize the encumbrance and send the EncumberResponse message to the requestor.</p>
+    <p>The token definition should have a Encumbered property or structure that may allow only one encumber or allow multiple.</p>
+    <h2>Behavior Invocations:</h2>
+    <table>
+        <tr>
+            <b>EncumberRequest</b>
+            <i>A Request by a party or account, perhaps a contract or another token, to encumber the token.</i>
+        </tr>
+        <tr>
+            <b>EncumberResponse</b>
+            <i>A confirmation response from the token for the encumber request.</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>AcceptEncumberRequest</b>
+            <i>A Request by the owner of the EncumberRequest.</i>
+        </tr>
+        <tr>
+            <b>AcceptEncumberRequest</b>
+            <i>A confirmation response returned to the owner of their acceptance.</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>RemoveEncumberRequest</b>
+            <i>A Request by encumbrancer, perhaps a contract or another token, to remove their encumber or lien from the token.  Which should remove any restrictions from behaviors if there are no more encumbers.  Only the owner of the encumber can remove their encumber.</i>
+        </tr>
+        <tr>
+            <b>RemoveEncumberResponse</b>
+            <i>A confirmation receipt or denial be returned to the RemoveEncumber requestor.</i>
+        </tr>
+    </table>
+    <h2>Behavior Properties</h2>
+    <p data-tokenPropertyName="Encumbered" data-tokenPropertyValueType="customType">Custom type defined in encumberable.proto that is used to record the properties of the party encumbering the token implementing the behavior. It should have a unique id generated for an EncumberRequest, the unique identifier, DiD, of the party encumbering, signature and signature type.</p>
+
+    <h2>Comments</h2>
+    <p></p>
+    
+</body>

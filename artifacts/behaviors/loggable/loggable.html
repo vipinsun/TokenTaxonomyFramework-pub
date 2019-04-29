@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head
+    data-tokenArtifactType="behavior-definition"
+    data-tokenArtifactName="Loggable"
+    data-tokenArtifactAliases="Audit, Event Recorder"
+    data-tokenTaxonomyVisualSymbol="<i>l</i>"
+    data-tokenTaxonomyToolingSymbol="l"
+    data-tokenBehaviorIsExternal="false"
+    data-tokenControlUri="loggable.proto"
+    data-tokenArtifactDescription="Loggable behavior definition"
+   >
+</head>
+<body>
+    <h1>Token Taxonomy Artifact</h1>
+    <h2>Loggable Behavior</h2>
+    <p>A token class that implements this behavior will record log entries from its owner with a generic payload.  These entries can be recorded stand alone and be given a unique identifier, EntryId, upon recording
+        or these entries can be recorded in a series or group that will create a SeriesId and a EntryId, where all the entries will have a unique EntryId but have the same SeriesId.
+    </p>
+    <p>Log entries can be queried by their EntryId or you can request an entire series with the SeriesId. The last recorded entry can also be requested without an Id and you can also request entries from a starting point to a finish point.
+         For example, you could request entries 100 through 125, which will return the entries starting at position 100 through 125 or the last entry recorded up to 125.</p>
+    <p>To add entry query by any other property of the token, that property must be specifically defined and cannot be a property in the base token property list.</p>
+    <h2>Behavior Invocations:</h2>
+    <table>
+        <tr>
+            <b>RecordEntryRequest</b>
+            <i>A request to record an log entry.</i>
+        </tr>
+        <tr>
+            <b>RecordEntryResponse</b>
+            <i>A confirmation of recording the entry</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>GetEntryRequest</b>
+            <i>A request to retrieve a specific Entry by its unique identifier.</i>
+        </tr>
+        <tr>
+            <b>GetEntryResponse</b>
+            <i>A response containing the specific log entry if found.</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>GetEntriesRequest</b>
+            <i>A request to get a list of entries from log position A to log position B.</i>
+        </tr>
+        <tr>
+            <b>GetEntriesResponse</b>
+            <i>A response containing a list of entries from log position A containing entries to or up to the last position before log position B.</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>GetLastEntryRequest</b>
+            <i>A request to retrieve the last log entry needing no parameters.</i>
+        </tr>
+        <tr>
+            <b>GetLastEntryResponse</b>
+            <i>A response container the last log entry if it exists.</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>CreateEntrySeriesRequest</b>
+            <i>A request create a series of log entries.</i>
+        </tr>
+        <tr>
+            <b>CreateEntrySeriesResponse</b>
+            <i>A response containing a unique SeriesId that should be set for each entry's RecordEntryRequest message in the series.</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>GetEntrySeriesRequest</b>
+            <i>A request retrieve all the log entries for a particular series by SeriesId.</i>
+        </tr>
+        <tr>
+            <b>GetEntrySeriesResponse</b>
+            <i>A response containing all the log entries for the requested SeriesId, if found.</i>
+        </tr>
+    </table>
+
+    <h2>Comments</h2>
+</body>

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package roles;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "TTF.Tokens.tokens";
+option java_package = "org.tokentaxonomyinitiative.tokens";
+option java_multiple_files = true;
+
+//Specifies what roles to create when creating the token class.
+message Constructor{
+    repeated Role roles = 1;
+}
+
+message Role{
+    string name = 1;
+    repeated string behavior_symbols_for_role = 2; //these are the symbols that the role should apply this role check to.
+}
+
+message GetRoleMembersRequest {
+    tokens.MessageHeader header = 1;
+    string role_id = 2;
+}
+
+message GetRoleMembersResponse {
+    tokens.MessageHeader header = 1;
+    repeated string account_ids = 2;
+}
+
+message AddRoleMemberRequest {
+    tokens.MessageHeader header = 1;
+    string role_id = 2;
+    string account_id = 3;
+}
+
+message AddRoleMemberResponse {
+    tokens.MessageHeader header = 1;
+    tokens.TransactionConfirmation confirmation = 2;
+}
+
+message RemoveRoleMemberRequest {
+    tokens.MessageHeader header = 1;
+    string role_id = 2;
+    string account_id = 3;
+}
+
+message RemoveRoleMemberResponse {
+    tokens.MessageHeader header = 1;
+    tokens.TransactionConfirmation confirmation = 2;
+}

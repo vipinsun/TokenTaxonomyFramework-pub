@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head
+    data-tokenArtifactType="token-definition"
+    data-tokenArtifactName="Base Token"
+    data-tokenTaxonomyVisualSymbol="&tau"
+    data-tokenTaxonomyToolingSymbol="t"
+    data-tokenControlUri="tokens.proto"
+    data-tokenArtifactDescription="Base token properties shared by all tokens"
+   >
+</head>
+
+<body>
+    <h1>Token Taxonomy Artifact</h1>
+    <h2>Base-Token</h2>
+    <p>All tokens will share a simple set of common properties and provide a base set of expectations when browsing a collection of tokens on a network and also must be provided when creating a new token class.</p>
+    <p>All Tokens are Constructable, a behavior that is not formally defined, but implies that every Token has an ability to create or construct a clone of itself.  This behavior is active when a token is operating as a template and not a class and can receive a request to create a clone or token class of itself.  This control is generically called a constructor.</p>
+    <p>Base Token Properties:</p>
+    <table>
+        <tr>
+            <b>Name</b>
+            <i>A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.</i>
+        </tr>
+        <tr>
+            <b>Symbol</b>
+            <i>A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.</i>
+        </tr>
+        <tr>
+            <b>Owner</b>
+            <i>A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.</i>
+        </tr>
+        <tr>
+            <b>Quantity</b>
+            <i>Can represent the initial quantity created or the total minted or issued.</i>
+        </tr>
+        <tr>
+            <b>Decimals</b>
+            <i>A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned. </i>
+        </tr>
+        <tr>
+            <b>Properties</b>
+            <i>Non-behavioral properties as a list of simple `name, value` pairs that can be generically implemented.</i>
+        </tr>
+    </table>
+    <p>These represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable. </p>
+</body>

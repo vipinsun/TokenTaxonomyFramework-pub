@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head
+    data-tokenArtifactType="token-definition"
+    data-tokenArtifactName="Document Token"
+    data-tokenArtifactAliases="File, Invoice, Bill of Ladling, PDF"
+    data-tokenTaxonomyVisualSymbol=""
+    data-tokenTaxonomyToolingSymbol=""
+    data-tokenTaxonomyVisualDefinition="&tau<sub>N</sub>{d',t,s,e,b}"
+    data-tokenTaxonomyToolingDefinition="tN{d',t,s,e,b}"
+    data-tokenBehaviorIsExternal="false"
+    data-tokenControlUri=""
+    data-tokenArtifactDescription="Used to represent a document that may be a scanned or PDF printed document"
+   >
+</head>
+
+<body>
+    <h1>Token Taxonomy Artifact</h1>
+    <h2>Document Token</h2>
+    <h3>Alternate names: File, Invoice, Bill of Ladling, PDF</h3>
+        <p>Used to represent a document that may be a scanned or PDF printed document. It records the document hash to check for tampering, a file path to fetch the file from storage as well as the ability to be encumbered.</p>
+        <p>For example: you may choose to create an invoice token from an invoice document.  You can then allow another token or contract representing a loan or proof of financing to encumber the document establishing a link between the two.</p>
+        <h2>Token Properties</h2>
+        <h3 data-tokenPropertyName="DocumentHashType" data-tokenPropertyValueType="string">Hash algorithm used to generate the document hash, a string value for then name used like SHA256 or SHA3.</h3>
+        <h3 data-tokenPropertyName="DocumentHash" data-tokenPropertyValueType="string">Document Hash is a hash value for the document.  This value is useful to allow to check if the document was tampered since creating the token.</h3>
+        <h3 data-tokenPropertyName="StoragePath" data-tokenPropertyValueType="string">Location where the actual document can be retrieved from to compare the document hash.</h3>
+        <h3 data-tokenPropertyName="Encumbrances" data-tokenPropertyValueType="Encumbered or List of Encumbered">This is a data structure used to record the information about the party that owns the encumber.</h3>
+        <h2>Token Behaviors:</h2>
+        <p>Transferable - This token can transfer ownership. This is restricted if encumbered.</p>
+        <p>Singleton - There will only be a single token.</p>
+        <p>Non-subdividable - The single token is the smallest ownable unit.</p>
+        <p>Burnable - The token can be retired or made permanently inactive. This is restricted if encumbered.</p>
+        <p>Encumberable - The document can support being encumbered by another party and restricting certain behaviors.
+    <h2>Behaviors</h2>
+    <p>Implementation should include a retrieve or fetch method that allows for the properties of the document to be queried and updated if needed. </p>
+    <h2>Comments</h2>
+</body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head
+    data-tokenArtifactType="behavior-definition"
+    data-tokenArtifactName="Transferable"
+    data-tokenArtifactAliases=""
+    data-tokenTaxonomyVisualSymbol="<i>t</i>"
+    data-tokenTaxonomyToolingSymbol="t"
+    data-tokenBehaviorIsExternal="false"
+    data-tokenControlUri="transferable.proto"
+    data-tokenArtifactDescription="Transferable behavior definition"
+   >
+</head>
+<body>
+    <h1>Token Taxonomy Artifact</h1>
+    <h2>Transferable Behavior</h2>
+    <p>Every token instance has an owner. The Transferable behavior provides the owner the ability to transfer the ownership to another party or account. This behavior is often inferred by other behaviors that might exist like Redeem, Sell, etc. </p>
+    <p>This behavior is Delegable. If the token definition is Delegable, TransferFrom will be available.</p>
+    <h2>Behavior Invocations:</h2>
+    <table>
+        <tr>
+            <b>TransferRequest</b>
+            <i>A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request. </i>
+        </tr>
+        <tr>
+            <b>TransferResponse</b>
+            <i>A confirmation receipt or error may be returned to the owner based on the outcome of the transfer request.</i>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <b>TransferFromRequest</b>
+            <i>If Delegable</i>
+            <i>This request differs from a TransferRequest by being invoked by a party or account that is not the owner, but a party that has been given an allowance by the owner to transfer a quantity of tokens within the class. An additional field for indicating the From account is added to the request.</i>
+        </tr>
+        <tr>
+            <b>TransferFromResponse</b>
+            <i>If Delegable</i>
+            <i>A confirmation receipt or error may be returned to the invoker (optionally owner as well) based on the outcome of the transfer request.</i>
+        </tr>
+    </table>
+
+    <h2>Comments</h2>
+    <p>Should TransferFrom and Allowance be defined in a separate behavior, like Delegable?</p>
+    <p><i>Yes, because it can be used by both transfer and burn behaviors.</i></p>
+    <p><i>Added Delegable</i></p>
+</body>

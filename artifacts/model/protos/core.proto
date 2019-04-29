@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package taxonomy.model.core;
+
+import "google/protobuf/any.proto";
+import "artifact.proto";
+
+option csharp_namespace = "TTF.Tokens.Model.Core";
+option java_package = "org.tti.tokens.model.core";
+option java_multiple_files = true;
+
+enum Type {
+    FUNGIBLE = 0;
+    NON_FUNGIBLE = 1;
+    HYBRID_FUNGIBLE_ROOT = 2;
+    HYBRID_NON_FUNGIBLE_ROOT = 3;
+}
+
+//all tokens inherit from the base and implicitly support construction.
+message Base{
+    taxonomy.model.artifact.Artifact artifact = 1;
+    string name = 2;
+    string symbol = 3;
+    string owner = 4;
+    bytes quantity = 5;
+    int32 decimals = 6;
+    map<string, string> token_properties = 7;
+}
+
+message Behavior{
+    taxonomy.model.artifact.Artifact artifact = 1;
+    bool external = 2;
+    google.protobuf.Any behavior_constructor = 3; //optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+    repeated Invocation behavior_invocations = 4;
+}
+
+message BehaviorGroup{
+    taxonomy.model.artifact.Artifact artifact = 1;
+    repeated string behavior_symbols = 2;
+    repeated model.artifact.Artifact behavior_artifacts = 3;
+}
+
+message PropertySet{
+    taxonomy.model.artifact.Artifact artifact = 1;
+    repeated Invocation property_invocations = 2;
+}
+
+message TokenTemplate {
+    taxonomy.model.artifact.Artifact artifact = 1;
+    Type type = 2;
+    Base base = 3;
+    repeated Behavior behaviors = 4;
+    repeated BehaviorGroup behavior_groups = 5;
+    repeated PropertySet property_sets = 6;
+}
+
+message Invocation{
+    string name = 1;
+    string description = 2;
+    InvocationRequest request = 3;
+    InvocationResponse response = 4;
+}
+
+message InvocationRequest{
+    string control_message_name = 1;
+    repeated InvocationParameter input_parameters = 2;
+    string description = 3;
+}
+
+message InvocationResponse{
+    string control_message_name = 1;
+    repeated InvocationParameter output_parameters = 2;
+    string description = 3;
+}
+
+message InvocationParameter{
+    string name = 1;
+    string value_description = 2; //describe the data type and restrictions like length.
+}

@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+package taxonomy.model.artifact;
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "TTF.Tokens.Model.Artifact";
+option java_package = "org.tti.tokens.model.artifact";
+option java_multiple_files = true;
+
+enum ArtifactType{
+    BASE = 0; //from core.Type
+    BEHAVIOR = 1; 
+    BEHAVIOR_GROUP = 2;
+    PROPERTY_SET = 3;
+    TOKEN_TEMPLATE = 4; //complete token definition
+}
+
+enum ArtifactContent {
+    DEFINITION = 0; //html, MD, etc.
+    CONTROL = 1; //proto
+    UML = 2; //md or other host UML
+    OTHER = 3; //any
+}
+
+enum MappingType{
+    SOURCE_CODE = 0;
+    IMPLEMENTATION = 1;
+    RESOURCE = 2; //to an external informational source like a regulatory framework or related issue
+}
+
+enum TargetPlatform{
+    ETHEREUM_SOLIDITY = 0;
+    CHAINCODE_GO = 1;
+    CHAINCODE_JAVA = 2;
+    CHAINCODE_NODE = 3;
+    CORDA = 4;
+    DAML = 5;
+}
+
+//contains artifact metadata structure
+message Artifact {
+    ArtifactType type = 1;
+    string name = 2;
+    repeated string aliases = 3;
+    string visual_symbol = 4;
+    string tooling_symbol = 5;
+    string control_uri = 6;
+    ArtifactDefinition definition = 7; //Base, Behavior or Behavior group type indicated by ArtifactType
+    repeated ArtifactFile artifact_files = 8; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    Maps maps = 9;
+}
+
+message ArtifactDefinition{
+    string business_description = 1;
+    string business_example = 2;
+    repeated ArtifactAnalogy analogies = 3;
+    string comments = 4;
+    Artifact artifact = 5; //navigation to parent
+}
+
+message ArtifactAnalogy{
+    string name = 1;
+    string description = 2;
+    ArtifactDefinition artifact_definition = 3; //navigation to parent
+}
+
+message ArtifactFile{
+    ArtifactContent content = 1; 
+    string file_name = 2;
+    bytes file_data = 3;
+    Artifact artifact = 4; //navigation to parent
+}
+
+
+message Maps{
+    repeated MapReference code_references = 1;
+    repeated MapReference implementation_references = 2;
+    repeated MapResourceEntry resources = 3;
+    Artifact artifact = 4; //navigation to parent
+}
+
+message MapReference{
+    MappingType mapping_type = 1;
+    string name = 2;
+    TargetPlatform platform = 3;
+    string reference_path = 4;
+    Maps maps = 5; //navigation to parent
+}
+
+message MapResourceEntry{
+    MappingType mapping_type = 1;
+    string name = 2;
+    string description = 3;
+    string resource_path = 4;
+    Maps maps = 5; //navigation to parent
+}
+
+message NewArtifactRequest{
+    ArtifactType type = 1;
+    string name = 2;
+}
+
+message NewArtifactResponse{
+    ArtifactType type = 1;
+    google.protobuf.Any artifact_type_object = 2; //deserialize based on type
+}
+
+message UpdateArtifactRequest{
+    ArtifactType type = 1;
+    google.protobuf.Any artifact_type_object = 2;//deserialize based on type
+}
+
+message UpdateArtifactResponse{
+    ArtifactType type = 1;
+    google.protobuf.Any artifact_type_object = 2; //deserialize based on type
+}

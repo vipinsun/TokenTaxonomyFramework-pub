@@ -1,0 +1,75 @@
+{
+    "taxonomyVersion": "v1",
+    "taxonomy": {
+      "behaviors": [
+    {
+        "name": "mintable",
+        "tokenTaxonomySymbol": "m",
+        "implementationSources": [
+        {
+            "name": "OpenZeppelin",
+            "platform": "Ethereum",
+            "sourcePath": "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-solidity/master/contracts/token/ERC20/ERC20Mintable.sol"
+        },
+        {
+            "name": "ChaincodeSource",
+            "platform": "HLF",
+            "sourcePath": "https://.../mintable.go"
+        },
+        {
+            "name": "CordaSource",
+            "platform": "Corda",
+            "sourcePath": "https://.../mintable.kt"
+        },
+        {
+            "name": "DAMLpowered",
+            "platform": "DA",
+            "sourcePath": "https://.../Mintable.daml"
+        }
+        ]
+    },
+    {
+        "name": "burnable",
+        "tokenTaxonomySymbol": "b",
+        "implementations": [
+        {
+            "name": "",
+            "platform": "Ethereum",
+            "sourcePath": ""
+        }       
+      ]
+    }
+    ],
+    "tokens": [
+        {
+            "name": "Loyalty",
+            "tokenTaxonomyDefinition": "tF{d',SC}",
+            "implementations": [
+            {
+                "name": "OpenZeppelin",
+                "platform": "Ethereum",
+                "sourcePath": "..."
+            },
+            {
+                "name": "ChaincodeSource",
+                "platform": "HLF",
+                "sourcePath": "..."
+            },
+            {
+                "name": "CordaSource",
+                "platform": "Corda",
+                "sourcePath": "..."
+            },
+            {
+                "name": "DAMLpowered",
+                "platform": "DA",
+                "sourcePath": "https://.../Mintable.daml"
+            }
+            ]
+        }
+        ]
+    }
+}
+
+  
+    
