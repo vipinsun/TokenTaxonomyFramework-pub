@@ -23,9 +23,8 @@ private static final long serialVersionUID = 0L;
     type_ = 0;
     name_ = "";
     aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    visualSymbol_ = "";
-    toolingSymbol_ = "";
     controlUri_ = "";
+    incompatibleWithSymbols_ = java.util.Collections.emptyList();
     artifactFiles_ = java.util.Collections.emptyList();
   }
 
@@ -75,24 +74,25 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+            org.tti.tokens.model.artifact.ArtifactSymbol.Builder subBuilder = null;
+            if (artifactSymbol_ != null) {
+              subBuilder = artifactSymbol_.toBuilder();
+            }
+            artifactSymbol_ = input.readMessage(org.tti.tokens.model.artifact.ArtifactSymbol.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(artifactSymbol_);
+              artifactSymbol_ = subBuilder.buildPartial();
+            }
 
-            visualSymbol_ = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            toolingSymbol_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             controlUri_ = s;
             break;
           }
-          case 58: {
+          case 50: {
             org.tti.tokens.model.artifact.ArtifactDefinition.Builder subBuilder = null;
             if (definition_ != null) {
               subBuilder = definition_.toBuilder();
@@ -103,6 +103,15 @@ private static final long serialVersionUID = 0L;
               definition_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 58: {
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              incompatibleWithSymbols_ = new java.util.ArrayList<org.tti.tokens.model.artifact.ArtifactSymbol>();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            incompatibleWithSymbols_.add(
+                input.readMessage(org.tti.tokens.model.artifact.ArtifactSymbol.parser(), extensionRegistry));
             break;
           }
           case 66: {
@@ -144,6 +153,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         aliases_ = aliases_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        incompatibleWithSymbols_ = java.util.Collections.unmodifiableList(incompatibleWithSymbols_);
       }
       if (((mutable_bitField0_ & 0x00000080) != 0)) {
         artifactFiles_ = java.util.Collections.unmodifiableList(artifactFiles_);
@@ -246,78 +258,31 @@ private static final long serialVersionUID = 0L;
     return aliases_.getByteString(index);
   }
 
-  public static final int VISUAL_SYMBOL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object visualSymbol_;
+  public static final int ARTIFACT_SYMBOL_FIELD_NUMBER = 4;
+  private org.tti.tokens.model.artifact.ArtifactSymbol artifactSymbol_;
   /**
-   * <code>string visual_symbol = 4;</code>
+   * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
    */
-  public java.lang.String getVisualSymbol() {
-    java.lang.Object ref = visualSymbol_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      visualSymbol_ = s;
-      return s;
-    }
+  public boolean hasArtifactSymbol() {
+    return artifactSymbol_ != null;
   }
   /**
-   * <code>string visual_symbol = 4;</code>
+   * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getVisualSymbolBytes() {
-    java.lang.Object ref = visualSymbol_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      visualSymbol_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public org.tti.tokens.model.artifact.ArtifactSymbol getArtifactSymbol() {
+    return artifactSymbol_ == null ? org.tti.tokens.model.artifact.ArtifactSymbol.getDefaultInstance() : artifactSymbol_;
+  }
+  /**
+   * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
+   */
+  public org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getArtifactSymbolOrBuilder() {
+    return getArtifactSymbol();
   }
 
-  public static final int TOOLING_SYMBOL_FIELD_NUMBER = 5;
-  private volatile java.lang.Object toolingSymbol_;
-  /**
-   * <code>string tooling_symbol = 5;</code>
-   */
-  public java.lang.String getToolingSymbol() {
-    java.lang.Object ref = toolingSymbol_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      toolingSymbol_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string tooling_symbol = 5;</code>
-   */
-  public com.google.protobuf.ByteString
-      getToolingSymbolBytes() {
-    java.lang.Object ref = toolingSymbol_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      toolingSymbol_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int CONTROL_URI_FIELD_NUMBER = 6;
+  public static final int CONTROL_URI_FIELD_NUMBER = 5;
   private volatile java.lang.Object controlUri_;
   /**
-   * <code>string control_uri = 6;</code>
+   * <code>string control_uri = 5;</code>
    */
   public java.lang.String getControlUri() {
     java.lang.Object ref = controlUri_;
@@ -332,7 +297,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string control_uri = 6;</code>
+   * <code>string control_uri = 5;</code>
    */
   public com.google.protobuf.ByteString
       getControlUriBytes() {
@@ -348,14 +313,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEFINITION_FIELD_NUMBER = 7;
+  public static final int DEFINITION_FIELD_NUMBER = 6;
   private org.tti.tokens.model.artifact.ArtifactDefinition definition_;
   /**
    * <pre>
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
    */
   public boolean hasDefinition() {
     return definition_ != null;
@@ -365,7 +330,7 @@ private static final long serialVersionUID = 0L;
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
    */
   public org.tti.tokens.model.artifact.ArtifactDefinition getDefinition() {
     return definition_ == null ? org.tti.tokens.model.artifact.ArtifactDefinition.getDefaultInstance() : definition_;
@@ -375,10 +340,65 @@ private static final long serialVersionUID = 0L;
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
    */
   public org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getDefinitionOrBuilder() {
     return getDefinition();
+  }
+
+  public static final int INCOMPATIBLE_WITH_SYMBOLS_FIELD_NUMBER = 7;
+  private java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> incompatibleWithSymbols_;
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  public java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> getIncompatibleWithSymbolsList() {
+    return incompatibleWithSymbols_;
+  }
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+      getIncompatibleWithSymbolsOrBuilderList() {
+    return incompatibleWithSymbols_;
+  }
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  public int getIncompatibleWithSymbolsCount() {
+    return incompatibleWithSymbols_.size();
+  }
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  public org.tti.tokens.model.artifact.ArtifactSymbol getIncompatibleWithSymbols(int index) {
+    return incompatibleWithSymbols_.get(index);
+  }
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  public org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getIncompatibleWithSymbolsOrBuilder(
+      int index) {
+    return incompatibleWithSymbols_.get(index);
   }
 
   public static final int ARTIFACT_FILES_FIELD_NUMBER = 8;
@@ -480,17 +500,17 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < aliases_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aliases_.getRaw(i));
     }
-    if (!getVisualSymbolBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, visualSymbol_);
-    }
-    if (!getToolingSymbolBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, toolingSymbol_);
+    if (artifactSymbol_ != null) {
+      output.writeMessage(4, getArtifactSymbol());
     }
     if (!getControlUriBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, controlUri_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, controlUri_);
     }
     if (definition_ != null) {
-      output.writeMessage(7, getDefinition());
+      output.writeMessage(6, getDefinition());
+    }
+    for (int i = 0; i < incompatibleWithSymbols_.size(); i++) {
+      output.writeMessage(7, incompatibleWithSymbols_.get(i));
     }
     for (int i = 0; i < artifactFiles_.size(); i++) {
       output.writeMessage(8, artifactFiles_.get(i));
@@ -522,18 +542,20 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAliasesList().size();
     }
-    if (!getVisualSymbolBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, visualSymbol_);
-    }
-    if (!getToolingSymbolBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, toolingSymbol_);
+    if (artifactSymbol_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getArtifactSymbol());
     }
     if (!getControlUriBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, controlUri_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, controlUri_);
     }
     if (definition_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getDefinition());
+        .computeMessageSize(6, getDefinition());
+    }
+    for (int i = 0; i < incompatibleWithSymbols_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, incompatibleWithSymbols_.get(i));
     }
     for (int i = 0; i < artifactFiles_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -563,10 +585,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getAliasesList()
         .equals(other.getAliasesList())) return false;
-    if (!getVisualSymbol()
-        .equals(other.getVisualSymbol())) return false;
-    if (!getToolingSymbol()
-        .equals(other.getToolingSymbol())) return false;
+    if (hasArtifactSymbol() != other.hasArtifactSymbol()) return false;
+    if (hasArtifactSymbol()) {
+      if (!getArtifactSymbol()
+          .equals(other.getArtifactSymbol())) return false;
+    }
     if (!getControlUri()
         .equals(other.getControlUri())) return false;
     if (hasDefinition() != other.hasDefinition()) return false;
@@ -574,6 +597,8 @@ private static final long serialVersionUID = 0L;
       if (!getDefinition()
           .equals(other.getDefinition())) return false;
     }
+    if (!getIncompatibleWithSymbolsList()
+        .equals(other.getIncompatibleWithSymbolsList())) return false;
     if (!getArtifactFilesList()
         .equals(other.getArtifactFilesList())) return false;
     if (hasMaps() != other.hasMaps()) return false;
@@ -600,15 +625,19 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ALIASES_FIELD_NUMBER;
       hash = (53 * hash) + getAliasesList().hashCode();
     }
-    hash = (37 * hash) + VISUAL_SYMBOL_FIELD_NUMBER;
-    hash = (53 * hash) + getVisualSymbol().hashCode();
-    hash = (37 * hash) + TOOLING_SYMBOL_FIELD_NUMBER;
-    hash = (53 * hash) + getToolingSymbol().hashCode();
+    if (hasArtifactSymbol()) {
+      hash = (37 * hash) + ARTIFACT_SYMBOL_FIELD_NUMBER;
+      hash = (53 * hash) + getArtifactSymbol().hashCode();
+    }
     hash = (37 * hash) + CONTROL_URI_FIELD_NUMBER;
     hash = (53 * hash) + getControlUri().hashCode();
     if (hasDefinition()) {
       hash = (37 * hash) + DEFINITION_FIELD_NUMBER;
       hash = (53 * hash) + getDefinition().hashCode();
+    }
+    if (getIncompatibleWithSymbolsCount() > 0) {
+      hash = (37 * hash) + INCOMPATIBLE_WITH_SYMBOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getIncompatibleWithSymbolsList().hashCode();
     }
     if (getArtifactFilesCount() > 0) {
       hash = (37 * hash) + ARTIFACT_FILES_FIELD_NUMBER;
@@ -750,6 +779,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getIncompatibleWithSymbolsFieldBuilder();
         getArtifactFilesFieldBuilder();
       }
     }
@@ -762,10 +792,12 @@ private static final long serialVersionUID = 0L;
 
       aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      visualSymbol_ = "";
-
-      toolingSymbol_ = "";
-
+      if (artifactSymbolBuilder_ == null) {
+        artifactSymbol_ = null;
+      } else {
+        artifactSymbol_ = null;
+        artifactSymbolBuilder_ = null;
+      }
       controlUri_ = "";
 
       if (definitionBuilder_ == null) {
@@ -773,6 +805,12 @@ private static final long serialVersionUID = 0L;
       } else {
         definition_ = null;
         definitionBuilder_ = null;
+      }
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        incompatibleWithSymbols_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      } else {
+        incompatibleWithSymbolsBuilder_.clear();
       }
       if (artifactFilesBuilder_ == null) {
         artifactFiles_ = java.util.Collections.emptyList();
@@ -821,13 +859,25 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.aliases_ = aliases_;
-      result.visualSymbol_ = visualSymbol_;
-      result.toolingSymbol_ = toolingSymbol_;
+      if (artifactSymbolBuilder_ == null) {
+        result.artifactSymbol_ = artifactSymbol_;
+      } else {
+        result.artifactSymbol_ = artifactSymbolBuilder_.build();
+      }
       result.controlUri_ = controlUri_;
       if (definitionBuilder_ == null) {
         result.definition_ = definition_;
       } else {
         result.definition_ = definitionBuilder_.build();
+      }
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          incompatibleWithSymbols_ = java.util.Collections.unmodifiableList(incompatibleWithSymbols_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.incompatibleWithSymbols_ = incompatibleWithSymbols_;
+      } else {
+        result.incompatibleWithSymbols_ = incompatibleWithSymbolsBuilder_.build();
       }
       if (artifactFilesBuilder_ == null) {
         if (((bitField0_ & 0x00000080) != 0)) {
@@ -909,13 +959,8 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      if (!other.getVisualSymbol().isEmpty()) {
-        visualSymbol_ = other.visualSymbol_;
-        onChanged();
-      }
-      if (!other.getToolingSymbol().isEmpty()) {
-        toolingSymbol_ = other.toolingSymbol_;
-        onChanged();
+      if (other.hasArtifactSymbol()) {
+        mergeArtifactSymbol(other.getArtifactSymbol());
       }
       if (!other.getControlUri().isEmpty()) {
         controlUri_ = other.controlUri_;
@@ -923,6 +968,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasDefinition()) {
         mergeDefinition(other.getDefinition());
+      }
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        if (!other.incompatibleWithSymbols_.isEmpty()) {
+          if (incompatibleWithSymbols_.isEmpty()) {
+            incompatibleWithSymbols_ = other.incompatibleWithSymbols_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureIncompatibleWithSymbolsIsMutable();
+            incompatibleWithSymbols_.addAll(other.incompatibleWithSymbols_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.incompatibleWithSymbols_.isEmpty()) {
+          if (incompatibleWithSymbolsBuilder_.isEmpty()) {
+            incompatibleWithSymbolsBuilder_.dispose();
+            incompatibleWithSymbolsBuilder_ = null;
+            incompatibleWithSymbols_ = other.incompatibleWithSymbols_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            incompatibleWithSymbolsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getIncompatibleWithSymbolsFieldBuilder() : null;
+          } else {
+            incompatibleWithSymbolsBuilder_.addAllMessages(other.incompatibleWithSymbols_);
+          }
+        }
       }
       if (artifactFilesBuilder_ == null) {
         if (!other.artifactFiles_.isEmpty()) {
@@ -1191,147 +1262,126 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object visualSymbol_ = "";
+    private org.tti.tokens.model.artifact.ArtifactSymbol artifactSymbol_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> artifactSymbolBuilder_;
     /**
-     * <code>string visual_symbol = 4;</code>
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
      */
-    public java.lang.String getVisualSymbol() {
-      java.lang.Object ref = visualSymbol_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        visualSymbol_ = s;
-        return s;
+    public boolean hasArtifactSymbol() {
+      return artifactSymbolBuilder_ != null || artifactSymbol_ != null;
+    }
+    /**
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbol getArtifactSymbol() {
+      if (artifactSymbolBuilder_ == null) {
+        return artifactSymbol_ == null ? org.tti.tokens.model.artifact.ArtifactSymbol.getDefaultInstance() : artifactSymbol_;
       } else {
-        return (java.lang.String) ref;
+        return artifactSymbolBuilder_.getMessage();
       }
     }
     /**
-     * <code>string visual_symbol = 4;</code>
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getVisualSymbolBytes() {
-      java.lang.Object ref = visualSymbol_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        visualSymbol_ = b;
-        return b;
+    public Builder setArtifactSymbol(org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (artifactSymbolBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        artifactSymbol_ = value;
+        onChanged();
       } else {
-        return (com.google.protobuf.ByteString) ref;
+        artifactSymbolBuilder_.setMessage(value);
       }
-    }
-    /**
-     * <code>string visual_symbol = 4;</code>
-     */
-    public Builder setVisualSymbol(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      visualSymbol_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string visual_symbol = 4;</code>
-     */
-    public Builder clearVisualSymbol() {
-      
-      visualSymbol_ = getDefaultInstance().getVisualSymbol();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string visual_symbol = 4;</code>
-     */
-    public Builder setVisualSymbolBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      visualSymbol_ = value;
-      onChanged();
-      return this;
-    }
 
-    private java.lang.Object toolingSymbol_ = "";
+      return this;
+    }
     /**
-     * <code>string tooling_symbol = 5;</code>
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
      */
-    public java.lang.String getToolingSymbol() {
-      java.lang.Object ref = toolingSymbol_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        toolingSymbol_ = s;
-        return s;
+    public Builder setArtifactSymbol(
+        org.tti.tokens.model.artifact.ArtifactSymbol.Builder builderForValue) {
+      if (artifactSymbolBuilder_ == null) {
+        artifactSymbol_ = builderForValue.build();
+        onChanged();
       } else {
-        return (java.lang.String) ref;
+        artifactSymbolBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
+     */
+    public Builder mergeArtifactSymbol(org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (artifactSymbolBuilder_ == null) {
+        if (artifactSymbol_ != null) {
+          artifactSymbol_ =
+            org.tti.tokens.model.artifact.ArtifactSymbol.newBuilder(artifactSymbol_).mergeFrom(value).buildPartial();
+        } else {
+          artifactSymbol_ = value;
+        }
+        onChanged();
+      } else {
+        artifactSymbolBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
+     */
+    public Builder clearArtifactSymbol() {
+      if (artifactSymbolBuilder_ == null) {
+        artifactSymbol_ = null;
+        onChanged();
+      } else {
+        artifactSymbol_ = null;
+        artifactSymbolBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbol.Builder getArtifactSymbolBuilder() {
+      
+      onChanged();
+      return getArtifactSymbolFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getArtifactSymbolOrBuilder() {
+      if (artifactSymbolBuilder_ != null) {
+        return artifactSymbolBuilder_.getMessageOrBuilder();
+      } else {
+        return artifactSymbol_ == null ?
+            org.tti.tokens.model.artifact.ArtifactSymbol.getDefaultInstance() : artifactSymbol_;
       }
     }
     /**
-     * <code>string tooling_symbol = 5;</code>
+     * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getToolingSymbolBytes() {
-      java.lang.Object ref = toolingSymbol_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        toolingSymbol_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+        getArtifactSymbolFieldBuilder() {
+      if (artifactSymbolBuilder_ == null) {
+        artifactSymbolBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder>(
+                getArtifactSymbol(),
+                getParentForChildren(),
+                isClean());
+        artifactSymbol_ = null;
       }
-    }
-    /**
-     * <code>string tooling_symbol = 5;</code>
-     */
-    public Builder setToolingSymbol(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      toolingSymbol_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string tooling_symbol = 5;</code>
-     */
-    public Builder clearToolingSymbol() {
-      
-      toolingSymbol_ = getDefaultInstance().getToolingSymbol();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string tooling_symbol = 5;</code>
-     */
-    public Builder setToolingSymbolBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      toolingSymbol_ = value;
-      onChanged();
-      return this;
+      return artifactSymbolBuilder_;
     }
 
     private java.lang.Object controlUri_ = "";
     /**
-     * <code>string control_uri = 6;</code>
+     * <code>string control_uri = 5;</code>
      */
     public java.lang.String getControlUri() {
       java.lang.Object ref = controlUri_;
@@ -1346,7 +1396,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string control_uri = 6;</code>
+     * <code>string control_uri = 5;</code>
      */
     public com.google.protobuf.ByteString
         getControlUriBytes() {
@@ -1362,7 +1412,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string control_uri = 6;</code>
+     * <code>string control_uri = 5;</code>
      */
     public Builder setControlUri(
         java.lang.String value) {
@@ -1375,7 +1425,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string control_uri = 6;</code>
+     * <code>string control_uri = 5;</code>
      */
     public Builder clearControlUri() {
       
@@ -1384,7 +1434,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string control_uri = 6;</code>
+     * <code>string control_uri = 5;</code>
      */
     public Builder setControlUriBytes(
         com.google.protobuf.ByteString value) {
@@ -1406,7 +1456,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public boolean hasDefinition() {
       return definitionBuilder_ != null || definition_ != null;
@@ -1416,7 +1466,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactDefinition getDefinition() {
       if (definitionBuilder_ == null) {
@@ -1430,7 +1480,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public Builder setDefinition(org.tti.tokens.model.artifact.ArtifactDefinition value) {
       if (definitionBuilder_ == null) {
@@ -1450,7 +1500,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public Builder setDefinition(
         org.tti.tokens.model.artifact.ArtifactDefinition.Builder builderForValue) {
@@ -1468,7 +1518,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public Builder mergeDefinition(org.tti.tokens.model.artifact.ArtifactDefinition value) {
       if (definitionBuilder_ == null) {
@@ -1490,7 +1540,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public Builder clearDefinition() {
       if (definitionBuilder_ == null) {
@@ -1508,7 +1558,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactDefinition.Builder getDefinitionBuilder() {
       
@@ -1520,7 +1570,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getDefinitionOrBuilder() {
       if (definitionBuilder_ != null) {
@@ -1535,7 +1585,7 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.artifact.ArtifactDefinition, org.tti.tokens.model.artifact.ArtifactDefinition.Builder, org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder> 
@@ -1549,6 +1599,318 @@ private static final long serialVersionUID = 0L;
         definition_ = null;
       }
       return definitionBuilder_;
+    }
+
+    private java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> incompatibleWithSymbols_ =
+      java.util.Collections.emptyList();
+    private void ensureIncompatibleWithSymbolsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        incompatibleWithSymbols_ = new java.util.ArrayList<org.tti.tokens.model.artifact.ArtifactSymbol>(incompatibleWithSymbols_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> incompatibleWithSymbolsBuilder_;
+
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> getIncompatibleWithSymbolsList() {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(incompatibleWithSymbols_);
+      } else {
+        return incompatibleWithSymbolsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public int getIncompatibleWithSymbolsCount() {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        return incompatibleWithSymbols_.size();
+      } else {
+        return incompatibleWithSymbolsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbol getIncompatibleWithSymbols(int index) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        return incompatibleWithSymbols_.get(index);
+      } else {
+        return incompatibleWithSymbolsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder setIncompatibleWithSymbols(
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncompatibleWithSymbolsIsMutable();
+        incompatibleWithSymbols_.set(index, value);
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder setIncompatibleWithSymbols(
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol.Builder builderForValue) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        ensureIncompatibleWithSymbolsIsMutable();
+        incompatibleWithSymbols_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder addIncompatibleWithSymbols(org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncompatibleWithSymbolsIsMutable();
+        incompatibleWithSymbols_.add(value);
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder addIncompatibleWithSymbols(
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIncompatibleWithSymbolsIsMutable();
+        incompatibleWithSymbols_.add(index, value);
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder addIncompatibleWithSymbols(
+        org.tti.tokens.model.artifact.ArtifactSymbol.Builder builderForValue) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        ensureIncompatibleWithSymbolsIsMutable();
+        incompatibleWithSymbols_.add(builderForValue.build());
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder addIncompatibleWithSymbols(
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol.Builder builderForValue) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        ensureIncompatibleWithSymbolsIsMutable();
+        incompatibleWithSymbols_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder addAllIncompatibleWithSymbols(
+        java.lang.Iterable<? extends org.tti.tokens.model.artifact.ArtifactSymbol> values) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        ensureIncompatibleWithSymbolsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, incompatibleWithSymbols_);
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder clearIncompatibleWithSymbols() {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        incompatibleWithSymbols_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public Builder removeIncompatibleWithSymbols(int index) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        ensureIncompatibleWithSymbolsIsMutable();
+        incompatibleWithSymbols_.remove(index);
+        onChanged();
+      } else {
+        incompatibleWithSymbolsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbol.Builder getIncompatibleWithSymbolsBuilder(
+        int index) {
+      return getIncompatibleWithSymbolsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getIncompatibleWithSymbolsOrBuilder(
+        int index) {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        return incompatibleWithSymbols_.get(index);  } else {
+        return incompatibleWithSymbolsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+         getIncompatibleWithSymbolsOrBuilderList() {
+      if (incompatibleWithSymbolsBuilder_ != null) {
+        return incompatibleWithSymbolsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(incompatibleWithSymbols_);
+      }
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbol.Builder addIncompatibleWithSymbolsBuilder() {
+      return getIncompatibleWithSymbolsFieldBuilder().addBuilder(
+          org.tti.tokens.model.artifact.ArtifactSymbol.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public org.tti.tokens.model.artifact.ArtifactSymbol.Builder addIncompatibleWithSymbolsBuilder(
+        int index) {
+      return getIncompatibleWithSymbolsFieldBuilder().addBuilder(
+          index, org.tti.tokens.model.artifact.ArtifactSymbol.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *for behaviors that have opposites, or if another behavior or property-set
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+     */
+    public java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol.Builder> 
+         getIncompatibleWithSymbolsBuilderList() {
+      return getIncompatibleWithSymbolsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+        getIncompatibleWithSymbolsFieldBuilder() {
+      if (incompatibleWithSymbolsBuilder_ == null) {
+        incompatibleWithSymbolsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder>(
+                incompatibleWithSymbols_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        incompatibleWithSymbols_ = null;
+      }
+      return incompatibleWithSymbolsBuilder_;
     }
 
     private java.util.List<org.tti.tokens.model.artifact.ArtifactFile> artifactFiles_ =

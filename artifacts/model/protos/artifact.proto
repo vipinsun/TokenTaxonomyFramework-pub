@@ -42,12 +42,17 @@ message Artifact {
     ArtifactType type = 1;
     string name = 2;
     repeated string aliases = 3;
-    string visual_symbol = 4;
-    string tooling_symbol = 5;
-    string control_uri = 6;
-    ArtifactDefinition definition = 7; //Base, Behavior or Behavior group type indicated by ArtifactType
+    ArtifactSymbol artifact_symbol = 4;
+    string control_uri = 5;
+    ArtifactDefinition definition = 6; //Base, Behavior or Behavior group type indicated by ArtifactType
+    repeated ArtifactSymbol incompatible_with_symbols = 7; //for behaviors that have opposites, or if another behavior or property-set
     repeated ArtifactFile artifact_files = 8; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
     Maps maps = 9;
+}
+
+message ArtifactSymbol{
+    string visual_symbol = 4;
+    string tooling_symbol = 5;
 }
 
 message ArtifactDefinition{

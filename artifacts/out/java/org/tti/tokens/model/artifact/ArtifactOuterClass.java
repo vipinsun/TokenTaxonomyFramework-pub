@@ -20,6 +20,11 @@ public final class ArtifactOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_taxonomy_model_artifact_Artifact_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_artifact_ArtifactSymbol_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_artifact_ArtifactSymbol_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_taxonomy_model_artifact_ArtifactDefinition_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -79,16 +84,20 @@ public final class ArtifactOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\016artifact.proto\022\027taxonomy.model.artifac" +
-      "t\032\031google/protobuf/any.proto\"\317\002\n\010Artifac" +
+      "t\032\031google/protobuf/any.proto\"\256\003\n\010Artifac" +
       "t\0223\n\004type\030\001 \001(\0162%.taxonomy.model.artifac" +
       "t.ArtifactType\022\014\n\004name\030\002 \001(\t\022\017\n\007aliases\030" +
-      "\003 \003(\t\022\025\n\rvisual_symbol\030\004 \001(\t\022\026\n\016tooling_" +
-      "symbol\030\005 \001(\t\022\023\n\013control_uri\030\006 \001(\t\022?\n\ndef" +
-      "inition\030\007 \001(\0132+.taxonomy.model.artifact." +
-      "ArtifactDefinition\022=\n\016artifact_files\030\010 \003" +
-      "(\0132%.taxonomy.model.artifact.ArtifactFil" +
-      "e\022+\n\004maps\030\t \001(\0132\035.taxonomy.model.artifac" +
-      "t.Maps\"\320\001\n\022ArtifactDefinition\022\034\n\024busines" +
+      "\003 \003(\t\022@\n\017artifact_symbol\030\004 \001(\0132\'.taxonom" +
+      "y.model.artifact.ArtifactSymbol\022\023\n\013contr" +
+      "ol_uri\030\005 \001(\t\022?\n\ndefinition\030\006 \001(\0132+.taxon" +
+      "omy.model.artifact.ArtifactDefinition\022J\n" +
+      "\031incompatible_with_symbols\030\007 \003(\0132\'.taxon" +
+      "omy.model.artifact.ArtifactSymbol\022=\n\016art" +
+      "ifact_files\030\010 \003(\0132%.taxonomy.model.artif" +
+      "act.ArtifactFile\022+\n\004maps\030\t \001(\0132\035.taxonom" +
+      "y.model.artifact.Maps\"?\n\016ArtifactSymbol\022" +
+      "\025\n\rvisual_symbol\030\004 \001(\t\022\026\n\016tooling_symbol" +
+      "\030\005 \001(\t\"\320\001\n\022ArtifactDefinition\022\034\n\024busines" +
       "s_description\030\001 \001(\t\022\030\n\020business_example\030" +
       "\002 \001(\t\022;\n\tanalogies\030\003 \003(\0132(.taxonomy.mode" +
       "l.artifact.ArtifactAnalogy\022\020\n\010comments\030\004" +
@@ -159,63 +168,69 @@ public final class ArtifactOuterClass {
     internal_static_taxonomy_model_artifact_Artifact_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_Artifact_descriptor,
-        new java.lang.String[] { "Type", "Name", "Aliases", "VisualSymbol", "ToolingSymbol", "ControlUri", "Definition", "ArtifactFiles", "Maps", });
-    internal_static_taxonomy_model_artifact_ArtifactDefinition_descriptor =
+        new java.lang.String[] { "Type", "Name", "Aliases", "ArtifactSymbol", "ControlUri", "Definition", "IncompatibleWithSymbols", "ArtifactFiles", "Maps", });
+    internal_static_taxonomy_model_artifact_ArtifactSymbol_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_taxonomy_model_artifact_ArtifactSymbol_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_artifact_ArtifactSymbol_descriptor,
+        new java.lang.String[] { "VisualSymbol", "ToolingSymbol", });
+    internal_static_taxonomy_model_artifact_ArtifactDefinition_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_taxonomy_model_artifact_ArtifactDefinition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_ArtifactDefinition_descriptor,
         new java.lang.String[] { "BusinessDescription", "BusinessExample", "Analogies", "Comments", "Artifact", });
     internal_static_taxonomy_model_artifact_ArtifactAnalogy_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_taxonomy_model_artifact_ArtifactAnalogy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_ArtifactAnalogy_descriptor,
         new java.lang.String[] { "Name", "Description", "ArtifactDefinition", });
     internal_static_taxonomy_model_artifact_ArtifactFile_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_taxonomy_model_artifact_ArtifactFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_ArtifactFile_descriptor,
         new java.lang.String[] { "Content", "FileName", "FileData", "Artifact", });
     internal_static_taxonomy_model_artifact_Maps_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_taxonomy_model_artifact_Maps_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_Maps_descriptor,
         new java.lang.String[] { "CodeReferences", "ImplementationReferences", "Resources", "Artifact", });
     internal_static_taxonomy_model_artifact_MapReference_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_taxonomy_model_artifact_MapReference_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_MapReference_descriptor,
         new java.lang.String[] { "MappingType", "Name", "Platform", "ReferencePath", "Maps", });
     internal_static_taxonomy_model_artifact_MapResourceEntry_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_taxonomy_model_artifact_MapResourceEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_MapResourceEntry_descriptor,
         new java.lang.String[] { "MappingType", "Name", "Description", "ResourcePath", "Maps", });
     internal_static_taxonomy_model_artifact_NewArtifactRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_taxonomy_model_artifact_NewArtifactRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_NewArtifactRequest_descriptor,
         new java.lang.String[] { "Type", "Name", });
     internal_static_taxonomy_model_artifact_NewArtifactResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_taxonomy_model_artifact_NewArtifactResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_NewArtifactResponse_descriptor,
         new java.lang.String[] { "Type", "ArtifactTypeObject", });
     internal_static_taxonomy_model_artifact_UpdateArtifactRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_taxonomy_model_artifact_UpdateArtifactRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_UpdateArtifactRequest_descriptor,
         new java.lang.String[] { "Type", "ArtifactTypeObject", });
     internal_static_taxonomy_model_artifact_UpdateArtifactResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_taxonomy_model_artifact_UpdateArtifactResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_UpdateArtifactResponse_descriptor,

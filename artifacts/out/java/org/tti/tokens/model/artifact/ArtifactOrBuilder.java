@@ -46,31 +46,24 @@ public interface ArtifactOrBuilder extends
       getAliasesBytes(int index);
 
   /**
-   * <code>string visual_symbol = 4;</code>
+   * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
    */
-  java.lang.String getVisualSymbol();
+  boolean hasArtifactSymbol();
   /**
-   * <code>string visual_symbol = 4;</code>
+   * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getVisualSymbolBytes();
+  org.tti.tokens.model.artifact.ArtifactSymbol getArtifactSymbol();
+  /**
+   * <code>.taxonomy.model.artifact.ArtifactSymbol artifact_symbol = 4;</code>
+   */
+  org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getArtifactSymbolOrBuilder();
 
   /**
-   * <code>string tooling_symbol = 5;</code>
-   */
-  java.lang.String getToolingSymbol();
-  /**
-   * <code>string tooling_symbol = 5;</code>
-   */
-  com.google.protobuf.ByteString
-      getToolingSymbolBytes();
-
-  /**
-   * <code>string control_uri = 6;</code>
+   * <code>string control_uri = 5;</code>
    */
   java.lang.String getControlUri();
   /**
-   * <code>string control_uri = 6;</code>
+   * <code>string control_uri = 5;</code>
    */
   com.google.protobuf.ByteString
       getControlUriBytes();
@@ -80,7 +73,7 @@ public interface ArtifactOrBuilder extends
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
    */
   boolean hasDefinition();
   /**
@@ -88,7 +81,7 @@ public interface ArtifactOrBuilder extends
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
    */
   org.tti.tokens.model.artifact.ArtifactDefinition getDefinition();
   /**
@@ -96,9 +89,53 @@ public interface ArtifactOrBuilder extends
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 7;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
    */
   org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getDefinitionOrBuilder();
+
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> 
+      getIncompatibleWithSymbolsList();
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  org.tti.tokens.model.artifact.ArtifactSymbol getIncompatibleWithSymbols(int index);
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  int getIncompatibleWithSymbolsCount();
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  java.util.List<? extends org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+      getIncompatibleWithSymbolsOrBuilderList();
+  /**
+   * <pre>
+   *for behaviors that have opposites, or if another behavior or property-set
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol incompatible_with_symbols = 7;</code>
+   */
+  org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getIncompatibleWithSymbolsOrBuilder(
+      int index);
 
   /**
    * <pre>

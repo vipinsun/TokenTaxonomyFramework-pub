@@ -25,65 +25,69 @@ namespace TTF.Tokens.Model.Artifact {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg5hcnRpZmFjdC5wcm90bxIXdGF4b25vbXkubW9kZWwuYXJ0aWZhY3QaGWdv",
-            "b2dsZS9wcm90b2J1Zi9hbnkucHJvdG8izwIKCEFydGlmYWN0EjMKBHR5cGUY",
+            "b2dsZS9wcm90b2J1Zi9hbnkucHJvdG8irgMKCEFydGlmYWN0EjMKBHR5cGUY",
             "ASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUS",
-            "DAoEbmFtZRgCIAEoCRIPCgdhbGlhc2VzGAMgAygJEhUKDXZpc3VhbF9zeW1i",
-            "b2wYBCABKAkSFgoOdG9vbGluZ19zeW1ib2wYBSABKAkSEwoLY29udHJvbF91",
-            "cmkYBiABKAkSPwoKZGVmaW5pdGlvbhgHIAEoCzIrLnRheG9ub215Lm1vZGVs",
-            "LmFydGlmYWN0LkFydGlmYWN0RGVmaW5pdGlvbhI9Cg5hcnRpZmFjdF9maWxl",
-            "cxgIIAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0Rmls",
-            "ZRIrCgRtYXBzGAkgASgLMh0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuTWFw",
-            "cyLQAQoSQXJ0aWZhY3REZWZpbml0aW9uEhwKFGJ1c2luZXNzX2Rlc2NyaXB0",
-            "aW9uGAEgASgJEhgKEGJ1c2luZXNzX2V4YW1wbGUYAiABKAkSOwoJYW5hbG9n",
-            "aWVzGAMgAygLMigudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RB",
-            "bmFsb2d5EhAKCGNvbW1lbnRzGAQgASgJEjMKCGFydGlmYWN0GAUgASgLMiEu",
-            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QifgoPQXJ0aWZhY3RB",
-            "bmFsb2d5EgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSSAoT",
-            "YXJ0aWZhY3RfZGVmaW5pdGlvbhgDIAEoCzIrLnRheG9ub215Lm1vZGVsLmFy",
-            "dGlmYWN0LkFydGlmYWN0RGVmaW5pdGlvbiKkAQoMQXJ0aWZhY3RGaWxlEjkK",
-            "B2NvbnRlbnQYASABKA4yKC50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRp",
-            "ZmFjdENvbnRlbnQSEQoJZmlsZV9uYW1lGAIgASgJEhEKCWZpbGVfZGF0YRgD",
-            "IAEoDBIzCghhcnRpZmFjdBgEIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LkFydGlmYWN0IoMCCgRNYXBzEj4KD2NvZGVfcmVmZXJlbmNlcxgBIAMo",
-            "CzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcFJlZmVyZW5jZRJIChlp",
-            "bXBsZW1lbnRhdGlvbl9yZWZlcmVuY2VzGAIgAygLMiUudGF4b25vbXkubW9k",
-            "ZWwuYXJ0aWZhY3QuTWFwUmVmZXJlbmNlEjwKCXJlc291cmNlcxgDIAMoCzIp",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcFJlc291cmNlRW50cnkSMwoI",
-            "YXJ0aWZhY3QYBCABKAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRp",
-            "ZmFjdCLYAQoMTWFwUmVmZXJlbmNlEjoKDG1hcHBpbmdfdHlwZRgBIAEoDjIk",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHBpbmdUeXBlEgwKBG5hbWUY",
-            "AiABKAkSOQoIcGxhdGZvcm0YAyABKA4yJy50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5UYXJnZXRQbGF0Zm9ybRIWCg5yZWZlcmVuY2VfcGF0aBgEIAEoCRIr",
-            "CgRtYXBzGAUgASgLMh0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuTWFwcyK1",
-            "AQoQTWFwUmVzb3VyY2VFbnRyeRI6CgxtYXBwaW5nX3R5cGUYASABKA4yJC50",
-            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIg",
-            "ASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJEhUKDXJlc291cmNlX3BhdGgYBCAB",
-            "KAkSKwoEbWFwcxgFIAEoCzIdLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1h",
-            "cHMiVwoSTmV3QXJ0aWZhY3RSZXF1ZXN0EjMKBHR5cGUYASABKA4yJS50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSDAoEbmFtZRgCIAEo",
-            "CSJ+ChNOZXdBcnRpZmFjdFJlc3BvbnNlEjMKBHR5cGUYASABKA4yJS50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSMgoUYXJ0aWZhY3Rf",
-            "dHlwZV9vYmplY3QYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55IoABChVV",
-            "cGRhdGVBcnRpZmFjdFJlcXVlc3QSMwoEdHlwZRgBIAEoDjIlLnRheG9ub215",
-            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIyChRhcnRpZmFjdF90eXBl",
-            "X29iamVjdBgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkigQEKFlVwZGF0",
-            "ZUFydGlmYWN0UmVzcG9uc2USMwoEdHlwZRgBIAEoDjIlLnRheG9ub215Lm1v",
-            "ZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIyChRhcnRpZmFjdF90eXBlX29i",
-            "amVjdBgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkqYAoMQXJ0aWZhY3RU",
-            "eXBlEggKBEJBU0UQABIMCghCRUhBVklPUhABEhIKDkJFSEFWSU9SX0dST1VQ",
-            "EAISEAoMUFJPUEVSVFlfU0VUEAMSEgoOVE9LRU5fVEVNUExBVEUQBCpCCg9B",
-            "cnRpZmFjdENvbnRlbnQSDgoKREVGSU5JVElPThAAEgsKB0NPTlRST0wQARIH",
-            "CgNVTUwQAhIJCgVPVEhFUhADKkAKC01hcHBpbmdUeXBlEg8KC1NPVVJDRV9D",
-            "T0RFEAASEgoOSU1QTEVNRU5UQVRJT04QARIMCghSRVNPVVJDRRACKnYKDlRh",
-            "cmdldFBsYXRmb3JtEhUKEUVUSEVSRVVNX1NPTElESVRZEAASEAoMQ0hBSU5D",
-            "T0RFX0dPEAESEgoOQ0hBSU5DT0RFX0pBVkEQAhISCg5DSEFJTkNPREVfTk9E",
-            "RRADEgkKBUNPUkRBEAQSCAoEREFNTBAFQj0KHW9yZy50dGkudG9rZW5zLm1v",
-            "ZGVsLmFydGlmYWN0UAGqAhlUVEYuVG9rZW5zLk1vZGVsLkFydGlmYWN0YgZw",
-            "cm90bzM="));
+            "DAoEbmFtZRgCIAEoCRIPCgdhbGlhc2VzGAMgAygJEkAKD2FydGlmYWN0X3N5",
+            "bWJvbBgEIAEoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0",
+            "U3ltYm9sEhMKC2NvbnRyb2xfdXJpGAUgASgJEj8KCmRlZmluaXRpb24YBiAB",
+            "KAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdERlZmluaXRp",
+            "b24SSgoZaW5jb21wYXRpYmxlX3dpdGhfc3ltYm9scxgHIAMoCzInLnRheG9u",
+            "b215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sEj0KDmFydGlmYWN0",
+            "X2ZpbGVzGAggAygLMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
+            "Y3RGaWxlEisKBG1hcHMYCSABKAsyHS50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
+            "dC5NYXBzIj8KDkFydGlmYWN0U3ltYm9sEhUKDXZpc3VhbF9zeW1ib2wYBCAB",
+            "KAkSFgoOdG9vbGluZ19zeW1ib2wYBSABKAki0AEKEkFydGlmYWN0RGVmaW5p",
+            "dGlvbhIcChRidXNpbmVzc19kZXNjcmlwdGlvbhgBIAEoCRIYChBidXNpbmVz",
+            "c19leGFtcGxlGAIgASgJEjsKCWFuYWxvZ2llcxgDIAMoCzIoLnRheG9ub215",
+            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0QW5hbG9neRIQCghjb21tZW50cxgE",
+            "IAEoCRIzCghhcnRpZmFjdBgFIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0LkFydGlmYWN0In4KD0FydGlmYWN0QW5hbG9neRIMCgRuYW1lGAEgASgJ",
+            "EhMKC2Rlc2NyaXB0aW9uGAIgASgJEkgKE2FydGlmYWN0X2RlZmluaXRpb24Y",
+            "AyABKAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdERlZmlu",
+            "aXRpb24ipAEKDEFydGlmYWN0RmlsZRI5Cgdjb250ZW50GAEgASgOMigudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RDb250ZW50EhEKCWZpbGVf",
+            "bmFtZRgCIAEoCRIRCglmaWxlX2RhdGEYAyABKAwSMwoIYXJ0aWZhY3QYBCAB",
+            "KAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdCKDAgoETWFw",
+            "cxI+Cg9jb2RlX3JlZmVyZW5jZXMYASADKAsyJS50YXhvbm9teS5tb2RlbC5h",
+            "cnRpZmFjdC5NYXBSZWZlcmVuY2USSAoZaW1wbGVtZW50YXRpb25fcmVmZXJl",
+            "bmNlcxgCIAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcFJlZmVy",
+            "ZW5jZRI8CglyZXNvdXJjZXMYAyADKAsyKS50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5NYXBSZXNvdXJjZUVudHJ5EjMKCGFydGlmYWN0GAQgASgLMiEudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3Qi2AEKDE1hcFJlZmVyZW5j",
+            "ZRI6CgxtYXBwaW5nX3R5cGUYASABKA4yJC50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIgASgJEjkKCHBsYXRmb3JtGAMg",
+            "ASgOMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVGFyZ2V0UGxhdGZvcm0S",
+            "FgoOcmVmZXJlbmNlX3BhdGgYBCABKAkSKwoEbWFwcxgFIAEoCzIdLnRheG9u",
+            "b215Lm1vZGVsLmFydGlmYWN0Lk1hcHMitQEKEE1hcFJlc291cmNlRW50cnkS",
+            "OgoMbWFwcGluZ190eXBlGAEgASgOMiQudGF4b25vbXkubW9kZWwuYXJ0aWZh",
+            "Y3QuTWFwcGluZ1R5cGUSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgD",
+            "IAEoCRIVCg1yZXNvdXJjZV9wYXRoGAQgASgJEisKBG1hcHMYBSABKAsyHS50",
+            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5NYXBzIlcKEk5ld0FydGlmYWN0UmVx",
+            "dWVzdBIzCgR0eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
+            "QXJ0aWZhY3RUeXBlEgwKBG5hbWUYAiABKAkifgoTTmV3QXJ0aWZhY3RSZXNw",
+            "b25zZRIzCgR0eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
+            "QXJ0aWZhY3RUeXBlEjIKFGFydGlmYWN0X3R5cGVfb2JqZWN0GAIgASgLMhQu",
+            "Z29vZ2xlLnByb3RvYnVmLkFueSKAAQoVVXBkYXRlQXJ0aWZhY3RSZXF1ZXN0",
+            "EjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRp",
+            "ZmFjdFR5cGUSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QYAiABKAsyFC5nb29n",
+            "bGUucHJvdG9idWYuQW55IoEBChZVcGRhdGVBcnRpZmFjdFJlc3BvbnNlEjMK",
+            "BHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFj",
+            "dFR5cGUSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QYAiABKAsyFC5nb29nbGUu",
+            "cHJvdG9idWYuQW55KmAKDEFydGlmYWN0VHlwZRIICgRCQVNFEAASDAoIQkVI",
+            "QVZJT1IQARISCg5CRUhBVklPUl9HUk9VUBACEhAKDFBST1BFUlRZX1NFVBAD",
+            "EhIKDlRPS0VOX1RFTVBMQVRFEAQqQgoPQXJ0aWZhY3RDb250ZW50Eg4KCkRF",
+            "RklOSVRJT04QABILCgdDT05UUk9MEAESBwoDVU1MEAISCQoFT1RIRVIQAypA",
+            "CgtNYXBwaW5nVHlwZRIPCgtTT1VSQ0VfQ09ERRAAEhIKDklNUExFTUVOVEFU",
+            "SU9OEAESDAoIUkVTT1VSQ0UQAip2Cg5UYXJnZXRQbGF0Zm9ybRIVChFFVEhF",
+            "UkVVTV9TT0xJRElUWRAAEhAKDENIQUlOQ09ERV9HTxABEhIKDkNIQUlOQ09E",
+            "RV9KQVZBEAISEgoOQ0hBSU5DT0RFX05PREUQAxIJCgVDT1JEQRAEEggKBERB",
+            "TUwQBUI9Ch1vcmcudHRpLnRva2Vucy5tb2RlbC5hcnRpZmFjdFABqgIZVFRG",
+            "LlRva2Vucy5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTF.Tokens.Model.Artifact.ArtifactType), typeof(global::TTF.Tokens.Model.Artifact.ArtifactContent), typeof(global::TTF.Tokens.Model.Artifact.MappingType), typeof(global::TTF.Tokens.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.Artifact), global::TTF.Tokens.Model.Artifact.Artifact.Parser, new[]{ "Type", "Name", "Aliases", "VisualSymbol", "ToolingSymbol", "ControlUri", "Definition", "ArtifactFiles", "Maps" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.Artifact), global::TTF.Tokens.Model.Artifact.Artifact.Parser, new[]{ "Type", "Name", "Aliases", "ArtifactSymbol", "ControlUri", "Definition", "IncompatibleWithSymbols", "ArtifactFiles", "Maps" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactSymbol), global::TTF.Tokens.Model.Artifact.ArtifactSymbol.Parser, new[]{ "VisualSymbol", "ToolingSymbol" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactDefinition), global::TTF.Tokens.Model.Artifact.ArtifactDefinition.Parser, new[]{ "BusinessDescription", "BusinessExample", "Analogies", "Comments", "Artifact" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactAnalogy), global::TTF.Tokens.Model.Artifact.ArtifactAnalogy.Parser, new[]{ "Name", "Description", "ArtifactDefinition" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactFile), global::TTF.Tokens.Model.Artifact.ArtifactFile.Parser, new[]{ "Content", "FileName", "FileData", "Artifact" }, null, null, null),
@@ -185,10 +189,10 @@ namespace TTF.Tokens.Model.Artifact {
       type_ = other.type_;
       name_ = other.name_;
       aliases_ = other.aliases_.Clone();
-      visualSymbol_ = other.visualSymbol_;
-      toolingSymbol_ = other.toolingSymbol_;
+      artifactSymbol_ = other.artifactSymbol_ != null ? other.artifactSymbol_.Clone() : null;
       controlUri_ = other.controlUri_;
       definition_ = other.definition_ != null ? other.definition_.Clone() : null;
+      incompatibleWithSymbols_ = other.incompatibleWithSymbols_.Clone();
       artifactFiles_ = other.artifactFiles_.Clone();
       maps_ = other.maps_ != null ? other.maps_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -231,30 +235,19 @@ namespace TTF.Tokens.Model.Artifact {
       get { return aliases_; }
     }
 
-    /// <summary>Field number for the "visual_symbol" field.</summary>
-    public const int VisualSymbolFieldNumber = 4;
-    private string visualSymbol_ = "";
+    /// <summary>Field number for the "artifact_symbol" field.</summary>
+    public const int ArtifactSymbolFieldNumber = 4;
+    private global::TTF.Tokens.Model.Artifact.ArtifactSymbol artifactSymbol_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string VisualSymbol {
-      get { return visualSymbol_; }
+    public global::TTF.Tokens.Model.Artifact.ArtifactSymbol ArtifactSymbol {
+      get { return artifactSymbol_; }
       set {
-        visualSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "tooling_symbol" field.</summary>
-    public const int ToolingSymbolFieldNumber = 5;
-    private string toolingSymbol_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ToolingSymbol {
-      get { return toolingSymbol_; }
-      set {
-        toolingSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        artifactSymbol_ = value;
       }
     }
 
     /// <summary>Field number for the "control_uri" field.</summary>
-    public const int ControlUriFieldNumber = 6;
+    public const int ControlUriFieldNumber = 5;
     private string controlUri_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ControlUri {
@@ -265,7 +258,7 @@ namespace TTF.Tokens.Model.Artifact {
     }
 
     /// <summary>Field number for the "definition" field.</summary>
-    public const int DefinitionFieldNumber = 7;
+    public const int DefinitionFieldNumber = 6;
     private global::TTF.Tokens.Model.Artifact.ArtifactDefinition definition_;
     /// <summary>
     ///Base, Behavior or Behavior group type indicated by ArtifactType
@@ -276,6 +269,19 @@ namespace TTF.Tokens.Model.Artifact {
       set {
         definition_ = value;
       }
+    }
+
+    /// <summary>Field number for the "incompatible_with_symbols" field.</summary>
+    public const int IncompatibleWithSymbolsFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> _repeated_incompatibleWithSymbols_codec
+        = pb::FieldCodec.ForMessage(58, global::TTF.Tokens.Model.Artifact.ArtifactSymbol.Parser);
+    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> incompatibleWithSymbols_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol>();
+    /// <summary>
+    ///for behaviors that have opposites, or if another behavior or property-set
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> IncompatibleWithSymbols {
+      get { return incompatibleWithSymbols_; }
     }
 
     /// <summary>Field number for the "artifact_files" field.</summary>
@@ -318,10 +324,10 @@ namespace TTF.Tokens.Model.Artifact {
       if (Type != other.Type) return false;
       if (Name != other.Name) return false;
       if(!aliases_.Equals(other.aliases_)) return false;
-      if (VisualSymbol != other.VisualSymbol) return false;
-      if (ToolingSymbol != other.ToolingSymbol) return false;
+      if (!object.Equals(ArtifactSymbol, other.ArtifactSymbol)) return false;
       if (ControlUri != other.ControlUri) return false;
       if (!object.Equals(Definition, other.Definition)) return false;
+      if(!incompatibleWithSymbols_.Equals(other.incompatibleWithSymbols_)) return false;
       if(!artifactFiles_.Equals(other.artifactFiles_)) return false;
       if (!object.Equals(Maps, other.Maps)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -333,10 +339,10 @@ namespace TTF.Tokens.Model.Artifact {
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       hash ^= aliases_.GetHashCode();
-      if (VisualSymbol.Length != 0) hash ^= VisualSymbol.GetHashCode();
-      if (ToolingSymbol.Length != 0) hash ^= ToolingSymbol.GetHashCode();
+      if (artifactSymbol_ != null) hash ^= ArtifactSymbol.GetHashCode();
       if (ControlUri.Length != 0) hash ^= ControlUri.GetHashCode();
       if (definition_ != null) hash ^= Definition.GetHashCode();
+      hash ^= incompatibleWithSymbols_.GetHashCode();
       hash ^= artifactFiles_.GetHashCode();
       if (maps_ != null) hash ^= Maps.GetHashCode();
       if (_unknownFields != null) {
@@ -361,22 +367,19 @@ namespace TTF.Tokens.Model.Artifact {
         output.WriteString(Name);
       }
       aliases_.WriteTo(output, _repeated_aliases_codec);
-      if (VisualSymbol.Length != 0) {
+      if (artifactSymbol_ != null) {
         output.WriteRawTag(34);
-        output.WriteString(VisualSymbol);
-      }
-      if (ToolingSymbol.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteString(ToolingSymbol);
+        output.WriteMessage(ArtifactSymbol);
       }
       if (ControlUri.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteString(ControlUri);
       }
       if (definition_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(50);
         output.WriteMessage(Definition);
       }
+      incompatibleWithSymbols_.WriteTo(output, _repeated_incompatibleWithSymbols_codec);
       artifactFiles_.WriteTo(output, _repeated_artifactFiles_codec);
       if (maps_ != null) {
         output.WriteRawTag(74);
@@ -397,11 +400,8 @@ namespace TTF.Tokens.Model.Artifact {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
       size += aliases_.CalculateSize(_repeated_aliases_codec);
-      if (VisualSymbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(VisualSymbol);
-      }
-      if (ToolingSymbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ToolingSymbol);
+      if (artifactSymbol_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ArtifactSymbol);
       }
       if (ControlUri.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ControlUri);
@@ -409,6 +409,7 @@ namespace TTF.Tokens.Model.Artifact {
       if (definition_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Definition);
       }
+      size += incompatibleWithSymbols_.CalculateSize(_repeated_incompatibleWithSymbols_codec);
       size += artifactFiles_.CalculateSize(_repeated_artifactFiles_codec);
       if (maps_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Maps);
@@ -431,11 +432,11 @@ namespace TTF.Tokens.Model.Artifact {
         Name = other.Name;
       }
       aliases_.Add(other.aliases_);
-      if (other.VisualSymbol.Length != 0) {
-        VisualSymbol = other.VisualSymbol;
-      }
-      if (other.ToolingSymbol.Length != 0) {
-        ToolingSymbol = other.ToolingSymbol;
+      if (other.artifactSymbol_ != null) {
+        if (artifactSymbol_ == null) {
+          ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+        }
+        ArtifactSymbol.MergeFrom(other.ArtifactSymbol);
       }
       if (other.ControlUri.Length != 0) {
         ControlUri = other.ControlUri;
@@ -446,6 +447,7 @@ namespace TTF.Tokens.Model.Artifact {
         }
         Definition.MergeFrom(other.Definition);
       }
+      incompatibleWithSymbols_.Add(other.incompatibleWithSymbols_);
       artifactFiles_.Add(other.artifactFiles_);
       if (other.maps_ != null) {
         if (maps_ == null) {
@@ -477,22 +479,25 @@ namespace TTF.Tokens.Model.Artifact {
             break;
           }
           case 34: {
-            VisualSymbol = input.ReadString();
+            if (artifactSymbol_ == null) {
+              ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+            }
+            input.ReadMessage(ArtifactSymbol);
             break;
           }
           case 42: {
-            ToolingSymbol = input.ReadString();
-            break;
-          }
-          case 50: {
             ControlUri = input.ReadString();
             break;
           }
-          case 58: {
+          case 50: {
             if (definition_ == null) {
               Definition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
             }
             input.ReadMessage(Definition);
+            break;
+          }
+          case 58: {
+            incompatibleWithSymbols_.AddEntriesFrom(input, _repeated_incompatibleWithSymbols_codec);
             break;
           }
           case 66: {
@@ -512,6 +517,163 @@ namespace TTF.Tokens.Model.Artifact {
 
   }
 
+  public sealed partial class ArtifactSymbol : pb::IMessage<ArtifactSymbol> {
+    private static readonly pb::MessageParser<ArtifactSymbol> _parser = new pb::MessageParser<ArtifactSymbol>(() => new ArtifactSymbol());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ArtifactSymbol> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ArtifactSymbol() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ArtifactSymbol(ArtifactSymbol other) : this() {
+      visualSymbol_ = other.visualSymbol_;
+      toolingSymbol_ = other.toolingSymbol_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ArtifactSymbol Clone() {
+      return new ArtifactSymbol(this);
+    }
+
+    /// <summary>Field number for the "visual_symbol" field.</summary>
+    public const int VisualSymbolFieldNumber = 4;
+    private string visualSymbol_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string VisualSymbol {
+      get { return visualSymbol_; }
+      set {
+        visualSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tooling_symbol" field.</summary>
+    public const int ToolingSymbolFieldNumber = 5;
+    private string toolingSymbol_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ToolingSymbol {
+      get { return toolingSymbol_; }
+      set {
+        toolingSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ArtifactSymbol);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ArtifactSymbol other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (VisualSymbol != other.VisualSymbol) return false;
+      if (ToolingSymbol != other.ToolingSymbol) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (VisualSymbol.Length != 0) hash ^= VisualSymbol.GetHashCode();
+      if (ToolingSymbol.Length != 0) hash ^= ToolingSymbol.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (VisualSymbol.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(VisualSymbol);
+      }
+      if (ToolingSymbol.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(ToolingSymbol);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (VisualSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(VisualSymbol);
+      }
+      if (ToolingSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ToolingSymbol);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ArtifactSymbol other) {
+      if (other == null) {
+        return;
+      }
+      if (other.VisualSymbol.Length != 0) {
+        VisualSymbol = other.VisualSymbol;
+      }
+      if (other.ToolingSymbol.Length != 0) {
+        ToolingSymbol = other.ToolingSymbol;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 34: {
+            VisualSymbol = input.ReadString();
+            break;
+          }
+          case 42: {
+            ToolingSymbol = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class ArtifactDefinition : pb::IMessage<ArtifactDefinition> {
     private static readonly pb::MessageParser<ArtifactDefinition> _parser = new pb::MessageParser<ArtifactDefinition>(() => new ArtifactDefinition());
     private pb::UnknownFieldSet _unknownFields;
@@ -520,7 +682,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -762,7 +924,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -956,7 +1118,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1178,7 +1340,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1376,7 +1538,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1626,7 +1788,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1876,7 +2038,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2033,7 +2195,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2199,7 +2361,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[9]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2365,7 +2527,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[10]; }
+      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
