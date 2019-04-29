@@ -8,8 +8,8 @@ mkdir -p out/go
 protoc --csharp_out=./out/csharp --java_out=./out/java  --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools ./model/protos/artifact.proto
 protoc --csharp_out=./out/csharp --java_out=./out/java  --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools ./model/protos/core.proto
 protoc --csharp_out=./out/csharp --java_out=./out/java  --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools ./model/protos/taxonomy.proto
-#protoc --csharp_out=./out/csharp --java_out=./out/java  --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools  --grpc_out ../tools/TaxonomyHost/TaxonomyHost ./model/protos/taxonomyservice.proto --plugin=protoc-gen-grpc=../../../.nuget/packages/grpc.tools/1.20.0/tools/macosx_x64/grpc_csharp_plugin
+protoc --csharp_out=./out/csharp --java_out=./out/java  --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools  --grpc_out ../tools/TaxonomyHost/TaxonomyHost ./model/protos/taxonomyservice.proto --plugin=protoc-gen-grpc=../../../../.nuget/packages/grpc.tools/1.20.0/tools/macosx_x64/grpc_csharp_plugin
 
-#cp ./out/csharp/* ../tools/artifactGenerator/artifactGenerator/model
+cp ./out/csharp/* ../tools/artifactGenerator/artifactGenerator/model
 
-#cp ./out/csharp/* ../tools/TaxonomyHost/TaxonomyHost/model
+cp ./out/csharp/* ../tools/TaxonomyHost/TaxonomyHost/model
