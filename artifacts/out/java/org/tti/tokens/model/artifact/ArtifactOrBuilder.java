@@ -73,25 +73,25 @@ public interface ArtifactOrBuilder extends
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
    */
-  boolean hasDefinition();
+  boolean hasArtifactDefinition();
   /**
    * <pre>
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
    */
-  org.tti.tokens.model.artifact.ArtifactDefinition getDefinition();
+  org.tti.tokens.model.artifact.ArtifactDefinition getArtifactDefinition();
   /**
    * <pre>
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
    */
-  org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getDefinitionOrBuilder();
+  org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getArtifactDefinitionOrBuilder();
 
   /**
    * <pre>

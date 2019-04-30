@@ -3,12 +3,13 @@ using System.IO;
 using System.Reflection;
 using Google.Protobuf;
 using log4net;
+using Newtonsoft.Json.Linq;
 using TTF.Tokens.Model.Artifact;
 using TTF.Tokens.Model.Core;
 
 namespace ArtifactGenerator
 {
-	class Program{
+	internal static class FactGen{
 	
 		private static ILog _log;
 		private static string ArtifactName { get; set; }
@@ -18,6 +19,11 @@ namespace ArtifactGenerator
 		{
 			if (args.Length != 6)
 			{
+				if (args.Length == 0)
+				{
+					_log.Info("Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate --n [ARTIFACT_NAME] ");
+					return;
+				}
 				_log.Error("Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate");
 				throw new Exception("Missing required parameters.");
 			}
@@ -43,6 +49,11 @@ namespace ArtifactGenerator
 				ArtifactType = (ArtifactType) t;
 			}
 
+			if (string.IsNullOrEmpty(ArtifactPath) || string.IsNullOrEmpty(ArtifactName))
+			{
+				throw new Exception("Missing value for either --n or --p.");
+			}
+
 			Utils.InitLog();
 			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 			_log.Info("Generating Artifact: " + ArtifactName + " of type: " + ArtifactType);
@@ -60,12 +71,60 @@ namespace ArtifactGenerator
 			
 			string artifactTypeFolder;
 			var jsf = new JsonFormatter(new JsonFormatter.Settings(true));
+			
 			string artifactJson;
 			DirectoryInfo outputFolder;
 			var artifact =  new Artifact
 			{
 				Name = ArtifactName,
-				Type = ArtifactType
+				Type = ArtifactType,
+				ArtifactSymbol = new ArtifactSymbol
+				{
+					ToolingSymbol = "",
+					VisualSymbol = ""
+				},
+				ArtifactDefinition = new ArtifactDefinition
+				{
+					BusinessDescription = "This is a " + ArtifactName + " of type: " + ArtifactType,
+					BusinessExample = "",
+					Comments = "",
+					Analogies = { new ArtifactAnalogy
+					{
+						Name = "Analogy 1",
+						Description = ArtifactName + " analogy 1 description"
+					}}
+				},
+				Maps = new Maps
+				{
+					CodeReferences = { new MapReference
+					{
+						MappingType = MappingType.SourceCode,
+						Name = "Code 1",
+						Platform = TargetPlatform.Daml,
+						ReferencePath = ""
+					}},
+					ImplementationReferences = { new MapReference
+					{
+						MappingType = MappingType.Implementation,
+						Name = "Implementation 1",
+						Platform = TargetPlatform.ChaincodeGo,
+						ReferencePath = ""
+					}},
+					Resources = { new MapResourceEntry
+					{
+						MappingType = MappingType.Resource,
+						Name = "Regulation Reference 1",
+						Description = "",
+						ResourcePath = ""
+					}}
+				},
+				IncompatibleWithSymbols = { new ArtifactSymbol
+				{
+					ToolingSymbol = "",
+					VisualSymbol = ""
+				}},
+				Aliases = { "alias1", "alias2"}
+				
 			};
 			switch (ArtifactType)
 			{
@@ -101,11 +160,11 @@ namespace ArtifactGenerator
 				case ArtifactType.PropertySet:
 					artifactTypeFolder = "property-sets";
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
-					var artifactPropertSet = new PropertySet
+					var artifactPropertySet = new PropertySet
 					{
 						Artifact = AddArtifactFiles(outputFolder, folderSeparator, artifact)
 					};
-					artifactJson = jsf.Format(artifactPropertSet);
+					artifactJson = jsf.Format(artifactPropertySet);
 					break;
 				case ArtifactType.TokenTemplate:
 					artifactTypeFolder = "tokens";
@@ -122,9 +181,53 @@ namespace ArtifactGenerator
 			}
 
 			_log.Info("Artifact Destination: " + outputFolder);
-			_log.Info("Creating Artifact: " + artifactJson);
+			var formattedJson = JToken.Parse(artifactJson).ToString();
+			
+			//test to make sure formattedJson will Deserialize.
+			try
+			{
+				switch (ArtifactType)
+				{
+					case ArtifactType.Base:
+						
+						var testBase = JsonParser.Default.Parse<Base>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testBase.Artifact.Name);
+						break;
+					case ArtifactType.Behavior:
+						var testBehavior = JsonParser.Default.Parse<Behavior>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testBehavior.Artifact.Name);
+						break;
+					case ArtifactType.BehaviorGroup:
+						var testBehaviorGroup = JsonParser.Default.Parse<Behavior>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testBehaviorGroup.Artifact.Name);
+						break;
+					case ArtifactType.PropertySet:
+						var testPropertySet = JsonParser.Default.Parse<Behavior>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testPropertySet.Artifact.Name);
+						break;
+					case ArtifactType.TokenTemplate:
+						var testTemplate = JsonParser.Default.Parse<Behavior>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testTemplate.Artifact.Name);
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
+			}
+			catch (Exception e)
+			{
+				_log.Error("Json failed to deserialize back into: " + ArtifactType);
+				_log.Error(e);
+				return;
+			}
+
+			_log.Info("Creating Artifact: " + formattedJson);
 			var artifactStream = File.CreateText(outputFolder.FullName + folderSeparator + ArtifactName + ".json");
-			artifactStream.Write(artifactJson);
+			artifactStream.Write(formattedJson);
 			artifactStream.Close();
 			
 			
@@ -133,15 +236,16 @@ namespace ArtifactGenerator
 
 		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string folderSeparator, Artifact parent)
 		{
-			var md = CreateMarkdown(outputFolder, folderSeparator, parent);
-			var proto = CreateProto(outputFolder, folderSeparator, parent);
+			var md = CreateMarkdown(outputFolder, folderSeparator);
+			var proto = CreateProto(outputFolder, folderSeparator);
 			var retArtifact = parent.Clone();
 			
 			retArtifact.ArtifactFiles.Add(proto);
+			retArtifact.ControlUri = ArtifactPath + folderSeparator + ArtifactName + folderSeparator + proto.FileName;
 			retArtifact.ArtifactFiles.Add(md);
 			return retArtifact;
 		}
-		private static ArtifactFile CreateMarkdown(DirectoryInfo outputFolder, string folderSeparator, Artifact parent)
+		private static ArtifactFile CreateMarkdown(DirectoryInfo outputFolder, string folderSeparator)
 		{
 			_log.Info("Creating Artifact Markdown");
 			var md = File.CreateText(outputFolder + folderSeparator + ArtifactName + ".md");
@@ -150,12 +254,11 @@ namespace ArtifactGenerator
 			return new ArtifactFile
 			{
 				FileName = ArtifactName + ".md",
-				Artifact = parent,
 				Content = ArtifactContent.Uml
 			};
 		}
 		
-		private static ArtifactFile CreateProto(DirectoryInfo outputFolder, string folderSeparator, Artifact parent)
+		private static ArtifactFile CreateProto(DirectoryInfo outputFolder, string folderSeparator)
 		{
 			_log.Info("Creating Artifact Proto");
 			var proto  = File.CreateText(outputFolder + folderSeparator + ArtifactName + ".proto");
@@ -169,7 +272,6 @@ namespace ArtifactGenerator
 			return new ArtifactFile
 			{
 				FileName = ArtifactName + ".proto",
-				Artifact = parent,
 				Content = ArtifactContent.Control
 			};
 		}

@@ -19,6 +19,31 @@ public final class TaxonomyOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_taxonomy_model_Taxonomy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_Taxonomy_BaseTokenTypesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_Taxonomy_BaseTokenTypesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_Taxonomy_BehaviorsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_Taxonomy_BehaviorsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_Taxonomy_BehaviorGroupsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_Taxonomy_BehaviorGroupsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_Taxonomy_PropertySetsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_Taxonomy_PropertySetsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_Taxonomy_TokenTemplatesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_Taxonomy_TokenTemplatesEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -29,17 +54,29 @@ public final class TaxonomyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\016taxonomy.proto\022\016taxonomy.model\032\ncore.p" +
-      "roto\"\265\002\n\010Taxonomy\022\017\n\007version\030\001 \001(\t\0223\n\020ba" +
-      "se_token_types\030\002 \003(\0132\031.taxonomy.model.co" +
-      "re.Base\0220\n\tbehaviors\030\003 \003(\0132\035.taxonomy.mo" +
-      "del.core.Behavior\022;\n\017behavior_groups\030\004 \003" +
-      "(\0132\".taxonomy.model.core.BehaviorGroup\0227" +
-      "\n\rproperty_sets\030\005 \003(\0132 .taxonomy.model.c" +
-      "ore.PropertySet\022;\n\017token_templates\030\006 \003(\013" +
-      "2\".taxonomy.model.core.TokenTemplateBQ\n1" +
-      "org.tokentaxonomyinitiative.tokens.model" +
-      ".taxonomyP\001\252\002\031TTF.Tokens.Model.Taxonomyb" +
-      "\006proto3"
+      "roto\"\240\006\n\010Taxonomy\022\017\n\007version\030\001 \001(\t\022F\n\020ba" +
+      "se_token_types\030\002 \003(\0132,.taxonomy.model.Ta" +
+      "xonomy.BaseTokenTypesEntry\022:\n\tbehaviors\030" +
+      "\003 \003(\0132\'.taxonomy.model.Taxonomy.Behavior" +
+      "sEntry\022E\n\017behavior_groups\030\004 \003(\0132,.taxono" +
+      "my.model.Taxonomy.BehaviorGroupsEntry\022A\n" +
+      "\rproperty_sets\030\005 \003(\0132*.taxonomy.model.Ta" +
+      "xonomy.PropertySetsEntry\022E\n\017token_templa" +
+      "tes\030\006 \003(\0132,.taxonomy.model.Taxonomy.Toke" +
+      "nTemplatesEntry\032P\n\023BaseTokenTypesEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022(\n\005value\030\002 \001(\0132\031.taxonomy.mo" +
+      "del.core.Base:\0028\001\032O\n\016BehaviorsEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022,\n\005value\030\002 \001(\0132\035.taxonomy.model" +
+      ".core.Behavior:\0028\001\032Y\n\023BehaviorGroupsEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".taxonomy" +
+      ".model.core.BehaviorGroup:\0028\001\032U\n\021Propert" +
+      "ySetsEntry\022\013\n\003key\030\001 \001(\t\022/\n\005value\030\002 \001(\0132 " +
+      ".taxonomy.model.core.PropertySet:\0028\001\032Y\n\023" +
+      "TokenTemplatesEntry\022\013\n\003key\030\001 \001(\t\0221\n\005valu" +
+      "e\030\002 \001(\0132\".taxonomy.model.core.TokenTempl" +
+      "ate:\0028\001BQ\n1org.tokentaxonomyinitiative.t" +
+      "okens.model.taxonomyP\001\252\002\031TTF.Tokens.Mode" +
+      "l.Taxonomyb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -60,6 +97,36 @@ public final class TaxonomyOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_Taxonomy_descriptor,
         new java.lang.String[] { "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", });
+    internal_static_taxonomy_model_Taxonomy_BaseTokenTypesEntry_descriptor =
+      internal_static_taxonomy_model_Taxonomy_descriptor.getNestedTypes().get(0);
+    internal_static_taxonomy_model_Taxonomy_BaseTokenTypesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_Taxonomy_BaseTokenTypesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_taxonomy_model_Taxonomy_BehaviorsEntry_descriptor =
+      internal_static_taxonomy_model_Taxonomy_descriptor.getNestedTypes().get(1);
+    internal_static_taxonomy_model_Taxonomy_BehaviorsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_Taxonomy_BehaviorsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_taxonomy_model_Taxonomy_BehaviorGroupsEntry_descriptor =
+      internal_static_taxonomy_model_Taxonomy_descriptor.getNestedTypes().get(2);
+    internal_static_taxonomy_model_Taxonomy_BehaviorGroupsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_Taxonomy_BehaviorGroupsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_taxonomy_model_Taxonomy_PropertySetsEntry_descriptor =
+      internal_static_taxonomy_model_Taxonomy_descriptor.getNestedTypes().get(3);
+    internal_static_taxonomy_model_Taxonomy_PropertySetsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_Taxonomy_PropertySetsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_taxonomy_model_Taxonomy_TokenTemplatesEntry_descriptor =
+      internal_static_taxonomy_model_Taxonomy_descriptor.getNestedTypes().get(4);
+    internal_static_taxonomy_model_Taxonomy_TokenTemplatesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_Taxonomy_TokenTemplatesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     org.tti.tokens.model.core.Core.getDescriptor();
   }
 

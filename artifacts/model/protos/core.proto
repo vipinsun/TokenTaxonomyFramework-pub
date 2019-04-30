@@ -16,15 +16,15 @@ enum Type {
     HYBRID_NON_FUNGIBLE_ROOT = 3;
 }
 
-//all tokens inherit from the base and implicitly support construction.
+//all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
 message Base{
     taxonomy.model.artifact.Artifact artifact = 1;
-    string name = 2;
-    string symbol = 3;
-    string owner = 4;
-    bytes quantity = 5;
-    int32 decimals = 6;
-    map<string, string> token_properties = 7;
+    string name = 2;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    string symbol = 3; //an optionally unique symbol or identifier
+    string owner = 4; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    bytes quantity = 5; //Can represent the initial quantity created or the total minted or issued for the class.
+    int32 decimals = 6; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    map<string, string> token_properties = 7; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
 }
 
 message Behavior{
@@ -55,8 +55,8 @@ message TokenTemplate {
 }
 
 message Invocation{
-    string name = 1;
-    string description = 2;
+    string name = 1; //property name if a property-set
+    string description = 2; //include the data type for the value.
     InvocationRequest request = 3;
     InvocationResponse response = 4;
 }

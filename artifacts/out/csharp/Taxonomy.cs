@@ -25,25 +25,39 @@ namespace TTF.Tokens.Model.Taxonomy {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg50YXhvbm9teS5wcm90bxIOdGF4b25vbXkubW9kZWwaCmNvcmUucHJvdG8i",
-            "tQIKCFRheG9ub215Eg8KB3ZlcnNpb24YASABKAkSMwoQYmFzZV90b2tlbl90",
-            "eXBlcxgCIAMoCzIZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZRIwCgliZWhh",
-            "dmlvcnMYAyADKAsyHS50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yEjsK",
-            "D2JlaGF2aW9yX2dyb3VwcxgEIAMoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUu",
-            "QmVoYXZpb3JHcm91cBI3Cg1wcm9wZXJ0eV9zZXRzGAUgAygLMiAudGF4b25v",
-            "bXkubW9kZWwuY29yZS5Qcm9wZXJ0eVNldBI7Cg90b2tlbl90ZW1wbGF0ZXMY",
-            "BiADKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuVGVtcGxhdGVCUQox",
-            "b3JnLnRva2VudGF4b25vbXlpbml0aWF0aXZlLnRva2Vucy5tb2RlbC50YXhv",
-            "bm9teVABqgIZVFRGLlRva2Vucy5Nb2RlbC5UYXhvbm9teWIGcHJvdG8z"));
+            "oAYKCFRheG9ub215Eg8KB3ZlcnNpb24YASABKAkSRgoQYmFzZV90b2tlbl90",
+            "eXBlcxgCIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9ub215LkJhc2VUb2tl",
+            "blR5cGVzRW50cnkSOgoJYmVoYXZpb3JzGAMgAygLMicudGF4b25vbXkubW9k",
+            "ZWwuVGF4b25vbXkuQmVoYXZpb3JzRW50cnkSRQoPYmVoYXZpb3JfZ3JvdXBz",
+            "GAQgAygLMiwudGF4b25vbXkubW9kZWwuVGF4b25vbXkuQmVoYXZpb3JHcm91",
+            "cHNFbnRyeRJBCg1wcm9wZXJ0eV9zZXRzGAUgAygLMioudGF4b25vbXkubW9k",
+            "ZWwuVGF4b25vbXkuUHJvcGVydHlTZXRzRW50cnkSRQoPdG9rZW5fdGVtcGxh",
+            "dGVzGAYgAygLMiwudGF4b25vbXkubW9kZWwuVGF4b25vbXkuVG9rZW5UZW1w",
+            "bGF0ZXNFbnRyeRpQChNCYXNlVG9rZW5UeXBlc0VudHJ5EgsKA2tleRgBIAEo",
+            "CRIoCgV2YWx1ZRgCIAEoCzIZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZToC",
+            "OAEaTwoOQmVoYXZpb3JzRW50cnkSCwoDa2V5GAEgASgJEiwKBXZhbHVlGAIg",
+            "ASgLMh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvcjoCOAEaWQoTQmVo",
+            "YXZpb3JHcm91cHNFbnRyeRILCgNrZXkYASABKAkSMQoFdmFsdWUYAiABKAsy",
+            "Ii50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXA6AjgBGlUKEVBy",
+            "b3BlcnR5U2V0c0VudHJ5EgsKA2tleRgBIAEoCRIvCgV2YWx1ZRgCIAEoCzIg",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQ6AjgBGlkKE1Rva2Vu",
+            "VGVtcGxhdGVzRW50cnkSCwoDa2V5GAEgASgJEjEKBXZhbHVlGAIgASgLMiIu",
+            "dGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRlOgI4AUJRCjFvcmcu",
+            "dG9rZW50YXhvbm9teWluaXRpYXRpdmUudG9rZW5zLm1vZGVsLnRheG9ub215",
+            "UAGqAhlUVEYuVG9rZW5zLk1vZGVsLlRheG9ub215YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Taxonomy.Taxonomy), global::TTF.Tokens.Model.Taxonomy.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Taxonomy.Taxonomy), global::TTF.Tokens.Model.Taxonomy.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
           }));
     }
     #endregion
 
   }
   #region Messages
+  /// <summary>
+  ///each collection defined in a map with the index being the symbol of the artifact for the collection.
+  /// </summary>
   public sealed partial class Taxonomy : pb::IMessage<Taxonomy> {
     private static readonly pb::MessageParser<Taxonomy> _parser = new pb::MessageParser<Taxonomy>(() => new Taxonomy());
     private pb::UnknownFieldSet _unknownFields;
@@ -96,51 +110,51 @@ namespace TTF.Tokens.Model.Taxonomy {
 
     /// <summary>Field number for the "base_token_types" field.</summary>
     public const int BaseTokenTypesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Base> _repeated_baseTokenTypes_codec
-        = pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.Base.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Base> baseTokenTypes_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Base>();
+    private static readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.Base>.Codec _map_baseTokenTypes_codec
+        = new pbc::MapField<string, global::TTF.Tokens.Model.Core.Base>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.Base.Parser), 18);
+    private readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.Base> baseTokenTypes_ = new pbc::MapField<string, global::TTF.Tokens.Model.Core.Base>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Base> BaseTokenTypes {
+    public pbc::MapField<string, global::TTF.Tokens.Model.Core.Base> BaseTokenTypes {
       get { return baseTokenTypes_; }
     }
 
     /// <summary>Field number for the "behaviors" field.</summary>
     public const int BehaviorsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Behavior> _repeated_behaviors_codec
-        = pb::FieldCodec.ForMessage(26, global::TTF.Tokens.Model.Core.Behavior.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Behavior> behaviors_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Behavior>();
+    private static readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.Behavior>.Codec _map_behaviors_codec
+        = new pbc::MapField<string, global::TTF.Tokens.Model.Core.Behavior>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.Behavior.Parser), 26);
+    private readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.Behavior> behaviors_ = new pbc::MapField<string, global::TTF.Tokens.Model.Core.Behavior>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Behavior> Behaviors {
+    public pbc::MapField<string, global::TTF.Tokens.Model.Core.Behavior> Behaviors {
       get { return behaviors_; }
     }
 
     /// <summary>Field number for the "behavior_groups" field.</summary>
     public const int BehaviorGroupsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.BehaviorGroup> _repeated_behaviorGroups_codec
-        = pb::FieldCodec.ForMessage(34, global::TTF.Tokens.Model.Core.BehaviorGroup.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.BehaviorGroup> behaviorGroups_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.BehaviorGroup>();
+    private static readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.BehaviorGroup>.Codec _map_behaviorGroups_codec
+        = new pbc::MapField<string, global::TTF.Tokens.Model.Core.BehaviorGroup>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.BehaviorGroup.Parser), 34);
+    private readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.BehaviorGroup> behaviorGroups_ = new pbc::MapField<string, global::TTF.Tokens.Model.Core.BehaviorGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.BehaviorGroup> BehaviorGroups {
+    public pbc::MapField<string, global::TTF.Tokens.Model.Core.BehaviorGroup> BehaviorGroups {
       get { return behaviorGroups_; }
     }
 
     /// <summary>Field number for the "property_sets" field.</summary>
     public const int PropertySetsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.PropertySet> _repeated_propertySets_codec
-        = pb::FieldCodec.ForMessage(42, global::TTF.Tokens.Model.Core.PropertySet.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.PropertySet> propertySets_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.PropertySet>();
+    private static readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.PropertySet>.Codec _map_propertySets_codec
+        = new pbc::MapField<string, global::TTF.Tokens.Model.Core.PropertySet>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.PropertySet.Parser), 42);
+    private readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.PropertySet> propertySets_ = new pbc::MapField<string, global::TTF.Tokens.Model.Core.PropertySet>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.PropertySet> PropertySets {
+    public pbc::MapField<string, global::TTF.Tokens.Model.Core.PropertySet> PropertySets {
       get { return propertySets_; }
     }
 
     /// <summary>Field number for the "token_templates" field.</summary>
     public const int TokenTemplatesFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.TokenTemplate> _repeated_tokenTemplates_codec
-        = pb::FieldCodec.ForMessage(50, global::TTF.Tokens.Model.Core.TokenTemplate.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.TokenTemplate> tokenTemplates_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.TokenTemplate>();
+    private static readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.TokenTemplate>.Codec _map_tokenTemplates_codec
+        = new pbc::MapField<string, global::TTF.Tokens.Model.Core.TokenTemplate>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.TokenTemplate.Parser), 50);
+    private readonly pbc::MapField<string, global::TTF.Tokens.Model.Core.TokenTemplate> tokenTemplates_ = new pbc::MapField<string, global::TTF.Tokens.Model.Core.TokenTemplate>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.TokenTemplate> TokenTemplates {
+    public pbc::MapField<string, global::TTF.Tokens.Model.Core.TokenTemplate> TokenTemplates {
       get { return tokenTemplates_; }
     }
 
@@ -158,11 +172,11 @@ namespace TTF.Tokens.Model.Taxonomy {
         return true;
       }
       if (Version != other.Version) return false;
-      if(!baseTokenTypes_.Equals(other.baseTokenTypes_)) return false;
-      if(!behaviors_.Equals(other.behaviors_)) return false;
-      if(!behaviorGroups_.Equals(other.behaviorGroups_)) return false;
-      if(!propertySets_.Equals(other.propertySets_)) return false;
-      if(!tokenTemplates_.Equals(other.tokenTemplates_)) return false;
+      if (!BaseTokenTypes.Equals(other.BaseTokenTypes)) return false;
+      if (!Behaviors.Equals(other.Behaviors)) return false;
+      if (!BehaviorGroups.Equals(other.BehaviorGroups)) return false;
+      if (!PropertySets.Equals(other.PropertySets)) return false;
+      if (!TokenTemplates.Equals(other.TokenTemplates)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -170,11 +184,11 @@ namespace TTF.Tokens.Model.Taxonomy {
     public override int GetHashCode() {
       int hash = 1;
       if (Version.Length != 0) hash ^= Version.GetHashCode();
-      hash ^= baseTokenTypes_.GetHashCode();
-      hash ^= behaviors_.GetHashCode();
-      hash ^= behaviorGroups_.GetHashCode();
-      hash ^= propertySets_.GetHashCode();
-      hash ^= tokenTemplates_.GetHashCode();
+      hash ^= BaseTokenTypes.GetHashCode();
+      hash ^= Behaviors.GetHashCode();
+      hash ^= BehaviorGroups.GetHashCode();
+      hash ^= PropertySets.GetHashCode();
+      hash ^= TokenTemplates.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -192,11 +206,11 @@ namespace TTF.Tokens.Model.Taxonomy {
         output.WriteRawTag(10);
         output.WriteString(Version);
       }
-      baseTokenTypes_.WriteTo(output, _repeated_baseTokenTypes_codec);
-      behaviors_.WriteTo(output, _repeated_behaviors_codec);
-      behaviorGroups_.WriteTo(output, _repeated_behaviorGroups_codec);
-      propertySets_.WriteTo(output, _repeated_propertySets_codec);
-      tokenTemplates_.WriteTo(output, _repeated_tokenTemplates_codec);
+      baseTokenTypes_.WriteTo(output, _map_baseTokenTypes_codec);
+      behaviors_.WriteTo(output, _map_behaviors_codec);
+      behaviorGroups_.WriteTo(output, _map_behaviorGroups_codec);
+      propertySets_.WriteTo(output, _map_propertySets_codec);
+      tokenTemplates_.WriteTo(output, _map_tokenTemplates_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -208,11 +222,11 @@ namespace TTF.Tokens.Model.Taxonomy {
       if (Version.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
       }
-      size += baseTokenTypes_.CalculateSize(_repeated_baseTokenTypes_codec);
-      size += behaviors_.CalculateSize(_repeated_behaviors_codec);
-      size += behaviorGroups_.CalculateSize(_repeated_behaviorGroups_codec);
-      size += propertySets_.CalculateSize(_repeated_propertySets_codec);
-      size += tokenTemplates_.CalculateSize(_repeated_tokenTemplates_codec);
+      size += baseTokenTypes_.CalculateSize(_map_baseTokenTypes_codec);
+      size += behaviors_.CalculateSize(_map_behaviors_codec);
+      size += behaviorGroups_.CalculateSize(_map_behaviorGroups_codec);
+      size += propertySets_.CalculateSize(_map_propertySets_codec);
+      size += tokenTemplates_.CalculateSize(_map_tokenTemplates_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -248,23 +262,23 @@ namespace TTF.Tokens.Model.Taxonomy {
             break;
           }
           case 18: {
-            baseTokenTypes_.AddEntriesFrom(input, _repeated_baseTokenTypes_codec);
+            baseTokenTypes_.AddEntriesFrom(input, _map_baseTokenTypes_codec);
             break;
           }
           case 26: {
-            behaviors_.AddEntriesFrom(input, _repeated_behaviors_codec);
+            behaviors_.AddEntriesFrom(input, _map_behaviors_codec);
             break;
           }
           case 34: {
-            behaviorGroups_.AddEntriesFrom(input, _repeated_behaviorGroups_codec);
+            behaviorGroups_.AddEntriesFrom(input, _map_behaviorGroups_codec);
             break;
           }
           case 42: {
-            propertySets_.AddEntriesFrom(input, _repeated_propertySets_codec);
+            propertySets_.AddEntriesFrom(input, _map_propertySets_codec);
             break;
           }
           case 50: {
-            tokenTemplates_.AddEntriesFrom(input, _repeated_tokenTemplates_codec);
+            tokenTemplates_.AddEntriesFrom(input, _map_tokenTemplates_codec);
             break;
           }
         }

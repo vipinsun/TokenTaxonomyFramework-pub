@@ -4,6 +4,10 @@
 package org.tokentaxonomyinitiative.tokens.model.taxonomy;
 
 /**
+ * <pre>
+ *each collection defined in a map with the index being the symbol of the artifact for the collection.
+ * </pre>
+ *
  * Protobuf type {@code taxonomy.model.Taxonomy}
  */
 public  final class Taxonomy extends
@@ -17,11 +21,6 @@ private static final long serialVersionUID = 0L;
   }
   private Taxonomy() {
     version_ = "";
-    baseTokenTypes_ = java.util.Collections.emptyList();
-    behaviors_ = java.util.Collections.emptyList();
-    behaviorGroups_ = java.util.Collections.emptyList();
-    propertySets_ = java.util.Collections.emptyList();
-    tokenTemplates_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -56,47 +55,67 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              baseTokenTypes_ = new java.util.ArrayList<org.tti.tokens.model.core.Base>();
+              baseTokenTypes_ = com.google.protobuf.MapField.newMapField(
+                  BaseTokenTypesDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000002;
             }
-            baseTokenTypes_.add(
-                input.readMessage(org.tti.tokens.model.core.Base.parser(), extensionRegistry));
+            com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.Base>
+            baseTokenTypes__ = input.readMessage(
+                BaseTokenTypesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            baseTokenTypes_.getMutableMap().put(
+                baseTokenTypes__.getKey(), baseTokenTypes__.getValue());
             break;
           }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              behaviors_ = new java.util.ArrayList<org.tti.tokens.model.core.Behavior>();
+              behaviors_ = com.google.protobuf.MapField.newMapField(
+                  BehaviorsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000004;
             }
-            behaviors_.add(
-                input.readMessage(org.tti.tokens.model.core.Behavior.parser(), extensionRegistry));
+            com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.Behavior>
+            behaviors__ = input.readMessage(
+                BehaviorsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            behaviors_.getMutableMap().put(
+                behaviors__.getKey(), behaviors__.getValue());
             break;
           }
           case 34: {
             if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-              behaviorGroups_ = new java.util.ArrayList<org.tti.tokens.model.core.BehaviorGroup>();
+              behaviorGroups_ = com.google.protobuf.MapField.newMapField(
+                  BehaviorGroupsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000008;
             }
-            behaviorGroups_.add(
-                input.readMessage(org.tti.tokens.model.core.BehaviorGroup.parser(), extensionRegistry));
+            com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+            behaviorGroups__ = input.readMessage(
+                BehaviorGroupsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            behaviorGroups_.getMutableMap().put(
+                behaviorGroups__.getKey(), behaviorGroups__.getValue());
             break;
           }
           case 42: {
             if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-              propertySets_ = new java.util.ArrayList<org.tti.tokens.model.core.PropertySet>();
+              propertySets_ = com.google.protobuf.MapField.newMapField(
+                  PropertySetsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000010;
             }
-            propertySets_.add(
-                input.readMessage(org.tti.tokens.model.core.PropertySet.parser(), extensionRegistry));
+            com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.PropertySet>
+            propertySets__ = input.readMessage(
+                PropertySetsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            propertySets_.getMutableMap().put(
+                propertySets__.getKey(), propertySets__.getValue());
             break;
           }
           case 50: {
             if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-              tokenTemplates_ = new java.util.ArrayList<org.tti.tokens.model.core.TokenTemplate>();
+              tokenTemplates_ = com.google.protobuf.MapField.newMapField(
+                  TokenTemplatesDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000020;
             }
-            tokenTemplates_.add(
-                input.readMessage(org.tti.tokens.model.core.TokenTemplate.parser(), extensionRegistry));
+            com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+            tokenTemplates__ = input.readMessage(
+                TokenTemplatesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            tokenTemplates_.getMutableMap().put(
+                tokenTemplates__.getKey(), tokenTemplates__.getValue());
             break;
           }
           default: {
@@ -114,21 +133,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        baseTokenTypes_ = java.util.Collections.unmodifiableList(baseTokenTypes_);
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        behaviors_ = java.util.Collections.unmodifiableList(behaviors_);
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        behaviorGroups_ = java.util.Collections.unmodifiableList(behaviorGroups_);
-      }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        propertySets_ = java.util.Collections.unmodifiableList(propertySets_);
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        tokenTemplates_ = java.util.Collections.unmodifiableList(tokenTemplates_);
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -138,6 +142,26 @@ private static final long serialVersionUID = 0L;
     return org.tokentaxonomyinitiative.tokens.model.taxonomy.TaxonomyOuterClass.internal_static_taxonomy_model_Taxonomy_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 2:
+        return internalGetBaseTokenTypes();
+      case 3:
+        return internalGetBehaviors();
+      case 4:
+        return internalGetBehaviorGroups();
+      case 5:
+        return internalGetPropertySets();
+      case 6:
+        return internalGetTokenTemplates();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -182,178 +206,383 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BASE_TOKEN_TYPES_FIELD_NUMBER = 2;
-  private java.util.List<org.tti.tokens.model.core.Base> baseTokenTypes_;
-  /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-   */
-  public java.util.List<org.tti.tokens.model.core.Base> getBaseTokenTypesList() {
+  private static final class BaseTokenTypesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, org.tti.tokens.model.core.Base> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, org.tti.tokens.model.core.Base>newDefaultInstance(
+                org.tokentaxonomyinitiative.tokens.model.taxonomy.TaxonomyOuterClass.internal_static_taxonomy_model_Taxonomy_BaseTokenTypesEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                org.tti.tokens.model.core.Base.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, org.tti.tokens.model.core.Base> baseTokenTypes_;
+  private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.Base>
+  internalGetBaseTokenTypes() {
+    if (baseTokenTypes_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          BaseTokenTypesDefaultEntryHolder.defaultEntry);
+    }
     return baseTokenTypes_;
   }
-  /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-   */
-  public java.util.List<? extends org.tti.tokens.model.core.BaseOrBuilder> 
-      getBaseTokenTypesOrBuilderList() {
-    return baseTokenTypes_;
-  }
-  /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-   */
+
   public int getBaseTokenTypesCount() {
-    return baseTokenTypes_.size();
+    return internalGetBaseTokenTypes().getMap().size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
    */
-  public org.tti.tokens.model.core.Base getBaseTokenTypes(int index) {
-    return baseTokenTypes_.get(index);
+
+  public boolean containsBaseTokenTypes(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetBaseTokenTypes().getMap().containsKey(key);
   }
   /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+   * Use {@link #getBaseTokenTypesMap()} instead.
    */
-  public org.tti.tokens.model.core.BaseOrBuilder getBaseTokenTypesOrBuilder(
-      int index) {
-    return baseTokenTypes_.get(index);
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> getBaseTokenTypes() {
+    return getBaseTokenTypesMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
+   */
+
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> getBaseTokenTypesMap() {
+    return internalGetBaseTokenTypes().getMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
+   */
+
+  public org.tti.tokens.model.core.Base getBaseTokenTypesOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.Base defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> map =
+        internalGetBaseTokenTypes().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
+   */
+
+  public org.tti.tokens.model.core.Base getBaseTokenTypesOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> map =
+        internalGetBaseTokenTypes().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int BEHAVIORS_FIELD_NUMBER = 3;
-  private java.util.List<org.tti.tokens.model.core.Behavior> behaviors_;
-  /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-   */
-  public java.util.List<org.tti.tokens.model.core.Behavior> getBehaviorsList() {
+  private static final class BehaviorsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, org.tti.tokens.model.core.Behavior> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, org.tti.tokens.model.core.Behavior>newDefaultInstance(
+                org.tokentaxonomyinitiative.tokens.model.taxonomy.TaxonomyOuterClass.internal_static_taxonomy_model_Taxonomy_BehaviorsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                org.tti.tokens.model.core.Behavior.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, org.tti.tokens.model.core.Behavior> behaviors_;
+  private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.Behavior>
+  internalGetBehaviors() {
+    if (behaviors_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          BehaviorsDefaultEntryHolder.defaultEntry);
+    }
     return behaviors_;
   }
-  /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-   */
-  public java.util.List<? extends org.tti.tokens.model.core.BehaviorOrBuilder> 
-      getBehaviorsOrBuilderList() {
-    return behaviors_;
-  }
-  /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-   */
+
   public int getBehaviorsCount() {
-    return behaviors_.size();
+    return internalGetBehaviors().getMap().size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
    */
-  public org.tti.tokens.model.core.Behavior getBehaviors(int index) {
-    return behaviors_.get(index);
+
+  public boolean containsBehaviors(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetBehaviors().getMap().containsKey(key);
   }
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+   * Use {@link #getBehaviorsMap()} instead.
    */
-  public org.tti.tokens.model.core.BehaviorOrBuilder getBehaviorsOrBuilder(
-      int index) {
-    return behaviors_.get(index);
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> getBehaviors() {
+    return getBehaviorsMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
+   */
+
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> getBehaviorsMap() {
+    return internalGetBehaviors().getMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
+   */
+
+  public org.tti.tokens.model.core.Behavior getBehaviorsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.Behavior defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> map =
+        internalGetBehaviors().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
+   */
+
+  public org.tti.tokens.model.core.Behavior getBehaviorsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> map =
+        internalGetBehaviors().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int BEHAVIOR_GROUPS_FIELD_NUMBER = 4;
-  private java.util.List<org.tti.tokens.model.core.BehaviorGroup> behaviorGroups_;
-  /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-   */
-  public java.util.List<org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroupsList() {
+  private static final class BehaviorGroupsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, org.tti.tokens.model.core.BehaviorGroup> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>newDefaultInstance(
+                org.tokentaxonomyinitiative.tokens.model.taxonomy.TaxonomyOuterClass.internal_static_taxonomy_model_Taxonomy_BehaviorGroupsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                org.tti.tokens.model.core.BehaviorGroup.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, org.tti.tokens.model.core.BehaviorGroup> behaviorGroups_;
+  private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+  internalGetBehaviorGroups() {
+    if (behaviorGroups_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          BehaviorGroupsDefaultEntryHolder.defaultEntry);
+    }
     return behaviorGroups_;
   }
-  /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-   */
-  public java.util.List<? extends org.tti.tokens.model.core.BehaviorGroupOrBuilder> 
-      getBehaviorGroupsOrBuilderList() {
-    return behaviorGroups_;
-  }
-  /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-   */
+
   public int getBehaviorGroupsCount() {
-    return behaviorGroups_.size();
+    return internalGetBehaviorGroups().getMap().size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
    */
-  public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroups(int index) {
-    return behaviorGroups_.get(index);
+
+  public boolean containsBehaviorGroups(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetBehaviorGroups().getMap().containsKey(key);
   }
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+   * Use {@link #getBehaviorGroupsMap()} instead.
    */
-  public org.tti.tokens.model.core.BehaviorGroupOrBuilder getBehaviorGroupsOrBuilder(
-      int index) {
-    return behaviorGroups_.get(index);
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroups() {
+    return getBehaviorGroupsMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
+   */
+
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroupsMap() {
+    return internalGetBehaviorGroups().getMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
+   */
+
+  public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroupsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.BehaviorGroup defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> map =
+        internalGetBehaviorGroups().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
+   */
+
+  public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroupsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> map =
+        internalGetBehaviorGroups().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int PROPERTY_SETS_FIELD_NUMBER = 5;
-  private java.util.List<org.tti.tokens.model.core.PropertySet> propertySets_;
-  /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-   */
-  public java.util.List<org.tti.tokens.model.core.PropertySet> getPropertySetsList() {
+  private static final class PropertySetsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, org.tti.tokens.model.core.PropertySet> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, org.tti.tokens.model.core.PropertySet>newDefaultInstance(
+                org.tokentaxonomyinitiative.tokens.model.taxonomy.TaxonomyOuterClass.internal_static_taxonomy_model_Taxonomy_PropertySetsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                org.tti.tokens.model.core.PropertySet.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, org.tti.tokens.model.core.PropertySet> propertySets_;
+  private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.PropertySet>
+  internalGetPropertySets() {
+    if (propertySets_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          PropertySetsDefaultEntryHolder.defaultEntry);
+    }
     return propertySets_;
   }
-  /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-   */
-  public java.util.List<? extends org.tti.tokens.model.core.PropertySetOrBuilder> 
-      getPropertySetsOrBuilderList() {
-    return propertySets_;
-  }
-  /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-   */
+
   public int getPropertySetsCount() {
-    return propertySets_.size();
+    return internalGetPropertySets().getMap().size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
    */
-  public org.tti.tokens.model.core.PropertySet getPropertySets(int index) {
-    return propertySets_.get(index);
+
+  public boolean containsPropertySets(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetPropertySets().getMap().containsKey(key);
   }
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+   * Use {@link #getPropertySetsMap()} instead.
    */
-  public org.tti.tokens.model.core.PropertySetOrBuilder getPropertySetsOrBuilder(
-      int index) {
-    return propertySets_.get(index);
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> getPropertySets() {
+    return getPropertySetsMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
+   */
+
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> getPropertySetsMap() {
+    return internalGetPropertySets().getMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
+   */
+
+  public org.tti.tokens.model.core.PropertySet getPropertySetsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.PropertySet defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> map =
+        internalGetPropertySets().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
+   */
+
+  public org.tti.tokens.model.core.PropertySet getPropertySetsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> map =
+        internalGetPropertySets().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int TOKEN_TEMPLATES_FIELD_NUMBER = 6;
-  private java.util.List<org.tti.tokens.model.core.TokenTemplate> tokenTemplates_;
-  /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-   */
-  public java.util.List<org.tti.tokens.model.core.TokenTemplate> getTokenTemplatesList() {
+  private static final class TokenTemplatesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, org.tti.tokens.model.core.TokenTemplate> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, org.tti.tokens.model.core.TokenTemplate>newDefaultInstance(
+                org.tokentaxonomyinitiative.tokens.model.taxonomy.TaxonomyOuterClass.internal_static_taxonomy_model_Taxonomy_TokenTemplatesEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                org.tti.tokens.model.core.TokenTemplate.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, org.tti.tokens.model.core.TokenTemplate> tokenTemplates_;
+  private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+  internalGetTokenTemplates() {
+    if (tokenTemplates_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          TokenTemplatesDefaultEntryHolder.defaultEntry);
+    }
     return tokenTemplates_;
   }
-  /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-   */
-  public java.util.List<? extends org.tti.tokens.model.core.TokenTemplateOrBuilder> 
-      getTokenTemplatesOrBuilderList() {
-    return tokenTemplates_;
-  }
-  /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-   */
+
   public int getTokenTemplatesCount() {
-    return tokenTemplates_.size();
+    return internalGetTokenTemplates().getMap().size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
    */
-  public org.tti.tokens.model.core.TokenTemplate getTokenTemplates(int index) {
-    return tokenTemplates_.get(index);
+
+  public boolean containsTokenTemplates(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetTokenTemplates().getMap().containsKey(key);
   }
   /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+   * Use {@link #getTokenTemplatesMap()} instead.
    */
-  public org.tti.tokens.model.core.TokenTemplateOrBuilder getTokenTemplatesOrBuilder(
-      int index) {
-    return tokenTemplates_.get(index);
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> getTokenTemplates() {
+    return getTokenTemplatesMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
+   */
+
+  public java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> getTokenTemplatesMap() {
+    return internalGetTokenTemplates().getMap();
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
+   */
+
+  public org.tti.tokens.model.core.TokenTemplate getTokenTemplatesOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.TokenTemplate defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> map =
+        internalGetTokenTemplates().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
+   */
+
+  public org.tti.tokens.model.core.TokenTemplate getTokenTemplatesOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> map =
+        internalGetTokenTemplates().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -373,21 +602,36 @@ private static final long serialVersionUID = 0L;
     if (!getVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
     }
-    for (int i = 0; i < baseTokenTypes_.size(); i++) {
-      output.writeMessage(2, baseTokenTypes_.get(i));
-    }
-    for (int i = 0; i < behaviors_.size(); i++) {
-      output.writeMessage(3, behaviors_.get(i));
-    }
-    for (int i = 0; i < behaviorGroups_.size(); i++) {
-      output.writeMessage(4, behaviorGroups_.get(i));
-    }
-    for (int i = 0; i < propertySets_.size(); i++) {
-      output.writeMessage(5, propertySets_.get(i));
-    }
-    for (int i = 0; i < tokenTemplates_.size(); i++) {
-      output.writeMessage(6, tokenTemplates_.get(i));
-    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetBaseTokenTypes(),
+        BaseTokenTypesDefaultEntryHolder.defaultEntry,
+        2);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetBehaviors(),
+        BehaviorsDefaultEntryHolder.defaultEntry,
+        3);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetBehaviorGroups(),
+        BehaviorGroupsDefaultEntryHolder.defaultEntry,
+        4);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetPropertySets(),
+        PropertySetsDefaultEntryHolder.defaultEntry,
+        5);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetTokenTemplates(),
+        TokenTemplatesDefaultEntryHolder.defaultEntry,
+        6);
     unknownFields.writeTo(output);
   }
 
@@ -400,25 +644,55 @@ private static final long serialVersionUID = 0L;
     if (!getVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, version_);
     }
-    for (int i = 0; i < baseTokenTypes_.size(); i++) {
+    for (java.util.Map.Entry<java.lang.String, org.tti.tokens.model.core.Base> entry
+         : internalGetBaseTokenTypes().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.Base>
+      baseTokenTypes__ = BaseTokenTypesDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, baseTokenTypes_.get(i));
+          .computeMessageSize(2, baseTokenTypes__);
     }
-    for (int i = 0; i < behaviors_.size(); i++) {
+    for (java.util.Map.Entry<java.lang.String, org.tti.tokens.model.core.Behavior> entry
+         : internalGetBehaviors().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.Behavior>
+      behaviors__ = BehaviorsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, behaviors_.get(i));
+          .computeMessageSize(3, behaviors__);
     }
-    for (int i = 0; i < behaviorGroups_.size(); i++) {
+    for (java.util.Map.Entry<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> entry
+         : internalGetBehaviorGroups().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+      behaviorGroups__ = BehaviorGroupsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, behaviorGroups_.get(i));
+          .computeMessageSize(4, behaviorGroups__);
     }
-    for (int i = 0; i < propertySets_.size(); i++) {
+    for (java.util.Map.Entry<java.lang.String, org.tti.tokens.model.core.PropertySet> entry
+         : internalGetPropertySets().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.PropertySet>
+      propertySets__ = PropertySetsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, propertySets_.get(i));
+          .computeMessageSize(5, propertySets__);
     }
-    for (int i = 0; i < tokenTemplates_.size(); i++) {
+    for (java.util.Map.Entry<java.lang.String, org.tti.tokens.model.core.TokenTemplate> entry
+         : internalGetTokenTemplates().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+      tokenTemplates__ = TokenTemplatesDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, tokenTemplates_.get(i));
+          .computeMessageSize(6, tokenTemplates__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -437,16 +711,16 @@ private static final long serialVersionUID = 0L;
 
     if (!getVersion()
         .equals(other.getVersion())) return false;
-    if (!getBaseTokenTypesList()
-        .equals(other.getBaseTokenTypesList())) return false;
-    if (!getBehaviorsList()
-        .equals(other.getBehaviorsList())) return false;
-    if (!getBehaviorGroupsList()
-        .equals(other.getBehaviorGroupsList())) return false;
-    if (!getPropertySetsList()
-        .equals(other.getPropertySetsList())) return false;
-    if (!getTokenTemplatesList()
-        .equals(other.getTokenTemplatesList())) return false;
+    if (!internalGetBaseTokenTypes().equals(
+        other.internalGetBaseTokenTypes())) return false;
+    if (!internalGetBehaviors().equals(
+        other.internalGetBehaviors())) return false;
+    if (!internalGetBehaviorGroups().equals(
+        other.internalGetBehaviorGroups())) return false;
+    if (!internalGetPropertySets().equals(
+        other.internalGetPropertySets())) return false;
+    if (!internalGetTokenTemplates().equals(
+        other.internalGetTokenTemplates())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -460,25 +734,25 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
-    if (getBaseTokenTypesCount() > 0) {
+    if (!internalGetBaseTokenTypes().getMap().isEmpty()) {
       hash = (37 * hash) + BASE_TOKEN_TYPES_FIELD_NUMBER;
-      hash = (53 * hash) + getBaseTokenTypesList().hashCode();
+      hash = (53 * hash) + internalGetBaseTokenTypes().hashCode();
     }
-    if (getBehaviorsCount() > 0) {
+    if (!internalGetBehaviors().getMap().isEmpty()) {
       hash = (37 * hash) + BEHAVIORS_FIELD_NUMBER;
-      hash = (53 * hash) + getBehaviorsList().hashCode();
+      hash = (53 * hash) + internalGetBehaviors().hashCode();
     }
-    if (getBehaviorGroupsCount() > 0) {
+    if (!internalGetBehaviorGroups().getMap().isEmpty()) {
       hash = (37 * hash) + BEHAVIOR_GROUPS_FIELD_NUMBER;
-      hash = (53 * hash) + getBehaviorGroupsList().hashCode();
+      hash = (53 * hash) + internalGetBehaviorGroups().hashCode();
     }
-    if (getPropertySetsCount() > 0) {
+    if (!internalGetPropertySets().getMap().isEmpty()) {
       hash = (37 * hash) + PROPERTY_SETS_FIELD_NUMBER;
-      hash = (53 * hash) + getPropertySetsList().hashCode();
+      hash = (53 * hash) + internalGetPropertySets().hashCode();
     }
-    if (getTokenTemplatesCount() > 0) {
+    if (!internalGetTokenTemplates().getMap().isEmpty()) {
       hash = (37 * hash) + TOKEN_TEMPLATES_FIELD_NUMBER;
-      hash = (53 * hash) + getTokenTemplatesList().hashCode();
+      hash = (53 * hash) + internalGetTokenTemplates().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -576,6 +850,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *each collection defined in a map with the index being the symbol of the artifact for the collection.
+   * </pre>
+   *
    * Protobuf type {@code taxonomy.model.Taxonomy}
    */
   public static final class Builder extends
@@ -587,6 +865,44 @@ private static final long serialVersionUID = 0L;
       return org.tokentaxonomyinitiative.tokens.model.taxonomy.TaxonomyOuterClass.internal_static_taxonomy_model_Taxonomy_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetBaseTokenTypes();
+        case 3:
+          return internalGetBehaviors();
+        case 4:
+          return internalGetBehaviorGroups();
+        case 5:
+          return internalGetPropertySets();
+        case 6:
+          return internalGetTokenTemplates();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetMutableBaseTokenTypes();
+        case 3:
+          return internalGetMutableBehaviors();
+        case 4:
+          return internalGetMutableBehaviorGroups();
+        case 5:
+          return internalGetMutablePropertySets();
+        case 6:
+          return internalGetMutableTokenTemplates();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -608,11 +924,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getBaseTokenTypesFieldBuilder();
-        getBehaviorsFieldBuilder();
-        getBehaviorGroupsFieldBuilder();
-        getPropertySetsFieldBuilder();
-        getTokenTemplatesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -620,36 +931,11 @@ private static final long serialVersionUID = 0L;
       super.clear();
       version_ = "";
 
-      if (baseTokenTypesBuilder_ == null) {
-        baseTokenTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      } else {
-        baseTokenTypesBuilder_.clear();
-      }
-      if (behaviorsBuilder_ == null) {
-        behaviors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      } else {
-        behaviorsBuilder_.clear();
-      }
-      if (behaviorGroupsBuilder_ == null) {
-        behaviorGroups_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      } else {
-        behaviorGroupsBuilder_.clear();
-      }
-      if (propertySetsBuilder_ == null) {
-        propertySets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-      } else {
-        propertySetsBuilder_.clear();
-      }
-      if (tokenTemplatesBuilder_ == null) {
-        tokenTemplates_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      } else {
-        tokenTemplatesBuilder_.clear();
-      }
+      internalGetMutableBaseTokenTypes().clear();
+      internalGetMutableBehaviors().clear();
+      internalGetMutableBehaviorGroups().clear();
+      internalGetMutablePropertySets().clear();
+      internalGetMutableTokenTemplates().clear();
       return this;
     }
 
@@ -679,51 +965,16 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.version_ = version_;
-      if (baseTokenTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
-          baseTokenTypes_ = java.util.Collections.unmodifiableList(baseTokenTypes_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.baseTokenTypes_ = baseTokenTypes_;
-      } else {
-        result.baseTokenTypes_ = baseTokenTypesBuilder_.build();
-      }
-      if (behaviorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          behaviors_ = java.util.Collections.unmodifiableList(behaviors_);
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.behaviors_ = behaviors_;
-      } else {
-        result.behaviors_ = behaviorsBuilder_.build();
-      }
-      if (behaviorGroupsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
-          behaviorGroups_ = java.util.Collections.unmodifiableList(behaviorGroups_);
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.behaviorGroups_ = behaviorGroups_;
-      } else {
-        result.behaviorGroups_ = behaviorGroupsBuilder_.build();
-      }
-      if (propertySetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
-          propertySets_ = java.util.Collections.unmodifiableList(propertySets_);
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.propertySets_ = propertySets_;
-      } else {
-        result.propertySets_ = propertySetsBuilder_.build();
-      }
-      if (tokenTemplatesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
-          tokenTemplates_ = java.util.Collections.unmodifiableList(tokenTemplates_);
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.tokenTemplates_ = tokenTemplates_;
-      } else {
-        result.tokenTemplates_ = tokenTemplatesBuilder_.build();
-      }
+      result.baseTokenTypes_ = internalGetBaseTokenTypes();
+      result.baseTokenTypes_.makeImmutable();
+      result.behaviors_ = internalGetBehaviors();
+      result.behaviors_.makeImmutable();
+      result.behaviorGroups_ = internalGetBehaviorGroups();
+      result.behaviorGroups_.makeImmutable();
+      result.propertySets_ = internalGetPropertySets();
+      result.propertySets_.makeImmutable();
+      result.tokenTemplates_ = internalGetTokenTemplates();
+      result.tokenTemplates_.makeImmutable();
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -777,136 +1028,16 @@ private static final long serialVersionUID = 0L;
         version_ = other.version_;
         onChanged();
       }
-      if (baseTokenTypesBuilder_ == null) {
-        if (!other.baseTokenTypes_.isEmpty()) {
-          if (baseTokenTypes_.isEmpty()) {
-            baseTokenTypes_ = other.baseTokenTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureBaseTokenTypesIsMutable();
-            baseTokenTypes_.addAll(other.baseTokenTypes_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.baseTokenTypes_.isEmpty()) {
-          if (baseTokenTypesBuilder_.isEmpty()) {
-            baseTokenTypesBuilder_.dispose();
-            baseTokenTypesBuilder_ = null;
-            baseTokenTypes_ = other.baseTokenTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-            baseTokenTypesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBaseTokenTypesFieldBuilder() : null;
-          } else {
-            baseTokenTypesBuilder_.addAllMessages(other.baseTokenTypes_);
-          }
-        }
-      }
-      if (behaviorsBuilder_ == null) {
-        if (!other.behaviors_.isEmpty()) {
-          if (behaviors_.isEmpty()) {
-            behaviors_ = other.behaviors_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureBehaviorsIsMutable();
-            behaviors_.addAll(other.behaviors_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.behaviors_.isEmpty()) {
-          if (behaviorsBuilder_.isEmpty()) {
-            behaviorsBuilder_.dispose();
-            behaviorsBuilder_ = null;
-            behaviors_ = other.behaviors_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            behaviorsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBehaviorsFieldBuilder() : null;
-          } else {
-            behaviorsBuilder_.addAllMessages(other.behaviors_);
-          }
-        }
-      }
-      if (behaviorGroupsBuilder_ == null) {
-        if (!other.behaviorGroups_.isEmpty()) {
-          if (behaviorGroups_.isEmpty()) {
-            behaviorGroups_ = other.behaviorGroups_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureBehaviorGroupsIsMutable();
-            behaviorGroups_.addAll(other.behaviorGroups_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.behaviorGroups_.isEmpty()) {
-          if (behaviorGroupsBuilder_.isEmpty()) {
-            behaviorGroupsBuilder_.dispose();
-            behaviorGroupsBuilder_ = null;
-            behaviorGroups_ = other.behaviorGroups_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-            behaviorGroupsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBehaviorGroupsFieldBuilder() : null;
-          } else {
-            behaviorGroupsBuilder_.addAllMessages(other.behaviorGroups_);
-          }
-        }
-      }
-      if (propertySetsBuilder_ == null) {
-        if (!other.propertySets_.isEmpty()) {
-          if (propertySets_.isEmpty()) {
-            propertySets_ = other.propertySets_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensurePropertySetsIsMutable();
-            propertySets_.addAll(other.propertySets_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.propertySets_.isEmpty()) {
-          if (propertySetsBuilder_.isEmpty()) {
-            propertySetsBuilder_.dispose();
-            propertySetsBuilder_ = null;
-            propertySets_ = other.propertySets_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-            propertySetsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPropertySetsFieldBuilder() : null;
-          } else {
-            propertySetsBuilder_.addAllMessages(other.propertySets_);
-          }
-        }
-      }
-      if (tokenTemplatesBuilder_ == null) {
-        if (!other.tokenTemplates_.isEmpty()) {
-          if (tokenTemplates_.isEmpty()) {
-            tokenTemplates_ = other.tokenTemplates_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureTokenTemplatesIsMutable();
-            tokenTemplates_.addAll(other.tokenTemplates_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.tokenTemplates_.isEmpty()) {
-          if (tokenTemplatesBuilder_.isEmpty()) {
-            tokenTemplatesBuilder_.dispose();
-            tokenTemplatesBuilder_ = null;
-            tokenTemplates_ = other.tokenTemplates_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-            tokenTemplatesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTokenTemplatesFieldBuilder() : null;
-          } else {
-            tokenTemplatesBuilder_.addAllMessages(other.tokenTemplates_);
-          }
-        }
-      }
+      internalGetMutableBaseTokenTypes().mergeFrom(
+          other.internalGetBaseTokenTypes());
+      internalGetMutableBehaviors().mergeFrom(
+          other.internalGetBehaviors());
+      internalGetMutableBehaviorGroups().mergeFrom(
+          other.internalGetBehaviorGroups());
+      internalGetMutablePropertySets().mergeFrom(
+          other.internalGetPropertySets());
+      internalGetMutableTokenTemplates().mergeFrom(
+          other.internalGetTokenTemplates());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1006,1204 +1137,619 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<org.tti.tokens.model.core.Base> baseTokenTypes_ =
-      java.util.Collections.emptyList();
-    private void ensureBaseTokenTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
-        baseTokenTypes_ = new java.util.ArrayList<org.tti.tokens.model.core.Base>(baseTokenTypes_);
-        bitField0_ |= 0x00000002;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder> baseTokenTypesBuilder_;
-
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.Base> getBaseTokenTypesList() {
-      if (baseTokenTypesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(baseTokenTypes_);
-      } else {
-        return baseTokenTypesBuilder_.getMessageList();
+    private com.google.protobuf.MapField<
+        java.lang.String, org.tti.tokens.model.core.Base> baseTokenTypes_;
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.Base>
+    internalGetBaseTokenTypes() {
+      if (baseTokenTypes_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            BaseTokenTypesDefaultEntryHolder.defaultEntry);
       }
+      return baseTokenTypes_;
     }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.Base>
+    internalGetMutableBaseTokenTypes() {
+      onChanged();;
+      if (baseTokenTypes_ == null) {
+        baseTokenTypes_ = com.google.protobuf.MapField.newMapField(
+            BaseTokenTypesDefaultEntryHolder.defaultEntry);
+      }
+      if (!baseTokenTypes_.isMutable()) {
+        baseTokenTypes_ = baseTokenTypes_.copy();
+      }
+      return baseTokenTypes_;
+    }
+
     public int getBaseTokenTypesCount() {
-      if (baseTokenTypesBuilder_ == null) {
-        return baseTokenTypes_.size();
-      } else {
-        return baseTokenTypesBuilder_.getCount();
-      }
+      return internalGetBaseTokenTypes().getMap().size();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
      */
-    public org.tti.tokens.model.core.Base getBaseTokenTypes(int index) {
-      if (baseTokenTypesBuilder_ == null) {
-        return baseTokenTypes_.get(index);
-      } else {
-        return baseTokenTypesBuilder_.getMessage(index);
-      }
+
+    public boolean containsBaseTokenTypes(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetBaseTokenTypes().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * Use {@link #getBaseTokenTypesMap()} instead.
      */
-    public Builder setBaseTokenTypes(
-        int index, org.tti.tokens.model.core.Base value) {
-      if (baseTokenTypesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBaseTokenTypesIsMutable();
-        baseTokenTypes_.set(index, value);
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.setMessage(index, value);
-      }
-      return this;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> getBaseTokenTypes() {
+      return getBaseTokenTypesMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
      */
-    public Builder setBaseTokenTypes(
-        int index, org.tti.tokens.model.core.Base.Builder builderForValue) {
-      if (baseTokenTypesBuilder_ == null) {
-        ensureBaseTokenTypesIsMutable();
-        baseTokenTypes_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
+
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> getBaseTokenTypesMap() {
+      return internalGetBaseTokenTypes().getMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
      */
-    public Builder addBaseTokenTypes(org.tti.tokens.model.core.Base value) {
-      if (baseTokenTypesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBaseTokenTypesIsMutable();
-        baseTokenTypes_.add(value);
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.addMessage(value);
-      }
-      return this;
+
+    public org.tti.tokens.model.core.Base getBaseTokenTypesOrDefault(
+        java.lang.String key,
+        org.tti.tokens.model.core.Base defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> map =
+          internalGetBaseTokenTypes().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
      */
-    public Builder addBaseTokenTypes(
-        int index, org.tti.tokens.model.core.Base value) {
-      if (baseTokenTypesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBaseTokenTypesIsMutable();
-        baseTokenTypes_.add(index, value);
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.addMessage(index, value);
+
+    public org.tti.tokens.model.core.Base getBaseTokenTypesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> map =
+          internalGetBaseTokenTypes().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return this;
+      return map.get(key);
     }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
-    public Builder addBaseTokenTypes(
-        org.tti.tokens.model.core.Base.Builder builderForValue) {
-      if (baseTokenTypesBuilder_ == null) {
-        ensureBaseTokenTypesIsMutable();
-        baseTokenTypes_.add(builderForValue.build());
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
-    public Builder addBaseTokenTypes(
-        int index, org.tti.tokens.model.core.Base.Builder builderForValue) {
-      if (baseTokenTypesBuilder_ == null) {
-        ensureBaseTokenTypesIsMutable();
-        baseTokenTypes_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
-    public Builder addAllBaseTokenTypes(
-        java.lang.Iterable<? extends org.tti.tokens.model.core.Base> values) {
-      if (baseTokenTypesBuilder_ == null) {
-        ensureBaseTokenTypesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, baseTokenTypes_);
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
+
     public Builder clearBaseTokenTypes() {
-      if (baseTokenTypesBuilder_ == null) {
-        baseTokenTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.clear();
-      }
+      internalGetMutableBaseTokenTypes().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
      */
-    public Builder removeBaseTokenTypes(int index) {
-      if (baseTokenTypesBuilder_ == null) {
-        ensureBaseTokenTypesIsMutable();
-        baseTokenTypes_.remove(index);
-        onChanged();
-      } else {
-        baseTokenTypesBuilder_.remove(index);
-      }
+
+    public Builder removeBaseTokenTypes(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableBaseTokenTypes().getMutableMap()
+          .remove(key);
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * Use alternate mutation accessors instead.
      */
-    public org.tti.tokens.model.core.Base.Builder getBaseTokenTypesBuilder(
-        int index) {
-      return getBaseTokenTypesFieldBuilder().getBuilder(index);
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.Base>
+    getMutableBaseTokenTypes() {
+      return internalGetMutableBaseTokenTypes().getMutableMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
      */
-    public org.tti.tokens.model.core.BaseOrBuilder getBaseTokenTypesOrBuilder(
-        int index) {
-      if (baseTokenTypesBuilder_ == null) {
-        return baseTokenTypes_.get(index);  } else {
-        return baseTokenTypesBuilder_.getMessageOrBuilder(index);
-      }
+    public Builder putBaseTokenTypes(
+        java.lang.String key,
+        org.tti.tokens.model.core.Base value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableBaseTokenTypes().getMutableMap()
+          .put(key, value);
+      return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
      */
-    public java.util.List<? extends org.tti.tokens.model.core.BaseOrBuilder> 
-         getBaseTokenTypesOrBuilderList() {
-      if (baseTokenTypesBuilder_ != null) {
-        return baseTokenTypesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(baseTokenTypes_);
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
-    public org.tti.tokens.model.core.Base.Builder addBaseTokenTypesBuilder() {
-      return getBaseTokenTypesFieldBuilder().addBuilder(
-          org.tti.tokens.model.core.Base.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
-    public org.tti.tokens.model.core.Base.Builder addBaseTokenTypesBuilder(
-        int index) {
-      return getBaseTokenTypesFieldBuilder().addBuilder(
-          index, org.tti.tokens.model.core.Base.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.Base.Builder> 
-         getBaseTokenTypesBuilderList() {
-      return getBaseTokenTypesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder> 
-        getBaseTokenTypesFieldBuilder() {
-      if (baseTokenTypesBuilder_ == null) {
-        baseTokenTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder>(
-                baseTokenTypes_,
-                ((bitField0_ & 0x00000002) != 0),
-                getParentForChildren(),
-                isClean());
-        baseTokenTypes_ = null;
-      }
-      return baseTokenTypesBuilder_;
+
+    public Builder putAllBaseTokenTypes(
+        java.util.Map<java.lang.String, org.tti.tokens.model.core.Base> values) {
+      internalGetMutableBaseTokenTypes().getMutableMap()
+          .putAll(values);
+      return this;
     }
 
-    private java.util.List<org.tti.tokens.model.core.Behavior> behaviors_ =
-      java.util.Collections.emptyList();
-    private void ensureBehaviorsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
-        behaviors_ = new java.util.ArrayList<org.tti.tokens.model.core.Behavior>(behaviors_);
-        bitField0_ |= 0x00000004;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.Behavior, org.tti.tokens.model.core.Behavior.Builder, org.tti.tokens.model.core.BehaviorOrBuilder> behaviorsBuilder_;
-
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.Behavior> getBehaviorsList() {
-      if (behaviorsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(behaviors_);
-      } else {
-        return behaviorsBuilder_.getMessageList();
+    private com.google.protobuf.MapField<
+        java.lang.String, org.tti.tokens.model.core.Behavior> behaviors_;
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.Behavior>
+    internalGetBehaviors() {
+      if (behaviors_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            BehaviorsDefaultEntryHolder.defaultEntry);
       }
+      return behaviors_;
     }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.Behavior>
+    internalGetMutableBehaviors() {
+      onChanged();;
+      if (behaviors_ == null) {
+        behaviors_ = com.google.protobuf.MapField.newMapField(
+            BehaviorsDefaultEntryHolder.defaultEntry);
+      }
+      if (!behaviors_.isMutable()) {
+        behaviors_ = behaviors_.copy();
+      }
+      return behaviors_;
+    }
+
     public int getBehaviorsCount() {
-      if (behaviorsBuilder_ == null) {
-        return behaviors_.size();
-      } else {
-        return behaviorsBuilder_.getCount();
-      }
+      return internalGetBehaviors().getMap().size();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
      */
-    public org.tti.tokens.model.core.Behavior getBehaviors(int index) {
-      if (behaviorsBuilder_ == null) {
-        return behaviors_.get(index);
-      } else {
-        return behaviorsBuilder_.getMessage(index);
-      }
+
+    public boolean containsBehaviors(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetBehaviors().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * Use {@link #getBehaviorsMap()} instead.
      */
-    public Builder setBehaviors(
-        int index, org.tti.tokens.model.core.Behavior value) {
-      if (behaviorsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorsIsMutable();
-        behaviors_.set(index, value);
-        onChanged();
-      } else {
-        behaviorsBuilder_.setMessage(index, value);
-      }
-      return this;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> getBehaviors() {
+      return getBehaviorsMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
      */
-    public Builder setBehaviors(
-        int index, org.tti.tokens.model.core.Behavior.Builder builderForValue) {
-      if (behaviorsBuilder_ == null) {
-        ensureBehaviorsIsMutable();
-        behaviors_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        behaviorsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
+
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> getBehaviorsMap() {
+      return internalGetBehaviors().getMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
      */
-    public Builder addBehaviors(org.tti.tokens.model.core.Behavior value) {
-      if (behaviorsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorsIsMutable();
-        behaviors_.add(value);
-        onChanged();
-      } else {
-        behaviorsBuilder_.addMessage(value);
-      }
-      return this;
+
+    public org.tti.tokens.model.core.Behavior getBehaviorsOrDefault(
+        java.lang.String key,
+        org.tti.tokens.model.core.Behavior defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> map =
+          internalGetBehaviors().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
      */
-    public Builder addBehaviors(
-        int index, org.tti.tokens.model.core.Behavior value) {
-      if (behaviorsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorsIsMutable();
-        behaviors_.add(index, value);
-        onChanged();
-      } else {
-        behaviorsBuilder_.addMessage(index, value);
+
+    public org.tti.tokens.model.core.Behavior getBehaviorsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> map =
+          internalGetBehaviors().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return this;
+      return map.get(key);
     }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
-    public Builder addBehaviors(
-        org.tti.tokens.model.core.Behavior.Builder builderForValue) {
-      if (behaviorsBuilder_ == null) {
-        ensureBehaviorsIsMutable();
-        behaviors_.add(builderForValue.build());
-        onChanged();
-      } else {
-        behaviorsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
-    public Builder addBehaviors(
-        int index, org.tti.tokens.model.core.Behavior.Builder builderForValue) {
-      if (behaviorsBuilder_ == null) {
-        ensureBehaviorsIsMutable();
-        behaviors_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        behaviorsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
-    public Builder addAllBehaviors(
-        java.lang.Iterable<? extends org.tti.tokens.model.core.Behavior> values) {
-      if (behaviorsBuilder_ == null) {
-        ensureBehaviorsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, behaviors_);
-        onChanged();
-      } else {
-        behaviorsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
+
     public Builder clearBehaviors() {
-      if (behaviorsBuilder_ == null) {
-        behaviors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-      } else {
-        behaviorsBuilder_.clear();
-      }
+      internalGetMutableBehaviors().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
      */
-    public Builder removeBehaviors(int index) {
-      if (behaviorsBuilder_ == null) {
-        ensureBehaviorsIsMutable();
-        behaviors_.remove(index);
-        onChanged();
-      } else {
-        behaviorsBuilder_.remove(index);
-      }
+
+    public Builder removeBehaviors(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableBehaviors().getMutableMap()
+          .remove(key);
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * Use alternate mutation accessors instead.
      */
-    public org.tti.tokens.model.core.Behavior.Builder getBehaviorsBuilder(
-        int index) {
-      return getBehaviorsFieldBuilder().getBuilder(index);
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior>
+    getMutableBehaviors() {
+      return internalGetMutableBehaviors().getMutableMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
      */
-    public org.tti.tokens.model.core.BehaviorOrBuilder getBehaviorsOrBuilder(
-        int index) {
-      if (behaviorsBuilder_ == null) {
-        return behaviors_.get(index);  } else {
-        return behaviorsBuilder_.getMessageOrBuilder(index);
-      }
+    public Builder putBehaviors(
+        java.lang.String key,
+        org.tti.tokens.model.core.Behavior value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableBehaviors().getMutableMap()
+          .put(key, value);
+      return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+     * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
      */
-    public java.util.List<? extends org.tti.tokens.model.core.BehaviorOrBuilder> 
-         getBehaviorsOrBuilderList() {
-      if (behaviorsBuilder_ != null) {
-        return behaviorsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(behaviors_);
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
-    public org.tti.tokens.model.core.Behavior.Builder addBehaviorsBuilder() {
-      return getBehaviorsFieldBuilder().addBuilder(
-          org.tti.tokens.model.core.Behavior.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
-    public org.tti.tokens.model.core.Behavior.Builder addBehaviorsBuilder(
-        int index) {
-      return getBehaviorsFieldBuilder().addBuilder(
-          index, org.tti.tokens.model.core.Behavior.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.Behavior.Builder> 
-         getBehaviorsBuilderList() {
-      return getBehaviorsFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.Behavior, org.tti.tokens.model.core.Behavior.Builder, org.tti.tokens.model.core.BehaviorOrBuilder> 
-        getBehaviorsFieldBuilder() {
-      if (behaviorsBuilder_ == null) {
-        behaviorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.tti.tokens.model.core.Behavior, org.tti.tokens.model.core.Behavior.Builder, org.tti.tokens.model.core.BehaviorOrBuilder>(
-                behaviors_,
-                ((bitField0_ & 0x00000004) != 0),
-                getParentForChildren(),
-                isClean());
-        behaviors_ = null;
-      }
-      return behaviorsBuilder_;
+
+    public Builder putAllBehaviors(
+        java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior> values) {
+      internalGetMutableBehaviors().getMutableMap()
+          .putAll(values);
+      return this;
     }
 
-    private java.util.List<org.tti.tokens.model.core.BehaviorGroup> behaviorGroups_ =
-      java.util.Collections.emptyList();
-    private void ensureBehaviorGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
-        behaviorGroups_ = new java.util.ArrayList<org.tti.tokens.model.core.BehaviorGroup>(behaviorGroups_);
-        bitField0_ |= 0x00000008;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.BehaviorGroup, org.tti.tokens.model.core.BehaviorGroup.Builder, org.tti.tokens.model.core.BehaviorGroupOrBuilder> behaviorGroupsBuilder_;
-
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroupsList() {
-      if (behaviorGroupsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(behaviorGroups_);
-      } else {
-        return behaviorGroupsBuilder_.getMessageList();
+    private com.google.protobuf.MapField<
+        java.lang.String, org.tti.tokens.model.core.BehaviorGroup> behaviorGroups_;
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+    internalGetBehaviorGroups() {
+      if (behaviorGroups_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            BehaviorGroupsDefaultEntryHolder.defaultEntry);
       }
+      return behaviorGroups_;
     }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+    internalGetMutableBehaviorGroups() {
+      onChanged();;
+      if (behaviorGroups_ == null) {
+        behaviorGroups_ = com.google.protobuf.MapField.newMapField(
+            BehaviorGroupsDefaultEntryHolder.defaultEntry);
+      }
+      if (!behaviorGroups_.isMutable()) {
+        behaviorGroups_ = behaviorGroups_.copy();
+      }
+      return behaviorGroups_;
+    }
+
     public int getBehaviorGroupsCount() {
-      if (behaviorGroupsBuilder_ == null) {
-        return behaviorGroups_.size();
-      } else {
-        return behaviorGroupsBuilder_.getCount();
-      }
+      return internalGetBehaviorGroups().getMap().size();
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
      */
-    public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroups(int index) {
-      if (behaviorGroupsBuilder_ == null) {
-        return behaviorGroups_.get(index);
-      } else {
-        return behaviorGroupsBuilder_.getMessage(index);
-      }
+
+    public boolean containsBehaviorGroups(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetBehaviorGroups().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * Use {@link #getBehaviorGroupsMap()} instead.
      */
-    public Builder setBehaviorGroups(
-        int index, org.tti.tokens.model.core.BehaviorGroup value) {
-      if (behaviorGroupsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorGroupsIsMutable();
-        behaviorGroups_.set(index, value);
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.setMessage(index, value);
-      }
-      return this;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroups() {
+      return getBehaviorGroupsMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
      */
-    public Builder setBehaviorGroups(
-        int index, org.tti.tokens.model.core.BehaviorGroup.Builder builderForValue) {
-      if (behaviorGroupsBuilder_ == null) {
-        ensureBehaviorGroupsIsMutable();
-        behaviorGroups_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
+
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroupsMap() {
+      return internalGetBehaviorGroups().getMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
      */
-    public Builder addBehaviorGroups(org.tti.tokens.model.core.BehaviorGroup value) {
-      if (behaviorGroupsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorGroupsIsMutable();
-        behaviorGroups_.add(value);
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.addMessage(value);
-      }
-      return this;
+
+    public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroupsOrDefault(
+        java.lang.String key,
+        org.tti.tokens.model.core.BehaviorGroup defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> map =
+          internalGetBehaviorGroups().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
      */
-    public Builder addBehaviorGroups(
-        int index, org.tti.tokens.model.core.BehaviorGroup value) {
-      if (behaviorGroupsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorGroupsIsMutable();
-        behaviorGroups_.add(index, value);
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.addMessage(index, value);
+
+    public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroupsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> map =
+          internalGetBehaviorGroups().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return this;
+      return map.get(key);
     }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
-    public Builder addBehaviorGroups(
-        org.tti.tokens.model.core.BehaviorGroup.Builder builderForValue) {
-      if (behaviorGroupsBuilder_ == null) {
-        ensureBehaviorGroupsIsMutable();
-        behaviorGroups_.add(builderForValue.build());
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
-    public Builder addBehaviorGroups(
-        int index, org.tti.tokens.model.core.BehaviorGroup.Builder builderForValue) {
-      if (behaviorGroupsBuilder_ == null) {
-        ensureBehaviorGroupsIsMutable();
-        behaviorGroups_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
-    public Builder addAllBehaviorGroups(
-        java.lang.Iterable<? extends org.tti.tokens.model.core.BehaviorGroup> values) {
-      if (behaviorGroupsBuilder_ == null) {
-        ensureBehaviorGroupsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, behaviorGroups_);
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
+
     public Builder clearBehaviorGroups() {
-      if (behaviorGroupsBuilder_ == null) {
-        behaviorGroups_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.clear();
-      }
+      internalGetMutableBehaviorGroups().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
      */
-    public Builder removeBehaviorGroups(int index) {
-      if (behaviorGroupsBuilder_ == null) {
-        ensureBehaviorGroupsIsMutable();
-        behaviorGroups_.remove(index);
-        onChanged();
-      } else {
-        behaviorGroupsBuilder_.remove(index);
-      }
+
+    public Builder removeBehaviorGroups(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableBehaviorGroups().getMutableMap()
+          .remove(key);
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * Use alternate mutation accessors instead.
      */
-    public org.tti.tokens.model.core.BehaviorGroup.Builder getBehaviorGroupsBuilder(
-        int index) {
-      return getBehaviorGroupsFieldBuilder().getBuilder(index);
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+    getMutableBehaviorGroups() {
+      return internalGetMutableBehaviorGroups().getMutableMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
      */
-    public org.tti.tokens.model.core.BehaviorGroupOrBuilder getBehaviorGroupsOrBuilder(
-        int index) {
-      if (behaviorGroupsBuilder_ == null) {
-        return behaviorGroups_.get(index);  } else {
-        return behaviorGroupsBuilder_.getMessageOrBuilder(index);
-      }
+    public Builder putBehaviorGroups(
+        java.lang.String key,
+        org.tti.tokens.model.core.BehaviorGroup value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableBehaviorGroups().getMutableMap()
+          .put(key, value);
+      return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+     * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
      */
-    public java.util.List<? extends org.tti.tokens.model.core.BehaviorGroupOrBuilder> 
-         getBehaviorGroupsOrBuilderList() {
-      if (behaviorGroupsBuilder_ != null) {
-        return behaviorGroupsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(behaviorGroups_);
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
-    public org.tti.tokens.model.core.BehaviorGroup.Builder addBehaviorGroupsBuilder() {
-      return getBehaviorGroupsFieldBuilder().addBuilder(
-          org.tti.tokens.model.core.BehaviorGroup.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
-    public org.tti.tokens.model.core.BehaviorGroup.Builder addBehaviorGroupsBuilder(
-        int index) {
-      return getBehaviorGroupsFieldBuilder().addBuilder(
-          index, org.tti.tokens.model.core.BehaviorGroup.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.BehaviorGroup.Builder> 
-         getBehaviorGroupsBuilderList() {
-      return getBehaviorGroupsFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.BehaviorGroup, org.tti.tokens.model.core.BehaviorGroup.Builder, org.tti.tokens.model.core.BehaviorGroupOrBuilder> 
-        getBehaviorGroupsFieldBuilder() {
-      if (behaviorGroupsBuilder_ == null) {
-        behaviorGroupsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.tti.tokens.model.core.BehaviorGroup, org.tti.tokens.model.core.BehaviorGroup.Builder, org.tti.tokens.model.core.BehaviorGroupOrBuilder>(
-                behaviorGroups_,
-                ((bitField0_ & 0x00000008) != 0),
-                getParentForChildren(),
-                isClean());
-        behaviorGroups_ = null;
-      }
-      return behaviorGroupsBuilder_;
+
+    public Builder putAllBehaviorGroups(
+        java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup> values) {
+      internalGetMutableBehaviorGroups().getMutableMap()
+          .putAll(values);
+      return this;
     }
 
-    private java.util.List<org.tti.tokens.model.core.PropertySet> propertySets_ =
-      java.util.Collections.emptyList();
-    private void ensurePropertySetsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
-        propertySets_ = new java.util.ArrayList<org.tti.tokens.model.core.PropertySet>(propertySets_);
-        bitField0_ |= 0x00000010;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.PropertySet, org.tti.tokens.model.core.PropertySet.Builder, org.tti.tokens.model.core.PropertySetOrBuilder> propertySetsBuilder_;
-
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.PropertySet> getPropertySetsList() {
-      if (propertySetsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(propertySets_);
-      } else {
-        return propertySetsBuilder_.getMessageList();
+    private com.google.protobuf.MapField<
+        java.lang.String, org.tti.tokens.model.core.PropertySet> propertySets_;
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.PropertySet>
+    internalGetPropertySets() {
+      if (propertySets_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PropertySetsDefaultEntryHolder.defaultEntry);
       }
+      return propertySets_;
     }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.PropertySet>
+    internalGetMutablePropertySets() {
+      onChanged();;
+      if (propertySets_ == null) {
+        propertySets_ = com.google.protobuf.MapField.newMapField(
+            PropertySetsDefaultEntryHolder.defaultEntry);
+      }
+      if (!propertySets_.isMutable()) {
+        propertySets_ = propertySets_.copy();
+      }
+      return propertySets_;
+    }
+
     public int getPropertySetsCount() {
-      if (propertySetsBuilder_ == null) {
-        return propertySets_.size();
-      } else {
-        return propertySetsBuilder_.getCount();
-      }
+      return internalGetPropertySets().getMap().size();
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
      */
-    public org.tti.tokens.model.core.PropertySet getPropertySets(int index) {
-      if (propertySetsBuilder_ == null) {
-        return propertySets_.get(index);
-      } else {
-        return propertySetsBuilder_.getMessage(index);
-      }
+
+    public boolean containsPropertySets(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetPropertySets().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * Use {@link #getPropertySetsMap()} instead.
      */
-    public Builder setPropertySets(
-        int index, org.tti.tokens.model.core.PropertySet value) {
-      if (propertySetsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePropertySetsIsMutable();
-        propertySets_.set(index, value);
-        onChanged();
-      } else {
-        propertySetsBuilder_.setMessage(index, value);
-      }
-      return this;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> getPropertySets() {
+      return getPropertySetsMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
      */
-    public Builder setPropertySets(
-        int index, org.tti.tokens.model.core.PropertySet.Builder builderForValue) {
-      if (propertySetsBuilder_ == null) {
-        ensurePropertySetsIsMutable();
-        propertySets_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        propertySetsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
+
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> getPropertySetsMap() {
+      return internalGetPropertySets().getMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
      */
-    public Builder addPropertySets(org.tti.tokens.model.core.PropertySet value) {
-      if (propertySetsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePropertySetsIsMutable();
-        propertySets_.add(value);
-        onChanged();
-      } else {
-        propertySetsBuilder_.addMessage(value);
-      }
-      return this;
+
+    public org.tti.tokens.model.core.PropertySet getPropertySetsOrDefault(
+        java.lang.String key,
+        org.tti.tokens.model.core.PropertySet defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> map =
+          internalGetPropertySets().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
      */
-    public Builder addPropertySets(
-        int index, org.tti.tokens.model.core.PropertySet value) {
-      if (propertySetsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensurePropertySetsIsMutable();
-        propertySets_.add(index, value);
-        onChanged();
-      } else {
-        propertySetsBuilder_.addMessage(index, value);
+
+    public org.tti.tokens.model.core.PropertySet getPropertySetsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> map =
+          internalGetPropertySets().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return this;
+      return map.get(key);
     }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
-    public Builder addPropertySets(
-        org.tti.tokens.model.core.PropertySet.Builder builderForValue) {
-      if (propertySetsBuilder_ == null) {
-        ensurePropertySetsIsMutable();
-        propertySets_.add(builderForValue.build());
-        onChanged();
-      } else {
-        propertySetsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
-    public Builder addPropertySets(
-        int index, org.tti.tokens.model.core.PropertySet.Builder builderForValue) {
-      if (propertySetsBuilder_ == null) {
-        ensurePropertySetsIsMutable();
-        propertySets_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        propertySetsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
-    public Builder addAllPropertySets(
-        java.lang.Iterable<? extends org.tti.tokens.model.core.PropertySet> values) {
-      if (propertySetsBuilder_ == null) {
-        ensurePropertySetsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, propertySets_);
-        onChanged();
-      } else {
-        propertySetsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
+
     public Builder clearPropertySets() {
-      if (propertySetsBuilder_ == null) {
-        propertySets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-      } else {
-        propertySetsBuilder_.clear();
-      }
+      internalGetMutablePropertySets().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
      */
-    public Builder removePropertySets(int index) {
-      if (propertySetsBuilder_ == null) {
-        ensurePropertySetsIsMutable();
-        propertySets_.remove(index);
-        onChanged();
-      } else {
-        propertySetsBuilder_.remove(index);
-      }
+
+    public Builder removePropertySets(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutablePropertySets().getMutableMap()
+          .remove(key);
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * Use alternate mutation accessors instead.
      */
-    public org.tti.tokens.model.core.PropertySet.Builder getPropertySetsBuilder(
-        int index) {
-      return getPropertySetsFieldBuilder().getBuilder(index);
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet>
+    getMutablePropertySets() {
+      return internalGetMutablePropertySets().getMutableMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
      */
-    public org.tti.tokens.model.core.PropertySetOrBuilder getPropertySetsOrBuilder(
-        int index) {
-      if (propertySetsBuilder_ == null) {
-        return propertySets_.get(index);  } else {
-        return propertySetsBuilder_.getMessageOrBuilder(index);
-      }
+    public Builder putPropertySets(
+        java.lang.String key,
+        org.tti.tokens.model.core.PropertySet value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutablePropertySets().getMutableMap()
+          .put(key, value);
+      return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+     * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
      */
-    public java.util.List<? extends org.tti.tokens.model.core.PropertySetOrBuilder> 
-         getPropertySetsOrBuilderList() {
-      if (propertySetsBuilder_ != null) {
-        return propertySetsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(propertySets_);
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
-    public org.tti.tokens.model.core.PropertySet.Builder addPropertySetsBuilder() {
-      return getPropertySetsFieldBuilder().addBuilder(
-          org.tti.tokens.model.core.PropertySet.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
-    public org.tti.tokens.model.core.PropertySet.Builder addPropertySetsBuilder(
-        int index) {
-      return getPropertySetsFieldBuilder().addBuilder(
-          index, org.tti.tokens.model.core.PropertySet.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.PropertySet.Builder> 
-         getPropertySetsBuilderList() {
-      return getPropertySetsFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.PropertySet, org.tti.tokens.model.core.PropertySet.Builder, org.tti.tokens.model.core.PropertySetOrBuilder> 
-        getPropertySetsFieldBuilder() {
-      if (propertySetsBuilder_ == null) {
-        propertySetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.tti.tokens.model.core.PropertySet, org.tti.tokens.model.core.PropertySet.Builder, org.tti.tokens.model.core.PropertySetOrBuilder>(
-                propertySets_,
-                ((bitField0_ & 0x00000010) != 0),
-                getParentForChildren(),
-                isClean());
-        propertySets_ = null;
-      }
-      return propertySetsBuilder_;
+
+    public Builder putAllPropertySets(
+        java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet> values) {
+      internalGetMutablePropertySets().getMutableMap()
+          .putAll(values);
+      return this;
     }
 
-    private java.util.List<org.tti.tokens.model.core.TokenTemplate> tokenTemplates_ =
-      java.util.Collections.emptyList();
-    private void ensureTokenTemplatesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
-        tokenTemplates_ = new java.util.ArrayList<org.tti.tokens.model.core.TokenTemplate>(tokenTemplates_);
-        bitField0_ |= 0x00000020;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.TokenTemplate, org.tti.tokens.model.core.TokenTemplate.Builder, org.tti.tokens.model.core.TokenTemplateOrBuilder> tokenTemplatesBuilder_;
-
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.TokenTemplate> getTokenTemplatesList() {
-      if (tokenTemplatesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(tokenTemplates_);
-      } else {
-        return tokenTemplatesBuilder_.getMessageList();
+    private com.google.protobuf.MapField<
+        java.lang.String, org.tti.tokens.model.core.TokenTemplate> tokenTemplates_;
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+    internalGetTokenTemplates() {
+      if (tokenTemplates_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            TokenTemplatesDefaultEntryHolder.defaultEntry);
       }
+      return tokenTemplates_;
     }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+    internalGetMutableTokenTemplates() {
+      onChanged();;
+      if (tokenTemplates_ == null) {
+        tokenTemplates_ = com.google.protobuf.MapField.newMapField(
+            TokenTemplatesDefaultEntryHolder.defaultEntry);
+      }
+      if (!tokenTemplates_.isMutable()) {
+        tokenTemplates_ = tokenTemplates_.copy();
+      }
+      return tokenTemplates_;
+    }
+
     public int getTokenTemplatesCount() {
-      if (tokenTemplatesBuilder_ == null) {
-        return tokenTemplates_.size();
-      } else {
-        return tokenTemplatesBuilder_.getCount();
-      }
+      return internalGetTokenTemplates().getMap().size();
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
      */
-    public org.tti.tokens.model.core.TokenTemplate getTokenTemplates(int index) {
-      if (tokenTemplatesBuilder_ == null) {
-        return tokenTemplates_.get(index);
-      } else {
-        return tokenTemplatesBuilder_.getMessage(index);
-      }
+
+    public boolean containsTokenTemplates(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetTokenTemplates().getMap().containsKey(key);
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * Use {@link #getTokenTemplatesMap()} instead.
      */
-    public Builder setTokenTemplates(
-        int index, org.tti.tokens.model.core.TokenTemplate value) {
-      if (tokenTemplatesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTokenTemplatesIsMutable();
-        tokenTemplates_.set(index, value);
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.setMessage(index, value);
-      }
-      return this;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> getTokenTemplates() {
+      return getTokenTemplatesMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
      */
-    public Builder setTokenTemplates(
-        int index, org.tti.tokens.model.core.TokenTemplate.Builder builderForValue) {
-      if (tokenTemplatesBuilder_ == null) {
-        ensureTokenTemplatesIsMutable();
-        tokenTemplates_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
+
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> getTokenTemplatesMap() {
+      return internalGetTokenTemplates().getMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
      */
-    public Builder addTokenTemplates(org.tti.tokens.model.core.TokenTemplate value) {
-      if (tokenTemplatesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTokenTemplatesIsMutable();
-        tokenTemplates_.add(value);
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.addMessage(value);
-      }
-      return this;
+
+    public org.tti.tokens.model.core.TokenTemplate getTokenTemplatesOrDefault(
+        java.lang.String key,
+        org.tti.tokens.model.core.TokenTemplate defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> map =
+          internalGetTokenTemplates().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
      */
-    public Builder addTokenTemplates(
-        int index, org.tti.tokens.model.core.TokenTemplate value) {
-      if (tokenTemplatesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureTokenTemplatesIsMutable();
-        tokenTemplates_.add(index, value);
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.addMessage(index, value);
+
+    public org.tti.tokens.model.core.TokenTemplate getTokenTemplatesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> map =
+          internalGetTokenTemplates().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return this;
+      return map.get(key);
     }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
-    public Builder addTokenTemplates(
-        org.tti.tokens.model.core.TokenTemplate.Builder builderForValue) {
-      if (tokenTemplatesBuilder_ == null) {
-        ensureTokenTemplatesIsMutable();
-        tokenTemplates_.add(builderForValue.build());
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
-    public Builder addTokenTemplates(
-        int index, org.tti.tokens.model.core.TokenTemplate.Builder builderForValue) {
-      if (tokenTemplatesBuilder_ == null) {
-        ensureTokenTemplatesIsMutable();
-        tokenTemplates_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
-    public Builder addAllTokenTemplates(
-        java.lang.Iterable<? extends org.tti.tokens.model.core.TokenTemplate> values) {
-      if (tokenTemplatesBuilder_ == null) {
-        ensureTokenTemplatesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tokenTemplates_);
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
+
     public Builder clearTokenTemplates() {
-      if (tokenTemplatesBuilder_ == null) {
-        tokenTemplates_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.clear();
-      }
+      internalGetMutableTokenTemplates().getMutableMap()
+          .clear();
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
      */
-    public Builder removeTokenTemplates(int index) {
-      if (tokenTemplatesBuilder_ == null) {
-        ensureTokenTemplatesIsMutable();
-        tokenTemplates_.remove(index);
-        onChanged();
-      } else {
-        tokenTemplatesBuilder_.remove(index);
-      }
+
+    public Builder removeTokenTemplates(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableTokenTemplates().getMutableMap()
+          .remove(key);
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * Use alternate mutation accessors instead.
      */
-    public org.tti.tokens.model.core.TokenTemplate.Builder getTokenTemplatesBuilder(
-        int index) {
-      return getTokenTemplatesFieldBuilder().getBuilder(index);
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+    getMutableTokenTemplates() {
+      return internalGetMutableTokenTemplates().getMutableMap();
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
      */
-    public org.tti.tokens.model.core.TokenTemplateOrBuilder getTokenTemplatesOrBuilder(
-        int index) {
-      if (tokenTemplatesBuilder_ == null) {
-        return tokenTemplates_.get(index);  } else {
-        return tokenTemplatesBuilder_.getMessageOrBuilder(index);
-      }
+    public Builder putTokenTemplates(
+        java.lang.String key,
+        org.tti.tokens.model.core.TokenTemplate value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableTokenTemplates().getMutableMap()
+          .put(key, value);
+      return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+     * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
      */
-    public java.util.List<? extends org.tti.tokens.model.core.TokenTemplateOrBuilder> 
-         getTokenTemplatesOrBuilderList() {
-      if (tokenTemplatesBuilder_ != null) {
-        return tokenTemplatesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(tokenTemplates_);
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
-    public org.tti.tokens.model.core.TokenTemplate.Builder addTokenTemplatesBuilder() {
-      return getTokenTemplatesFieldBuilder().addBuilder(
-          org.tti.tokens.model.core.TokenTemplate.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
-    public org.tti.tokens.model.core.TokenTemplate.Builder addTokenTemplatesBuilder(
-        int index) {
-      return getTokenTemplatesFieldBuilder().addBuilder(
-          index, org.tti.tokens.model.core.TokenTemplate.getDefaultInstance());
-    }
-    /**
-     * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-     */
-    public java.util.List<org.tti.tokens.model.core.TokenTemplate.Builder> 
-         getTokenTemplatesBuilderList() {
-      return getTokenTemplatesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.TokenTemplate, org.tti.tokens.model.core.TokenTemplate.Builder, org.tti.tokens.model.core.TokenTemplateOrBuilder> 
-        getTokenTemplatesFieldBuilder() {
-      if (tokenTemplatesBuilder_ == null) {
-        tokenTemplatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.tti.tokens.model.core.TokenTemplate, org.tti.tokens.model.core.TokenTemplate.Builder, org.tti.tokens.model.core.TokenTemplateOrBuilder>(
-                tokenTemplates_,
-                ((bitField0_ & 0x00000020) != 0),
-                getParentForChildren(),
-                isClean());
-        tokenTemplates_ = null;
-      }
-      return tokenTemplatesBuilder_;
+
+    public Builder putAllTokenTemplates(
+        java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate> values) {
+      internalGetMutableTokenTemplates().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

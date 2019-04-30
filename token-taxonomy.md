@@ -107,17 +107,17 @@ These are some common behaviors and not comprehensive.
 
 ![CommonBehaviors](images/common-behaviors.png)
 
-Some of these behaviors are valid for either base type, while others only apply to one.  For example, *t'* or non-transferable would not make sense for a fungible token and subdividable does not apply to a token representing a *s* or singleton.
+Some of these behaviors are valid for either base type, while others only apply to one.  For example, *~t* or non-transferable would not make sense for a fungible token and subdividable does not apply to a token representing a *s* or singleton.
 
-A behavior that is only valid for a specific type will include the *&tau;<sub>F</sub>* or *&tau;<sub>N</sub>* as a property such as *&tau;<sub>F</sub>{s}* and *&tau;<sub>N</sub>{t'}*.
+A behavior that is only valid for a specific type will include the *&tau;<sub>F</sub>* or *&tau;<sub>N</sub>* as a property such as *&tau;<sub>F</sub>{s}* and *&tau;<sub>N</sub>{~t}*.
 
 Where hybrid tokens are being defined, behaviors can be defined that are common to all tokens, or at different granularities. For example, the following definition is for a fungible token that does not allow new tokens to be minted, which themselves are composed of non-fungible tokens that can be minted. However both classes of token are transferrable:
 
-> **&tau;<sub>F</sub>{m'} (&tau;<sub>N</sub>{m}) {t}**
+> **&tau;<sub>F</sub>{~m} (&tau;<sub>N</sub>{m}) {t}**
 
-For Boolean behaviors like Sub-dividable *d* or Whole *d'* the absence of *d'* would imply *d*, but should usually be included for clarity if it is a restriction on a base property value like decimals or changing the owner.
+For Boolean behaviors like Sub-dividable *d* or Whole *~d* the absence of *~d* would imply *d*, but should usually be included for clarity if it is a restriction on a base property value like decimals or changing the owner.
 
-Some behaviors, when applied, will effect other behaviors within the token definition.  These behaviors or traits can be thought of as inherited traits that will alter a particular behavior. An example of this is the behavior, delegable, which is the ability to delegate a behavior to another party to perform on your behalf as the owner.  Delegable is implied, so an absence of *g'* would imply that the token class or behavior is delegable.
+Some behaviors, when applied, will effect other behaviors within the token definition.  These behaviors or traits can be thought of as inherited traits that will alter a particular behavior. An example of this is the behavior, delegable, which is the ability to delegate a behavior to another party to perform on your behalf as the owner.  Delegable is implied, so an absence of *~g* would imply that the token class or behavior is delegable.
 
 delegable *g*
 
@@ -234,7 +234,7 @@ The root of the tree is a common base token or **&tau;** which has an owner Id, 
 
 There is also a base behavior artifact that includes simple GetTokenRequest/Response and GetTaxonomyRequest/Response.  
 
-Then two branches for fungible *&tau;<sub>F</sub>* and non-fungible *&tau;<sub>N</sub>* and under them are branches for sub-dividable *d* and whole *d'* to create the first three relationships.  
+Then two branches for fungible *&tau;<sub>F</sub>* and non-fungible *&tau;<sub>N</sub>* and under them are branches for sub-dividable *d* and whole *~d* to create the first three relationships.  
 
 ![Hierarchy](images/hierarchy.png)
 
@@ -256,7 +256,7 @@ In the workshop, the group will select a base token type and select from the exi
 
 The end result of the workshop is to have a complete definition of the token that can be expressed using grammar as a formula.  This formula becomes the token's taxonomy definition like:
 
- >**&tau;<sub>F</sub>{d',SC}**
+ >**&tau;<sub>F</sub>{~d,SC}**
 
 When a workshops is completed, the artifacts should be recorded, any new behaviors, groups and token definitions and a pull request be issued for these to be merged after approval to be part of the framework and available for reuse by other workshops.
 
@@ -264,11 +264,11 @@ When a workshops is completed, the artifacts should be recorded, any new behavio
 
 ## Example Design
 
-As an example, let’s see what a fungible token with supply control or &tau;<sub>F</sub>{<i>SC</i>} or for clarity &tau;<sub>F</sub>{<i>d', SC</i>} could look like with a design tool.
+As an example, let’s see what a fungible token with supply control or &tau;<sub>F</sub>{<i>SC</i>} or for clarity &tau;<sub>F</sub>{<i>~d, SC</i>} could look like with a design tool.
 
 ![Design](images/design.png)
 
-The designer would drag one of the bottom base tokens to start the process.  Then from the behavior palate, select *SC* from the Behavior Groups and drag it over, which brings over the properties *{m, b, r}* and additionally *d'* from Behaviors to design the token.
+The designer would drag one of the bottom base tokens to start the process.  Then from the behavior palate, select *SC* from the Behavior Groups and drag it over, which brings over the properties *{m, b, r}* and additionally *~d* from Behaviors to design the token.
 
 Contract designers can also attach contract logic to token behaviors and visually represent the relationships between a contract and its underlying tokens.
 
@@ -276,7 +276,7 @@ Contract designers can also attach contract logic to token behaviors and visuall
 
 If you have created a token definition that is already defined, but your token has specific non-behavioral properties like a `SKU` or  `CUSIP` property you can create a new token definition for this formula in the taxonomy.
 
-In this case the generic taxonomy definition: &tau;<sub>F</sub>{d',SC} or `tF{d',SC}` can be named `Whole Fungible Token with Supply Control` and represents a `branch` in the hierarchy and your token definition will be a `node` or `leaf` on the branch named `Inventory Item Token`.  Your new token equal to the generic branch formula plus the definition containing the `SKU` non-behavioral property i.e. [&tau;<sub>F</sub>{d',SC}+&phi;SKU].
+In this case the generic taxonomy definition: &tau;<sub>F</sub>{~d,SC} or `tF{~d,SC}` can be named `Whole Fungible Token with Supply Control` and represents a `branch` in the hierarchy and your token definition will be a `node` or `leaf` on the branch named `Inventory Item Token`.  Your new token equal to the generic branch formula plus the definition containing the `SKU` non-behavioral property i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
 
 ## Tooling and Taxonomy
 
@@ -302,7 +302,7 @@ For example, in the Ethereum community [OpenZeppelin](https://github.com/OpenZep
 
 Using a taxonomy code map, tools can be built to generate code for specific platforms by combining the code from the formula into new source composite source code to speed development.
 
-Similarly, an implementation map can be used to provide navigation from a specific token formula like >**&tau;<sub>F</sub>{d',SC}** or `tF{d',SC}` to map to a vendor or open source complete implementation in as open source or packaged solution.
+Similarly, an implementation map can be used to provide navigation from a specific token formula like >**&tau;<sub>F</sub>{~d,SC}** or `tF{~d,SC}` to map to a vendor or open source complete implementation in as open source or packaged solution.
 
 ![TaxonomyImplementationMap](images/implementationMap.png)
 
@@ -310,7 +310,7 @@ Similarly, an implementation map can be used to provide navigation from a specif
 
 Using the taxonomy when creating or defining an existing token can also generically apply to a token implementation as well. The high-level design phases are:
 
-- Workshop - this is the initial phase when starting from scratch defining the token for your business needs. During this process you can create new taxonomy artifacts and when complete have a resulting token taxonomy definition which looks like a mathematical formula: **&tau;<sub>F</sub>{d',SC}** or `tF{d',SC}`
+- Workshop - this is the initial phase when starting from scratch defining the token for your business needs. During this process you can create new taxonomy artifacts and when complete have a resulting token taxonomy definition which looks like a mathematical formula: **&tau;<sub>F</sub>{~d,SC}** or `tF{d~,SC}`
 - Hierarchy Location - Once you have your taxonomy definition, you may be able to find an existing definition in the taxonomy with the same formula.  This doesn't mean that the token you defined is **exactly** the same as the existing definition. If your token definition has defined a non-behavioral property set or sets that are specific to your token, like a `phSKU` or  `phCU` you can create a new token definition for this formula in the taxonomy. See [Taxonomy Hierarchy](taxonomy-hierarchy).
 - Implementation - You can use maps in the taxonomy to locate platform specific implementation code or complete token solutions from open source, vendors to get create or find an implementation suitable for your deployment platform target. i.e. Ethereum, Hyperledger Fabric, Corda or Digital Asset.
 

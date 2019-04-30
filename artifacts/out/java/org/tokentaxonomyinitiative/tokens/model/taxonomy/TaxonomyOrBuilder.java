@@ -18,122 +18,172 @@ public interface TaxonomyOrBuilder extends
       getVersionBytes();
 
   /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-   */
-  java.util.List<org.tti.tokens.model.core.Base> 
-      getBaseTokenTypesList();
-  /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
-   */
-  org.tti.tokens.model.core.Base getBaseTokenTypes(int index);
-  /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
    */
   int getBaseTokenTypesCount();
   /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
    */
-  java.util.List<? extends org.tti.tokens.model.core.BaseOrBuilder> 
-      getBaseTokenTypesOrBuilderList();
+  boolean containsBaseTokenTypes(
+      java.lang.String key);
   /**
-   * <code>repeated .taxonomy.model.core.Base base_token_types = 2;</code>
+   * Use {@link #getBaseTokenTypesMap()} instead.
    */
-  org.tti.tokens.model.core.BaseOrBuilder getBaseTokenTypesOrBuilder(
-      int index);
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.Base>
+  getBaseTokenTypes();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
+   */
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.Base>
+  getBaseTokenTypesMap();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
+   */
+
+  org.tti.tokens.model.core.Base getBaseTokenTypesOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.Base defaultValue);
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Base&gt; base_token_types = 2;</code>
+   */
+
+  org.tti.tokens.model.core.Base getBaseTokenTypesOrThrow(
+      java.lang.String key);
 
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-   */
-  java.util.List<org.tti.tokens.model.core.Behavior> 
-      getBehaviorsList();
-  /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
-   */
-  org.tti.tokens.model.core.Behavior getBehaviors(int index);
-  /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
    */
   int getBehaviorsCount();
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
    */
-  java.util.List<? extends org.tti.tokens.model.core.BehaviorOrBuilder> 
-      getBehaviorsOrBuilderList();
+  boolean containsBehaviors(
+      java.lang.String key);
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
+   * Use {@link #getBehaviorsMap()} instead.
    */
-  org.tti.tokens.model.core.BehaviorOrBuilder getBehaviorsOrBuilder(
-      int index);
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior>
+  getBehaviors();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
+   */
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.Behavior>
+  getBehaviorsMap();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
+   */
+
+  org.tti.tokens.model.core.Behavior getBehaviorsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.Behavior defaultValue);
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.Behavior&gt; behaviors = 3;</code>
+   */
+
+  org.tti.tokens.model.core.Behavior getBehaviorsOrThrow(
+      java.lang.String key);
 
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-   */
-  java.util.List<org.tti.tokens.model.core.BehaviorGroup> 
-      getBehaviorGroupsList();
-  /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
-   */
-  org.tti.tokens.model.core.BehaviorGroup getBehaviorGroups(int index);
-  /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
    */
   int getBehaviorGroupsCount();
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
    */
-  java.util.List<? extends org.tti.tokens.model.core.BehaviorGroupOrBuilder> 
-      getBehaviorGroupsOrBuilderList();
+  boolean containsBehaviorGroups(
+      java.lang.String key);
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
+   * Use {@link #getBehaviorGroupsMap()} instead.
    */
-  org.tti.tokens.model.core.BehaviorGroupOrBuilder getBehaviorGroupsOrBuilder(
-      int index);
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+  getBehaviorGroups();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
+   */
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.BehaviorGroup>
+  getBehaviorGroupsMap();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
+   */
+
+  org.tti.tokens.model.core.BehaviorGroup getBehaviorGroupsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.BehaviorGroup defaultValue);
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.BehaviorGroup&gt; behavior_groups = 4;</code>
+   */
+
+  org.tti.tokens.model.core.BehaviorGroup getBehaviorGroupsOrThrow(
+      java.lang.String key);
 
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-   */
-  java.util.List<org.tti.tokens.model.core.PropertySet> 
-      getPropertySetsList();
-  /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
-   */
-  org.tti.tokens.model.core.PropertySet getPropertySets(int index);
-  /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
    */
   int getPropertySetsCount();
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
    */
-  java.util.List<? extends org.tti.tokens.model.core.PropertySetOrBuilder> 
-      getPropertySetsOrBuilderList();
+  boolean containsPropertySets(
+      java.lang.String key);
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
+   * Use {@link #getPropertySetsMap()} instead.
    */
-  org.tti.tokens.model.core.PropertySetOrBuilder getPropertySetsOrBuilder(
-      int index);
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet>
+  getPropertySets();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
+   */
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.PropertySet>
+  getPropertySetsMap();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
+   */
+
+  org.tti.tokens.model.core.PropertySet getPropertySetsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.PropertySet defaultValue);
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.PropertySet&gt; property_sets = 5;</code>
+   */
+
+  org.tti.tokens.model.core.PropertySet getPropertySetsOrThrow(
+      java.lang.String key);
 
   /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-   */
-  java.util.List<org.tti.tokens.model.core.TokenTemplate> 
-      getTokenTemplatesList();
-  /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
-   */
-  org.tti.tokens.model.core.TokenTemplate getTokenTemplates(int index);
-  /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
    */
   int getTokenTemplatesCount();
   /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
    */
-  java.util.List<? extends org.tti.tokens.model.core.TokenTemplateOrBuilder> 
-      getTokenTemplatesOrBuilderList();
+  boolean containsTokenTemplates(
+      java.lang.String key);
   /**
-   * <code>repeated .taxonomy.model.core.TokenTemplate token_templates = 6;</code>
+   * Use {@link #getTokenTemplatesMap()} instead.
    */
-  org.tti.tokens.model.core.TokenTemplateOrBuilder getTokenTemplatesOrBuilder(
-      int index);
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+  getTokenTemplates();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
+   */
+  java.util.Map<java.lang.String, org.tti.tokens.model.core.TokenTemplate>
+  getTokenTemplatesMap();
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
+   */
+
+  org.tti.tokens.model.core.TokenTemplate getTokenTemplatesOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.core.TokenTemplate defaultValue);
+  /**
+   * <code>map&lt;string, .taxonomy.model.core.TokenTemplate&gt; token_templates = 6;</code>
+   */
+
+  org.tti.tokens.model.core.TokenTemplate getTokenTemplatesOrThrow(
+      java.lang.String key);
 }

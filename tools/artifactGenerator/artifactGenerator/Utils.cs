@@ -17,16 +17,16 @@ namespace ArtifactGenerator
 			try
 			{
 				if (Os.IsWindows())
-					xmlDocument.Load((Stream) File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\log4net.config"));
+					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\log4net.config"));
 				else
-					xmlDocument.Load((Stream) File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/log4net.config"));
+					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/log4net.config"));
 			}
 			catch (Exception ex)
 			{
 				if (Os.IsWindows())
-					xmlDocument.Load((Stream) File.OpenRead(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log4net.config"));
+					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log4net.config"));
 				else
-					xmlDocument.Load((Stream) File.OpenRead(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/log4net.config"));
+					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/log4net.config"));
 			}
 			XmlConfigurator.Configure(LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof (log4net.Repository.Hierarchy.Hierarchy)), xmlDocument["log4net"]);
 		}
