@@ -1,6 +1,6 @@
 # Contents
 
-©2019 Token Taxonomy Initiative Inc. (“EEA”).  All Rights Reserved. EEA Proprietary and Confidential.
+©2019 Token Taxonomy Initiative Inc. (“TTI”).  All Rights Reserved. TTI Proprietary and Confidential.
 
 The contents of this repo contain the Token Taxonomy Framework (TTF) comprised of the following:
 
