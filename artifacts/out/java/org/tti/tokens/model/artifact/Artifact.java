@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     aliases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     controlUri_ = "";
     incompatibleWithSymbols_ = java.util.Collections.emptyList();
+    influencedBySymbols_ = java.util.Collections.emptyList();
     artifactFiles_ = java.util.Collections.emptyList();
   }
 
@@ -94,13 +95,13 @@ private static final long serialVersionUID = 0L;
           }
           case 50: {
             org.tti.tokens.model.artifact.ArtifactDefinition.Builder subBuilder = null;
-            if (definition_ != null) {
-              subBuilder = definition_.toBuilder();
+            if (artifactDefinition_ != null) {
+              subBuilder = artifactDefinition_.toBuilder();
             }
-            definition_ = input.readMessage(org.tti.tokens.model.artifact.ArtifactDefinition.parser(), extensionRegistry);
+            artifactDefinition_ = input.readMessage(org.tti.tokens.model.artifact.ArtifactDefinition.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(definition_);
-              definition_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(artifactDefinition_);
+              artifactDefinition_ = subBuilder.buildPartial();
             }
 
             break;
@@ -116,14 +117,23 @@ private static final long serialVersionUID = 0L;
           }
           case 66: {
             if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-              artifactFiles_ = new java.util.ArrayList<org.tti.tokens.model.artifact.ArtifactFile>();
+              influencedBySymbols_ = new java.util.ArrayList<org.tti.tokens.model.artifact.SymbolInfluence>();
               mutable_bitField0_ |= 0x00000080;
+            }
+            influencedBySymbols_.add(
+                input.readMessage(org.tti.tokens.model.artifact.SymbolInfluence.parser(), extensionRegistry));
+            break;
+          }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              artifactFiles_ = new java.util.ArrayList<org.tti.tokens.model.artifact.ArtifactFile>();
+              mutable_bitField0_ |= 0x00000100;
             }
             artifactFiles_.add(
                 input.readMessage(org.tti.tokens.model.artifact.ArtifactFile.parser(), extensionRegistry));
             break;
           }
-          case 74: {
+          case 82: {
             org.tti.tokens.model.artifact.Maps.Builder subBuilder = null;
             if (maps_ != null) {
               subBuilder = maps_.toBuilder();
@@ -158,6 +168,9 @@ private static final long serialVersionUID = 0L;
         incompatibleWithSymbols_ = java.util.Collections.unmodifiableList(incompatibleWithSymbols_);
       }
       if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        influencedBySymbols_ = java.util.Collections.unmodifiableList(influencedBySymbols_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
         artifactFiles_ = java.util.Collections.unmodifiableList(artifactFiles_);
       }
       this.unknownFields = unknownFields.build();
@@ -313,37 +326,37 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEFINITION_FIELD_NUMBER = 6;
-  private org.tti.tokens.model.artifact.ArtifactDefinition definition_;
+  public static final int ARTIFACT_DEFINITION_FIELD_NUMBER = 6;
+  private org.tti.tokens.model.artifact.ArtifactDefinition artifactDefinition_;
   /**
    * <pre>
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
    */
-  public boolean hasDefinition() {
-    return definition_ != null;
+  public boolean hasArtifactDefinition() {
+    return artifactDefinition_ != null;
   }
   /**
    * <pre>
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
    */
-  public org.tti.tokens.model.artifact.ArtifactDefinition getDefinition() {
-    return definition_ == null ? org.tti.tokens.model.artifact.ArtifactDefinition.getDefaultInstance() : definition_;
+  public org.tti.tokens.model.artifact.ArtifactDefinition getArtifactDefinition() {
+    return artifactDefinition_ == null ? org.tti.tokens.model.artifact.ArtifactDefinition.getDefaultInstance() : artifactDefinition_;
   }
   /**
    * <pre>
    *Base, Behavior or Behavior group type indicated by ArtifactType
    * </pre>
    *
-   * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+   * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
    */
-  public org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getDefinitionOrBuilder() {
-    return getDefinition();
+  public org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getArtifactDefinitionOrBuilder() {
+    return getArtifactDefinition();
   }
 
   public static final int INCOMPATIBLE_WITH_SYMBOLS_FIELD_NUMBER = 7;
@@ -401,14 +414,49 @@ private static final long serialVersionUID = 0L;
     return incompatibleWithSymbols_.get(index);
   }
 
-  public static final int ARTIFACT_FILES_FIELD_NUMBER = 8;
+  public static final int INFLUENCED_BY_SYMBOLS_FIELD_NUMBER = 8;
+  private java.util.List<org.tti.tokens.model.artifact.SymbolInfluence> influencedBySymbols_;
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  public java.util.List<org.tti.tokens.model.artifact.SymbolInfluence> getInfluencedBySymbolsList() {
+    return influencedBySymbols_;
+  }
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  public java.util.List<? extends org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder> 
+      getInfluencedBySymbolsOrBuilderList() {
+    return influencedBySymbols_;
+  }
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  public int getInfluencedBySymbolsCount() {
+    return influencedBySymbols_.size();
+  }
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  public org.tti.tokens.model.artifact.SymbolInfluence getInfluencedBySymbols(int index) {
+    return influencedBySymbols_.get(index);
+  }
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  public org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder getInfluencedBySymbolsOrBuilder(
+      int index) {
+    return influencedBySymbols_.get(index);
+  }
+
+  public static final int ARTIFACT_FILES_FIELD_NUMBER = 9;
   private java.util.List<org.tti.tokens.model.artifact.ArtifactFile> artifactFiles_;
   /**
    * <pre>
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   public java.util.List<org.tti.tokens.model.artifact.ArtifactFile> getArtifactFilesList() {
     return artifactFiles_;
@@ -418,7 +466,7 @@ private static final long serialVersionUID = 0L;
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactFileOrBuilder> 
       getArtifactFilesOrBuilderList() {
@@ -429,7 +477,7 @@ private static final long serialVersionUID = 0L;
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   public int getArtifactFilesCount() {
     return artifactFiles_.size();
@@ -439,7 +487,7 @@ private static final long serialVersionUID = 0L;
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   public org.tti.tokens.model.artifact.ArtifactFile getArtifactFiles(int index) {
     return artifactFiles_.get(index);
@@ -449,29 +497,29 @@ private static final long serialVersionUID = 0L;
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   public org.tti.tokens.model.artifact.ArtifactFileOrBuilder getArtifactFilesOrBuilder(
       int index) {
     return artifactFiles_.get(index);
   }
 
-  public static final int MAPS_FIELD_NUMBER = 9;
+  public static final int MAPS_FIELD_NUMBER = 10;
   private org.tti.tokens.model.artifact.Maps maps_;
   /**
-   * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+   * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
    */
   public boolean hasMaps() {
     return maps_ != null;
   }
   /**
-   * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+   * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
    */
   public org.tti.tokens.model.artifact.Maps getMaps() {
     return maps_ == null ? org.tti.tokens.model.artifact.Maps.getDefaultInstance() : maps_;
   }
   /**
-   * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+   * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
    */
   public org.tti.tokens.model.artifact.MapsOrBuilder getMapsOrBuilder() {
     return getMaps();
@@ -506,17 +554,20 @@ private static final long serialVersionUID = 0L;
     if (!getControlUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, controlUri_);
     }
-    if (definition_ != null) {
-      output.writeMessage(6, getDefinition());
+    if (artifactDefinition_ != null) {
+      output.writeMessage(6, getArtifactDefinition());
     }
     for (int i = 0; i < incompatibleWithSymbols_.size(); i++) {
       output.writeMessage(7, incompatibleWithSymbols_.get(i));
     }
+    for (int i = 0; i < influencedBySymbols_.size(); i++) {
+      output.writeMessage(8, influencedBySymbols_.get(i));
+    }
     for (int i = 0; i < artifactFiles_.size(); i++) {
-      output.writeMessage(8, artifactFiles_.get(i));
+      output.writeMessage(9, artifactFiles_.get(i));
     }
     if (maps_ != null) {
-      output.writeMessage(9, getMaps());
+      output.writeMessage(10, getMaps());
     }
     unknownFields.writeTo(output);
   }
@@ -549,21 +600,25 @@ private static final long serialVersionUID = 0L;
     if (!getControlUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, controlUri_);
     }
-    if (definition_ != null) {
+    if (artifactDefinition_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getDefinition());
+        .computeMessageSize(6, getArtifactDefinition());
     }
     for (int i = 0; i < incompatibleWithSymbols_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, incompatibleWithSymbols_.get(i));
     }
+    for (int i = 0; i < influencedBySymbols_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, influencedBySymbols_.get(i));
+    }
     for (int i = 0; i < artifactFiles_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, artifactFiles_.get(i));
+        .computeMessageSize(9, artifactFiles_.get(i));
     }
     if (maps_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getMaps());
+        .computeMessageSize(10, getMaps());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -592,13 +647,15 @@ private static final long serialVersionUID = 0L;
     }
     if (!getControlUri()
         .equals(other.getControlUri())) return false;
-    if (hasDefinition() != other.hasDefinition()) return false;
-    if (hasDefinition()) {
-      if (!getDefinition()
-          .equals(other.getDefinition())) return false;
+    if (hasArtifactDefinition() != other.hasArtifactDefinition()) return false;
+    if (hasArtifactDefinition()) {
+      if (!getArtifactDefinition()
+          .equals(other.getArtifactDefinition())) return false;
     }
     if (!getIncompatibleWithSymbolsList()
         .equals(other.getIncompatibleWithSymbolsList())) return false;
+    if (!getInfluencedBySymbolsList()
+        .equals(other.getInfluencedBySymbolsList())) return false;
     if (!getArtifactFilesList()
         .equals(other.getArtifactFilesList())) return false;
     if (hasMaps() != other.hasMaps()) return false;
@@ -631,13 +688,17 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CONTROL_URI_FIELD_NUMBER;
     hash = (53 * hash) + getControlUri().hashCode();
-    if (hasDefinition()) {
-      hash = (37 * hash) + DEFINITION_FIELD_NUMBER;
-      hash = (53 * hash) + getDefinition().hashCode();
+    if (hasArtifactDefinition()) {
+      hash = (37 * hash) + ARTIFACT_DEFINITION_FIELD_NUMBER;
+      hash = (53 * hash) + getArtifactDefinition().hashCode();
     }
     if (getIncompatibleWithSymbolsCount() > 0) {
       hash = (37 * hash) + INCOMPATIBLE_WITH_SYMBOLS_FIELD_NUMBER;
       hash = (53 * hash) + getIncompatibleWithSymbolsList().hashCode();
+    }
+    if (getInfluencedBySymbolsCount() > 0) {
+      hash = (37 * hash) + INFLUENCED_BY_SYMBOLS_FIELD_NUMBER;
+      hash = (53 * hash) + getInfluencedBySymbolsList().hashCode();
     }
     if (getArtifactFilesCount() > 0) {
       hash = (37 * hash) + ARTIFACT_FILES_FIELD_NUMBER;
@@ -780,6 +841,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getIncompatibleWithSymbolsFieldBuilder();
+        getInfluencedBySymbolsFieldBuilder();
         getArtifactFilesFieldBuilder();
       }
     }
@@ -800,11 +862,11 @@ private static final long serialVersionUID = 0L;
       }
       controlUri_ = "";
 
-      if (definitionBuilder_ == null) {
-        definition_ = null;
+      if (artifactDefinitionBuilder_ == null) {
+        artifactDefinition_ = null;
       } else {
-        definition_ = null;
-        definitionBuilder_ = null;
+        artifactDefinition_ = null;
+        artifactDefinitionBuilder_ = null;
       }
       if (incompatibleWithSymbolsBuilder_ == null) {
         incompatibleWithSymbols_ = java.util.Collections.emptyList();
@@ -812,9 +874,15 @@ private static final long serialVersionUID = 0L;
       } else {
         incompatibleWithSymbolsBuilder_.clear();
       }
+      if (influencedBySymbolsBuilder_ == null) {
+        influencedBySymbols_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        influencedBySymbolsBuilder_.clear();
+      }
       if (artifactFilesBuilder_ == null) {
         artifactFiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       } else {
         artifactFilesBuilder_.clear();
       }
@@ -865,10 +933,10 @@ private static final long serialVersionUID = 0L;
         result.artifactSymbol_ = artifactSymbolBuilder_.build();
       }
       result.controlUri_ = controlUri_;
-      if (definitionBuilder_ == null) {
-        result.definition_ = definition_;
+      if (artifactDefinitionBuilder_ == null) {
+        result.artifactDefinition_ = artifactDefinition_;
       } else {
-        result.definition_ = definitionBuilder_.build();
+        result.artifactDefinition_ = artifactDefinitionBuilder_.build();
       }
       if (incompatibleWithSymbolsBuilder_ == null) {
         if (((bitField0_ & 0x00000040) != 0)) {
@@ -879,10 +947,19 @@ private static final long serialVersionUID = 0L;
       } else {
         result.incompatibleWithSymbols_ = incompatibleWithSymbolsBuilder_.build();
       }
-      if (artifactFilesBuilder_ == null) {
+      if (influencedBySymbolsBuilder_ == null) {
         if (((bitField0_ & 0x00000080) != 0)) {
-          artifactFiles_ = java.util.Collections.unmodifiableList(artifactFiles_);
+          influencedBySymbols_ = java.util.Collections.unmodifiableList(influencedBySymbols_);
           bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.influencedBySymbols_ = influencedBySymbols_;
+      } else {
+        result.influencedBySymbols_ = influencedBySymbolsBuilder_.build();
+      }
+      if (artifactFilesBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          artifactFiles_ = java.util.Collections.unmodifiableList(artifactFiles_);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.artifactFiles_ = artifactFiles_;
       } else {
@@ -966,8 +1043,8 @@ private static final long serialVersionUID = 0L;
         controlUri_ = other.controlUri_;
         onChanged();
       }
-      if (other.hasDefinition()) {
-        mergeDefinition(other.getDefinition());
+      if (other.hasArtifactDefinition()) {
+        mergeArtifactDefinition(other.getArtifactDefinition());
       }
       if (incompatibleWithSymbolsBuilder_ == null) {
         if (!other.incompatibleWithSymbols_.isEmpty()) {
@@ -995,11 +1072,37 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (influencedBySymbolsBuilder_ == null) {
+        if (!other.influencedBySymbols_.isEmpty()) {
+          if (influencedBySymbols_.isEmpty()) {
+            influencedBySymbols_ = other.influencedBySymbols_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureInfluencedBySymbolsIsMutable();
+            influencedBySymbols_.addAll(other.influencedBySymbols_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.influencedBySymbols_.isEmpty()) {
+          if (influencedBySymbolsBuilder_.isEmpty()) {
+            influencedBySymbolsBuilder_.dispose();
+            influencedBySymbolsBuilder_ = null;
+            influencedBySymbols_ = other.influencedBySymbols_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            influencedBySymbolsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getInfluencedBySymbolsFieldBuilder() : null;
+          } else {
+            influencedBySymbolsBuilder_.addAllMessages(other.influencedBySymbols_);
+          }
+        }
+      }
       if (artifactFilesBuilder_ == null) {
         if (!other.artifactFiles_.isEmpty()) {
           if (artifactFiles_.isEmpty()) {
             artifactFiles_ = other.artifactFiles_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureArtifactFilesIsMutable();
             artifactFiles_.addAll(other.artifactFiles_);
@@ -1012,7 +1115,7 @@ private static final long serialVersionUID = 0L;
             artifactFilesBuilder_.dispose();
             artifactFilesBuilder_ = null;
             artifactFiles_ = other.artifactFiles_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             artifactFilesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getArtifactFilesFieldBuilder() : null;
@@ -1448,31 +1551,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.tti.tokens.model.artifact.ArtifactDefinition definition_;
+    private org.tti.tokens.model.artifact.ArtifactDefinition artifactDefinition_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.tti.tokens.model.artifact.ArtifactDefinition, org.tti.tokens.model.artifact.ArtifactDefinition.Builder, org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder> definitionBuilder_;
+        org.tti.tokens.model.artifact.ArtifactDefinition, org.tti.tokens.model.artifact.ArtifactDefinition.Builder, org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder> artifactDefinitionBuilder_;
     /**
      * <pre>
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public boolean hasDefinition() {
-      return definitionBuilder_ != null || definition_ != null;
+    public boolean hasArtifactDefinition() {
+      return artifactDefinitionBuilder_ != null || artifactDefinition_ != null;
     }
     /**
      * <pre>
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public org.tti.tokens.model.artifact.ArtifactDefinition getDefinition() {
-      if (definitionBuilder_ == null) {
-        return definition_ == null ? org.tti.tokens.model.artifact.ArtifactDefinition.getDefaultInstance() : definition_;
+    public org.tti.tokens.model.artifact.ArtifactDefinition getArtifactDefinition() {
+      if (artifactDefinitionBuilder_ == null) {
+        return artifactDefinition_ == null ? org.tti.tokens.model.artifact.ArtifactDefinition.getDefaultInstance() : artifactDefinition_;
       } else {
-        return definitionBuilder_.getMessage();
+        return artifactDefinitionBuilder_.getMessage();
       }
     }
     /**
@@ -1480,17 +1583,17 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public Builder setDefinition(org.tti.tokens.model.artifact.ArtifactDefinition value) {
-      if (definitionBuilder_ == null) {
+    public Builder setArtifactDefinition(org.tti.tokens.model.artifact.ArtifactDefinition value) {
+      if (artifactDefinitionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        definition_ = value;
+        artifactDefinition_ = value;
         onChanged();
       } else {
-        definitionBuilder_.setMessage(value);
+        artifactDefinitionBuilder_.setMessage(value);
       }
 
       return this;
@@ -1500,15 +1603,15 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public Builder setDefinition(
+    public Builder setArtifactDefinition(
         org.tti.tokens.model.artifact.ArtifactDefinition.Builder builderForValue) {
-      if (definitionBuilder_ == null) {
-        definition_ = builderForValue.build();
+      if (artifactDefinitionBuilder_ == null) {
+        artifactDefinition_ = builderForValue.build();
         onChanged();
       } else {
-        definitionBuilder_.setMessage(builderForValue.build());
+        artifactDefinitionBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -1518,19 +1621,19 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public Builder mergeDefinition(org.tti.tokens.model.artifact.ArtifactDefinition value) {
-      if (definitionBuilder_ == null) {
-        if (definition_ != null) {
-          definition_ =
-            org.tti.tokens.model.artifact.ArtifactDefinition.newBuilder(definition_).mergeFrom(value).buildPartial();
+    public Builder mergeArtifactDefinition(org.tti.tokens.model.artifact.ArtifactDefinition value) {
+      if (artifactDefinitionBuilder_ == null) {
+        if (artifactDefinition_ != null) {
+          artifactDefinition_ =
+            org.tti.tokens.model.artifact.ArtifactDefinition.newBuilder(artifactDefinition_).mergeFrom(value).buildPartial();
         } else {
-          definition_ = value;
+          artifactDefinition_ = value;
         }
         onChanged();
       } else {
-        definitionBuilder_.mergeFrom(value);
+        artifactDefinitionBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -1540,15 +1643,15 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public Builder clearDefinition() {
-      if (definitionBuilder_ == null) {
-        definition_ = null;
+    public Builder clearArtifactDefinition() {
+      if (artifactDefinitionBuilder_ == null) {
+        artifactDefinition_ = null;
         onChanged();
       } else {
-        definition_ = null;
-        definitionBuilder_ = null;
+        artifactDefinition_ = null;
+        artifactDefinitionBuilder_ = null;
       }
 
       return this;
@@ -1558,26 +1661,26 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public org.tti.tokens.model.artifact.ArtifactDefinition.Builder getDefinitionBuilder() {
+    public org.tti.tokens.model.artifact.ArtifactDefinition.Builder getArtifactDefinitionBuilder() {
       
       onChanged();
-      return getDefinitionFieldBuilder().getBuilder();
+      return getArtifactDefinitionFieldBuilder().getBuilder();
     }
     /**
      * <pre>
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
-    public org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getDefinitionOrBuilder() {
-      if (definitionBuilder_ != null) {
-        return definitionBuilder_.getMessageOrBuilder();
+    public org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder getArtifactDefinitionOrBuilder() {
+      if (artifactDefinitionBuilder_ != null) {
+        return artifactDefinitionBuilder_.getMessageOrBuilder();
       } else {
-        return definition_ == null ?
-            org.tti.tokens.model.artifact.ArtifactDefinition.getDefaultInstance() : definition_;
+        return artifactDefinition_ == null ?
+            org.tti.tokens.model.artifact.ArtifactDefinition.getDefaultInstance() : artifactDefinition_;
       }
     }
     /**
@@ -1585,20 +1688,20 @@ private static final long serialVersionUID = 0L;
      *Base, Behavior or Behavior group type indicated by ArtifactType
      * </pre>
      *
-     * <code>.taxonomy.model.artifact.ArtifactDefinition definition = 6;</code>
+     * <code>.taxonomy.model.artifact.ArtifactDefinition artifact_definition = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.artifact.ArtifactDefinition, org.tti.tokens.model.artifact.ArtifactDefinition.Builder, org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder> 
-        getDefinitionFieldBuilder() {
-      if (definitionBuilder_ == null) {
-        definitionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getArtifactDefinitionFieldBuilder() {
+      if (artifactDefinitionBuilder_ == null) {
+        artifactDefinitionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             org.tti.tokens.model.artifact.ArtifactDefinition, org.tti.tokens.model.artifact.ArtifactDefinition.Builder, org.tti.tokens.model.artifact.ArtifactDefinitionOrBuilder>(
-                getDefinition(),
+                getArtifactDefinition(),
                 getParentForChildren(),
                 isClean());
-        definition_ = null;
+        artifactDefinition_ = null;
       }
-      return definitionBuilder_;
+      return artifactDefinitionBuilder_;
     }
 
     private java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> incompatibleWithSymbols_ =
@@ -1913,12 +2016,252 @@ private static final long serialVersionUID = 0L;
       return incompatibleWithSymbolsBuilder_;
     }
 
+    private java.util.List<org.tti.tokens.model.artifact.SymbolInfluence> influencedBySymbols_ =
+      java.util.Collections.emptyList();
+    private void ensureInfluencedBySymbolsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        influencedBySymbols_ = new java.util.ArrayList<org.tti.tokens.model.artifact.SymbolInfluence>(influencedBySymbols_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.artifact.SymbolInfluence, org.tti.tokens.model.artifact.SymbolInfluence.Builder, org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder> influencedBySymbolsBuilder_;
+
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public java.util.List<org.tti.tokens.model.artifact.SymbolInfluence> getInfluencedBySymbolsList() {
+      if (influencedBySymbolsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(influencedBySymbols_);
+      } else {
+        return influencedBySymbolsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public int getInfluencedBySymbolsCount() {
+      if (influencedBySymbolsBuilder_ == null) {
+        return influencedBySymbols_.size();
+      } else {
+        return influencedBySymbolsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public org.tti.tokens.model.artifact.SymbolInfluence getInfluencedBySymbols(int index) {
+      if (influencedBySymbolsBuilder_ == null) {
+        return influencedBySymbols_.get(index);
+      } else {
+        return influencedBySymbolsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder setInfluencedBySymbols(
+        int index, org.tti.tokens.model.artifact.SymbolInfluence value) {
+      if (influencedBySymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInfluencedBySymbolsIsMutable();
+        influencedBySymbols_.set(index, value);
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder setInfluencedBySymbols(
+        int index, org.tti.tokens.model.artifact.SymbolInfluence.Builder builderForValue) {
+      if (influencedBySymbolsBuilder_ == null) {
+        ensureInfluencedBySymbolsIsMutable();
+        influencedBySymbols_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder addInfluencedBySymbols(org.tti.tokens.model.artifact.SymbolInfluence value) {
+      if (influencedBySymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInfluencedBySymbolsIsMutable();
+        influencedBySymbols_.add(value);
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder addInfluencedBySymbols(
+        int index, org.tti.tokens.model.artifact.SymbolInfluence value) {
+      if (influencedBySymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInfluencedBySymbolsIsMutable();
+        influencedBySymbols_.add(index, value);
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder addInfluencedBySymbols(
+        org.tti.tokens.model.artifact.SymbolInfluence.Builder builderForValue) {
+      if (influencedBySymbolsBuilder_ == null) {
+        ensureInfluencedBySymbolsIsMutable();
+        influencedBySymbols_.add(builderForValue.build());
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder addInfluencedBySymbols(
+        int index, org.tti.tokens.model.artifact.SymbolInfluence.Builder builderForValue) {
+      if (influencedBySymbolsBuilder_ == null) {
+        ensureInfluencedBySymbolsIsMutable();
+        influencedBySymbols_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder addAllInfluencedBySymbols(
+        java.lang.Iterable<? extends org.tti.tokens.model.artifact.SymbolInfluence> values) {
+      if (influencedBySymbolsBuilder_ == null) {
+        ensureInfluencedBySymbolsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, influencedBySymbols_);
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder clearInfluencedBySymbols() {
+      if (influencedBySymbolsBuilder_ == null) {
+        influencedBySymbols_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public Builder removeInfluencedBySymbols(int index) {
+      if (influencedBySymbolsBuilder_ == null) {
+        ensureInfluencedBySymbolsIsMutable();
+        influencedBySymbols_.remove(index);
+        onChanged();
+      } else {
+        influencedBySymbolsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public org.tti.tokens.model.artifact.SymbolInfluence.Builder getInfluencedBySymbolsBuilder(
+        int index) {
+      return getInfluencedBySymbolsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder getInfluencedBySymbolsOrBuilder(
+        int index) {
+      if (influencedBySymbolsBuilder_ == null) {
+        return influencedBySymbols_.get(index);  } else {
+        return influencedBySymbolsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public java.util.List<? extends org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder> 
+         getInfluencedBySymbolsOrBuilderList() {
+      if (influencedBySymbolsBuilder_ != null) {
+        return influencedBySymbolsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(influencedBySymbols_);
+      }
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public org.tti.tokens.model.artifact.SymbolInfluence.Builder addInfluencedBySymbolsBuilder() {
+      return getInfluencedBySymbolsFieldBuilder().addBuilder(
+          org.tti.tokens.model.artifact.SymbolInfluence.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public org.tti.tokens.model.artifact.SymbolInfluence.Builder addInfluencedBySymbolsBuilder(
+        int index) {
+      return getInfluencedBySymbolsFieldBuilder().addBuilder(
+          index, org.tti.tokens.model.artifact.SymbolInfluence.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+     */
+    public java.util.List<org.tti.tokens.model.artifact.SymbolInfluence.Builder> 
+         getInfluencedBySymbolsBuilderList() {
+      return getInfluencedBySymbolsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.artifact.SymbolInfluence, org.tti.tokens.model.artifact.SymbolInfluence.Builder, org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder> 
+        getInfluencedBySymbolsFieldBuilder() {
+      if (influencedBySymbolsBuilder_ == null) {
+        influencedBySymbolsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.tti.tokens.model.artifact.SymbolInfluence, org.tti.tokens.model.artifact.SymbolInfluence.Builder, org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder>(
+                influencedBySymbols_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        influencedBySymbols_ = null;
+      }
+      return influencedBySymbolsBuilder_;
+    }
+
     private java.util.List<org.tti.tokens.model.artifact.ArtifactFile> artifactFiles_ =
       java.util.Collections.emptyList();
     private void ensureArtifactFilesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         artifactFiles_ = new java.util.ArrayList<org.tti.tokens.model.artifact.ArtifactFile>(artifactFiles_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
        }
     }
 
@@ -1930,7 +2273,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public java.util.List<org.tti.tokens.model.artifact.ArtifactFile> getArtifactFilesList() {
       if (artifactFilesBuilder_ == null) {
@@ -1944,7 +2287,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public int getArtifactFilesCount() {
       if (artifactFilesBuilder_ == null) {
@@ -1958,7 +2301,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactFile getArtifactFiles(int index) {
       if (artifactFilesBuilder_ == null) {
@@ -1972,7 +2315,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder setArtifactFiles(
         int index, org.tti.tokens.model.artifact.ArtifactFile value) {
@@ -1993,7 +2336,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder setArtifactFiles(
         int index, org.tti.tokens.model.artifact.ArtifactFile.Builder builderForValue) {
@@ -2011,7 +2354,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder addArtifactFiles(org.tti.tokens.model.artifact.ArtifactFile value) {
       if (artifactFilesBuilder_ == null) {
@@ -2031,7 +2374,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder addArtifactFiles(
         int index, org.tti.tokens.model.artifact.ArtifactFile value) {
@@ -2052,7 +2395,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder addArtifactFiles(
         org.tti.tokens.model.artifact.ArtifactFile.Builder builderForValue) {
@@ -2070,7 +2413,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder addArtifactFiles(
         int index, org.tti.tokens.model.artifact.ArtifactFile.Builder builderForValue) {
@@ -2088,7 +2431,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder addAllArtifactFiles(
         java.lang.Iterable<? extends org.tti.tokens.model.artifact.ArtifactFile> values) {
@@ -2107,12 +2450,12 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder clearArtifactFiles() {
       if (artifactFilesBuilder_ == null) {
         artifactFiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         artifactFilesBuilder_.clear();
@@ -2124,7 +2467,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public Builder removeArtifactFiles(int index) {
       if (artifactFilesBuilder_ == null) {
@@ -2141,7 +2484,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactFile.Builder getArtifactFilesBuilder(
         int index) {
@@ -2152,7 +2495,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactFileOrBuilder getArtifactFilesOrBuilder(
         int index) {
@@ -2166,7 +2509,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactFileOrBuilder> 
          getArtifactFilesOrBuilderList() {
@@ -2181,7 +2524,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactFile.Builder addArtifactFilesBuilder() {
       return getArtifactFilesFieldBuilder().addBuilder(
@@ -2192,7 +2535,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public org.tti.tokens.model.artifact.ArtifactFile.Builder addArtifactFilesBuilder(
         int index) {
@@ -2204,7 +2547,7 @@ private static final long serialVersionUID = 0L;
      *loop through the files and read them in as bytes to produce a complete artifact object model instance.
      * </pre>
      *
-     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
      */
     public java.util.List<org.tti.tokens.model.artifact.ArtifactFile.Builder> 
          getArtifactFilesBuilderList() {
@@ -2217,7 +2560,7 @@ private static final long serialVersionUID = 0L;
         artifactFilesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.artifact.ArtifactFile, org.tti.tokens.model.artifact.ArtifactFile.Builder, org.tti.tokens.model.artifact.ArtifactFileOrBuilder>(
                 artifactFiles_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         artifactFiles_ = null;
@@ -2229,13 +2572,13 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.artifact.Maps, org.tti.tokens.model.artifact.Maps.Builder, org.tti.tokens.model.artifact.MapsOrBuilder> mapsBuilder_;
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public boolean hasMaps() {
       return mapsBuilder_ != null || maps_ != null;
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public org.tti.tokens.model.artifact.Maps getMaps() {
       if (mapsBuilder_ == null) {
@@ -2245,7 +2588,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public Builder setMaps(org.tti.tokens.model.artifact.Maps value) {
       if (mapsBuilder_ == null) {
@@ -2261,7 +2604,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public Builder setMaps(
         org.tti.tokens.model.artifact.Maps.Builder builderForValue) {
@@ -2275,7 +2618,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public Builder mergeMaps(org.tti.tokens.model.artifact.Maps value) {
       if (mapsBuilder_ == null) {
@@ -2293,7 +2636,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public Builder clearMaps() {
       if (mapsBuilder_ == null) {
@@ -2307,7 +2650,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public org.tti.tokens.model.artifact.Maps.Builder getMapsBuilder() {
       
@@ -2315,7 +2658,7 @@ private static final long serialVersionUID = 0L;
       return getMapsFieldBuilder().getBuilder();
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     public org.tti.tokens.model.artifact.MapsOrBuilder getMapsOrBuilder() {
       if (mapsBuilder_ != null) {
@@ -2326,7 +2669,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+     * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.artifact.Maps, org.tti.tokens.model.artifact.Maps.Builder, org.tti.tokens.model.artifact.MapsOrBuilder> 

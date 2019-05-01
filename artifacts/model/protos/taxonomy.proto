@@ -7,11 +7,12 @@ option csharp_namespace = "TTF.Tokens.Model.Taxonomy";
 option java_package = "org.tokentaxonomyinitiative.tokens.model.taxonomy";
 option java_multiple_files = true;
 
+//each collection defined in a map with the index being the symbol of the artifact for the collection.
 message Taxonomy{
     string version = 1;
-    repeated taxonomy.model.core.Base base_token_types = 2;
-    repeated taxonomy.model.core.Behavior behaviors = 3;
-    repeated taxonomy.model.core.BehaviorGroup behavior_groups = 4;
-    repeated taxonomy.model.core.PropertySet property_sets = 5;
-    repeated taxonomy.model.core.TokenTemplate token_templates = 6;
+    map<string, taxonomy.model.core.Base> base_token_types = 2;
+    map<string, taxonomy.model.core.Behavior> behaviors = 3;
+    map<string, taxonomy.model.core.BehaviorGroup> behavior_groups = 4;
+    map<string, taxonomy.model.core.PropertySet> property_sets = 5;
+    map<string, taxonomy.model.core.TokenTemplate> token_templates = 6;
 }

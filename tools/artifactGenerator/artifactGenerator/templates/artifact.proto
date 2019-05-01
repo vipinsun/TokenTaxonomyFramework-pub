@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ARTIFACT;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "TTF.Tokens.tokens";
+option java_package = "org.tti.tokens";
+option java_multiple_files = true;

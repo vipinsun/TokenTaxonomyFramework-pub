@@ -22,6 +22,7 @@ message NotifyOwnerOfEncumberRequest{
     string encumber_id = 1;
     string d_i_d = 3;
 }
+
 message EncumberResponse {
     tokens.MessageHeader Header = 1;
     tokens.TransactionConfirmation confirmations = 2;

@@ -117,6 +117,10 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   * <pre>
+   *property name if a property-set
+   * </pre>
+   *
    * <code>string name = 1;</code>
    */
   public java.lang.String getName() {
@@ -132,6 +136,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *property name if a property-set
+   * </pre>
+   *
    * <code>string name = 1;</code>
    */
   public com.google.protobuf.ByteString
@@ -151,6 +159,10 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
+   * <pre>
+   *include the data type for the value.
+   * </pre>
+   *
    * <code>string description = 2;</code>
    */
   public java.lang.String getDescription() {
@@ -166,6 +178,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *include the data type for the value.
+   * </pre>
+   *
    * <code>string description = 2;</code>
    */
   public com.google.protobuf.ByteString
@@ -605,6 +621,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     * <pre>
+     *property name if a property-set
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
@@ -620,6 +640,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *property name if a property-set
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -636,6 +660,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *property name if a property-set
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public Builder setName(
@@ -649,6 +677,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *property name if a property-set
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
@@ -658,6 +690,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *property name if a property-set
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public Builder setNameBytes(
@@ -674,6 +710,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     * <pre>
+     *include the data type for the value.
+     * </pre>
+     *
      * <code>string description = 2;</code>
      */
     public java.lang.String getDescription() {
@@ -689,6 +729,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *include the data type for the value.
+     * </pre>
+     *
      * <code>string description = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -705,6 +749,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *include the data type for the value.
+     * </pre>
+     *
      * <code>string description = 2;</code>
      */
     public Builder setDescription(
@@ -718,6 +766,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *include the data type for the value.
+     * </pre>
+     *
      * <code>string description = 2;</code>
      */
     public Builder clearDescription() {
@@ -727,6 +779,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *include the data type for the value.
+     * </pre>
+     *
      * <code>string description = 2;</code>
      */
     public Builder setDescriptionBytes(

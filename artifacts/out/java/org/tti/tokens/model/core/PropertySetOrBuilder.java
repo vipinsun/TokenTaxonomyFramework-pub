@@ -21,26 +21,26 @@ public interface PropertySetOrBuilder extends
   org.tti.tokens.model.artifact.ArtifactOrBuilder getArtifactOrBuilder();
 
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  java.util.List<org.tti.tokens.model.core.Invocation> 
-      getPropertyInvocationsList();
+  java.util.List<org.tti.tokens.model.core.Property> 
+      getPropertiesList();
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  org.tti.tokens.model.core.Invocation getPropertyInvocations(int index);
+  org.tti.tokens.model.core.Property getProperties(int index);
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  int getPropertyInvocationsCount();
+  int getPropertiesCount();
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  java.util.List<? extends org.tti.tokens.model.core.InvocationOrBuilder> 
-      getPropertyInvocationsOrBuilderList();
+  java.util.List<? extends org.tti.tokens.model.core.PropertyOrBuilder> 
+      getPropertiesOrBuilderList();
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  org.tti.tokens.model.core.InvocationOrBuilder getPropertyInvocationsOrBuilder(
+  org.tti.tokens.model.core.PropertyOrBuilder getPropertiesOrBuilder(
       int index);
 }

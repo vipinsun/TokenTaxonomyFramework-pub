@@ -21,50 +21,90 @@ public interface BaseOrBuilder extends
   org.tti.tokens.model.artifact.ArtifactOrBuilder getArtifactOrBuilder();
 
   /**
+   * <pre>
+   *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+   * </pre>
+   *
    * <code>string name = 2;</code>
    */
   java.lang.String getName();
   /**
+   * <pre>
+   *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+   * </pre>
+   *
    * <code>string name = 2;</code>
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
+   * <pre>
+   *an optionally unique symbol or identifier
+   * </pre>
+   *
    * <code>string symbol = 3;</code>
    */
   java.lang.String getSymbol();
   /**
+   * <pre>
+   *an optionally unique symbol or identifier
+   * </pre>
+   *
    * <code>string symbol = 3;</code>
    */
   com.google.protobuf.ByteString
       getSymbolBytes();
 
   /**
+   * <pre>
+   *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+   * </pre>
+   *
    * <code>string owner = 4;</code>
    */
   java.lang.String getOwner();
   /**
+   * <pre>
+   *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+   * </pre>
+   *
    * <code>string owner = 4;</code>
    */
   com.google.protobuf.ByteString
       getOwnerBytes();
 
   /**
+   * <pre>
+   *Can represent the initial quantity created or the total minted or issued for the class.
+   * </pre>
+   *
    * <code>bytes quantity = 5;</code>
    */
   com.google.protobuf.ByteString getQuantity();
 
   /**
+   * <pre>
+   *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+   * </pre>
+   *
    * <code>int32 decimals = 6;</code>
    */
   int getDecimals();
 
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
   int getTokenPropertiesCount();
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
   boolean containsTokenProperties(
@@ -76,11 +116,19 @@ public interface BaseOrBuilder extends
   java.util.Map<java.lang.String, java.lang.String>
   getTokenProperties();
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getTokenPropertiesMap();
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
 
@@ -88,6 +136,10 @@ public interface BaseOrBuilder extends
       java.lang.String key,
       java.lang.String defaultValue);
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
 

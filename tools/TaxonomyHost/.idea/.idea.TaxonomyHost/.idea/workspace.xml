@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a725583d-0766-41f5-a02f-3c183a5d3393" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behavior-groups/supply-control/supply-control.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/burnable/burnable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/delegable/delegable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/encumberable/encumberable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/encumberable/encumberable.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/behaviors/encumberable/encumberable.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/loggable/logable.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/loggable/loggable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/mintable/mintable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/roles/roles-sequence.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/roles/roles.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/singleton/singleton.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/sub-dividable/sub-dividable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/transferable/transferable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/core.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/core.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Artifact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOuterClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BaseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BaseOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Behavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Behavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroupOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroupOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Core.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Invocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Invocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySetOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySetOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../presentations/TTF-Presentation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../presentations/TTF-Presentation.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/runConfigurations/Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/runConfigurations/Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/FactGen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/FactGen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/Utils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="jNUjIywJ" />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/riderModule.iml" />
+        <option value="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/indexLayout.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="2510" />
+    <option name="height" value="1123" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="FileSystemExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a725583d-0766-41f5-a02f-3c183a5d3393" name="Default Changelist" comment="" />
+      <created>1556643348314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556643348314</updated>
+      <workItem from="1556643349665" duration="1245000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1245000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="3440" height="1331" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Azure Explorer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12190813" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="NuGet" />
+      <window_info anchor="bottom" id="Azure Activity Log" />
+      <window_info anchor="bottom" id="Docker" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Dilbert" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Cargo" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -44,15 +44,21 @@ message Artifact {
     repeated string aliases = 3;
     ArtifactSymbol artifact_symbol = 4;
     string control_uri = 5;
-    ArtifactDefinition definition = 6; //Base, Behavior or Behavior group type indicated by ArtifactType
+    ArtifactDefinition artifact_definition = 6; //Base, Behavior or Behavior group type indicated by ArtifactType
     repeated ArtifactSymbol incompatible_with_symbols = 7; //for behaviors that have opposites, or if another behavior or property-set
-    repeated ArtifactFile artifact_files = 8; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
-    Maps maps = 9;
+    repeated SymbolInfluence influenced_by_symbols = 8;
+    repeated ArtifactFile artifact_files = 9; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    Maps maps = 10;
 }
 
 message ArtifactSymbol{
     string visual_symbol = 4;
     string tooling_symbol = 5;
+}
+
+message SymbolInfluence{
+    string description = 1; //describe how the symbol influences this artifact, like non-sub-dividable or delegable.
+    ArtifactSymbol symbol = 2;
 }
 
 message ArtifactDefinition{
