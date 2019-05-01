@@ -1,6 +1,6 @@
 # Contents
 
-©2019 Token Taxonomy Initiative Inc. (“EEA”).  All Rights Reserved. EEA Proprietary and Confidential.
+©2019 Token Taxonomy Initiative Inc. (“EEA”).  All Rights Reserved. EEA Proprietary and Confidential. This Github repository has been set up as a collaboration site for its users and by accessing this GitHub repository or using it in any way, you are consenting to be bound by the [Token Taxonomy Initiative Terms and Conditions of Use](TERMS-OF-USE) of GitHub Repository.
 
 The contents of this repo contain the Token Taxonomy Framework (TTF) comprised of the following:
 

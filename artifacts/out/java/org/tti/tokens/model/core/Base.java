@@ -5,7 +5,7 @@ package org.tti.tokens.model.core;
 
 /**
  * <pre>
- *all tokens inherit from the base and implicitly support construction.
+ *all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
  * </pre>
  *
  * Protobuf type {@code taxonomy.model.core.Base}
@@ -173,6 +173,10 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
+   * <pre>
+   *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+   * </pre>
+   *
    * <code>string name = 2;</code>
    */
   public java.lang.String getName() {
@@ -188,6 +192,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+   * </pre>
+   *
    * <code>string name = 2;</code>
    */
   public com.google.protobuf.ByteString
@@ -207,6 +215,10 @@ private static final long serialVersionUID = 0L;
   public static final int SYMBOL_FIELD_NUMBER = 3;
   private volatile java.lang.Object symbol_;
   /**
+   * <pre>
+   *an optionally unique symbol or identifier
+   * </pre>
+   *
    * <code>string symbol = 3;</code>
    */
   public java.lang.String getSymbol() {
@@ -222,6 +234,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *an optionally unique symbol or identifier
+   * </pre>
+   *
    * <code>string symbol = 3;</code>
    */
   public com.google.protobuf.ByteString
@@ -241,6 +257,10 @@ private static final long serialVersionUID = 0L;
   public static final int OWNER_FIELD_NUMBER = 4;
   private volatile java.lang.Object owner_;
   /**
+   * <pre>
+   *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+   * </pre>
+   *
    * <code>string owner = 4;</code>
    */
   public java.lang.String getOwner() {
@@ -256,6 +276,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+   * </pre>
+   *
    * <code>string owner = 4;</code>
    */
   public com.google.protobuf.ByteString
@@ -275,6 +299,10 @@ private static final long serialVersionUID = 0L;
   public static final int QUANTITY_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString quantity_;
   /**
+   * <pre>
+   *Can represent the initial quantity created or the total minted or issued for the class.
+   * </pre>
+   *
    * <code>bytes quantity = 5;</code>
    */
   public com.google.protobuf.ByteString getQuantity() {
@@ -284,6 +312,10 @@ private static final long serialVersionUID = 0L;
   public static final int DECIMALS_FIELD_NUMBER = 6;
   private int decimals_;
   /**
+   * <pre>
+   *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+   * </pre>
+   *
    * <code>int32 decimals = 6;</code>
    */
   public int getDecimals() {
@@ -317,6 +349,10 @@ private static final long serialVersionUID = 0L;
     return internalGetTokenProperties().getMap().size();
   }
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
 
@@ -333,6 +369,10 @@ private static final long serialVersionUID = 0L;
     return getTokenPropertiesMap();
   }
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
 
@@ -340,6 +380,10 @@ private static final long serialVersionUID = 0L;
     return internalGetTokenProperties().getMap();
   }
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
 
@@ -352,6 +396,10 @@ private static final long serialVersionUID = 0L;
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   * <pre>
+   *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+   * </pre>
+   *
    * <code>map&lt;string, string&gt; token_properties = 7;</code>
    */
 
@@ -602,7 +650,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *all tokens inherit from the base and implicitly support construction.
+   *all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
    * </pre>
    *
    * Protobuf type {@code taxonomy.model.core.Base}
@@ -942,6 +990,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     * <pre>
+     *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     public java.lang.String getName() {
@@ -957,6 +1009,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -973,6 +1029,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     public Builder setName(
@@ -986,6 +1046,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     public Builder clearName() {
@@ -995,6 +1059,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+     * </pre>
+     *
      * <code>string name = 2;</code>
      */
     public Builder setNameBytes(
@@ -1011,6 +1079,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object symbol_ = "";
     /**
+     * <pre>
+     *an optionally unique symbol or identifier
+     * </pre>
+     *
      * <code>string symbol = 3;</code>
      */
     public java.lang.String getSymbol() {
@@ -1026,6 +1098,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *an optionally unique symbol or identifier
+     * </pre>
+     *
      * <code>string symbol = 3;</code>
      */
     public com.google.protobuf.ByteString
@@ -1042,6 +1118,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *an optionally unique symbol or identifier
+     * </pre>
+     *
      * <code>string symbol = 3;</code>
      */
     public Builder setSymbol(
@@ -1055,6 +1135,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *an optionally unique symbol or identifier
+     * </pre>
+     *
      * <code>string symbol = 3;</code>
      */
     public Builder clearSymbol() {
@@ -1064,6 +1148,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *an optionally unique symbol or identifier
+     * </pre>
+     *
      * <code>string symbol = 3;</code>
      */
     public Builder setSymbolBytes(
@@ -1080,6 +1168,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object owner_ = "";
     /**
+     * <pre>
+     *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+     * </pre>
+     *
      * <code>string owner = 4;</code>
      */
     public java.lang.String getOwner() {
@@ -1095,6 +1187,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+     * </pre>
+     *
      * <code>string owner = 4;</code>
      */
     public com.google.protobuf.ByteString
@@ -1111,6 +1207,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+     * </pre>
+     *
      * <code>string owner = 4;</code>
      */
     public Builder setOwner(
@@ -1124,6 +1224,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+     * </pre>
+     *
      * <code>string owner = 4;</code>
      */
     public Builder clearOwner() {
@@ -1133,6 +1237,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+     * </pre>
+     *
      * <code>string owner = 4;</code>
      */
     public Builder setOwnerBytes(
@@ -1149,12 +1257,20 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString quantity_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     * <pre>
+     *Can represent the initial quantity created or the total minted or issued for the class.
+     * </pre>
+     *
      * <code>bytes quantity = 5;</code>
      */
     public com.google.protobuf.ByteString getQuantity() {
       return quantity_;
     }
     /**
+     * <pre>
+     *Can represent the initial quantity created or the total minted or issued for the class.
+     * </pre>
+     *
      * <code>bytes quantity = 5;</code>
      */
     public Builder setQuantity(com.google.protobuf.ByteString value) {
@@ -1167,6 +1283,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *Can represent the initial quantity created or the total minted or issued for the class.
+     * </pre>
+     *
      * <code>bytes quantity = 5;</code>
      */
     public Builder clearQuantity() {
@@ -1178,12 +1298,20 @@ private static final long serialVersionUID = 0L;
 
     private int decimals_ ;
     /**
+     * <pre>
+     *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+     * </pre>
+     *
      * <code>int32 decimals = 6;</code>
      */
     public int getDecimals() {
       return decimals_;
     }
     /**
+     * <pre>
+     *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+     * </pre>
+     *
      * <code>int32 decimals = 6;</code>
      */
     public Builder setDecimals(int value) {
@@ -1193,6 +1321,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+     * </pre>
+     *
      * <code>int32 decimals = 6;</code>
      */
     public Builder clearDecimals() {
@@ -1229,6 +1361,10 @@ private static final long serialVersionUID = 0L;
       return internalGetTokenProperties().getMap().size();
     }
     /**
+     * <pre>
+     *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; token_properties = 7;</code>
      */
 
@@ -1245,6 +1381,10 @@ private static final long serialVersionUID = 0L;
       return getTokenPropertiesMap();
     }
     /**
+     * <pre>
+     *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; token_properties = 7;</code>
      */
 
@@ -1252,6 +1392,10 @@ private static final long serialVersionUID = 0L;
       return internalGetTokenProperties().getMap();
     }
     /**
+     * <pre>
+     *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; token_properties = 7;</code>
      */
 
@@ -1264,6 +1408,10 @@ private static final long serialVersionUID = 0L;
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; token_properties = 7;</code>
      */
 
@@ -1284,6 +1432,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; token_properties = 7;</code>
      */
 
@@ -1303,6 +1455,10 @@ private static final long serialVersionUID = 0L;
       return internalGetMutableTokenProperties().getMutableMap();
     }
     /**
+     * <pre>
+     *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; token_properties = 7;</code>
      */
     public Builder putTokenProperties(
@@ -1315,6 +1471,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+     * </pre>
+     *
      * <code>map&lt;string, string&gt; token_properties = 7;</code>
      */
 

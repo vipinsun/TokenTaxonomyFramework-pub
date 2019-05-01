@@ -21,45 +21,80 @@ public interface BehaviorGroupOrBuilder extends
   org.tti.tokens.model.artifact.ArtifactOrBuilder getArtifactOrBuilder();
 
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> 
       getBehaviorSymbolsList();
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
+   */
+  org.tti.tokens.model.artifact.ArtifactSymbol getBehaviorSymbols(int index);
+  /**
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
   int getBehaviorSymbolsCount();
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
-  java.lang.String getBehaviorSymbols(int index);
+  java.util.List<? extends org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+      getBehaviorSymbolsOrBuilderList();
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getBehaviorSymbolsBytes(int index);
+  org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getBehaviorSymbolsOrBuilder(
+      int index);
 
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
    */
-  java.util.List<org.tti.tokens.model.artifact.Artifact> 
-      getBehaviorArtifactsList();
+  int getMemberBehaviorArtifactsCount();
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
    */
-  org.tti.tokens.model.artifact.Artifact getBehaviorArtifacts(int index);
+  boolean containsMemberBehaviorArtifacts(
+      java.lang.String key);
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * Use {@link #getMemberBehaviorArtifactsMap()} instead.
    */
-  int getBehaviorArtifactsCount();
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+  getMemberBehaviorArtifacts();
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
    */
-  java.util.List<? extends org.tti.tokens.model.artifact.ArtifactOrBuilder> 
-      getBehaviorArtifactsOrBuilderList();
+  java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+  getMemberBehaviorArtifactsMap();
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
    */
-  org.tti.tokens.model.artifact.ArtifactOrBuilder getBehaviorArtifactsOrBuilder(
-      int index);
+
+  org.tti.tokens.model.artifact.Artifact getMemberBehaviorArtifactsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.artifact.Artifact defaultValue);
+  /**
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+   */
+
+  org.tti.tokens.model.artifact.Artifact getMemberBehaviorArtifactsOrThrow(
+      java.lang.String key);
 }

@@ -8,20 +8,36 @@ public interface InvocationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   *property name if a property-set
+   * </pre>
+   *
    * <code>string name = 1;</code>
    */
   java.lang.String getName();
   /**
+   * <pre>
+   *property name if a property-set
+   * </pre>
+   *
    * <code>string name = 1;</code>
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
+   * <pre>
+   *include the data type for the value.
+   * </pre>
+   *
    * <code>string description = 2;</code>
    */
   java.lang.String getDescription();
   /**
+   * <pre>
+   *include the data type for the value.
+   * </pre>
+   *
    * <code>string description = 2;</code>
    */
   com.google.protobuf.ByteString

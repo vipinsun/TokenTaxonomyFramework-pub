@@ -21,7 +21,7 @@ namespace ArtifactGenerator
 				else
 					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/log4net.config"));
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				if (Os.IsWindows())
 					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log4net.config"));

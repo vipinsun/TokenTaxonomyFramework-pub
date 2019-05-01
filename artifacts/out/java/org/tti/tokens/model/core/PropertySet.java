@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PropertySet() {
-    propertyInvocations_ = java.util.Collections.emptyList();
+    properties_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -58,11 +58,11 @@ private static final long serialVersionUID = 0L;
           }
           case 18: {
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              propertyInvocations_ = new java.util.ArrayList<org.tti.tokens.model.core.Invocation>();
+              properties_ = new java.util.ArrayList<org.tti.tokens.model.core.Property>();
               mutable_bitField0_ |= 0x00000002;
             }
-            propertyInvocations_.add(
-                input.readMessage(org.tti.tokens.model.core.Invocation.parser(), extensionRegistry));
+            properties_.add(
+                input.readMessage(org.tti.tokens.model.core.Property.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -81,7 +81,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        propertyInvocations_ = java.util.Collections.unmodifiableList(propertyInvocations_);
+        properties_ = java.util.Collections.unmodifiableList(properties_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -122,39 +122,39 @@ private static final long serialVersionUID = 0L;
     return getArtifact();
   }
 
-  public static final int PROPERTY_INVOCATIONS_FIELD_NUMBER = 2;
-  private java.util.List<org.tti.tokens.model.core.Invocation> propertyInvocations_;
+  public static final int PROPERTIES_FIELD_NUMBER = 2;
+  private java.util.List<org.tti.tokens.model.core.Property> properties_;
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  public java.util.List<org.tti.tokens.model.core.Invocation> getPropertyInvocationsList() {
-    return propertyInvocations_;
+  public java.util.List<org.tti.tokens.model.core.Property> getPropertiesList() {
+    return properties_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  public java.util.List<? extends org.tti.tokens.model.core.InvocationOrBuilder> 
-      getPropertyInvocationsOrBuilderList() {
-    return propertyInvocations_;
+  public java.util.List<? extends org.tti.tokens.model.core.PropertyOrBuilder> 
+      getPropertiesOrBuilderList() {
+    return properties_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  public int getPropertyInvocationsCount() {
-    return propertyInvocations_.size();
+  public int getPropertiesCount() {
+    return properties_.size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  public org.tti.tokens.model.core.Invocation getPropertyInvocations(int index) {
-    return propertyInvocations_.get(index);
+  public org.tti.tokens.model.core.Property getProperties(int index) {
+    return properties_.get(index);
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+   * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
    */
-  public org.tti.tokens.model.core.InvocationOrBuilder getPropertyInvocationsOrBuilder(
+  public org.tti.tokens.model.core.PropertyOrBuilder getPropertiesOrBuilder(
       int index) {
-    return propertyInvocations_.get(index);
+    return properties_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -174,8 +174,8 @@ private static final long serialVersionUID = 0L;
     if (artifact_ != null) {
       output.writeMessage(1, getArtifact());
     }
-    for (int i = 0; i < propertyInvocations_.size(); i++) {
-      output.writeMessage(2, propertyInvocations_.get(i));
+    for (int i = 0; i < properties_.size(); i++) {
+      output.writeMessage(2, properties_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -190,9 +190,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getArtifact());
     }
-    for (int i = 0; i < propertyInvocations_.size(); i++) {
+    for (int i = 0; i < properties_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, propertyInvocations_.get(i));
+        .computeMessageSize(2, properties_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -214,8 +214,8 @@ private static final long serialVersionUID = 0L;
       if (!getArtifact()
           .equals(other.getArtifact())) return false;
     }
-    if (!getPropertyInvocationsList()
-        .equals(other.getPropertyInvocationsList())) return false;
+    if (!getPropertiesList()
+        .equals(other.getPropertiesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -231,9 +231,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
       hash = (53 * hash) + getArtifact().hashCode();
     }
-    if (getPropertyInvocationsCount() > 0) {
-      hash = (37 * hash) + PROPERTY_INVOCATIONS_FIELD_NUMBER;
-      hash = (53 * hash) + getPropertyInvocationsList().hashCode();
+    if (getPropertiesCount() > 0) {
+      hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
+      hash = (53 * hash) + getPropertiesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -363,7 +363,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getPropertyInvocationsFieldBuilder();
+        getPropertiesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -375,11 +375,11 @@ private static final long serialVersionUID = 0L;
         artifact_ = null;
         artifactBuilder_ = null;
       }
-      if (propertyInvocationsBuilder_ == null) {
-        propertyInvocations_ = java.util.Collections.emptyList();
+      if (propertiesBuilder_ == null) {
+        properties_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
       } else {
-        propertyInvocationsBuilder_.clear();
+        propertiesBuilder_.clear();
       }
       return this;
     }
@@ -414,14 +414,14 @@ private static final long serialVersionUID = 0L;
       } else {
         result.artifact_ = artifactBuilder_.build();
       }
-      if (propertyInvocationsBuilder_ == null) {
+      if (propertiesBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
-          propertyInvocations_ = java.util.Collections.unmodifiableList(propertyInvocations_);
+          properties_ = java.util.Collections.unmodifiableList(properties_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.propertyInvocations_ = propertyInvocations_;
+        result.properties_ = properties_;
       } else {
-        result.propertyInvocations_ = propertyInvocationsBuilder_.build();
+        result.properties_ = propertiesBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -475,29 +475,29 @@ private static final long serialVersionUID = 0L;
       if (other.hasArtifact()) {
         mergeArtifact(other.getArtifact());
       }
-      if (propertyInvocationsBuilder_ == null) {
-        if (!other.propertyInvocations_.isEmpty()) {
-          if (propertyInvocations_.isEmpty()) {
-            propertyInvocations_ = other.propertyInvocations_;
+      if (propertiesBuilder_ == null) {
+        if (!other.properties_.isEmpty()) {
+          if (properties_.isEmpty()) {
+            properties_ = other.properties_;
             bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensurePropertyInvocationsIsMutable();
-            propertyInvocations_.addAll(other.propertyInvocations_);
+            ensurePropertiesIsMutable();
+            properties_.addAll(other.properties_);
           }
           onChanged();
         }
       } else {
-        if (!other.propertyInvocations_.isEmpty()) {
-          if (propertyInvocationsBuilder_.isEmpty()) {
-            propertyInvocationsBuilder_.dispose();
-            propertyInvocationsBuilder_ = null;
-            propertyInvocations_ = other.propertyInvocations_;
+        if (!other.properties_.isEmpty()) {
+          if (propertiesBuilder_.isEmpty()) {
+            propertiesBuilder_.dispose();
+            propertiesBuilder_ = null;
+            properties_ = other.properties_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            propertyInvocationsBuilder_ = 
+            propertiesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPropertyInvocationsFieldBuilder() : null;
+                 getPropertiesFieldBuilder() : null;
           } else {
-            propertyInvocationsBuilder_.addAllMessages(other.propertyInvocations_);
+            propertiesBuilder_.addAllMessages(other.properties_);
           }
         }
       }
@@ -648,244 +648,244 @@ private static final long serialVersionUID = 0L;
       return artifactBuilder_;
     }
 
-    private java.util.List<org.tti.tokens.model.core.Invocation> propertyInvocations_ =
+    private java.util.List<org.tti.tokens.model.core.Property> properties_ =
       java.util.Collections.emptyList();
-    private void ensurePropertyInvocationsIsMutable() {
+    private void ensurePropertiesIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        propertyInvocations_ = new java.util.ArrayList<org.tti.tokens.model.core.Invocation>(propertyInvocations_);
+        properties_ = new java.util.ArrayList<org.tti.tokens.model.core.Property>(properties_);
         bitField0_ |= 0x00000002;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.Invocation, org.tti.tokens.model.core.Invocation.Builder, org.tti.tokens.model.core.InvocationOrBuilder> propertyInvocationsBuilder_;
+        org.tti.tokens.model.core.Property, org.tti.tokens.model.core.Property.Builder, org.tti.tokens.model.core.PropertyOrBuilder> propertiesBuilder_;
 
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public java.util.List<org.tti.tokens.model.core.Invocation> getPropertyInvocationsList() {
-      if (propertyInvocationsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(propertyInvocations_);
+    public java.util.List<org.tti.tokens.model.core.Property> getPropertiesList() {
+      if (propertiesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(properties_);
       } else {
-        return propertyInvocationsBuilder_.getMessageList();
+        return propertiesBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public int getPropertyInvocationsCount() {
-      if (propertyInvocationsBuilder_ == null) {
-        return propertyInvocations_.size();
+    public int getPropertiesCount() {
+      if (propertiesBuilder_ == null) {
+        return properties_.size();
       } else {
-        return propertyInvocationsBuilder_.getCount();
+        return propertiesBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public org.tti.tokens.model.core.Invocation getPropertyInvocations(int index) {
-      if (propertyInvocationsBuilder_ == null) {
-        return propertyInvocations_.get(index);
+    public org.tti.tokens.model.core.Property getProperties(int index) {
+      if (propertiesBuilder_ == null) {
+        return properties_.get(index);
       } else {
-        return propertyInvocationsBuilder_.getMessage(index);
+        return propertiesBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder setPropertyInvocations(
-        int index, org.tti.tokens.model.core.Invocation value) {
-      if (propertyInvocationsBuilder_ == null) {
+    public Builder setProperties(
+        int index, org.tti.tokens.model.core.Property value) {
+      if (propertiesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensurePropertyInvocationsIsMutable();
-        propertyInvocations_.set(index, value);
+        ensurePropertiesIsMutable();
+        properties_.set(index, value);
         onChanged();
       } else {
-        propertyInvocationsBuilder_.setMessage(index, value);
+        propertiesBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder setPropertyInvocations(
-        int index, org.tti.tokens.model.core.Invocation.Builder builderForValue) {
-      if (propertyInvocationsBuilder_ == null) {
-        ensurePropertyInvocationsIsMutable();
-        propertyInvocations_.set(index, builderForValue.build());
+    public Builder setProperties(
+        int index, org.tti.tokens.model.core.Property.Builder builderForValue) {
+      if (propertiesBuilder_ == null) {
+        ensurePropertiesIsMutable();
+        properties_.set(index, builderForValue.build());
         onChanged();
       } else {
-        propertyInvocationsBuilder_.setMessage(index, builderForValue.build());
+        propertiesBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder addPropertyInvocations(org.tti.tokens.model.core.Invocation value) {
-      if (propertyInvocationsBuilder_ == null) {
+    public Builder addProperties(org.tti.tokens.model.core.Property value) {
+      if (propertiesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensurePropertyInvocationsIsMutable();
-        propertyInvocations_.add(value);
+        ensurePropertiesIsMutable();
+        properties_.add(value);
         onChanged();
       } else {
-        propertyInvocationsBuilder_.addMessage(value);
+        propertiesBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder addPropertyInvocations(
-        int index, org.tti.tokens.model.core.Invocation value) {
-      if (propertyInvocationsBuilder_ == null) {
+    public Builder addProperties(
+        int index, org.tti.tokens.model.core.Property value) {
+      if (propertiesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensurePropertyInvocationsIsMutable();
-        propertyInvocations_.add(index, value);
+        ensurePropertiesIsMutable();
+        properties_.add(index, value);
         onChanged();
       } else {
-        propertyInvocationsBuilder_.addMessage(index, value);
+        propertiesBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder addPropertyInvocations(
-        org.tti.tokens.model.core.Invocation.Builder builderForValue) {
-      if (propertyInvocationsBuilder_ == null) {
-        ensurePropertyInvocationsIsMutable();
-        propertyInvocations_.add(builderForValue.build());
+    public Builder addProperties(
+        org.tti.tokens.model.core.Property.Builder builderForValue) {
+      if (propertiesBuilder_ == null) {
+        ensurePropertiesIsMutable();
+        properties_.add(builderForValue.build());
         onChanged();
       } else {
-        propertyInvocationsBuilder_.addMessage(builderForValue.build());
+        propertiesBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder addPropertyInvocations(
-        int index, org.tti.tokens.model.core.Invocation.Builder builderForValue) {
-      if (propertyInvocationsBuilder_ == null) {
-        ensurePropertyInvocationsIsMutable();
-        propertyInvocations_.add(index, builderForValue.build());
+    public Builder addProperties(
+        int index, org.tti.tokens.model.core.Property.Builder builderForValue) {
+      if (propertiesBuilder_ == null) {
+        ensurePropertiesIsMutable();
+        properties_.add(index, builderForValue.build());
         onChanged();
       } else {
-        propertyInvocationsBuilder_.addMessage(index, builderForValue.build());
+        propertiesBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder addAllPropertyInvocations(
-        java.lang.Iterable<? extends org.tti.tokens.model.core.Invocation> values) {
-      if (propertyInvocationsBuilder_ == null) {
-        ensurePropertyInvocationsIsMutable();
+    public Builder addAllProperties(
+        java.lang.Iterable<? extends org.tti.tokens.model.core.Property> values) {
+      if (propertiesBuilder_ == null) {
+        ensurePropertiesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, propertyInvocations_);
+            values, properties_);
         onChanged();
       } else {
-        propertyInvocationsBuilder_.addAllMessages(values);
+        propertiesBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder clearPropertyInvocations() {
-      if (propertyInvocationsBuilder_ == null) {
-        propertyInvocations_ = java.util.Collections.emptyList();
+    public Builder clearProperties() {
+      if (propertiesBuilder_ == null) {
+        properties_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
-        propertyInvocationsBuilder_.clear();
+        propertiesBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public Builder removePropertyInvocations(int index) {
-      if (propertyInvocationsBuilder_ == null) {
-        ensurePropertyInvocationsIsMutable();
-        propertyInvocations_.remove(index);
+    public Builder removeProperties(int index) {
+      if (propertiesBuilder_ == null) {
+        ensurePropertiesIsMutable();
+        properties_.remove(index);
         onChanged();
       } else {
-        propertyInvocationsBuilder_.remove(index);
+        propertiesBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public org.tti.tokens.model.core.Invocation.Builder getPropertyInvocationsBuilder(
+    public org.tti.tokens.model.core.Property.Builder getPropertiesBuilder(
         int index) {
-      return getPropertyInvocationsFieldBuilder().getBuilder(index);
+      return getPropertiesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public org.tti.tokens.model.core.InvocationOrBuilder getPropertyInvocationsOrBuilder(
+    public org.tti.tokens.model.core.PropertyOrBuilder getPropertiesOrBuilder(
         int index) {
-      if (propertyInvocationsBuilder_ == null) {
-        return propertyInvocations_.get(index);  } else {
-        return propertyInvocationsBuilder_.getMessageOrBuilder(index);
+      if (propertiesBuilder_ == null) {
+        return properties_.get(index);  } else {
+        return propertiesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public java.util.List<? extends org.tti.tokens.model.core.InvocationOrBuilder> 
-         getPropertyInvocationsOrBuilderList() {
-      if (propertyInvocationsBuilder_ != null) {
-        return propertyInvocationsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends org.tti.tokens.model.core.PropertyOrBuilder> 
+         getPropertiesOrBuilderList() {
+      if (propertiesBuilder_ != null) {
+        return propertiesBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(propertyInvocations_);
+        return java.util.Collections.unmodifiableList(properties_);
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public org.tti.tokens.model.core.Invocation.Builder addPropertyInvocationsBuilder() {
-      return getPropertyInvocationsFieldBuilder().addBuilder(
-          org.tti.tokens.model.core.Invocation.getDefaultInstance());
+    public org.tti.tokens.model.core.Property.Builder addPropertiesBuilder() {
+      return getPropertiesFieldBuilder().addBuilder(
+          org.tti.tokens.model.core.Property.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public org.tti.tokens.model.core.Invocation.Builder addPropertyInvocationsBuilder(
+    public org.tti.tokens.model.core.Property.Builder addPropertiesBuilder(
         int index) {
-      return getPropertyInvocationsFieldBuilder().addBuilder(
-          index, org.tti.tokens.model.core.Invocation.getDefaultInstance());
+      return getPropertiesFieldBuilder().addBuilder(
+          index, org.tti.tokens.model.core.Property.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation property_invocations = 2;</code>
+     * <code>repeated .taxonomy.model.core.Property properties = 2;</code>
      */
-    public java.util.List<org.tti.tokens.model.core.Invocation.Builder> 
-         getPropertyInvocationsBuilderList() {
-      return getPropertyInvocationsFieldBuilder().getBuilderList();
+    public java.util.List<org.tti.tokens.model.core.Property.Builder> 
+         getPropertiesBuilderList() {
+      return getPropertiesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.core.Invocation, org.tti.tokens.model.core.Invocation.Builder, org.tti.tokens.model.core.InvocationOrBuilder> 
-        getPropertyInvocationsFieldBuilder() {
-      if (propertyInvocationsBuilder_ == null) {
-        propertyInvocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.tti.tokens.model.core.Invocation, org.tti.tokens.model.core.Invocation.Builder, org.tti.tokens.model.core.InvocationOrBuilder>(
-                propertyInvocations_,
+        org.tti.tokens.model.core.Property, org.tti.tokens.model.core.Property.Builder, org.tti.tokens.model.core.PropertyOrBuilder> 
+        getPropertiesFieldBuilder() {
+      if (propertiesBuilder_ == null) {
+        propertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.tti.tokens.model.core.Property, org.tti.tokens.model.core.Property.Builder, org.tti.tokens.model.core.PropertyOrBuilder>(
+                properties_,
                 ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
-        propertyInvocations_ = null;
+        properties_ = null;
       }
-      return propertyInvocationsBuilder_;
+      return propertiesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

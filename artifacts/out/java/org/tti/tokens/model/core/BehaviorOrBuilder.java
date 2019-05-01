@@ -27,50 +27,112 @@ public interface BehaviorOrBuilder extends
 
   /**
    * <pre>
-   *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+   *proto message name empty if there is no constructor, used when unpacking the Any.
    * </pre>
    *
-   * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+   * <code>string behavior_constructor_name = 3;</code>
+   */
+  java.lang.String getBehaviorConstructorName();
+  /**
+   * <pre>
+   *proto message name empty if there is no constructor, used when unpacking the Any.
+   * </pre>
+   *
+   * <code>string behavior_constructor_name = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getBehaviorConstructorNameBytes();
+
+  /**
+   * <pre>
+   *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any behavior_constructor = 4;</code>
    */
   boolean hasBehaviorConstructor();
   /**
    * <pre>
-   *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+   *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
    * </pre>
    *
-   * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+   * <code>.google.protobuf.Any behavior_constructor = 4;</code>
    */
   com.google.protobuf.Any getBehaviorConstructor();
   /**
    * <pre>
-   *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+   *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
    * </pre>
    *
-   * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+   * <code>.google.protobuf.Any behavior_constructor = 4;</code>
    */
   com.google.protobuf.AnyOrBuilder getBehaviorConstructorOrBuilder();
 
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   java.util.List<org.tti.tokens.model.core.Invocation> 
       getBehaviorInvocationsList();
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   org.tti.tokens.model.core.Invocation getBehaviorInvocations(int index);
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   int getBehaviorInvocationsCount();
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   java.util.List<? extends org.tti.tokens.model.core.InvocationOrBuilder> 
       getBehaviorInvocationsOrBuilderList();
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   org.tti.tokens.model.core.InvocationOrBuilder getBehaviorInvocationsOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  java.util.List<org.tti.tokens.model.core.Property> 
+      getBehavioralPropertiesList();
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  org.tti.tokens.model.core.Property getBehavioralProperties(int index);
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  int getBehavioralPropertiesCount();
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  java.util.List<? extends org.tti.tokens.model.core.PropertyOrBuilder> 
+      getBehavioralPropertiesOrBuilderList();
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  org.tti.tokens.model.core.PropertyOrBuilder getBehavioralPropertiesOrBuilder(
       int index);
 }

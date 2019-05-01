@@ -138,11 +138,35 @@ public interface ArtifactOrBuilder extends
       int index);
 
   /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  java.util.List<org.tti.tokens.model.artifact.SymbolInfluence> 
+      getInfluencedBySymbolsList();
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  org.tti.tokens.model.artifact.SymbolInfluence getInfluencedBySymbols(int index);
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  int getInfluencedBySymbolsCount();
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  java.util.List<? extends org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder> 
+      getInfluencedBySymbolsOrBuilderList();
+  /**
+   * <code>repeated .taxonomy.model.artifact.SymbolInfluence influenced_by_symbols = 8;</code>
+   */
+  org.tti.tokens.model.artifact.SymbolInfluenceOrBuilder getInfluencedBySymbolsOrBuilder(
+      int index);
+
+  /**
    * <pre>
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   java.util.List<org.tti.tokens.model.artifact.ArtifactFile> 
       getArtifactFilesList();
@@ -151,7 +175,7 @@ public interface ArtifactOrBuilder extends
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   org.tti.tokens.model.artifact.ArtifactFile getArtifactFiles(int index);
   /**
@@ -159,7 +183,7 @@ public interface ArtifactOrBuilder extends
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   int getArtifactFilesCount();
   /**
@@ -167,7 +191,7 @@ public interface ArtifactOrBuilder extends
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   java.util.List<? extends org.tti.tokens.model.artifact.ArtifactFileOrBuilder> 
       getArtifactFilesOrBuilderList();
@@ -176,21 +200,21 @@ public interface ArtifactOrBuilder extends
    *loop through the files and read them in as bytes to produce a complete artifact object model instance.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 8;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactFile artifact_files = 9;</code>
    */
   org.tti.tokens.model.artifact.ArtifactFileOrBuilder getArtifactFilesOrBuilder(
       int index);
 
   /**
-   * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+   * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
    */
   boolean hasMaps();
   /**
-   * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+   * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
    */
   org.tti.tokens.model.artifact.Maps getMaps();
   /**
-   * <code>.taxonomy.model.artifact.Maps maps = 9;</code>
+   * <code>.taxonomy.model.artifact.Maps maps = 10;</code>
    */
   org.tti.tokens.model.artifact.MapsOrBuilder getMapsOrBuilder();
 }

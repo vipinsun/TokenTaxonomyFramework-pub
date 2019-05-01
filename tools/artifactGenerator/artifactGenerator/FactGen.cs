@@ -134,8 +134,17 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactBase = new Base
 					{
-						Artifact = AddArtifactFiles(outputFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact)
 					};
+					artifactBase.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
+					{
+						Description = "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+						Symbol = new ArtifactSymbol
+						{
+							ToolingSymbol = "~d",
+							VisualSymbol = "~d"
+						}
+					});
 					artifactJson = jsf.Format(artifactBase);
 					break;
 				case ArtifactType.Behavior:
@@ -144,8 +153,76 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactBehavior = new Behavior
 					{
-						Artifact = AddArtifactFiles(outputFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact),
+						BehaviorConstructorName = "",
+						BehaviorInvocations = { new Invocation
+						{
+							Name = "InvocationRequest1",
+							Description = "Describe the what the this invocation triggers in the behavior",
+							Request = new InvocationRequest
+							{
+								ControlMessageName = "InvocationRequest",
+								Description = "The request",
+								InputParameters = { new InvocationParameter
+								{
+									Name = "Input Parameter 1",
+									ValueDescription = "Contains some input data required for the invocation to work."
+								}}
+							},
+							Response = new InvocationResponse
+							{
+								ControlMessageName = "InvocationResponse",
+								Description = "The response",
+								OutputParameters =  { new InvocationParameter
+								{
+									Name = "Output Parameter 1",
+									ValueDescription = "One of the values that the invocation should return."
+								}}
+							}
+						}}
 					};
+					artifactBehavior.BehavioralProperties.Add(new Property
+					{
+						Name = "Property1",
+						ValueDescription = "Some Value",
+						PropertyInvocations = { new Invocation
+						{
+							Name="PropertyGetter",
+							Description = "The property value.",
+							Request = new InvocationRequest
+							{
+								ControlMessageName = "GetProperty1Request",
+								Description = "",
+								InputParameters =
+								{
+									new InvocationParameter
+									{
+										Name = "input1",
+										ValueDescription = "value"
+									}
+								}
+							},
+							Response = new InvocationResponse
+							{
+								ControlMessageName = "GetProperty1Response",
+								Description = "Return value",
+								OutputParameters = { new InvocationParameter
+								{
+									Name = "Output1",
+									ValueDescription = "value of property"
+								}}
+							}
+						}}
+					});
+					artifactBehavior.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
+					{
+						Description = "",
+						Symbol = new ArtifactSymbol
+						{
+							ToolingSymbol = "",
+							VisualSymbol = ""
+						}
+					});
 					artifactJson = jsf.Format(artifactBehavior);
 					break;
 				case ArtifactType.BehaviorGroup:
@@ -153,8 +230,20 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactBehaviorGroup = new BehaviorGroup
 					{
-						Artifact = AddArtifactFiles(outputFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact)
 					};
+					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol{
+						ToolingSymbol = "<i>Symbol1</i>",
+						VisualSymbol =  "Symbol1"
+						});
+					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol{
+						ToolingSymbol = "<i>Symbol2</i>",
+						VisualSymbol =  "Symbol2"
+					});
+					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol{
+						ToolingSymbol = "<i>Symbol3<i>",
+						VisualSymbol =  "Symbol3"
+					});
 					artifactJson = jsf.Format(artifactBehaviorGroup);
 					break;
 				case ArtifactType.PropertySet:
@@ -162,8 +251,86 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactPropertySet = new PropertySet
 					{
-						Artifact = AddArtifactFiles(outputFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact),
+						Properties =
+						{
+							new Property
+							{
+								Name = "Property1",
+								ValueDescription =
+									"This is the property required to be implemented and should be able to contain data of type X.",
+								PropertyInvocations =
+								{
+									new Invocation
+									{
+										Name = "Property1 Getter",
+										Description = "Request the value of the property",
+										Request = new InvocationRequest
+										{
+											ControlMessageName = "GetProperty1Request",
+											Description = "The request"
+										},
+										Response = new InvocationResponse
+										{
+											ControlMessageName = "GetProperty1Response",
+											Description = "The response",
+											OutputParameters =
+											{
+												new InvocationParameter
+												{
+													Name = "Property1.Value",
+													ValueDescription =
+														"Returning the value of the property."
+												}
+											}
+										}
+									},
+									new Invocation
+									{
+										Name = "Property1 Setter",
+										Description =
+											"Set the Value of the Property, note if Roles should be applied to the Setter.",
+										Request = new InvocationRequest
+										{
+											ControlMessageName = "SetProperty1Request",
+											Description = "The request",
+											InputParameters =
+											{
+												new InvocationParameter
+												{
+													Name = "New Value of Property",
+													ValueDescription = "The data to set the property to."
+												}
+											}
+										},
+										Response = new InvocationResponse
+										{
+											ControlMessageName = "SetProperty1Response",
+											Description = "The response",
+											OutputParameters =
+											{
+												new InvocationParameter
+												{
+													Name = "Result, true or false",
+													ValueDescription =
+														"Returning the value of the set request."
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					};
+					artifactPropertySet.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
+					{
+						Description = "",
+						Symbol = new ArtifactSymbol
+						{
+							ToolingSymbol = "",
+							VisualSymbol = ""
+						}
+					});
 					artifactJson = jsf.Format(artifactPropertySet);
 					break;
 				case ArtifactType.TokenTemplate:
@@ -171,7 +338,7 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactTokenTemplate = new TokenTemplate
 					{
-						Artifact = AddArtifactFiles(outputFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact)
 					};
 					artifactJson = jsf.Format(artifactTokenTemplate);
 					break;
@@ -200,17 +367,17 @@ namespace ArtifactGenerator
 						          testBehavior.Artifact.Name);
 						break;
 					case ArtifactType.BehaviorGroup:
-						var testBehaviorGroup = JsonParser.Default.Parse<Behavior>(formattedJson);
+						var testBehaviorGroup = JsonParser.Default.Parse<BehaviorGroup>(formattedJson);
 						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
 						          testBehaviorGroup.Artifact.Name);
 						break;
 					case ArtifactType.PropertySet:
-						var testPropertySet = JsonParser.Default.Parse<Behavior>(formattedJson);
+						var testPropertySet = JsonParser.Default.Parse<PropertySet>(formattedJson);
 						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
 						          testPropertySet.Artifact.Name);
 						break;
 					case ArtifactType.TokenTemplate:
-						var testTemplate = JsonParser.Default.Parse<Behavior>(formattedJson);
+						var testTemplate = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
 						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
 						          testTemplate.Artifact.Name);
 						break;
@@ -234,23 +401,32 @@ namespace ArtifactGenerator
 			_log.Info("Complete");
 		}
 
-		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string folderSeparator, Artifact parent)
+		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, Artifact parent)
 		{
 			var md = CreateMarkdown(outputFolder, folderSeparator);
 			var proto = CreateProto(outputFolder, folderSeparator);
 			var retArtifact = parent.Clone();
 			
 			retArtifact.ArtifactFiles.Add(proto);
-			retArtifact.ControlUri = ArtifactPath + folderSeparator + ArtifactName + folderSeparator + proto.FileName;
+			retArtifact.ControlUri = ArtifactPath + folderSeparator + typeFolder + folderSeparator + ArtifactName + folderSeparator + proto.FileName;
 			retArtifact.ArtifactFiles.Add(md);
 			return retArtifact;
 		}
 		private static ArtifactFile CreateMarkdown(DirectoryInfo outputFolder, string folderSeparator)
 		{
 			_log.Info("Creating Artifact Markdown");
+			var mdFile = outputFolder + folderSeparator + ArtifactName + ".md";
+			var t = File.Exists(mdFile);
+			if (t)
+				return new ArtifactFile
+				{
+					FileName = ArtifactName + ".md",
+					Content = ArtifactContent.Uml
+				};
 			var md = File.CreateText(outputFolder + folderSeparator + ArtifactName + ".md");
 			md.Write("# " + ArtifactName + " a TTF " + ArtifactType);
 			md.Close();
+
 			return new ArtifactFile
 			{
 				FileName = ArtifactName + ".md",
@@ -261,11 +437,18 @@ namespace ArtifactGenerator
 		private static ArtifactFile CreateProto(DirectoryInfo outputFolder, string folderSeparator)
 		{
 			_log.Info("Creating Artifact Proto");
-			var proto  = File.CreateText(outputFolder + folderSeparator + ArtifactName + ".proto");
+			var pFile = outputFolder + folderSeparator + ArtifactName + ".proto";
+			var t = File.Exists(pFile);
+			if (t)
+				return new ArtifactFile
+				{
+					FileName = ArtifactName + ".proto",
+					Content = ArtifactContent.Control
+				};
+			var proto  = File.CreateText(pFile);
 			var templateProto =
 				File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + 
 				                 folderSeparator + "templates" + folderSeparator + "artifact.proto");
-			
 			
 			proto.Write(templateProto.Replace("ARTIFACT", ArtifactName));
 			proto.Close();

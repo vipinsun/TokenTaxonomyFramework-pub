@@ -31,47 +31,57 @@ namespace TTF.Tokens.Model.Core {
             "ASgJEhAKCHF1YW50aXR5GAUgASgMEhAKCGRlY2ltYWxzGAYgASgFEkgKEHRv",
             "a2VuX3Byb3BlcnRpZXMYByADKAsyLi50YXhvbm9teS5tb2RlbC5jb3JlLkJh",
             "c2UuVG9rZW5Qcm9wZXJ0aWVzRW50cnkaNgoUVG9rZW5Qcm9wZXJ0aWVzRW50",
-            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASLEAQoIQmVoYXZp",
+            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASKlAgoIQmVoYXZp",
             "b3ISMwoIYXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
-            "dC5BcnRpZmFjdBIQCghleHRlcm5hbBgCIAEoCBIyChRiZWhhdmlvcl9jb25z",
-            "dHJ1Y3RvchgDIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSPQoUYmVoYXZp",
-            "b3JfaW52b2NhdGlvbnMYBCADKAsyHy50YXhvbm9teS5tb2RlbC5jb3JlLklu",
-            "dm9jYXRpb24inQEKDUJlaGF2aW9yR3JvdXASMwoIYXJ0aWZhY3QYASABKAsy",
-            "IS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdBIYChBiZWhhdmlv",
-            "cl9zeW1ib2xzGAIgAygJEj0KEmJlaGF2aW9yX2FydGlmYWN0cxgDIAMoCzIh",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0IoEBCgtQcm9wZXJ0",
-            "eVNldBIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LkFydGlmYWN0Ej0KFHByb3BlcnR5X2ludm9jYXRpb25zGAIgAygLMh8u",
-            "dGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uIr4CCg1Ub2tlblRlbXBs",
-            "YXRlEjMKCGFydGlmYWN0GAEgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZh",
-            "Y3QuQXJ0aWZhY3QSJwoEdHlwZRgCIAEoDjIZLnRheG9ub215Lm1vZGVsLmNv",
-            "cmUuVHlwZRInCgRiYXNlGAMgASgLMhkudGF4b25vbXkubW9kZWwuY29yZS5C",
-            "YXNlEjAKCWJlaGF2aW9ycxgEIAMoCzIdLnRheG9ub215Lm1vZGVsLmNvcmUu",
-            "QmVoYXZpb3ISOwoPYmVoYXZpb3JfZ3JvdXBzGAUgAygLMiIudGF4b25vbXku",
-            "bW9kZWwuY29yZS5CZWhhdmlvckdyb3VwEjcKDXByb3BlcnR5X3NldHMYBiAD",
-            "KAsyIC50YXhvbm9teS5tb2RlbC5jb3JlLlByb3BlcnR5U2V0IqMBCgpJbnZv",
-            "Y2F0aW9uEgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSNwoH",
-            "cmVxdWVzdBgDIAEoCzImLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlv",
-            "blJlcXVlc3QSOQoIcmVzcG9uc2UYBCABKAsyJy50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLkludm9jYXRpb25SZXNwb25zZSKKAQoRSW52b2NhdGlvblJlcXVlc3QS",
-            "HAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkSQgoQaW5wdXRfcGFyYW1l",
-            "dGVycxgCIAMoCzIoLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblBh",
-            "cmFtZXRlchITCgtkZXNjcmlwdGlvbhgDIAEoCSKMAQoSSW52b2NhdGlvblJl",
-            "c3BvbnNlEhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1lGAEgASgJEkMKEW91dHB1",
-            "dF9wYXJhbWV0ZXJzGAIgAygLMigudGF4b25vbXkubW9kZWwuY29yZS5JbnZv",
-            "Y2F0aW9uUGFyYW1ldGVyEhMKC2Rlc2NyaXB0aW9uGAMgASgJIj4KE0ludm9j",
-            "YXRpb25QYXJhbWV0ZXISDAoEbmFtZRgBIAEoCRIZChF2YWx1ZV9kZXNjcmlw",
-            "dGlvbhgCIAEoCSpeCgRUeXBlEgwKCEZVTkdJQkxFEAASEAoMTk9OX0ZVTkdJ",
-            "QkxFEAESGAoUSFlCUklEX0ZVTkdJQkxFX1JPT1QQAhIcChhIWUJSSURfTk9O",
-            "X0ZVTkdJQkxFX1JPT1QQA0I1ChlvcmcudHRpLnRva2Vucy5tb2RlbC5jb3Jl",
-            "UAGqAhVUVEYuVG9rZW5zLk1vZGVsLkNvcmViBnByb3RvMw=="));
+            "dC5BcnRpZmFjdBIQCghleHRlcm5hbBgCIAEoCBIhChliZWhhdmlvcl9jb25z",
+            "dHJ1Y3Rvcl9uYW1lGAMgASgJEjIKFGJlaGF2aW9yX2NvbnN0cnVjdG9yGAQg",
+            "ASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueRI9ChRiZWhhdmlvcl9pbnZvY2F0",
+            "aW9ucxgFIAMoCzIfLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvbhI8",
+            "ChViZWhhdmlvcmFsX3Byb3BlcnRpZXMYBiADKAsyHS50YXhvbm9teS5tb2Rl",
+            "bC5jb3JlLlByb3BlcnR5Is4CCg1CZWhhdmlvckdyb3VwEjMKCGFydGlmYWN0",
+            "GAEgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSQQoQ",
+            "YmVoYXZpb3Jfc3ltYm9scxgCIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0LkFydGlmYWN0U3ltYm9sEmIKGW1lbWJlcl9iZWhhdmlvcl9hcnRpZmFj",
+            "dHMYAyADKAsyPy50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXAu",
+            "TWVtYmVyQmVoYXZpb3JBcnRpZmFjdHNFbnRyeRphChxNZW1iZXJCZWhhdmlv",
+            "ckFydGlmYWN0c0VudHJ5EgsKA2tleRgBIAEoCRIwCgV2YWx1ZRgCIAEoCzIh",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0OgI4ASJ1CgtQcm9w",
+            "ZXJ0eVNldBIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFy",
+            "dGlmYWN0LkFydGlmYWN0EjEKCnByb3BlcnRpZXMYAiADKAsyHS50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLlByb3BlcnR5InIKCFByb3BlcnR5EgwKBG5hbWUYASAB",
+            "KAkSGQoRdmFsdWVfZGVzY3JpcHRpb24YAiABKAkSPQoUcHJvcGVydHlfaW52",
+            "b2NhdGlvbnMYAyADKAsyHy50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRp",
+            "b24ivgIKDVRva2VuVGVtcGxhdGUSMwoIYXJ0aWZhY3QYASABKAsyIS50YXhv",
+            "bm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdBInCgR0eXBlGAIgASgOMhku",
+            "dGF4b25vbXkubW9kZWwuY29yZS5UeXBlEicKBGJhc2UYAyABKAsyGS50YXhv",
+            "bm9teS5tb2RlbC5jb3JlLkJhc2USMAoJYmVoYXZpb3JzGAQgAygLMh0udGF4",
+            "b25vbXkubW9kZWwuY29yZS5CZWhhdmlvchI7Cg9iZWhhdmlvcl9ncm91cHMY",
+            "BSADKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXASNwoN",
+            "cHJvcGVydHlfc2V0cxgGIAMoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJv",
+            "cGVydHlTZXQiowEKCkludm9jYXRpb24SDAoEbmFtZRgBIAEoCRITCgtkZXNj",
+            "cmlwdGlvbhgCIAEoCRI3CgdyZXF1ZXN0GAMgASgLMiYudGF4b25vbXkubW9k",
+            "ZWwuY29yZS5JbnZvY2F0aW9uUmVxdWVzdBI5CghyZXNwb25zZRgEIAEoCzIn",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblJlc3BvbnNlIooBChFJ",
+            "bnZvY2F0aW9uUmVxdWVzdBIcChRjb250cm9sX21lc3NhZ2VfbmFtZRgBIAEo",
+            "CRJCChBpbnB1dF9wYXJhbWV0ZXJzGAIgAygLMigudGF4b25vbXkubW9kZWwu",
+            "Y29yZS5JbnZvY2F0aW9uUGFyYW1ldGVyEhMKC2Rlc2NyaXB0aW9uGAMgASgJ",
+            "IowBChJJbnZvY2F0aW9uUmVzcG9uc2USHAoUY29udHJvbF9tZXNzYWdlX25h",
+            "bWUYASABKAkSQwoRb3V0cHV0X3BhcmFtZXRlcnMYAiADKAsyKC50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLkludm9jYXRpb25QYXJhbWV0ZXISEwoLZGVzY3JpcHRp",
+            "b24YAyABKAkiPgoTSW52b2NhdGlvblBhcmFtZXRlchIMCgRuYW1lGAEgASgJ",
+            "EhkKEXZhbHVlX2Rlc2NyaXB0aW9uGAIgASgJKl4KBFR5cGUSDAoIRlVOR0lC",
+            "TEUQABIQCgxOT05fRlVOR0lCTEUQARIYChRIWUJSSURfRlVOR0lCTEVfUk9P",
+            "VBACEhwKGEhZQlJJRF9OT05fRlVOR0lCTEVfUk9PVBADQjUKGW9yZy50dGku",
+            "dG9rZW5zLm1vZGVsLmNvcmVQAaoCFVRURi5Ub2tlbnMuTW9kZWwuQ29yZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTF.Tokens.Model.Core.Type), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Base), global::TTF.Tokens.Model.Core.Base.Parser, new[]{ "Artifact", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Behavior), global::TTF.Tokens.Model.Core.Behavior.Parser, new[]{ "Artifact", "External", "BehaviorConstructor", "BehaviorInvocations" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.BehaviorGroup), global::TTF.Tokens.Model.Core.BehaviorGroup.Parser, new[]{ "Artifact", "BehaviorSymbols", "BehaviorArtifacts" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.PropertySet), global::TTF.Tokens.Model.Core.PropertySet.Parser, new[]{ "Artifact", "PropertyInvocations" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Behavior), global::TTF.Tokens.Model.Core.Behavior.Parser, new[]{ "Artifact", "External", "BehaviorConstructorName", "BehaviorConstructor", "BehaviorInvocations", "BehavioralProperties" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.BehaviorGroup), global::TTF.Tokens.Model.Core.BehaviorGroup.Parser, new[]{ "Artifact", "BehaviorSymbols", "MemberBehaviorArtifacts" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.PropertySet), global::TTF.Tokens.Model.Core.PropertySet.Parser, new[]{ "Artifact", "Properties" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Property), global::TTF.Tokens.Model.Core.Property.Parser, new[]{ "Name", "ValueDescription", "PropertyInvocations" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.TokenTemplate), global::TTF.Tokens.Model.Core.TokenTemplate.Parser, new[]{ "Artifact", "Type", "Base", "Behaviors", "BehaviorGroups", "PropertySets" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Invocation), global::TTF.Tokens.Model.Core.Invocation.Parser, new[]{ "Name", "Description", "Request", "Response" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.InvocationRequest), global::TTF.Tokens.Model.Core.InvocationRequest.Parser, new[]{ "ControlMessageName", "InputParameters", "Description" }, null, null, null),
@@ -94,7 +104,7 @@ namespace TTF.Tokens.Model.Core {
 
   #region Messages
   /// <summary>
-  ///all tokens inherit from the base and implicitly support construction.
+  ///all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
   /// </summary>
   public sealed partial class Base : pb::IMessage<Base> {
     private static readonly pb::MessageParser<Base> _parser = new pb::MessageParser<Base>(() => new Base());
@@ -150,6 +160,9 @@ namespace TTF.Tokens.Model.Core {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 2;
     private string name_ = "";
+    /// <summary>
+    ///A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
@@ -161,6 +174,9 @@ namespace TTF.Tokens.Model.Core {
     /// <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 3;
     private string symbol_ = "";
+    /// <summary>
+    ///an optionally unique symbol or identifier
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Symbol {
       get { return symbol_; }
@@ -172,6 +188,9 @@ namespace TTF.Tokens.Model.Core {
     /// <summary>Field number for the "owner" field.</summary>
     public const int OwnerFieldNumber = 4;
     private string owner_ = "";
+    /// <summary>
+    ///A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Owner {
       get { return owner_; }
@@ -183,6 +202,9 @@ namespace TTF.Tokens.Model.Core {
     /// <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 5;
     private pb::ByteString quantity_ = pb::ByteString.Empty;
+    /// <summary>
+    ///Can represent the initial quantity created or the total minted or issued for the class.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Quantity {
       get { return quantity_; }
@@ -194,6 +216,9 @@ namespace TTF.Tokens.Model.Core {
     /// <summary>Field number for the "decimals" field.</summary>
     public const int DecimalsFieldNumber = 6;
     private int decimals_;
+    /// <summary>
+    ///A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Decimals {
       get { return decimals_; }
@@ -207,6 +232,9 @@ namespace TTF.Tokens.Model.Core {
     private static readonly pbc::MapField<string, string>.Codec _map_tokenProperties_codec
         = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 58);
     private readonly pbc::MapField<string, string> tokenProperties_ = new pbc::MapField<string, string>();
+    /// <summary>
+    ///Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> TokenProperties {
       get { return tokenProperties_; }
@@ -418,8 +446,10 @@ namespace TTF.Tokens.Model.Core {
     public Behavior(Behavior other) : this() {
       artifact_ = other.artifact_ != null ? other.artifact_.Clone() : null;
       external_ = other.external_;
+      behaviorConstructorName_ = other.behaviorConstructorName_;
       behaviorConstructor_ = other.behaviorConstructor_ != null ? other.behaviorConstructor_.Clone() : null;
       behaviorInvocations_ = other.behaviorInvocations_.Clone();
+      behavioralProperties_ = other.behavioralProperties_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -450,11 +480,25 @@ namespace TTF.Tokens.Model.Core {
       }
     }
 
+    /// <summary>Field number for the "behavior_constructor_name" field.</summary>
+    public const int BehaviorConstructorNameFieldNumber = 3;
+    private string behaviorConstructorName_ = "";
+    /// <summary>
+    ///proto message name empty if there is no constructor, used when unpacking the Any.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string BehaviorConstructorName {
+      get { return behaviorConstructorName_; }
+      set {
+        behaviorConstructorName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "behavior_constructor" field.</summary>
-    public const int BehaviorConstructorFieldNumber = 3;
+    public const int BehaviorConstructorFieldNumber = 4;
     private global::Google.Protobuf.WellKnownTypes.Any behaviorConstructor_;
     /// <summary>
-    ///optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+    ///optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Any BehaviorConstructor {
@@ -465,13 +509,26 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "behavior_invocations" field.</summary>
-    public const int BehaviorInvocationsFieldNumber = 4;
+    public const int BehaviorInvocationsFieldNumber = 5;
     private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Invocation> _repeated_behaviorInvocations_codec
-        = pb::FieldCodec.ForMessage(34, global::TTF.Tokens.Model.Core.Invocation.Parser);
+        = pb::FieldCodec.ForMessage(42, global::TTF.Tokens.Model.Core.Invocation.Parser);
     private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation> behaviorInvocations_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation> BehaviorInvocations {
       get { return behaviorInvocations_; }
+    }
+
+    /// <summary>Field number for the "behavioral_properties" field.</summary>
+    public const int BehavioralPropertiesFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Property> _repeated_behavioralProperties_codec
+        = pb::FieldCodec.ForMessage(50, global::TTF.Tokens.Model.Core.Property.Parser);
+    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Property> behavioralProperties_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Property>();
+    /// <summary>
+    ///for any properties that should be added to the token if the behavior is implemented.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Property> BehavioralProperties {
+      get { return behavioralProperties_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -489,8 +546,10 @@ namespace TTF.Tokens.Model.Core {
       }
       if (!object.Equals(Artifact, other.Artifact)) return false;
       if (External != other.External) return false;
+      if (BehaviorConstructorName != other.BehaviorConstructorName) return false;
       if (!object.Equals(BehaviorConstructor, other.BehaviorConstructor)) return false;
       if(!behaviorInvocations_.Equals(other.behaviorInvocations_)) return false;
+      if(!behavioralProperties_.Equals(other.behavioralProperties_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -499,8 +558,10 @@ namespace TTF.Tokens.Model.Core {
       int hash = 1;
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
       if (External != false) hash ^= External.GetHashCode();
+      if (BehaviorConstructorName.Length != 0) hash ^= BehaviorConstructorName.GetHashCode();
       if (behaviorConstructor_ != null) hash ^= BehaviorConstructor.GetHashCode();
       hash ^= behaviorInvocations_.GetHashCode();
+      hash ^= behavioralProperties_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -522,11 +583,16 @@ namespace TTF.Tokens.Model.Core {
         output.WriteRawTag(16);
         output.WriteBool(External);
       }
-      if (behaviorConstructor_ != null) {
+      if (BehaviorConstructorName.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(BehaviorConstructorName);
+      }
+      if (behaviorConstructor_ != null) {
+        output.WriteRawTag(34);
         output.WriteMessage(BehaviorConstructor);
       }
       behaviorInvocations_.WriteTo(output, _repeated_behaviorInvocations_codec);
+      behavioralProperties_.WriteTo(output, _repeated_behavioralProperties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -541,10 +607,14 @@ namespace TTF.Tokens.Model.Core {
       if (External != false) {
         size += 1 + 1;
       }
+      if (BehaviorConstructorName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BehaviorConstructorName);
+      }
       if (behaviorConstructor_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BehaviorConstructor);
       }
       size += behaviorInvocations_.CalculateSize(_repeated_behaviorInvocations_codec);
+      size += behavioralProperties_.CalculateSize(_repeated_behavioralProperties_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -565,6 +635,9 @@ namespace TTF.Tokens.Model.Core {
       if (other.External != false) {
         External = other.External;
       }
+      if (other.BehaviorConstructorName.Length != 0) {
+        BehaviorConstructorName = other.BehaviorConstructorName;
+      }
       if (other.behaviorConstructor_ != null) {
         if (behaviorConstructor_ == null) {
           BehaviorConstructor = new global::Google.Protobuf.WellKnownTypes.Any();
@@ -572,6 +645,7 @@ namespace TTF.Tokens.Model.Core {
         BehaviorConstructor.MergeFrom(other.BehaviorConstructor);
       }
       behaviorInvocations_.Add(other.behaviorInvocations_);
+      behavioralProperties_.Add(other.behavioralProperties_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -595,14 +669,22 @@ namespace TTF.Tokens.Model.Core {
             break;
           }
           case 26: {
+            BehaviorConstructorName = input.ReadString();
+            break;
+          }
+          case 34: {
             if (behaviorConstructor_ == null) {
               BehaviorConstructor = new global::Google.Protobuf.WellKnownTypes.Any();
             }
             input.ReadMessage(BehaviorConstructor);
             break;
           }
-          case 34: {
+          case 42: {
             behaviorInvocations_.AddEntriesFrom(input, _repeated_behaviorInvocations_codec);
+            break;
+          }
+          case 50: {
+            behavioralProperties_.AddEntriesFrom(input, _repeated_behavioralProperties_codec);
             break;
           }
         }
@@ -638,7 +720,7 @@ namespace TTF.Tokens.Model.Core {
     public BehaviorGroup(BehaviorGroup other) : this() {
       artifact_ = other.artifact_ != null ? other.artifact_.Clone() : null;
       behaviorSymbols_ = other.behaviorSymbols_.Clone();
-      behaviorArtifacts_ = other.behaviorArtifacts_.Clone();
+      memberBehaviorArtifacts_ = other.memberBehaviorArtifacts_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -660,22 +742,25 @@ namespace TTF.Tokens.Model.Core {
 
     /// <summary>Field number for the "behavior_symbols" field.</summary>
     public const int BehaviorSymbolsFieldNumber = 2;
-    private static readonly pb::FieldCodec<string> _repeated_behaviorSymbols_codec
-        = pb::FieldCodec.ForString(18);
-    private readonly pbc::RepeatedField<string> behaviorSymbols_ = new pbc::RepeatedField<string>();
+    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> _repeated_behaviorSymbols_codec
+        = pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Artifact.ArtifactSymbol.Parser);
+    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> behaviorSymbols_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<string> BehaviorSymbols {
+    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> BehaviorSymbols {
       get { return behaviorSymbols_; }
     }
 
-    /// <summary>Field number for the "behavior_artifacts" field.</summary>
-    public const int BehaviorArtifactsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.Artifact> _repeated_behaviorArtifacts_codec
-        = pb::FieldCodec.ForMessage(26, global::TTF.Tokens.Model.Artifact.Artifact.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.Artifact> behaviorArtifacts_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.Artifact>();
+    /// <summary>Field number for the "member_behavior_artifacts" field.</summary>
+    public const int MemberBehaviorArtifactsFieldNumber = 3;
+    private static readonly pbc::MapField<string, global::TTF.Tokens.Model.Artifact.Artifact>.Codec _map_memberBehaviorArtifacts_codec
+        = new pbc::MapField<string, global::TTF.Tokens.Model.Artifact.Artifact>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Artifact.Artifact.Parser), 26);
+    private readonly pbc::MapField<string, global::TTF.Tokens.Model.Artifact.Artifact> memberBehaviorArtifacts_ = new pbc::MapField<string, global::TTF.Tokens.Model.Artifact.Artifact>();
+    /// <summary>
+    ///if retrieved this can be populated with the behaviors nested in the group.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.Artifact> BehaviorArtifacts {
-      get { return behaviorArtifacts_; }
+    public pbc::MapField<string, global::TTF.Tokens.Model.Artifact.Artifact> MemberBehaviorArtifacts {
+      get { return memberBehaviorArtifacts_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -693,7 +778,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (!object.Equals(Artifact, other.Artifact)) return false;
       if(!behaviorSymbols_.Equals(other.behaviorSymbols_)) return false;
-      if(!behaviorArtifacts_.Equals(other.behaviorArtifacts_)) return false;
+      if (!MemberBehaviorArtifacts.Equals(other.MemberBehaviorArtifacts)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -702,7 +787,7 @@ namespace TTF.Tokens.Model.Core {
       int hash = 1;
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
       hash ^= behaviorSymbols_.GetHashCode();
-      hash ^= behaviorArtifacts_.GetHashCode();
+      hash ^= MemberBehaviorArtifacts.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -721,7 +806,7 @@ namespace TTF.Tokens.Model.Core {
         output.WriteMessage(Artifact);
       }
       behaviorSymbols_.WriteTo(output, _repeated_behaviorSymbols_codec);
-      behaviorArtifacts_.WriteTo(output, _repeated_behaviorArtifacts_codec);
+      memberBehaviorArtifacts_.WriteTo(output, _map_memberBehaviorArtifacts_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -734,7 +819,7 @@ namespace TTF.Tokens.Model.Core {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
       }
       size += behaviorSymbols_.CalculateSize(_repeated_behaviorSymbols_codec);
-      size += behaviorArtifacts_.CalculateSize(_repeated_behaviorArtifacts_codec);
+      size += memberBehaviorArtifacts_.CalculateSize(_map_memberBehaviorArtifacts_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -753,7 +838,7 @@ namespace TTF.Tokens.Model.Core {
         Artifact.MergeFrom(other.Artifact);
       }
       behaviorSymbols_.Add(other.behaviorSymbols_);
-      behaviorArtifacts_.Add(other.behaviorArtifacts_);
+      memberBehaviorArtifacts_.Add(other.memberBehaviorArtifacts_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -777,7 +862,7 @@ namespace TTF.Tokens.Model.Core {
             break;
           }
           case 26: {
-            behaviorArtifacts_.AddEntriesFrom(input, _repeated_behaviorArtifacts_codec);
+            memberBehaviorArtifacts_.AddEntriesFrom(input, _map_memberBehaviorArtifacts_codec);
             break;
           }
         }
@@ -812,7 +897,7 @@ namespace TTF.Tokens.Model.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PropertySet(PropertySet other) : this() {
       artifact_ = other.artifact_ != null ? other.artifact_.Clone() : null;
-      propertyInvocations_ = other.propertyInvocations_.Clone();
+      properties_ = other.properties_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -832,14 +917,14 @@ namespace TTF.Tokens.Model.Core {
       }
     }
 
-    /// <summary>Field number for the "property_invocations" field.</summary>
-    public const int PropertyInvocationsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Invocation> _repeated_propertyInvocations_codec
-        = pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.Invocation.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation> propertyInvocations_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation>();
+    /// <summary>Field number for the "properties" field.</summary>
+    public const int PropertiesFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Property> _repeated_properties_codec
+        = pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Core.Property.Parser);
+    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Property> properties_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Property>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation> PropertyInvocations {
-      get { return propertyInvocations_; }
+    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Property> Properties {
+      get { return properties_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -856,7 +941,7 @@ namespace TTF.Tokens.Model.Core {
         return true;
       }
       if (!object.Equals(Artifact, other.Artifact)) return false;
-      if(!propertyInvocations_.Equals(other.propertyInvocations_)) return false;
+      if(!properties_.Equals(other.properties_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -864,7 +949,7 @@ namespace TTF.Tokens.Model.Core {
     public override int GetHashCode() {
       int hash = 1;
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
-      hash ^= propertyInvocations_.GetHashCode();
+      hash ^= properties_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -882,7 +967,7 @@ namespace TTF.Tokens.Model.Core {
         output.WriteRawTag(10);
         output.WriteMessage(Artifact);
       }
-      propertyInvocations_.WriteTo(output, _repeated_propertyInvocations_codec);
+      properties_.WriteTo(output, _repeated_properties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -894,7 +979,7 @@ namespace TTF.Tokens.Model.Core {
       if (artifact_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
       }
-      size += propertyInvocations_.CalculateSize(_repeated_propertyInvocations_codec);
+      size += properties_.CalculateSize(_repeated_properties_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -912,7 +997,7 @@ namespace TTF.Tokens.Model.Core {
         }
         Artifact.MergeFrom(other.Artifact);
       }
-      propertyInvocations_.Add(other.propertyInvocations_);
+      properties_.Add(other.properties_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -932,6 +1017,183 @@ namespace TTF.Tokens.Model.Core {
             break;
           }
           case 18: {
+            properties_.AddEntriesFrom(input, _repeated_properties_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Property : pb::IMessage<Property> {
+    private static readonly pb::MessageParser<Property> _parser = new pb::MessageParser<Property>(() => new Property());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Property> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Property() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Property(Property other) : this() {
+      name_ = other.name_;
+      valueDescription_ = other.valueDescription_;
+      propertyInvocations_ = other.propertyInvocations_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Property Clone() {
+      return new Property(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "value_description" field.</summary>
+    public const int ValueDescriptionFieldNumber = 2;
+    private string valueDescription_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ValueDescription {
+      get { return valueDescription_; }
+      set {
+        valueDescription_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "property_invocations" field.</summary>
+    public const int PropertyInvocationsFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Invocation> _repeated_propertyInvocations_codec
+        = pb::FieldCodec.ForMessage(26, global::TTF.Tokens.Model.Core.Invocation.Parser);
+    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation> propertyInvocations_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Invocation> PropertyInvocations {
+      get { return propertyInvocations_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Property);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Property other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (ValueDescription != other.ValueDescription) return false;
+      if(!propertyInvocations_.Equals(other.propertyInvocations_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (ValueDescription.Length != 0) hash ^= ValueDescription.GetHashCode();
+      hash ^= propertyInvocations_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (ValueDescription.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ValueDescription);
+      }
+      propertyInvocations_.WriteTo(output, _repeated_propertyInvocations_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (ValueDescription.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ValueDescription);
+      }
+      size += propertyInvocations_.CalculateSize(_repeated_propertyInvocations_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Property other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.ValueDescription.Length != 0) {
+        ValueDescription = other.ValueDescription;
+      }
+      propertyInvocations_.Add(other.propertyInvocations_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            ValueDescription = input.ReadString();
+            break;
+          }
+          case 26: {
             propertyInvocations_.AddEntriesFrom(input, _repeated_propertyInvocations_codec);
             break;
           }
@@ -949,7 +1211,7 @@ namespace TTF.Tokens.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1206,7 +1468,7 @@ namespace TTF.Tokens.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1238,6 +1500,9 @@ namespace TTF.Tokens.Model.Core {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    /// <summary>
+    ///property name if a property-set
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
@@ -1249,6 +1514,9 @@ namespace TTF.Tokens.Model.Core {
     /// <summary>Field number for the "description" field.</summary>
     public const int DescriptionFieldNumber = 2;
     private string description_ = "";
+    /// <summary>
+    ///include the data type for the value.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
       get { return description_; }
@@ -1431,7 +1699,7 @@ namespace TTF.Tokens.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1608,7 +1876,7 @@ namespace TTF.Tokens.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1785,7 +2053,7 @@ namespace TTF.Tokens.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TTF.Tokens.Model.Core.CoreReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

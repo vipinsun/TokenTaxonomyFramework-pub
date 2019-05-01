@@ -16,7 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Behavior() {
+    behaviorConstructorName_ = "";
     behaviorInvocations_ = java.util.Collections.emptyList();
+    behavioralProperties_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -62,6 +64,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            behaviorConstructorName_ = s;
+            break;
+          }
+          case 34: {
             com.google.protobuf.Any.Builder subBuilder = null;
             if (behaviorConstructor_ != null) {
               subBuilder = behaviorConstructor_.toBuilder();
@@ -74,13 +82,22 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               behaviorInvocations_ = new java.util.ArrayList<org.tti.tokens.model.core.Invocation>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000010;
             }
             behaviorInvocations_.add(
                 input.readMessage(org.tti.tokens.model.core.Invocation.parser(), extensionRegistry));
+            break;
+          }
+          case 50: {
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              behavioralProperties_ = new java.util.ArrayList<org.tti.tokens.model.core.Property>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            behavioralProperties_.add(
+                input.readMessage(org.tti.tokens.model.core.Property.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -98,8 +115,11 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         behaviorInvocations_ = java.util.Collections.unmodifiableList(behaviorInvocations_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        behavioralProperties_ = java.util.Collections.unmodifiableList(behavioralProperties_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -149,72 +169,169 @@ private static final long serialVersionUID = 0L;
     return external_;
   }
 
-  public static final int BEHAVIOR_CONSTRUCTOR_FIELD_NUMBER = 3;
+  public static final int BEHAVIOR_CONSTRUCTOR_NAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object behaviorConstructorName_;
+  /**
+   * <pre>
+   *proto message name empty if there is no constructor, used when unpacking the Any.
+   * </pre>
+   *
+   * <code>string behavior_constructor_name = 3;</code>
+   */
+  public java.lang.String getBehaviorConstructorName() {
+    java.lang.Object ref = behaviorConstructorName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      behaviorConstructorName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *proto message name empty if there is no constructor, used when unpacking the Any.
+   * </pre>
+   *
+   * <code>string behavior_constructor_name = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBehaviorConstructorNameBytes() {
+    java.lang.Object ref = behaviorConstructorName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      behaviorConstructorName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BEHAVIOR_CONSTRUCTOR_FIELD_NUMBER = 4;
   private com.google.protobuf.Any behaviorConstructor_;
   /**
    * <pre>
-   *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+   *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
    * </pre>
    *
-   * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+   * <code>.google.protobuf.Any behavior_constructor = 4;</code>
    */
   public boolean hasBehaviorConstructor() {
     return behaviorConstructor_ != null;
   }
   /**
    * <pre>
-   *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+   *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
    * </pre>
    *
-   * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+   * <code>.google.protobuf.Any behavior_constructor = 4;</code>
    */
   public com.google.protobuf.Any getBehaviorConstructor() {
     return behaviorConstructor_ == null ? com.google.protobuf.Any.getDefaultInstance() : behaviorConstructor_;
   }
   /**
    * <pre>
-   *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+   *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
    * </pre>
    *
-   * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+   * <code>.google.protobuf.Any behavior_constructor = 4;</code>
    */
   public com.google.protobuf.AnyOrBuilder getBehaviorConstructorOrBuilder() {
     return getBehaviorConstructor();
   }
 
-  public static final int BEHAVIOR_INVOCATIONS_FIELD_NUMBER = 4;
+  public static final int BEHAVIOR_INVOCATIONS_FIELD_NUMBER = 5;
   private java.util.List<org.tti.tokens.model.core.Invocation> behaviorInvocations_;
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   public java.util.List<org.tti.tokens.model.core.Invocation> getBehaviorInvocationsList() {
     return behaviorInvocations_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   public java.util.List<? extends org.tti.tokens.model.core.InvocationOrBuilder> 
       getBehaviorInvocationsOrBuilderList() {
     return behaviorInvocations_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   public int getBehaviorInvocationsCount() {
     return behaviorInvocations_.size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   public org.tti.tokens.model.core.Invocation getBehaviorInvocations(int index) {
     return behaviorInvocations_.get(index);
   }
   /**
-   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+   * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
    */
   public org.tti.tokens.model.core.InvocationOrBuilder getBehaviorInvocationsOrBuilder(
       int index) {
     return behaviorInvocations_.get(index);
+  }
+
+  public static final int BEHAVIORAL_PROPERTIES_FIELD_NUMBER = 6;
+  private java.util.List<org.tti.tokens.model.core.Property> behavioralProperties_;
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  public java.util.List<org.tti.tokens.model.core.Property> getBehavioralPropertiesList() {
+    return behavioralProperties_;
+  }
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  public java.util.List<? extends org.tti.tokens.model.core.PropertyOrBuilder> 
+      getBehavioralPropertiesOrBuilderList() {
+    return behavioralProperties_;
+  }
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  public int getBehavioralPropertiesCount() {
+    return behavioralProperties_.size();
+  }
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  public org.tti.tokens.model.core.Property getBehavioralProperties(int index) {
+    return behavioralProperties_.get(index);
+  }
+  /**
+   * <pre>
+   *for any properties that should be added to the token if the behavior is implemented.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+   */
+  public org.tti.tokens.model.core.PropertyOrBuilder getBehavioralPropertiesOrBuilder(
+      int index) {
+    return behavioralProperties_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -237,11 +354,17 @@ private static final long serialVersionUID = 0L;
     if (external_ != false) {
       output.writeBool(2, external_);
     }
+    if (!getBehaviorConstructorNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, behaviorConstructorName_);
+    }
     if (behaviorConstructor_ != null) {
-      output.writeMessage(3, getBehaviorConstructor());
+      output.writeMessage(4, getBehaviorConstructor());
     }
     for (int i = 0; i < behaviorInvocations_.size(); i++) {
-      output.writeMessage(4, behaviorInvocations_.get(i));
+      output.writeMessage(5, behaviorInvocations_.get(i));
+    }
+    for (int i = 0; i < behavioralProperties_.size(); i++) {
+      output.writeMessage(6, behavioralProperties_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -260,13 +383,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, external_);
     }
+    if (!getBehaviorConstructorNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, behaviorConstructorName_);
+    }
     if (behaviorConstructor_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getBehaviorConstructor());
+        .computeMessageSize(4, getBehaviorConstructor());
     }
     for (int i = 0; i < behaviorInvocations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, behaviorInvocations_.get(i));
+        .computeMessageSize(5, behaviorInvocations_.get(i));
+    }
+    for (int i = 0; i < behavioralProperties_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, behavioralProperties_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,6 +420,8 @@ private static final long serialVersionUID = 0L;
     }
     if (getExternal()
         != other.getExternal()) return false;
+    if (!getBehaviorConstructorName()
+        .equals(other.getBehaviorConstructorName())) return false;
     if (hasBehaviorConstructor() != other.hasBehaviorConstructor()) return false;
     if (hasBehaviorConstructor()) {
       if (!getBehaviorConstructor()
@@ -297,6 +429,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBehaviorInvocationsList()
         .equals(other.getBehaviorInvocationsList())) return false;
+    if (!getBehavioralPropertiesList()
+        .equals(other.getBehavioralPropertiesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -315,6 +449,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + EXTERNAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getExternal());
+    hash = (37 * hash) + BEHAVIOR_CONSTRUCTOR_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBehaviorConstructorName().hashCode();
     if (hasBehaviorConstructor()) {
       hash = (37 * hash) + BEHAVIOR_CONSTRUCTOR_FIELD_NUMBER;
       hash = (53 * hash) + getBehaviorConstructor().hashCode();
@@ -322,6 +458,10 @@ private static final long serialVersionUID = 0L;
     if (getBehaviorInvocationsCount() > 0) {
       hash = (37 * hash) + BEHAVIOR_INVOCATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getBehaviorInvocationsList().hashCode();
+    }
+    if (getBehavioralPropertiesCount() > 0) {
+      hash = (37 * hash) + BEHAVIORAL_PROPERTIES_FIELD_NUMBER;
+      hash = (53 * hash) + getBehavioralPropertiesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -452,6 +592,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getBehaviorInvocationsFieldBuilder();
+        getBehavioralPropertiesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -465,6 +606,8 @@ private static final long serialVersionUID = 0L;
       }
       external_ = false;
 
+      behaviorConstructorName_ = "";
+
       if (behaviorConstructorBuilder_ == null) {
         behaviorConstructor_ = null;
       } else {
@@ -473,9 +616,15 @@ private static final long serialVersionUID = 0L;
       }
       if (behaviorInvocationsBuilder_ == null) {
         behaviorInvocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         behaviorInvocationsBuilder_.clear();
+      }
+      if (behavioralPropertiesBuilder_ == null) {
+        behavioralProperties_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        behavioralPropertiesBuilder_.clear();
       }
       return this;
     }
@@ -511,19 +660,29 @@ private static final long serialVersionUID = 0L;
         result.artifact_ = artifactBuilder_.build();
       }
       result.external_ = external_;
+      result.behaviorConstructorName_ = behaviorConstructorName_;
       if (behaviorConstructorBuilder_ == null) {
         result.behaviorConstructor_ = behaviorConstructor_;
       } else {
         result.behaviorConstructor_ = behaviorConstructorBuilder_.build();
       }
       if (behaviorInvocationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           behaviorInvocations_ = java.util.Collections.unmodifiableList(behaviorInvocations_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.behaviorInvocations_ = behaviorInvocations_;
       } else {
         result.behaviorInvocations_ = behaviorInvocationsBuilder_.build();
+      }
+      if (behavioralPropertiesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          behavioralProperties_ = java.util.Collections.unmodifiableList(behavioralProperties_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.behavioralProperties_ = behavioralProperties_;
+      } else {
+        result.behavioralProperties_ = behavioralPropertiesBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -580,6 +739,10 @@ private static final long serialVersionUID = 0L;
       if (other.getExternal() != false) {
         setExternal(other.getExternal());
       }
+      if (!other.getBehaviorConstructorName().isEmpty()) {
+        behaviorConstructorName_ = other.behaviorConstructorName_;
+        onChanged();
+      }
       if (other.hasBehaviorConstructor()) {
         mergeBehaviorConstructor(other.getBehaviorConstructor());
       }
@@ -587,7 +750,7 @@ private static final long serialVersionUID = 0L;
         if (!other.behaviorInvocations_.isEmpty()) {
           if (behaviorInvocations_.isEmpty()) {
             behaviorInvocations_ = other.behaviorInvocations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureBehaviorInvocationsIsMutable();
             behaviorInvocations_.addAll(other.behaviorInvocations_);
@@ -600,12 +763,38 @@ private static final long serialVersionUID = 0L;
             behaviorInvocationsBuilder_.dispose();
             behaviorInvocationsBuilder_ = null;
             behaviorInvocations_ = other.behaviorInvocations_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             behaviorInvocationsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getBehaviorInvocationsFieldBuilder() : null;
           } else {
             behaviorInvocationsBuilder_.addAllMessages(other.behaviorInvocations_);
+          }
+        }
+      }
+      if (behavioralPropertiesBuilder_ == null) {
+        if (!other.behavioralProperties_.isEmpty()) {
+          if (behavioralProperties_.isEmpty()) {
+            behavioralProperties_ = other.behavioralProperties_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureBehavioralPropertiesIsMutable();
+            behavioralProperties_.addAll(other.behavioralProperties_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.behavioralProperties_.isEmpty()) {
+          if (behavioralPropertiesBuilder_.isEmpty()) {
+            behavioralPropertiesBuilder_.dispose();
+            behavioralPropertiesBuilder_ = null;
+            behavioralProperties_ = other.behavioralProperties_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            behavioralPropertiesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getBehavioralPropertiesFieldBuilder() : null;
+          } else {
+            behavioralPropertiesBuilder_.addAllMessages(other.behavioralProperties_);
           }
         }
       }
@@ -782,25 +971,114 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object behaviorConstructorName_ = "";
+    /**
+     * <pre>
+     *proto message name empty if there is no constructor, used when unpacking the Any.
+     * </pre>
+     *
+     * <code>string behavior_constructor_name = 3;</code>
+     */
+    public java.lang.String getBehaviorConstructorName() {
+      java.lang.Object ref = behaviorConstructorName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        behaviorConstructorName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *proto message name empty if there is no constructor, used when unpacking the Any.
+     * </pre>
+     *
+     * <code>string behavior_constructor_name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBehaviorConstructorNameBytes() {
+      java.lang.Object ref = behaviorConstructorName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        behaviorConstructorName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *proto message name empty if there is no constructor, used when unpacking the Any.
+     * </pre>
+     *
+     * <code>string behavior_constructor_name = 3;</code>
+     */
+    public Builder setBehaviorConstructorName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      behaviorConstructorName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *proto message name empty if there is no constructor, used when unpacking the Any.
+     * </pre>
+     *
+     * <code>string behavior_constructor_name = 3;</code>
+     */
+    public Builder clearBehaviorConstructorName() {
+      
+      behaviorConstructorName_ = getDefaultInstance().getBehaviorConstructorName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *proto message name empty if there is no constructor, used when unpacking the Any.
+     * </pre>
+     *
+     * <code>string behavior_constructor_name = 3;</code>
+     */
+    public Builder setBehaviorConstructorNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      behaviorConstructorName_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Any behaviorConstructor_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> behaviorConstructorBuilder_;
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public boolean hasBehaviorConstructor() {
       return behaviorConstructorBuilder_ != null || behaviorConstructor_ != null;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public com.google.protobuf.Any getBehaviorConstructor() {
       if (behaviorConstructorBuilder_ == null) {
@@ -811,10 +1089,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public Builder setBehaviorConstructor(com.google.protobuf.Any value) {
       if (behaviorConstructorBuilder_ == null) {
@@ -831,10 +1109,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public Builder setBehaviorConstructor(
         com.google.protobuf.Any.Builder builderForValue) {
@@ -849,10 +1127,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public Builder mergeBehaviorConstructor(com.google.protobuf.Any value) {
       if (behaviorConstructorBuilder_ == null) {
@@ -871,10 +1149,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public Builder clearBehaviorConstructor() {
       if (behaviorConstructorBuilder_ == null) {
@@ -889,10 +1167,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public com.google.protobuf.Any.Builder getBehaviorConstructorBuilder() {
       
@@ -901,10 +1179,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     public com.google.protobuf.AnyOrBuilder getBehaviorConstructorOrBuilder() {
       if (behaviorConstructorBuilder_ != null) {
@@ -916,10 +1194,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *optional for behaviors like Role Support that needs input when setting up the roles when the token class is created.
+     *optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
      * </pre>
      *
-     * <code>.google.protobuf.Any behavior_constructor = 3;</code>
+     * <code>.google.protobuf.Any behavior_constructor = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -938,9 +1216,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.tti.tokens.model.core.Invocation> behaviorInvocations_ =
       java.util.Collections.emptyList();
     private void ensureBehaviorInvocationsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         behaviorInvocations_ = new java.util.ArrayList<org.tti.tokens.model.core.Invocation>(behaviorInvocations_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
        }
     }
 
@@ -948,7 +1226,7 @@ private static final long serialVersionUID = 0L;
         org.tti.tokens.model.core.Invocation, org.tti.tokens.model.core.Invocation.Builder, org.tti.tokens.model.core.InvocationOrBuilder> behaviorInvocationsBuilder_;
 
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public java.util.List<org.tti.tokens.model.core.Invocation> getBehaviorInvocationsList() {
       if (behaviorInvocationsBuilder_ == null) {
@@ -958,7 +1236,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public int getBehaviorInvocationsCount() {
       if (behaviorInvocationsBuilder_ == null) {
@@ -968,7 +1246,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public org.tti.tokens.model.core.Invocation getBehaviorInvocations(int index) {
       if (behaviorInvocationsBuilder_ == null) {
@@ -978,7 +1256,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder setBehaviorInvocations(
         int index, org.tti.tokens.model.core.Invocation value) {
@@ -995,7 +1273,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder setBehaviorInvocations(
         int index, org.tti.tokens.model.core.Invocation.Builder builderForValue) {
@@ -1009,7 +1287,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder addBehaviorInvocations(org.tti.tokens.model.core.Invocation value) {
       if (behaviorInvocationsBuilder_ == null) {
@@ -1025,7 +1303,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder addBehaviorInvocations(
         int index, org.tti.tokens.model.core.Invocation value) {
@@ -1042,7 +1320,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder addBehaviorInvocations(
         org.tti.tokens.model.core.Invocation.Builder builderForValue) {
@@ -1056,7 +1334,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder addBehaviorInvocations(
         int index, org.tti.tokens.model.core.Invocation.Builder builderForValue) {
@@ -1070,7 +1348,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder addAllBehaviorInvocations(
         java.lang.Iterable<? extends org.tti.tokens.model.core.Invocation> values) {
@@ -1085,12 +1363,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder clearBehaviorInvocations() {
       if (behaviorInvocationsBuilder_ == null) {
         behaviorInvocations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         behaviorInvocationsBuilder_.clear();
@@ -1098,7 +1376,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public Builder removeBehaviorInvocations(int index) {
       if (behaviorInvocationsBuilder_ == null) {
@@ -1111,14 +1389,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public org.tti.tokens.model.core.Invocation.Builder getBehaviorInvocationsBuilder(
         int index) {
       return getBehaviorInvocationsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public org.tti.tokens.model.core.InvocationOrBuilder getBehaviorInvocationsOrBuilder(
         int index) {
@@ -1128,7 +1406,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public java.util.List<? extends org.tti.tokens.model.core.InvocationOrBuilder> 
          getBehaviorInvocationsOrBuilderList() {
@@ -1139,14 +1417,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public org.tti.tokens.model.core.Invocation.Builder addBehaviorInvocationsBuilder() {
       return getBehaviorInvocationsFieldBuilder().addBuilder(
           org.tti.tokens.model.core.Invocation.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public org.tti.tokens.model.core.Invocation.Builder addBehaviorInvocationsBuilder(
         int index) {
@@ -1154,7 +1432,7 @@ private static final long serialVersionUID = 0L;
           index, org.tti.tokens.model.core.Invocation.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 4;</code>
+     * <code>repeated .taxonomy.model.core.Invocation behavior_invocations = 5;</code>
      */
     public java.util.List<org.tti.tokens.model.core.Invocation.Builder> 
          getBehaviorInvocationsBuilderList() {
@@ -1167,12 +1445,324 @@ private static final long serialVersionUID = 0L;
         behaviorInvocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.core.Invocation, org.tti.tokens.model.core.Invocation.Builder, org.tti.tokens.model.core.InvocationOrBuilder>(
                 behaviorInvocations_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         behaviorInvocations_ = null;
       }
       return behaviorInvocationsBuilder_;
+    }
+
+    private java.util.List<org.tti.tokens.model.core.Property> behavioralProperties_ =
+      java.util.Collections.emptyList();
+    private void ensureBehavioralPropertiesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        behavioralProperties_ = new java.util.ArrayList<org.tti.tokens.model.core.Property>(behavioralProperties_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.core.Property, org.tti.tokens.model.core.Property.Builder, org.tti.tokens.model.core.PropertyOrBuilder> behavioralPropertiesBuilder_;
+
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public java.util.List<org.tti.tokens.model.core.Property> getBehavioralPropertiesList() {
+      if (behavioralPropertiesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(behavioralProperties_);
+      } else {
+        return behavioralPropertiesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public int getBehavioralPropertiesCount() {
+      if (behavioralPropertiesBuilder_ == null) {
+        return behavioralProperties_.size();
+      } else {
+        return behavioralPropertiesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public org.tti.tokens.model.core.Property getBehavioralProperties(int index) {
+      if (behavioralPropertiesBuilder_ == null) {
+        return behavioralProperties_.get(index);
+      } else {
+        return behavioralPropertiesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder setBehavioralProperties(
+        int index, org.tti.tokens.model.core.Property value) {
+      if (behavioralPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBehavioralPropertiesIsMutable();
+        behavioralProperties_.set(index, value);
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder setBehavioralProperties(
+        int index, org.tti.tokens.model.core.Property.Builder builderForValue) {
+      if (behavioralPropertiesBuilder_ == null) {
+        ensureBehavioralPropertiesIsMutable();
+        behavioralProperties_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder addBehavioralProperties(org.tti.tokens.model.core.Property value) {
+      if (behavioralPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBehavioralPropertiesIsMutable();
+        behavioralProperties_.add(value);
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder addBehavioralProperties(
+        int index, org.tti.tokens.model.core.Property value) {
+      if (behavioralPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBehavioralPropertiesIsMutable();
+        behavioralProperties_.add(index, value);
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder addBehavioralProperties(
+        org.tti.tokens.model.core.Property.Builder builderForValue) {
+      if (behavioralPropertiesBuilder_ == null) {
+        ensureBehavioralPropertiesIsMutable();
+        behavioralProperties_.add(builderForValue.build());
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder addBehavioralProperties(
+        int index, org.tti.tokens.model.core.Property.Builder builderForValue) {
+      if (behavioralPropertiesBuilder_ == null) {
+        ensureBehavioralPropertiesIsMutable();
+        behavioralProperties_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder addAllBehavioralProperties(
+        java.lang.Iterable<? extends org.tti.tokens.model.core.Property> values) {
+      if (behavioralPropertiesBuilder_ == null) {
+        ensureBehavioralPropertiesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, behavioralProperties_);
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder clearBehavioralProperties() {
+      if (behavioralPropertiesBuilder_ == null) {
+        behavioralProperties_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public Builder removeBehavioralProperties(int index) {
+      if (behavioralPropertiesBuilder_ == null) {
+        ensureBehavioralPropertiesIsMutable();
+        behavioralProperties_.remove(index);
+        onChanged();
+      } else {
+        behavioralPropertiesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public org.tti.tokens.model.core.Property.Builder getBehavioralPropertiesBuilder(
+        int index) {
+      return getBehavioralPropertiesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public org.tti.tokens.model.core.PropertyOrBuilder getBehavioralPropertiesOrBuilder(
+        int index) {
+      if (behavioralPropertiesBuilder_ == null) {
+        return behavioralProperties_.get(index);  } else {
+        return behavioralPropertiesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public java.util.List<? extends org.tti.tokens.model.core.PropertyOrBuilder> 
+         getBehavioralPropertiesOrBuilderList() {
+      if (behavioralPropertiesBuilder_ != null) {
+        return behavioralPropertiesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(behavioralProperties_);
+      }
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public org.tti.tokens.model.core.Property.Builder addBehavioralPropertiesBuilder() {
+      return getBehavioralPropertiesFieldBuilder().addBuilder(
+          org.tti.tokens.model.core.Property.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public org.tti.tokens.model.core.Property.Builder addBehavioralPropertiesBuilder(
+        int index) {
+      return getBehavioralPropertiesFieldBuilder().addBuilder(
+          index, org.tti.tokens.model.core.Property.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *for any properties that should be added to the token if the behavior is implemented.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Property behavioral_properties = 6;</code>
+     */
+    public java.util.List<org.tti.tokens.model.core.Property.Builder> 
+         getBehavioralPropertiesBuilderList() {
+      return getBehavioralPropertiesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.core.Property, org.tti.tokens.model.core.Property.Builder, org.tti.tokens.model.core.PropertyOrBuilder> 
+        getBehavioralPropertiesFieldBuilder() {
+      if (behavioralPropertiesBuilder_ == null) {
+        behavioralPropertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.tti.tokens.model.core.Property, org.tti.tokens.model.core.Property.Builder, org.tti.tokens.model.core.PropertyOrBuilder>(
+                behavioralProperties_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        behavioralProperties_ = null;
+      }
+      return behavioralPropertiesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

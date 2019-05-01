@@ -16,8 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private BehaviorGroup() {
-    behaviorSymbols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    behaviorArtifacts_ = java.util.Collections.emptyList();
+    behaviorSymbols_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -58,21 +57,25 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              behaviorSymbols_ = new com.google.protobuf.LazyStringArrayList();
+              behaviorSymbols_ = new java.util.ArrayList<org.tti.tokens.model.artifact.ArtifactSymbol>();
               mutable_bitField0_ |= 0x00000002;
             }
-            behaviorSymbols_.add(s);
+            behaviorSymbols_.add(
+                input.readMessage(org.tti.tokens.model.artifact.ArtifactSymbol.parser(), extensionRegistry));
             break;
           }
           case 26: {
             if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-              behaviorArtifacts_ = new java.util.ArrayList<org.tti.tokens.model.artifact.Artifact>();
+              memberBehaviorArtifacts_ = com.google.protobuf.MapField.newMapField(
+                  MemberBehaviorArtifactsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000004;
             }
-            behaviorArtifacts_.add(
-                input.readMessage(org.tti.tokens.model.artifact.Artifact.parser(), extensionRegistry));
+            com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+            memberBehaviorArtifacts__ = input.readMessage(
+                MemberBehaviorArtifactsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            memberBehaviorArtifacts_.getMutableMap().put(
+                memberBehaviorArtifacts__.getKey(), memberBehaviorArtifacts__.getValue());
             break;
           }
           default: {
@@ -91,10 +94,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        behaviorSymbols_ = behaviorSymbols_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000004) != 0)) {
-        behaviorArtifacts_ = java.util.Collections.unmodifiableList(behaviorArtifacts_);
+        behaviorSymbols_ = java.util.Collections.unmodifiableList(behaviorSymbols_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -105,6 +105,18 @@ private static final long serialVersionUID = 0L;
     return org.tti.tokens.model.core.Core.internal_static_taxonomy_model_core_BehaviorGroup_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 3:
+        return internalGetMemberBehaviorArtifacts();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -136,67 +148,130 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BEHAVIOR_SYMBOLS_FIELD_NUMBER = 2;
-  private com.google.protobuf.LazyStringList behaviorSymbols_;
+  private java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> behaviorSymbols_;
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getBehaviorSymbolsList() {
+  public java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> getBehaviorSymbolsList() {
     return behaviorSymbols_;
   }
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
+   */
+  public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+      getBehaviorSymbolsOrBuilderList() {
+    return behaviorSymbols_;
+  }
+  /**
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
   public int getBehaviorSymbolsCount() {
     return behaviorSymbols_.size();
   }
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
-  public java.lang.String getBehaviorSymbols(int index) {
+  public org.tti.tokens.model.artifact.ArtifactSymbol getBehaviorSymbols(int index) {
     return behaviorSymbols_.get(index);
   }
   /**
-   * <code>repeated string behavior_symbols = 2;</code>
+   * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getBehaviorSymbolsBytes(int index) {
-    return behaviorSymbols_.getByteString(index);
+  public org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getBehaviorSymbolsOrBuilder(
+      int index) {
+    return behaviorSymbols_.get(index);
   }
 
-  public static final int BEHAVIOR_ARTIFACTS_FIELD_NUMBER = 3;
-  private java.util.List<org.tti.tokens.model.artifact.Artifact> behaviorArtifacts_;
-  /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-   */
-  public java.util.List<org.tti.tokens.model.artifact.Artifact> getBehaviorArtifactsList() {
-    return behaviorArtifacts_;
+  public static final int MEMBER_BEHAVIOR_ARTIFACTS_FIELD_NUMBER = 3;
+  private static final class MemberBehaviorArtifactsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, org.tti.tokens.model.artifact.Artifact> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, org.tti.tokens.model.artifact.Artifact>newDefaultInstance(
+                org.tti.tokens.model.core.Core.internal_static_taxonomy_model_core_BehaviorGroup_MemberBehaviorArtifactsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                org.tti.tokens.model.artifact.Artifact.getDefaultInstance());
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, org.tti.tokens.model.artifact.Artifact> memberBehaviorArtifacts_;
+  private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+  internalGetMemberBehaviorArtifacts() {
+    if (memberBehaviorArtifacts_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MemberBehaviorArtifactsDefaultEntryHolder.defaultEntry);
+    }
+    return memberBehaviorArtifacts_;
+  }
+
+  public int getMemberBehaviorArtifactsCount() {
+    return internalGetMemberBehaviorArtifacts().getMap().size();
   }
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
    */
-  public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactOrBuilder> 
-      getBehaviorArtifactsOrBuilderList() {
-    return behaviorArtifacts_;
+
+  public boolean containsMemberBehaviorArtifacts(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetMemberBehaviorArtifacts().getMap().containsKey(key);
   }
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * Use {@link #getMemberBehaviorArtifactsMap()} instead.
    */
-  public int getBehaviorArtifactsCount() {
-    return behaviorArtifacts_.size();
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> getMemberBehaviorArtifacts() {
+    return getMemberBehaviorArtifactsMap();
   }
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
    */
-  public org.tti.tokens.model.artifact.Artifact getBehaviorArtifacts(int index) {
-    return behaviorArtifacts_.get(index);
+
+  public java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> getMemberBehaviorArtifactsMap() {
+    return internalGetMemberBehaviorArtifacts().getMap();
   }
   /**
-   * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
    */
-  public org.tti.tokens.model.artifact.ArtifactOrBuilder getBehaviorArtifactsOrBuilder(
-      int index) {
-    return behaviorArtifacts_.get(index);
+
+  public org.tti.tokens.model.artifact.Artifact getMemberBehaviorArtifactsOrDefault(
+      java.lang.String key,
+      org.tti.tokens.model.artifact.Artifact defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> map =
+        internalGetMemberBehaviorArtifacts().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   *if retrieved this can be populated with the behaviors nested in the group.
+   * </pre>
+   *
+   * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+   */
+
+  public org.tti.tokens.model.artifact.Artifact getMemberBehaviorArtifactsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> map =
+        internalGetMemberBehaviorArtifacts().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -217,11 +292,14 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(1, getArtifact());
     }
     for (int i = 0; i < behaviorSymbols_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, behaviorSymbols_.getRaw(i));
+      output.writeMessage(2, behaviorSymbols_.get(i));
     }
-    for (int i = 0; i < behaviorArtifacts_.size(); i++) {
-      output.writeMessage(3, behaviorArtifacts_.get(i));
-    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetMemberBehaviorArtifacts(),
+        MemberBehaviorArtifactsDefaultEntryHolder.defaultEntry,
+        3);
     unknownFields.writeTo(output);
   }
 
@@ -235,17 +313,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getArtifact());
     }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < behaviorSymbols_.size(); i++) {
-        dataSize += computeStringSizeNoTag(behaviorSymbols_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getBehaviorSymbolsList().size();
-    }
-    for (int i = 0; i < behaviorArtifacts_.size(); i++) {
+    for (int i = 0; i < behaviorSymbols_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, behaviorArtifacts_.get(i));
+        .computeMessageSize(2, behaviorSymbols_.get(i));
+    }
+    for (java.util.Map.Entry<java.lang.String, org.tti.tokens.model.artifact.Artifact> entry
+         : internalGetMemberBehaviorArtifacts().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+      memberBehaviorArtifacts__ = MemberBehaviorArtifactsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, memberBehaviorArtifacts__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -269,8 +349,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBehaviorSymbolsList()
         .equals(other.getBehaviorSymbolsList())) return false;
-    if (!getBehaviorArtifactsList()
-        .equals(other.getBehaviorArtifactsList())) return false;
+    if (!internalGetMemberBehaviorArtifacts().equals(
+        other.internalGetMemberBehaviorArtifacts())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -290,9 +370,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + BEHAVIOR_SYMBOLS_FIELD_NUMBER;
       hash = (53 * hash) + getBehaviorSymbolsList().hashCode();
     }
-    if (getBehaviorArtifactsCount() > 0) {
-      hash = (37 * hash) + BEHAVIOR_ARTIFACTS_FIELD_NUMBER;
-      hash = (53 * hash) + getBehaviorArtifactsList().hashCode();
+    if (!internalGetMemberBehaviorArtifacts().getMap().isEmpty()) {
+      hash = (37 * hash) + MEMBER_BEHAVIOR_ARTIFACTS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMemberBehaviorArtifacts().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -401,6 +481,28 @@ private static final long serialVersionUID = 0L;
       return org.tti.tokens.model.core.Core.internal_static_taxonomy_model_core_BehaviorGroup_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMemberBehaviorArtifacts();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableMemberBehaviorArtifacts();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -422,7 +524,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getBehaviorArtifactsFieldBuilder();
+        getBehaviorSymbolsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -434,14 +536,13 @@ private static final long serialVersionUID = 0L;
         artifact_ = null;
         artifactBuilder_ = null;
       }
-      behaviorSymbols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (behaviorArtifactsBuilder_ == null) {
-        behaviorArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+      if (behaviorSymbolsBuilder_ == null) {
+        behaviorSymbols_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
-        behaviorArtifactsBuilder_.clear();
+        behaviorSymbolsBuilder_.clear();
       }
+      internalGetMutableMemberBehaviorArtifacts().clear();
       return this;
     }
 
@@ -475,20 +576,17 @@ private static final long serialVersionUID = 0L;
       } else {
         result.artifact_ = artifactBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        behaviorSymbols_ = behaviorSymbols_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.behaviorSymbols_ = behaviorSymbols_;
-      if (behaviorArtifactsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          behaviorArtifacts_ = java.util.Collections.unmodifiableList(behaviorArtifacts_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+      if (behaviorSymbolsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          behaviorSymbols_ = java.util.Collections.unmodifiableList(behaviorSymbols_);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.behaviorArtifacts_ = behaviorArtifacts_;
+        result.behaviorSymbols_ = behaviorSymbols_;
       } else {
-        result.behaviorArtifacts_ = behaviorArtifactsBuilder_.build();
+        result.behaviorSymbols_ = behaviorSymbolsBuilder_.build();
       }
+      result.memberBehaviorArtifacts_ = internalGetMemberBehaviorArtifacts();
+      result.memberBehaviorArtifacts_.makeImmutable();
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -541,42 +639,34 @@ private static final long serialVersionUID = 0L;
       if (other.hasArtifact()) {
         mergeArtifact(other.getArtifact());
       }
-      if (!other.behaviorSymbols_.isEmpty()) {
-        if (behaviorSymbols_.isEmpty()) {
-          behaviorSymbols_ = other.behaviorSymbols_;
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          ensureBehaviorSymbolsIsMutable();
-          behaviorSymbols_.addAll(other.behaviorSymbols_);
-        }
-        onChanged();
-      }
-      if (behaviorArtifactsBuilder_ == null) {
-        if (!other.behaviorArtifacts_.isEmpty()) {
-          if (behaviorArtifacts_.isEmpty()) {
-            behaviorArtifacts_ = other.behaviorArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+      if (behaviorSymbolsBuilder_ == null) {
+        if (!other.behaviorSymbols_.isEmpty()) {
+          if (behaviorSymbols_.isEmpty()) {
+            behaviorSymbols_ = other.behaviorSymbols_;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureBehaviorArtifactsIsMutable();
-            behaviorArtifacts_.addAll(other.behaviorArtifacts_);
+            ensureBehaviorSymbolsIsMutable();
+            behaviorSymbols_.addAll(other.behaviorSymbols_);
           }
           onChanged();
         }
       } else {
-        if (!other.behaviorArtifacts_.isEmpty()) {
-          if (behaviorArtifactsBuilder_.isEmpty()) {
-            behaviorArtifactsBuilder_.dispose();
-            behaviorArtifactsBuilder_ = null;
-            behaviorArtifacts_ = other.behaviorArtifacts_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            behaviorArtifactsBuilder_ = 
+        if (!other.behaviorSymbols_.isEmpty()) {
+          if (behaviorSymbolsBuilder_.isEmpty()) {
+            behaviorSymbolsBuilder_.dispose();
+            behaviorSymbolsBuilder_ = null;
+            behaviorSymbols_ = other.behaviorSymbols_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            behaviorSymbolsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBehaviorArtifactsFieldBuilder() : null;
+                 getBehaviorSymbolsFieldBuilder() : null;
           } else {
-            behaviorArtifactsBuilder_.addAllMessages(other.behaviorArtifacts_);
+            behaviorSymbolsBuilder_.addAllMessages(other.behaviorSymbols_);
           }
         }
       }
+      internalGetMutableMemberBehaviorArtifacts().mergeFrom(
+          other.internalGetMemberBehaviorArtifacts());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -724,338 +814,395 @@ private static final long serialVersionUID = 0L;
       return artifactBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList behaviorSymbols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> behaviorSymbols_ =
+      java.util.Collections.emptyList();
     private void ensureBehaviorSymbolsIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        behaviorSymbols_ = new com.google.protobuf.LazyStringArrayList(behaviorSymbols_);
+        behaviorSymbols_ = new java.util.ArrayList<org.tti.tokens.model.artifact.ArtifactSymbol>(behaviorSymbols_);
         bitField0_ |= 0x00000002;
        }
     }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> behaviorSymbolsBuilder_;
+
     /**
-     * <code>repeated string behavior_symbols = 2;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getBehaviorSymbolsList() {
-      return behaviorSymbols_.getUnmodifiableView();
+    public java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol> getBehaviorSymbolsList() {
+      if (behaviorSymbolsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(behaviorSymbols_);
+      } else {
+        return behaviorSymbolsBuilder_.getMessageList();
+      }
     }
     /**
-     * <code>repeated string behavior_symbols = 2;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
     public int getBehaviorSymbolsCount() {
-      return behaviorSymbols_.size();
+      if (behaviorSymbolsBuilder_ == null) {
+        return behaviorSymbols_.size();
+      } else {
+        return behaviorSymbolsBuilder_.getCount();
+      }
     }
     /**
-     * <code>repeated string behavior_symbols = 2;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public java.lang.String getBehaviorSymbols(int index) {
-      return behaviorSymbols_.get(index);
+    public org.tti.tokens.model.artifact.ArtifactSymbol getBehaviorSymbols(int index) {
+      if (behaviorSymbolsBuilder_ == null) {
+        return behaviorSymbols_.get(index);
+      } else {
+        return behaviorSymbolsBuilder_.getMessage(index);
+      }
     }
     /**
-     * <code>repeated string behavior_symbols = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getBehaviorSymbolsBytes(int index) {
-      return behaviorSymbols_.getByteString(index);
-    }
-    /**
-     * <code>repeated string behavior_symbols = 2;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
     public Builder setBehaviorSymbols(
-        int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBehaviorSymbolsIsMutable();
-      behaviorSymbols_.set(index, value);
-      onChanged();
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (behaviorSymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBehaviorSymbolsIsMutable();
+        behaviorSymbols_.set(index, value);
+        onChanged();
+      } else {
+        behaviorSymbolsBuilder_.setMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string behavior_symbols = 2;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
+     */
+    public Builder setBehaviorSymbols(
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol.Builder builderForValue) {
+      if (behaviorSymbolsBuilder_ == null) {
+        ensureBehaviorSymbolsIsMutable();
+        behaviorSymbols_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        behaviorSymbolsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
+     */
+    public Builder addBehaviorSymbols(org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (behaviorSymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBehaviorSymbolsIsMutable();
+        behaviorSymbols_.add(value);
+        onChanged();
+      } else {
+        behaviorSymbolsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
     public Builder addBehaviorSymbols(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBehaviorSymbolsIsMutable();
-      behaviorSymbols_.add(value);
-      onChanged();
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol value) {
+      if (behaviorSymbolsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBehaviorSymbolsIsMutable();
+        behaviorSymbols_.add(index, value);
+        onChanged();
+      } else {
+        behaviorSymbolsBuilder_.addMessage(index, value);
+      }
       return this;
     }
     /**
-     * <code>repeated string behavior_symbols = 2;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
+     */
+    public Builder addBehaviorSymbols(
+        org.tti.tokens.model.artifact.ArtifactSymbol.Builder builderForValue) {
+      if (behaviorSymbolsBuilder_ == null) {
+        ensureBehaviorSymbolsIsMutable();
+        behaviorSymbols_.add(builderForValue.build());
+        onChanged();
+      } else {
+        behaviorSymbolsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
+     */
+    public Builder addBehaviorSymbols(
+        int index, org.tti.tokens.model.artifact.ArtifactSymbol.Builder builderForValue) {
+      if (behaviorSymbolsBuilder_ == null) {
+        ensureBehaviorSymbolsIsMutable();
+        behaviorSymbols_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        behaviorSymbolsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
     public Builder addAllBehaviorSymbols(
-        java.lang.Iterable<java.lang.String> values) {
-      ensureBehaviorSymbolsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, behaviorSymbols_);
-      onChanged();
+        java.lang.Iterable<? extends org.tti.tokens.model.artifact.ArtifactSymbol> values) {
+      if (behaviorSymbolsBuilder_ == null) {
+        ensureBehaviorSymbolsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, behaviorSymbols_);
+        onChanged();
+      } else {
+        behaviorSymbolsBuilder_.addAllMessages(values);
+      }
       return this;
     }
     /**
-     * <code>repeated string behavior_symbols = 2;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
     public Builder clearBehaviorSymbols() {
-      behaviorSymbols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string behavior_symbols = 2;</code>
-     */
-    public Builder addBehaviorSymbolsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureBehaviorSymbolsIsMutable();
-      behaviorSymbols_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private java.util.List<org.tti.tokens.model.artifact.Artifact> behaviorArtifacts_ =
-      java.util.Collections.emptyList();
-    private void ensureBehaviorArtifactsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
-        behaviorArtifacts_ = new java.util.ArrayList<org.tti.tokens.model.artifact.Artifact>(behaviorArtifacts_);
-        bitField0_ |= 0x00000004;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.artifact.Artifact, org.tti.tokens.model.artifact.Artifact.Builder, org.tti.tokens.model.artifact.ArtifactOrBuilder> behaviorArtifactsBuilder_;
-
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public java.util.List<org.tti.tokens.model.artifact.Artifact> getBehaviorArtifactsList() {
-      if (behaviorArtifactsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(behaviorArtifacts_);
-      } else {
-        return behaviorArtifactsBuilder_.getMessageList();
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public int getBehaviorArtifactsCount() {
-      if (behaviorArtifactsBuilder_ == null) {
-        return behaviorArtifacts_.size();
-      } else {
-        return behaviorArtifactsBuilder_.getCount();
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public org.tti.tokens.model.artifact.Artifact getBehaviorArtifacts(int index) {
-      if (behaviorArtifactsBuilder_ == null) {
-        return behaviorArtifacts_.get(index);
-      } else {
-        return behaviorArtifactsBuilder_.getMessage(index);
-      }
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public Builder setBehaviorArtifacts(
-        int index, org.tti.tokens.model.artifact.Artifact value) {
-      if (behaviorArtifactsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorArtifactsIsMutable();
-        behaviorArtifacts_.set(index, value);
+      if (behaviorSymbolsBuilder_ == null) {
+        behaviorSymbols_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
-        behaviorArtifactsBuilder_.setMessage(index, value);
+        behaviorSymbolsBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public Builder setBehaviorArtifacts(
-        int index, org.tti.tokens.model.artifact.Artifact.Builder builderForValue) {
-      if (behaviorArtifactsBuilder_ == null) {
-        ensureBehaviorArtifactsIsMutable();
-        behaviorArtifacts_.set(index, builderForValue.build());
+    public Builder removeBehaviorSymbols(int index) {
+      if (behaviorSymbolsBuilder_ == null) {
+        ensureBehaviorSymbolsIsMutable();
+        behaviorSymbols_.remove(index);
         onChanged();
       } else {
-        behaviorArtifactsBuilder_.setMessage(index, builderForValue.build());
+        behaviorSymbolsBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public Builder addBehaviorArtifacts(org.tti.tokens.model.artifact.Artifact value) {
-      if (behaviorArtifactsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorArtifactsIsMutable();
-        behaviorArtifacts_.add(value);
-        onChanged();
-      } else {
-        behaviorArtifactsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public Builder addBehaviorArtifacts(
-        int index, org.tti.tokens.model.artifact.Artifact value) {
-      if (behaviorArtifactsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureBehaviorArtifactsIsMutable();
-        behaviorArtifacts_.add(index, value);
-        onChanged();
-      } else {
-        behaviorArtifactsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public Builder addBehaviorArtifacts(
-        org.tti.tokens.model.artifact.Artifact.Builder builderForValue) {
-      if (behaviorArtifactsBuilder_ == null) {
-        ensureBehaviorArtifactsIsMutable();
-        behaviorArtifacts_.add(builderForValue.build());
-        onChanged();
-      } else {
-        behaviorArtifactsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public Builder addBehaviorArtifacts(
-        int index, org.tti.tokens.model.artifact.Artifact.Builder builderForValue) {
-      if (behaviorArtifactsBuilder_ == null) {
-        ensureBehaviorArtifactsIsMutable();
-        behaviorArtifacts_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        behaviorArtifactsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public Builder addAllBehaviorArtifacts(
-        java.lang.Iterable<? extends org.tti.tokens.model.artifact.Artifact> values) {
-      if (behaviorArtifactsBuilder_ == null) {
-        ensureBehaviorArtifactsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, behaviorArtifacts_);
-        onChanged();
-      } else {
-        behaviorArtifactsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public Builder clearBehaviorArtifacts() {
-      if (behaviorArtifactsBuilder_ == null) {
-        behaviorArtifacts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-      } else {
-        behaviorArtifactsBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public Builder removeBehaviorArtifacts(int index) {
-      if (behaviorArtifactsBuilder_ == null) {
-        ensureBehaviorArtifactsIsMutable();
-        behaviorArtifacts_.remove(index);
-        onChanged();
-      } else {
-        behaviorArtifactsBuilder_.remove(index);
-      }
-      return this;
-    }
-    /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
-     */
-    public org.tti.tokens.model.artifact.Artifact.Builder getBehaviorArtifactsBuilder(
+    public org.tti.tokens.model.artifact.ArtifactSymbol.Builder getBehaviorSymbolsBuilder(
         int index) {
-      return getBehaviorArtifactsFieldBuilder().getBuilder(index);
+      return getBehaviorSymbolsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public org.tti.tokens.model.artifact.ArtifactOrBuilder getBehaviorArtifactsOrBuilder(
+    public org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder getBehaviorSymbolsOrBuilder(
         int index) {
-      if (behaviorArtifactsBuilder_ == null) {
-        return behaviorArtifacts_.get(index);  } else {
-        return behaviorArtifactsBuilder_.getMessageOrBuilder(index);
+      if (behaviorSymbolsBuilder_ == null) {
+        return behaviorSymbols_.get(index);  } else {
+        return behaviorSymbolsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactOrBuilder> 
-         getBehaviorArtifactsOrBuilderList() {
-      if (behaviorArtifactsBuilder_ != null) {
-        return behaviorArtifactsBuilder_.getMessageOrBuilderList();
+    public java.util.List<? extends org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+         getBehaviorSymbolsOrBuilderList() {
+      if (behaviorSymbolsBuilder_ != null) {
+        return behaviorSymbolsBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(behaviorArtifacts_);
+        return java.util.Collections.unmodifiableList(behaviorSymbols_);
       }
     }
     /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public org.tti.tokens.model.artifact.Artifact.Builder addBehaviorArtifactsBuilder() {
-      return getBehaviorArtifactsFieldBuilder().addBuilder(
-          org.tti.tokens.model.artifact.Artifact.getDefaultInstance());
+    public org.tti.tokens.model.artifact.ArtifactSymbol.Builder addBehaviorSymbolsBuilder() {
+      return getBehaviorSymbolsFieldBuilder().addBuilder(
+          org.tti.tokens.model.artifact.ArtifactSymbol.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public org.tti.tokens.model.artifact.Artifact.Builder addBehaviorArtifactsBuilder(
+    public org.tti.tokens.model.artifact.ArtifactSymbol.Builder addBehaviorSymbolsBuilder(
         int index) {
-      return getBehaviorArtifactsFieldBuilder().addBuilder(
-          index, org.tti.tokens.model.artifact.Artifact.getDefaultInstance());
+      return getBehaviorSymbolsFieldBuilder().addBuilder(
+          index, org.tti.tokens.model.artifact.ArtifactSymbol.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.artifact.Artifact behavior_artifacts = 3;</code>
+     * <code>repeated .taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;</code>
      */
-    public java.util.List<org.tti.tokens.model.artifact.Artifact.Builder> 
-         getBehaviorArtifactsBuilderList() {
-      return getBehaviorArtifactsFieldBuilder().getBuilderList();
+    public java.util.List<org.tti.tokens.model.artifact.ArtifactSymbol.Builder> 
+         getBehaviorSymbolsBuilderList() {
+      return getBehaviorSymbolsFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        org.tti.tokens.model.artifact.Artifact, org.tti.tokens.model.artifact.Artifact.Builder, org.tti.tokens.model.artifact.ArtifactOrBuilder> 
-        getBehaviorArtifactsFieldBuilder() {
-      if (behaviorArtifactsBuilder_ == null) {
-        behaviorArtifactsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            org.tti.tokens.model.artifact.Artifact, org.tti.tokens.model.artifact.Artifact.Builder, org.tti.tokens.model.artifact.ArtifactOrBuilder>(
-                behaviorArtifacts_,
-                ((bitField0_ & 0x00000004) != 0),
+        org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder> 
+        getBehaviorSymbolsFieldBuilder() {
+      if (behaviorSymbolsBuilder_ == null) {
+        behaviorSymbolsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.tti.tokens.model.artifact.ArtifactSymbol, org.tti.tokens.model.artifact.ArtifactSymbol.Builder, org.tti.tokens.model.artifact.ArtifactSymbolOrBuilder>(
+                behaviorSymbols_,
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
-        behaviorArtifacts_ = null;
+        behaviorSymbols_ = null;
       }
-      return behaviorArtifactsBuilder_;
+      return behaviorSymbolsBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, org.tti.tokens.model.artifact.Artifact> memberBehaviorArtifacts_;
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+    internalGetMemberBehaviorArtifacts() {
+      if (memberBehaviorArtifacts_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MemberBehaviorArtifactsDefaultEntryHolder.defaultEntry);
+      }
+      return memberBehaviorArtifacts_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+    internalGetMutableMemberBehaviorArtifacts() {
+      onChanged();;
+      if (memberBehaviorArtifacts_ == null) {
+        memberBehaviorArtifacts_ = com.google.protobuf.MapField.newMapField(
+            MemberBehaviorArtifactsDefaultEntryHolder.defaultEntry);
+      }
+      if (!memberBehaviorArtifacts_.isMutable()) {
+        memberBehaviorArtifacts_ = memberBehaviorArtifacts_.copy();
+      }
+      return memberBehaviorArtifacts_;
+    }
+
+    public int getMemberBehaviorArtifactsCount() {
+      return internalGetMemberBehaviorArtifacts().getMap().size();
+    }
+    /**
+     * <pre>
+     *if retrieved this can be populated with the behaviors nested in the group.
+     * </pre>
+     *
+     * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+     */
+
+    public boolean containsMemberBehaviorArtifacts(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMemberBehaviorArtifacts().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMemberBehaviorArtifactsMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> getMemberBehaviorArtifacts() {
+      return getMemberBehaviorArtifactsMap();
+    }
+    /**
+     * <pre>
+     *if retrieved this can be populated with the behaviors nested in the group.
+     * </pre>
+     *
+     * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+     */
+
+    public java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> getMemberBehaviorArtifactsMap() {
+      return internalGetMemberBehaviorArtifacts().getMap();
+    }
+    /**
+     * <pre>
+     *if retrieved this can be populated with the behaviors nested in the group.
+     * </pre>
+     *
+     * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+     */
+
+    public org.tti.tokens.model.artifact.Artifact getMemberBehaviorArtifactsOrDefault(
+        java.lang.String key,
+        org.tti.tokens.model.artifact.Artifact defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> map =
+          internalGetMemberBehaviorArtifacts().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     *if retrieved this can be populated with the behaviors nested in the group.
+     * </pre>
+     *
+     * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+     */
+
+    public org.tti.tokens.model.artifact.Artifact getMemberBehaviorArtifactsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> map =
+          internalGetMemberBehaviorArtifacts().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMemberBehaviorArtifacts() {
+      internalGetMutableMemberBehaviorArtifacts().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     *if retrieved this can be populated with the behaviors nested in the group.
+     * </pre>
+     *
+     * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+     */
+
+    public Builder removeMemberBehaviorArtifacts(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableMemberBehaviorArtifacts().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact>
+    getMutableMemberBehaviorArtifacts() {
+      return internalGetMutableMemberBehaviorArtifacts().getMutableMap();
+    }
+    /**
+     * <pre>
+     *if retrieved this can be populated with the behaviors nested in the group.
+     * </pre>
+     *
+     * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+     */
+    public Builder putMemberBehaviorArtifacts(
+        java.lang.String key,
+        org.tti.tokens.model.artifact.Artifact value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableMemberBehaviorArtifacts().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     *if retrieved this can be populated with the behaviors nested in the group.
+     * </pre>
+     *
+     * <code>map&lt;string, .taxonomy.model.artifact.Artifact&gt; member_behavior_artifacts = 3;</code>
+     */
+
+    public Builder putAllMemberBehaviorArtifacts(
+        java.util.Map<java.lang.String, org.tti.tokens.model.artifact.Artifact> values) {
+      internalGetMutableMemberBehaviorArtifacts().getMutableMap()
+          .putAll(values);
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
