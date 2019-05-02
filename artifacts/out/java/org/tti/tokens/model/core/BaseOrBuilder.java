@@ -21,13 +21,13 @@ public interface BaseOrBuilder extends
   org.tti.tokens.model.artifact.ArtifactOrBuilder getArtifactOrBuilder();
 
   /**
-   * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+   * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
    */
   int getTokenTypeValue();
   /**
-   * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+   * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
    */
-  org.tti.tokens.model.core.TokenType getTokenType();
+  org.tti.tokens.model.artifact.TokenType getTokenType();
 
   /**
    * <pre>

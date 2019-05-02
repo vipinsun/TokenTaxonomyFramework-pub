@@ -25,4 +25,21 @@ public interface NewArtifactRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   *if ArtifactType Base or TokenTemplate
+   * </pre>
+   *
+   * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+   */
+  int getTokenTypeValue();
+  /**
+   * <pre>
+   *if ArtifactType Base or TokenTemplate
+   * </pre>
+   *
+   * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+   */
+  org.tti.tokens.model.artifact.TokenType getTokenType();
 }

@@ -49,7 +49,12 @@ private static final long serialVersionUID = 0L;
             type_ = rawValue;
             break;
           }
-          case 18: {
+          case 16: {
+
+            updated_ = input.readBool();
+            break;
+          }
+          case 26: {
             com.google.protobuf.Any.Builder subBuilder = null;
             if (artifactTypeObject_ != null) {
               subBuilder = artifactTypeObject_.toBuilder();
@@ -111,34 +116,43 @@ private static final long serialVersionUID = 0L;
     return result == null ? org.tti.tokens.model.artifact.ArtifactType.UNRECOGNIZED : result;
   }
 
-  public static final int ARTIFACT_TYPE_OBJECT_FIELD_NUMBER = 2;
+  public static final int UPDATED_FIELD_NUMBER = 2;
+  private boolean updated_;
+  /**
+   * <code>bool updated = 2;</code>
+   */
+  public boolean getUpdated() {
+    return updated_;
+  }
+
+  public static final int ARTIFACT_TYPE_OBJECT_FIELD_NUMBER = 3;
   private com.google.protobuf.Any artifactTypeObject_;
   /**
    * <pre>
-   *deserialize based on type
+   *updated type, deserialize based on type
    * </pre>
    *
-   * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+   * <code>.google.protobuf.Any artifact_type_object = 3;</code>
    */
   public boolean hasArtifactTypeObject() {
     return artifactTypeObject_ != null;
   }
   /**
    * <pre>
-   *deserialize based on type
+   *updated type, deserialize based on type
    * </pre>
    *
-   * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+   * <code>.google.protobuf.Any artifact_type_object = 3;</code>
    */
   public com.google.protobuf.Any getArtifactTypeObject() {
     return artifactTypeObject_ == null ? com.google.protobuf.Any.getDefaultInstance() : artifactTypeObject_;
   }
   /**
    * <pre>
-   *deserialize based on type
+   *updated type, deserialize based on type
    * </pre>
    *
-   * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+   * <code>.google.protobuf.Any artifact_type_object = 3;</code>
    */
   public com.google.protobuf.AnyOrBuilder getArtifactTypeObjectOrBuilder() {
     return getArtifactTypeObject();
@@ -161,8 +175,11 @@ private static final long serialVersionUID = 0L;
     if (type_ != org.tti.tokens.model.artifact.ArtifactType.BASE.getNumber()) {
       output.writeEnum(1, type_);
     }
+    if (updated_ != false) {
+      output.writeBool(2, updated_);
+    }
     if (artifactTypeObject_ != null) {
-      output.writeMessage(2, getArtifactTypeObject());
+      output.writeMessage(3, getArtifactTypeObject());
     }
     unknownFields.writeTo(output);
   }
@@ -177,9 +194,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }
+    if (updated_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(2, updated_);
+    }
     if (artifactTypeObject_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getArtifactTypeObject());
+        .computeMessageSize(3, getArtifactTypeObject());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -197,6 +218,8 @@ private static final long serialVersionUID = 0L;
     org.tti.tokens.model.artifact.UpdateArtifactResponse other = (org.tti.tokens.model.artifact.UpdateArtifactResponse) obj;
 
     if (type_ != other.type_) return false;
+    if (getUpdated()
+        != other.getUpdated()) return false;
     if (hasArtifactTypeObject() != other.hasArtifactTypeObject()) return false;
     if (hasArtifactTypeObject()) {
       if (!getArtifactTypeObject()
@@ -215,6 +238,9 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    hash = (37 * hash) + UPDATED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getUpdated());
     if (hasArtifactTypeObject()) {
       hash = (37 * hash) + ARTIFACT_TYPE_OBJECT_FIELD_NUMBER;
       hash = (53 * hash) + getArtifactTypeObject().hashCode();
@@ -354,6 +380,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       type_ = 0;
 
+      updated_ = false;
+
       if (artifactTypeObjectBuilder_ == null) {
         artifactTypeObject_ = null;
       } else {
@@ -387,6 +415,7 @@ private static final long serialVersionUID = 0L;
     public org.tti.tokens.model.artifact.UpdateArtifactResponse buildPartial() {
       org.tti.tokens.model.artifact.UpdateArtifactResponse result = new org.tti.tokens.model.artifact.UpdateArtifactResponse(this);
       result.type_ = type_;
+      result.updated_ = updated_;
       if (artifactTypeObjectBuilder_ == null) {
         result.artifactTypeObject_ = artifactTypeObject_;
       } else {
@@ -442,6 +471,9 @@ private static final long serialVersionUID = 0L;
       if (other == org.tti.tokens.model.artifact.UpdateArtifactResponse.getDefaultInstance()) return this;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
+      }
+      if (other.getUpdated() != false) {
+        setUpdated(other.getUpdated());
       }
       if (other.hasArtifactTypeObject()) {
         mergeArtifactTypeObject(other.getArtifactTypeObject());
@@ -520,25 +552,51 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean updated_ ;
+    /**
+     * <code>bool updated = 2;</code>
+     */
+    public boolean getUpdated() {
+      return updated_;
+    }
+    /**
+     * <code>bool updated = 2;</code>
+     */
+    public Builder setUpdated(boolean value) {
+      
+      updated_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool updated = 2;</code>
+     */
+    public Builder clearUpdated() {
+      
+      updated_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Any artifactTypeObject_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> artifactTypeObjectBuilder_;
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public boolean hasArtifactTypeObject() {
       return artifactTypeObjectBuilder_ != null || artifactTypeObject_ != null;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public com.google.protobuf.Any getArtifactTypeObject() {
       if (artifactTypeObjectBuilder_ == null) {
@@ -549,10 +607,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public Builder setArtifactTypeObject(com.google.protobuf.Any value) {
       if (artifactTypeObjectBuilder_ == null) {
@@ -569,10 +627,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public Builder setArtifactTypeObject(
         com.google.protobuf.Any.Builder builderForValue) {
@@ -587,10 +645,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public Builder mergeArtifactTypeObject(com.google.protobuf.Any value) {
       if (artifactTypeObjectBuilder_ == null) {
@@ -609,10 +667,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public Builder clearArtifactTypeObject() {
       if (artifactTypeObjectBuilder_ == null) {
@@ -627,10 +685,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public com.google.protobuf.Any.Builder getArtifactTypeObjectBuilder() {
       
@@ -639,10 +697,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     public com.google.protobuf.AnyOrBuilder getArtifactTypeObjectOrBuilder() {
       if (artifactTypeObjectBuilder_ != null) {
@@ -654,10 +712,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     *deserialize based on type
+     *updated type, deserialize based on type
      * </pre>
      *
-     * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+     * <code>.google.protobuf.Any artifact_type_object = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 

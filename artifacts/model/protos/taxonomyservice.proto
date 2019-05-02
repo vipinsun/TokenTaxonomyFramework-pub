@@ -5,8 +5,8 @@ import "taxonomy.proto";
 import "core.proto";
 import "artifact.proto";
 
-option csharp_namespace = "TTF.Tokens.tokens";
-option java_package = "org.tokentaxonomyinitiative.tokens";
+option csharp_namespace = "TTT.TTF.Taxonomy";
+option java_package = "org.tti.ttf.taxonomy";
 option java_multiple_files = true;
 
 service TaxonomyService {
@@ -15,12 +15,13 @@ service TaxonomyService {
     rpc GetBaseArtifact (Symbol) returns (taxonomy.model.core.Base) {}
     rpc GetBehaviorArtifact (Symbol) returns (taxonomy.model.core.Behavior) {}
     rpc GetBehaviorGroupArtifact (Symbol) returns (taxonomy.model.core.BehaviorGroup) {}
-    rpc GetBehaviorPropertySet (Symbol) returns (taxonomy.model.core.PropertySet) {}
+    rpc GetPropertySetArtifact (Symbol) returns (taxonomy.model.core.PropertySet) {}
     rpc GetTokenTemplateArtifact (TaxonomyFormula) returns (taxonomy.model.core.TokenTemplate) {}
     
     //sets
-    rpc AddArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactRequest) {}
-    rpc UpdateArtifact (taxonomy.model.artifact.UpdateArtifactRequest) returns (taxonomy.model.artifact.UpdateArtifactRequest) {}
+    rpc CreateArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactResponse) {}
+    rpc UpdateArtifact (taxonomy.model.artifact.UpdateArtifactRequest) returns (taxonomy.model.artifact.UpdateArtifactResponse) {}
+    rpc DeleteArtifact (taxonomy.model.artifact.DeleteArtifactRequest) returns (taxonomy.model.artifact.DeleteArtifactResponse) {}
 }
 
 message TaxonomyVersion{

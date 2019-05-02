@@ -92,7 +92,7 @@ public enum MappingType
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return org.tti.tokens.model.artifact.ArtifactOuterClass.getDescriptor().getEnumTypes().get(2);
+    return org.tti.tokens.model.artifact.ArtifactOuterClass.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final MappingType[] VALUES = values();

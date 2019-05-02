@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private NewArtifactRequest() {
     type_ = 0;
     name_ = "";
+    tokenType_ = 0;
   }
 
   @java.lang.Override
@@ -54,6 +55,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
+            break;
+          }
+          case 24: {
+            int rawValue = input.readEnum();
+
+            tokenType_ = rawValue;
             break;
           }
           default: {
@@ -139,6 +146,31 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int TOKEN_TYPE_FIELD_NUMBER = 3;
+  private int tokenType_;
+  /**
+   * <pre>
+   *if ArtifactType Base or TokenTemplate
+   * </pre>
+   *
+   * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+   */
+  public int getTokenTypeValue() {
+    return tokenType_;
+  }
+  /**
+   * <pre>
+   *if ArtifactType Base or TokenTemplate
+   * </pre>
+   *
+   * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+   */
+  public org.tti.tokens.model.artifact.TokenType getTokenType() {
+    @SuppressWarnings("deprecation")
+    org.tti.tokens.model.artifact.TokenType result = org.tti.tokens.model.artifact.TokenType.valueOf(tokenType_);
+    return result == null ? org.tti.tokens.model.artifact.TokenType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -159,6 +191,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
+    if (tokenType_ != org.tti.tokens.model.artifact.TokenType.FUNGIBLE.getNumber()) {
+      output.writeEnum(3, tokenType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -174,6 +209,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+    }
+    if (tokenType_ != org.tti.tokens.model.artifact.TokenType.FUNGIBLE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(3, tokenType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -193,6 +232,7 @@ private static final long serialVersionUID = 0L;
     if (type_ != other.type_) return false;
     if (!getName()
         .equals(other.getName())) return false;
+    if (tokenType_ != other.tokenType_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -208,6 +248,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + type_;
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + TOKEN_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + tokenType_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -345,6 +387,8 @@ private static final long serialVersionUID = 0L;
 
       name_ = "";
 
+      tokenType_ = 0;
+
       return this;
     }
 
@@ -373,6 +417,7 @@ private static final long serialVersionUID = 0L;
       org.tti.tokens.model.artifact.NewArtifactRequest result = new org.tti.tokens.model.artifact.NewArtifactRequest(this);
       result.type_ = type_;
       result.name_ = name_;
+      result.tokenType_ = tokenType_;
       onBuilt();
       return result;
     }
@@ -427,6 +472,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.tokenType_ != 0) {
+        setTokenTypeValue(other.getTokenTypeValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -567,6 +615,71 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int tokenType_ = 0;
+    /**
+     * <pre>
+     *if ArtifactType Base or TokenTemplate
+     * </pre>
+     *
+     * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+     */
+    public int getTokenTypeValue() {
+      return tokenType_;
+    }
+    /**
+     * <pre>
+     *if ArtifactType Base or TokenTemplate
+     * </pre>
+     *
+     * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+     */
+    public Builder setTokenTypeValue(int value) {
+      tokenType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *if ArtifactType Base or TokenTemplate
+     * </pre>
+     *
+     * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+     */
+    public org.tti.tokens.model.artifact.TokenType getTokenType() {
+      @SuppressWarnings("deprecation")
+      org.tti.tokens.model.artifact.TokenType result = org.tti.tokens.model.artifact.TokenType.valueOf(tokenType_);
+      return result == null ? org.tti.tokens.model.artifact.TokenType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     *if ArtifactType Base or TokenTemplate
+     * </pre>
+     *
+     * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+     */
+    public Builder setTokenType(org.tti.tokens.model.artifact.TokenType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      tokenType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *if ArtifactType Base or TokenTemplate
+     * </pre>
+     *
+     * <code>.taxonomy.model.artifact.TokenType token_type = 3;</code>
+     */
+    public Builder clearTokenType() {
+      
+      tokenType_ = 0;
       onChanged();
       return this;
     }

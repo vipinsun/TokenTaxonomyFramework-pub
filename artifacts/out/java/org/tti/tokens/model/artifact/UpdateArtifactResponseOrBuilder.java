@@ -17,27 +17,32 @@ public interface UpdateArtifactResponseOrBuilder extends
   org.tti.tokens.model.artifact.ArtifactType getType();
 
   /**
+   * <code>bool updated = 2;</code>
+   */
+  boolean getUpdated();
+
+  /**
    * <pre>
-   *deserialize based on type
+   *updated type, deserialize based on type
    * </pre>
    *
-   * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+   * <code>.google.protobuf.Any artifact_type_object = 3;</code>
    */
   boolean hasArtifactTypeObject();
   /**
    * <pre>
-   *deserialize based on type
+   *updated type, deserialize based on type
    * </pre>
    *
-   * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+   * <code>.google.protobuf.Any artifact_type_object = 3;</code>
    */
   com.google.protobuf.Any getArtifactTypeObject();
   /**
    * <pre>
-   *deserialize based on type
+   *updated type, deserialize based on type
    * </pre>
    *
-   * <code>.google.protobuf.Any artifact_type_object = 2;</code>
+   * <code>.google.protobuf.Any artifact_type_object = 3;</code>
    */
   com.google.protobuf.AnyOrBuilder getArtifactTypeObjectOrBuilder();
 }

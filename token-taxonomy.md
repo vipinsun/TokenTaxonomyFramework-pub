@@ -336,9 +336,7 @@ For each complete token definition these interactions can be defined as an artif
 
 The behavior artifacts and groups are not fixed, nor do they represent complete implementation specific values. But they do represent a common base set of messages which similar to Ethereum's [ERC-20](https://eips.ethereum.org/EIPS/eip-20) standard allows for working with tokens in a generic way and supports implementation of specific properties and features without breaking the base messaging interface.
 
-The `TokenTaxonomyDefinition` represents the token interface and contains the taxonomy identifiers for its root and the standard behavior artifacts and groups it has as well as a collection of custom behaviors.
-
-![TaxonomyRoot](images/taxonomyRoot.png)
+The `TokenTaxonomyDefinition` represents the token interface and contains the taxonomy identifiers for its root, behaviors and behavior groups it has, followed by any property-sets.
 
 A `GetTaxonomyRequest` message sent to a token will respond with a `GetTaxonomyResponse` and be able to understand the token interface as well as any custom behaviors, internal or external, to begin interacting with it.
 

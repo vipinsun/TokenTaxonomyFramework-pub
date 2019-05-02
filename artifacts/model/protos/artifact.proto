@@ -7,6 +7,13 @@ option csharp_namespace = "TTF.Tokens.Model.Artifact";
 option java_package = "org.tti.tokens.model.artifact";
 option java_multiple_files = true;
 
+enum TokenType {
+    FUNGIBLE = 0;
+    NON_FUNGIBLE = 1;
+    HYBRID_FUNGIBLE_ROOT = 2;
+    HYBRID_NON_FUNGIBLE_ROOT = 3;
+}
+
 enum ArtifactType{
     BASE = 0; //from core.Type
     BEHAVIOR = 1; 
@@ -109,6 +116,7 @@ message MapResourceEntry{
 message NewArtifactRequest{
     ArtifactType type = 1;
     string name = 2;
+    TokenType token_type = 3; //if ArtifactType Base or TokenTemplate
 }
 
 message NewArtifactResponse{
@@ -123,5 +131,15 @@ message UpdateArtifactRequest{
 
 message UpdateArtifactResponse{
     ArtifactType type = 1;
-    google.protobuf.Any artifact_type_object = 2; //deserialize based on type
+    bool updated = 2;
+    google.protobuf.Any artifact_type_object = 3; //updated type, deserialize based on type
+}
+
+message DeleteArtifactRequest{
+    ArtifactType type = 1;
+    ArtifactSymbol artifact_symbol = 2;//deserialize based on type
+}
+
+message DeleteArtifactResponse{
+    bool deleted = 1;
 }

@@ -79,6 +79,16 @@ public final class ArtifactOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_taxonomy_model_artifact_UpdateArtifactResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_artifact_DeleteArtifactRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_artifact_DeleteArtifactRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_taxonomy_model_artifact_DeleteArtifactResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_taxonomy_model_artifact_DeleteArtifactResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -135,30 +145,39 @@ public final class ArtifactOuterClass {
       "ping_type\030\001 \001(\0162$.taxonomy.model.artifac" +
       "t.MappingType\022\014\n\004name\030\002 \001(\t\022\023\n\013descripti" +
       "on\030\003 \001(\t\022\025\n\rresource_path\030\004 \001(\t\022+\n\004maps\030" +
-      "\005 \001(\0132\035.taxonomy.model.artifact.Maps\"W\n\022" +
-      "NewArtifactRequest\0223\n\004type\030\001 \001(\0162%.taxon" +
-      "omy.model.artifact.ArtifactType\022\014\n\004name\030" +
-      "\002 \001(\t\"~\n\023NewArtifactResponse\0223\n\004type\030\001 \001" +
+      "\005 \001(\0132\035.taxonomy.model.artifact.Maps\"\217\001\n" +
+      "\022NewArtifactRequest\0223\n\004type\030\001 \001(\0162%.taxo" +
+      "nomy.model.artifact.ArtifactType\022\014\n\004name" +
+      "\030\002 \001(\t\0226\n\ntoken_type\030\003 \001(\0162\".taxonomy.mo" +
+      "del.artifact.TokenType\"~\n\023NewArtifactRes" +
+      "ponse\0223\n\004type\030\001 \001(\0162%.taxonomy.model.art" +
+      "ifact.ArtifactType\0222\n\024artifact_type_obje" +
+      "ct\030\002 \001(\0132\024.google.protobuf.Any\"\200\001\n\025Updat" +
+      "eArtifactRequest\0223\n\004type\030\001 \001(\0162%.taxonom" +
+      "y.model.artifact.ArtifactType\0222\n\024artifac" +
+      "t_type_object\030\002 \001(\0132\024.google.protobuf.An" +
+      "y\"\222\001\n\026UpdateArtifactResponse\0223\n\004type\030\001 \001" +
       "(\0162%.taxonomy.model.artifact.ArtifactTyp" +
-      "e\0222\n\024artifact_type_object\030\002 \001(\0132\024.google" +
-      ".protobuf.Any\"\200\001\n\025UpdateArtifactRequest\022" +
-      "3\n\004type\030\001 \001(\0162%.taxonomy.model.artifact." +
-      "ArtifactType\0222\n\024artifact_type_object\030\002 \001" +
-      "(\0132\024.google.protobuf.Any\"\201\001\n\026UpdateArtif" +
-      "actResponse\0223\n\004type\030\001 \001(\0162%.taxonomy.mod" +
-      "el.artifact.ArtifactType\0222\n\024artifact_typ" +
-      "e_object\030\002 \001(\0132\024.google.protobuf.Any*`\n\014" +
-      "ArtifactType\022\010\n\004BASE\020\000\022\014\n\010BEHAVIOR\020\001\022\022\n\016" +
-      "BEHAVIOR_GROUP\020\002\022\020\n\014PROPERTY_SET\020\003\022\022\n\016TO" +
-      "KEN_TEMPLATE\020\004*B\n\017ArtifactContent\022\016\n\nDEF" +
-      "INITION\020\000\022\013\n\007CONTROL\020\001\022\007\n\003UML\020\002\022\t\n\005OTHER" +
-      "\020\003*@\n\013MappingType\022\017\n\013SOURCE_CODE\020\000\022\022\n\016IM" +
-      "PLEMENTATION\020\001\022\014\n\010RESOURCE\020\002*v\n\016TargetPl" +
-      "atform\022\025\n\021ETHEREUM_SOLIDITY\020\000\022\020\n\014CHAINCO" +
-      "DE_GO\020\001\022\022\n\016CHAINCODE_JAVA\020\002\022\022\n\016CHAINCODE" +
-      "_NODE\020\003\022\t\n\005CORDA\020\004\022\010\n\004DAML\020\005B=\n\035org.tti." +
-      "tokens.model.artifactP\001\252\002\031TTF.Tokens.Mod" +
-      "el.Artifactb\006proto3"
+      "e\022\017\n\007updated\030\002 \001(\010\0222\n\024artifact_type_obje" +
+      "ct\030\003 \001(\0132\024.google.protobuf.Any\"\216\001\n\025Delet" +
+      "eArtifactRequest\0223\n\004type\030\001 \001(\0162%.taxonom" +
+      "y.model.artifact.ArtifactType\022@\n\017artifac" +
+      "t_symbol\030\002 \001(\0132\'.taxonomy.model.artifact" +
+      ".ArtifactSymbol\")\n\026DeleteArtifactRespons" +
+      "e\022\017\n\007deleted\030\001 \001(\010*c\n\tTokenType\022\014\n\010FUNGI" +
+      "BLE\020\000\022\020\n\014NON_FUNGIBLE\020\001\022\030\n\024HYBRID_FUNGIB" +
+      "LE_ROOT\020\002\022\034\n\030HYBRID_NON_FUNGIBLE_ROOT\020\003*" +
+      "`\n\014ArtifactType\022\010\n\004BASE\020\000\022\014\n\010BEHAVIOR\020\001\022" +
+      "\022\n\016BEHAVIOR_GROUP\020\002\022\020\n\014PROPERTY_SET\020\003\022\022\n" +
+      "\016TOKEN_TEMPLATE\020\004*B\n\017ArtifactContent\022\016\n\n" +
+      "DEFINITION\020\000\022\013\n\007CONTROL\020\001\022\007\n\003UML\020\002\022\t\n\005OT" +
+      "HER\020\003*@\n\013MappingType\022\017\n\013SOURCE_CODE\020\000\022\022\n" +
+      "\016IMPLEMENTATION\020\001\022\014\n\010RESOURCE\020\002*v\n\016Targe" +
+      "tPlatform\022\025\n\021ETHEREUM_SOLIDITY\020\000\022\020\n\014CHAI" +
+      "NCODE_GO\020\001\022\022\n\016CHAINCODE_JAVA\020\002\022\022\n\016CHAINC" +
+      "ODE_NODE\020\003\022\t\n\005CORDA\020\004\022\010\n\004DAML\020\005B=\n\035org.t" +
+      "ti.tokens.model.artifactP\001\252\002\031TTF.Tokens." +
+      "Model.Artifactb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -232,7 +251,7 @@ public final class ArtifactOuterClass {
     internal_static_taxonomy_model_artifact_NewArtifactRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_NewArtifactRequest_descriptor,
-        new java.lang.String[] { "Type", "Name", });
+        new java.lang.String[] { "Type", "Name", "TokenType", });
     internal_static_taxonomy_model_artifact_NewArtifactResponse_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_taxonomy_model_artifact_NewArtifactResponse_fieldAccessorTable = new
@@ -250,7 +269,19 @@ public final class ArtifactOuterClass {
     internal_static_taxonomy_model_artifact_UpdateArtifactResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_artifact_UpdateArtifactResponse_descriptor,
-        new java.lang.String[] { "Type", "ArtifactTypeObject", });
+        new java.lang.String[] { "Type", "Updated", "ArtifactTypeObject", });
+    internal_static_taxonomy_model_artifact_DeleteArtifactRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_taxonomy_model_artifact_DeleteArtifactRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_artifact_DeleteArtifactRequest_descriptor,
+        new java.lang.String[] { "Type", "ArtifactSymbol", });
+    internal_static_taxonomy_model_artifact_DeleteArtifactResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_taxonomy_model_artifact_DeleteArtifactResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_taxonomy_model_artifact_DeleteArtifactResponse_descriptor,
+        new java.lang.String[] { "Deleted", });
     com.google.protobuf.AnyProto.getDescriptor();
   }
 

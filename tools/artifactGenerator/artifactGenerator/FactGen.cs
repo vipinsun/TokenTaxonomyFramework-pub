@@ -6,6 +6,8 @@ using log4net;
 using Newtonsoft.Json.Linq;
 using TTF.Tokens.Model.Artifact;
 using TTF.Tokens.Model.Core;
+using TTI.TTF.Taxonomy.Model;
+using TTT.TTF.Taxonomy;
 
 namespace ArtifactGenerator
 {
@@ -16,9 +18,10 @@ namespace ArtifactGenerator
 		private static string ArtifactPath { get; set; }
 		private static ArtifactType ArtifactType { get; set; }
 		private static TokenType BaseType { get; set; }
+		private static TaxonomyVersion TaxonomyVersion { get; set; }
 		public static void Main(string[] args)
 		{
-			if (args.Length == 6 || args.Length == 8)
+			if (args.Length == 6 || args.Length == 8 || args.Length == 4)
 			{
 				for (var i = 0; i < args.Length; i++)
 				{
@@ -43,6 +46,14 @@ namespace ArtifactGenerator
 							var b = Convert.ToInt32(args[i]);
 							BaseType = (TokenType) b;
 							continue;
+						case "--v":
+							i++;
+							var v = args[i];
+							TaxonomyVersion = new TaxonomyVersion
+							{
+								Version = v
+							};
+							continue;
 						default:
 							continue;
 					}
@@ -53,9 +64,11 @@ namespace ArtifactGenerator
 				if (args.Length == 0)
 				{
 					_log.Info(
-						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate --n [ARTIFACT_NAME] (optional if artifactType is Base orTokenTemplate ");
+						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate --n [ARTIFACT_NAME] (optional if artifactType is Base or TokenTemplate.");
 					_log.Info(
 						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot");
+					_log.Info(
+						"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] [PATH_TO_ARTIFACTS FOLDER]");
 					return;
 				}
 
@@ -63,12 +76,9 @@ namespace ArtifactGenerator
 					"Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate, (optional if artifactType is Base or TokenTemplate ");
 				_log.Error(
 					"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot");
+				_log.Error(
+					"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] [PATH_TO_ARTIFACTS FOLDER]");
 				throw new Exception("Missing required parameters.");
-			}
-
-			if (string.IsNullOrEmpty(ArtifactPath) || string.IsNullOrEmpty(ArtifactName))
-			{
-				throw new Exception("Missing value for either --n or --p.");
 			}
 
 			Utils.InitLog();
@@ -88,6 +98,48 @@ namespace ArtifactGenerator
 			
 			string artifactTypeFolder;
 			var jsf = new JsonFormatter(new JsonFormatter.Settings(true));
+
+					
+			if (string.IsNullOrEmpty(ArtifactPath))
+			{
+				throw new Exception("Missing value for --p.");
+			}
+			if (!string.IsNullOrEmpty(TaxonomyVersion.Version))
+			{
+				_log.Info("Updating Taxonomy Version Only.");
+				var tx = new Taxonomy
+				{
+					Version = TaxonomyVersion.Version
+				};
+				var txVersionJson = jsf.Format(tx);
+				
+				var formattedTxJson = JToken.Parse(txVersionJson).ToString();
+			
+				//test to make sure formattedJson will Deserialize.
+				try
+				{
+					JsonParser.Default.Parse<Taxonomy>(formattedTxJson);
+					_log.Info("Taxonomy: " + TaxonomyVersion.Version + " successfully deserialized.");
+				}
+				catch (Exception e)
+				{
+					_log.Error("Json failed to deserialize back into Taxonomy");
+					_log.Error(e);
+					return;
+				}
+
+				_log.Info("Creating Taxonomy: " + formattedTxJson);
+				var txStream = File.CreateText(fullPath + "Taxonomy.json");
+				txStream.Write(formattedTxJson);
+				txStream.Close();
+				return;
+			}
+			
+			
+			if (string.IsNullOrEmpty(ArtifactName))
+			{
+				throw new Exception("Missing value for  --n ");
+			}
 			
 			string artifactJson;
 			DirectoryInfo outputFolder;

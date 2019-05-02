@@ -4,15 +4,25 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="TaxonomyHost" t="IncludeRecursive">
+        <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="factories" t="Include">
+          <e p="BaseFactory.cs" t="Include" />
+          <e p="BehaviorFactory.cs" t="Include" />
+          <e p="BehaviorGroupFactory.cs" t="Include" />
+          <e p="PropertySetFactory.cs" t="Include" />
+          <e p="TaxonomyFactory.cs" t="Include" />
+          <e p="TokenTemplateFactory.cs" t="Include" />
+        </e>
+        <e p="Host.cs" t="Include" />
         <e p="log4net.config" t="Include" />
         <e p="model" t="Include">
           <e p="Artifact.cs" t="Include" />
           <e p="Core.cs" t="Include" />
-          <e p="Map.cs" t="Include" />
           <e p="Taxonomy.cs" t="Include" />
           <e p="Taxonomyservice.cs" t="Include" />
         </e>
+        <e p="ModelManager.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -20,9 +30,12 @@
             </e>
           </e>
         </e>
-        <e p="Program.cs" t="Include" />
+        <e p="startTx.sh" t="Include" />
+        <e p="TaxonomyCache.cs" t="Include" />
         <e p="TaxonomyHost.csproj" t="IncludeRecursive" />
+        <e p="Taxonomyservice.cs" t="Include" />
         <e p="TaxonomyserviceGrpc.cs" t="Include" />
+        <e p="Utils.cs" t="Include" />
       </e>
       <e p="TaxonomyHost.sln" t="IncludeFlat" />
     </e>

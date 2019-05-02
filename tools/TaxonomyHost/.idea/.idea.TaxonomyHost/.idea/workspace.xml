@@ -2,23 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a725583d-0766-41f5-a02f-3c183a5d3393" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/Host.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/ModelManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/TaxonomyCache.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/Utils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaxonomyHost/startTx.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../artifactGenerator/docker-build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/core.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/core.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomy.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomy.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomyservice.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomyservice.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomyservice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOuterClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/MappingType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/MappingType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactRequestOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactRequestOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/TargetPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/TargetPlatform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactResponseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactResponseOrBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BaseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BaseOrBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Document/DocumentToken.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Document/document.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Document/documentToken.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Log/LogToken.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Log/logToken.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/tt/tt.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/tt/tt.proto" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../images/codeMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../images/codeMap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../images/fileHierarchy.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../images/fileHierarchy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/implementationMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../images/implementationMap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/taxonomyRoot.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../presentations/TTF-Presentation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../presentations/TTF-Presentation.pptx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../token-taxonomy.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../token-taxonomy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/TaxonomyserviceGrpc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/TaxonomyserviceGrpc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Map.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Taxonomy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Taxonomy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Taxonomyservice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/runConfigurations/Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/runConfigurations/Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/FactGen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/FactGen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Taxonomy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Taxonomy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Taxonomyservice.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +72,213 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/ModelManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="788">
+              <caret line="37" column="11" lean-forward="true" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+              <folding>
+                <marker date="1556828837879" expanded="true" signature="6:199" ph="..." />
+                <marker date="1556828837879" expanded="true" signature="223:1895" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="252:1893" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="356:461" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="492:656" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="725:897" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="950:998" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="1059:1107" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="1178:1226" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="1293:1341" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="1422:1470" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="1558:1606" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="1700:1748" ph="{...}" />
+                <marker date="1556828837879" expanded="true" signature="1842:1890" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+              <folding>
+                <marker date="1556827481413" expanded="true" signature="6:74" ph="..." />
+                <marker date="1556827481413" expanded="true" signature="108:245" ph="{...}" />
+                <marker date="1556827481413" expanded="true" signature="147:243" ph="{...}" />
+                <marker date="1556827481413" expanded="true" signature="184:237" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+              <folding>
+                <marker date="1556827179626" expanded="true" signature="6:62" ph="..." />
+                <marker date="1556827179626" expanded="true" signature="96:227" ph="{...}" />
+                <marker date="1556827179626" expanded="true" signature="124:225" ph="{...}" />
+                <marker date="1556827179626" expanded="true" signature="163:222" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+              <folding>
+                <marker date="1556827251927" expanded="true" signature="6:62" ph="..." />
+                <marker date="1556827251927" expanded="true" signature="96:247" ph="{...}" />
+                <marker date="1556827251927" expanded="true" signature="128:245" ph="{...}" />
+                <marker date="1556827251927" expanded="true" signature="171:242" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+              <folding>
+                <marker date="1556827312033" expanded="true" signature="6:62" ph="..." />
+                <marker date="1556827312033" expanded="true" signature="96:272" ph="{...}" />
+                <marker date="1556827312033" expanded="true" signature="133:270" ph="{...}" />
+                <marker date="1556827312033" expanded="true" signature="181:267" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+              <folding>
+                <marker date="1556827335189" expanded="true" signature="6:62" ph="..." />
+                <marker date="1556827335189" expanded="true" signature="96:262" ph="{...}" />
+                <marker date="1556827335189" expanded="true" signature="131:260" ph="{...}" />
+                <marker date="1556827335189" expanded="true" signature="177:257" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <marker date="1556827368381" expanded="true" signature="6:62" ph="..." />
+                <marker date="1556827368381" expanded="true" signature="96:272" ph="{...}" />
+                <marker date="1556827368381" expanded="true" signature="133:270" ph="{...}" />
+                <marker date="1556827368381" expanded="true" signature="181:267" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+              <folding>
+                <marker date="1556826840185" expanded="true" signature="6:112" ph="..." />
+                <marker date="1556826840185" expanded="true" signature="136:1333" ph="{...}" />
+                <marker date="1556826840185" expanded="true" signature="177:1331" ph="{...}" />
+                <marker date="1556826840185" expanded="true" signature="425:1328" ph="{...}" />
+                <marker date="1556826840185" expanded="false" signature="433:595" ph="config" />
+                <marker date="1556826840185" expanded="false" signature="603:731" ph="logging" />
+                <marker date="1556826840185" expanded="true" signature="903:1063" ph="{...}" />
+                <marker date="1556826840185" expanded="true" signature="1283:1293" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="68" column="51" lean-forward="true" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+              <folding>
+                <marker date="1556828563120" expanded="false" signature="6:240" ph="..." />
+                <marker date="1556828563120" expanded="true" signature="264:3047" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="345:3045" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="408:543" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="647:802" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="892:1046" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="1152:1314" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="1430:1602" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="1705:1873" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="1990:2163" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="2287:2448" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="2578:2739" ph="{...}" />
+                <marker date="1556828563120" expanded="true" signature="2869:3030" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/log4net.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/ModelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyCache.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/Utils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/TaxonomyHost/startTx.sh" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/Program.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/Utils.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/appsettings.json" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/TaxonomyIO.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/TaxonomyCache.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/Base.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/Host.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/ModelManager.cs" />
+      </list>
+    </option>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="jNUjIywJ" />
@@ -42,9 +293,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="2510" />
-    <option name="height" value="1123" />
+    <option name="x" value="530" />
+    <option name="y" value="27" />
+    <option name="width" value="2512" />
+    <option name="height" value="1140" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -54,11 +306,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="TaxonomyHost" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="TaxonomyHost" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="TaxonomyHost" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="TaxonomyHost" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="TaxonomyHost" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="factories" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="TaxonomyHost" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="TaxonomyHost" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="model" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
         <option name="show-all-files" value="false" />
       </pane>
       <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -100,9 +378,7 @@
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="None" />
       <option name="PROJECT_TFM" value="" />
-      <method v="2">
-        <option name="Build" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -116,11 +392,12 @@
       <option name="presentableId" value="Default" />
       <updated>1556643348314</updated>
       <workItem from="1556643349665" duration="1245000" />
+      <workItem from="1556808575763" duration="6817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1245000" />
+    <option name="totallyTimeSpent" value="8062000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -132,22 +409,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="3440" height="1331" extended-state="6" />
+    <frame x="0" y="23" width="3440" height="1332" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Azure Explorer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12190813" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08951708" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Azure Activity Log" />
-      <window_info anchor="bottom" id="Docker" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Dilbert" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info id="Azure Explorer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -155,19 +423,29 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Cargo" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32978722" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" />
+      <window_info anchor="bottom" id="Azure Activity Log" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Dilbert" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Unit Tests" order="14" />
+      <window_info anchor="bottom" id="Terminal" order="15" />
+      <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Cargo" order="3" />
+      <window_info anchor="right" id="Errors In Solution" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -178,5 +456,221 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/model/Map.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/Utils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <marker date="1556813676706" expanded="true" signature="6:148" ph="..." />
+            <marker date="1556813676706" expanded="true" signature="172:1566" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="201:1049" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="236:1045" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="287:569" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="590:880" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="1073:1564" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="1109:1180" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="1212:1279" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="1311:1380" ph="{...}" />
+            <marker date="1556813676706" expanded="true" signature="1413:1561" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/log4net.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/startTx.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="98" selection-start-line="1" selection-start-column="98" selection-end-line="1" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/appsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyIO.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyCache.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <marker date="1556826840182" expanded="true" signature="6:86" ph="..." />
+            <marker date="1556826840182" expanded="true" signature="110:746" ph="{...}" />
+            <marker date="1556826840182" expanded="true" signature="149:743" ph="{...}" />
+            <marker date="1556826840182" expanded="true" signature="341:414" ph="{...}" />
+            <marker date="1556826840182" expanded="true" signature="470:532" ph="{...}" />
+            <marker date="1556826840182" expanded="true" signature="587:633" ph="{...}" />
+            <marker date="1556826840182" expanded="true" signature="682:740" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
+          <folding>
+            <marker date="1556826840185" expanded="true" signature="6:112" ph="..." />
+            <marker date="1556826840185" expanded="true" signature="136:1333" ph="{...}" />
+            <marker date="1556826840185" expanded="true" signature="177:1331" ph="{...}" />
+            <marker date="1556826840185" expanded="true" signature="425:1328" ph="{...}" />
+            <marker date="1556826840185" expanded="false" signature="433:595" ph="config" />
+            <marker date="1556826840185" expanded="false" signature="603:731" ph="logging" />
+            <marker date="1556826840185" expanded="true" signature="903:1063" ph="{...}" />
+            <marker date="1556826840185" expanded="true" signature="1283:1293" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <marker date="1556827251927" expanded="true" signature="6:62" ph="..." />
+            <marker date="1556827251927" expanded="true" signature="96:247" ph="{...}" />
+            <marker date="1556827251927" expanded="true" signature="128:245" ph="{...}" />
+            <marker date="1556827251927" expanded="true" signature="171:242" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <marker date="1556827179626" expanded="true" signature="6:62" ph="..." />
+            <marker date="1556827179626" expanded="true" signature="96:227" ph="{...}" />
+            <marker date="1556827179626" expanded="true" signature="124:225" ph="{...}" />
+            <marker date="1556827179626" expanded="true" signature="163:222" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <marker date="1556827312033" expanded="true" signature="6:62" ph="..." />
+            <marker date="1556827312033" expanded="true" signature="96:272" ph="{...}" />
+            <marker date="1556827312033" expanded="true" signature="133:270" ph="{...}" />
+            <marker date="1556827312033" expanded="true" signature="181:267" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <marker date="1556827335189" expanded="true" signature="6:62" ph="..." />
+            <marker date="1556827335189" expanded="true" signature="96:262" ph="{...}" />
+            <marker date="1556827335189" expanded="true" signature="131:260" ph="{...}" />
+            <marker date="1556827335189" expanded="true" signature="177:257" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <marker date="1556827368381" expanded="true" signature="6:62" ph="..." />
+            <marker date="1556827368381" expanded="true" signature="96:272" ph="{...}" />
+            <marker date="1556827368381" expanded="true" signature="133:270" ph="{...}" />
+            <marker date="1556827368381" expanded="true" signature="181:267" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding>
+            <marker date="1556827481413" expanded="true" signature="6:74" ph="..." />
+            <marker date="1556827481413" expanded="true" signature="108:245" ph="{...}" />
+            <marker date="1556827481413" expanded="true" signature="147:243" ph="{...}" />
+            <marker date="1556827481413" expanded="true" signature="184:237" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="68" column="51" lean-forward="true" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+          <folding>
+            <marker date="1556828563120" expanded="false" signature="6:240" ph="..." />
+            <marker date="1556828563120" expanded="true" signature="264:3047" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="345:3045" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="408:543" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="647:802" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="892:1046" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="1152:1314" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="1430:1602" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="1705:1873" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="1990:2163" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="2287:2448" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="2578:2739" ph="{...}" />
+            <marker date="1556828563120" expanded="true" signature="2869:3030" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/ModelManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="37" column="11" lean-forward="true" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+          <folding>
+            <marker date="1556828837879" expanded="true" signature="6:199" ph="..." />
+            <marker date="1556828837879" expanded="true" signature="223:1895" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="252:1893" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="356:461" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="492:656" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="725:897" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="950:998" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="1059:1107" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="1178:1226" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="1293:1341" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="1422:1470" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="1558:1606" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="1700:1748" ph="{...}" />
+            <marker date="1556828837879" expanded="true" signature="1842:1890" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

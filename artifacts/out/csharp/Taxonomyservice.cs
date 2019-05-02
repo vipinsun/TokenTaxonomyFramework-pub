@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TTF.Tokens.tokens {
+namespace TTT.TTF.Taxonomy {
 
   /// <summary>Holder for reflection information generated from taxonomyservice.proto</summary>
   public static partial class TaxonomyserviceReflection {
@@ -28,7 +28,7 @@ namespace TTF.Tokens.tokens {
             "eG9ub215LnByb3RvGgpjb3JlLnByb3RvGg5hcnRpZmFjdC5wcm90byIiCg9U",
             "YXhvbm9teVZlcnNpb24SDwoHdmVyc2lvbhgBIAEoCSIYCgZTeW1ib2wSDgoG",
             "c3ltYm9sGAEgASgJIiIKD1RheG9ub215Rm9ybXVsYRIPCgdmb3JtdWxhGAEg",
-            "ASgJMvcFCg9UYXhvbm9teVNlcnZpY2USUAoPR2V0RnVsbFRheG9ub215EiEu",
+            "ASgJMvEGCg9UYXhvbm9teVNlcnZpY2USUAoPR2V0RnVsbFRheG9ub215EiEu",
             "dGF4b25vbXkuc2VydmljZS5UYXhvbm9teVZlcnNpb24aGC50YXhvbm9teS5t",
             "b2RlbC5UYXhvbm9teSIAEkgKD0dldEJhc2VBcnRpZmFjdBIYLnRheG9ub215",
             "LnNlcnZpY2UuU3ltYm9sGhkudGF4b25vbXkubW9kZWwuY29yZS5CYXNlIgAS",
@@ -36,23 +36,25 @@ namespace TTF.Tokens.tokens {
             "Ym9sGh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvciIAEloKGEdldEJl",
             "aGF2aW9yR3JvdXBBcnRpZmFjdBIYLnRheG9ub215LnNlcnZpY2UuU3ltYm9s",
             "GiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwIgASVgoWR2V0",
-            "QmVoYXZpb3JQcm9wZXJ0eVNldBIYLnRheG9ub215LnNlcnZpY2UuU3ltYm9s",
+            "UHJvcGVydHlTZXRBcnRpZmFjdBIYLnRheG9ub215LnNlcnZpY2UuU3ltYm9s",
             "GiAudGF4b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0eVNldCIAEmMKGEdldFRv",
             "a2VuVGVtcGxhdGVBcnRpZmFjdBIhLnRheG9ub215LnNlcnZpY2UuVGF4b25v",
             "bXlGb3JtdWxhGiIudGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRl",
-            "IgASaQoLQWRkQXJ0aWZhY3QSKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5O",
-            "ZXdBcnRpZmFjdFJlcXVlc3QaKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5O",
-            "ZXdBcnRpZmFjdFJlcXVlc3QiABJyCg5VcGRhdGVBcnRpZmFjdBIuLnRheG9u",
-            "b215Lm1vZGVsLmFydGlmYWN0LlVwZGF0ZUFydGlmYWN0UmVxdWVzdBouLnRh",
-            "eG9ub215Lm1vZGVsLmFydGlmYWN0LlVwZGF0ZUFydGlmYWN0UmVxdWVzdCIA",
-            "QjoKIm9yZy50b2tlbnRheG9ub215aW5pdGlhdGl2ZS50b2tlbnNQAaoCEVRU",
-            "Ri5Ub2tlbnMudG9rZW5zYgZwcm90bzM="));
+            "IgASbQoOQ3JlYXRlQXJ0aWZhY3QSKy50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
+            "dC5OZXdBcnRpZmFjdFJlcXVlc3QaLC50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
+            "dC5OZXdBcnRpZmFjdFJlc3BvbnNlIgAScwoOVXBkYXRlQXJ0aWZhY3QSLi50",
+            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5VcGRhdGVBcnRpZmFjdFJlcXVlc3Qa",
+            "Ly50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5VcGRhdGVBcnRpZmFjdFJlc3Bv",
+            "bnNlIgAScwoORGVsZXRlQXJ0aWZhY3QSLi50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5EZWxldGVBcnRpZmFjdFJlcXVlc3QaLy50YXhvbm9teS5tb2RlbC5h",
+            "cnRpZmFjdC5EZWxldGVBcnRpZmFjdFJlc3BvbnNlIgBCKwoUb3JnLnR0aS50",
+            "dGYudGF4b25vbXlQAaoCEFRUVC5UVEYuVGF4b25vbXliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TTF.Tokens.Model.Taxonomy.TaxonomyReflection.Descriptor, global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.tokens.TaxonomyVersion), global::TTF.Tokens.tokens.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.tokens.Symbol), global::TTF.Tokens.tokens.Symbol.Parser, new[]{ "Symbol_" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.tokens.TaxonomyFormula), global::TTF.Tokens.tokens.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.TaxonomyVersion), global::TTT.TTF.Taxonomy.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.Symbol), global::TTT.TTF.Taxonomy.Symbol.Parser, new[]{ "Symbol_" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.TaxonomyFormula), global::TTT.TTF.Taxonomy.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null)
           }));
     }
     #endregion
@@ -67,7 +69,7 @@ namespace TTF.Tokens.tokens {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.tokens.TaxonomyserviceReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TTT.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -196,7 +198,7 @@ namespace TTF.Tokens.tokens {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.tokens.TaxonomyserviceReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TTT.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -325,7 +327,7 @@ namespace TTF.Tokens.tokens {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.tokens.TaxonomyserviceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TTT.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

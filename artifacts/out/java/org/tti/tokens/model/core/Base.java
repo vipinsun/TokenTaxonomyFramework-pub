@@ -213,18 +213,18 @@ private static final long serialVersionUID = 0L;
   public static final int TOKEN_TYPE_FIELD_NUMBER = 2;
   private int tokenType_;
   /**
-   * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+   * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
    */
   public int getTokenTypeValue() {
     return tokenType_;
   }
   /**
-   * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+   * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
    */
-  public org.tti.tokens.model.core.TokenType getTokenType() {
+  public org.tti.tokens.model.artifact.TokenType getTokenType() {
     @SuppressWarnings("deprecation")
-    org.tti.tokens.model.core.TokenType result = org.tti.tokens.model.core.TokenType.valueOf(tokenType_);
-    return result == null ? org.tti.tokens.model.core.TokenType.UNRECOGNIZED : result;
+    org.tti.tokens.model.artifact.TokenType result = org.tti.tokens.model.artifact.TokenType.valueOf(tokenType_);
+    return result == null ? org.tti.tokens.model.artifact.TokenType.UNRECOGNIZED : result;
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
     if (artifact_ != null) {
       output.writeMessage(1, getArtifact());
     }
-    if (tokenType_ != org.tti.tokens.model.core.TokenType.FUNGIBLE.getNumber()) {
+    if (tokenType_ != org.tti.tokens.model.artifact.TokenType.FUNGIBLE.getNumber()) {
       output.writeEnum(2, tokenType_);
     }
     if (!getNameBytes().isEmpty()) {
@@ -664,7 +664,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getArtifact());
     }
-    if (tokenType_ != org.tti.tokens.model.core.TokenType.FUNGIBLE.getNumber()) {
+    if (tokenType_ != org.tti.tokens.model.artifact.TokenType.FUNGIBLE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, tokenType_);
     }
@@ -1295,13 +1295,13 @@ private static final long serialVersionUID = 0L;
 
     private int tokenType_ = 0;
     /**
-     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
      */
     public int getTokenTypeValue() {
       return tokenType_;
     }
     /**
-     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
      */
     public Builder setTokenTypeValue(int value) {
       tokenType_ = value;
@@ -1309,17 +1309,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
      */
-    public org.tti.tokens.model.core.TokenType getTokenType() {
+    public org.tti.tokens.model.artifact.TokenType getTokenType() {
       @SuppressWarnings("deprecation")
-      org.tti.tokens.model.core.TokenType result = org.tti.tokens.model.core.TokenType.valueOf(tokenType_);
-      return result == null ? org.tti.tokens.model.core.TokenType.UNRECOGNIZED : result;
+      org.tti.tokens.model.artifact.TokenType result = org.tti.tokens.model.artifact.TokenType.valueOf(tokenType_);
+      return result == null ? org.tti.tokens.model.artifact.TokenType.UNRECOGNIZED : result;
     }
     /**
-     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
      */
-    public Builder setTokenType(org.tti.tokens.model.core.TokenType value) {
+    public Builder setTokenType(org.tti.tokens.model.artifact.TokenType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1329,7 +1329,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     * <code>.taxonomy.model.artifact.TokenType token_type = 2;</code>
      */
     public Builder clearTokenType() {
       

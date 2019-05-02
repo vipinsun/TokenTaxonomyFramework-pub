@@ -125,7 +125,7 @@ public enum ArtifactContent
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return org.tti.tokens.model.artifact.ArtifactOuterClass.getDescriptor().getEnumTypes().get(1);
+    return org.tti.tokens.model.artifact.ArtifactOuterClass.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ArtifactContent[] VALUES = values();

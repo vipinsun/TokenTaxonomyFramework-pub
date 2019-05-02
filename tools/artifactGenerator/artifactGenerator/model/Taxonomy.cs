@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TTF.Tokens.Model.Taxonomy {
+namespace TTI.TTF.Taxonomy.Model {
 
   /// <summary>Holder for reflection information generated from taxonomy.proto</summary>
   public static partial class TaxonomyReflection {
@@ -42,13 +42,13 @@ namespace TTF.Tokens.Model.Taxonomy {
             "b3BlcnR5U2V0c0VudHJ5EgsKA2tleRgBIAEoCRIvCgV2YWx1ZRgCIAEoCzIg",
             "LnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQ6AjgBGlkKE1Rva2Vu",
             "VGVtcGxhdGVzRW50cnkSCwoDa2V5GAEgASgJEjEKBXZhbHVlGAIgASgLMiIu",
-            "dGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRlOgI4AUJRCjFvcmcu",
-            "dG9rZW50YXhvbm9teWluaXRpYXRpdmUudG9rZW5zLm1vZGVsLnRheG9ub215",
-            "UAGqAhlUVEYuVG9rZW5zLk1vZGVsLlRheG9ub215YgZwcm90bzM="));
+            "dGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRlOgI4AUI3Chpvcmcu",
+            "dHRpLnR0Zi50YXhvbm9teS5tb2RlbFABqgIWVFRJLlRURi5UYXhvbm9teS5N",
+            "b2RlbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Taxonomy.Taxonomy), global::TTF.Tokens.Model.Taxonomy.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
           }));
     }
     #endregion
@@ -66,7 +66,7 @@ namespace TTF.Tokens.Model.Taxonomy {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Taxonomy.TaxonomyReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

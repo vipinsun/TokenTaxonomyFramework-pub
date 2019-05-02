@@ -25,61 +25,58 @@ namespace TTF.Tokens.Model.Core {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgpjb3JlLnByb3RvEhN0YXhvbm9teS5tb2RlbC5jb3JlGhlnb29nbGUvcHJv",
-            "dG9idWYvYW55LnByb3RvGg5hcnRpZmFjdC5wcm90byK4AwoEQmFzZRIzCghh",
+            "dG9idWYvYW55LnByb3RvGg5hcnRpZmFjdC5wcm90byK8AwoEQmFzZRIzCghh",
             "cnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlm",
-            "YWN0EjIKCnRva2VuX3R5cGUYAiABKA4yHi50YXhvbm9teS5tb2RlbC5jb3Jl",
-            "LlRva2VuVHlwZRIMCgRuYW1lGAMgASgJEg4KBnN5bWJvbBgEIAEoCRINCgVv",
-            "d25lchgFIAEoCRIQCghxdWFudGl0eRgGIAEoDBIQCghkZWNpbWFscxgHIAEo",
-            "BRJIChB0b2tlbl9wcm9wZXJ0aWVzGAggAygLMi4udGF4b25vbXkubW9kZWwu",
-            "Y29yZS5CYXNlLlRva2VuUHJvcGVydGllc0VudHJ5EhgKEGNvbnN0cnVjdG9y",
-            "X25hbWUYCSABKAkSKQoLY29uc3RydWN0b3IYCiABKAsyFC5nb29nbGUucHJv",
-            "dG9idWYuQW55Ei8KDGNoaWxkX3Rva2VucxgLIAMoCzIZLnRheG9ub215Lm1v",
-            "ZGVsLmNvcmUuQmFzZRo2ChRUb2tlblByb3BlcnRpZXNFbnRyeRILCgNrZXkY",
-            "ASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIqUCCghCZWhhdmlvchIzCghhcnRp",
-            "ZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0",
-            "EhAKCGV4dGVybmFsGAIgASgIEiEKGWJlaGF2aW9yX2NvbnN0cnVjdG9yX25h",
-            "bWUYAyABKAkSMgoUYmVoYXZpb3JfY29uc3RydWN0b3IYBCABKAsyFC5nb29n",
-            "bGUucHJvdG9idWYuQW55Ej0KFGJlaGF2aW9yX2ludm9jYXRpb25zGAUgAygL",
-            "Mh8udGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uEjwKFWJlaGF2aW9y",
-            "YWxfcHJvcGVydGllcxgGIAMoCzIdLnRheG9ub215Lm1vZGVsLmNvcmUuUHJv",
-            "cGVydHkizgIKDUJlaGF2aW9yR3JvdXASMwoIYXJ0aWZhY3QYASABKAsyIS50",
-            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdBJBChBiZWhhdmlvcl9z",
-            "eW1ib2xzGAIgAygLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
-            "Y3RTeW1ib2wSYgoZbWVtYmVyX2JlaGF2aW9yX2FydGlmYWN0cxgDIAMoCzI/",
-            "LnRheG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3JHcm91cC5NZW1iZXJCZWhh",
-            "dmlvckFydGlmYWN0c0VudHJ5GmEKHE1lbWJlckJlaGF2aW9yQXJ0aWZhY3Rz",
-            "RW50cnkSCwoDa2V5GAEgASgJEjAKBXZhbHVlGAIgASgLMiEudGF4b25vbXku",
-            "bW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3Q6AjgBInUKC1Byb3BlcnR5U2V0EjMK",
-            "CGFydGlmYWN0GAEgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0",
-            "aWZhY3QSMQoKcHJvcGVydGllcxgCIAMoCzIdLnRheG9ub215Lm1vZGVsLmNv",
-            "cmUuUHJvcGVydHkicgoIUHJvcGVydHkSDAoEbmFtZRgBIAEoCRIZChF2YWx1",
-            "ZV9kZXNjcmlwdGlvbhgCIAEoCRI9ChRwcm9wZXJ0eV9pbnZvY2F0aW9ucxgD",
-            "IAMoCzIfLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvbiKVAgoNVG9r",
-            "ZW5UZW1wbGF0ZRIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVs",
-            "LmFydGlmYWN0LkFydGlmYWN0EicKBGJhc2UYAiABKAsyGS50YXhvbm9teS5t",
-            "b2RlbC5jb3JlLkJhc2USMAoJYmVoYXZpb3JzGAMgAygLMh0udGF4b25vbXku",
-            "bW9kZWwuY29yZS5CZWhhdmlvchI7Cg9iZWhhdmlvcl9ncm91cHMYBCADKAsy",
-            "Ii50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXASNwoNcHJvcGVy",
-            "dHlfc2V0cxgFIAMoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlT",
-            "ZXQiowEKCkludm9jYXRpb24SDAoEbmFtZRgBIAEoCRITCgtkZXNjcmlwdGlv",
-            "bhgCIAEoCRI3CgdyZXF1ZXN0GAMgASgLMiYudGF4b25vbXkubW9kZWwuY29y",
-            "ZS5JbnZvY2F0aW9uUmVxdWVzdBI5CghyZXNwb25zZRgEIAEoCzInLnRheG9u",
-            "b215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblJlc3BvbnNlIooBChFJbnZvY2F0",
-            "aW9uUmVxdWVzdBIcChRjb250cm9sX21lc3NhZ2VfbmFtZRgBIAEoCRJCChBp",
-            "bnB1dF9wYXJhbWV0ZXJzGAIgAygLMigudGF4b25vbXkubW9kZWwuY29yZS5J",
-            "bnZvY2F0aW9uUGFyYW1ldGVyEhMKC2Rlc2NyaXB0aW9uGAMgASgJIowBChJJ",
-            "bnZvY2F0aW9uUmVzcG9uc2USHAoUY29udHJvbF9tZXNzYWdlX25hbWUYASAB",
-            "KAkSQwoRb3V0cHV0X3BhcmFtZXRlcnMYAiADKAsyKC50YXhvbm9teS5tb2Rl",
-            "bC5jb3JlLkludm9jYXRpb25QYXJhbWV0ZXISEwoLZGVzY3JpcHRpb24YAyAB",
-            "KAkiPgoTSW52b2NhdGlvblBhcmFtZXRlchIMCgRuYW1lGAEgASgJEhkKEXZh",
-            "bHVlX2Rlc2NyaXB0aW9uGAIgASgJKmMKCVRva2VuVHlwZRIMCghGVU5HSUJM",
-            "RRAAEhAKDE5PTl9GVU5HSUJMRRABEhgKFEhZQlJJRF9GVU5HSUJMRV9ST09U",
-            "EAISHAoYSFlCUklEX05PTl9GVU5HSUJMRV9ST09UEANCNQoZb3JnLnR0aS50",
-            "b2tlbnMubW9kZWwuY29yZVABqgIVVFRGLlRva2Vucy5Nb2RlbC5Db3JlYgZw",
-            "cm90bzM="));
+            "YWN0EjYKCnRva2VuX3R5cGUYAiABKA4yIi50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5Ub2tlblR5cGUSDAoEbmFtZRgDIAEoCRIOCgZzeW1ib2wYBCABKAkS",
+            "DQoFb3duZXIYBSABKAkSEAoIcXVhbnRpdHkYBiABKAwSEAoIZGVjaW1hbHMY",
+            "ByABKAUSSAoQdG9rZW5fcHJvcGVydGllcxgIIAMoCzIuLnRheG9ub215Lm1v",
+            "ZGVsLmNvcmUuQmFzZS5Ub2tlblByb3BlcnRpZXNFbnRyeRIYChBjb25zdHJ1",
+            "Y3Rvcl9uYW1lGAkgASgJEikKC2NvbnN0cnVjdG9yGAogASgLMhQuZ29vZ2xl",
+            "LnByb3RvYnVmLkFueRIvCgxjaGlsZF90b2tlbnMYCyADKAsyGS50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLkJhc2UaNgoUVG9rZW5Qcm9wZXJ0aWVzRW50cnkSCwoD",
+            "a2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASKlAgoIQmVoYXZpb3ISMwoI",
+            "YXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRp",
+            "ZmFjdBIQCghleHRlcm5hbBgCIAEoCBIhChliZWhhdmlvcl9jb25zdHJ1Y3Rv",
+            "cl9uYW1lGAMgASgJEjIKFGJlaGF2aW9yX2NvbnN0cnVjdG9yGAQgASgLMhQu",
+            "Z29vZ2xlLnByb3RvYnVmLkFueRI9ChRiZWhhdmlvcl9pbnZvY2F0aW9ucxgF",
+            "IAMoCzIfLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvbhI8ChViZWhh",
+            "dmlvcmFsX3Byb3BlcnRpZXMYBiADKAsyHS50YXhvbm9teS5tb2RlbC5jb3Jl",
+            "LlByb3BlcnR5Is4CCg1CZWhhdmlvckdyb3VwEjMKCGFydGlmYWN0GAEgASgL",
+            "MiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSQQoQYmVoYXZp",
+            "b3Jfc3ltYm9scxgCIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFy",
+            "dGlmYWN0U3ltYm9sEmIKGW1lbWJlcl9iZWhhdmlvcl9hcnRpZmFjdHMYAyAD",
+            "KAsyPy50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXAuTWVtYmVy",
+            "QmVoYXZpb3JBcnRpZmFjdHNFbnRyeRphChxNZW1iZXJCZWhhdmlvckFydGlm",
+            "YWN0c0VudHJ5EgsKA2tleRgBIAEoCRIwCgV2YWx1ZRgCIAEoCzIhLnRheG9u",
+            "b215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0OgI4ASJ1CgtQcm9wZXJ0eVNl",
+            "dBIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
+            "LkFydGlmYWN0EjEKCnByb3BlcnRpZXMYAiADKAsyHS50YXhvbm9teS5tb2Rl",
+            "bC5jb3JlLlByb3BlcnR5InIKCFByb3BlcnR5EgwKBG5hbWUYASABKAkSGQoR",
+            "dmFsdWVfZGVzY3JpcHRpb24YAiABKAkSPQoUcHJvcGVydHlfaW52b2NhdGlv",
+            "bnMYAyADKAsyHy50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb24ilQIK",
+            "DVRva2VuVGVtcGxhdGUSMwoIYXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5t",
+            "b2RlbC5hcnRpZmFjdC5BcnRpZmFjdBInCgRiYXNlGAIgASgLMhkudGF4b25v",
+            "bXkubW9kZWwuY29yZS5CYXNlEjAKCWJlaGF2aW9ycxgDIAMoCzIdLnRheG9u",
+            "b215Lm1vZGVsLmNvcmUuQmVoYXZpb3ISOwoPYmVoYXZpb3JfZ3JvdXBzGAQg",
+            "AygLMiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwEjcKDXBy",
+            "b3BlcnR5X3NldHMYBSADKAsyIC50YXhvbm9teS5tb2RlbC5jb3JlLlByb3Bl",
+            "cnR5U2V0IqMBCgpJbnZvY2F0aW9uEgwKBG5hbWUYASABKAkSEwoLZGVzY3Jp",
+            "cHRpb24YAiABKAkSNwoHcmVxdWVzdBgDIAEoCzImLnRheG9ub215Lm1vZGVs",
+            "LmNvcmUuSW52b2NhdGlvblJlcXVlc3QSOQoIcmVzcG9uc2UYBCABKAsyJy50",
+            "YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25SZXNwb25zZSKKAQoRSW52",
+            "b2NhdGlvblJlcXVlc3QSHAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkS",
+            "QgoQaW5wdXRfcGFyYW1ldGVycxgCIAMoCzIoLnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuSW52b2NhdGlvblBhcmFtZXRlchITCgtkZXNjcmlwdGlvbhgDIAEoCSKM",
+            "AQoSSW52b2NhdGlvblJlc3BvbnNlEhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1l",
+            "GAEgASgJEkMKEW91dHB1dF9wYXJhbWV0ZXJzGAIgAygLMigudGF4b25vbXku",
+            "bW9kZWwuY29yZS5JbnZvY2F0aW9uUGFyYW1ldGVyEhMKC2Rlc2NyaXB0aW9u",
+            "GAMgASgJIj4KE0ludm9jYXRpb25QYXJhbWV0ZXISDAoEbmFtZRgBIAEoCRIZ",
+            "ChF2YWx1ZV9kZXNjcmlwdGlvbhgCIAEoCUI1ChlvcmcudHRpLnRva2Vucy5t",
+            "b2RlbC5jb3JlUAGqAhVUVEYuVG9rZW5zLk1vZGVsLkNvcmViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTF.Tokens.Model.Core.TokenType), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Base), global::TTF.Tokens.Model.Core.Base.Parser, new[]{ "Artifact", "TokenType", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor", "ChildTokens" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Behavior), global::TTF.Tokens.Model.Core.Behavior.Parser, new[]{ "Artifact", "External", "BehaviorConstructorName", "BehaviorConstructor", "BehaviorInvocations", "BehavioralProperties" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.BehaviorGroup), global::TTF.Tokens.Model.Core.BehaviorGroup.Parser, new[]{ "Artifact", "BehaviorSymbols", "MemberBehaviorArtifacts" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -95,16 +92,6 @@ namespace TTF.Tokens.Model.Core {
     #endregion
 
   }
-  #region Enums
-  public enum TokenType {
-    [pbr::OriginalName("FUNGIBLE")] Fungible = 0,
-    [pbr::OriginalName("NON_FUNGIBLE")] NonFungible = 1,
-    [pbr::OriginalName("HYBRID_FUNGIBLE_ROOT")] HybridFungibleRoot = 2,
-    [pbr::OriginalName("HYBRID_NON_FUNGIBLE_ROOT")] HybridNonFungibleRoot = 3,
-  }
-
-  #endregion
-
   #region Messages
   /// <summary>
   ///all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
@@ -166,9 +153,9 @@ namespace TTF.Tokens.Model.Core {
 
     /// <summary>Field number for the "token_type" field.</summary>
     public const int TokenTypeFieldNumber = 2;
-    private global::TTF.Tokens.Model.Core.TokenType tokenType_ = 0;
+    private global::TTF.Tokens.Model.Artifact.TokenType tokenType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Core.TokenType TokenType {
+    public global::TTF.Tokens.Model.Artifact.TokenType TokenType {
       get { return tokenType_; }
       set {
         tokenType_ = value;
@@ -493,7 +480,7 @@ namespace TTF.Tokens.Model.Core {
             break;
           }
           case 16: {
-            TokenType = (global::TTF.Tokens.Model.Core.TokenType) input.ReadEnum();
+            TokenType = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
             break;
           }
           case 26: {

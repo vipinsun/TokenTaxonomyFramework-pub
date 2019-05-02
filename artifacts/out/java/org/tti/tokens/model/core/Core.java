@@ -84,64 +84,62 @@ public final class Core {
   static {
     java.lang.String[] descriptorData = {
       "\n\ncore.proto\022\023taxonomy.model.core\032\031googl" +
-      "e/protobuf/any.proto\032\016artifact.proto\"\270\003\n" +
+      "e/protobuf/any.proto\032\016artifact.proto\"\274\003\n" +
       "\004Base\0223\n\010artifact\030\001 \001(\0132!.taxonomy.model" +
-      ".artifact.Artifact\0222\n\ntoken_type\030\002 \001(\0162\036" +
-      ".taxonomy.model.core.TokenType\022\014\n\004name\030\003" +
-      " \001(\t\022\016\n\006symbol\030\004 \001(\t\022\r\n\005owner\030\005 \001(\t\022\020\n\010q" +
-      "uantity\030\006 \001(\014\022\020\n\010decimals\030\007 \001(\005\022H\n\020token" +
-      "_properties\030\010 \003(\0132..taxonomy.model.core." +
-      "Base.TokenPropertiesEntry\022\030\n\020constructor" +
-      "_name\030\t \001(\t\022)\n\013constructor\030\n \001(\0132\024.googl" +
-      "e.protobuf.Any\022/\n\014child_tokens\030\013 \003(\0132\031.t" +
-      "axonomy.model.core.Base\0326\n\024TokenProperti" +
-      "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
-      "\245\002\n\010Behavior\0223\n\010artifact\030\001 \001(\0132!.taxonom" +
-      "y.model.artifact.Artifact\022\020\n\010external\030\002 " +
-      "\001(\010\022!\n\031behavior_constructor_name\030\003 \001(\t\0222" +
-      "\n\024behavior_constructor\030\004 \001(\0132\024.google.pr" +
-      "otobuf.Any\022=\n\024behavior_invocations\030\005 \003(\013" +
-      "2\037.taxonomy.model.core.Invocation\022<\n\025beh" +
-      "avioral_properties\030\006 \003(\0132\035.taxonomy.mode" +
-      "l.core.Property\"\316\002\n\rBehaviorGroup\0223\n\010art" +
-      "ifact\030\001 \001(\0132!.taxonomy.model.artifact.Ar" +
-      "tifact\022A\n\020behavior_symbols\030\002 \003(\0132\'.taxon" +
-      "omy.model.artifact.ArtifactSymbol\022b\n\031mem" +
-      "ber_behavior_artifacts\030\003 \003(\0132?.taxonomy." +
-      "model.core.BehaviorGroup.MemberBehaviorA" +
-      "rtifactsEntry\032a\n\034MemberBehaviorArtifacts" +
-      "Entry\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.taxo" +
-      "nomy.model.artifact.Artifact:\0028\001\"u\n\013Prop" +
-      "ertySet\0223\n\010artifact\030\001 \001(\0132!.taxonomy.mod" +
-      "el.artifact.Artifact\0221\n\nproperties\030\002 \003(\013" +
-      "2\035.taxonomy.model.core.Property\"r\n\010Prope" +
-      "rty\022\014\n\004name\030\001 \001(\t\022\031\n\021value_description\030\002" +
-      " \001(\t\022=\n\024property_invocations\030\003 \003(\0132\037.tax" +
-      "onomy.model.core.Invocation\"\225\002\n\rTokenTem" +
-      "plate\0223\n\010artifact\030\001 \001(\0132!.taxonomy.model" +
-      ".artifact.Artifact\022\'\n\004base\030\002 \001(\0132\031.taxon" +
-      "omy.model.core.Base\0220\n\tbehaviors\030\003 \003(\0132\035" +
-      ".taxonomy.model.core.Behavior\022;\n\017behavio" +
-      "r_groups\030\004 \003(\0132\".taxonomy.model.core.Beh" +
-      "aviorGroup\0227\n\rproperty_sets\030\005 \003(\0132 .taxo" +
-      "nomy.model.core.PropertySet\"\243\001\n\nInvocati" +
-      "on\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\0227\n" +
-      "\007request\030\003 \001(\0132&.taxonomy.model.core.Inv" +
-      "ocationRequest\0229\n\010response\030\004 \001(\0132\'.taxon" +
-      "omy.model.core.InvocationResponse\"\212\001\n\021In" +
-      "vocationRequest\022\034\n\024control_message_name\030" +
-      "\001 \001(\t\022B\n\020input_parameters\030\002 \003(\0132(.taxono" +
-      "my.model.core.InvocationParameter\022\023\n\013des" +
-      "cription\030\003 \001(\t\"\214\001\n\022InvocationResponse\022\034\n" +
-      "\024control_message_name\030\001 \001(\t\022C\n\021output_pa" +
-      "rameters\030\002 \003(\0132(.taxonomy.model.core.Inv" +
-      "ocationParameter\022\023\n\013description\030\003 \001(\t\">\n" +
-      "\023InvocationParameter\022\014\n\004name\030\001 \001(\t\022\031\n\021va" +
-      "lue_description\030\002 \001(\t*c\n\tTokenType\022\014\n\010FU" +
-      "NGIBLE\020\000\022\020\n\014NON_FUNGIBLE\020\001\022\030\n\024HYBRID_FUN" +
-      "GIBLE_ROOT\020\002\022\034\n\030HYBRID_NON_FUNGIBLE_ROOT" +
-      "\020\003B5\n\031org.tti.tokens.model.coreP\001\252\002\025TTF." +
-      "Tokens.Model.Coreb\006proto3"
+      ".artifact.Artifact\0226\n\ntoken_type\030\002 \001(\0162\"" +
+      ".taxonomy.model.artifact.TokenType\022\014\n\004na" +
+      "me\030\003 \001(\t\022\016\n\006symbol\030\004 \001(\t\022\r\n\005owner\030\005 \001(\t\022" +
+      "\020\n\010quantity\030\006 \001(\014\022\020\n\010decimals\030\007 \001(\005\022H\n\020t" +
+      "oken_properties\030\010 \003(\0132..taxonomy.model.c" +
+      "ore.Base.TokenPropertiesEntry\022\030\n\020constru" +
+      "ctor_name\030\t \001(\t\022)\n\013constructor\030\n \001(\0132\024.g" +
+      "oogle.protobuf.Any\022/\n\014child_tokens\030\013 \003(\013" +
+      "2\031.taxonomy.model.core.Base\0326\n\024TokenProp" +
+      "ertiesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001\"\245\002\n\010Behavior\0223\n\010artifact\030\001 \001(\0132!.tax" +
+      "onomy.model.artifact.Artifact\022\020\n\010externa" +
+      "l\030\002 \001(\010\022!\n\031behavior_constructor_name\030\003 \001" +
+      "(\t\0222\n\024behavior_constructor\030\004 \001(\0132\024.googl" +
+      "e.protobuf.Any\022=\n\024behavior_invocations\030\005" +
+      " \003(\0132\037.taxonomy.model.core.Invocation\022<\n" +
+      "\025behavioral_properties\030\006 \003(\0132\035.taxonomy." +
+      "model.core.Property\"\316\002\n\rBehaviorGroup\0223\n" +
+      "\010artifact\030\001 \001(\0132!.taxonomy.model.artifac" +
+      "t.Artifact\022A\n\020behavior_symbols\030\002 \003(\0132\'.t" +
+      "axonomy.model.artifact.ArtifactSymbol\022b\n" +
+      "\031member_behavior_artifacts\030\003 \003(\0132?.taxon" +
+      "omy.model.core.BehaviorGroup.MemberBehav" +
+      "iorArtifactsEntry\032a\n\034MemberBehaviorArtif" +
+      "actsEntry\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!." +
+      "taxonomy.model.artifact.Artifact:\0028\001\"u\n\013" +
+      "PropertySet\0223\n\010artifact\030\001 \001(\0132!.taxonomy" +
+      ".model.artifact.Artifact\0221\n\nproperties\030\002" +
+      " \003(\0132\035.taxonomy.model.core.Property\"r\n\010P" +
+      "roperty\022\014\n\004name\030\001 \001(\t\022\031\n\021value_descripti" +
+      "on\030\002 \001(\t\022=\n\024property_invocations\030\003 \003(\0132\037" +
+      ".taxonomy.model.core.Invocation\"\225\002\n\rToke" +
+      "nTemplate\0223\n\010artifact\030\001 \001(\0132!.taxonomy.m" +
+      "odel.artifact.Artifact\022\'\n\004base\030\002 \001(\0132\031.t" +
+      "axonomy.model.core.Base\0220\n\tbehaviors\030\003 \003" +
+      "(\0132\035.taxonomy.model.core.Behavior\022;\n\017beh" +
+      "avior_groups\030\004 \003(\0132\".taxonomy.model.core" +
+      ".BehaviorGroup\0227\n\rproperty_sets\030\005 \003(\0132 ." +
+      "taxonomy.model.core.PropertySet\"\243\001\n\nInvo" +
+      "cation\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(" +
+      "\t\0227\n\007request\030\003 \001(\0132&.taxonomy.model.core" +
+      ".InvocationRequest\0229\n\010response\030\004 \001(\0132\'.t" +
+      "axonomy.model.core.InvocationResponse\"\212\001" +
+      "\n\021InvocationRequest\022\034\n\024control_message_n" +
+      "ame\030\001 \001(\t\022B\n\020input_parameters\030\002 \003(\0132(.ta" +
+      "xonomy.model.core.InvocationParameter\022\023\n" +
+      "\013description\030\003 \001(\t\"\214\001\n\022InvocationRespons" +
+      "e\022\034\n\024control_message_name\030\001 \001(\t\022C\n\021outpu" +
+      "t_parameters\030\002 \003(\0132(.taxonomy.model.core" +
+      ".InvocationParameter\022\023\n\013description\030\003 \001(" +
+      "\t\">\n\023InvocationParameter\022\014\n\004name\030\001 \001(\t\022\031" +
+      "\n\021value_description\030\002 \001(\tB5\n\031org.tti.tok" +
+      "ens.model.coreP\001\252\002\025TTF.Tokens.Model.Core" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

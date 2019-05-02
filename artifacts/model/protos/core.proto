@@ -9,17 +9,10 @@ option csharp_namespace = "TTF.Tokens.Model.Core";
 option java_package = "org.tti.tokens.model.core";
 option java_multiple_files = true;
 
-enum TokenType {
-    FUNGIBLE = 0;
-    NON_FUNGIBLE = 1;
-    HYBRID_FUNGIBLE_ROOT = 2;
-    HYBRID_NON_FUNGIBLE_ROOT = 3;
-}
-
 //all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
 message Base{
     taxonomy.model.artifact.Artifact artifact = 1;
-    TokenType token_type = 2;
+    taxonomy.model.artifact.TokenType token_type = 2;
     string name = 3;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
     string symbol = 4; //an optionally unique symbol or identifier
     string owner = 5; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
