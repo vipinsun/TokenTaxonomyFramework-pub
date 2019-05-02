@@ -20,10 +20,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Base() {
+    tokenType_ = 0;
     name_ = "";
     symbol_ = "";
     owner_ = "";
     quantity_ = com.google.protobuf.ByteString.EMPTY;
+    constructorName_ = "";
+    childTokens_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -63,45 +66,79 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16: {
+            int rawValue = input.readEnum();
 
-            name_ = s;
+            tokenType_ = rawValue;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            symbol_ = s;
+            name_ = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            owner_ = s;
+            symbol_ = s;
             break;
           }
           case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            owner_ = s;
+            break;
+          }
+          case 50: {
 
             quantity_ = input.readBytes();
             break;
           }
-          case 48: {
+          case 56: {
 
             decimals_ = input.readInt32();
             break;
           }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+          case 66: {
+            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
               tokenProperties_ = com.google.protobuf.MapField.newMapField(
                   TokenPropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000080;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             tokenProperties__ = input.readMessage(
                 TokenPropertiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             tokenProperties_.getMutableMap().put(
                 tokenProperties__.getKey(), tokenProperties__.getValue());
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            constructorName_ = s;
+            break;
+          }
+          case 82: {
+            com.google.protobuf.Any.Builder subBuilder = null;
+            if (constructor_ != null) {
+              subBuilder = constructor_.toBuilder();
+            }
+            constructor_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(constructor_);
+              constructor_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 90: {
+            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              childTokens_ = new java.util.ArrayList<org.tti.tokens.model.core.Base>();
+              mutable_bitField0_ |= 0x00000400;
+            }
+            childTokens_.add(
+                input.readMessage(org.tti.tokens.model.core.Base.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -119,6 +156,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+        childTokens_ = java.util.Collections.unmodifiableList(childTokens_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -133,7 +173,7 @@ private static final long serialVersionUID = 0L;
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 7:
+      case 8:
         return internalGetTokenProperties();
       default:
         throw new RuntimeException(
@@ -170,14 +210,31 @@ private static final long serialVersionUID = 0L;
     return getArtifact();
   }
 
-  public static final int NAME_FIELD_NUMBER = 2;
+  public static final int TOKEN_TYPE_FIELD_NUMBER = 2;
+  private int tokenType_;
+  /**
+   * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+   */
+  public int getTokenTypeValue() {
+    return tokenType_;
+  }
+  /**
+   * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+   */
+  public org.tti.tokens.model.core.TokenType getTokenType() {
+    @SuppressWarnings("deprecation")
+    org.tti.tokens.model.core.TokenType result = org.tti.tokens.model.core.TokenType.valueOf(tokenType_);
+    return result == null ? org.tti.tokens.model.core.TokenType.UNRECOGNIZED : result;
+  }
+
+  public static final int NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object name_;
   /**
    * <pre>
    *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 3;</code>
    */
   public java.lang.String getName() {
     java.lang.Object ref = name_;
@@ -196,7 +253,7 @@ private static final long serialVersionUID = 0L;
    *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 3;</code>
    */
   public com.google.protobuf.ByteString
       getNameBytes() {
@@ -212,14 +269,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SYMBOL_FIELD_NUMBER = 3;
+  public static final int SYMBOL_FIELD_NUMBER = 4;
   private volatile java.lang.Object symbol_;
   /**
    * <pre>
    *an optionally unique symbol or identifier
    * </pre>
    *
-   * <code>string symbol = 3;</code>
+   * <code>string symbol = 4;</code>
    */
   public java.lang.String getSymbol() {
     java.lang.Object ref = symbol_;
@@ -238,7 +295,7 @@ private static final long serialVersionUID = 0L;
    *an optionally unique symbol or identifier
    * </pre>
    *
-   * <code>string symbol = 3;</code>
+   * <code>string symbol = 4;</code>
    */
   public com.google.protobuf.ByteString
       getSymbolBytes() {
@@ -254,14 +311,14 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OWNER_FIELD_NUMBER = 4;
+  public static final int OWNER_FIELD_NUMBER = 5;
   private volatile java.lang.Object owner_;
   /**
    * <pre>
    *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
    * </pre>
    *
-   * <code>string owner = 4;</code>
+   * <code>string owner = 5;</code>
    */
   public java.lang.String getOwner() {
     java.lang.Object ref = owner_;
@@ -280,7 +337,7 @@ private static final long serialVersionUID = 0L;
    *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
    * </pre>
    *
-   * <code>string owner = 4;</code>
+   * <code>string owner = 5;</code>
    */
   public com.google.protobuf.ByteString
       getOwnerBytes() {
@@ -296,33 +353,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int QUANTITY_FIELD_NUMBER = 5;
+  public static final int QUANTITY_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString quantity_;
   /**
    * <pre>
    *Can represent the initial quantity created or the total minted or issued for the class.
    * </pre>
    *
-   * <code>bytes quantity = 5;</code>
+   * <code>bytes quantity = 6;</code>
    */
   public com.google.protobuf.ByteString getQuantity() {
     return quantity_;
   }
 
-  public static final int DECIMALS_FIELD_NUMBER = 6;
+  public static final int DECIMALS_FIELD_NUMBER = 7;
   private int decimals_;
   /**
    * <pre>
    *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
    * </pre>
    *
-   * <code>int32 decimals = 6;</code>
+   * <code>int32 decimals = 7;</code>
    */
   public int getDecimals() {
     return decimals_;
   }
 
-  public static final int TOKEN_PROPERTIES_FIELD_NUMBER = 7;
+  public static final int TOKEN_PROPERTIES_FIELD_NUMBER = 8;
   private static final class TokenPropertiesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, java.lang.String> defaultEntry =
@@ -353,7 +410,7 @@ private static final long serialVersionUID = 0L;
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 7;</code>
+   * <code>map&lt;string, string&gt; token_properties = 8;</code>
    */
 
   public boolean containsTokenProperties(
@@ -373,7 +430,7 @@ private static final long serialVersionUID = 0L;
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 7;</code>
+   * <code>map&lt;string, string&gt; token_properties = 8;</code>
    */
 
   public java.util.Map<java.lang.String, java.lang.String> getTokenPropertiesMap() {
@@ -384,7 +441,7 @@ private static final long serialVersionUID = 0L;
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 7;</code>
+   * <code>map&lt;string, string&gt; token_properties = 8;</code>
    */
 
   public java.lang.String getTokenPropertiesOrDefault(
@@ -400,7 +457,7 @@ private static final long serialVersionUID = 0L;
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 7;</code>
+   * <code>map&lt;string, string&gt; token_properties = 8;</code>
    */
 
   public java.lang.String getTokenPropertiesOrThrow(
@@ -412,6 +469,136 @@ private static final long serialVersionUID = 0L;
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int CONSTRUCTOR_NAME_FIELD_NUMBER = 9;
+  private volatile java.lang.Object constructorName_;
+  /**
+   * <pre>
+   *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+   * </pre>
+   *
+   * <code>string constructor_name = 9;</code>
+   */
+  public java.lang.String getConstructorName() {
+    java.lang.Object ref = constructorName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      constructorName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+   * </pre>
+   *
+   * <code>string constructor_name = 9;</code>
+   */
+  public com.google.protobuf.ByteString
+      getConstructorNameBytes() {
+    java.lang.Object ref = constructorName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      constructorName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONSTRUCTOR_FIELD_NUMBER = 10;
+  private com.google.protobuf.Any constructor_;
+  /**
+   * <pre>
+   *the constructor type defined in the token template artifact.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any constructor = 10;</code>
+   */
+  public boolean hasConstructor() {
+    return constructor_ != null;
+  }
+  /**
+   * <pre>
+   *the constructor type defined in the token template artifact.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any constructor = 10;</code>
+   */
+  public com.google.protobuf.Any getConstructor() {
+    return constructor_ == null ? com.google.protobuf.Any.getDefaultInstance() : constructor_;
+  }
+  /**
+   * <pre>
+   *the constructor type defined in the token template artifact.
+   * </pre>
+   *
+   * <code>.google.protobuf.Any constructor = 10;</code>
+   */
+  public com.google.protobuf.AnyOrBuilder getConstructorOrBuilder() {
+    return getConstructor();
+  }
+
+  public static final int CHILD_TOKENS_FIELD_NUMBER = 11;
+  private java.util.List<org.tti.tokens.model.core.Base> childTokens_;
+  /**
+   * <pre>
+   *if hybrid, this can contain the list of child token classes.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   */
+  public java.util.List<org.tti.tokens.model.core.Base> getChildTokensList() {
+    return childTokens_;
+  }
+  /**
+   * <pre>
+   *if hybrid, this can contain the list of child token classes.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   */
+  public java.util.List<? extends org.tti.tokens.model.core.BaseOrBuilder> 
+      getChildTokensOrBuilderList() {
+    return childTokens_;
+  }
+  /**
+   * <pre>
+   *if hybrid, this can contain the list of child token classes.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   */
+  public int getChildTokensCount() {
+    return childTokens_.size();
+  }
+  /**
+   * <pre>
+   *if hybrid, this can contain the list of child token classes.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   */
+  public org.tti.tokens.model.core.Base getChildTokens(int index) {
+    return childTokens_.get(index);
+  }
+  /**
+   * <pre>
+   *if hybrid, this can contain the list of child token classes.
+   * </pre>
+   *
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   */
+  public org.tti.tokens.model.core.BaseOrBuilder getChildTokensOrBuilder(
+      int index) {
+    return childTokens_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -431,27 +618,39 @@ private static final long serialVersionUID = 0L;
     if (artifact_ != null) {
       output.writeMessage(1, getArtifact());
     }
+    if (tokenType_ != org.tti.tokens.model.core.TokenType.FUNGIBLE.getNumber()) {
+      output.writeEnum(2, tokenType_);
+    }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
     if (!getSymbolBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, symbol_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, symbol_);
     }
     if (!getOwnerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, owner_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, owner_);
     }
     if (!quantity_.isEmpty()) {
-      output.writeBytes(5, quantity_);
+      output.writeBytes(6, quantity_);
     }
     if (decimals_ != 0) {
-      output.writeInt32(6, decimals_);
+      output.writeInt32(7, decimals_);
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetTokenProperties(),
         TokenPropertiesDefaultEntryHolder.defaultEntry,
-        7);
+        8);
+    if (!getConstructorNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, constructorName_);
+    }
+    if (constructor_ != null) {
+      output.writeMessage(10, getConstructor());
+    }
+    for (int i = 0; i < childTokens_.size(); i++) {
+      output.writeMessage(11, childTokens_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -465,22 +664,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getArtifact());
     }
+    if (tokenType_ != org.tti.tokens.model.core.TokenType.FUNGIBLE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, tokenType_);
+    }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     if (!getSymbolBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, symbol_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, symbol_);
     }
     if (!getOwnerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, owner_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, owner_);
     }
     if (!quantity_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(5, quantity_);
+        .computeBytesSize(6, quantity_);
     }
     if (decimals_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, decimals_);
+        .computeInt32Size(7, decimals_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetTokenProperties().getMap().entrySet()) {
@@ -490,7 +693,18 @@ private static final long serialVersionUID = 0L;
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, tokenProperties__);
+          .computeMessageSize(8, tokenProperties__);
+    }
+    if (!getConstructorNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, constructorName_);
+    }
+    if (constructor_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getConstructor());
+    }
+    for (int i = 0; i < childTokens_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, childTokens_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -512,6 +726,7 @@ private static final long serialVersionUID = 0L;
       if (!getArtifact()
           .equals(other.getArtifact())) return false;
     }
+    if (tokenType_ != other.tokenType_) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getSymbol()
@@ -524,6 +739,15 @@ private static final long serialVersionUID = 0L;
         != other.getDecimals()) return false;
     if (!internalGetTokenProperties().equals(
         other.internalGetTokenProperties())) return false;
+    if (!getConstructorName()
+        .equals(other.getConstructorName())) return false;
+    if (hasConstructor() != other.hasConstructor()) return false;
+    if (hasConstructor()) {
+      if (!getConstructor()
+          .equals(other.getConstructor())) return false;
+    }
+    if (!getChildTokensList()
+        .equals(other.getChildTokensList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -539,6 +763,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
       hash = (53 * hash) + getArtifact().hashCode();
     }
+    hash = (37 * hash) + TOKEN_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + tokenType_;
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + SYMBOL_FIELD_NUMBER;
@@ -552,6 +778,16 @@ private static final long serialVersionUID = 0L;
     if (!internalGetTokenProperties().getMap().isEmpty()) {
       hash = (37 * hash) + TOKEN_PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTokenProperties().hashCode();
+    }
+    hash = (37 * hash) + CONSTRUCTOR_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getConstructorName().hashCode();
+    if (hasConstructor()) {
+      hash = (37 * hash) + CONSTRUCTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getConstructor().hashCode();
+    }
+    if (getChildTokensCount() > 0) {
+      hash = (37 * hash) + CHILD_TOKENS_FIELD_NUMBER;
+      hash = (53 * hash) + getChildTokensList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -668,7 +904,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 7:
+        case 8:
           return internalGetTokenProperties();
         default:
           throw new RuntimeException(
@@ -679,7 +915,7 @@ private static final long serialVersionUID = 0L;
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 7:
+        case 8:
           return internalGetMutableTokenProperties();
         default:
           throw new RuntimeException(
@@ -707,6 +943,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getChildTokensFieldBuilder();
       }
     }
     @java.lang.Override
@@ -718,6 +955,8 @@ private static final long serialVersionUID = 0L;
         artifact_ = null;
         artifactBuilder_ = null;
       }
+      tokenType_ = 0;
+
       name_ = "";
 
       symbol_ = "";
@@ -729,6 +968,20 @@ private static final long serialVersionUID = 0L;
       decimals_ = 0;
 
       internalGetMutableTokenProperties().clear();
+      constructorName_ = "";
+
+      if (constructorBuilder_ == null) {
+        constructor_ = null;
+      } else {
+        constructor_ = null;
+        constructorBuilder_ = null;
+      }
+      if (childTokensBuilder_ == null) {
+        childTokens_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      } else {
+        childTokensBuilder_.clear();
+      }
       return this;
     }
 
@@ -762,6 +1015,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.artifact_ = artifactBuilder_.build();
       }
+      result.tokenType_ = tokenType_;
       result.name_ = name_;
       result.symbol_ = symbol_;
       result.owner_ = owner_;
@@ -769,6 +1023,21 @@ private static final long serialVersionUID = 0L;
       result.decimals_ = decimals_;
       result.tokenProperties_ = internalGetTokenProperties();
       result.tokenProperties_.makeImmutable();
+      result.constructorName_ = constructorName_;
+      if (constructorBuilder_ == null) {
+        result.constructor_ = constructor_;
+      } else {
+        result.constructor_ = constructorBuilder_.build();
+      }
+      if (childTokensBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          childTokens_ = java.util.Collections.unmodifiableList(childTokens_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.childTokens_ = childTokens_;
+      } else {
+        result.childTokens_ = childTokensBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -821,6 +1090,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasArtifact()) {
         mergeArtifact(other.getArtifact());
       }
+      if (other.tokenType_ != 0) {
+        setTokenTypeValue(other.getTokenTypeValue());
+      }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -841,6 +1113,39 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableTokenProperties().mergeFrom(
           other.internalGetTokenProperties());
+      if (!other.getConstructorName().isEmpty()) {
+        constructorName_ = other.constructorName_;
+        onChanged();
+      }
+      if (other.hasConstructor()) {
+        mergeConstructor(other.getConstructor());
+      }
+      if (childTokensBuilder_ == null) {
+        if (!other.childTokens_.isEmpty()) {
+          if (childTokens_.isEmpty()) {
+            childTokens_ = other.childTokens_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureChildTokensIsMutable();
+            childTokens_.addAll(other.childTokens_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.childTokens_.isEmpty()) {
+          if (childTokensBuilder_.isEmpty()) {
+            childTokensBuilder_.dispose();
+            childTokensBuilder_ = null;
+            childTokens_ = other.childTokens_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            childTokensBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getChildTokensFieldBuilder() : null;
+          } else {
+            childTokensBuilder_.addAllMessages(other.childTokens_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -988,13 +1293,58 @@ private static final long serialVersionUID = 0L;
       return artifactBuilder_;
     }
 
+    private int tokenType_ = 0;
+    /**
+     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     */
+    public int getTokenTypeValue() {
+      return tokenType_;
+    }
+    /**
+     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     */
+    public Builder setTokenTypeValue(int value) {
+      tokenType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     */
+    public org.tti.tokens.model.core.TokenType getTokenType() {
+      @SuppressWarnings("deprecation")
+      org.tti.tokens.model.core.TokenType result = org.tti.tokens.model.core.TokenType.valueOf(tokenType_);
+      return result == null ? org.tti.tokens.model.core.TokenType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     */
+    public Builder setTokenType(org.tti.tokens.model.core.TokenType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      tokenType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.taxonomy.model.core.TokenType token_type = 2;</code>
+     */
+    public Builder clearTokenType() {
+      
+      tokenType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
      * <pre>
      *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 3;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1013,7 +1363,7 @@ private static final long serialVersionUID = 0L;
      *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 3;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1033,7 +1383,7 @@ private static final long serialVersionUID = 0L;
      *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 3;</code>
      */
     public Builder setName(
         java.lang.String value) {
@@ -1050,7 +1400,7 @@ private static final long serialVersionUID = 0L;
      *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 3;</code>
      */
     public Builder clearName() {
       
@@ -1063,7 +1413,7 @@ private static final long serialVersionUID = 0L;
      *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 3;</code>
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1083,7 +1433,7 @@ private static final long serialVersionUID = 0L;
      *an optionally unique symbol or identifier
      * </pre>
      *
-     * <code>string symbol = 3;</code>
+     * <code>string symbol = 4;</code>
      */
     public java.lang.String getSymbol() {
       java.lang.Object ref = symbol_;
@@ -1102,7 +1452,7 @@ private static final long serialVersionUID = 0L;
      *an optionally unique symbol or identifier
      * </pre>
      *
-     * <code>string symbol = 3;</code>
+     * <code>string symbol = 4;</code>
      */
     public com.google.protobuf.ByteString
         getSymbolBytes() {
@@ -1122,7 +1472,7 @@ private static final long serialVersionUID = 0L;
      *an optionally unique symbol or identifier
      * </pre>
      *
-     * <code>string symbol = 3;</code>
+     * <code>string symbol = 4;</code>
      */
     public Builder setSymbol(
         java.lang.String value) {
@@ -1139,7 +1489,7 @@ private static final long serialVersionUID = 0L;
      *an optionally unique symbol or identifier
      * </pre>
      *
-     * <code>string symbol = 3;</code>
+     * <code>string symbol = 4;</code>
      */
     public Builder clearSymbol() {
       
@@ -1152,7 +1502,7 @@ private static final long serialVersionUID = 0L;
      *an optionally unique symbol or identifier
      * </pre>
      *
-     * <code>string symbol = 3;</code>
+     * <code>string symbol = 4;</code>
      */
     public Builder setSymbolBytes(
         com.google.protobuf.ByteString value) {
@@ -1172,7 +1522,7 @@ private static final long serialVersionUID = 0L;
      *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
      * </pre>
      *
-     * <code>string owner = 4;</code>
+     * <code>string owner = 5;</code>
      */
     public java.lang.String getOwner() {
       java.lang.Object ref = owner_;
@@ -1191,7 +1541,7 @@ private static final long serialVersionUID = 0L;
      *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
      * </pre>
      *
-     * <code>string owner = 4;</code>
+     * <code>string owner = 5;</code>
      */
     public com.google.protobuf.ByteString
         getOwnerBytes() {
@@ -1211,7 +1561,7 @@ private static final long serialVersionUID = 0L;
      *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
      * </pre>
      *
-     * <code>string owner = 4;</code>
+     * <code>string owner = 5;</code>
      */
     public Builder setOwner(
         java.lang.String value) {
@@ -1228,7 +1578,7 @@ private static final long serialVersionUID = 0L;
      *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
      * </pre>
      *
-     * <code>string owner = 4;</code>
+     * <code>string owner = 5;</code>
      */
     public Builder clearOwner() {
       
@@ -1241,7 +1591,7 @@ private static final long serialVersionUID = 0L;
      *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
      * </pre>
      *
-     * <code>string owner = 4;</code>
+     * <code>string owner = 5;</code>
      */
     public Builder setOwnerBytes(
         com.google.protobuf.ByteString value) {
@@ -1261,7 +1611,7 @@ private static final long serialVersionUID = 0L;
      *Can represent the initial quantity created or the total minted or issued for the class.
      * </pre>
      *
-     * <code>bytes quantity = 5;</code>
+     * <code>bytes quantity = 6;</code>
      */
     public com.google.protobuf.ByteString getQuantity() {
       return quantity_;
@@ -1271,7 +1621,7 @@ private static final long serialVersionUID = 0L;
      *Can represent the initial quantity created or the total minted or issued for the class.
      * </pre>
      *
-     * <code>bytes quantity = 5;</code>
+     * <code>bytes quantity = 6;</code>
      */
     public Builder setQuantity(com.google.protobuf.ByteString value) {
       if (value == null) {
@@ -1287,7 +1637,7 @@ private static final long serialVersionUID = 0L;
      *Can represent the initial quantity created or the total minted or issued for the class.
      * </pre>
      *
-     * <code>bytes quantity = 5;</code>
+     * <code>bytes quantity = 6;</code>
      */
     public Builder clearQuantity() {
       
@@ -1302,7 +1652,7 @@ private static final long serialVersionUID = 0L;
      *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
      * </pre>
      *
-     * <code>int32 decimals = 6;</code>
+     * <code>int32 decimals = 7;</code>
      */
     public int getDecimals() {
       return decimals_;
@@ -1312,7 +1662,7 @@ private static final long serialVersionUID = 0L;
      *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
      * </pre>
      *
-     * <code>int32 decimals = 6;</code>
+     * <code>int32 decimals = 7;</code>
      */
     public Builder setDecimals(int value) {
       
@@ -1325,7 +1675,7 @@ private static final long serialVersionUID = 0L;
      *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
      * </pre>
      *
-     * <code>int32 decimals = 6;</code>
+     * <code>int32 decimals = 7;</code>
      */
     public Builder clearDecimals() {
       
@@ -1365,7 +1715,7 @@ private static final long serialVersionUID = 0L;
      *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; token_properties = 7;</code>
+     * <code>map&lt;string, string&gt; token_properties = 8;</code>
      */
 
     public boolean containsTokenProperties(
@@ -1385,7 +1735,7 @@ private static final long serialVersionUID = 0L;
      *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; token_properties = 7;</code>
+     * <code>map&lt;string, string&gt; token_properties = 8;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getTokenPropertiesMap() {
@@ -1396,7 +1746,7 @@ private static final long serialVersionUID = 0L;
      *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; token_properties = 7;</code>
+     * <code>map&lt;string, string&gt; token_properties = 8;</code>
      */
 
     public java.lang.String getTokenPropertiesOrDefault(
@@ -1412,7 +1762,7 @@ private static final long serialVersionUID = 0L;
      *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; token_properties = 7;</code>
+     * <code>map&lt;string, string&gt; token_properties = 8;</code>
      */
 
     public java.lang.String getTokenPropertiesOrThrow(
@@ -1436,7 +1786,7 @@ private static final long serialVersionUID = 0L;
      *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; token_properties = 7;</code>
+     * <code>map&lt;string, string&gt; token_properties = 8;</code>
      */
 
     public Builder removeTokenProperties(
@@ -1459,7 +1809,7 @@ private static final long serialVersionUID = 0L;
      *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; token_properties = 7;</code>
+     * <code>map&lt;string, string&gt; token_properties = 8;</code>
      */
     public Builder putTokenProperties(
         java.lang.String key,
@@ -1475,7 +1825,7 @@ private static final long serialVersionUID = 0L;
      *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; token_properties = 7;</code>
+     * <code>map&lt;string, string&gt; token_properties = 8;</code>
      */
 
     public Builder putAllTokenProperties(
@@ -1483,6 +1833,560 @@ private static final long serialVersionUID = 0L;
       internalGetMutableTokenProperties().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private java.lang.Object constructorName_ = "";
+    /**
+     * <pre>
+     *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+     * </pre>
+     *
+     * <code>string constructor_name = 9;</code>
+     */
+    public java.lang.String getConstructorName() {
+      java.lang.Object ref = constructorName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        constructorName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+     * </pre>
+     *
+     * <code>string constructor_name = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getConstructorNameBytes() {
+      java.lang.Object ref = constructorName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        constructorName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+     * </pre>
+     *
+     * <code>string constructor_name = 9;</code>
+     */
+    public Builder setConstructorName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      constructorName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+     * </pre>
+     *
+     * <code>string constructor_name = 9;</code>
+     */
+    public Builder clearConstructorName() {
+      
+      constructorName_ = getDefaultInstance().getConstructorName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+     * </pre>
+     *
+     * <code>string constructor_name = 9;</code>
+     */
+    public Builder setConstructorNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      constructorName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Any constructor_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> constructorBuilder_;
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public boolean hasConstructor() {
+      return constructorBuilder_ != null || constructor_ != null;
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public com.google.protobuf.Any getConstructor() {
+      if (constructorBuilder_ == null) {
+        return constructor_ == null ? com.google.protobuf.Any.getDefaultInstance() : constructor_;
+      } else {
+        return constructorBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public Builder setConstructor(com.google.protobuf.Any value) {
+      if (constructorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        constructor_ = value;
+        onChanged();
+      } else {
+        constructorBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public Builder setConstructor(
+        com.google.protobuf.Any.Builder builderForValue) {
+      if (constructorBuilder_ == null) {
+        constructor_ = builderForValue.build();
+        onChanged();
+      } else {
+        constructorBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public Builder mergeConstructor(com.google.protobuf.Any value) {
+      if (constructorBuilder_ == null) {
+        if (constructor_ != null) {
+          constructor_ =
+            com.google.protobuf.Any.newBuilder(constructor_).mergeFrom(value).buildPartial();
+        } else {
+          constructor_ = value;
+        }
+        onChanged();
+      } else {
+        constructorBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public Builder clearConstructor() {
+      if (constructorBuilder_ == null) {
+        constructor_ = null;
+        onChanged();
+      } else {
+        constructor_ = null;
+        constructorBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public com.google.protobuf.Any.Builder getConstructorBuilder() {
+      
+      onChanged();
+      return getConstructorFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    public com.google.protobuf.AnyOrBuilder getConstructorOrBuilder() {
+      if (constructorBuilder_ != null) {
+        return constructorBuilder_.getMessageOrBuilder();
+      } else {
+        return constructor_ == null ?
+            com.google.protobuf.Any.getDefaultInstance() : constructor_;
+      }
+    }
+    /**
+     * <pre>
+     *the constructor type defined in the token template artifact.
+     * </pre>
+     *
+     * <code>.google.protobuf.Any constructor = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+        getConstructorFieldBuilder() {
+      if (constructorBuilder_ == null) {
+        constructorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                getConstructor(),
+                getParentForChildren(),
+                isClean());
+        constructor_ = null;
+      }
+      return constructorBuilder_;
+    }
+
+    private java.util.List<org.tti.tokens.model.core.Base> childTokens_ =
+      java.util.Collections.emptyList();
+    private void ensureChildTokensIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        childTokens_ = new java.util.ArrayList<org.tti.tokens.model.core.Base>(childTokens_);
+        bitField0_ |= 0x00000400;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder> childTokensBuilder_;
+
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public java.util.List<org.tti.tokens.model.core.Base> getChildTokensList() {
+      if (childTokensBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(childTokens_);
+      } else {
+        return childTokensBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public int getChildTokensCount() {
+      if (childTokensBuilder_ == null) {
+        return childTokens_.size();
+      } else {
+        return childTokensBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public org.tti.tokens.model.core.Base getChildTokens(int index) {
+      if (childTokensBuilder_ == null) {
+        return childTokens_.get(index);
+      } else {
+        return childTokensBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder setChildTokens(
+        int index, org.tti.tokens.model.core.Base value) {
+      if (childTokensBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildTokensIsMutable();
+        childTokens_.set(index, value);
+        onChanged();
+      } else {
+        childTokensBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder setChildTokens(
+        int index, org.tti.tokens.model.core.Base.Builder builderForValue) {
+      if (childTokensBuilder_ == null) {
+        ensureChildTokensIsMutable();
+        childTokens_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        childTokensBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder addChildTokens(org.tti.tokens.model.core.Base value) {
+      if (childTokensBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildTokensIsMutable();
+        childTokens_.add(value);
+        onChanged();
+      } else {
+        childTokensBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder addChildTokens(
+        int index, org.tti.tokens.model.core.Base value) {
+      if (childTokensBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureChildTokensIsMutable();
+        childTokens_.add(index, value);
+        onChanged();
+      } else {
+        childTokensBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder addChildTokens(
+        org.tti.tokens.model.core.Base.Builder builderForValue) {
+      if (childTokensBuilder_ == null) {
+        ensureChildTokensIsMutable();
+        childTokens_.add(builderForValue.build());
+        onChanged();
+      } else {
+        childTokensBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder addChildTokens(
+        int index, org.tti.tokens.model.core.Base.Builder builderForValue) {
+      if (childTokensBuilder_ == null) {
+        ensureChildTokensIsMutable();
+        childTokens_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        childTokensBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder addAllChildTokens(
+        java.lang.Iterable<? extends org.tti.tokens.model.core.Base> values) {
+      if (childTokensBuilder_ == null) {
+        ensureChildTokensIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, childTokens_);
+        onChanged();
+      } else {
+        childTokensBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder clearChildTokens() {
+      if (childTokensBuilder_ == null) {
+        childTokens_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        childTokensBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public Builder removeChildTokens(int index) {
+      if (childTokensBuilder_ == null) {
+        ensureChildTokensIsMutable();
+        childTokens_.remove(index);
+        onChanged();
+      } else {
+        childTokensBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public org.tti.tokens.model.core.Base.Builder getChildTokensBuilder(
+        int index) {
+      return getChildTokensFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public org.tti.tokens.model.core.BaseOrBuilder getChildTokensOrBuilder(
+        int index) {
+      if (childTokensBuilder_ == null) {
+        return childTokens_.get(index);  } else {
+        return childTokensBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public java.util.List<? extends org.tti.tokens.model.core.BaseOrBuilder> 
+         getChildTokensOrBuilderList() {
+      if (childTokensBuilder_ != null) {
+        return childTokensBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(childTokens_);
+      }
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public org.tti.tokens.model.core.Base.Builder addChildTokensBuilder() {
+      return getChildTokensFieldBuilder().addBuilder(
+          org.tti.tokens.model.core.Base.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public org.tti.tokens.model.core.Base.Builder addChildTokensBuilder(
+        int index) {
+      return getChildTokensFieldBuilder().addBuilder(
+          index, org.tti.tokens.model.core.Base.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     *if hybrid, this can contain the list of child token classes.
+     * </pre>
+     *
+     * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+     */
+    public java.util.List<org.tti.tokens.model.core.Base.Builder> 
+         getChildTokensBuilderList() {
+      return getChildTokensFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder> 
+        getChildTokensFieldBuilder() {
+      if (childTokensBuilder_ == null) {
+        childTokensBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder>(
+                childTokens_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        childTokens_ = null;
+      }
+      return childTokensBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

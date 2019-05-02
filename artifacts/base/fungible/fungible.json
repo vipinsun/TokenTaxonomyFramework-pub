@@ -1,0 +1,97 @@
+{
+  "artifact": {
+    "type": "BASE",
+    "name": "Fungible Token",
+    "aliases": [
+      "Liquid",
+      "Physical Cash"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "&tau;<sub>F</sub>",
+      "toolingSymbol": "tF"
+    },
+    "controlUri": "../../../../../../artifacts/base/fungible/fungible.proto",
+    "artifactDefinition": {
+      "businessDescription": "Fungible tokens have interchangeable value with each other, where any quantity of them from the same class has the same value as another equal quantity. Similar to physical cash money, a crypto-currency is an example of a fungible token.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "fungible analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "",
+        "toolingSymbol": ""
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+        "symbol": {
+          "visualSymbol": "~d",
+          "toolingSymbol": "~d"
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "fungible.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "fungible.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "tokenType": "FUNGIBLE",
+  "name": "",
+  "symbol": "",
+  "owner": "",
+  "quantity": "",
+  "decimals": 0,
+  "tokenProperties": {},
+  "constructorName": "",
+  "constructor": null,
+  "childTokens": []
+}

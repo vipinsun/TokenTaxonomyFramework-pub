@@ -5,14 +5,19 @@ package document;
 import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 import "../../behaviors/encumberable/encumberable.proto";
-option csharp_namespace = "TTF.Tokens.Base";
-option java_package = "org.tokentaxonomyinitiative.tokens";
+import "../../property-sets/file/file.proto";
+option csharp_namespace = "TTI.TTF.TokenTemplates.Document";
+option java_package = "org.tti.ttf.tokenTemplates.document";
 option java_multiple_files = true;
 
-message Document {
+message Constructor{
     string document_hash_type = 1;
     string document_hash = 2;
     string storage_path = 3; 
+}
+
+message Document {
+    file.File file = 1;
     repeated encumberable.Encumbered encumbers = 4;
 }
 

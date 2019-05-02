@@ -1,0 +1,96 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR",
+    "name": "Singleton",
+    "aliases": [
+      "Unique",
+      "One and Only"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "<i>s</i>",
+      "toolingSymbol": "s"
+    },
+    "controlUri": "../../../../../../artifacts/behaviors/singleton/singleton.proto",
+    "artifactDefinition": {
+      "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class.  This single whole token may or may not be sub-dividable, but in most cases it will not be sub-dividable. This restriction is set at the base token by only creating a quantity of one.  By definition, a Singleton cannot be mintable.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "singleton analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "<i>d</i>",
+        "toolingSymbol": "d"
+      },
+      {
+        "visualSymbol": "<i>m</i>",
+        "toolingSymbol": "m"
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "",
+        "symbol": {
+          "visualSymbol": "",
+          "toolingSymbol": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "singleton.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "singleton.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "external": false,
+  "behaviorConstructorName": "",
+  "behaviorConstructor": null,
+  "behaviorInvocations": [],
+  "behavioralProperties": []
+}

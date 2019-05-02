@@ -1,0 +1,140 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR",
+    "name": "Delegable",
+    "aliases": [
+      "To Delegate"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "<i>g</i>",
+      "toolingSymbol": "g"
+    },
+    "controlUri": "../../../../../../artifacts/behaviors/delegable/delegable.proto",
+    "artifactDefinition": {
+      "businessDescription": "A token class that implements this behavior will support the delegation of certain behaviors to another party or account to invoke them on the behalf of the owner. When applied to a token, behaviors that are Delegable will enable delegated request invocations. This is useful to provide another party to automatically be able to perform the behaviors that can be delegated without seeking permission up to a certain allowance.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "delegable analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "Applied to behaviors that are Delegable.",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "",
+        "toolingSymbol": ""
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "",
+        "symbol": {
+          "visualSymbol": "",
+          "toolingSymbol": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "delegable.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "delegable.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "external": false,
+  "behaviorConstructorName": "",
+  "behaviorConstructor": null,
+  "behaviorInvocations": [
+    {
+      "name": "Allowance",
+      "description": "A Request by a party or account to the owner of a token(s) to have the right to perform a delegated behavior on their behalf.",
+      "request": {
+        "controlMessageName": "AllowanceRequest",
+        "inputParameters": [
+          {
+            "name": "Quantity",
+            "valueDescription": "Number of Tokens to be allowed."
+          }
+        ],
+        "description": "The request"
+      },
+      "response": {
+        "controlMessageName": "AllowanceResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A confirmation receipt or denial be returned to the allowance requestor."
+          }
+        ],
+        "description": "The response"
+      }
+    },
+    {
+      "name": "Approve Allowance",
+      "description": "Same control message as the AllowanceRequest.  This could allow for an AllowanceRequest to be forwarded to multiple parties needed to Approve and shield this from the requestor. When all Approvals are obtained, an AllowanceResponse could be sent.",
+      "request": {
+        "controlMessageName": "AllowanceRequest",
+        "inputParameters": [
+          {
+            "name": "Quantity",
+            "valueDescription": "Number of Tokens to be allowed."
+          }
+        ],
+        "description": "The request"
+      },
+      "response": {
+        "controlMessageName": "ApproveResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A confirmation response from the owner approving the an allowance request, indicating a allowance quantity the requestor has the option to invoke the Delegable behaviors on the token(s)."
+          }
+        ],
+        "description": "The response"
+      }
+    }
+  ],
+  "behavioralProperties": []
+}

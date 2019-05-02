@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$/../../artifacts/build-model.sh" t="Include" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="artifactGenerator" t="IncludeRecursive">
         <e p="artifactGenerator.csproj" t="IncludeRecursive" />
@@ -30,6 +31,7 @@
       </e>
       <e p="artifactGenerator.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="scripts" t="Include" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_artifactGenerator.-805208496.00" t="ExcludeRecursive" />

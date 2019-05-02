@@ -1,0 +1,203 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR",
+    "name": "Roles",
+    "aliases": [
+      "Groups"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "<i>r</i>",
+      "toolingSymbol": "r"
+    },
+    "controlUri": "../../../../../../artifacts/behaviors/roles/roles.proto",
+    "artifactDefinition": {
+      "businessDescription": "A token can have behaviors that the class will restrict invocations to a select set of parties or accounts that are members of a role or group.  This is a generic behavior that can apply to a token many times to represent many role definitions within the template.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "roles analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "Roles has a constructor control that creates roles and applies them to certain behaviors of the token at creation of the class from the template.",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "",
+        "toolingSymbol": ""
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "",
+        "symbol": {
+          "visualSymbol": "",
+          "toolingSymbol": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "roles.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "roles.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "external": false,
+  "behaviorConstructorName": "Constructor",
+  "behaviorConstructor": null,
+  "behaviorInvocations": [
+    {
+      "name": "RoleCheck",
+      "description": "Internal invocation when the applied behavior is called to check if the requestor is a member of the role.",
+      "request": {
+        "controlMessageName": "IsInRole",
+        "inputParameters": [
+          {
+            "name": "AccountId",
+            "valueDescription": "AccountId of the requestor."
+          }
+        ],
+        "description": "The request"
+      },
+      "response": {
+        "controlMessageName": "True/False",
+        "outputParameters": [
+          {
+            "name": "IsInRole",
+            "valueDescription": "True/False"
+          }
+        ],
+        "description": "The response"
+      }
+    }
+  ],
+  "behavioralProperties": [
+    {
+      "name": "Role",
+      "valueDescription": "Name of a role that can have a list of accounts in the role.",
+      "propertyInvocations": [
+        {
+          "name": "GetRoleMembers",
+          "description": "The property value.",
+          "request": {
+            "controlMessageName": "GetRoleMembersRequest",
+            "inputParameters": [
+              {
+                "name": "RoleName",
+                "valueDescription": "Name of the Role"
+              }
+            ],
+            "description": ""
+          },
+          "response": {
+            "controlMessageName": "GetRoleMembersResponse",
+            "outputParameters": [
+              {
+                "name": "Accounts",
+                "valueDescription": "value of property"
+              }
+            ],
+            "description": "Return value"
+          }
+        },
+        {
+          "name": "AddRoleMember",
+          "description": "Add a party or account to a particular role.",
+          "request": {
+            "controlMessageName": "AddRoleMemberRequest",
+            "inputParameters": [
+              {
+                "name": "RoleId",
+                "valueDescription": "Name or Id of the Role"
+              },
+              {
+                "name": "AccountId",
+                "valueDescription": "Id of account to add to the Role"
+              }
+            ],
+            "description": ""
+          },
+          "response": {
+            "controlMessageName": "AddRoleMemberResponse",
+            "outputParameters": [
+              {
+                "name": "Confirmation",
+                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the request."
+              }
+            ],
+            "description": "Return value"
+          }
+        },
+        {
+          "name": "RemoveRoleMember",
+          "description": "Remove a party or account to a particular role",
+          "request": {
+            "controlMessageName": "RemoveRoleMemberRequest",
+            "inputParameters": [
+              {
+                "name": "RoleId",
+                "valueDescription": "Name or Id of the Role"
+              },
+              {
+                "name": "AccountId",
+                "valueDescription": "Id of account to add to the Role"
+              }
+            ],
+            "description": ""
+          },
+          "response": {
+            "controlMessageName": "RemoveRoleMemberResponse",
+            "outputParameters": [
+              {
+                "name": "Confirmation",
+                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the request."
+              }
+            ],
+            "description": "Return value"
+          }
+        }
+      ]
+    }
+  ]
+}

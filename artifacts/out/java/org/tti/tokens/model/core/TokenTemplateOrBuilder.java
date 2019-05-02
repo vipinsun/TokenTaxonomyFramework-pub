@@ -21,95 +21,86 @@ public interface TokenTemplateOrBuilder extends
   org.tti.tokens.model.artifact.ArtifactOrBuilder getArtifactOrBuilder();
 
   /**
-   * <code>.taxonomy.model.core.Type type = 2;</code>
-   */
-  int getTypeValue();
-  /**
-   * <code>.taxonomy.model.core.Type type = 2;</code>
-   */
-  org.tti.tokens.model.core.Type getType();
-
-  /**
-   * <code>.taxonomy.model.core.Base base = 3;</code>
+   * <code>.taxonomy.model.core.Base base = 2;</code>
    */
   boolean hasBase();
   /**
-   * <code>.taxonomy.model.core.Base base = 3;</code>
+   * <code>.taxonomy.model.core.Base base = 2;</code>
    */
   org.tti.tokens.model.core.Base getBase();
   /**
-   * <code>.taxonomy.model.core.Base base = 3;</code>
+   * <code>.taxonomy.model.core.Base base = 2;</code>
    */
   org.tti.tokens.model.core.BaseOrBuilder getBaseOrBuilder();
 
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   java.util.List<org.tti.tokens.model.core.Behavior> 
       getBehaviorsList();
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   org.tti.tokens.model.core.Behavior getBehaviors(int index);
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   int getBehaviorsCount();
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   java.util.List<? extends org.tti.tokens.model.core.BehaviorOrBuilder> 
       getBehaviorsOrBuilderList();
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   org.tti.tokens.model.core.BehaviorOrBuilder getBehaviorsOrBuilder(
       int index);
 
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   java.util.List<org.tti.tokens.model.core.BehaviorGroup> 
       getBehaviorGroupsList();
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   org.tti.tokens.model.core.BehaviorGroup getBehaviorGroups(int index);
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   int getBehaviorGroupsCount();
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   java.util.List<? extends org.tti.tokens.model.core.BehaviorGroupOrBuilder> 
       getBehaviorGroupsOrBuilderList();
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   org.tti.tokens.model.core.BehaviorGroupOrBuilder getBehaviorGroupsOrBuilder(
       int index);
 
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   java.util.List<org.tti.tokens.model.core.PropertySet> 
       getPropertySetsList();
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   org.tti.tokens.model.core.PropertySet getPropertySets(int index);
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   int getPropertySetsCount();
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   java.util.List<? extends org.tti.tokens.model.core.PropertySetOrBuilder> 
       getPropertySetsOrBuilderList();
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   org.tti.tokens.model.core.PropertySetOrBuilder getPropertySetsOrBuilder(
       int index);

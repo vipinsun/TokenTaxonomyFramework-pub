@@ -1,0 +1,140 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR",
+    "name": "Burnable",
+    "aliases": [
+      "Retire"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "<i>b</i>",
+      "toolingSymbol": "b"
+    },
+    "controlUri": "../../../../../../artifacts/behaviors/burnable/burnable.proto",
+    "artifactDefinition": {
+      "businessDescription": "A token class that implements this behavior will support the burning or decommissioning of token instances of the class. This does not delete a token, but rather places it in a permanent non-use state.  Burning is a one way operation and cannot be reversed. This behavior is Delegable. If the token definition is Delegable, BurnFrom will be available.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "burnable analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "",
+        "toolingSymbol": ""
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "Delegable or not, will determine if the BurnFrom Control will be available in the implementation.",
+        "symbol": {
+          "visualSymbol": "<i>g</i>",
+          "toolingSymbol": "g"
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "burnable.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "burnable.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "external": false,
+  "behaviorConstructorName": "",
+  "behaviorConstructor": null,
+  "behaviorInvocations": [
+    {
+      "name": "Burn",
+      "description": "A request to burn a token instance(s) in the class by the owner of the token instance(s).  Optional Quantity field in the request.",
+      "request": {
+        "controlMessageName": "BurnRequest",
+        "inputParameters": [
+          {
+            "name": "Quantity",
+            "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+          }
+        ],
+        "description": "The request to Burn or Retire tokens."
+      },
+      "response": {
+        "controlMessageName": "BurnResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+          }
+        ],
+        "description": "The response from the request to burn."
+      }
+    },
+    {
+      "name": "BurnFrom",
+      "description": "Requires Delegable. A request to burn token instance(s) in the class by a party or account that has allowance to do so.  Requires a From and Quantity fields in the request.",
+      "request": {
+        "controlMessageName": "BurnRequest",
+        "inputParameters": [
+          {
+            "name": "Quantity",
+            "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+          }
+        ],
+        "description": "The request to Burn or Retire tokens."
+      },
+      "response": {
+        "controlMessageName": "BurnResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+          }
+        ],
+        "description": "The response from the request to burn."
+      }
+    }
+  ],
+  "behavioralProperties": []
+}

@@ -1,0 +1,180 @@
+{
+  "artifact": {
+    "type": "TOKEN_TEMPLATE",
+    "name": "Log Token",
+    "aliases": [
+      "Logging",
+      "Event Recorder",
+      "Audit"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "&tau<sub>N</sub>{t', d', b, s, r, l}",
+      "toolingSymbol": "tN{t', d', b, s, r, l}"
+    },
+    "controlUri": "../../../../../../artifacts/token-templates/Log/Log.proto",
+    "artifactDefinition": {
+      "businessDescription": "Log, is a non-fungible token that serves as a trusted log that is used to record event data for some shared process, application or other type of context specific log data that is of interest to multiple parties. This token is owned by some shared source and viewable by parties that are members of a LogViewer role.",
+      "businessExample": "This token is useful when the owner of the token must record periodic data that multiple parties may want to monitor or audit.",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "Log analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "",
+        "toolingSymbol": ""
+      }
+    ],
+    "influencedBySymbols": [],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "Log.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "Log.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "base": {
+    "artifact": {
+      "type": "BASE",
+      "name": "Non-Fungible Token",
+      "aliases": [
+        "Title",
+        "Deed"
+      ],
+      "artifactSymbol": {
+        "visualSymbol": "&tau<sub>N</sub>",
+        "toolingSymbol": "tN"
+      },
+      "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
+      "artifactDefinition": {
+        "businessDescription": "Every non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
+        "businessExample": "",
+        "analogies": [
+          {
+            "name": "Analogy 1",
+            "description": "non-fungible analogy 1 description",
+            "artifactDefinition": null
+          }
+        ],
+        "comments": "",
+        "artifact": null
+      },
+      "incompatibleWithSymbols": [
+        {
+          "visualSymbol": "",
+          "toolingSymbol": ""
+        }
+      ],
+      "influencedBySymbols": [
+        {
+          "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+          "symbol": {
+            "visualSymbol": "~d",
+            "toolingSymbol": "~d"
+          }
+        }
+      ],
+      "artifactFiles": [
+        {
+          "content": "CONTROL",
+          "fileName": "non-fungible.proto",
+          "fileData": "",
+          "artifact": null
+        },
+        {
+          "content": "UML",
+          "fileName": "non-fungible.md",
+          "fileData": "",
+          "artifact": null
+        }
+      ],
+      "maps": {
+        "codeReferences": [
+          {
+            "mappingType": "SOURCE_CODE",
+            "name": "Code 1",
+            "platform": "DAML",
+            "referencePath": "",
+            "maps": null
+          }
+        ],
+        "implementationReferences": [
+          {
+            "mappingType": "IMPLEMENTATION",
+            "name": "Implementation 1",
+            "platform": "CHAINCODE_GO",
+            "referencePath": "",
+            "maps": null
+          }
+        ],
+        "resources": [
+          {
+            "mappingType": "RESOURCE",
+            "name": "Regulation Reference 1",
+            "description": "",
+            "resourcePath": "",
+            "maps": null
+          }
+        ],
+        "artifact": null
+      }
+    },
+    "tokenType": "NON_FUNGIBLE",
+    "name": "",
+    "symbol": "",
+    "owner": "",
+    "quantity": "",
+    "decimals": 0,
+    "tokenProperties": {},
+    "constructorName": "",
+    "constructor": null,
+    "childTokens": []
+  },
+  "behaviors": [],
+  "behaviorGroups": [],
+  "propertySets": []
+}
