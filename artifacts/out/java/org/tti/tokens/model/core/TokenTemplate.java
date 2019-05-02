@@ -16,7 +16,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TokenTemplate() {
-    type_ = 0;
     behaviors_ = java.util.Collections.emptyList();
     behaviorGroups_ = java.util.Collections.emptyList();
     propertySets_ = java.util.Collections.emptyList();
@@ -59,13 +58,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            type_ = rawValue;
-            break;
-          }
-          case 26: {
+          case 18: {
             org.tti.tokens.model.core.Base.Builder subBuilder = null;
             if (base_ != null) {
               subBuilder = base_.toBuilder();
@@ -78,28 +71,28 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               behaviors_ = new java.util.ArrayList<org.tti.tokens.model.core.Behavior>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000004;
             }
             behaviors_.add(
                 input.readMessage(org.tti.tokens.model.core.Behavior.parser(), extensionRegistry));
             break;
           }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
               behaviorGroups_ = new java.util.ArrayList<org.tti.tokens.model.core.BehaviorGroup>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000008;
             }
             behaviorGroups_.add(
                 input.readMessage(org.tti.tokens.model.core.BehaviorGroup.parser(), extensionRegistry));
             break;
           }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
               propertySets_ = new java.util.ArrayList<org.tti.tokens.model.core.PropertySet>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000010;
             }
             propertySets_.add(
                 input.readMessage(org.tti.tokens.model.core.PropertySet.parser(), extensionRegistry));
@@ -120,13 +113,13 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         behaviors_ = java.util.Collections.unmodifiableList(behaviors_);
       }
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
         behaviorGroups_ = java.util.Collections.unmodifiableList(behaviorGroups_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
         propertySets_ = java.util.Collections.unmodifiableList(propertySets_);
       }
       this.unknownFields = unknownFields.build();
@@ -168,143 +161,126 @@ private static final long serialVersionUID = 0L;
     return getArtifact();
   }
 
-  public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
-  /**
-   * <code>.taxonomy.model.core.Type type = 2;</code>
-   */
-  public int getTypeValue() {
-    return type_;
-  }
-  /**
-   * <code>.taxonomy.model.core.Type type = 2;</code>
-   */
-  public org.tti.tokens.model.core.Type getType() {
-    @SuppressWarnings("deprecation")
-    org.tti.tokens.model.core.Type result = org.tti.tokens.model.core.Type.valueOf(type_);
-    return result == null ? org.tti.tokens.model.core.Type.UNRECOGNIZED : result;
-  }
-
-  public static final int BASE_FIELD_NUMBER = 3;
+  public static final int BASE_FIELD_NUMBER = 2;
   private org.tti.tokens.model.core.Base base_;
   /**
-   * <code>.taxonomy.model.core.Base base = 3;</code>
+   * <code>.taxonomy.model.core.Base base = 2;</code>
    */
   public boolean hasBase() {
     return base_ != null;
   }
   /**
-   * <code>.taxonomy.model.core.Base base = 3;</code>
+   * <code>.taxonomy.model.core.Base base = 2;</code>
    */
   public org.tti.tokens.model.core.Base getBase() {
     return base_ == null ? org.tti.tokens.model.core.Base.getDefaultInstance() : base_;
   }
   /**
-   * <code>.taxonomy.model.core.Base base = 3;</code>
+   * <code>.taxonomy.model.core.Base base = 2;</code>
    */
   public org.tti.tokens.model.core.BaseOrBuilder getBaseOrBuilder() {
     return getBase();
   }
 
-  public static final int BEHAVIORS_FIELD_NUMBER = 4;
+  public static final int BEHAVIORS_FIELD_NUMBER = 3;
   private java.util.List<org.tti.tokens.model.core.Behavior> behaviors_;
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   public java.util.List<org.tti.tokens.model.core.Behavior> getBehaviorsList() {
     return behaviors_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   public java.util.List<? extends org.tti.tokens.model.core.BehaviorOrBuilder> 
       getBehaviorsOrBuilderList() {
     return behaviors_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   public int getBehaviorsCount() {
     return behaviors_.size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   public org.tti.tokens.model.core.Behavior getBehaviors(int index) {
     return behaviors_.get(index);
   }
   /**
-   * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+   * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
    */
   public org.tti.tokens.model.core.BehaviorOrBuilder getBehaviorsOrBuilder(
       int index) {
     return behaviors_.get(index);
   }
 
-  public static final int BEHAVIOR_GROUPS_FIELD_NUMBER = 5;
+  public static final int BEHAVIOR_GROUPS_FIELD_NUMBER = 4;
   private java.util.List<org.tti.tokens.model.core.BehaviorGroup> behaviorGroups_;
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   public java.util.List<org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroupsList() {
     return behaviorGroups_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   public java.util.List<? extends org.tti.tokens.model.core.BehaviorGroupOrBuilder> 
       getBehaviorGroupsOrBuilderList() {
     return behaviorGroups_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   public int getBehaviorGroupsCount() {
     return behaviorGroups_.size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroups(int index) {
     return behaviorGroups_.get(index);
   }
   /**
-   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+   * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
    */
   public org.tti.tokens.model.core.BehaviorGroupOrBuilder getBehaviorGroupsOrBuilder(
       int index) {
     return behaviorGroups_.get(index);
   }
 
-  public static final int PROPERTY_SETS_FIELD_NUMBER = 6;
+  public static final int PROPERTY_SETS_FIELD_NUMBER = 5;
   private java.util.List<org.tti.tokens.model.core.PropertySet> propertySets_;
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   public java.util.List<org.tti.tokens.model.core.PropertySet> getPropertySetsList() {
     return propertySets_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   public java.util.List<? extends org.tti.tokens.model.core.PropertySetOrBuilder> 
       getPropertySetsOrBuilderList() {
     return propertySets_;
   }
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   public int getPropertySetsCount() {
     return propertySets_.size();
   }
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   public org.tti.tokens.model.core.PropertySet getPropertySets(int index) {
     return propertySets_.get(index);
   }
   /**
-   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+   * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
    */
   public org.tti.tokens.model.core.PropertySetOrBuilder getPropertySetsOrBuilder(
       int index) {
@@ -328,20 +304,17 @@ private static final long serialVersionUID = 0L;
     if (artifact_ != null) {
       output.writeMessage(1, getArtifact());
     }
-    if (type_ != org.tti.tokens.model.core.Type.FUNGIBLE.getNumber()) {
-      output.writeEnum(2, type_);
-    }
     if (base_ != null) {
-      output.writeMessage(3, getBase());
+      output.writeMessage(2, getBase());
     }
     for (int i = 0; i < behaviors_.size(); i++) {
-      output.writeMessage(4, behaviors_.get(i));
+      output.writeMessage(3, behaviors_.get(i));
     }
     for (int i = 0; i < behaviorGroups_.size(); i++) {
-      output.writeMessage(5, behaviorGroups_.get(i));
+      output.writeMessage(4, behaviorGroups_.get(i));
     }
     for (int i = 0; i < propertySets_.size(); i++) {
-      output.writeMessage(6, propertySets_.get(i));
+      output.writeMessage(5, propertySets_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -356,25 +329,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getArtifact());
     }
-    if (type_ != org.tti.tokens.model.core.Type.FUNGIBLE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, type_);
-    }
     if (base_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getBase());
+        .computeMessageSize(2, getBase());
     }
     for (int i = 0; i < behaviors_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, behaviors_.get(i));
+        .computeMessageSize(3, behaviors_.get(i));
     }
     for (int i = 0; i < behaviorGroups_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, behaviorGroups_.get(i));
+        .computeMessageSize(4, behaviorGroups_.get(i));
     }
     for (int i = 0; i < propertySets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, propertySets_.get(i));
+        .computeMessageSize(5, propertySets_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -396,7 +365,6 @@ private static final long serialVersionUID = 0L;
       if (!getArtifact()
           .equals(other.getArtifact())) return false;
     }
-    if (type_ != other.type_) return false;
     if (hasBase() != other.hasBase()) return false;
     if (hasBase()) {
       if (!getBase()
@@ -423,8 +391,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
       hash = (53 * hash) + getArtifact().hashCode();
     }
-    hash = (37 * hash) + TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + type_;
     if (hasBase()) {
       hash = (37 * hash) + BASE_FIELD_NUMBER;
       hash = (53 * hash) + getBase().hashCode();
@@ -583,8 +549,6 @@ private static final long serialVersionUID = 0L;
         artifact_ = null;
         artifactBuilder_ = null;
       }
-      type_ = 0;
-
       if (baseBuilder_ == null) {
         base_ = null;
       } else {
@@ -593,19 +557,19 @@ private static final long serialVersionUID = 0L;
       }
       if (behaviorsBuilder_ == null) {
         behaviors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         behaviorsBuilder_.clear();
       }
       if (behaviorGroupsBuilder_ == null) {
         behaviorGroups_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
       } else {
         behaviorGroupsBuilder_.clear();
       }
       if (propertySetsBuilder_ == null) {
         propertySets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
       } else {
         propertySetsBuilder_.clear();
       }
@@ -642,34 +606,33 @@ private static final long serialVersionUID = 0L;
       } else {
         result.artifact_ = artifactBuilder_.build();
       }
-      result.type_ = type_;
       if (baseBuilder_ == null) {
         result.base_ = base_;
       } else {
         result.base_ = baseBuilder_.build();
       }
       if (behaviorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           behaviors_ = java.util.Collections.unmodifiableList(behaviors_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.behaviors_ = behaviors_;
       } else {
         result.behaviors_ = behaviorsBuilder_.build();
       }
       if (behaviorGroupsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           behaviorGroups_ = java.util.Collections.unmodifiableList(behaviorGroups_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.behaviorGroups_ = behaviorGroups_;
       } else {
         result.behaviorGroups_ = behaviorGroupsBuilder_.build();
       }
       if (propertySetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           propertySets_ = java.util.Collections.unmodifiableList(propertySets_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.propertySets_ = propertySets_;
       } else {
@@ -727,9 +690,6 @@ private static final long serialVersionUID = 0L;
       if (other.hasArtifact()) {
         mergeArtifact(other.getArtifact());
       }
-      if (other.type_ != 0) {
-        setTypeValue(other.getTypeValue());
-      }
       if (other.hasBase()) {
         mergeBase(other.getBase());
       }
@@ -737,7 +697,7 @@ private static final long serialVersionUID = 0L;
         if (!other.behaviors_.isEmpty()) {
           if (behaviors_.isEmpty()) {
             behaviors_ = other.behaviors_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureBehaviorsIsMutable();
             behaviors_.addAll(other.behaviors_);
@@ -750,7 +710,7 @@ private static final long serialVersionUID = 0L;
             behaviorsBuilder_.dispose();
             behaviorsBuilder_ = null;
             behaviors_ = other.behaviors_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000004);
             behaviorsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getBehaviorsFieldBuilder() : null;
@@ -763,7 +723,7 @@ private static final long serialVersionUID = 0L;
         if (!other.behaviorGroups_.isEmpty()) {
           if (behaviorGroups_.isEmpty()) {
             behaviorGroups_ = other.behaviorGroups_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureBehaviorGroupsIsMutable();
             behaviorGroups_.addAll(other.behaviorGroups_);
@@ -776,7 +736,7 @@ private static final long serialVersionUID = 0L;
             behaviorGroupsBuilder_.dispose();
             behaviorGroupsBuilder_ = null;
             behaviorGroups_ = other.behaviorGroups_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000008);
             behaviorGroupsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getBehaviorGroupsFieldBuilder() : null;
@@ -789,7 +749,7 @@ private static final long serialVersionUID = 0L;
         if (!other.propertySets_.isEmpty()) {
           if (propertySets_.isEmpty()) {
             propertySets_ = other.propertySets_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensurePropertySetsIsMutable();
             propertySets_.addAll(other.propertySets_);
@@ -802,7 +762,7 @@ private static final long serialVersionUID = 0L;
             propertySetsBuilder_.dispose();
             propertySetsBuilder_ = null;
             propertySets_ = other.propertySets_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
             propertySetsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getPropertySetsFieldBuilder() : null;
@@ -958,62 +918,17 @@ private static final long serialVersionUID = 0L;
       return artifactBuilder_;
     }
 
-    private int type_ = 0;
-    /**
-     * <code>.taxonomy.model.core.Type type = 2;</code>
-     */
-    public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <code>.taxonomy.model.core.Type type = 2;</code>
-     */
-    public Builder setTypeValue(int value) {
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.taxonomy.model.core.Type type = 2;</code>
-     */
-    public org.tti.tokens.model.core.Type getType() {
-      @SuppressWarnings("deprecation")
-      org.tti.tokens.model.core.Type result = org.tti.tokens.model.core.Type.valueOf(type_);
-      return result == null ? org.tti.tokens.model.core.Type.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.taxonomy.model.core.Type type = 2;</code>
-     */
-    public Builder setType(org.tti.tokens.model.core.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      type_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.taxonomy.model.core.Type type = 2;</code>
-     */
-    public Builder clearType() {
-      
-      type_ = 0;
-      onChanged();
-      return this;
-    }
-
     private org.tti.tokens.model.core.Base base_;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder> baseBuilder_;
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public boolean hasBase() {
       return baseBuilder_ != null || base_ != null;
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public org.tti.tokens.model.core.Base getBase() {
       if (baseBuilder_ == null) {
@@ -1023,7 +938,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public Builder setBase(org.tti.tokens.model.core.Base value) {
       if (baseBuilder_ == null) {
@@ -1039,7 +954,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public Builder setBase(
         org.tti.tokens.model.core.Base.Builder builderForValue) {
@@ -1053,7 +968,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public Builder mergeBase(org.tti.tokens.model.core.Base value) {
       if (baseBuilder_ == null) {
@@ -1071,7 +986,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public Builder clearBase() {
       if (baseBuilder_ == null) {
@@ -1085,7 +1000,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public org.tti.tokens.model.core.Base.Builder getBaseBuilder() {
       
@@ -1093,7 +1008,7 @@ private static final long serialVersionUID = 0L;
       return getBaseFieldBuilder().getBuilder();
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     public org.tti.tokens.model.core.BaseOrBuilder getBaseOrBuilder() {
       if (baseBuilder_ != null) {
@@ -1104,7 +1019,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.taxonomy.model.core.Base base = 3;</code>
+     * <code>.taxonomy.model.core.Base base = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder> 
@@ -1123,9 +1038,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.tti.tokens.model.core.Behavior> behaviors_ =
       java.util.Collections.emptyList();
     private void ensureBehaviorsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         behaviors_ = new java.util.ArrayList<org.tti.tokens.model.core.Behavior>(behaviors_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1133,7 +1048,7 @@ private static final long serialVersionUID = 0L;
         org.tti.tokens.model.core.Behavior, org.tti.tokens.model.core.Behavior.Builder, org.tti.tokens.model.core.BehaviorOrBuilder> behaviorsBuilder_;
 
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public java.util.List<org.tti.tokens.model.core.Behavior> getBehaviorsList() {
       if (behaviorsBuilder_ == null) {
@@ -1143,7 +1058,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public int getBehaviorsCount() {
       if (behaviorsBuilder_ == null) {
@@ -1153,7 +1068,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public org.tti.tokens.model.core.Behavior getBehaviors(int index) {
       if (behaviorsBuilder_ == null) {
@@ -1163,7 +1078,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder setBehaviors(
         int index, org.tti.tokens.model.core.Behavior value) {
@@ -1180,7 +1095,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder setBehaviors(
         int index, org.tti.tokens.model.core.Behavior.Builder builderForValue) {
@@ -1194,7 +1109,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder addBehaviors(org.tti.tokens.model.core.Behavior value) {
       if (behaviorsBuilder_ == null) {
@@ -1210,7 +1125,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder addBehaviors(
         int index, org.tti.tokens.model.core.Behavior value) {
@@ -1227,7 +1142,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder addBehaviors(
         org.tti.tokens.model.core.Behavior.Builder builderForValue) {
@@ -1241,7 +1156,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder addBehaviors(
         int index, org.tti.tokens.model.core.Behavior.Builder builderForValue) {
@@ -1255,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder addAllBehaviors(
         java.lang.Iterable<? extends org.tti.tokens.model.core.Behavior> values) {
@@ -1270,12 +1185,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder clearBehaviors() {
       if (behaviorsBuilder_ == null) {
         behaviors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         behaviorsBuilder_.clear();
@@ -1283,7 +1198,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public Builder removeBehaviors(int index) {
       if (behaviorsBuilder_ == null) {
@@ -1296,14 +1211,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public org.tti.tokens.model.core.Behavior.Builder getBehaviorsBuilder(
         int index) {
       return getBehaviorsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public org.tti.tokens.model.core.BehaviorOrBuilder getBehaviorsOrBuilder(
         int index) {
@@ -1313,7 +1228,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public java.util.List<? extends org.tti.tokens.model.core.BehaviorOrBuilder> 
          getBehaviorsOrBuilderList() {
@@ -1324,14 +1239,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public org.tti.tokens.model.core.Behavior.Builder addBehaviorsBuilder() {
       return getBehaviorsFieldBuilder().addBuilder(
           org.tti.tokens.model.core.Behavior.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public org.tti.tokens.model.core.Behavior.Builder addBehaviorsBuilder(
         int index) {
@@ -1339,7 +1254,7 @@ private static final long serialVersionUID = 0L;
           index, org.tti.tokens.model.core.Behavior.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.Behavior behaviors = 4;</code>
+     * <code>repeated .taxonomy.model.core.Behavior behaviors = 3;</code>
      */
     public java.util.List<org.tti.tokens.model.core.Behavior.Builder> 
          getBehaviorsBuilderList() {
@@ -1352,7 +1267,7 @@ private static final long serialVersionUID = 0L;
         behaviorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.core.Behavior, org.tti.tokens.model.core.Behavior.Builder, org.tti.tokens.model.core.BehaviorOrBuilder>(
                 behaviors_,
-                ((bitField0_ & 0x00000008) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         behaviors_ = null;
@@ -1363,9 +1278,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.tti.tokens.model.core.BehaviorGroup> behaviorGroups_ =
       java.util.Collections.emptyList();
     private void ensureBehaviorGroupsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         behaviorGroups_ = new java.util.ArrayList<org.tti.tokens.model.core.BehaviorGroup>(behaviorGroups_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -1373,7 +1288,7 @@ private static final long serialVersionUID = 0L;
         org.tti.tokens.model.core.BehaviorGroup, org.tti.tokens.model.core.BehaviorGroup.Builder, org.tti.tokens.model.core.BehaviorGroupOrBuilder> behaviorGroupsBuilder_;
 
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public java.util.List<org.tti.tokens.model.core.BehaviorGroup> getBehaviorGroupsList() {
       if (behaviorGroupsBuilder_ == null) {
@@ -1383,7 +1298,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public int getBehaviorGroupsCount() {
       if (behaviorGroupsBuilder_ == null) {
@@ -1393,7 +1308,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public org.tti.tokens.model.core.BehaviorGroup getBehaviorGroups(int index) {
       if (behaviorGroupsBuilder_ == null) {
@@ -1403,7 +1318,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder setBehaviorGroups(
         int index, org.tti.tokens.model.core.BehaviorGroup value) {
@@ -1420,7 +1335,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder setBehaviorGroups(
         int index, org.tti.tokens.model.core.BehaviorGroup.Builder builderForValue) {
@@ -1434,7 +1349,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder addBehaviorGroups(org.tti.tokens.model.core.BehaviorGroup value) {
       if (behaviorGroupsBuilder_ == null) {
@@ -1450,7 +1365,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder addBehaviorGroups(
         int index, org.tti.tokens.model.core.BehaviorGroup value) {
@@ -1467,7 +1382,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder addBehaviorGroups(
         org.tti.tokens.model.core.BehaviorGroup.Builder builderForValue) {
@@ -1481,7 +1396,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder addBehaviorGroups(
         int index, org.tti.tokens.model.core.BehaviorGroup.Builder builderForValue) {
@@ -1495,7 +1410,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder addAllBehaviorGroups(
         java.lang.Iterable<? extends org.tti.tokens.model.core.BehaviorGroup> values) {
@@ -1510,12 +1425,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder clearBehaviorGroups() {
       if (behaviorGroupsBuilder_ == null) {
         behaviorGroups_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         behaviorGroupsBuilder_.clear();
@@ -1523,7 +1438,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public Builder removeBehaviorGroups(int index) {
       if (behaviorGroupsBuilder_ == null) {
@@ -1536,14 +1451,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public org.tti.tokens.model.core.BehaviorGroup.Builder getBehaviorGroupsBuilder(
         int index) {
       return getBehaviorGroupsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public org.tti.tokens.model.core.BehaviorGroupOrBuilder getBehaviorGroupsOrBuilder(
         int index) {
@@ -1553,7 +1468,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public java.util.List<? extends org.tti.tokens.model.core.BehaviorGroupOrBuilder> 
          getBehaviorGroupsOrBuilderList() {
@@ -1564,14 +1479,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public org.tti.tokens.model.core.BehaviorGroup.Builder addBehaviorGroupsBuilder() {
       return getBehaviorGroupsFieldBuilder().addBuilder(
           org.tti.tokens.model.core.BehaviorGroup.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public org.tti.tokens.model.core.BehaviorGroup.Builder addBehaviorGroupsBuilder(
         int index) {
@@ -1579,7 +1494,7 @@ private static final long serialVersionUID = 0L;
           index, org.tti.tokens.model.core.BehaviorGroup.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 5;</code>
+     * <code>repeated .taxonomy.model.core.BehaviorGroup behavior_groups = 4;</code>
      */
     public java.util.List<org.tti.tokens.model.core.BehaviorGroup.Builder> 
          getBehaviorGroupsBuilderList() {
@@ -1592,7 +1507,7 @@ private static final long serialVersionUID = 0L;
         behaviorGroupsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.core.BehaviorGroup, org.tti.tokens.model.core.BehaviorGroup.Builder, org.tti.tokens.model.core.BehaviorGroupOrBuilder>(
                 behaviorGroups_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         behaviorGroups_ = null;
@@ -1603,9 +1518,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.tti.tokens.model.core.PropertySet> propertySets_ =
       java.util.Collections.emptyList();
     private void ensurePropertySetsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         propertySets_ = new java.util.ArrayList<org.tti.tokens.model.core.PropertySet>(propertySets_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
        }
     }
 
@@ -1613,7 +1528,7 @@ private static final long serialVersionUID = 0L;
         org.tti.tokens.model.core.PropertySet, org.tti.tokens.model.core.PropertySet.Builder, org.tti.tokens.model.core.PropertySetOrBuilder> propertySetsBuilder_;
 
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public java.util.List<org.tti.tokens.model.core.PropertySet> getPropertySetsList() {
       if (propertySetsBuilder_ == null) {
@@ -1623,7 +1538,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public int getPropertySetsCount() {
       if (propertySetsBuilder_ == null) {
@@ -1633,7 +1548,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public org.tti.tokens.model.core.PropertySet getPropertySets(int index) {
       if (propertySetsBuilder_ == null) {
@@ -1643,7 +1558,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder setPropertySets(
         int index, org.tti.tokens.model.core.PropertySet value) {
@@ -1660,7 +1575,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder setPropertySets(
         int index, org.tti.tokens.model.core.PropertySet.Builder builderForValue) {
@@ -1674,7 +1589,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder addPropertySets(org.tti.tokens.model.core.PropertySet value) {
       if (propertySetsBuilder_ == null) {
@@ -1690,7 +1605,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder addPropertySets(
         int index, org.tti.tokens.model.core.PropertySet value) {
@@ -1707,7 +1622,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder addPropertySets(
         org.tti.tokens.model.core.PropertySet.Builder builderForValue) {
@@ -1721,7 +1636,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder addPropertySets(
         int index, org.tti.tokens.model.core.PropertySet.Builder builderForValue) {
@@ -1735,7 +1650,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder addAllPropertySets(
         java.lang.Iterable<? extends org.tti.tokens.model.core.PropertySet> values) {
@@ -1750,12 +1665,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder clearPropertySets() {
       if (propertySetsBuilder_ == null) {
         propertySets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         propertySetsBuilder_.clear();
@@ -1763,7 +1678,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public Builder removePropertySets(int index) {
       if (propertySetsBuilder_ == null) {
@@ -1776,14 +1691,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public org.tti.tokens.model.core.PropertySet.Builder getPropertySetsBuilder(
         int index) {
       return getPropertySetsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public org.tti.tokens.model.core.PropertySetOrBuilder getPropertySetsOrBuilder(
         int index) {
@@ -1793,7 +1708,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public java.util.List<? extends org.tti.tokens.model.core.PropertySetOrBuilder> 
          getPropertySetsOrBuilderList() {
@@ -1804,14 +1719,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public org.tti.tokens.model.core.PropertySet.Builder addPropertySetsBuilder() {
       return getPropertySetsFieldBuilder().addBuilder(
           org.tti.tokens.model.core.PropertySet.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public org.tti.tokens.model.core.PropertySet.Builder addPropertySetsBuilder(
         int index) {
@@ -1819,7 +1734,7 @@ private static final long serialVersionUID = 0L;
           index, org.tti.tokens.model.core.PropertySet.getDefaultInstance());
     }
     /**
-     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 6;</code>
+     * <code>repeated .taxonomy.model.core.PropertySet property_sets = 5;</code>
      */
     public java.util.List<org.tti.tokens.model.core.PropertySet.Builder> 
          getPropertySetsBuilderList() {
@@ -1832,7 +1747,7 @@ private static final long serialVersionUID = 0L;
         propertySetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.core.PropertySet, org.tti.tokens.model.core.PropertySet.Builder, org.tti.tokens.model.core.PropertySetOrBuilder>(
                 propertySets_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000010) != 0),
                 getParentForChildren(),
                 isClean());
         propertySets_ = null;

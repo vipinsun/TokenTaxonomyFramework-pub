@@ -15,38 +15,55 @@ namespace ArtifactGenerator
 		private static string ArtifactName { get; set; }
 		private static string ArtifactPath { get; set; }
 		private static ArtifactType ArtifactType { get; set; }
+		private static TokenType BaseType { get; set; }
 		public static void Main(string[] args)
 		{
-			if (args.Length != 6)
+			if (args.Length == 6 || args.Length == 8)
+			{
+				for (var i = 0; i < args.Length; i++)
+				{
+					var arg = args[i];
+					switch (arg)
+					{
+						case "--p":
+							i++;
+							ArtifactPath = args[i];
+							continue;
+						case "--n":
+							i++;
+							ArtifactName = args[i];
+							continue;
+						case "--t":
+							i++;
+							var t = Convert.ToInt32(args[i]);
+							ArtifactType = (ArtifactType) t;
+							continue;
+						case "--b":
+							i++;
+							var b = Convert.ToInt32(args[i]);
+							BaseType = (TokenType) b;
+							continue;
+						default:
+							continue;
+					}
+				}
+			}
+			else
 			{
 				if (args.Length == 0)
 				{
-					_log.Info("Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate --n [ARTIFACT_NAME] ");
+					_log.Info(
+						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate --n [ARTIFACT_NAME] (optional if artifactType is Base orTokenTemplate ");
+					_log.Info(
+						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot");
 					return;
 				}
-				_log.Error("Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate");
+
+				_log.Error(
+					"Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate, (optional if artifactType is Base or TokenTemplate ");
+				_log.Error(
+					"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot");
 				throw new Exception("Missing required parameters.");
-			}
-
-			for (var i = 0; i < args.Length; i++)
-			{
-				var arg = args[i];
-				switch (arg)
-				{
-					case "--p":
-						i++;
-						ArtifactPath = args[i];
-						continue;
-					case "--n":
-						i++;
-						ArtifactName = args[i];
-						continue;
-				}
-
-				if (arg != "--t") continue;
-				i++;
-				var t = Convert.ToInt32(args[i]);
-				ArtifactType = (ArtifactType) t;
 			}
 
 			if (string.IsNullOrEmpty(ArtifactPath) || string.IsNullOrEmpty(ArtifactName))
@@ -134,7 +151,8 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactBase = new Base
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "Base"),
+						TokenType = BaseType
 					};
 					artifactBase.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
 					{
@@ -153,7 +171,7 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactBehavior = new Behavior
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact),
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "Behaviors"),
 						BehaviorConstructorName = "",
 						BehaviorInvocations = { new Invocation
 						{
@@ -230,7 +248,7 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactBehaviorGroup = new BehaviorGroup
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "BehaviorGroups")
 					};
 					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol{
 						ToolingSymbol = "<i>Symbol1</i>",
@@ -251,7 +269,7 @@ namespace ArtifactGenerator
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactPropertySet = new PropertySet
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact),
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "PropertySets"),
 						Properties =
 						{
 							new Property
@@ -334,11 +352,12 @@ namespace ArtifactGenerator
 					artifactJson = jsf.Format(artifactPropertySet);
 					break;
 				case ArtifactType.TokenTemplate:
-					artifactTypeFolder = "tokens";
+					artifactTypeFolder = "token-templates";
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactTokenTemplate = new TokenTemplate
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact)
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "TokenTemplates"),
+						Base = GetTokenTypeBase(fullPath, folderSeparator)
 					};
 					artifactJson = jsf.Format(artifactTokenTemplate);
 					break;
@@ -401,10 +420,37 @@ namespace ArtifactGenerator
 			_log.Info("Complete");
 		}
 
-		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, Artifact parent)
+		private static Base GetTokenTypeBase(string fullPath,  string folderSeparator)
+		{
+			string baseName;
+			const string typeFolder = "base";
+			switch (BaseType)
+			{
+				case TokenType.Fungible:
+					baseName = "fungible";
+					break;
+				case TokenType.NonFungible:
+					baseName = "non-fungible";
+					break;
+				case TokenType.HybridFungibleRoot:
+					baseName = "hybrid-fungibleRoot";
+					break;
+				case TokenType.HybridNonFungibleRoot:
+					baseName = "hybrid-non-fungibleRoot";
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + baseName+".json");
+			var json = baseFile.ReadToEnd();
+			var formattedJson = JToken.Parse(json).ToString();
+			return JsonParser.Default.Parse<Base>(formattedJson);
+		}
+
+		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, Artifact parent, string nameSpaceAdd)
 		{
 			var md = CreateMarkdown(outputFolder, folderSeparator);
-			var proto = CreateProto(outputFolder, folderSeparator);
+			var proto = CreateProto(outputFolder, folderSeparator, nameSpaceAdd);
 			var retArtifact = parent.Clone();
 			
 			retArtifact.ArtifactFiles.Add(proto);
@@ -434,7 +480,7 @@ namespace ArtifactGenerator
 			};
 		}
 		
-		private static ArtifactFile CreateProto(DirectoryInfo outputFolder, string folderSeparator)
+		private static ArtifactFile CreateProto(DirectoryInfo outputFolder, string folderSeparator, string nameSpaceAdd)
 		{
 			_log.Info("Creating Artifact Proto");
 			var pFile = outputFolder + folderSeparator + ArtifactName + ".proto";
@@ -450,7 +496,9 @@ namespace ArtifactGenerator
 				File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + 
 				                 folderSeparator + "templates" + folderSeparator + "artifact.proto");
 			
-			proto.Write(templateProto.Replace("ARTIFACT", ArtifactName));
+			var ns = templateProto.Replace("BASE", nameSpaceAdd);
+			ns = ns.Replace("NAME", ArtifactName);
+			proto.Write(ns.Replace("ARTIFACT", ArtifactName));
 			proto.Close();
 			return new ArtifactFile
 			{

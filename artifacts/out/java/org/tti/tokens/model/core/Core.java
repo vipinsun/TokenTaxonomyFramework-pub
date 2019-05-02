@@ -84,61 +84,64 @@ public final class Core {
   static {
     java.lang.String[] descriptorData = {
       "\n\ncore.proto\022\023taxonomy.model.core\032\031googl" +
-      "e/protobuf/any.proto\032\016artifact.proto\"\216\002\n" +
+      "e/protobuf/any.proto\032\016artifact.proto\"\270\003\n" +
       "\004Base\0223\n\010artifact\030\001 \001(\0132!.taxonomy.model" +
-      ".artifact.Artifact\022\014\n\004name\030\002 \001(\t\022\016\n\006symb" +
-      "ol\030\003 \001(\t\022\r\n\005owner\030\004 \001(\t\022\020\n\010quantity\030\005 \001(" +
-      "\014\022\020\n\010decimals\030\006 \001(\005\022H\n\020token_properties\030" +
-      "\007 \003(\0132..taxonomy.model.core.Base.TokenPr" +
-      "opertiesEntry\0326\n\024TokenPropertiesEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\245\002\n\010Behavi" +
-      "or\0223\n\010artifact\030\001 \001(\0132!.taxonomy.model.ar" +
-      "tifact.Artifact\022\020\n\010external\030\002 \001(\010\022!\n\031beh" +
-      "avior_constructor_name\030\003 \001(\t\0222\n\024behavior" +
-      "_constructor\030\004 \001(\0132\024.google.protobuf.Any" +
-      "\022=\n\024behavior_invocations\030\005 \003(\0132\037.taxonom" +
-      "y.model.core.Invocation\022<\n\025behavioral_pr" +
-      "operties\030\006 \003(\0132\035.taxonomy.model.core.Pro" +
-      "perty\"\316\002\n\rBehaviorGroup\0223\n\010artifact\030\001 \001(" +
-      "\0132!.taxonomy.model.artifact.Artifact\022A\n\020" +
-      "behavior_symbols\030\002 \003(\0132\'.taxonomy.model." +
-      "artifact.ArtifactSymbol\022b\n\031member_behavi" +
-      "or_artifacts\030\003 \003(\0132?.taxonomy.model.core" +
-      ".BehaviorGroup.MemberBehaviorArtifactsEn" +
-      "try\032a\n\034MemberBehaviorArtifactsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.taxonomy.model" +
-      ".artifact.Artifact:\0028\001\"u\n\013PropertySet\0223\n" +
-      "\010artifact\030\001 \001(\0132!.taxonomy.model.artifac" +
-      "t.Artifact\0221\n\nproperties\030\002 \003(\0132\035.taxonom" +
-      "y.model.core.Property\"r\n\010Property\022\014\n\004nam" +
-      "e\030\001 \001(\t\022\031\n\021value_description\030\002 \001(\t\022=\n\024pr" +
-      "operty_invocations\030\003 \003(\0132\037.taxonomy.mode" +
-      "l.core.Invocation\"\276\002\n\rTokenTemplate\0223\n\010a" +
-      "rtifact\030\001 \001(\0132!.taxonomy.model.artifact." +
-      "Artifact\022\'\n\004type\030\002 \001(\0162\031.taxonomy.model." +
-      "core.Type\022\'\n\004base\030\003 \001(\0132\031.taxonomy.model" +
-      ".core.Base\0220\n\tbehaviors\030\004 \003(\0132\035.taxonomy" +
-      ".model.core.Behavior\022;\n\017behavior_groups\030" +
-      "\005 \003(\0132\".taxonomy.model.core.BehaviorGrou" +
-      "p\0227\n\rproperty_sets\030\006 \003(\0132 .taxonomy.mode" +
-      "l.core.PropertySet\"\243\001\n\nInvocation\022\014\n\004nam" +
-      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\0227\n\007request\030" +
-      "\003 \001(\0132&.taxonomy.model.core.InvocationRe" +
-      "quest\0229\n\010response\030\004 \001(\0132\'.taxonomy.model" +
-      ".core.InvocationResponse\"\212\001\n\021InvocationR" +
-      "equest\022\034\n\024control_message_name\030\001 \001(\t\022B\n\020" +
-      "input_parameters\030\002 \003(\0132(.taxonomy.model." +
-      "core.InvocationParameter\022\023\n\013description\030" +
-      "\003 \001(\t\"\214\001\n\022InvocationResponse\022\034\n\024control_" +
-      "message_name\030\001 \001(\t\022C\n\021output_parameters\030" +
-      "\002 \003(\0132(.taxonomy.model.core.InvocationPa" +
-      "rameter\022\023\n\013description\030\003 \001(\t\">\n\023Invocati" +
-      "onParameter\022\014\n\004name\030\001 \001(\t\022\031\n\021value_descr" +
-      "iption\030\002 \001(\t*^\n\004Type\022\014\n\010FUNGIBLE\020\000\022\020\n\014NO" +
-      "N_FUNGIBLE\020\001\022\030\n\024HYBRID_FUNGIBLE_ROOT\020\002\022\034" +
-      "\n\030HYBRID_NON_FUNGIBLE_ROOT\020\003B5\n\031org.tti." +
-      "tokens.model.coreP\001\252\002\025TTF.Tokens.Model.C" +
-      "oreb\006proto3"
+      ".artifact.Artifact\0222\n\ntoken_type\030\002 \001(\0162\036" +
+      ".taxonomy.model.core.TokenType\022\014\n\004name\030\003" +
+      " \001(\t\022\016\n\006symbol\030\004 \001(\t\022\r\n\005owner\030\005 \001(\t\022\020\n\010q" +
+      "uantity\030\006 \001(\014\022\020\n\010decimals\030\007 \001(\005\022H\n\020token" +
+      "_properties\030\010 \003(\0132..taxonomy.model.core." +
+      "Base.TokenPropertiesEntry\022\030\n\020constructor" +
+      "_name\030\t \001(\t\022)\n\013constructor\030\n \001(\0132\024.googl" +
+      "e.protobuf.Any\022/\n\014child_tokens\030\013 \003(\0132\031.t" +
+      "axonomy.model.core.Base\0326\n\024TokenProperti" +
+      "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
+      "\245\002\n\010Behavior\0223\n\010artifact\030\001 \001(\0132!.taxonom" +
+      "y.model.artifact.Artifact\022\020\n\010external\030\002 " +
+      "\001(\010\022!\n\031behavior_constructor_name\030\003 \001(\t\0222" +
+      "\n\024behavior_constructor\030\004 \001(\0132\024.google.pr" +
+      "otobuf.Any\022=\n\024behavior_invocations\030\005 \003(\013" +
+      "2\037.taxonomy.model.core.Invocation\022<\n\025beh" +
+      "avioral_properties\030\006 \003(\0132\035.taxonomy.mode" +
+      "l.core.Property\"\316\002\n\rBehaviorGroup\0223\n\010art" +
+      "ifact\030\001 \001(\0132!.taxonomy.model.artifact.Ar" +
+      "tifact\022A\n\020behavior_symbols\030\002 \003(\0132\'.taxon" +
+      "omy.model.artifact.ArtifactSymbol\022b\n\031mem" +
+      "ber_behavior_artifacts\030\003 \003(\0132?.taxonomy." +
+      "model.core.BehaviorGroup.MemberBehaviorA" +
+      "rtifactsEntry\032a\n\034MemberBehaviorArtifacts" +
+      "Entry\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.taxo" +
+      "nomy.model.artifact.Artifact:\0028\001\"u\n\013Prop" +
+      "ertySet\0223\n\010artifact\030\001 \001(\0132!.taxonomy.mod" +
+      "el.artifact.Artifact\0221\n\nproperties\030\002 \003(\013" +
+      "2\035.taxonomy.model.core.Property\"r\n\010Prope" +
+      "rty\022\014\n\004name\030\001 \001(\t\022\031\n\021value_description\030\002" +
+      " \001(\t\022=\n\024property_invocations\030\003 \003(\0132\037.tax" +
+      "onomy.model.core.Invocation\"\225\002\n\rTokenTem" +
+      "plate\0223\n\010artifact\030\001 \001(\0132!.taxonomy.model" +
+      ".artifact.Artifact\022\'\n\004base\030\002 \001(\0132\031.taxon" +
+      "omy.model.core.Base\0220\n\tbehaviors\030\003 \003(\0132\035" +
+      ".taxonomy.model.core.Behavior\022;\n\017behavio" +
+      "r_groups\030\004 \003(\0132\".taxonomy.model.core.Beh" +
+      "aviorGroup\0227\n\rproperty_sets\030\005 \003(\0132 .taxo" +
+      "nomy.model.core.PropertySet\"\243\001\n\nInvocati" +
+      "on\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\0227\n" +
+      "\007request\030\003 \001(\0132&.taxonomy.model.core.Inv" +
+      "ocationRequest\0229\n\010response\030\004 \001(\0132\'.taxon" +
+      "omy.model.core.InvocationResponse\"\212\001\n\021In" +
+      "vocationRequest\022\034\n\024control_message_name\030" +
+      "\001 \001(\t\022B\n\020input_parameters\030\002 \003(\0132(.taxono" +
+      "my.model.core.InvocationParameter\022\023\n\013des" +
+      "cription\030\003 \001(\t\"\214\001\n\022InvocationResponse\022\034\n" +
+      "\024control_message_name\030\001 \001(\t\022C\n\021output_pa" +
+      "rameters\030\002 \003(\0132(.taxonomy.model.core.Inv" +
+      "ocationParameter\022\023\n\013description\030\003 \001(\t\">\n" +
+      "\023InvocationParameter\022\014\n\004name\030\001 \001(\t\022\031\n\021va" +
+      "lue_description\030\002 \001(\t*c\n\tTokenType\022\014\n\010FU" +
+      "NGIBLE\020\000\022\020\n\014NON_FUNGIBLE\020\001\022\030\n\024HYBRID_FUN" +
+      "GIBLE_ROOT\020\002\022\034\n\030HYBRID_NON_FUNGIBLE_ROOT" +
+      "\020\003B5\n\031org.tti.tokens.model.coreP\001\252\002\025TTF." +
+      "Tokens.Model.Coreb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -159,7 +162,7 @@ public final class Core {
     internal_static_taxonomy_model_core_Base_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_core_Base_descriptor,
-        new java.lang.String[] { "Artifact", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", });
+        new java.lang.String[] { "Artifact", "TokenType", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor", "ChildTokens", });
     internal_static_taxonomy_model_core_Base_TokenPropertiesEntry_descriptor =
       internal_static_taxonomy_model_core_Base_descriptor.getNestedTypes().get(0);
     internal_static_taxonomy_model_core_Base_TokenPropertiesEntry_fieldAccessorTable = new
@@ -201,7 +204,7 @@ public final class Core {
     internal_static_taxonomy_model_core_TokenTemplate_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_taxonomy_model_core_TokenTemplate_descriptor,
-        new java.lang.String[] { "Artifact", "Type", "Base", "Behaviors", "BehaviorGroups", "PropertySets", });
+        new java.lang.String[] { "Artifact", "Base", "Behaviors", "BehaviorGroups", "PropertySets", });
     internal_static_taxonomy_model_core_Invocation_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_taxonomy_model_core_Invocation_fieldAccessorTable = new

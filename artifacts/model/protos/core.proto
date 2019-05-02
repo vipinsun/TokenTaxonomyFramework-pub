@@ -9,7 +9,7 @@ option csharp_namespace = "TTF.Tokens.Model.Core";
 option java_package = "org.tti.tokens.model.core";
 option java_multiple_files = true;
 
-enum Type {
+enum TokenType {
     FUNGIBLE = 0;
     NON_FUNGIBLE = 1;
     HYBRID_FUNGIBLE_ROOT = 2;
@@ -19,12 +19,16 @@ enum Type {
 //all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
 message Base{
     taxonomy.model.artifact.Artifact artifact = 1;
-    string name = 2;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
-    string symbol = 3; //an optionally unique symbol or identifier
-    string owner = 4; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
-    bytes quantity = 5; //Can represent the initial quantity created or the total minted or issued for the class.
-    int32 decimals = 6; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
-    map<string, string> token_properties = 7; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    TokenType token_type = 2;
+    string name = 3;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    string symbol = 4; //an optionally unique symbol or identifier
+    string owner = 5; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    bytes quantity = 6; //Can represent the initial quantity created or the total minted or issued for the class.
+    int32 decimals = 7; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    map<string, string> token_properties = 8; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    string constructor_name = 9; //a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+    google.protobuf.Any constructor = 10; //the constructor type defined in the token template artifact.
+    repeated Base child_tokens = 11; //if hybrid, this can contain the list of child token classes.
 }
 
 message Behavior{
@@ -55,11 +59,10 @@ message Property{
 
 message TokenTemplate {
     taxonomy.model.artifact.Artifact artifact = 1;
-    Type type = 2;
-    Base base = 3;
-    repeated Behavior behaviors = 4;
-    repeated BehaviorGroup behavior_groups = 5;
-    repeated PropertySet property_sets = 6;
+    Base base = 2;
+    repeated Behavior behaviors = 3;
+    repeated BehaviorGroup behavior_groups = 4;
+    repeated PropertySet property_sets = 5;
 }
 
 message Invocation{

@@ -39,7 +39,7 @@ The taxonomy uses these terms for all tokens:
 
 The taxonomy is anchored by single root token followed by two implementable or base types which provide the foundation for deriving specific tokens that differentiate themselves based on their behaviors and non-behavioral properties.
 
-The root token is abstract, meaning you can't actually create one of them, and contains properties and a single behavior called Constructable.  This behavior provides the ability for each token to have the ability to be a template, or to create a clone of itself.  Constructable simply means that every token will have a constructor control message when it is operating as a template.  The constructor itself is an abstract as well as each token can define its own constructor control message.
+The root token is abstract, meaning you can't actually create one of them, and contains properties and a single behavior called constructable.  This behavior provides the ability for each token to have the ability to be a template, or to create a clone of itself.  Constructable simply means that every token will have a constructor control message when it is operating as a template and is defined in the token template artifact.  
 
 The two base types can also be used together to create hybrid token definitions. Using the taxonomy, a token template is defined that is be used to create a token or asset class. The class is essentially a mold for creating instances (printing or minting) of that token type.  An instance of a token class is the smallest unit that can be owned in that class.
 
@@ -221,6 +221,10 @@ Now we can begin naming and describing tokens starting with the base type follow
 A token formula uses the taxonomy symbols, which are references to artifacts, can be used to represent a token that is useful for tooling allowing grouping and structures to be represented. Some examples:
 
 ![TokenTaxonomy](images/tokens.png)
+
+A Token Formula is a Token Template, which is a collection of artifacts in a folder, where the artifact folder and the artifacts within start with an uppercase letter, i.e Loyalty. The template's artifacts have references to the artifacts of its constituent parts.
+
+![TokenTemplate](imageps/template.png)
 
 ## Classification Hierarchy
 

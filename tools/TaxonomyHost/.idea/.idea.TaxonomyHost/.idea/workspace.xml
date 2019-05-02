@@ -2,46 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a725583d-0766-41f5-a02f-3c183a5d3393" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behavior-groups/supply-control/supply-control.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/burnable/burnable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/delegable/delegable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/encumberable/encumberable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/encumberable/encumberable.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/behaviors/encumberable/encumberable.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/loggable/logable.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/loggable/loggable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/mintable/mintable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/roles/roles-sequence.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/roles/roles.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/singleton/singleton.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/sub-dividable/sub-dividable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/behaviors/transferable/transferable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/core.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/core.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Artifact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactOuterClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BaseOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BaseOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Behavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Behavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroupOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroupOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorOrBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Invocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Invocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationOrBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySetOrBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySetOrBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Document/DocumentToken.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Document/document.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Document/documentToken.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Log/LogToken.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/tokens/Log/logToken.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/codeMap.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../images/codeMap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../images/fileHierarchy.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../images/fileHierarchy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../presentations/TTF-Presentation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/../../presentations/TTF-Presentation.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../token-taxonomy.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../token-taxonomy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/runConfigurations/Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/runConfigurations/Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/FactGen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/FactGen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/Utils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -157,7 +133,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="3440" height="1331" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Azure Explorer" />
       <window_info id="Favorites" side_tool="true" />

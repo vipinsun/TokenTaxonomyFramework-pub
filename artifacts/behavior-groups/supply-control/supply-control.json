@@ -1,0 +1,101 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR_GROUP",
+    "name": "Supply Control",
+    "aliases": [
+      "Central Bank"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "<i>SC</i>",
+      "toolingSymbol": "SC"
+    },
+    "controlUri": "../../../../../../artifacts/behavior-groups/supply-control/supply-control.proto",
+    "artifactDefinition": {
+      "businessDescription": "A token class that implements this behavior will provide controls to increase and decrease supply of tokens within the class.  Additionally, it will include the ability to support a role, like Minters, that will be allowed to invoke the Mintable behavior. The owner can add accounts to the role and any account that is a member of the role will be able to mint tokens in the class.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "supply-control analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "<i>s</i>",
+        "toolingSymbol": "s"
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
+        "symbol": {
+          "visualSymbol": "<i>r</i>",
+          "toolingSymbol": "r"
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "supply-control.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "supply-control.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "behaviorSymbols": [
+    {
+      "visualSymbol": "m",
+      "toolingSymbol": "<i>m</i>"
+    },
+    {
+      "visualSymbol": "b",
+      "toolingSymbol": "<i>b</i>"
+    },
+    {
+      "visualSymbol": "r",
+      "toolingSymbol": "<i>r</i>"
+    }
+  ],
+  "memberBehaviorArtifacts": {}
+}

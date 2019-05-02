@@ -1,0 +1,145 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR",
+    "name": "Mintable",
+    "aliases": [
+      "Issuable",
+      "Create"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "<i>m</i>",
+      "toolingSymbol": "m"
+    },
+    "controlUri": "../../../../../../artifacts/behaviors/mintable/mintable.proto",
+    "artifactDefinition": {
+      "businessDescription": "A token class that implements this behavior will support the minting or issuing of new token instances of the class.  This new tokens can be minted and belong to the owner or minted to another account. This behavior may be overriden by a restrictive behavior like Singleton, where only a single instance of the token can exist.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "mintable analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "<i>s</s>",
+        "toolingSymbol": "s"
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
+        "symbol": {
+          "visualSymbol": "<i>r</i>",
+          "toolingSymbol": "r"
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "mintable.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "mintable.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "external": false,
+  "behaviorConstructorName": "",
+  "behaviorConstructor": null,
+  "behaviorInvocations": [
+    {
+      "name": "Mint",
+      "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission.  Requires a Quantity field in the request.",
+      "request": {
+        "controlMessageName": "MintRequest",
+        "inputParameters": [
+          {
+            "name": "Quantity",
+            "valueDescription": "Number of new tokens to create."
+          }
+        ],
+        "description": "The request"
+      },
+      "response": {
+        "controlMessageName": "MintResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the mint request."
+          }
+        ],
+        "description": "The response"
+      }
+    },
+    {
+      "name": "MintTo",
+      "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
+      "request": {
+        "controlMessageName": "MintToRequest",
+        "inputParameters": [
+          {
+            "name": "ToAccount",
+            "valueDescription": "Account Id to mint the tokens to."
+          },
+          {
+            "name": "Quantity",
+            "valueDescription": "Number of new tokens to create."
+          }
+        ],
+        "description": "The request"
+      },
+      "response": {
+        "controlMessageName": "MintToResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the MintTo request."
+          }
+        ],
+        "description": "The response"
+      }
+    }
+  ],
+  "behavioralProperties": []
+}

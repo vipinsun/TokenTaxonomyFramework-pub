@@ -1,0 +1,82 @@
+{
+    "artifact": {
+      "type": "BASE",
+      "name": "Base Token",
+      "artifactSymbol": {
+        "visualSymbol": "&tau",
+        "toolingSymbol": "t"
+      },
+      "controlUri": "../../../../../../artifacts/tokens.proto",
+      "artifactDefinition": {
+        "businessDescription": "All tokens will share a simple set of common properties and provide a base set of expectations when browsing a collection of tokens on a network and also must be provided when creating a new token class. All Tokens are Constructable, a behavior that is not formally defined, but implies that every Token has an ability to create or construct a clone of itself.  This behavior is active when a token is operating as a template and not a class and can receive a request to create a clone or token class of itself.  This control is generically called a constructor.",
+        "businessExample": "",
+        "analogies": [
+          {
+            "name": "Analogy 1",
+            "description": "non-fungible analogy 1 description",
+            "artifactDefinition": null
+          }
+        ],
+        "comments": "",
+        "artifact": null
+      },
+      "incompatibleWithSymbols": [
+        {
+          "visualSymbol": "",
+          "toolingSymbol": ""
+        }
+      ],
+      "artifactFiles": [
+        {
+          "content": "CONTROL",
+          "fileName": "tokens.proto",
+          "fileData": "",
+          "artifact": null
+        },
+        {
+          "content": "UML",
+          "fileName": "non-fungible.md",
+          "fileData": "",
+          "artifact": null
+        }
+      ],
+      "maps": {
+        "codeReferences": [
+          {
+            "mappingType": "SOURCE_CODE",
+            "name": "Code 1",
+            "platform": "DAML",
+            "referencePath": "",
+            "maps": null
+          }
+        ],
+        "implementationReferences": [
+          {
+            "mappingType": "IMPLEMENTATION",
+            "name": "Implementation 1",
+            "platform": "CHAINCODE_GO",
+            "referencePath": "",
+            "maps": null
+          }
+        ],
+        "resources": [
+          {
+            "mappingType": "RESOURCE",
+            "name": "Regulation Reference 1",
+            "description": "",
+            "resourcePath": "",
+            "maps": null
+          }
+        ],
+        "artifact": null
+      }
+    },
+    "name": "",
+    "symbol": "",
+    "owner": "",
+    "quantity": "",
+    "decimals": 0,
+    "tokenProperties": {},
+    "constructorName": "",
+    "constructor": null
+  }

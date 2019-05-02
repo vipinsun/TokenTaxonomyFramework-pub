@@ -5,6 +5,6 @@ package ARTIFACT;
 import "tokens.proto";
 import "google/protobuf/any.proto";
 
-option csharp_namespace = "TTF.Tokens.tokens";
-option java_package = "org.tti.tokens";
+option csharp_namespace = "TTI.TTF.BASE.NAME";
+option java_package = "org.tti.ttf.BASE.NAME";
 option java_multiple_files = true;
