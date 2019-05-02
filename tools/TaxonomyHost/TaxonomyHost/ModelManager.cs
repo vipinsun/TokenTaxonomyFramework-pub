@@ -9,26 +9,27 @@ using TTT.TTF.Taxonomy;
 
 namespace TaxonomyHost
 {
-	public class ModelManager
+	public static class ModelManager
 	{
-		private static ILog _log;
+		private static readonly ILog Log;
 		private static Taxonomy Taxonomy { get; set; }
-		public ModelManager()
+
+		static ModelManager()
 		{
 			Utils.InitLog();
-			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+			Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 		}
 
 		internal static void Init()
 		{
-			_log.Info("ModelManager Init");
+			Log.Info("ModelManager Init");
 			Taxonomy = TaxonomyFactory.Load();
 			TaxonomyCache.SaveToCache(Taxonomy.Version, Taxonomy, DateTime.Now.AddDays(1));
 		}
 
 		internal static Taxonomy GetFullTaxonomy(TaxonomyVersion version)
 		{
-			_log.Info("GetFullTaxonomy version " + version.Version);
+			Log.Info("GetFullTaxonomy version " + version.Version);
 			return Taxonomy.Version == version.Version ? Taxonomy : TaxonomyCache.GetFromCache(version.Version);
 		}
 
