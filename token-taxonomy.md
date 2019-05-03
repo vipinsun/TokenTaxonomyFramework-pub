@@ -306,7 +306,7 @@ For example, in the Ethereum community [OpenZeppelin](https://github.com/OpenZep
 
 Using a taxonomy code map, tools can be built to generate code for specific platforms by combining the code from the formula into new source composite source code to speed development.
 
-Similarly, an implementation map can be used to provide navigation from a specific token formula like >**&tau;<sub>F</sub>{~d,SC}** or `tF{~d,SC}` to map to a vendor or open source complete implementation in as open source or packaged solution.
+Similarly, an implementation map can be used to provide navigation from a specific token formula like **&tau;<sub>F</sub>{~d,SC}** or `tF{~d,SC}` to map to a vendor or open source complete implementation in as open source or packaged solution.
 
 ![TaxonomyImplementationMap](images/implementationMap.png)
 
@@ -314,7 +314,7 @@ Similarly, an implementation map can be used to provide navigation from a specif
 
 Using the taxonomy when creating or defining an existing token can also generically apply to a token implementation as well. The high-level design phases are:
 
-- Workshop - this is the initial phase when starting from scratch defining the token for your business needs. During this process you can create new taxonomy artifacts and when complete have a resulting token taxonomy definition which looks like a mathematical formula: **&tau;<sub>F</sub>{~d,SC}** or `tF{d~,SC}`
+- Workshop - this is the initial phase when starting from scratch defining the token for your business needs. During this process you can create new taxonomy artifacts and when complete have a resulting token taxonomy definition which looks like a mathematical formula: **&tau;<sub>F</sub>{~d,SC}** or `tF{~d,SC}`
 - Hierarchy Location - Once you have your taxonomy definition, you may be able to find an existing definition in the taxonomy with the same formula.  This doesn't mean that the token you defined is **exactly** the same as the existing definition. If your token definition has defined a non-behavioral property set or sets that are specific to your token, like a `phSKU` or  `phCU` you can create a new token definition for this formula in the taxonomy. See [Taxonomy Hierarchy](taxonomy-hierarchy).
 - Implementation - You can use maps in the taxonomy to locate platform specific implementation code or complete token solutions from open source, vendors to get create or find an implementation suitable for your deployment platform target. i.e. Ethereum, Hyperledger Fabric, Corda or Digital Asset.
 
