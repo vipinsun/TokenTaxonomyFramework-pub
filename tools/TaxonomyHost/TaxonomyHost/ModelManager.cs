@@ -1,6 +1,9 @@
 using System;
+using System.IO;
 using System.Reflection;
+using Google.Protobuf;
 using log4net;
+using Newtonsoft.Json.Linq;
 using TaxonomyHost.factories;
 using TTF.Tokens.Model.Artifact;
 using TTF.Tokens.Model.Core;
@@ -11,25 +14,25 @@ namespace TaxonomyHost
 {
 	public static class ModelManager
 	{
-		private static readonly ILog Log;
+		private static readonly ILog _log;
 		private static Taxonomy Taxonomy { get; set; }
 
 		static ModelManager()
 		{
 			Utils.InitLog();
-			Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 		}
 
 		internal static void Init()
 		{
-			Log.Info("ModelManager Init");
+			_log.Info("ModelManager Init");
 			Taxonomy = TaxonomyFactory.Load();
 			TaxonomyCache.SaveToCache(Taxonomy.Version, Taxonomy, DateTime.Now.AddDays(1));
 		}
 
 		internal static Taxonomy GetFullTaxonomy(TaxonomyVersion version)
 		{
-			Log.Info("GetFullTaxonomy version " + version.Version);
+			_log.Info("GetFullTaxonomy version " + version.Version);
 			return Taxonomy.Version == version.Version ? Taxonomy : TaxonomyCache.GetFromCache(version.Version);
 		}
 

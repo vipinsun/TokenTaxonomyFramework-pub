@@ -10,11 +10,11 @@ namespace TaxonomyHost
 	{
 		private static IConfigurationRoot _config;
 		private static ILog _log;
-		private static string _artifactPath;
+		internal static string ArtifactPath { get; set; }
 		private static string _gRpcHost;
 		private static int _gRpcPort;
 		private static Server _apiServer;
-
+		internal static string FolderSeparator { get; private set; }
 		private static void Main()
 		{
 			#region config
@@ -31,9 +31,11 @@ namespace TaxonomyHost
 
 			#endregion
 			
-			_artifactPath = _config["artifactPath"];
+			ArtifactPath = _config["artifactPath"];
 			_gRpcHost = _config["gRpcHost"];
 			_gRpcPort = Convert.ToInt32(_config["gRpcPort"]);
+
+			FolderSeparator = Os.IsWindows() ? "\\" : "/";
 			
 			_apiServer = new Server
 			{

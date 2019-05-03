@@ -10,7 +10,6 @@ namespace TaxonomyHost
 {
 	public static class Utils
 	{
-
 		public static void InitLog()
 		{
 			var xmlDocument = new XmlDocument();
