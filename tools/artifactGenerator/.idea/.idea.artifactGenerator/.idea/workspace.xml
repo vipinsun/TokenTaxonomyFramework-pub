@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18e5c737-78d3-41aa-b57a-849c6df3dc6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../TaxonomyHost/.idea/.idea.TaxonomyHost/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/.idea/.idea.TaxonomyHost/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/ModelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/ModelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/TaxonomyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/TaxonomyService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/Utils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/factories/TaxonomyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/factories/TaxonomyFactory.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

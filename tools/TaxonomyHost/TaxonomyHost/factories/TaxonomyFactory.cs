@@ -72,7 +72,7 @@ namespace TaxonomyHost.factories
 					}
 					catch (Exception e)
 					{
-						_log.Error("Failed to load base token type.");
+						_log.Error("Failed to load base token type: " + ad.Name);
 						_log.Error(e);
 						continue;
 					}
@@ -89,7 +89,7 @@ namespace TaxonomyHost.factories
 			if (Directory.Exists(aPath + _behaviorFolder))
 			{
 
-				_log.Info("Behavior Artifact Folder Found, loading to Behavior Types");
+				_log.Info("Behavior Artifact Folder Found, loading to Behaviors");
 				var behaviors = new DirectoryInfo(aPath + _behaviorFolder);
 				foreach (var ad in behaviors.EnumerateDirectories())
 				{
@@ -103,25 +103,105 @@ namespace TaxonomyHost.factories
 					}
 					catch (Exception e)
 					{
-						_log.Error("Failed to load base token type.");
+						_log.Error("Failed to load Behavior: " + ad.Name);
 						_log.Error(e);
 						continue;
 					}
 
-					var baseArtifactWFiles = GetBehaviorArtifactFiles(ad, behavior);
-					taxonomy.Behaviors.Add(baseType.Artifact.ArtifactSymbol.ToolingSymbol, baseArtifactWFiles);
+					var behaviorArtifactFiles = GetBehaviorArtifactFiles(ad, behavior);
+					taxonomy.Behaviors.Add(behavior.Artifact.ArtifactSymbol.ToolingSymbol, behaviorArtifactFiles);
 				}
 			}
 
+			if (Directory.Exists(aPath + _behaviorGroupFolder))
+			{
 
-			return tax;
+				_log.Info("BehaviorGroup Artifact Folder Found, loading to BehaviorGroups");
+				var behaviorGroups = new DirectoryInfo(aPath + _behaviorGroupFolder);
+				foreach (var ad in behaviorGroups.EnumerateDirectories())
+				{
+					BehaviorGroup behaviorGroup;
+					_log.Info("Loading " + ad.Name);
+					var bJson = ad.GetFiles("*.json");
+					try
+					{
+						behaviorGroup = GetArtifact<BehaviorGroup>(bJson[0]);
+						
+					}
+					catch (Exception e)
+					{
+						_log.Error("Failed to load BehaviorGroup: " +ad.Name);
+						_log.Error(e);
+						continue;
+					}
+
+					var behaviorGroupArtifactWFiles = GetBehaviorGroupArtifactFiles(ad, behaviorGroup);
+					taxonomy.BehaviorGroups.Add(behaviorGroupArtifactWFiles.Artifact.ArtifactSymbol.ToolingSymbol, behaviorGroupArtifactWFiles);
+				}
+			}
+			
+			if(Directory.Exists(aPath + _propertySetFolder))
+			{
+
+				_log.Info("PropertySet Artifact Folder Found, loading to PropertySets");
+				var propertySets = new DirectoryInfo(aPath + _behaviorGroupFolder);
+				foreach (var ad in propertySets.EnumerateDirectories())
+				{
+					PropertySet propertySet;
+					_log.Info("Loading " + ad.Name);
+					var bJson = ad.GetFiles("*.json");
+					try
+					{
+						propertySet = GetArtifact<PropertySet>(bJson[0]);
+						
+					}
+					catch (Exception e)
+					{
+						_log.Error("Failed to load PropertySet: " + ad.Name);
+						_log.Error(e);
+						continue;
+					}
+
+					var propertySetArtifactFiles = GetPropertySetArtifactFiles(ad, propertySet);
+					taxonomy.PropertySets.Add(propertySetArtifactFiles.Artifact.ArtifactSymbol.ToolingSymbol, propertySetArtifactFiles);
+				}
+			}
+			
+			if(Directory.Exists(aPath + _tokenTemplates))
+			{
+
+				_log.Info("TokenTemplate Artifact Folder Found, loading to TokenTemplates");
+				var tokenTemplates = new DirectoryInfo(aPath + _tokenTemplates);
+				foreach (var ad in tokenTemplates.EnumerateDirectories())
+				{
+					TokenTemplate tokenTemplate;
+					_log.Info("Loading " + ad.Name);
+					var bJson = ad.GetFiles("*.json");
+					try
+					{
+						tokenTemplate = GetArtifact<TokenTemplate>(bJson[0]);
+						
+					}
+					catch (Exception e)
+					{
+						_log.Error("Failed to load TokenTemplate: " + ad.Name);
+						_log.Error(e);
+						continue;
+					}
+
+					var tokenTemplateArtifactFiles = GetTokenTemplateArtifactFiles(ad, tokenTemplate);
+					taxonomy.TokenTemplates.Add(tokenTemplateArtifactFiles.Artifact.ArtifactSymbol.ToolingSymbol, tokenTemplateArtifactFiles);
+				}
+			}
+			
+			return taxonomy;
 		}
 
 		private static Base GetBaseArtifactFiles(DirectoryInfo ad, Base baseType)
 		{
 			foreach (var af in ad.EnumerateFiles())
 			{
-				if (af.Name.EndsWith("proto", ignoreCase: true))
+				if (af.Name.EndsWith("proto"))
 				{
 					var protoFile = GetArtifactText(af);
 					baseType.Artifact.ControlUri = af.Name;
@@ -133,7 +213,7 @@ namespace TaxonomyHost.factories
 					});
 				}
 
-				if (af.Name.EndsWith("md", ignoreCase: true))
+				if (af.Name.EndsWith("md"))
 				{
 					var mdFile = GetArtifactText(af);
 
@@ -164,7 +244,7 @@ namespace TaxonomyHost.factories
 		{
 			foreach (var af in ad.EnumerateFiles())
 			{
-				if (af.Name.EndsWith("proto", ignoreCase: true))
+				if (af.Name.EndsWith("proto"))
 				{
 					var protoFile = GetArtifactText(af);
 					behavior.Artifact.ControlUri = af.Name;
@@ -176,7 +256,7 @@ namespace TaxonomyHost.factories
 					});
 				}
 
-				if (af.Name.EndsWith("md", ignoreCase: true))
+				if (af.Name.EndsWith("md"))
 				{
 					var mdFile = GetArtifactText(af);
 
@@ -203,7 +283,136 @@ namespace TaxonomyHost.factories
 			return behavior;
 		}
 
-		private static T GetArtifact<T>(FileInfo artifact) where T : new()
+		private static BehaviorGroup GetBehaviorGroupArtifactFiles(DirectoryInfo ad, BehaviorGroup behaviorGroup)
+		{
+			foreach (var af in ad.EnumerateFiles())
+			{
+				if (af.Name.EndsWith("proto"))
+				{
+					var protoFile = GetArtifactText(af);
+					behaviorGroup.Artifact.ControlUri = af.Name;
+					behaviorGroup.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(protoFile),
+						Content = ArtifactContent.Control
+					});
+				}
+
+				if (af.Name.EndsWith("md"))
+				{
+					var mdFile = GetArtifactText(af);
+
+					behaviorGroup.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(mdFile),
+						Content = ArtifactContent.Uml
+					});
+				}
+				else
+				{
+					var otherFile = GetArtifactBytes(af);
+
+					behaviorGroup.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFrom(otherFile),
+						Content = ArtifactContent.Other
+					});
+				}
+			}
+
+			return behaviorGroup;
+		}
+		
+		private static PropertySet GetPropertySetArtifactFiles(DirectoryInfo ad, PropertySet propertySet)
+		{
+			foreach (var af in ad.EnumerateFiles())
+			{
+				if (af.Name.EndsWith("proto"))
+				{
+					var protoFile = GetArtifactText(af);
+					propertySet.Artifact.ControlUri = af.Name;
+					propertySet.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(protoFile),
+						Content = ArtifactContent.Control
+					});
+				}
+
+				if (af.Name.EndsWith("md"))
+				{
+					var mdFile = GetArtifactText(af);
+
+					propertySet.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(mdFile),
+						Content = ArtifactContent.Uml
+					});
+				}
+				else
+				{
+					var otherFile = GetArtifactBytes(af);
+
+					propertySet.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFrom(otherFile),
+						Content = ArtifactContent.Other
+					});
+				}
+			}
+
+			return propertySet;
+		}
+		
+		private static TokenTemplate GetTokenTemplateArtifactFiles(DirectoryInfo ad, TokenTemplate tokenTemplate)
+		{
+			foreach (var af in ad.EnumerateFiles())
+			{
+				if (af.Name.EndsWith("proto"))
+				{
+					var protoFile = GetArtifactText(af);
+					tokenTemplate.Artifact.ControlUri = af.Name;
+					tokenTemplate.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(protoFile),
+						Content = ArtifactContent.Control
+					});
+				}
+
+				if (af.Name.EndsWith("md"))
+				{
+					var mdFile = GetArtifactText(af);
+
+					tokenTemplate.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(mdFile),
+						Content = ArtifactContent.Uml
+					});
+				}
+				else
+				{
+					var otherFile = GetArtifactBytes(af);
+
+					tokenTemplate.Artifact.ArtifactFiles.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFrom(otherFile),
+						Content = ArtifactContent.Other
+					});
+				}
+			}
+
+			return tokenTemplate;
+		}
+		
+		private static T GetArtifact<T>(FileInfo artifact) where T : IMessage, new()
 		{
 			var typeFile = artifact.OpenText();
 			var json = typeFile.ReadToEnd();
