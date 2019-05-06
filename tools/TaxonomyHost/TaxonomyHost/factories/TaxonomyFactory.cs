@@ -1,12 +1,16 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Threading;
 using Google.Protobuf;
 using log4net;
 using Newtonsoft.Json.Linq;
 using TTF.Tokens.Model.Artifact;
 using TTF.Tokens.Model.Core;
+using TTF.Tokens.Model.Grammar;
 using TTI.TTF.Taxonomy.Model;
+using TTT.TTF.Taxonomy;
 
 namespace TaxonomyHost.factories
 {
@@ -42,11 +46,14 @@ namespace TaxonomyHost.factories
 			_log.Info("Artifact Folder Found, loading to Taxonomy.");
 			var root = new DirectoryInfo(_artifactPath);
 			Taxonomy taxonomy;
-			var rJson = root.GetFiles("*.json");
+			var rJson = root.GetFiles("Taxonomy.json");
+			var fJson = root.GetFiles("FormulaGrammar.json");
 			try
 			{
 				taxonomy = GetArtifact<Taxonomy>(rJson[0]);
+				taxonomy.FormulaGrammar = GetArtifact<FormulaGrammar>(fJson[0]);
 				_log.Info("Loaded Taxonomy Version: " + taxonomy.Version);
+				_log.Info("Taxonomy Formula Grammar loaded");
 			}
 			catch (Exception e)
 			{
@@ -265,8 +272,107 @@ namespace TaxonomyHost.factories
 
 		internal static TokenTemplate GetTokenTemplateTree(TokenTemplate template)
 		{
+			var formula = template.Artifact.ArtifactSymbol.ToolingSymbol.Trim();
+			string rootToken;
+			if (template.Base.TokenType == TokenType.Fungible || template.Base.TokenType == TokenType.NonFungible)
+			{
+				if (formula.StartsWith("["))
+				{
+					var rootToken1 = formula.Split("[");
+					var rootToken2 = rootToken1[0].Split("]");
+					rootToken = rootToken2[0];
+				}
+				else
+				{
+					rootToken = formula;
+				}
+
+				var (_, behaviors, behaviorGroups, propertySets) = GetTokenComponentsFromInsideBraces(rootToken);
+				template.Behaviors.Add(behaviors);
+				template.BehaviorGroups.Add(behaviorGroups);
+				template.PropertySets.Add(propertySets);
+			}
+
+			if (template.Base.TokenType == TokenType.HybridFungibleRoot ||
+			    template.Base.TokenType == TokenType.HybridNonFungibleRoot)
+			{
+				if (formula.StartsWith("["))
+				{
+					var rootToken1 = formula.Split("[");
+					var rootToken2 = rootToken1[0].Split("]");
+					rootToken = rootToken2[0];
+				}
+				else
+				{
+					var rootToken1 = formula.Split("(");
+					rootToken = rootToken1[0];
+				}
+
+				var (_, behaviors, behaviorGroups, propertySets) = GetTokenComponentsFromInsideBraces(rootToken);
+				template.Behaviors.Add(behaviors);
+				template.BehaviorGroups.Add(behaviorGroups);
+				template.PropertySets.Add(propertySets);
+			}
 			
+			if (template.Base.TokenType == TokenType.HybridFungibleRootHybridChildren ||
+			    template.Base.TokenType == TokenType.HybridNonFungibleRootHybridChildren)
+			{
+				var grammar = ModelManager.Taxonomy.FormulaGrammar.HybridWithHybrids;
+			}
+			
+			
+			return template;
 		}
 
+		private static (Base, IEnumerable<Behavior>, IEnumerable<BehaviorGroup>, IEnumerable<PropertySet>) GetTokenComponentsFromInsideBraces(string formula)
+		{
+			var behaviors1 = formula.Split("{");
+			var behaviors2 = behaviors1[1].Split("}");
+			var behaviors = behaviors2[0].Split(",");
+
+			var baseToken = ModelManager.GetBaseArtifact(new Symbol
+			{
+				ArtifactSymbol = behaviors1[0]
+			});
+			
+			var behaviorList = new List<Behavior>();
+			var behaviorGroupList = new List<BehaviorGroup>();
+			var propertySetList = new List<PropertySet>();
+			
+			foreach (var t in behaviors)
+			{
+				if (char.IsUpper(t[0]))
+				{
+					behaviorGroupList.Add(ModelManager.GetBehaviorGroupArtifact(new Symbol
+					{
+						ArtifactSymbol = t
+					}));
+					continue;
+				}
+
+				behaviorList.Add(ModelManager.GetBehaviorArtifact(new Symbol
+				{
+					ArtifactSymbol = t
+				}));
+			}
+
+			var props1 = formula.Split("}");
+			var props2 = props1[1].Split("]");
+			var props = props2[0].Split("+");
+			foreach (var t in props)
+			{
+				if (t.StartsWith("ph"))
+				{
+					propertySetList.Add(ModelManager.GetPropertySetArtifact(new Symbol
+					{
+						ArtifactSymbol = t
+					}));
+				}
+			}
+
+			return (baseToken, behaviorList, behaviorGroupList, propertySetList);
+		}
+		
+		
 	}
 }

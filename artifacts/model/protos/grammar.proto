@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package taxonomy.model.grammar;
+
+option csharp_namespace = "TTF.Tokens.Model.Grammar";
+option java_package = "org.tti.tokens.model.grammar";
+option java_multiple_files = true;
+
+message FormulaGrammar{
+    SingleToken single_token = 1;
+    HybridTokenFormula hybrid = 2;
+    HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 3;
+}
+
+message HybridTokenFormula{
+    SingleToken parent = 1;
+    string hybrid_children_start = 2; // "("
+    repeated SingleToken child_tokens = 3;
+    string hybrid_children_end = 4; // ")"
+}
+
+message HybridTokenWithHybridChildrenFormula{
+    SingleToken parent = 1;
+    string hybrid_children_start = 2; // "("
+    repeated HybridTokenFormula child_tokens = 3;
+    string hybrid_children_end = 4; // ")"
+}
+
+//outermost grouping container for the formula for a whole template either a parent or hybrid child.
+message SingleToken{
+    string group_start = 1; // "["
+    TokenBase base_token = 2;
+    BehaviorList behaviors = 3;
+    repeated PropertySetListItem property_sets = 4;
+    string group_end = 5; // "]"
+}
+
+message TokenBase{
+    string base_symbol = 1;
+}
+
+message BehaviorList{
+    string list_start = 1; // "{"
+    repeated string behavior_symbol = 2; // lowercase letters for individual behaviors, UPPERCASE for behaviorGroup
+    string list_end = 3; // "}"
+}
+
+message PropertySetListItem{
+    string list_start = 1; // "+"
+    string property_set_symbol = 2; // starts with ph followed by Camel case name or symbol.
+}

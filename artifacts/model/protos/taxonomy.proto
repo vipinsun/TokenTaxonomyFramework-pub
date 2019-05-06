@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package taxonomy.model;
 import "core.proto";
+import "grammar.proto";
 
 option csharp_namespace = "TTI.TTF.Taxonomy.Model";
 option java_package = "org.tti.ttf.taxonomy.model";
@@ -15,4 +16,5 @@ message Taxonomy{
     map<string, taxonomy.model.core.BehaviorGroup> behavior_groups = 4;
     map<string, taxonomy.model.core.PropertySet> property_sets = 5;
     map<string, taxonomy.model.core.TokenTemplate> token_templates = 6;
+    taxonomy.model.grammar.FormulaGrammar formula_grammar = 7;
 }

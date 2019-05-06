@@ -16,7 +16,7 @@ namespace TaxonomyHost
 	public static class ModelManager
 	{
 		private static readonly ILog _log;
-		private static Taxonomy Taxonomy { get; set; }
+		internal static Taxonomy Taxonomy { get; set; }
 
 		static ModelManager()
 		{

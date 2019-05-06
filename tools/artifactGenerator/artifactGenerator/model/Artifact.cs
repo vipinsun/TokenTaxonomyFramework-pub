@@ -83,18 +83,20 @@ namespace TTF.Tokens.Model.Artifact {
             "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSQAoPYXJ0aWZhY3Rfc3lt",
             "Ym9sGAIgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RT",
             "eW1ib2wiKQoWRGVsZXRlQXJ0aWZhY3RSZXNwb25zZRIPCgdkZWxldGVkGAEg",
-            "ASgIKmMKCVRva2VuVHlwZRIMCghGVU5HSUJMRRAAEhAKDE5PTl9GVU5HSUJM",
-            "RRABEhgKFEhZQlJJRF9GVU5HSUJMRV9ST09UEAISHAoYSFlCUklEX05PTl9G",
-            "VU5HSUJMRV9ST09UEAMqYAoMQXJ0aWZhY3RUeXBlEggKBEJBU0UQABIMCghC",
-            "RUhBVklPUhABEhIKDkJFSEFWSU9SX0dST1VQEAISEAoMUFJPUEVSVFlfU0VU",
-            "EAMSEgoOVE9LRU5fVEVNUExBVEUQBCpCCg9BcnRpZmFjdENvbnRlbnQSDgoK",
-            "REVGSU5JVElPThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhAD",
-            "KkAKC01hcHBpbmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5U",
-            "QVRJT04QARIMCghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVU",
-            "SEVSRVVNX1NPTElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5D",
-            "T0RFX0pBVkEQAhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoE",
-            "REFNTBAFQj0KHW9yZy50dGkudG9rZW5zLm1vZGVsLmFydGlmYWN0UAGqAhlU",
-            "VEYuVG9rZW5zLk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
+            "ASgIKrsBCglUb2tlblR5cGUSDAoIRlVOR0lCTEUQABIQCgxOT05fRlVOR0lC",
+            "TEUQARIYChRIWUJSSURfRlVOR0lCTEVfUk9PVBACEhwKGEhZQlJJRF9OT05f",
+            "RlVOR0lCTEVfUk9PVBADEigKJEhZQlJJRF9GVU5HSUJMRV9ST09UX0hZQlJJ",
+            "RF9DSElMRFJFThAEEiwKKEhZQlJJRF9OT05fRlVOR0lCTEVfUk9PVF9IWUJS",
+            "SURfQ0hJTERSRU4QBSpgCgxBcnRpZmFjdFR5cGUSCAoEQkFTRRAAEgwKCEJF",
+            "SEFWSU9SEAESEgoOQkVIQVZJT1JfR1JPVVAQAhIQCgxQUk9QRVJUWV9TRVQQ",
+            "AxISCg5UT0tFTl9URU1QTEFURRAEKkIKD0FydGlmYWN0Q29udGVudBIOCgpE",
+            "RUZJTklUSU9OEAASCwoHQ09OVFJPTBABEgcKA1VNTBACEgkKBU9USEVSEAMq",
+            "QAoLTWFwcGluZ1R5cGUSDwoLU09VUkNFX0NPREUQABISCg5JTVBMRU1FTlRB",
+            "VElPThABEgwKCFJFU09VUkNFEAIqdgoOVGFyZ2V0UGxhdGZvcm0SFQoRRVRI",
+            "RVJFVU1fU09MSURJVFkQABIQCgxDSEFJTkNPREVfR08QARISCg5DSEFJTkNP",
+            "REVfSkFWQRACEhIKDkNIQUlOQ09ERV9OT0RFEAMSCQoFQ09SREEQBBIICgRE",
+            "QU1MEAVCPQodb3JnLnR0aS50b2tlbnMubW9kZWwuYXJ0aWZhY3RQAaoCGVRU",
+            "Ri5Ub2tlbnMuTW9kZWwuQXJ0aWZhY3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTF.Tokens.Model.Artifact.TokenType), typeof(global::TTF.Tokens.Model.Artifact.ArtifactType), typeof(global::TTF.Tokens.Model.Artifact.ArtifactContent), typeof(global::TTF.Tokens.Model.Artifact.MappingType), typeof(global::TTF.Tokens.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
@@ -124,6 +126,8 @@ namespace TTF.Tokens.Model.Artifact {
     [pbr::OriginalName("NON_FUNGIBLE")] NonFungible = 1,
     [pbr::OriginalName("HYBRID_FUNGIBLE_ROOT")] HybridFungibleRoot = 2,
     [pbr::OriginalName("HYBRID_NON_FUNGIBLE_ROOT")] HybridNonFungibleRoot = 3,
+    [pbr::OriginalName("HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN")] HybridFungibleRootHybridChildren = 4,
+    [pbr::OriginalName("HYBRID_NON_FUNGIBLE_ROOT_HYBRID_CHILDREN")] HybridNonFungibleRootHybridChildren = 5,
   }
 
   public enum ArtifactType {
@@ -471,7 +475,7 @@ namespace TTF.Tokens.Model.Artifact {
       aliases_.Add(other.aliases_);
       if (other.artifactSymbol_ != null) {
         if (artifactSymbol_ == null) {
-          artifactSymbol_ = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+          ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
         }
         ArtifactSymbol.MergeFrom(other.ArtifactSymbol);
       }
@@ -480,7 +484,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactDefinition_ != null) {
         if (artifactDefinition_ == null) {
-          artifactDefinition_ = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+          ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
         }
         ArtifactDefinition.MergeFrom(other.ArtifactDefinition);
       }
@@ -489,7 +493,7 @@ namespace TTF.Tokens.Model.Artifact {
       artifactFiles_.Add(other.artifactFiles_);
       if (other.maps_ != null) {
         if (maps_ == null) {
-          maps_ = new global::TTF.Tokens.Model.Artifact.Maps();
+          Maps = new global::TTF.Tokens.Model.Artifact.Maps();
         }
         Maps.MergeFrom(other.Maps);
       }
@@ -505,7 +509,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            type_ = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -518,9 +522,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 34: {
             if (artifactSymbol_ == null) {
-              artifactSymbol_ = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+              ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
             }
-            input.ReadMessage(artifactSymbol_);
+            input.ReadMessage(ArtifactSymbol);
             break;
           }
           case 42: {
@@ -529,9 +533,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 50: {
             if (artifactDefinition_ == null) {
-              artifactDefinition_ = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+              ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
             }
-            input.ReadMessage(artifactDefinition_);
+            input.ReadMessage(ArtifactDefinition);
             break;
           }
           case 58: {
@@ -548,9 +552,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 82: {
             if (maps_ == null) {
-              maps_ = new global::TTF.Tokens.Model.Artifact.Maps();
+              Maps = new global::TTF.Tokens.Model.Artifact.Maps();
             }
-            input.ReadMessage(maps_);
+            input.ReadMessage(Maps);
             break;
           }
         }
@@ -850,7 +854,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.symbol_ != null) {
         if (symbol_ == null) {
-          symbol_ = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+          Symbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
         }
         Symbol.MergeFrom(other.Symbol);
       }
@@ -871,9 +875,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 18: {
             if (symbol_ == null) {
-              symbol_ = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+              Symbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
             }
-            input.ReadMessage(symbol_);
+            input.ReadMessage(Symbol);
             break;
           }
         }
@@ -1080,7 +1084,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1113,9 +1117,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 42: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
         }
@@ -1282,7 +1286,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactDefinition_ != null) {
         if (artifactDefinition_ == null) {
-          artifactDefinition_ = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+          ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
         }
         ArtifactDefinition.MergeFrom(other.ArtifactDefinition);
       }
@@ -1307,9 +1311,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 26: {
             if (artifactDefinition_ == null) {
-              artifactDefinition_ = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+              ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
             }
-            input.ReadMessage(artifactDefinition_);
+            input.ReadMessage(ArtifactDefinition);
             break;
           }
         }
@@ -1500,7 +1504,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1516,7 +1520,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            content_ = (global::TTF.Tokens.Model.Artifact.ArtifactContent) input.ReadEnum();
+            Content = (global::TTF.Tokens.Model.Artifact.ArtifactContent) input.ReadEnum();
             break;
           }
           case 18: {
@@ -1529,9 +1533,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 34: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
         }
@@ -1698,7 +1702,7 @@ namespace TTF.Tokens.Model.Artifact {
       resources_.Add(other.resources_);
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1727,9 +1731,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 34: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
         }
@@ -1944,7 +1948,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.maps_ != null) {
         if (maps_ == null) {
-          maps_ = new global::TTF.Tokens.Model.Artifact.Maps();
+          Maps = new global::TTF.Tokens.Model.Artifact.Maps();
         }
         Maps.MergeFrom(other.Maps);
       }
@@ -1960,7 +1964,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            mappingType_ = (global::TTF.Tokens.Model.Artifact.MappingType) input.ReadEnum();
+            MappingType = (global::TTF.Tokens.Model.Artifact.MappingType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -1968,7 +1972,7 @@ namespace TTF.Tokens.Model.Artifact {
             break;
           }
           case 24: {
-            platform_ = (global::TTF.Tokens.Model.Artifact.TargetPlatform) input.ReadEnum();
+            Platform = (global::TTF.Tokens.Model.Artifact.TargetPlatform) input.ReadEnum();
             break;
           }
           case 34: {
@@ -1977,9 +1981,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 42: {
             if (maps_ == null) {
-              maps_ = new global::TTF.Tokens.Model.Artifact.Maps();
+              Maps = new global::TTF.Tokens.Model.Artifact.Maps();
             }
-            input.ReadMessage(maps_);
+            input.ReadMessage(Maps);
             break;
           }
         }
@@ -2194,7 +2198,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.maps_ != null) {
         if (maps_ == null) {
-          maps_ = new global::TTF.Tokens.Model.Artifact.Maps();
+          Maps = new global::TTF.Tokens.Model.Artifact.Maps();
         }
         Maps.MergeFrom(other.Maps);
       }
@@ -2210,7 +2214,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            mappingType_ = (global::TTF.Tokens.Model.Artifact.MappingType) input.ReadEnum();
+            MappingType = (global::TTF.Tokens.Model.Artifact.MappingType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -2227,9 +2231,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 42: {
             if (maps_ == null) {
-              maps_ = new global::TTF.Tokens.Model.Artifact.Maps();
+              Maps = new global::TTF.Tokens.Model.Artifact.Maps();
             }
-            input.ReadMessage(maps_);
+            input.ReadMessage(Maps);
             break;
           }
         }
@@ -2409,7 +2413,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            type_ = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -2417,7 +2421,7 @@ namespace TTF.Tokens.Model.Artifact {
             break;
           }
           case 24: {
-            tokenType_ = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
+            TokenType = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
             break;
           }
         }
@@ -2560,7 +2564,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactTypeObject_ != null) {
         if (artifactTypeObject_ == null) {
-          artifactTypeObject_ = new global::Google.Protobuf.WellKnownTypes.Any();
+          ArtifactTypeObject = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         ArtifactTypeObject.MergeFrom(other.ArtifactTypeObject);
       }
@@ -2576,14 +2580,14 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            type_ = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
             if (artifactTypeObject_ == null) {
-              artifactTypeObject_ = new global::Google.Protobuf.WellKnownTypes.Any();
+              ArtifactTypeObject = new global::Google.Protobuf.WellKnownTypes.Any();
             }
-            input.ReadMessage(artifactTypeObject_);
+            input.ReadMessage(ArtifactTypeObject);
             break;
           }
         }
@@ -2726,7 +2730,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactTypeObject_ != null) {
         if (artifactTypeObject_ == null) {
-          artifactTypeObject_ = new global::Google.Protobuf.WellKnownTypes.Any();
+          ArtifactTypeObject = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         ArtifactTypeObject.MergeFrom(other.ArtifactTypeObject);
       }
@@ -2742,14 +2746,14 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            type_ = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
             if (artifactTypeObject_ == null) {
-              artifactTypeObject_ = new global::Google.Protobuf.WellKnownTypes.Any();
+              ArtifactTypeObject = new global::Google.Protobuf.WellKnownTypes.Any();
             }
-            input.ReadMessage(artifactTypeObject_);
+            input.ReadMessage(ArtifactTypeObject);
             break;
           }
         }
@@ -2916,7 +2920,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactTypeObject_ != null) {
         if (artifactTypeObject_ == null) {
-          artifactTypeObject_ = new global::Google.Protobuf.WellKnownTypes.Any();
+          ArtifactTypeObject = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         ArtifactTypeObject.MergeFrom(other.ArtifactTypeObject);
       }
@@ -2932,7 +2936,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            type_ = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -2941,9 +2945,9 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 26: {
             if (artifactTypeObject_ == null) {
-              artifactTypeObject_ = new global::Google.Protobuf.WellKnownTypes.Any();
+              ArtifactTypeObject = new global::Google.Protobuf.WellKnownTypes.Any();
             }
-            input.ReadMessage(artifactTypeObject_);
+            input.ReadMessage(ArtifactTypeObject);
             break;
           }
         }
@@ -3086,7 +3090,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactSymbol_ != null) {
         if (artifactSymbol_ == null) {
-          artifactSymbol_ = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+          ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
         }
         ArtifactSymbol.MergeFrom(other.ArtifactSymbol);
       }
@@ -3102,14 +3106,14 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            type_ = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
             if (artifactSymbol_ == null) {
-              artifactSymbol_ = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+              ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
             }
-            input.ReadMessage(artifactSymbol_);
+            input.ReadMessage(ArtifactSymbol);
             break;
           }
         }

@@ -14,6 +14,7 @@
         <e p="model" t="Include">
           <e p="Artifact.cs" t="Include" />
           <e p="Core.cs" t="Include" />
+          <e p="Grammar.cs" t="Include" />
           <e p="Taxonomy.cs" t="Include" />
           <e p="Taxonomyservice.cs" t="Include" />
         </e>

@@ -30,11 +30,50 @@ public interface BaseOrBuilder extends
   org.tti.tokens.model.artifact.TokenType getTokenType();
 
   /**
+   * <code>.taxonomy.model.grammar.SingleToken single_token = 3;</code>
+   */
+  boolean hasSingleToken();
+  /**
+   * <code>.taxonomy.model.grammar.SingleToken single_token = 3;</code>
+   */
+  org.tti.tokens.model.grammar.SingleToken getSingleToken();
+  /**
+   * <code>.taxonomy.model.grammar.SingleToken single_token = 3;</code>
+   */
+  org.tti.tokens.model.grammar.SingleTokenOrBuilder getSingleTokenOrBuilder();
+
+  /**
+   * <code>.taxonomy.model.grammar.HybridTokenFormula hybrid = 4;</code>
+   */
+  boolean hasHybrid();
+  /**
+   * <code>.taxonomy.model.grammar.HybridTokenFormula hybrid = 4;</code>
+   */
+  org.tti.tokens.model.grammar.HybridTokenFormula getHybrid();
+  /**
+   * <code>.taxonomy.model.grammar.HybridTokenFormula hybrid = 4;</code>
+   */
+  org.tti.tokens.model.grammar.HybridTokenFormulaOrBuilder getHybridOrBuilder();
+
+  /**
+   * <code>.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 5;</code>
+   */
+  boolean hasHybridWithHybrids();
+  /**
+   * <code>.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 5;</code>
+   */
+  org.tti.tokens.model.grammar.HybridTokenWithHybridChildrenFormula getHybridWithHybrids();
+  /**
+   * <code>.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 5;</code>
+   */
+  org.tti.tokens.model.grammar.HybridTokenWithHybridChildrenFormulaOrBuilder getHybridWithHybridsOrBuilder();
+
+  /**
    * <pre>
    *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 6;</code>
    */
   java.lang.String getName();
   /**
@@ -42,7 +81,7 @@ public interface BaseOrBuilder extends
    *A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
    * </pre>
    *
-   * <code>string name = 3;</code>
+   * <code>string name = 6;</code>
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -52,7 +91,7 @@ public interface BaseOrBuilder extends
    *an optionally unique symbol or identifier
    * </pre>
    *
-   * <code>string symbol = 4;</code>
+   * <code>string symbol = 7;</code>
    */
   java.lang.String getSymbol();
   /**
@@ -60,7 +99,7 @@ public interface BaseOrBuilder extends
    *an optionally unique symbol or identifier
    * </pre>
    *
-   * <code>string symbol = 4;</code>
+   * <code>string symbol = 7;</code>
    */
   com.google.protobuf.ByteString
       getSymbolBytes();
@@ -70,7 +109,7 @@ public interface BaseOrBuilder extends
    *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
    * </pre>
    *
-   * <code>string owner = 5;</code>
+   * <code>string owner = 8;</code>
    */
   java.lang.String getOwner();
   /**
@@ -78,7 +117,7 @@ public interface BaseOrBuilder extends
    *A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
    * </pre>
    *
-   * <code>string owner = 5;</code>
+   * <code>string owner = 8;</code>
    */
   com.google.protobuf.ByteString
       getOwnerBytes();
@@ -88,7 +127,7 @@ public interface BaseOrBuilder extends
    *Can represent the initial quantity created or the total minted or issued for the class.
    * </pre>
    *
-   * <code>bytes quantity = 6;</code>
+   * <code>bytes quantity = 9;</code>
    */
   com.google.protobuf.ByteString getQuantity();
 
@@ -97,7 +136,7 @@ public interface BaseOrBuilder extends
    *A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
    * </pre>
    *
-   * <code>int32 decimals = 7;</code>
+   * <code>int32 decimals = 10;</code>
    */
   int getDecimals();
 
@@ -106,7 +145,7 @@ public interface BaseOrBuilder extends
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 8;</code>
+   * <code>map&lt;string, string&gt; token_properties = 11;</code>
    */
   int getTokenPropertiesCount();
   /**
@@ -114,7 +153,7 @@ public interface BaseOrBuilder extends
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 8;</code>
+   * <code>map&lt;string, string&gt; token_properties = 11;</code>
    */
   boolean containsTokenProperties(
       java.lang.String key);
@@ -129,7 +168,7 @@ public interface BaseOrBuilder extends
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 8;</code>
+   * <code>map&lt;string, string&gt; token_properties = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getTokenPropertiesMap();
@@ -138,7 +177,7 @@ public interface BaseOrBuilder extends
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 8;</code>
+   * <code>map&lt;string, string&gt; token_properties = 11;</code>
    */
 
   java.lang.String getTokenPropertiesOrDefault(
@@ -149,7 +188,7 @@ public interface BaseOrBuilder extends
    *Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; token_properties = 8;</code>
+   * <code>map&lt;string, string&gt; token_properties = 11;</code>
    */
 
   java.lang.String getTokenPropertiesOrThrow(
@@ -160,7 +199,7 @@ public interface BaseOrBuilder extends
    *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
    * </pre>
    *
-   * <code>string constructor_name = 9;</code>
+   * <code>string constructor_name = 12;</code>
    */
   java.lang.String getConstructorName();
   /**
@@ -168,7 +207,7 @@ public interface BaseOrBuilder extends
    *a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
    * </pre>
    *
-   * <code>string constructor_name = 9;</code>
+   * <code>string constructor_name = 12;</code>
    */
   com.google.protobuf.ByteString
       getConstructorNameBytes();
@@ -178,7 +217,7 @@ public interface BaseOrBuilder extends
    *the constructor type defined in the token template artifact.
    * </pre>
    *
-   * <code>.google.protobuf.Any constructor = 10;</code>
+   * <code>.google.protobuf.Any constructor = 13;</code>
    */
   boolean hasConstructor();
   /**
@@ -186,7 +225,7 @@ public interface BaseOrBuilder extends
    *the constructor type defined in the token template artifact.
    * </pre>
    *
-   * <code>.google.protobuf.Any constructor = 10;</code>
+   * <code>.google.protobuf.Any constructor = 13;</code>
    */
   com.google.protobuf.Any getConstructor();
   /**
@@ -194,7 +233,7 @@ public interface BaseOrBuilder extends
    *the constructor type defined in the token template artifact.
    * </pre>
    *
-   * <code>.google.protobuf.Any constructor = 10;</code>
+   * <code>.google.protobuf.Any constructor = 13;</code>
    */
   com.google.protobuf.AnyOrBuilder getConstructorOrBuilder();
 
@@ -203,7 +242,7 @@ public interface BaseOrBuilder extends
    *if hybrid, this can contain the list of child token classes.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 14;</code>
    */
   java.util.List<org.tti.tokens.model.core.Base> 
       getChildTokensList();
@@ -212,7 +251,7 @@ public interface BaseOrBuilder extends
    *if hybrid, this can contain the list of child token classes.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 14;</code>
    */
   org.tti.tokens.model.core.Base getChildTokens(int index);
   /**
@@ -220,7 +259,7 @@ public interface BaseOrBuilder extends
    *if hybrid, this can contain the list of child token classes.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 14;</code>
    */
   int getChildTokensCount();
   /**
@@ -228,7 +267,7 @@ public interface BaseOrBuilder extends
    *if hybrid, this can contain the list of child token classes.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 14;</code>
    */
   java.util.List<? extends org.tti.tokens.model.core.BaseOrBuilder> 
       getChildTokensOrBuilderList();
@@ -237,8 +276,10 @@ public interface BaseOrBuilder extends
    *if hybrid, this can contain the list of child token classes.
    * </pre>
    *
-   * <code>repeated .taxonomy.model.core.Base child_tokens = 11;</code>
+   * <code>repeated .taxonomy.model.core.Base child_tokens = 14;</code>
    */
   org.tti.tokens.model.core.BaseOrBuilder getChildTokensOrBuilder(
       int index);
+
+  public org.tti.tokens.model.core.Base.TokenFormulaCase getTokenFormulaCase();
 }

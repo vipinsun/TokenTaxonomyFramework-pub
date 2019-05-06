@@ -1,23 +1,20 @@
 {
   "artifact": {
     "type": "BEHAVIOR",
-    "name": "Subdividable",
-    "aliases": [
-      "alias1",
-      "alias2"
-    ],
+    "name": "Non-transferable",
+    "aliases": [],
     "artifactSymbol": {
-      "visualSymbol": "<i>d</i>",
-      "toolingSymbol": "d"
+      "visualSymbol": "<i>~t</i>",
+      "toolingSymbol": "~t"
     },
-    "controlUri": "../../../../../../artifacts/behaviors/subdividable/subdividable.proto",
+    "controlUri": "../../../../../../artifacts/behaviors/transferable/non-transferable.proto",
     "artifactDefinition": {
-      "businessDescription": "An ability for the token to be subdivided from a single whole token into fractions, which are represented as decimal places. Any value greater than 0 will indicate how many fractions are possible where the smallest fraction is also the smallest ownable unit of the token.",
-      "businessExample": "Sub-dividable is common for crypto-currencies or tokens of fiat currency.  For example, the US Dollar is sub-dividable to 2 decimal places, where a value like .42 is possible.  Bitcoin, is sub-dividable up to 8 decimal places.",
+      "businessDescription": "Every token instance has an owner. The Non-transferable behavior prevents the owner of a token from changing.",
+      "businessExample": "A vote token, for a citizen in a public election would be non-transferable.",
       "analogies": [
         {
           "name": "Analogy 1",
-          "description": "subdividable analogy 1 description",
+          "description": "transferable analogy 1 description",
           "artifactDefinition": null
         }
       ],
@@ -26,8 +23,8 @@
     },
     "incompatibleWithSymbols": [
       {
-        "visualSymbol": "<i>~d</i>",
-        "toolingSymbol": "~d"
+        "visualSymbol": "<i>t</i>",
+        "toolingSymbol": "t"
       }
     ],
     "influencedBySymbols": [
@@ -42,13 +39,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "subdividable.proto",
+        "fileName": "non-transferable.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "subdividable.md",
+        "fileName": "non-transferable.md",
         "fileData": "",
         "artifact": null
       }

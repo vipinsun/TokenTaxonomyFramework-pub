@@ -23,8 +23,8 @@
     },
     "incompatibleWithSymbols": [
       {
-        "visualSymbol": "",
-        "toolingSymbol": ""
+        "visualSymbol": "<i>~t</i>",
+        "toolingSymbol": "~t"
       }
     ],
     "influencedBySymbols": [

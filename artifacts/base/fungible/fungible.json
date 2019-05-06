@@ -85,6 +85,24 @@
     }
   },
   "tokenType": "FUNGIBLE",
+  "singleToken": {
+    "groupStart": "[",
+    "baseToken": {
+      "baseSymbol": ""
+    },
+    "behaviors": {
+      "listStart": "{",
+      "behaviorSymbol": [],
+      "listEnd": "}"
+    },
+    "propertySets": [
+      {
+        "listStart": "+",
+        "propertySetSymbol": ""
+      }
+    ],
+    "groupEnd": "]"
+  },
   "name": "",
   "symbol": "",
   "owner": "",

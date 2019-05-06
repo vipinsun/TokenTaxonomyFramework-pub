@@ -192,7 +192,9 @@ A behavior may also include things like a sequence diagram to clearly define how
 ## Taxonomy Grammar
 
 Grammar defines how to construct a token or behavior group as a formula that is recorded as metadata in the artifact for the respective token, behavior or group.
-The grammar has a visual representation and one for tooling that does not include presentation characters for italics, Greek, super or subscript, etc.
+The grammar has a visual representation and one for tooling that does not include presentation characters for italics,Greek, super or subscript, etc. Using the grammar, a Token Formula can be written to have a shorthand definition for the template used in classifying the token.
+
+The formula uses brackets, braces and parentheses to combine the token parts.
 
 Token definitions start with the token base type:
 
@@ -201,16 +203,18 @@ Token definitions start with the token base type:
 | Fungible      |  **&tau;<sub>F</sub>** | tF |
 | Non-fungible  | **&tau;<sub>N</sub>**   |   tN |
 | Hybrid – class in (,)|      |     |
-| Non-fungible with a class of fungibles|**&tau;<sub>N</sub>(&tau;<sub>F</sub>)**      |    tN(tF) |
-| Fungible with a class of non-fungibles| **&tau;<sub>F</sub>(&tau;<sub>N</sub>)**      |    tF(tN)|
-| Fungible with a class of non-fungibles and fungibles| **&tau;<sub>F</sub>(&tau;<sub>N</sub>, &tau;<sub>F</sub>)** |   tF(tN,tF) |
-| Non-fungible with a class of fungibles and non-fungibles| **&tau;<sub>N</sub>(&tau;<sub>F</sub>, &tau;<sub>N</sub>)**| tN(tF,tN) |
+| Non-fungible with a class of fungibles|[&tau;<sub>N</sub>] (&tau;<sub>F</sub>)      |   `[tN](tF)` |
+| Fungible with a class of non-fungibles| [&tau;<sub>F</sub>] (&tau;<sub>N</sub>)      |    `[tF](tN)`|
+| Fungible with a class of non-fungibles and fungibles| [&tau;<sub>F</sub>](&tau;<sub>N</sub>, &tau;<sub>F</sub>) |   `[tF](tN,tF)` |
+| Non-fungible with a class of fungibles and non-fungibles| [&tau;<sub>N</sub>](&tau;<sub>F</sub>, &tau;<sub>N</sub>)| `[tN](tF,tN)` |
+| Non-fungible with a class of fungibles and non-fungibles, with each child having formulas| [&tau;<sub>N</sub>]([&tau;<sub>F</sub>], [&tau;<sub>N</sub>)]| `[tN]([tF],[tN])` |
 | etc.|      |     |
 
 - Behavior is a single *italic* lower-case letter or letters that is unique.
 - Behavior Group is an upper-case letter or letters that is unique with behavior formula encased in `{,}` Supply Control: `SC{m,b,r}`
-- Property Sets are prefixed with **&phi;** followed by a upper case letter or acronym that is unique to the taxonomy. **&phi** is the visual format and `ph` is the tooling. If multiple sets are used they should be group using (,).
-- Token Node is indicated surrounding the generic token formula in brackets `[]` and adds using `+` the unique non-behavioral properties, property sets, defined within them. i.e. **[&tau;<sub>N</sub>(&tau;<sub>F</sub>, &tau;<sub>N</sub>)+&phi;SKU]**
+- Property Sets are prefixed with **&phi;** followed by a upper case letter or acronym that is unique to the taxonomy. **&phi** is the visual format and `ph` is the tooling. to add a property set to a template, enclose the token definition within [] adding the property set after the behaviors with a + for each set needed. All of the token's behaviors and properties are contained within the surrounding brackets [].
+- For example, a Token Branch can be a Formula with just the base and behaviors and can then have a Node that had the Branch formula surround by brackets `[]` and adds using `+` the unique property sets, added within the brackets. i.e. **[&tau;<sub>N</sub>(&tau;<sub>F</sub>, &tau;<sub>N</sub>)+&phi;SKU]**
+- Hybrid tokens, represented as children of a base parent are added after the base's [] and contained with in parenthesis (,).  These child tokens are also contained within brackets resulting in a formula grouping like: `[]([],[])`
 
 Whole Token Formulas start with the base token type, followed by a collection of behaviors and groups within {,}, ending in any property-sets.
 

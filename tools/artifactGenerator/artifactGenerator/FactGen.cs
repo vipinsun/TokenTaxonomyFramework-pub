@@ -6,6 +6,7 @@ using log4net;
 using Newtonsoft.Json.Linq;
 using TTF.Tokens.Model.Artifact;
 using TTF.Tokens.Model.Core;
+using TTF.Tokens.Model.Grammar;
 using TTI.TTF.Taxonomy.Model;
 using TTT.TTF.Taxonomy;
 
@@ -66,18 +67,18 @@ namespace ArtifactGenerator
 					_log.Info(
 						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate --n [ARTIFACT_NAME] (optional if artifactType is Base or TokenTemplate.");
 					_log.Info(
-						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot");
+						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot, 4 = hybrid-fungibleRoot-hybridChildren, 5 = hybrid-non-fungibleRoot-hybridChildren");
 					_log.Info(
-						"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] [PATH_TO_ARTIFACTS FOLDER]");
+						"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] --p [PATH_TO_ARTIFACTS FOLDER]");
 					return;
 				}
 
 				_log.Error(
 					"Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate, (optional if artifactType is Base or TokenTemplate ");
 				_log.Error(
-					"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot");
+					"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot, 4 = hybrid-fungibleRoot-hybridChildren, 5 = hybrid-non-fungibleRoot-hybridChildren");
 				_log.Error(
-					"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] [PATH_TO_ARTIFACTS FOLDER]");
+					"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] --p [PATH_TO_ARTIFACTS FOLDER]");
 				throw new Exception("Missing required parameters.");
 			}
 
@@ -104,7 +105,7 @@ namespace ArtifactGenerator
 			{
 				throw new Exception("Missing value for --p.");
 			}
-			if (!string.IsNullOrEmpty(TaxonomyVersion.Version))
+			if (TaxonomyVersion != null)
 			{
 				_log.Info("Updating Taxonomy Version Only.");
 				var tx = new Taxonomy
@@ -132,6 +133,31 @@ namespace ArtifactGenerator
 				var txStream = File.CreateText(fullPath + "Taxonomy.json");
 				txStream.Write(formattedTxJson);
 				txStream.Close();
+
+				
+				_log.Info("Creating Formula and Grammar Definitions");
+				var formula = GenerateFormula();
+				
+				var formulaJson = jsf.Format(formula);
+				
+				var formattedFormulaJson = JToken.Parse(formulaJson).ToString();
+			
+				//test to make sure formattedJson will Deserialize.
+				try
+				{
+					JsonParser.Default.Parse<FormulaGrammar>(formattedFormulaJson);
+					_log.Info("FormulaGrammar successfully deserialized.");
+				}
+				catch (Exception e)
+				{
+					_log.Error("Json failed to deserialize back into FormulaGrammar.");
+					_log.Error(e);
+					return;
+				}
+				var formulaStream = File.CreateText(fullPath + "FormulaGrammar.json");
+				formulaStream.Write(formattedFormulaJson);
+				formulaStream.Close();
+				
 				return;
 			}
 			
@@ -198,7 +224,7 @@ namespace ArtifactGenerator
 			switch (ArtifactType)
 			{
 				case ArtifactType.Base:
-					
+					var formula = GenerateFormula();
 					artifactTypeFolder = "base";
 					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
 					var artifactBase = new Base
@@ -215,6 +241,30 @@ namespace ArtifactGenerator
 							VisualSymbol = "~d"
 						}
 					});
+					switch (BaseType)
+					{
+						case TokenType.Fungible:
+							artifactBase.SingleToken = formula.SingleToken;
+							break;
+						case TokenType.NonFungible:
+							artifactBase.SingleToken = formula.SingleToken;
+							break;
+						case TokenType.HybridFungibleRoot:
+							artifactBase.Hybrid = formula.Hybrid;
+							break;
+						case TokenType.HybridNonFungibleRoot:
+							artifactBase.Hybrid = formula.Hybrid;
+							break;
+						case TokenType.HybridFungibleRootHybridChildren:
+							artifactBase.HybridWithHybrids = formula.HybridWithHybrids;
+							break;
+						case TokenType.HybridNonFungibleRootHybridChildren:
+							artifactBase.HybridWithHybrids = formula.HybridWithHybrids;
+							break;
+						default:
+							throw new ArgumentOutOfRangeException();
+					}
+					
 					artifactJson = jsf.Format(artifactBase);
 					break;
 				case ArtifactType.Behavior:
@@ -467,9 +517,61 @@ namespace ArtifactGenerator
 			var artifactStream = File.CreateText(outputFolder.FullName + folderSeparator + ArtifactName + ".json");
 			artifactStream.Write(formattedJson);
 			artifactStream.Close();
-			
-			
+
 			_log.Info("Complete");
+		}
+
+		private static FormulaGrammar GenerateFormula()
+		{
+			var formula = new FormulaGrammar();
+
+			var singleToken = new SingleToken
+			{
+				BaseToken = new TokenBase
+				{
+					BaseSymbol = ""
+				},
+				Behaviors = new BehaviorList
+				{
+					ListStart = "{",
+					ListEnd = "}"
+				},
+				GroupStart = "[",
+				GroupEnd = "]"
+			};
+			
+			var psli = new PropertySetListItem
+			{
+				ListStart = "+",
+				PropertySetSymbol = ""
+			};
+			singleToken.PropertySets.Add(psli);
+
+			formula.SingleToken = singleToken;
+
+			var hybrid = new HybridTokenFormula
+			{
+				HybridChildrenStart = "(",
+				HybridChildrenEnd = ")",
+				Parent = singleToken
+			};
+			hybrid.ChildTokens.Add(singleToken);
+			hybrid.ChildTokens.Add(singleToken);
+
+			formula.Hybrid = hybrid;
+			
+			var hybridHybrids = new HybridTokenWithHybridChildrenFormula
+			{
+				HybridChildrenStart = "(",
+				HybridChildrenEnd = ")",
+				Parent = singleToken
+			};
+			hybridHybrids.ChildTokens.Add(hybrid);
+			hybridHybrids.ChildTokens.Add(hybrid);
+			formula.HybridWithHybrids = hybridHybrids;
+			
+			
+			return formula;
 		}
 
 		private static Base GetTokenTypeBase(string fullPath,  string folderSeparator)
@@ -489,6 +591,12 @@ namespace ArtifactGenerator
 					break;
 				case TokenType.HybridNonFungibleRoot:
 					baseName = "hybrid-non-fungibleRoot";
+					break;
+				case TokenType.HybridFungibleRootHybridChildren:
+					baseName = "hybrid-non-fungibleRoot-hybridChildren";
+					break;
+				case TokenType.HybridNonFungibleRootHybridChildren:
+					baseName = "hybrid-non-fungibleRoot-hybridChildren";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();

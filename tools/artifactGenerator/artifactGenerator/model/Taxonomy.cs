@@ -24,31 +24,33 @@ namespace TTI.TTF.Taxonomy.Model {
     static TaxonomyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg50YXhvbm9teS5wcm90bxIOdGF4b25vbXkubW9kZWwaCmNvcmUucHJvdG8i",
-            "oAYKCFRheG9ub215Eg8KB3ZlcnNpb24YASABKAkSRgoQYmFzZV90b2tlbl90",
-            "eXBlcxgCIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9ub215LkJhc2VUb2tl",
-            "blR5cGVzRW50cnkSOgoJYmVoYXZpb3JzGAMgAygLMicudGF4b25vbXkubW9k",
-            "ZWwuVGF4b25vbXkuQmVoYXZpb3JzRW50cnkSRQoPYmVoYXZpb3JfZ3JvdXBz",
-            "GAQgAygLMiwudGF4b25vbXkubW9kZWwuVGF4b25vbXkuQmVoYXZpb3JHcm91",
-            "cHNFbnRyeRJBCg1wcm9wZXJ0eV9zZXRzGAUgAygLMioudGF4b25vbXkubW9k",
-            "ZWwuVGF4b25vbXkuUHJvcGVydHlTZXRzRW50cnkSRQoPdG9rZW5fdGVtcGxh",
-            "dGVzGAYgAygLMiwudGF4b25vbXkubW9kZWwuVGF4b25vbXkuVG9rZW5UZW1w",
-            "bGF0ZXNFbnRyeRpQChNCYXNlVG9rZW5UeXBlc0VudHJ5EgsKA2tleRgBIAEo",
-            "CRIoCgV2YWx1ZRgCIAEoCzIZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZToC",
-            "OAEaTwoOQmVoYXZpb3JzRW50cnkSCwoDa2V5GAEgASgJEiwKBXZhbHVlGAIg",
-            "ASgLMh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvcjoCOAEaWQoTQmVo",
-            "YXZpb3JHcm91cHNFbnRyeRILCgNrZXkYASABKAkSMQoFdmFsdWUYAiABKAsy",
-            "Ii50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXA6AjgBGlUKEVBy",
-            "b3BlcnR5U2V0c0VudHJ5EgsKA2tleRgBIAEoCRIvCgV2YWx1ZRgCIAEoCzIg",
-            "LnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQ6AjgBGlkKE1Rva2Vu",
-            "VGVtcGxhdGVzRW50cnkSCwoDa2V5GAEgASgJEjEKBXZhbHVlGAIgASgLMiIu",
-            "dGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRlOgI4AUI3Chpvcmcu",
-            "dHRpLnR0Zi50YXhvbm9teS5tb2RlbFABqgIWVFRJLlRURi5UYXhvbm9teS5N",
-            "b2RlbGIGcHJvdG8z"));
+            "Cg50YXhvbm9teS5wcm90bxIOdGF4b25vbXkubW9kZWwaCmNvcmUucHJvdG8a",
+            "DWdyYW1tYXIucHJvdG8i4QYKCFRheG9ub215Eg8KB3ZlcnNpb24YASABKAkS",
+            "RgoQYmFzZV90b2tlbl90eXBlcxgCIAMoCzIsLnRheG9ub215Lm1vZGVsLlRh",
+            "eG9ub215LkJhc2VUb2tlblR5cGVzRW50cnkSOgoJYmVoYXZpb3JzGAMgAygL",
+            "MicudGF4b25vbXkubW9kZWwuVGF4b25vbXkuQmVoYXZpb3JzRW50cnkSRQoP",
+            "YmVoYXZpb3JfZ3JvdXBzGAQgAygLMiwudGF4b25vbXkubW9kZWwuVGF4b25v",
+            "bXkuQmVoYXZpb3JHcm91cHNFbnRyeRJBCg1wcm9wZXJ0eV9zZXRzGAUgAygL",
+            "MioudGF4b25vbXkubW9kZWwuVGF4b25vbXkuUHJvcGVydHlTZXRzRW50cnkS",
+            "RQoPdG9rZW5fdGVtcGxhdGVzGAYgAygLMiwudGF4b25vbXkubW9kZWwuVGF4",
+            "b25vbXkuVG9rZW5UZW1wbGF0ZXNFbnRyeRI/Cg9mb3JtdWxhX2dyYW1tYXIY",
+            "ByABKAsyJi50YXhvbm9teS5tb2RlbC5ncmFtbWFyLkZvcm11bGFHcmFtbWFy",
+            "GlAKE0Jhc2VUb2tlblR5cGVzRW50cnkSCwoDa2V5GAEgASgJEigKBXZhbHVl",
+            "GAIgASgLMhkudGF4b25vbXkubW9kZWwuY29yZS5CYXNlOgI4ARpPCg5CZWhh",
+            "dmlvcnNFbnRyeRILCgNrZXkYASABKAkSLAoFdmFsdWUYAiABKAsyHS50YXhv",
+            "bm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yOgI4ARpZChNCZWhhdmlvckdyb3Vw",
+            "c0VudHJ5EgsKA2tleRgBIAEoCRIxCgV2YWx1ZRgCIAEoCzIiLnRheG9ub215",
+            "Lm1vZGVsLmNvcmUuQmVoYXZpb3JHcm91cDoCOAEaVQoRUHJvcGVydHlTZXRz",
+            "RW50cnkSCwoDa2V5GAEgASgJEi8KBXZhbHVlGAIgASgLMiAudGF4b25vbXku",
+            "bW9kZWwuY29yZS5Qcm9wZXJ0eVNldDoCOAEaWQoTVG9rZW5UZW1wbGF0ZXNF",
+            "bnRyeRILCgNrZXkYASABKAkSMQoFdmFsdWUYAiABKAsyIi50YXhvbm9teS5t",
+            "b2RlbC5jb3JlLlRva2VuVGVtcGxhdGU6AjgBQjcKGm9yZy50dGkudHRmLnRh",
+            "eG9ub215Lm1vZGVsUAGqAhZUVEkuVFRGLlRheG9ub215Lk1vZGVsYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
           }));
     }
     #endregion
@@ -89,6 +91,7 @@ namespace TTI.TTF.Taxonomy.Model {
       behaviorGroups_ = other.behaviorGroups_.Clone();
       propertySets_ = other.propertySets_.Clone();
       tokenTemplates_ = other.tokenTemplates_.Clone();
+      formulaGrammar_ = other.formulaGrammar_ != null ? other.formulaGrammar_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -158,6 +161,17 @@ namespace TTI.TTF.Taxonomy.Model {
       get { return tokenTemplates_; }
     }
 
+    /// <summary>Field number for the "formula_grammar" field.</summary>
+    public const int FormulaGrammarFieldNumber = 7;
+    private global::TTF.Tokens.Model.Grammar.FormulaGrammar formulaGrammar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTF.Tokens.Model.Grammar.FormulaGrammar FormulaGrammar {
+      get { return formulaGrammar_; }
+      set {
+        formulaGrammar_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Taxonomy);
@@ -177,6 +191,7 @@ namespace TTI.TTF.Taxonomy.Model {
       if (!BehaviorGroups.Equals(other.BehaviorGroups)) return false;
       if (!PropertySets.Equals(other.PropertySets)) return false;
       if (!TokenTemplates.Equals(other.TokenTemplates)) return false;
+      if (!object.Equals(FormulaGrammar, other.FormulaGrammar)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -189,6 +204,7 @@ namespace TTI.TTF.Taxonomy.Model {
       hash ^= BehaviorGroups.GetHashCode();
       hash ^= PropertySets.GetHashCode();
       hash ^= TokenTemplates.GetHashCode();
+      if (formulaGrammar_ != null) hash ^= FormulaGrammar.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -211,6 +227,10 @@ namespace TTI.TTF.Taxonomy.Model {
       behaviorGroups_.WriteTo(output, _map_behaviorGroups_codec);
       propertySets_.WriteTo(output, _map_propertySets_codec);
       tokenTemplates_.WriteTo(output, _map_tokenTemplates_codec);
+      if (formulaGrammar_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(FormulaGrammar);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -227,6 +247,9 @@ namespace TTI.TTF.Taxonomy.Model {
       size += behaviorGroups_.CalculateSize(_map_behaviorGroups_codec);
       size += propertySets_.CalculateSize(_map_propertySets_codec);
       size += tokenTemplates_.CalculateSize(_map_tokenTemplates_codec);
+      if (formulaGrammar_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FormulaGrammar);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -246,6 +269,12 @@ namespace TTI.TTF.Taxonomy.Model {
       behaviorGroups_.Add(other.behaviorGroups_);
       propertySets_.Add(other.propertySets_);
       tokenTemplates_.Add(other.tokenTemplates_);
+      if (other.formulaGrammar_ != null) {
+        if (formulaGrammar_ == null) {
+          FormulaGrammar = new global::TTF.Tokens.Model.Grammar.FormulaGrammar();
+        }
+        FormulaGrammar.MergeFrom(other.FormulaGrammar);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -279,6 +308,13 @@ namespace TTI.TTF.Taxonomy.Model {
           }
           case 50: {
             tokenTemplates_.AddEntriesFrom(input, _map_tokenTemplates_codec);
+            break;
+          }
+          case 58: {
+            if (formulaGrammar_ == null) {
+              FormulaGrammar = new global::TTF.Tokens.Model.Grammar.FormulaGrammar();
+            }
+            input.ReadMessage(FormulaGrammar);
             break;
           }
         }

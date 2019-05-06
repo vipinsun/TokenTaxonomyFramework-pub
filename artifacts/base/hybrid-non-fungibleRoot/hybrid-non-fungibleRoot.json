@@ -85,6 +85,66 @@
     }
   },
   "tokenType": "HYBRID_NON_FUNGIBLE_ROOT",
+  "hybrid": {
+    "parent": {
+      "groupStart": "[",
+      "baseToken": {
+        "baseSymbol": ""
+      },
+      "behaviors": {
+        "listStart": "{",
+        "behaviorSymbol": [],
+        "listEnd": "}"
+      },
+      "propertySets": [
+        {
+          "listStart": "+",
+          "propertySetSymbol": ""
+        }
+      ],
+      "groupEnd": "]"
+    },
+    "hybridChildrenStart": "(",
+    "childTokens": [
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      },
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      }
+    ],
+    "hybridChildrenEnd": ")"
+  },
   "name": "",
   "symbol": "",
   "owner": "",

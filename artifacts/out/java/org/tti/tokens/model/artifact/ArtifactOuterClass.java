@@ -164,20 +164,22 @@ public final class ArtifactOuterClass {
       "y.model.artifact.ArtifactType\022@\n\017artifac" +
       "t_symbol\030\002 \001(\0132\'.taxonomy.model.artifact" +
       ".ArtifactSymbol\")\n\026DeleteArtifactRespons" +
-      "e\022\017\n\007deleted\030\001 \001(\010*c\n\tTokenType\022\014\n\010FUNGI" +
-      "BLE\020\000\022\020\n\014NON_FUNGIBLE\020\001\022\030\n\024HYBRID_FUNGIB" +
-      "LE_ROOT\020\002\022\034\n\030HYBRID_NON_FUNGIBLE_ROOT\020\003*" +
-      "`\n\014ArtifactType\022\010\n\004BASE\020\000\022\014\n\010BEHAVIOR\020\001\022" +
-      "\022\n\016BEHAVIOR_GROUP\020\002\022\020\n\014PROPERTY_SET\020\003\022\022\n" +
-      "\016TOKEN_TEMPLATE\020\004*B\n\017ArtifactContent\022\016\n\n" +
-      "DEFINITION\020\000\022\013\n\007CONTROL\020\001\022\007\n\003UML\020\002\022\t\n\005OT" +
-      "HER\020\003*@\n\013MappingType\022\017\n\013SOURCE_CODE\020\000\022\022\n" +
-      "\016IMPLEMENTATION\020\001\022\014\n\010RESOURCE\020\002*v\n\016Targe" +
-      "tPlatform\022\025\n\021ETHEREUM_SOLIDITY\020\000\022\020\n\014CHAI" +
-      "NCODE_GO\020\001\022\022\n\016CHAINCODE_JAVA\020\002\022\022\n\016CHAINC" +
-      "ODE_NODE\020\003\022\t\n\005CORDA\020\004\022\010\n\004DAML\020\005B=\n\035org.t" +
-      "ti.tokens.model.artifactP\001\252\002\031TTF.Tokens." +
-      "Model.Artifactb\006proto3"
+      "e\022\017\n\007deleted\030\001 \001(\010*\273\001\n\tTokenType\022\014\n\010FUNG" +
+      "IBLE\020\000\022\020\n\014NON_FUNGIBLE\020\001\022\030\n\024HYBRID_FUNGI" +
+      "BLE_ROOT\020\002\022\034\n\030HYBRID_NON_FUNGIBLE_ROOT\020\003" +
+      "\022(\n$HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN" +
+      "\020\004\022,\n(HYBRID_NON_FUNGIBLE_ROOT_HYBRID_CH" +
+      "ILDREN\020\005*`\n\014ArtifactType\022\010\n\004BASE\020\000\022\014\n\010BE" +
+      "HAVIOR\020\001\022\022\n\016BEHAVIOR_GROUP\020\002\022\020\n\014PROPERTY" +
+      "_SET\020\003\022\022\n\016TOKEN_TEMPLATE\020\004*B\n\017ArtifactCo" +
+      "ntent\022\016\n\nDEFINITION\020\000\022\013\n\007CONTROL\020\001\022\007\n\003UM" +
+      "L\020\002\022\t\n\005OTHER\020\003*@\n\013MappingType\022\017\n\013SOURCE_" +
+      "CODE\020\000\022\022\n\016IMPLEMENTATION\020\001\022\014\n\010RESOURCE\020\002" +
+      "*v\n\016TargetPlatform\022\025\n\021ETHEREUM_SOLIDITY\020" +
+      "\000\022\020\n\014CHAINCODE_GO\020\001\022\022\n\016CHAINCODE_JAVA\020\002\022" +
+      "\022\n\016CHAINCODE_NODE\020\003\022\t\n\005CORDA\020\004\022\010\n\004DAML\020\005" +
+      "B=\n\035org.tti.tokens.model.artifactP\001\252\002\031TT" +
+      "F.Tokens.Model.Artifactb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

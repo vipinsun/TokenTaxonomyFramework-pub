@@ -25,59 +25,65 @@ namespace TTF.Tokens.Model.Core {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgpjb3JlLnByb3RvEhN0YXhvbm9teS5tb2RlbC5jb3JlGhlnb29nbGUvcHJv",
-            "dG9idWYvYW55LnByb3RvGg5hcnRpZmFjdC5wcm90byK8AwoEQmFzZRIzCghh",
-            "cnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlm",
-            "YWN0EjYKCnRva2VuX3R5cGUYAiABKA4yIi50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5Ub2tlblR5cGUSDAoEbmFtZRgDIAEoCRIOCgZzeW1ib2wYBCABKAkS",
-            "DQoFb3duZXIYBSABKAkSEAoIcXVhbnRpdHkYBiABKAwSEAoIZGVjaW1hbHMY",
-            "ByABKAUSSAoQdG9rZW5fcHJvcGVydGllcxgIIAMoCzIuLnRheG9ub215Lm1v",
-            "ZGVsLmNvcmUuQmFzZS5Ub2tlblByb3BlcnRpZXNFbnRyeRIYChBjb25zdHJ1",
-            "Y3Rvcl9uYW1lGAkgASgJEikKC2NvbnN0cnVjdG9yGAogASgLMhQuZ29vZ2xl",
-            "LnByb3RvYnVmLkFueRIvCgxjaGlsZF90b2tlbnMYCyADKAsyGS50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlLkJhc2UaNgoUVG9rZW5Qcm9wZXJ0aWVzRW50cnkSCwoD",
-            "a2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASKlAgoIQmVoYXZpb3ISMwoI",
-            "YXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRp",
-            "ZmFjdBIQCghleHRlcm5hbBgCIAEoCBIhChliZWhhdmlvcl9jb25zdHJ1Y3Rv",
-            "cl9uYW1lGAMgASgJEjIKFGJlaGF2aW9yX2NvbnN0cnVjdG9yGAQgASgLMhQu",
-            "Z29vZ2xlLnByb3RvYnVmLkFueRI9ChRiZWhhdmlvcl9pbnZvY2F0aW9ucxgF",
-            "IAMoCzIfLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvbhI8ChViZWhh",
-            "dmlvcmFsX3Byb3BlcnRpZXMYBiADKAsyHS50YXhvbm9teS5tb2RlbC5jb3Jl",
-            "LlByb3BlcnR5Is4CCg1CZWhhdmlvckdyb3VwEjMKCGFydGlmYWN0GAEgASgL",
-            "MiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSQQoQYmVoYXZp",
-            "b3Jfc3ltYm9scxgCIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFy",
-            "dGlmYWN0U3ltYm9sEmIKGW1lbWJlcl9iZWhhdmlvcl9hcnRpZmFjdHMYAyAD",
-            "KAsyPy50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXAuTWVtYmVy",
-            "QmVoYXZpb3JBcnRpZmFjdHNFbnRyeRphChxNZW1iZXJCZWhhdmlvckFydGlm",
-            "YWN0c0VudHJ5EgsKA2tleRgBIAEoCRIwCgV2YWx1ZRgCIAEoCzIhLnRheG9u",
-            "b215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0OgI4ASJ1CgtQcm9wZXJ0eVNl",
-            "dBIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
-            "LkFydGlmYWN0EjEKCnByb3BlcnRpZXMYAiADKAsyHS50YXhvbm9teS5tb2Rl",
-            "bC5jb3JlLlByb3BlcnR5InIKCFByb3BlcnR5EgwKBG5hbWUYASABKAkSGQoR",
-            "dmFsdWVfZGVzY3JpcHRpb24YAiABKAkSPQoUcHJvcGVydHlfaW52b2NhdGlv",
-            "bnMYAyADKAsyHy50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb24ilQIK",
-            "DVRva2VuVGVtcGxhdGUSMwoIYXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5t",
-            "b2RlbC5hcnRpZmFjdC5BcnRpZmFjdBInCgRiYXNlGAIgASgLMhkudGF4b25v",
-            "bXkubW9kZWwuY29yZS5CYXNlEjAKCWJlaGF2aW9ycxgDIAMoCzIdLnRheG9u",
-            "b215Lm1vZGVsLmNvcmUuQmVoYXZpb3ISOwoPYmVoYXZpb3JfZ3JvdXBzGAQg",
-            "AygLMiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwEjcKDXBy",
-            "b3BlcnR5X3NldHMYBSADKAsyIC50YXhvbm9teS5tb2RlbC5jb3JlLlByb3Bl",
-            "cnR5U2V0IqMBCgpJbnZvY2F0aW9uEgwKBG5hbWUYASABKAkSEwoLZGVzY3Jp",
-            "cHRpb24YAiABKAkSNwoHcmVxdWVzdBgDIAEoCzImLnRheG9ub215Lm1vZGVs",
-            "LmNvcmUuSW52b2NhdGlvblJlcXVlc3QSOQoIcmVzcG9uc2UYBCABKAsyJy50",
-            "YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25SZXNwb25zZSKKAQoRSW52",
-            "b2NhdGlvblJlcXVlc3QSHAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkS",
-            "QgoQaW5wdXRfcGFyYW1ldGVycxgCIAMoCzIoLnRheG9ub215Lm1vZGVsLmNv",
-            "cmUuSW52b2NhdGlvblBhcmFtZXRlchITCgtkZXNjcmlwdGlvbhgDIAEoCSKM",
-            "AQoSSW52b2NhdGlvblJlc3BvbnNlEhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1l",
-            "GAEgASgJEkMKEW91dHB1dF9wYXJhbWV0ZXJzGAIgAygLMigudGF4b25vbXku",
-            "bW9kZWwuY29yZS5JbnZvY2F0aW9uUGFyYW1ldGVyEhMKC2Rlc2NyaXB0aW9u",
-            "GAMgASgJIj4KE0ludm9jYXRpb25QYXJhbWV0ZXISDAoEbmFtZRgBIAEoCRIZ",
-            "ChF2YWx1ZV9kZXNjcmlwdGlvbhgCIAEoCUI1ChlvcmcudHRpLnRva2Vucy5t",
-            "b2RlbC5jb3JlUAGqAhVUVEYuVG9rZW5zLk1vZGVsLkNvcmViBnByb3RvMw=="));
+            "dG9idWYvYW55LnByb3RvGg5hcnRpZmFjdC5wcm90bxoNZ3JhbW1hci5wcm90",
+            "byKlBQoEQmFzZRIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVs",
+            "LmFydGlmYWN0LkFydGlmYWN0EjYKCnRva2VuX3R5cGUYAiABKA4yIi50YXhv",
+            "bm9teS5tb2RlbC5hcnRpZmFjdC5Ub2tlblR5cGUSOwoMc2luZ2xlX3Rva2Vu",
+            "GAMgASgLMiMudGF4b25vbXkubW9kZWwuZ3JhbW1hci5TaW5nbGVUb2tlbkgA",
+            "EjwKBmh5YnJpZBgEIAEoCzIqLnRheG9ub215Lm1vZGVsLmdyYW1tYXIuSHli",
+            "cmlkVG9rZW5Gb3JtdWxhSAASWwoTaHlicmlkX3dpdGhfaHlicmlkcxgFIAEo",
+            "CzI8LnRheG9ub215Lm1vZGVsLmdyYW1tYXIuSHlicmlkVG9rZW5XaXRoSHli",
+            "cmlkQ2hpbGRyZW5Gb3JtdWxhSAASDAoEbmFtZRgGIAEoCRIOCgZzeW1ib2wY",
+            "ByABKAkSDQoFb3duZXIYCCABKAkSEAoIcXVhbnRpdHkYCSABKAwSEAoIZGVj",
+            "aW1hbHMYCiABKAUSSAoQdG9rZW5fcHJvcGVydGllcxgLIAMoCzIuLnRheG9u",
+            "b215Lm1vZGVsLmNvcmUuQmFzZS5Ub2tlblByb3BlcnRpZXNFbnRyeRIYChBj",
+            "b25zdHJ1Y3Rvcl9uYW1lGAwgASgJEikKC2NvbnN0cnVjdG9yGA0gASgLMhQu",
+            "Z29vZ2xlLnByb3RvYnVmLkFueRIvCgxjaGlsZF90b2tlbnMYDiADKAsyGS50",
+            "YXhvbm9teS5tb2RlbC5jb3JlLkJhc2UaNgoUVG9rZW5Qcm9wZXJ0aWVzRW50",
+            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4AUIPCg10b2tlbl9m",
+            "b3JtdWxhIqUCCghCZWhhdmlvchIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9u",
+            "b215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0EhAKCGV4dGVybmFsGAIgASgI",
+            "EiEKGWJlaGF2aW9yX2NvbnN0cnVjdG9yX25hbWUYAyABKAkSMgoUYmVoYXZp",
+            "b3JfY29uc3RydWN0b3IYBCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55Ej0K",
+            "FGJlaGF2aW9yX2ludm9jYXRpb25zGAUgAygLMh8udGF4b25vbXkubW9kZWwu",
+            "Y29yZS5JbnZvY2F0aW9uEjwKFWJlaGF2aW9yYWxfcHJvcGVydGllcxgGIAMo",
+            "CzIdLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHkizgIKDUJlaGF2aW9y",
+            "R3JvdXASMwoIYXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5BcnRpZmFjdBJBChBiZWhhdmlvcl9zeW1ib2xzGAIgAygLMicudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wSYgoZbWVtYmVy",
+            "X2JlaGF2aW9yX2FydGlmYWN0cxgDIAMoCzI/LnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuQmVoYXZpb3JHcm91cC5NZW1iZXJCZWhhdmlvckFydGlmYWN0c0VudHJ5",
+            "GmEKHE1lbWJlckJlaGF2aW9yQXJ0aWZhY3RzRW50cnkSCwoDa2V5GAEgASgJ",
+            "EjAKBXZhbHVlGAIgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0",
+            "aWZhY3Q6AjgBInUKC1Byb3BlcnR5U2V0EjMKCGFydGlmYWN0GAEgASgLMiEu",
+            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSMQoKcHJvcGVydGll",
+            "cxgCIAMoCzIdLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHkicgoIUHJv",
+            "cGVydHkSDAoEbmFtZRgBIAEoCRIZChF2YWx1ZV9kZXNjcmlwdGlvbhgCIAEo",
+            "CRI9ChRwcm9wZXJ0eV9pbnZvY2F0aW9ucxgDIAMoCzIfLnRheG9ub215Lm1v",
+            "ZGVsLmNvcmUuSW52b2NhdGlvbiKVAgoNVG9rZW5UZW1wbGF0ZRIzCghhcnRp",
+            "ZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0",
+            "EicKBGJhc2UYAiABKAsyGS50YXhvbm9teS5tb2RlbC5jb3JlLkJhc2USMAoJ",
+            "YmVoYXZpb3JzGAMgAygLMh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlv",
+            "chI7Cg9iZWhhdmlvcl9ncm91cHMYBCADKAsyIi50YXhvbm9teS5tb2RlbC5j",
+            "b3JlLkJlaGF2aW9yR3JvdXASNwoNcHJvcGVydHlfc2V0cxgFIAMoCzIgLnRh",
+            "eG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQiowEKCkludm9jYXRpb24S",
+            "DAoEbmFtZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRI3CgdyZXF1ZXN0",
+            "GAMgASgLMiYudGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uUmVxdWVz",
+            "dBI5CghyZXNwb25zZRgEIAEoCzInLnRheG9ub215Lm1vZGVsLmNvcmUuSW52",
+            "b2NhdGlvblJlc3BvbnNlIooBChFJbnZvY2F0aW9uUmVxdWVzdBIcChRjb250",
+            "cm9sX21lc3NhZ2VfbmFtZRgBIAEoCRJCChBpbnB1dF9wYXJhbWV0ZXJzGAIg",
+            "AygLMigudGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uUGFyYW1ldGVy",
+            "EhMKC2Rlc2NyaXB0aW9uGAMgASgJIowBChJJbnZvY2F0aW9uUmVzcG9uc2US",
+            "HAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkSQwoRb3V0cHV0X3BhcmFt",
+            "ZXRlcnMYAiADKAsyKC50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25Q",
+            "YXJhbWV0ZXISEwoLZGVzY3JpcHRpb24YAyABKAkiPgoTSW52b2NhdGlvblBh",
+            "cmFtZXRlchIMCgRuYW1lGAEgASgJEhkKEXZhbHVlX2Rlc2NyaXB0aW9uGAIg",
+            "ASgJQjUKGW9yZy50dGkudG9rZW5zLm1vZGVsLmNvcmVQAaoCFVRURi5Ub2tl",
+            "bnMuTW9kZWwuQ29yZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Base), global::TTF.Tokens.Model.Core.Base.Parser, new[]{ "Artifact", "TokenType", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor", "ChildTokens" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Base), global::TTF.Tokens.Model.Core.Base.Parser, new[]{ "Artifact", "TokenType", "SingleToken", "Hybrid", "HybridWithHybrids", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor", "ChildTokens" }, new[]{ "TokenFormula" }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.Behavior), global::TTF.Tokens.Model.Core.Behavior.Parser, new[]{ "Artifact", "External", "BehaviorConstructorName", "BehaviorConstructor", "BehaviorInvocations", "BehavioralProperties" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.BehaviorGroup), global::TTF.Tokens.Model.Core.BehaviorGroup.Parser, new[]{ "Artifact", "BehaviorSymbols", "MemberBehaviorArtifacts" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Core.PropertySet), global::TTF.Tokens.Model.Core.PropertySet.Parser, new[]{ "Artifact", "Properties" }, null, null, null),
@@ -132,6 +138,18 @@ namespace TTF.Tokens.Model.Core {
       constructorName_ = other.constructorName_;
       constructor_ = other.constructor_ != null ? other.constructor_.Clone() : null;
       childTokens_ = other.childTokens_.Clone();
+      switch (other.TokenFormulaCase) {
+        case TokenFormulaOneofCase.SingleToken:
+          SingleToken = other.SingleToken.Clone();
+          break;
+        case TokenFormulaOneofCase.Hybrid:
+          Hybrid = other.Hybrid.Clone();
+          break;
+        case TokenFormulaOneofCase.HybridWithHybrids:
+          HybridWithHybrids = other.HybridWithHybrids.Clone();
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -162,8 +180,41 @@ namespace TTF.Tokens.Model.Core {
       }
     }
 
+    /// <summary>Field number for the "single_token" field.</summary>
+    public const int SingleTokenFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTF.Tokens.Model.Grammar.SingleToken SingleToken {
+      get { return tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken ? (global::TTF.Tokens.Model.Grammar.SingleToken) tokenFormula_ : null; }
+      set {
+        tokenFormula_ = value;
+        tokenFormulaCase_ = value == null ? TokenFormulaOneofCase.None : TokenFormulaOneofCase.SingleToken;
+      }
+    }
+
+    /// <summary>Field number for the "hybrid" field.</summary>
+    public const int HybridFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTF.Tokens.Model.Grammar.HybridTokenFormula Hybrid {
+      get { return tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid ? (global::TTF.Tokens.Model.Grammar.HybridTokenFormula) tokenFormula_ : null; }
+      set {
+        tokenFormula_ = value;
+        tokenFormulaCase_ = value == null ? TokenFormulaOneofCase.None : TokenFormulaOneofCase.Hybrid;
+      }
+    }
+
+    /// <summary>Field number for the "hybrid_with_hybrids" field.</summary>
+    public const int HybridWithHybridsFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula HybridWithHybrids {
+      get { return tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids ? (global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula) tokenFormula_ : null; }
+      set {
+        tokenFormula_ = value;
+        tokenFormulaCase_ = value == null ? TokenFormulaOneofCase.None : TokenFormulaOneofCase.HybridWithHybrids;
+      }
+    }
+
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 3;
+    public const int NameFieldNumber = 6;
     private string name_ = "";
     /// <summary>
     ///A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
@@ -177,7 +228,7 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "symbol" field.</summary>
-    public const int SymbolFieldNumber = 4;
+    public const int SymbolFieldNumber = 7;
     private string symbol_ = "";
     /// <summary>
     ///an optionally unique symbol or identifier
@@ -191,7 +242,7 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "owner" field.</summary>
-    public const int OwnerFieldNumber = 5;
+    public const int OwnerFieldNumber = 8;
     private string owner_ = "";
     /// <summary>
     ///A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
@@ -205,7 +256,7 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "quantity" field.</summary>
-    public const int QuantityFieldNumber = 6;
+    public const int QuantityFieldNumber = 9;
     private pb::ByteString quantity_ = pb::ByteString.Empty;
     /// <summary>
     ///Can represent the initial quantity created or the total minted or issued for the class.
@@ -219,7 +270,7 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "decimals" field.</summary>
-    public const int DecimalsFieldNumber = 7;
+    public const int DecimalsFieldNumber = 10;
     private int decimals_;
     /// <summary>
     ///A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
@@ -233,9 +284,9 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "token_properties" field.</summary>
-    public const int TokenPropertiesFieldNumber = 8;
+    public const int TokenPropertiesFieldNumber = 11;
     private static readonly pbc::MapField<string, string>.Codec _map_tokenProperties_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 66);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 90);
     private readonly pbc::MapField<string, string> tokenProperties_ = new pbc::MapField<string, string>();
     /// <summary>
     ///Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
@@ -246,7 +297,7 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "constructor_name" field.</summary>
-    public const int ConstructorNameFieldNumber = 9;
+    public const int ConstructorNameFieldNumber = 12;
     private string constructorName_ = "";
     /// <summary>
     ///a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
@@ -260,7 +311,7 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "constructor" field.</summary>
-    public const int ConstructorFieldNumber = 10;
+    public const int ConstructorFieldNumber = 13;
     private global::Google.Protobuf.WellKnownTypes.Any constructor_;
     /// <summary>
     ///the constructor type defined in the token template artifact.
@@ -274,9 +325,9 @@ namespace TTF.Tokens.Model.Core {
     }
 
     /// <summary>Field number for the "child_tokens" field.</summary>
-    public const int ChildTokensFieldNumber = 11;
+    public const int ChildTokensFieldNumber = 14;
     private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Core.Base> _repeated_childTokens_codec
-        = pb::FieldCodec.ForMessage(90, global::TTF.Tokens.Model.Core.Base.Parser);
+        = pb::FieldCodec.ForMessage(114, global::TTF.Tokens.Model.Core.Base.Parser);
     private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Core.Base> childTokens_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Core.Base>();
     /// <summary>
     ///if hybrid, this can contain the list of child token classes.
@@ -284,6 +335,26 @@ namespace TTF.Tokens.Model.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTF.Tokens.Model.Core.Base> ChildTokens {
       get { return childTokens_; }
+    }
+
+    private object tokenFormula_;
+    /// <summary>Enum of possible cases for the "token_formula" oneof.</summary>
+    public enum TokenFormulaOneofCase {
+      None = 0,
+      SingleToken = 3,
+      Hybrid = 4,
+      HybridWithHybrids = 5,
+    }
+    private TokenFormulaOneofCase tokenFormulaCase_ = TokenFormulaOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TokenFormulaOneofCase TokenFormulaCase {
+      get { return tokenFormulaCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearTokenFormula() {
+      tokenFormulaCase_ = TokenFormulaOneofCase.None;
+      tokenFormula_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -301,6 +372,9 @@ namespace TTF.Tokens.Model.Core {
       }
       if (!object.Equals(Artifact, other.Artifact)) return false;
       if (TokenType != other.TokenType) return false;
+      if (!object.Equals(SingleToken, other.SingleToken)) return false;
+      if (!object.Equals(Hybrid, other.Hybrid)) return false;
+      if (!object.Equals(HybridWithHybrids, other.HybridWithHybrids)) return false;
       if (Name != other.Name) return false;
       if (Symbol != other.Symbol) return false;
       if (Owner != other.Owner) return false;
@@ -310,6 +384,7 @@ namespace TTF.Tokens.Model.Core {
       if (ConstructorName != other.ConstructorName) return false;
       if (!object.Equals(Constructor, other.Constructor)) return false;
       if(!childTokens_.Equals(other.childTokens_)) return false;
+      if (TokenFormulaCase != other.TokenFormulaCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -318,6 +393,9 @@ namespace TTF.Tokens.Model.Core {
       int hash = 1;
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
       if (TokenType != 0) hash ^= TokenType.GetHashCode();
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken) hash ^= SingleToken.GetHashCode();
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid) hash ^= Hybrid.GetHashCode();
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids) hash ^= HybridWithHybrids.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (Owner.Length != 0) hash ^= Owner.GetHashCode();
@@ -327,6 +405,7 @@ namespace TTF.Tokens.Model.Core {
       if (ConstructorName.Length != 0) hash ^= ConstructorName.GetHashCode();
       if (constructor_ != null) hash ^= Constructor.GetHashCode();
       hash ^= childTokens_.GetHashCode();
+      hash ^= (int) tokenFormulaCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -348,33 +427,45 @@ namespace TTF.Tokens.Model.Core {
         output.WriteRawTag(16);
         output.WriteEnum((int) TokenType);
       }
-      if (Name.Length != 0) {
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken) {
         output.WriteRawTag(26);
+        output.WriteMessage(SingleToken);
+      }
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Hybrid);
+      }
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids) {
+        output.WriteRawTag(42);
+        output.WriteMessage(HybridWithHybrids);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(50);
         output.WriteString(Name);
       }
       if (Symbol.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(Symbol);
       }
       if (Owner.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteString(Owner);
       }
       if (Quantity.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteBytes(Quantity);
       }
       if (Decimals != 0) {
-        output.WriteRawTag(56);
+        output.WriteRawTag(80);
         output.WriteInt32(Decimals);
       }
       tokenProperties_.WriteTo(output, _map_tokenProperties_codec);
       if (ConstructorName.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(98);
         output.WriteString(ConstructorName);
       }
       if (constructor_ != null) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(106);
         output.WriteMessage(Constructor);
       }
       childTokens_.WriteTo(output, _repeated_childTokens_codec);
@@ -391,6 +482,15 @@ namespace TTF.Tokens.Model.Core {
       }
       if (TokenType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
+      }
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SingleToken);
+      }
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Hybrid);
+      }
+      if (tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HybridWithHybrids);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -428,7 +528,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -456,11 +556,32 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.constructor_ != null) {
         if (constructor_ == null) {
-          constructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
+          Constructor = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         Constructor.MergeFrom(other.Constructor);
       }
       childTokens_.Add(other.childTokens_);
+      switch (other.TokenFormulaCase) {
+        case TokenFormulaOneofCase.SingleToken:
+          if (SingleToken == null) {
+            SingleToken = new global::TTF.Tokens.Model.Grammar.SingleToken();
+          }
+          SingleToken.MergeFrom(other.SingleToken);
+          break;
+        case TokenFormulaOneofCase.Hybrid:
+          if (Hybrid == null) {
+            Hybrid = new global::TTF.Tokens.Model.Grammar.HybridTokenFormula();
+          }
+          Hybrid.MergeFrom(other.Hybrid);
+          break;
+        case TokenFormulaOneofCase.HybridWithHybrids:
+          if (HybridWithHybrids == null) {
+            HybridWithHybrids = new global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula();
+          }
+          HybridWithHybrids.MergeFrom(other.HybridWithHybrids);
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -474,51 +595,78 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
           case 16: {
-            tokenType_ = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
+            TokenType = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
             break;
           }
           case 26: {
-            Name = input.ReadString();
+            global::TTF.Tokens.Model.Grammar.SingleToken subBuilder = new global::TTF.Tokens.Model.Grammar.SingleToken();
+            if (tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken) {
+              subBuilder.MergeFrom(SingleToken);
+            }
+            input.ReadMessage(subBuilder);
+            SingleToken = subBuilder;
             break;
           }
           case 34: {
-            Symbol = input.ReadString();
+            global::TTF.Tokens.Model.Grammar.HybridTokenFormula subBuilder = new global::TTF.Tokens.Model.Grammar.HybridTokenFormula();
+            if (tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid) {
+              subBuilder.MergeFrom(Hybrid);
+            }
+            input.ReadMessage(subBuilder);
+            Hybrid = subBuilder;
             break;
           }
           case 42: {
-            Owner = input.ReadString();
+            global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula subBuilder = new global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula();
+            if (tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids) {
+              subBuilder.MergeFrom(HybridWithHybrids);
+            }
+            input.ReadMessage(subBuilder);
+            HybridWithHybrids = subBuilder;
             break;
           }
           case 50: {
-            Quantity = input.ReadBytes();
+            Name = input.ReadString();
             break;
           }
-          case 56: {
-            Decimals = input.ReadInt32();
+          case 58: {
+            Symbol = input.ReadString();
             break;
           }
           case 66: {
-            tokenProperties_.AddEntriesFrom(input, _map_tokenProperties_codec);
+            Owner = input.ReadString();
             break;
           }
           case 74: {
-            ConstructorName = input.ReadString();
+            Quantity = input.ReadBytes();
             break;
           }
-          case 82: {
-            if (constructor_ == null) {
-              constructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
-            }
-            input.ReadMessage(constructor_);
+          case 80: {
+            Decimals = input.ReadInt32();
             break;
           }
           case 90: {
+            tokenProperties_.AddEntriesFrom(input, _map_tokenProperties_codec);
+            break;
+          }
+          case 98: {
+            ConstructorName = input.ReadString();
+            break;
+          }
+          case 106: {
+            if (constructor_ == null) {
+              Constructor = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(Constructor);
+            break;
+          }
+          case 114: {
             childTokens_.AddEntriesFrom(input, _repeated_childTokens_codec);
             break;
           }
@@ -737,7 +885,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -749,7 +897,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.behaviorConstructor_ != null) {
         if (behaviorConstructor_ == null) {
-          behaviorConstructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
+          BehaviorConstructor = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         BehaviorConstructor.MergeFrom(other.BehaviorConstructor);
       }
@@ -768,9 +916,9 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
           case 16: {
@@ -783,9 +931,9 @@ namespace TTF.Tokens.Model.Core {
           }
           case 34: {
             if (behaviorConstructor_ == null) {
-              behaviorConstructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
+              BehaviorConstructor = new global::Google.Protobuf.WellKnownTypes.Any();
             }
-            input.ReadMessage(behaviorConstructor_);
+            input.ReadMessage(BehaviorConstructor);
             break;
           }
           case 42: {
@@ -942,7 +1090,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -961,9 +1109,9 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
           case 18: {
@@ -1102,7 +1250,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1120,9 +1268,9 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
           case 18: {
@@ -1485,13 +1633,13 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
       if (other.base_ != null) {
         if (base_ == null) {
-          base_ = new global::TTF.Tokens.Model.Core.Base();
+          Base = new global::TTF.Tokens.Model.Core.Base();
         }
         Base.MergeFrom(other.Base);
       }
@@ -1511,16 +1659,16 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(artifact_);
+            input.ReadMessage(Artifact);
             break;
           }
           case 18: {
             if (base_ == null) {
-              base_ = new global::TTF.Tokens.Model.Core.Base();
+              Base = new global::TTF.Tokens.Model.Core.Base();
             }
-            input.ReadMessage(base_);
+            input.ReadMessage(Base);
             break;
           }
           case 26: {
@@ -1723,13 +1871,13 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.request_ != null) {
         if (request_ == null) {
-          request_ = new global::TTF.Tokens.Model.Core.InvocationRequest();
+          Request = new global::TTF.Tokens.Model.Core.InvocationRequest();
         }
         Request.MergeFrom(other.Request);
       }
       if (other.response_ != null) {
         if (response_ == null) {
-          response_ = new global::TTF.Tokens.Model.Core.InvocationResponse();
+          Response = new global::TTF.Tokens.Model.Core.InvocationResponse();
         }
         Response.MergeFrom(other.Response);
       }
@@ -1754,16 +1902,16 @@ namespace TTF.Tokens.Model.Core {
           }
           case 26: {
             if (request_ == null) {
-              request_ = new global::TTF.Tokens.Model.Core.InvocationRequest();
+              Request = new global::TTF.Tokens.Model.Core.InvocationRequest();
             }
-            input.ReadMessage(request_);
+            input.ReadMessage(Request);
             break;
           }
           case 34: {
             if (response_ == null) {
-              response_ = new global::TTF.Tokens.Model.Core.InvocationResponse();
+              Response = new global::TTF.Tokens.Model.Core.InvocationResponse();
             }
-            input.ReadMessage(response_);
+            input.ReadMessage(Response);
             break;
           }
         }
