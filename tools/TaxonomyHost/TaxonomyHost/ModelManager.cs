@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Google.Protobuf;
 using log4net;
@@ -38,27 +39,32 @@ namespace TaxonomyHost
 
 		public static Base GetBaseArtifact(Symbol symbol)
 		{
-			throw new NotImplementedException();
+			_log.Info("GetBaseArtifact Symbol " + symbol.ArtifactSymbol);
+			return Taxonomy.BaseTokenTypes.Single(e => e.Key == symbol.ArtifactSymbol).Value;
 		}
 
 		public static Behavior GetBehaviorArtifact(Symbol symbol)
 		{
-			throw new NotImplementedException();
+			_log.Info("GetBehaviorArtifact Symbol " + symbol.ArtifactSymbol);
+			return Taxonomy.Behaviors.Single(e => e.Key == symbol.ArtifactSymbol).Value;
 		}
 
 		public static BehaviorGroup GetBehaviorGroupArtifact(Symbol symbol)
 		{
-			throw new NotImplementedException();
+			_log.Info("GetBehaviorGroupArtifact Symbol " + symbol.ArtifactSymbol);
+			return Taxonomy.BehaviorGroups.Single(e => e.Key == symbol.ArtifactSymbol).Value;
 		}
 
 		public static PropertySet GetPropertySetArtifact(Symbol symbol)
 		{
-			throw new NotImplementedException();
+			_log.Info("GetPropertySetArtifact Symbol " + symbol.ArtifactSymbol);
+			return Taxonomy.PropertySets.Single(e => e.Key == symbol.ArtifactSymbol).Value;		
 		}
 
 		public static TokenTemplate GetTokenTemplateArtifact(TaxonomyFormula formula)
 		{
-			throw new NotImplementedException();
+			_log.Info("GetTokenTemplateArtifact Formula: " + formula.Formula);
+			return Taxonomy.TokenTemplates.Single(e => e.Key == formula.Formula).Value;		
 		}
 
 		public static NewArtifactResponse CreateArtifact(NewArtifactRequest artifactRequest)

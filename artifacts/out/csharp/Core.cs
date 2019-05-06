@@ -428,7 +428,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -456,7 +456,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.constructor_ != null) {
         if (constructor_ == null) {
-          Constructor = new global::Google.Protobuf.WellKnownTypes.Any();
+          constructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         Constructor.MergeFrom(other.Constructor);
       }
@@ -474,13 +474,13 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(Artifact);
+            input.ReadMessage(artifact_);
             break;
           }
           case 16: {
-            TokenType = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
+            tokenType_ = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
             break;
           }
           case 26: {
@@ -513,9 +513,9 @@ namespace TTF.Tokens.Model.Core {
           }
           case 82: {
             if (constructor_ == null) {
-              Constructor = new global::Google.Protobuf.WellKnownTypes.Any();
+              constructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
             }
-            input.ReadMessage(Constructor);
+            input.ReadMessage(constructor_);
             break;
           }
           case 90: {
@@ -737,7 +737,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -749,7 +749,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.behaviorConstructor_ != null) {
         if (behaviorConstructor_ == null) {
-          BehaviorConstructor = new global::Google.Protobuf.WellKnownTypes.Any();
+          behaviorConstructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         BehaviorConstructor.MergeFrom(other.BehaviorConstructor);
       }
@@ -768,9 +768,9 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(Artifact);
+            input.ReadMessage(artifact_);
             break;
           }
           case 16: {
@@ -783,9 +783,9 @@ namespace TTF.Tokens.Model.Core {
           }
           case 34: {
             if (behaviorConstructor_ == null) {
-              BehaviorConstructor = new global::Google.Protobuf.WellKnownTypes.Any();
+              behaviorConstructor_ = new global::Google.Protobuf.WellKnownTypes.Any();
             }
-            input.ReadMessage(BehaviorConstructor);
+            input.ReadMessage(behaviorConstructor_);
             break;
           }
           case 42: {
@@ -942,7 +942,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -961,9 +961,9 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(Artifact);
+            input.ReadMessage(artifact_);
             break;
           }
           case 18: {
@@ -1102,7 +1102,7 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1120,9 +1120,9 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(Artifact);
+            input.ReadMessage(artifact_);
             break;
           }
           case 18: {
@@ -1485,13 +1485,13 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
       if (other.base_ != null) {
         if (base_ == null) {
-          Base = new global::TTF.Tokens.Model.Core.Base();
+          base_ = new global::TTF.Tokens.Model.Core.Base();
         }
         Base.MergeFrom(other.Base);
       }
@@ -1511,16 +1511,16 @@ namespace TTF.Tokens.Model.Core {
             break;
           case 10: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              artifact_ = new global::TTF.Tokens.Model.Artifact.Artifact();
             }
-            input.ReadMessage(Artifact);
+            input.ReadMessage(artifact_);
             break;
           }
           case 18: {
             if (base_ == null) {
-              Base = new global::TTF.Tokens.Model.Core.Base();
+              base_ = new global::TTF.Tokens.Model.Core.Base();
             }
-            input.ReadMessage(Base);
+            input.ReadMessage(base_);
             break;
           }
           case 26: {
@@ -1723,13 +1723,13 @@ namespace TTF.Tokens.Model.Core {
       }
       if (other.request_ != null) {
         if (request_ == null) {
-          Request = new global::TTF.Tokens.Model.Core.InvocationRequest();
+          request_ = new global::TTF.Tokens.Model.Core.InvocationRequest();
         }
         Request.MergeFrom(other.Request);
       }
       if (other.response_ != null) {
         if (response_ == null) {
-          Response = new global::TTF.Tokens.Model.Core.InvocationResponse();
+          response_ = new global::TTF.Tokens.Model.Core.InvocationResponse();
         }
         Response.MergeFrom(other.Response);
       }
@@ -1754,16 +1754,16 @@ namespace TTF.Tokens.Model.Core {
           }
           case 26: {
             if (request_ == null) {
-              Request = new global::TTF.Tokens.Model.Core.InvocationRequest();
+              request_ = new global::TTF.Tokens.Model.Core.InvocationRequest();
             }
-            input.ReadMessage(Request);
+            input.ReadMessage(request_);
             break;
           }
           case 34: {
             if (response_ == null) {
-              Response = new global::TTF.Tokens.Model.Core.InvocationResponse();
+              response_ = new global::TTF.Tokens.Model.Core.InvocationResponse();
             }
-            input.ReadMessage(Response);
+            input.ReadMessage(response_);
             break;
           }
         }

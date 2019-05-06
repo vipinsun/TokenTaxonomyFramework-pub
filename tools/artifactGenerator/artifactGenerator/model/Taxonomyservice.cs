@@ -26,34 +26,35 @@ namespace TTT.TTF.Taxonomy {
           string.Concat(
             "ChV0YXhvbm9teXNlcnZpY2UucHJvdG8SEHRheG9ub215LnNlcnZpY2UaDnRh",
             "eG9ub215LnByb3RvGgpjb3JlLnByb3RvGg5hcnRpZmFjdC5wcm90byIiCg9U",
-            "YXhvbm9teVZlcnNpb24SDwoHdmVyc2lvbhgBIAEoCSIYCgZTeW1ib2wSDgoG",
-            "c3ltYm9sGAEgASgJIiIKD1RheG9ub215Rm9ybXVsYRIPCgdmb3JtdWxhGAEg",
-            "ASgJMvEGCg9UYXhvbm9teVNlcnZpY2USUAoPR2V0RnVsbFRheG9ub215EiEu",
-            "dGF4b25vbXkuc2VydmljZS5UYXhvbm9teVZlcnNpb24aGC50YXhvbm9teS5t",
-            "b2RlbC5UYXhvbm9teSIAEkgKD0dldEJhc2VBcnRpZmFjdBIYLnRheG9ub215",
-            "LnNlcnZpY2UuU3ltYm9sGhkudGF4b25vbXkubW9kZWwuY29yZS5CYXNlIgAS",
-            "UAoTR2V0QmVoYXZpb3JBcnRpZmFjdBIYLnRheG9ub215LnNlcnZpY2UuU3lt",
-            "Ym9sGh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvciIAEloKGEdldEJl",
-            "aGF2aW9yR3JvdXBBcnRpZmFjdBIYLnRheG9ub215LnNlcnZpY2UuU3ltYm9s",
-            "GiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwIgASVgoWR2V0",
-            "UHJvcGVydHlTZXRBcnRpZmFjdBIYLnRheG9ub215LnNlcnZpY2UuU3ltYm9s",
-            "GiAudGF4b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0eVNldCIAEmMKGEdldFRv",
-            "a2VuVGVtcGxhdGVBcnRpZmFjdBIhLnRheG9ub215LnNlcnZpY2UuVGF4b25v",
-            "bXlGb3JtdWxhGiIudGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRl",
-            "IgASbQoOQ3JlYXRlQXJ0aWZhY3QSKy50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
-            "dC5OZXdBcnRpZmFjdFJlcXVlc3QaLC50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
-            "dC5OZXdBcnRpZmFjdFJlc3BvbnNlIgAScwoOVXBkYXRlQXJ0aWZhY3QSLi50",
-            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5VcGRhdGVBcnRpZmFjdFJlcXVlc3Qa",
-            "Ly50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5VcGRhdGVBcnRpZmFjdFJlc3Bv",
-            "bnNlIgAScwoORGVsZXRlQXJ0aWZhY3QSLi50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5EZWxldGVBcnRpZmFjdFJlcXVlc3QaLy50YXhvbm9teS5tb2RlbC5h",
-            "cnRpZmFjdC5EZWxldGVBcnRpZmFjdFJlc3BvbnNlIgBCKwoUb3JnLnR0aS50",
-            "dGYudGF4b25vbXlQAaoCEFRUVC5UVEYuVGF4b25vbXliBnByb3RvMw=="));
+            "YXhvbm9teVZlcnNpb24SDwoHdmVyc2lvbhgBIAEoCSIhCgZTeW1ib2wSFwoP",
+            "YXJ0aWZhY3Rfc3ltYm9sGAEgASgJIiIKD1RheG9ub215Rm9ybXVsYRIPCgdm",
+            "b3JtdWxhGAEgASgJMvEGCg9UYXhvbm9teVNlcnZpY2USUAoPR2V0RnVsbFRh",
+            "eG9ub215EiEudGF4b25vbXkuc2VydmljZS5UYXhvbm9teVZlcnNpb24aGC50",
+            "YXhvbm9teS5tb2RlbC5UYXhvbm9teSIAEkgKD0dldEJhc2VBcnRpZmFjdBIY",
+            "LnRheG9ub215LnNlcnZpY2UuU3ltYm9sGhkudGF4b25vbXkubW9kZWwuY29y",
+            "ZS5CYXNlIgASUAoTR2V0QmVoYXZpb3JBcnRpZmFjdBIYLnRheG9ub215LnNl",
+            "cnZpY2UuU3ltYm9sGh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvciIA",
+            "EloKGEdldEJlaGF2aW9yR3JvdXBBcnRpZmFjdBIYLnRheG9ub215LnNlcnZp",
+            "Y2UuU3ltYm9sGiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3Vw",
+            "IgASVgoWR2V0UHJvcGVydHlTZXRBcnRpZmFjdBIYLnRheG9ub215LnNlcnZp",
+            "Y2UuU3ltYm9sGiAudGF4b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0eVNldCIA",
+            "EmMKGEdldFRva2VuVGVtcGxhdGVBcnRpZmFjdBIhLnRheG9ub215LnNlcnZp",
+            "Y2UuVGF4b25vbXlGb3JtdWxhGiIudGF4b25vbXkubW9kZWwuY29yZS5Ub2tl",
+            "blRlbXBsYXRlIgASbQoOQ3JlYXRlQXJ0aWZhY3QSKy50YXhvbm9teS5tb2Rl",
+            "bC5hcnRpZmFjdC5OZXdBcnRpZmFjdFJlcXVlc3QaLC50YXhvbm9teS5tb2Rl",
+            "bC5hcnRpZmFjdC5OZXdBcnRpZmFjdFJlc3BvbnNlIgAScwoOVXBkYXRlQXJ0",
+            "aWZhY3QSLi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5VcGRhdGVBcnRpZmFj",
+            "dFJlcXVlc3QaLy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5VcGRhdGVBcnRp",
+            "ZmFjdFJlc3BvbnNlIgAScwoORGVsZXRlQXJ0aWZhY3QSLi50YXhvbm9teS5t",
+            "b2RlbC5hcnRpZmFjdC5EZWxldGVBcnRpZmFjdFJlcXVlc3QaLy50YXhvbm9t",
+            "eS5tb2RlbC5hcnRpZmFjdC5EZWxldGVBcnRpZmFjdFJlc3BvbnNlIgBCKwoU",
+            "b3JnLnR0aS50dGYudGF4b25vbXlQAaoCEFRUVC5UVEYuVGF4b25vbXliBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.TaxonomyVersion), global::TTT.TTF.Taxonomy.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.Symbol), global::TTT.TTF.Taxonomy.Symbol.Parser, new[]{ "Symbol_" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.Symbol), global::TTT.TTF.Taxonomy.Symbol.Parser, new[]{ "ArtifactSymbol" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.TaxonomyFormula), global::TTT.TTF.Taxonomy.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null)
           }));
     }
@@ -215,7 +216,7 @@ namespace TTT.TTF.Taxonomy {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Symbol(Symbol other) : this() {
-      symbol_ = other.symbol_;
+      artifactSymbol_ = other.artifactSymbol_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -224,14 +225,17 @@ namespace TTT.TTF.Taxonomy {
       return new Symbol(this);
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
-    public const int Symbol_FieldNumber = 1;
-    private string symbol_ = "";
+    /// <summary>Field number for the "artifact_symbol" field.</summary>
+    public const int ArtifactSymbolFieldNumber = 1;
+    private string artifactSymbol_ = "";
+    /// <summary>
+    ///should always be the tooling symbol.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Symbol_ {
-      get { return symbol_; }
+    public string ArtifactSymbol {
+      get { return artifactSymbol_; }
       set {
-        symbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        artifactSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -248,14 +252,14 @@ namespace TTT.TTF.Taxonomy {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Symbol_ != other.Symbol_) return false;
+      if (ArtifactSymbol != other.ArtifactSymbol) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Symbol_.Length != 0) hash ^= Symbol_.GetHashCode();
+      if (ArtifactSymbol.Length != 0) hash ^= ArtifactSymbol.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -269,9 +273,9 @@ namespace TTT.TTF.Taxonomy {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Symbol_.Length != 0) {
+      if (ArtifactSymbol.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Symbol_);
+        output.WriteString(ArtifactSymbol);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -281,8 +285,8 @@ namespace TTT.TTF.Taxonomy {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Symbol_.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Symbol_);
+      if (ArtifactSymbol.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ArtifactSymbol);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -295,8 +299,8 @@ namespace TTT.TTF.Taxonomy {
       if (other == null) {
         return;
       }
-      if (other.Symbol_.Length != 0) {
-        Symbol_ = other.Symbol_;
+      if (other.ArtifactSymbol.Length != 0) {
+        ArtifactSymbol = other.ArtifactSymbol;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -310,7 +314,7 @@ namespace TTT.TTF.Taxonomy {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Symbol_ = input.ReadString();
+            ArtifactSymbol = input.ReadString();
             break;
           }
         }

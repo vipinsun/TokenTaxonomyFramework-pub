@@ -7,12 +7,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="factories" t="Include">
-          <e p="BaseFactory.cs" t="Include" />
-          <e p="BehaviorFactory.cs" t="Include" />
-          <e p="BehaviorGroupFactory.cs" t="Include" />
-          <e p="PropertySetFactory.cs" t="Include" />
           <e p="TaxonomyFactory.cs" t="Include" />
-          <e p="TokenTemplateFactory.cs" t="Include" />
         </e>
         <e p="Host.cs" t="Include" />
         <e p="log4net.config" t="Include" />
@@ -40,7 +35,7 @@
       <e p="TaxonomyHost.sln" t="IncludeFlat" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_TaxonomyHost.-1439679956.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_TaxonomyHost.1819159890.00" t="ExcludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/rust_expanded_macros/jNUjIywJ/expansions" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />

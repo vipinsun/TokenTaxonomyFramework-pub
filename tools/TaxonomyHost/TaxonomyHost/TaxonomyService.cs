@@ -36,6 +36,8 @@ namespace TaxonomyHost
 			_gRpcPort = Convert.ToInt32(_config["gRpcPort"]);
 
 			FolderSeparator = Os.IsWindows() ? "\\" : "/";
+
+			ModelManager.Init();
 			
 			_apiServer = new Server
 			{

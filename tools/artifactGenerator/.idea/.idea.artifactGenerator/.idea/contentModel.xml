@@ -3,7 +3,7 @@
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$/../../artifacts/build-model.sh" t="Include" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
-      <e p="ArtifactGenerator" t="IncludeRecursive">
+      <e p="artifactGenerator" t="IncludeRecursive">
         <e p="artifactGenerator.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Dockerfile" t="Include" />
@@ -36,7 +36,7 @@
       <e p="scripts" t="Include" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_artifactGenerator.-805208496.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_artifactGenerator.-643941898.00" t="ExcludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/rust_expanded_macros/NxGsHVvH/expansions" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />

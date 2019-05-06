@@ -29,7 +29,7 @@ message TaxonomyVersion{
 }
 
 message Symbol{
-    string symbol = 1;
+    string artifact_symbol = 1; //should always be the tooling symbol.
 }
 
 message TaxonomyFormula{

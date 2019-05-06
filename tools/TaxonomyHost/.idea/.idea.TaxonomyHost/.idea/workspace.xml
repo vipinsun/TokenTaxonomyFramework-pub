@@ -2,7 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a725583d-0766-41f5-a02f-3c183a5d3393" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../artifacts/build-model.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/build-model.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomyservice.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomyservice.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomyservice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Artifact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactAnalogy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactAnalogy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/ArtifactSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/MapReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/MapReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/MapResourceEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/MapResourceEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/Maps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/NewArtifactResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/artifact/UpdateArtifactResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Base.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Behavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Behavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/BehaviorGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Invocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/Invocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/InvocationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/PropertySet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/TokenTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/java/org/tti/tokens/model/core/TokenTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TaxonomyHost/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/ModelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/ModelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaxonomyHost/model/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TaxonomyHost/model/Taxonomyservice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/.idea/.idea.artifactGenerator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Core.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../artifactGenerator/artifactGenerator/model/Taxonomyservice.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,24 +60,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TaxonomyHost/ModelManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="23" column="11" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="23" selection-end-column="11" />
+            <state relative-caret-position="-85">
+              <caret line="64" column="11" lean-forward="true" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
               <folding>
-                <marker date="1556910880917" expanded="true" signature="6:267" ph="..." />
-                <marker date="1556910880917" expanded="true" signature="291:1980" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="327:1978" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="441:546" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="577:741" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="810:982" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1035:1083" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1144:1192" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1263:1311" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1378:1426" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1507:1555" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1643:1691" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1785:1833" ph="{...}" />
-                <marker date="1556910880917" expanded="true" signature="1927:1975" ph="{...}" />
+                <marker date="1557158641974" expanded="false" signature="6:286" ph="..." />
+                <marker date="1557158641974" expanded="true" signature="310:2565" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="346:2563" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="460:565" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="596:760" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="829:1001" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="1054:1212" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="1273:1430" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="1501:1668" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="1735:1900" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="1981:2140" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="2228:2276" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="2370:2418" ph="{...}" />
+                <marker date="1557158641974" expanded="true" signature="2512:2560" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TaxonomyHost/appsettings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -40,179 +94,51 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="183" column="26" lean-forward="true" selection-start-line="183" selection-start-column="26" selection-end-line="183" selection-end-column="26" />
+            <state relative-caret-position="247">
+              <caret line="271" column="1" lean-forward="true" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
               <folding>
-                <marker date="1556987772044" expanded="true" signature="6:327" ph="..." />
-                <marker date="1556987772044" expanded="true" signature="361:11630" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="400:11628" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="904:1009" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="1044:5786" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="1089:1209" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="1388:1509" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="1532:1602" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="1698:2387" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="1887:2382" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="2000:2067" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="2092:2207" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="2395:2480" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="2531:3235" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="2729:3230" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="2846:2917" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="2942:3050" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="3291:4090" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="3514:4085" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="3641:3722" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="3747:3859" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="4146:4913" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="4361:4908" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="4484:4561" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="4586:4697" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="4966:5758" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="5184:5753" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="5311:5392" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="5417:5530" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="5863:6795" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="5910:6770" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="5950:6242" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6107:6234" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6275:6513" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6385:6505" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6522:6765" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6636:6757" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6886:7818" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6933:7793" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="6973:7265" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="7130:7257" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="7298:7536" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="7408:7528" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="7545:7788" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="7659:7780" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="7927:8884" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="7974:8854" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="8014:8316" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="8181:8308" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="8349:8592" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="8464:8584" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="8601:8849" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="8720:8841" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="8987:9934" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="9034:9906" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="9074:9372" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="9237:9364" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="9405:9646" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="9518:9638" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="9655:9901" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="9772:9893" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10045:11002" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10092:10972" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10132:10434" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10299:10426" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10467:10710" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10582:10702" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10719:10967" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="10838:10959" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="11084:11275" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="11339:11422" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="11487:11625" ph="{...}" />
-                <marker date="1556987772044" expanded="true" signature="11534:11621" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <marker date="1556827179626" expanded="true" signature="6:62" ph="..." />
-                <marker date="1556827179626" expanded="true" signature="96:227" ph="{...}" />
-                <marker date="1556827179626" expanded="true" signature="124:225" ph="{...}" />
-                <marker date="1556827179626" expanded="true" signature="163:222" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TaxonomyHost/Utils.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-              <folding>
-                <marker date="1556912526368" expanded="true" signature="6:148" ph="..." />
-                <marker date="1556912526368" expanded="true" signature="172:1565" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="201:1048" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="235:1044" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="286:568" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="589:879" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="1072:1563" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="1108:1179" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="1211:1278" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="1310:1379" ph="{...}" />
-                <marker date="1556912526368" expanded="true" signature="1412:1560" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42">
-              <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
-              <folding>
-                <marker date="1556827251927" expanded="true" signature="6:62" ph="..." />
-                <marker date="1556827251927" expanded="true" signature="96:247" ph="{...}" />
-                <marker date="1556827251927" expanded="true" signature="128:245" ph="{...}" />
-                <marker date="1556827251927" expanded="true" signature="171:242" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42">
-              <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
-              <folding>
-                <marker date="1556827312033" expanded="true" signature="6:62" ph="..." />
-                <marker date="1556827312033" expanded="true" signature="96:272" ph="{...}" />
-                <marker date="1556827312033" expanded="true" signature="133:270" ph="{...}" />
-                <marker date="1556827312033" expanded="true" signature="181:267" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42">
-              <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
-              <folding>
-                <marker date="1556827335189" expanded="true" signature="6:62" ph="..." />
-                <marker date="1556827335189" expanded="true" signature="96:262" ph="{...}" />
-                <marker date="1556827335189" expanded="true" signature="131:260" ph="{...}" />
-                <marker date="1556827335189" expanded="true" signature="177:257" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-42">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding>
-                <marker date="1556827368381" expanded="true" signature="6:62" ph="..." />
-                <marker date="1556827368381" expanded="true" signature="96:272" ph="{...}" />
-                <marker date="1556827368381" expanded="true" signature="133:270" ph="{...}" />
-                <marker date="1556827368381" expanded="true" signature="181:267" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="6:213" ph="..." />
+                <marker date="1557159094691" expanded="true" signature="247:7377" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="286:7375" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="767:1025" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="1029:5684" ph="load" />
+                <marker date="1557159094691" expanded="true" signature="1075:5670" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="1120:1240" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="1419:1540" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="1563:1633" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="1728:2406" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="1916:2401" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="2029:2096" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="2121:2236" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="2414:2499" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="2549:3237" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="2746:3232" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="2863:2934" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="2959:3067" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="3292:4049" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="3514:4044" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="3641:3722" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="3747:3859" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="4104:4825" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="4316:4820" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="4439:4509" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="4534:4645" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="5109:5640" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="5236:5317" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="5342:5455" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="5764:6660" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="5811:6635" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="5851:6125" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="5990:6117" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="6158:6387" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="6259:6379" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="6396:6630" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="6501:6622" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="6740:6931" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="6995:7078" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="7143:7281" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="7190:7277" ph="{...}" />
+                <marker date="1557159094691" expanded="true" signature="7359:7371" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -221,17 +147,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-58">
-              <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+            <state relative-caret-position="451">
+              <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
               <folding>
-                <marker date="1556906280063" expanded="true" signature="6:112" ph="..." />
-                <marker date="1556906280063" expanded="true" signature="136:1458" ph="{...}" />
-                <marker date="1556906280063" expanded="true" signature="177:1456" ph="{...}" />
-                <marker date="1556906280063" expanded="true" signature="500:1453" ph="{...}" />
-                <marker date="1556906280063" expanded="false" signature="508:670" ph="config" />
-                <marker date="1556906280063" expanded="false" signature="678:806" ph="logging" />
-                <marker date="1556906280063" expanded="true" signature="1028:1188" ph="{...}" />
-                <marker date="1556906280063" expanded="true" signature="1408:1418" ph="{...}" />
+                <marker date="1557156078968" expanded="false" signature="6:112" ph="..." />
+                <marker date="1557156078968" expanded="true" signature="136:1483" ph="{...}" />
+                <marker date="1557156078968" expanded="true" signature="177:1481" ph="{...}" />
+                <marker date="1557156078968" expanded="true" signature="500:1478" ph="{...}" />
+                <marker date="1557156078968" expanded="false" signature="508:670" ph="config" />
+                <marker date="1557156078968" expanded="false" signature="678:806" ph="logging" />
+                <marker date="1557156078968" expanded="true" signature="1053:1213" ph="{...}" />
+                <marker date="1557156078968" expanded="true" signature="1433:1443" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -240,22 +166,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1029">
+            <state relative-caret-position="1949">
               <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
               <folding>
-                <marker date="1556828563120" expanded="false" signature="6:240" ph="..." />
-                <marker date="1556828563120" expanded="true" signature="264:3047" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="345:3045" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="408:543" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="647:802" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="892:1046" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="1152:1314" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="1430:1602" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="1705:1873" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="1990:2163" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="2287:2448" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="2578:2739" ph="{...}" />
-                <marker date="1556828563120" expanded="true" signature="2869:3030" ph="{...}" />
+                <marker date="1557151331672" expanded="false" signature="6:240" ph="..." />
+                <marker date="1557151331672" expanded="true" signature="264:3047" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="345:3045" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="408:543" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="647:802" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="892:1046" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="1152:1314" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="1430:1602" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="1705:1873" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="1990:2163" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="2287:2448" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="2578:2739" ph="{...}" />
+                <marker date="1557151331672" expanded="true" signature="2869:3030" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -267,18 +193,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/Utils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5486B0B5-95C6-4BBE-8EDA-415056DF068B/96/305f2e40/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TaxonomyHost/log4net.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TaxonomyHost/ModelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyCache.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/Utils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -295,11 +217,11 @@
         <option value="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs" />
         <option value="$PROJECT_DIR$/TaxonomyHost/factories/BehaviorGroupFactory.cs" />
         <option value="$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs" />
-        <option value="$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs" />
         <option value="$PROJECT_DIR$/TaxonomyHost/Host.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/Utils.cs" />
         <option value="$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs" />
         <option value="$PROJECT_DIR$/TaxonomyHost/ModelManager.cs" />
-        <option value="$PROJECT_DIR$/TaxonomyHost/Utils.cs" />
+        <option value="$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs" />
         <option value="$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs" />
       </list>
     </option>
@@ -329,7 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -353,7 +275,7 @@
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,7 +288,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Rainbow Brackets" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -382,20 +304,22 @@
   </component>
   <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/TaxonomyHost/bin/Debug/netcoreapp2.2/TaxonomyHost.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TaxonomyHost" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="None" />
-      <option name="PROJECT_TFM" value="" />
-      <method v="2" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.2" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -411,11 +335,12 @@
       <workItem from="1556643349665" duration="1245000" />
       <workItem from="1556808575763" duration="6817000" />
       <workItem from="1556902743731" duration="13295000" />
+      <workItem from="1557153582052" duration="4765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21940000" />
+    <option name="totallyTimeSpent" value="26705000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -427,21 +352,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="942" extended-state="6" />
+    <frame x="0" y="23" width="3440" height="1325" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18643032" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18746321" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Azure Explorer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Build" weight="0.32941177" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.27731094" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32978722" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32941177" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" />
       <window_info anchor="bottom" id="Azure Activity Log" order="10" />
@@ -449,7 +375,7 @@
       <window_info anchor="bottom" id="Dilbert" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Unit Tests" order="14" />
-      <window_info anchor="bottom" id="Terminal" order="15" />
+      <window_info anchor="bottom" id="Terminal" order="15" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Event Log" order="16" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -491,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TaxonomyHost/appsettings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyIO.cs" />
     <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyCache.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -517,16 +436,37 @@
     <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyHost.csproj">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/Utils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <marker date="1557151331673" expanded="true" signature="6:148" ph="..." />
+            <marker date="1557151331673" expanded="true" signature="172:1565" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="201:1048" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="235:1044" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="286:568" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="589:879" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="1072:1563" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="1108:1179" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="1211:1278" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="1310:1379" ph="{...}" />
+            <marker date="1557151331673" expanded="true" signature="1412:1560" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BehaviorFactory.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42">
           <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <marker date="1556827251927" expanded="true" signature="6:62" ph="..." />
-            <marker date="1556827251927" expanded="true" signature="96:247" ph="{...}" />
-            <marker date="1556827251927" expanded="true" signature="128:245" ph="{...}" />
-            <marker date="1556827251927" expanded="true" signature="171:242" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,214 +474,146 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42">
           <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1949">
+          <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
           <folding>
-            <marker date="1556827312033" expanded="true" signature="6:62" ph="..." />
-            <marker date="1556827312033" expanded="true" signature="96:272" ph="{...}" />
-            <marker date="1556827312033" expanded="true" signature="133:270" ph="{...}" />
-            <marker date="1556827312033" expanded="true" signature="181:267" ph="{...}" />
+            <marker date="1557151331672" expanded="false" signature="6:240" ph="..." />
+            <marker date="1557151331672" expanded="true" signature="264:3047" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="345:3045" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="408:543" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="647:802" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="892:1046" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="1152:1314" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="1430:1602" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="1705:1873" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="1990:2163" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="2287:2448" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="2578:2739" ph="{...}" />
+            <marker date="1557151331672" expanded="true" signature="2869:3030" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs">
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/appsettings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="104">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="52" column="15" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="15" />
           <folding>
-            <marker date="1556827335189" expanded="true" signature="6:62" ph="..." />
-            <marker date="1556827335189" expanded="true" signature="96:262" ph="{...}" />
-            <marker date="1556827335189" expanded="true" signature="131:260" ph="{...}" />
-            <marker date="1556827335189" expanded="true" signature="177:257" ph="{...}" />
+            <marker date="1557156078968" expanded="false" signature="6:112" ph="..." />
+            <marker date="1557156078968" expanded="true" signature="136:1483" ph="{...}" />
+            <marker date="1557156078968" expanded="true" signature="177:1481" ph="{...}" />
+            <marker date="1557156078968" expanded="true" signature="500:1478" ph="{...}" />
+            <marker date="1557156078968" expanded="false" signature="508:670" ph="config" />
+            <marker date="1557156078968" expanded="false" signature="678:806" ph="logging" />
+            <marker date="1557156078968" expanded="true" signature="1053:1213" ph="{...}" />
+            <marker date="1557156078968" expanded="true" signature="1433:1443" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5486B0B5-95C6-4BBE-8EDA-415056DF068B/96/305f2e40/Encoding.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="673" column="8" selection-start-line="673" selection-start-column="8" selection-end-line="673" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/ModelManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="64" column="11" lean-forward="true" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+          <folding>
+            <marker date="1557158641974" expanded="false" signature="6:286" ph="..." />
+            <marker date="1557158641974" expanded="true" signature="310:2565" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="346:2563" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="460:565" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="596:760" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="829:1001" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="1054:1212" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="1273:1430" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="1501:1668" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="1735:1900" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="1981:2140" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="2228:2276" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="2370:2418" ph="{...}" />
+            <marker date="1557158641974" expanded="true" signature="2512:2560" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TokenTemplateFactory.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <marker date="1556827368381" expanded="true" signature="6:62" ph="..." />
-            <marker date="1556827368381" expanded="true" signature="96:272" ph="{...}" />
-            <marker date="1556827368381" expanded="true" signature="133:270" ph="{...}" />
-            <marker date="1556827368381" expanded="true" signature="181:267" ph="{...}" />
-          </folding>
+        <state relative-caret-position="147">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TaxonomyHost/Host.cs">
+    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/PropertySetFactory.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
-          <folding>
-            <marker date="1556828563120" expanded="false" signature="6:240" ph="..." />
-            <marker date="1556828563120" expanded="true" signature="264:3047" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="345:3045" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="408:543" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="647:802" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="892:1046" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="1152:1314" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="1430:1602" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="1705:1873" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="1990:2163" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="2287:2448" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="2578:2739" ph="{...}" />
-            <marker date="1556828563120" expanded="true" signature="2869:3030" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/BaseFactory.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <marker date="1556827179626" expanded="true" signature="6:62" ph="..." />
-            <marker date="1556827179626" expanded="true" signature="96:227" ph="{...}" />
-            <marker date="1556827179626" expanded="true" signature="124:225" ph="{...}" />
-            <marker date="1556827179626" expanded="true" signature="163:222" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TaxonomyHost/TaxonomyService.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-          <folding>
-            <marker date="1556906280063" expanded="true" signature="6:112" ph="..." />
-            <marker date="1556906280063" expanded="true" signature="136:1458" ph="{...}" />
-            <marker date="1556906280063" expanded="true" signature="177:1456" ph="{...}" />
-            <marker date="1556906280063" expanded="true" signature="500:1453" ph="{...}" />
-            <marker date="1556906280063" expanded="false" signature="508:670" ph="config" />
-            <marker date="1556906280063" expanded="false" signature="678:806" ph="logging" />
-            <marker date="1556906280063" expanded="true" signature="1028:1188" ph="{...}" />
-            <marker date="1556906280063" expanded="true" signature="1408:1418" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TaxonomyHost/ModelManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="23" selection-end-column="11" />
-          <folding>
-            <marker date="1556910880917" expanded="true" signature="6:267" ph="..." />
-            <marker date="1556910880917" expanded="true" signature="291:1980" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="327:1978" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="441:546" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="577:741" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="810:982" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1035:1083" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1144:1192" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1263:1311" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1378:1426" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1507:1555" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1643:1691" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1785:1833" ph="{...}" />
-            <marker date="1556910880917" expanded="true" signature="1927:1975" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TaxonomyHost/Utils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <marker date="1556912526368" expanded="true" signature="6:148" ph="..." />
-            <marker date="1556912526368" expanded="true" signature="172:1565" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="201:1048" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="235:1044" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="286:568" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="589:879" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="1072:1563" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="1108:1179" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="1211:1278" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="1310:1379" ph="{...}" />
-            <marker date="1556912526368" expanded="true" signature="1412:1560" ph="{...}" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TaxonomyHost/factories/TaxonomyFactory.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="183" column="26" lean-forward="true" selection-start-line="183" selection-start-column="26" selection-end-line="183" selection-end-column="26" />
+        <state relative-caret-position="247">
+          <caret line="271" column="1" lean-forward="true" selection-start-line="271" selection-start-column="1" selection-end-line="271" selection-end-column="1" />
           <folding>
-            <marker date="1556987772044" expanded="true" signature="6:327" ph="..." />
-            <marker date="1556987772044" expanded="true" signature="361:11630" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="400:11628" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="904:1009" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="1044:5786" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="1089:1209" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="1388:1509" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="1532:1602" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="1698:2387" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="1887:2382" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="2000:2067" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="2092:2207" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="2395:2480" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="2531:3235" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="2729:3230" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="2846:2917" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="2942:3050" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="3291:4090" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="3514:4085" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="3641:3722" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="3747:3859" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="4146:4913" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="4361:4908" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="4484:4561" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="4586:4697" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="4966:5758" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="5184:5753" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="5311:5392" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="5417:5530" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="5863:6795" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="5910:6770" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="5950:6242" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6107:6234" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6275:6513" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6385:6505" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6522:6765" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6636:6757" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6886:7818" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6933:7793" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="6973:7265" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="7130:7257" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="7298:7536" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="7408:7528" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="7545:7788" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="7659:7780" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="7927:8884" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="7974:8854" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="8014:8316" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="8181:8308" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="8349:8592" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="8464:8584" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="8601:8849" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="8720:8841" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="8987:9934" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="9034:9906" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="9074:9372" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="9237:9364" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="9405:9646" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="9518:9638" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="9655:9901" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="9772:9893" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10045:11002" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10092:10972" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10132:10434" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10299:10426" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10467:10710" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10582:10702" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10719:10967" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="10838:10959" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="11084:11275" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="11339:11422" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="11487:11625" ph="{...}" />
-            <marker date="1556987772044" expanded="true" signature="11534:11621" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="6:213" ph="..." />
+            <marker date="1557159094691" expanded="true" signature="247:7377" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="286:7375" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="767:1025" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="1029:5684" ph="load" />
+            <marker date="1557159094691" expanded="true" signature="1075:5670" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="1120:1240" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="1419:1540" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="1563:1633" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="1728:2406" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="1916:2401" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="2029:2096" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="2121:2236" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="2414:2499" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="2549:3237" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="2746:3232" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="2863:2934" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="2959:3067" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="3292:4049" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="3514:4044" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="3641:3722" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="3747:3859" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="4104:4825" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="4316:4820" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="4439:4509" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="4534:4645" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="5109:5640" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="5236:5317" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="5342:5455" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="5764:6660" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="5811:6635" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="5851:6125" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="5990:6117" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="6158:6387" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="6259:6379" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="6396:6630" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="6501:6622" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="6740:6931" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="6995:7078" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="7143:7281" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="7190:7277" ph="{...}" />
+            <marker date="1557159094691" expanded="true" signature="7359:7371" ph="{...}" />
           </folding>
         </state>
       </provider>

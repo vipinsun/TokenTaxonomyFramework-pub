@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Behavior() {
+    external_ = false;
     behaviorConstructorName_ = "";
     behaviorInvocations_ = java.util.Collections.emptyList();
     behavioralProperties_ = java.util.Collections.emptyList();
@@ -83,7 +84,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
               behaviorInvocations_ = new java.util.ArrayList<org.tti.tokens.model.core.Invocation>();
               mutable_bitField0_ |= 0x00000010;
             }
@@ -92,7 +93,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
               behavioralProperties_ = new java.util.ArrayList<org.tti.tokens.model.core.Property>();
               mutable_bitField0_ |= 0x00000020;
             }
@@ -101,7 +102,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownField(
+            if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -115,10 +116,10 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         behaviorInvocations_ = java.util.Collections.unmodifiableList(behaviorInvocations_);
       }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         behavioralProperties_ = java.util.Collections.unmodifiableList(behavioralProperties_);
       }
       this.unknownFields = unknownFields.build();
@@ -413,26 +414,27 @@ private static final long serialVersionUID = 0L;
     }
     org.tti.tokens.model.core.Behavior other = (org.tti.tokens.model.core.Behavior) obj;
 
-    if (hasArtifact() != other.hasArtifact()) return false;
+    boolean result = true;
+    result = result && (hasArtifact() == other.hasArtifact());
     if (hasArtifact()) {
-      if (!getArtifact()
-          .equals(other.getArtifact())) return false;
+      result = result && getArtifact()
+          .equals(other.getArtifact());
     }
-    if (getExternal()
-        != other.getExternal()) return false;
-    if (!getBehaviorConstructorName()
-        .equals(other.getBehaviorConstructorName())) return false;
-    if (hasBehaviorConstructor() != other.hasBehaviorConstructor()) return false;
+    result = result && (getExternal()
+        == other.getExternal());
+    result = result && getBehaviorConstructorName()
+        .equals(other.getBehaviorConstructorName());
+    result = result && (hasBehaviorConstructor() == other.hasBehaviorConstructor());
     if (hasBehaviorConstructor()) {
-      if (!getBehaviorConstructor()
-          .equals(other.getBehaviorConstructor())) return false;
+      result = result && getBehaviorConstructor()
+          .equals(other.getBehaviorConstructor());
     }
-    if (!getBehaviorInvocationsList()
-        .equals(other.getBehaviorInvocationsList())) return false;
-    if (!getBehavioralPropertiesList()
-        .equals(other.getBehavioralPropertiesList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    result = result && getBehaviorInvocationsList()
+        .equals(other.getBehaviorInvocationsList());
+    result = result && getBehavioralPropertiesList()
+        .equals(other.getBehavioralPropertiesList());
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
   }
 
   @java.lang.Override
@@ -667,7 +669,7 @@ private static final long serialVersionUID = 0L;
         result.behaviorConstructor_ = behaviorConstructorBuilder_.build();
       }
       if (behaviorInvocationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
           behaviorInvocations_ = java.util.Collections.unmodifiableList(behaviorInvocations_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
@@ -676,7 +678,7 @@ private static final long serialVersionUID = 0L;
         result.behaviorInvocations_ = behaviorInvocationsBuilder_.build();
       }
       if (behavioralPropertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
           behavioralProperties_ = java.util.Collections.unmodifiableList(behavioralProperties_);
           bitField0_ = (bitField0_ & ~0x00000020);
         }
@@ -691,35 +693,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.setField(field, value);
+      return (Builder) super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+      return (Builder) super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+      return (Builder) super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -828,7 +830,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private org.tti.tokens.model.artifact.Artifact artifact_;
+    private org.tti.tokens.model.artifact.Artifact artifact_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.artifact.Artifact, org.tti.tokens.model.artifact.Artifact.Builder, org.tti.tokens.model.artifact.ArtifactOrBuilder> artifactBuilder_;
     /**
@@ -1060,7 +1062,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Any behaviorConstructor_;
+    private com.google.protobuf.Any behaviorConstructor_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> behaviorConstructorBuilder_;
     /**
@@ -1216,7 +1218,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.tti.tokens.model.core.Invocation> behaviorInvocations_ =
       java.util.Collections.emptyList();
     private void ensureBehaviorInvocationsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         behaviorInvocations_ = new java.util.ArrayList<org.tti.tokens.model.core.Invocation>(behaviorInvocations_);
         bitField0_ |= 0x00000010;
        }
@@ -1445,7 +1447,7 @@ private static final long serialVersionUID = 0L;
         behaviorInvocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.core.Invocation, org.tti.tokens.model.core.Invocation.Builder, org.tti.tokens.model.core.InvocationOrBuilder>(
                 behaviorInvocations_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
                 isClean());
         behaviorInvocations_ = null;
@@ -1456,7 +1458,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.tti.tokens.model.core.Property> behavioralProperties_ =
       java.util.Collections.emptyList();
     private void ensureBehavioralPropertiesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         behavioralProperties_ = new java.util.ArrayList<org.tti.tokens.model.core.Property>(behavioralProperties_);
         bitField0_ |= 0x00000020;
        }
@@ -1757,7 +1759,7 @@ private static final long serialVersionUID = 0L;
         behavioralPropertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.core.Property, org.tti.tokens.model.core.Property.Builder, org.tti.tokens.model.core.PropertyOrBuilder>(
                 behavioralProperties_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
                 isClean());
         behavioralProperties_ = null;
@@ -1767,7 +1769,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     @java.lang.Override

@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     symbol_ = "";
     owner_ = "";
     quantity_ = com.google.protobuf.ByteString.EMPTY;
+    decimals_ = 0;
     constructorName_ = "";
     childTokens_ = java.util.Collections.emptyList();
   }
@@ -101,7 +102,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
               tokenProperties_ = com.google.protobuf.MapField.newMapField(
                   TokenPropertiesDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000080;
@@ -133,7 +134,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 90: {
-            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
               childTokens_ = new java.util.ArrayList<org.tti.tokens.model.core.Base>();
               mutable_bitField0_ |= 0x00000400;
             }
@@ -142,7 +143,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           default: {
-            if (!parseUnknownField(
+            if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
@@ -156,7 +157,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+      if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         childTokens_ = java.util.Collections.unmodifiableList(childTokens_);
       }
       this.unknownFields = unknownFields.build();
@@ -721,35 +722,36 @@ private static final long serialVersionUID = 0L;
     }
     org.tti.tokens.model.core.Base other = (org.tti.tokens.model.core.Base) obj;
 
-    if (hasArtifact() != other.hasArtifact()) return false;
+    boolean result = true;
+    result = result && (hasArtifact() == other.hasArtifact());
     if (hasArtifact()) {
-      if (!getArtifact()
-          .equals(other.getArtifact())) return false;
+      result = result && getArtifact()
+          .equals(other.getArtifact());
     }
-    if (tokenType_ != other.tokenType_) return false;
-    if (!getName()
-        .equals(other.getName())) return false;
-    if (!getSymbol()
-        .equals(other.getSymbol())) return false;
-    if (!getOwner()
-        .equals(other.getOwner())) return false;
-    if (!getQuantity()
-        .equals(other.getQuantity())) return false;
-    if (getDecimals()
-        != other.getDecimals()) return false;
-    if (!internalGetTokenProperties().equals(
-        other.internalGetTokenProperties())) return false;
-    if (!getConstructorName()
-        .equals(other.getConstructorName())) return false;
-    if (hasConstructor() != other.hasConstructor()) return false;
+    result = result && tokenType_ == other.tokenType_;
+    result = result && getName()
+        .equals(other.getName());
+    result = result && getSymbol()
+        .equals(other.getSymbol());
+    result = result && getOwner()
+        .equals(other.getOwner());
+    result = result && getQuantity()
+        .equals(other.getQuantity());
+    result = result && (getDecimals()
+        == other.getDecimals());
+    result = result && internalGetTokenProperties().equals(
+        other.internalGetTokenProperties());
+    result = result && getConstructorName()
+        .equals(other.getConstructorName());
+    result = result && (hasConstructor() == other.hasConstructor());
     if (hasConstructor()) {
-      if (!getConstructor()
-          .equals(other.getConstructor())) return false;
+      result = result && getConstructor()
+          .equals(other.getConstructor());
     }
-    if (!getChildTokensList()
-        .equals(other.getChildTokensList())) return false;
-    if (!unknownFields.equals(other.unknownFields)) return false;
-    return true;
+    result = result && getChildTokensList()
+        .equals(other.getChildTokensList());
+    result = result && unknownFields.equals(other.unknownFields);
+    return result;
   }
 
   @java.lang.Override
@@ -1030,7 +1032,7 @@ private static final long serialVersionUID = 0L;
         result.constructor_ = constructorBuilder_.build();
       }
       if (childTokensBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
           childTokens_ = java.util.Collections.unmodifiableList(childTokens_);
           bitField0_ = (bitField0_ & ~0x00000400);
         }
@@ -1045,35 +1047,35 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder clone() {
-      return super.clone();
+      return (Builder) super.clone();
     }
     @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.setField(field, value);
+      return (Builder) super.setField(field, value);
     }
     @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
+      return (Builder) super.clearField(field);
     }
     @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
+      return (Builder) super.clearOneof(oneof);
     }
     @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
+      return (Builder) super.setRepeatedField(field, index, value);
     }
     @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return super.addRepeatedField(field, value);
+      return (Builder) super.addRepeatedField(field, value);
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1176,7 +1178,7 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private org.tti.tokens.model.artifact.Artifact artifact_;
+    private org.tti.tokens.model.artifact.Artifact artifact_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.tti.tokens.model.artifact.Artifact, org.tti.tokens.model.artifact.Artifact.Builder, org.tti.tokens.model.artifact.ArtifactOrBuilder> artifactBuilder_;
     /**
@@ -1924,7 +1926,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Any constructor_;
+    private com.google.protobuf.Any constructor_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> constructorBuilder_;
     /**
@@ -2080,7 +2082,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.tti.tokens.model.core.Base> childTokens_ =
       java.util.Collections.emptyList();
     private void ensureChildTokensIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000400) == 0x00000400)) {
         childTokens_ = new java.util.ArrayList<org.tti.tokens.model.core.Base>(childTokens_);
         bitField0_ |= 0x00000400;
        }
@@ -2381,7 +2383,7 @@ private static final long serialVersionUID = 0L;
         childTokensBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.tti.tokens.model.core.Base, org.tti.tokens.model.core.Base.Builder, org.tti.tokens.model.core.BaseOrBuilder>(
                 childTokens_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000400) == 0x00000400),
                 getParentForChildren(),
                 isClean());
         childTokens_ = null;
@@ -2391,7 +2393,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     @java.lang.Override
