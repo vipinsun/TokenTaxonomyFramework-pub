@@ -352,108 +352,132 @@ namespace TaxonomyHost.Controllers
 		
 			var jsf = new JsonFormatter(new JsonFormatter.Settings(true));
 			var artifactType = artifactRequest.Type;
-			var artifactName = "";
+	
 			var retVal = new UpdateArtifactResponse
 			{
 				Type = artifactType
 			};
-			
+
+			var artifactName = "";
 			switch (artifactType)
 			{
 				case ArtifactType.Base:
-					_log.Info("CreateArtifact was requested to create a new base token type, which is not supported.");
+					_log.Info("UpdateArtifact was requested to update a base token type, which is not supported.");
 					break;
 				case ArtifactType.Behavior:
-					var newBehavior = artifactRequest.ArtifactTypeObject.Unpack<Behavior>();
-					if (!CheckForUniqueArtifact(ArtifactType.Behavior, newBehavior.Artifact))
-					{
-						newBehavior.Artifact = MakeUniqueArtifact(newBehavior.Artifact);
-					}
+					var updateBehavior = artifactRequest.ArtifactTypeObject.Unpack<Behavior>();
 
-					artifactName = newBehavior.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorFolder + _folderSeparator + newBehavior.Artifact.Name.ToLower());
-					if(newBehavior.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newBehavior.Artifact.ArtifactFiles, outputFolder);
-					artifactJson = jsf.Format(newBehavior);
-					retVal.ArtifactTypeObject= Any.Pack(newBehavior);
-					break;
-				case ArtifactType.BehaviorGroup:
-					var newBehaviorGroup = artifactRequest.ArtifactTypeObject.Unpack<BehaviorGroup>();
-					if (!CheckForUniqueArtifact(ArtifactType.BehaviorGroup, newBehaviorGroup.Artifact))
+					var existingBehavior = ModelManager.GetBehaviorArtifact(new Symbol
 					{
-						newBehaviorGroup.Artifact = MakeUniqueArtifact(newBehaviorGroup.Artifact);
-					}
-					artifactName = newBehaviorGroup.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorGroupFolder + _folderSeparator + newBehaviorGroup.Artifact.Name.ToLower());
-					if(newBehaviorGroup.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newBehaviorGroup.Artifact.ArtifactFiles, outputFolder);
-					artifactJson = jsf.Format(newBehaviorGroup);
-					retVal.ArtifactTypeObject= Any.Pack(newBehaviorGroup);
-					break;
-				case ArtifactType.PropertySet:
-					var newPropertySet = artifactRequest.ArtifactTypeObject.Unpack<PropertySet>();
-					if (!CheckForUniqueArtifact(ArtifactType.PropertySet, newPropertySet.Artifact))
-					{
-						newPropertySet.Artifact = MakeUniqueArtifact(newPropertySet.Artifact);
-					}
-					artifactName = newPropertySet.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + PropertySetFolder + _folderSeparator + newPropertySet.Artifact.Name.ToLower());
-					if(newPropertySet.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newPropertySet.Artifact.ArtifactFiles, outputFolder);
-					retVal.ArtifactTypeObject= Any.Pack(newPropertySet);
-					artifactJson = jsf.Format(newPropertySet);
-					break;
-				case ArtifactType.TokenTemplate:
-					var newTokenTemplate = artifactRequest.ArtifactTypeObject.Unpack<TokenTemplate>();
-					if (!CheckForUniqueArtifact(ArtifactType.PropertySet, newTokenTemplate.Artifact))
-					{
-						newTokenTemplate.Artifact = MakeUniqueArtifact(newTokenTemplate.Artifact);
-					}
-					artifactName = Utils.FirstToUpper(newTokenTemplate.Artifact.Name);
-					newTokenTemplate.Artifact.Name = artifactName;
+						ArtifactSymbol = updateBehavior.Artifact.ArtifactSymbol.ToolingSymbol
+					});
+
+					existingBehavior?.MergeFrom(updateBehavior);
+					artifactName = updateBehavior.Artifact.Name.ToLower();
 					
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + TokenTemplatesFolder + _folderSeparator + newTokenTemplate.Artifact.Name.ToLower());
-					if(newTokenTemplate.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newTokenTemplate.Artifact.ArtifactFiles, outputFolder);
-					retVal.ArtifactTypeObject= Any.Pack(newTokenTemplate);
-					artifactJson = jsf.Format(newTokenTemplate);
-					break;
+					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + BehaviorFolder + _folderSeparator + artifactName);
+					artifactJson = jsf.Format(existingBehavior);
+					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
+						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingBehavior));
+
+					retVal.ArtifactTypeObject= Any.Pack(existingBehavior);
+					return retVal;
+				case ArtifactType.BehaviorGroup:
+					var updateBehaviorGroup = artifactRequest.ArtifactTypeObject.Unpack<BehaviorGroup>();
+
+					var existingBehaviorGroup = ModelManager.GetBehaviorGroupArtifact(new Symbol
+					{
+						ArtifactSymbol = updateBehaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol
+					});
+
+					existingBehaviorGroup?.MergeFrom(updateBehaviorGroup);
+					artifactName = updateBehaviorGroup.Artifact.Name.ToLower();
+
+					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + BehaviorGroupFolder + _folderSeparator + artifactName);
+					artifactJson = jsf.Format(existingBehaviorGroup);
+					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
+						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingBehaviorGroup));
+
+					retVal.ArtifactTypeObject= Any.Pack(existingBehaviorGroup);
+					return retVal;
+				case ArtifactType.PropertySet:
+					var updatePropertySet = artifactRequest.ArtifactTypeObject.Unpack<PropertySet>();
+
+					var existingPropertySet = ModelManager.GetPropertySetArtifact(new Symbol
+					{
+						ArtifactSymbol = updatePropertySet.Artifact.ArtifactSymbol.ToolingSymbol
+					});
+
+					existingPropertySet?.MergeFrom(updatePropertySet);
+					artifactName = updatePropertySet.Artifact.Name.ToLower();
+	
+					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + PropertySetFolder + _folderSeparator + artifactName);
+					artifactJson = jsf.Format(existingPropertySet);
+					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
+						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingPropertySet));
+
+					retVal.ArtifactTypeObject= Any.Pack(existingPropertySet);
+					return retVal;
+				case ArtifactType.TokenTemplate:
+					var updateTokenTemplate = artifactRequest.ArtifactTypeObject.Unpack<TokenTemplate>();
+
+					var existingTokenTemplate = ModelManager.GetTokenTemplateArtifact( new TaxonomyFormula
+					{
+						Formula = updateTokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol
+					});
+
+					existingTokenTemplate?.MergeFrom(updateTokenTemplate);
+					artifactName = updateTokenTemplate.Artifact.Name.ToLower();
+	
+					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + TokenTemplatesFolder + _folderSeparator + artifactName);
+					artifactJson = jsf.Format(existingTokenTemplate);
+					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
+						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingTokenTemplate));
+
+					retVal.ArtifactTypeObject= Any.Pack(existingTokenTemplate);
+					return retVal;
 				default:
 					_log.Error("No matching type found for: " + artifactType);
 					throw new ArgumentOutOfRangeException();
 			}
 
-			_log.Info("Artifact Destination: " + _artifactPath + _folderSeparator + artifactRequest.Type + " folder");
+			return retVal;
+		}
+
+		private static bool SaveArtifact(ArtifactType type, string artifactName, string artifactJson,
+			DirectoryInfo outputFolder)
+		{
+			_log.Info("Artifact Destination: " + _artifactPath + _folderSeparator + type + " folder");
 			var formattedJson = JToken.Parse(artifactJson).ToString();
-			
+
 			//test to make sure formattedJson will Deserialize.
 			try
 			{
-				switch (artifactRequest.Type)
+				switch (type)
 				{
 					case ArtifactType.Base:
 						var testBase = JsonParser.Default.Parse<Base>(formattedJson);
-						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testBase.Artifact.Name);
 						break;
 					case ArtifactType.Behavior:
 						var testBehavior = JsonParser.Default.Parse<Behavior>(formattedJson);
-						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testBehavior.Artifact.Name);
 						break;
 					case ArtifactType.BehaviorGroup:
 						var testBehaviorGroup = JsonParser.Default.Parse<BehaviorGroup>(formattedJson);
-						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testBehaviorGroup.Artifact.Name);
 						break;
 					case ArtifactType.PropertySet:
 						var testPropertySet = JsonParser.Default.Parse<PropertySet>(formattedJson);
-						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testPropertySet.Artifact.Name);
 						break;
 					case ArtifactType.TokenTemplate:
 						var testTemplate = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
-						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testTemplate.Artifact.Name);
 						break;
 					default:
@@ -462,12 +486,12 @@ namespace TaxonomyHost.Controllers
 			}
 			catch (Exception e)
 			{
-				_log.Error("Json failed to deserialize back into: " + artifactType);
+				_log.Error("Json failed to deserialize back into: " + type);
 				_log.Error(e);
-				return new UpdateArtifactResponse();
+				return false;
 			}
 
-			_log.Info("Creating Artifact: " + formattedJson);
+			_log.Info("Saving Artifact: " + formattedJson);
 			if (outputFolder != null)
 			{
 				var artifactStream = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName + ".json");
@@ -476,7 +500,7 @@ namespace TaxonomyHost.Controllers
 			}
 
 			_log.Info("Complete");
-			return retVal;
+			return false;
 		}
 
 		public static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)

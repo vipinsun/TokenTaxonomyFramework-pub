@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using Google.Protobuf.WellKnownTypes;
 using log4net;
 using TaxonomyHost.Controllers;
 using TTI.TTF.Model.Artifact;
@@ -79,6 +80,11 @@ namespace TaxonomyHost
 		{
 			_log.Info("DeleteArtifact: " + artifactRequest.ArtifactSymbol.ToolingSymbol);
 			return TaxonomyController.DeleteArtifact(artifactRequest);
+		}
+
+		public static bool UpdateInMemoryArtifact(ArtifactType type, Any artifact)
+		{
+			return true;
 		}
 	}
 }
