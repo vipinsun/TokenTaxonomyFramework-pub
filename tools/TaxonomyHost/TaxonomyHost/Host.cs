@@ -1,16 +1,15 @@
 using System.Reflection;
 using System.Threading.Tasks;
-using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using log4net;
-using TTF.Tokens.Model.Artifact;
-using TTF.Tokens.Model.Core;
+using TTI.TTF.Model.Artifact;
+using TTI.TTF.Model.Core;
+using TTI.TTF.Taxonomy;
 using TTI.TTF.Taxonomy.Model;
-using TTT.TTF.Taxonomy;
 
 namespace TaxonomyHost
 {
-    internal class Host : TTT.TTF.Taxonomy.TaxonomyService.TaxonomyServiceBase
+    internal class Host : TTI.TTF.Taxonomy.TaxonomyService.TaxonomyServiceBase
     {
         private static ILog _log;
 

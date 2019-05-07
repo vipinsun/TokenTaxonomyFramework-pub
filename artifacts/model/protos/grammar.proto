@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package taxonomy.model.grammar;
 
-option csharp_namespace = "TTF.Tokens.Model.Grammar";
-option java_package = "org.tti.tokens.model.grammar";
+option csharp_namespace = "TTI.TTF.Model.Grammar";
+option java_package = "org.tti.ttf.model.grammar";
 option java_multiple_files = true;
 
 message FormulaGrammar{

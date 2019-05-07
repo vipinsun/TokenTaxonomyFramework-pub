@@ -3,8 +3,8 @@ syntax = "proto3";
 package taxonomy.model.artifact;
 import "google/protobuf/any.proto";
 
-option csharp_namespace = "TTF.Tokens.Model.Artifact";
-option java_package = "org.tti.tokens.model.artifact";
+option csharp_namespace = "TTI.TTF.Model.Artifact";
+option java_package = "org.tti.ttf.model.artifact";
 option java_multiple_files = true;
 
 enum TokenType {
@@ -117,8 +117,7 @@ message MapResourceEntry{
 
 message NewArtifactRequest{
     ArtifactType type = 1;
-    string name = 2;
-    TokenType token_type = 3; //if ArtifactType Base or TokenTemplate
+    google.protobuf.Any artifact = 2;
 }
 
 message NewArtifactResponse{

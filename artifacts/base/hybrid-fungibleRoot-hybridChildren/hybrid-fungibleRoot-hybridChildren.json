@@ -7,8 +7,8 @@
       "alias2"
     ],
     "artifactSymbol": {
-      "visualSymbol": "",
-      "toolingSymbol": ""
+      "visualSymbol": "&tau;<sub>F</sub>([&tau;(&tau;))",
+        "toolingSymbol": "tF([t(t)]"
     },
     "controlUri": "../../../../../../artifacts/base/hybrid-fungibleRoot-hybridChildren/hybrid-fungibleRoot-hybridChildren.proto",
     "artifactDefinition": {

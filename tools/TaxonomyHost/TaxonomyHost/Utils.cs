@@ -29,7 +29,25 @@ namespace TaxonomyHost
 			}
 			XmlConfigurator.Configure(LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof (log4net.Repository.Hierarchy.Hierarchy)), xmlDocument["log4net"]);
 		}
+		public static string FirstToUpper(string nameString)
+		{
+			var ch = nameString.ToCharArray();
+			for (var i = 0; i < nameString.Length; i++)
+			{
 
+				// If first character of a word is found 
+				if ((i != 0 || ch[i] == ' ') && (ch[i] == ' ' || ch[i - 1] != ' ')) continue;
+				// If it is in lower-case 
+				if (ch[i] >= 'a' && ch[i] <= 'z')
+				{
+
+					// Convert into Upper-case 
+					ch[i] = (char) (ch[i] - 'a' + 'A');
+				}
+			}
+
+			return ch.ToString();
+		}
 	}
 	public static class Os
 	{

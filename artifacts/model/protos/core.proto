@@ -6,8 +6,8 @@ import "google/protobuf/any.proto";
 import "artifact.proto";
 import "grammar.proto";
 
-option csharp_namespace = "TTF.Tokens.Model.Core";
-option java_package = "org.tti.tokens.model.core";
+option csharp_namespace = "TTI.TTF.Model.Core";
+option java_package = "org.tti.ttf.model.core";
 option java_multiple_files = true;
 
 //all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
@@ -27,7 +27,7 @@ message Base{
     map<string, string> token_properties = 11; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
     string constructor_name = 12; //a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
     google.protobuf.Any constructor = 13; //the constructor type defined in the token template artifact.
-    repeated Base child_tokens = 14; //if hybrid, this can contain the list of child token classes.
+    repeated TokenTemplate child_tokens = 14; //if hybrid, this can contain the list of child token classes.
 }
 
 message Behavior{

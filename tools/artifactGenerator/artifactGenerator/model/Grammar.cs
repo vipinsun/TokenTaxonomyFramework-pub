@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TTF.Tokens.Model.Grammar {
+namespace TTI.TTF.Model.Grammar {
 
   /// <summary>Holder for reflection information generated from grammar.proto</summary>
   public static partial class GrammarReflection {
@@ -48,19 +48,18 @@ namespace TTF.Tokens.Model.Grammar {
             "b2wYASABKAkiTQoMQmVoYXZpb3JMaXN0EhIKCmxpc3Rfc3RhcnQYASABKAkS",
             "FwoPYmVoYXZpb3Jfc3ltYm9sGAIgAygJEhAKCGxpc3RfZW5kGAMgASgJIkYK",
             "E1Byb3BlcnR5U2V0TGlzdEl0ZW0SEgoKbGlzdF9zdGFydBgBIAEoCRIbChNw",
-            "cm9wZXJ0eV9zZXRfc3ltYm9sGAIgASgJQjsKHG9yZy50dGkudG9rZW5zLm1v",
-            "ZGVsLmdyYW1tYXJQAaoCGFRURi5Ub2tlbnMuTW9kZWwuR3JhbW1hcmIGcHJv",
-            "dG8z"));
+            "cm9wZXJ0eV9zZXRfc3ltYm9sGAIgASgJQjUKGW9yZy50dGkudHRmLm1vZGVs",
+            "LmdyYW1tYXJQAaoCFVRUSS5UVEYuTW9kZWwuR3JhbW1hcmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Grammar.FormulaGrammar), global::TTF.Tokens.Model.Grammar.FormulaGrammar.Parser, new[]{ "SingleToken", "Hybrid", "HybridWithHybrids" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Grammar.HybridTokenFormula), global::TTF.Tokens.Model.Grammar.HybridTokenFormula.Parser, new[]{ "Parent", "HybridChildrenStart", "ChildTokens", "HybridChildrenEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula), global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula.Parser, new[]{ "Parent", "HybridChildrenStart", "ChildTokens", "HybridChildrenEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Grammar.SingleToken), global::TTF.Tokens.Model.Grammar.SingleToken.Parser, new[]{ "GroupStart", "BaseToken", "Behaviors", "PropertySets", "GroupEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Grammar.TokenBase), global::TTF.Tokens.Model.Grammar.TokenBase.Parser, new[]{ "BaseSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Grammar.BehaviorList), global::TTF.Tokens.Model.Grammar.BehaviorList.Parser, new[]{ "ListStart", "BehaviorSymbol", "ListEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Grammar.PropertySetListItem), global::TTF.Tokens.Model.Grammar.PropertySetListItem.Parser, new[]{ "ListStart", "PropertySetSymbol" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.FormulaGrammar), global::TTI.TTF.Model.Grammar.FormulaGrammar.Parser, new[]{ "SingleToken", "Hybrid", "HybridWithHybrids" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.HybridTokenFormula), global::TTI.TTF.Model.Grammar.HybridTokenFormula.Parser, new[]{ "Parent", "HybridChildrenStart", "ChildTokens", "HybridChildrenEnd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula), global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula.Parser, new[]{ "Parent", "HybridChildrenStart", "ChildTokens", "HybridChildrenEnd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.SingleToken), global::TTI.TTF.Model.Grammar.SingleToken.Parser, new[]{ "GroupStart", "BaseToken", "Behaviors", "PropertySets", "GroupEnd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.TokenBase), global::TTI.TTF.Model.Grammar.TokenBase.Parser, new[]{ "BaseSymbol" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.BehaviorList), global::TTI.TTF.Model.Grammar.BehaviorList.Parser, new[]{ "ListStart", "BehaviorSymbol", "ListEnd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.PropertySetListItem), global::TTI.TTF.Model.Grammar.PropertySetListItem.Parser, new[]{ "ListStart", "PropertySetSymbol" }, null, null, null)
           }));
     }
     #endregion
@@ -75,7 +74,7 @@ namespace TTF.Tokens.Model.Grammar {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -105,9 +104,9 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "single_token" field.</summary>
     public const int SingleTokenFieldNumber = 1;
-    private global::TTF.Tokens.Model.Grammar.SingleToken singleToken_;
+    private global::TTI.TTF.Model.Grammar.SingleToken singleToken_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Grammar.SingleToken SingleToken {
+    public global::TTI.TTF.Model.Grammar.SingleToken SingleToken {
       get { return singleToken_; }
       set {
         singleToken_ = value;
@@ -116,9 +115,9 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "hybrid" field.</summary>
     public const int HybridFieldNumber = 2;
-    private global::TTF.Tokens.Model.Grammar.HybridTokenFormula hybrid_;
+    private global::TTI.TTF.Model.Grammar.HybridTokenFormula hybrid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Grammar.HybridTokenFormula Hybrid {
+    public global::TTI.TTF.Model.Grammar.HybridTokenFormula Hybrid {
       get { return hybrid_; }
       set {
         hybrid_ = value;
@@ -127,9 +126,9 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "hybrid_with_hybrids" field.</summary>
     public const int HybridWithHybridsFieldNumber = 3;
-    private global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula hybridWithHybrids_;
+    private global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula hybridWithHybrids_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula HybridWithHybrids {
+    public global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula HybridWithHybrids {
       get { return hybridWithHybrids_; }
       set {
         hybridWithHybrids_ = value;
@@ -216,19 +215,19 @@ namespace TTF.Tokens.Model.Grammar {
       }
       if (other.singleToken_ != null) {
         if (singleToken_ == null) {
-          SingleToken = new global::TTF.Tokens.Model.Grammar.SingleToken();
+          SingleToken = new global::TTI.TTF.Model.Grammar.SingleToken();
         }
         SingleToken.MergeFrom(other.SingleToken);
       }
       if (other.hybrid_ != null) {
         if (hybrid_ == null) {
-          Hybrid = new global::TTF.Tokens.Model.Grammar.HybridTokenFormula();
+          Hybrid = new global::TTI.TTF.Model.Grammar.HybridTokenFormula();
         }
         Hybrid.MergeFrom(other.Hybrid);
       }
       if (other.hybridWithHybrids_ != null) {
         if (hybridWithHybrids_ == null) {
-          HybridWithHybrids = new global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula();
+          HybridWithHybrids = new global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula();
         }
         HybridWithHybrids.MergeFrom(other.HybridWithHybrids);
       }
@@ -245,21 +244,21 @@ namespace TTF.Tokens.Model.Grammar {
             break;
           case 10: {
             if (singleToken_ == null) {
-              SingleToken = new global::TTF.Tokens.Model.Grammar.SingleToken();
+              SingleToken = new global::TTI.TTF.Model.Grammar.SingleToken();
             }
             input.ReadMessage(SingleToken);
             break;
           }
           case 18: {
             if (hybrid_ == null) {
-              Hybrid = new global::TTF.Tokens.Model.Grammar.HybridTokenFormula();
+              Hybrid = new global::TTI.TTF.Model.Grammar.HybridTokenFormula();
             }
             input.ReadMessage(Hybrid);
             break;
           }
           case 26: {
             if (hybridWithHybrids_ == null) {
-              HybridWithHybrids = new global::TTF.Tokens.Model.Grammar.HybridTokenWithHybridChildrenFormula();
+              HybridWithHybrids = new global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula();
             }
             input.ReadMessage(HybridWithHybrids);
             break;
@@ -278,7 +277,7 @@ namespace TTF.Tokens.Model.Grammar {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -309,9 +308,9 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "parent" field.</summary>
     public const int ParentFieldNumber = 1;
-    private global::TTF.Tokens.Model.Grammar.SingleToken parent_;
+    private global::TTI.TTF.Model.Grammar.SingleToken parent_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Grammar.SingleToken Parent {
+    public global::TTI.TTF.Model.Grammar.SingleToken Parent {
       get { return parent_; }
       set {
         parent_ = value;
@@ -334,11 +333,11 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "child_tokens" field.</summary>
     public const int ChildTokensFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Grammar.SingleToken> _repeated_childTokens_codec
-        = pb::FieldCodec.ForMessage(26, global::TTF.Tokens.Model.Grammar.SingleToken.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.SingleToken> childTokens_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.SingleToken>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Grammar.SingleToken> _repeated_childTokens_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Model.Grammar.SingleToken.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Grammar.SingleToken> childTokens_ = new pbc::RepeatedField<global::TTI.TTF.Model.Grammar.SingleToken>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.SingleToken> ChildTokens {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Grammar.SingleToken> ChildTokens {
       get { return childTokens_; }
     }
 
@@ -440,7 +439,7 @@ namespace TTF.Tokens.Model.Grammar {
       }
       if (other.parent_ != null) {
         if (parent_ == null) {
-          Parent = new global::TTF.Tokens.Model.Grammar.SingleToken();
+          Parent = new global::TTI.TTF.Model.Grammar.SingleToken();
         }
         Parent.MergeFrom(other.Parent);
       }
@@ -464,7 +463,7 @@ namespace TTF.Tokens.Model.Grammar {
             break;
           case 10: {
             if (parent_ == null) {
-              Parent = new global::TTF.Tokens.Model.Grammar.SingleToken();
+              Parent = new global::TTI.TTF.Model.Grammar.SingleToken();
             }
             input.ReadMessage(Parent);
             break;
@@ -495,7 +494,7 @@ namespace TTF.Tokens.Model.Grammar {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -526,9 +525,9 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "parent" field.</summary>
     public const int ParentFieldNumber = 1;
-    private global::TTF.Tokens.Model.Grammar.SingleToken parent_;
+    private global::TTI.TTF.Model.Grammar.SingleToken parent_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Grammar.SingleToken Parent {
+    public global::TTI.TTF.Model.Grammar.SingleToken Parent {
       get { return parent_; }
       set {
         parent_ = value;
@@ -551,11 +550,11 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "child_tokens" field.</summary>
     public const int ChildTokensFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Grammar.HybridTokenFormula> _repeated_childTokens_codec
-        = pb::FieldCodec.ForMessage(26, global::TTF.Tokens.Model.Grammar.HybridTokenFormula.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.HybridTokenFormula> childTokens_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.HybridTokenFormula>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Grammar.HybridTokenFormula> _repeated_childTokens_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Model.Grammar.HybridTokenFormula.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula> childTokens_ = new pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.HybridTokenFormula> ChildTokens {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula> ChildTokens {
       get { return childTokens_; }
     }
 
@@ -657,7 +656,7 @@ namespace TTF.Tokens.Model.Grammar {
       }
       if (other.parent_ != null) {
         if (parent_ == null) {
-          Parent = new global::TTF.Tokens.Model.Grammar.SingleToken();
+          Parent = new global::TTI.TTF.Model.Grammar.SingleToken();
         }
         Parent.MergeFrom(other.Parent);
       }
@@ -681,7 +680,7 @@ namespace TTF.Tokens.Model.Grammar {
             break;
           case 10: {
             if (parent_ == null) {
-              Parent = new global::TTF.Tokens.Model.Grammar.SingleToken();
+              Parent = new global::TTI.TTF.Model.Grammar.SingleToken();
             }
             input.ReadMessage(Parent);
             break;
@@ -715,7 +714,7 @@ namespace TTF.Tokens.Model.Grammar {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -761,9 +760,9 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "base_token" field.</summary>
     public const int BaseTokenFieldNumber = 2;
-    private global::TTF.Tokens.Model.Grammar.TokenBase baseToken_;
+    private global::TTI.TTF.Model.Grammar.TokenBase baseToken_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Grammar.TokenBase BaseToken {
+    public global::TTI.TTF.Model.Grammar.TokenBase BaseToken {
       get { return baseToken_; }
       set {
         baseToken_ = value;
@@ -772,9 +771,9 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "behaviors" field.</summary>
     public const int BehaviorsFieldNumber = 3;
-    private global::TTF.Tokens.Model.Grammar.BehaviorList behaviors_;
+    private global::TTI.TTF.Model.Grammar.BehaviorList behaviors_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Grammar.BehaviorList Behaviors {
+    public global::TTI.TTF.Model.Grammar.BehaviorList Behaviors {
       get { return behaviors_; }
       set {
         behaviors_ = value;
@@ -783,11 +782,11 @@ namespace TTF.Tokens.Model.Grammar {
 
     /// <summary>Field number for the "property_sets" field.</summary>
     public const int PropertySetsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Grammar.PropertySetListItem> _repeated_propertySets_codec
-        = pb::FieldCodec.ForMessage(34, global::TTF.Tokens.Model.Grammar.PropertySetListItem.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.PropertySetListItem> propertySets_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.PropertySetListItem>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Grammar.PropertySetListItem> _repeated_propertySets_codec
+        = pb::FieldCodec.ForMessage(34, global::TTI.TTF.Model.Grammar.PropertySetListItem.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Grammar.PropertySetListItem> propertySets_ = new pbc::RepeatedField<global::TTI.TTF.Model.Grammar.PropertySetListItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Grammar.PropertySetListItem> PropertySets {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Grammar.PropertySetListItem> PropertySets {
       get { return propertySets_; }
     }
 
@@ -901,13 +900,13 @@ namespace TTF.Tokens.Model.Grammar {
       }
       if (other.baseToken_ != null) {
         if (baseToken_ == null) {
-          BaseToken = new global::TTF.Tokens.Model.Grammar.TokenBase();
+          BaseToken = new global::TTI.TTF.Model.Grammar.TokenBase();
         }
         BaseToken.MergeFrom(other.BaseToken);
       }
       if (other.behaviors_ != null) {
         if (behaviors_ == null) {
-          Behaviors = new global::TTF.Tokens.Model.Grammar.BehaviorList();
+          Behaviors = new global::TTI.TTF.Model.Grammar.BehaviorList();
         }
         Behaviors.MergeFrom(other.Behaviors);
       }
@@ -932,14 +931,14 @@ namespace TTF.Tokens.Model.Grammar {
           }
           case 18: {
             if (baseToken_ == null) {
-              BaseToken = new global::TTF.Tokens.Model.Grammar.TokenBase();
+              BaseToken = new global::TTI.TTF.Model.Grammar.TokenBase();
             }
             input.ReadMessage(BaseToken);
             break;
           }
           case 26: {
             if (behaviors_ == null) {
-              Behaviors = new global::TTF.Tokens.Model.Grammar.BehaviorList();
+              Behaviors = new global::TTI.TTF.Model.Grammar.BehaviorList();
             }
             input.ReadMessage(Behaviors);
             break;
@@ -966,7 +965,7 @@ namespace TTF.Tokens.Model.Grammar {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1095,7 +1094,7 @@ namespace TTF.Tokens.Model.Grammar {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1281,7 +1280,7 @@ namespace TTF.Tokens.Model.Grammar {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -41,7 +41,7 @@ namespace TaxonomyHost
 			
 			_apiServer = new Server
 			{
-				Services = {TTT.TTF.Taxonomy.TaxonomyService.BindService(new Host())},
+				Services = {TTI.TTF.Taxonomy.TaxonomyService.BindService(new Host())},
 				Ports = {new ServerPort(_gRpcHost, _gRpcPort, ServerCredentials.Insecure)}
 			};
 			

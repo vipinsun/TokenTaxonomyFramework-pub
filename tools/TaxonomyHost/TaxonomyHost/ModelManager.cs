@@ -1,23 +1,19 @@
 using System;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using Google.Protobuf;
 using log4net;
-using Newtonsoft.Json.Linq;
-using TaxonomyHost.factories;
-using TTF.Tokens.Model.Artifact;
-using TTF.Tokens.Model.Core;
+using TaxonomyHost.Controllers;
+using TTI.TTF.Model.Artifact;
+using TTI.TTF.Model.Core;
+using TTI.TTF.Taxonomy;
 using TTI.TTF.Taxonomy.Model;
-using TTT.TTF.Taxonomy;
 
 namespace TaxonomyHost
 {
 	public static class ModelManager
 	{
 		private static readonly ILog _log;
-		internal static Taxonomy Taxonomy { get; set; }
-
+		private static Taxonomy Taxonomy { get; set; }
 		static ModelManager()
 		{
 			Utils.InitLog();
@@ -27,7 +23,7 @@ namespace TaxonomyHost
 		internal static void Init()
 		{
 			_log.Info("ModelManager Init");
-			Taxonomy = TaxonomyFactory.Load();
+			Taxonomy = TaxonomyController.Load();
 			TaxonomyCache.SaveToCache(Taxonomy.Version, Taxonomy, DateTime.Now.AddDays(1));
 		}
 
@@ -69,17 +65,20 @@ namespace TaxonomyHost
 
 		public static NewArtifactResponse CreateArtifact(NewArtifactRequest artifactRequest)
 		{
-			throw new NotImplementedException();
+			_log.Info("CreateArtifact: " + artifactRequest.Type);
+			return TaxonomyController.CreateArtifact(artifactRequest);
 		}
 
 		public static UpdateArtifactResponse UpdateArtifact(UpdateArtifactRequest artifactRequest)
 		{
-			throw new NotImplementedException();
+			_log.Info("UpdateArtifact: " + artifactRequest.Type);
+			return TaxonomyController.UpdateArtifact(artifactRequest);
 		}
 
 		public static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
 		{
-			throw new NotImplementedException();
+			_log.Info("DeleteArtifact: " + artifactRequest.ArtifactSymbol.ToolingSymbol);
+			return TaxonomyController.DeleteArtifact(artifactRequest);
 		}
 	}
 }

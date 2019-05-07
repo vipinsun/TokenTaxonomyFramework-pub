@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TTF.Tokens.Model.Artifact {
+namespace TTI.TTF.Model.Artifact {
 
   /// <summary>Holder for reflection information generated from artifact.proto</summary>
   public static partial class ArtifactReflection {
@@ -66,55 +66,54 @@ namespace TTF.Tokens.Model.Artifact {
             "CgxtYXBwaW5nX3R5cGUYASABKA4yJC50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
             "dC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMg",
             "ASgJEhUKDXJlc291cmNlX3BhdGgYBCABKAkSKwoEbWFwcxgFIAEoCzIdLnRh",
-            "eG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMijwEKEk5ld0FydGlmYWN0UmVx",
-            "dWVzdBIzCgR0eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
-            "QXJ0aWZhY3RUeXBlEgwKBG5hbWUYAiABKAkSNgoKdG9rZW5fdHlwZRgDIAEo",
-            "DjIiLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlRva2VuVHlwZSJ+ChNOZXdB",
-            "cnRpZmFjdFJlc3BvbnNlEjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2Rl",
-            "bC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSMgoUYXJ0aWZhY3RfdHlwZV9vYmpl",
-            "Y3QYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55IoABChVVcGRhdGVBcnRp",
-            "ZmFjdFJlcXVlc3QSMwoEdHlwZRgBIAEoDjIlLnRheG9ub215Lm1vZGVsLmFy",
-            "dGlmYWN0LkFydGlmYWN0VHlwZRIyChRhcnRpZmFjdF90eXBlX29iamVjdBgC",
-            "IAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkikgEKFlVwZGF0ZUFydGlmYWN0",
-            "UmVzcG9uc2USMwoEdHlwZRgBIAEoDjIlLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LkFydGlmYWN0VHlwZRIPCgd1cGRhdGVkGAIgASgIEjIKFGFydGlmYWN0",
-            "X3R5cGVfb2JqZWN0GAMgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKOAQoV",
-            "RGVsZXRlQXJ0aWZhY3RSZXF1ZXN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9t",
-            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSQAoPYXJ0aWZhY3Rfc3lt",
-            "Ym9sGAIgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RT",
-            "eW1ib2wiKQoWRGVsZXRlQXJ0aWZhY3RSZXNwb25zZRIPCgdkZWxldGVkGAEg",
-            "ASgIKrsBCglUb2tlblR5cGUSDAoIRlVOR0lCTEUQABIQCgxOT05fRlVOR0lC",
-            "TEUQARIYChRIWUJSSURfRlVOR0lCTEVfUk9PVBACEhwKGEhZQlJJRF9OT05f",
-            "RlVOR0lCTEVfUk9PVBADEigKJEhZQlJJRF9GVU5HSUJMRV9ST09UX0hZQlJJ",
-            "RF9DSElMRFJFThAEEiwKKEhZQlJJRF9OT05fRlVOR0lCTEVfUk9PVF9IWUJS",
-            "SURfQ0hJTERSRU4QBSpgCgxBcnRpZmFjdFR5cGUSCAoEQkFTRRAAEgwKCEJF",
-            "SEFWSU9SEAESEgoOQkVIQVZJT1JfR1JPVVAQAhIQCgxQUk9QRVJUWV9TRVQQ",
-            "AxISCg5UT0tFTl9URU1QTEFURRAEKkIKD0FydGlmYWN0Q29udGVudBIOCgpE",
-            "RUZJTklUSU9OEAASCwoHQ09OVFJPTBABEgcKA1VNTBACEgkKBU9USEVSEAMq",
-            "QAoLTWFwcGluZ1R5cGUSDwoLU09VUkNFX0NPREUQABISCg5JTVBMRU1FTlRB",
-            "VElPThABEgwKCFJFU09VUkNFEAIqdgoOVGFyZ2V0UGxhdGZvcm0SFQoRRVRI",
-            "RVJFVU1fU09MSURJVFkQABIQCgxDSEFJTkNPREVfR08QARISCg5DSEFJTkNP",
-            "REVfSkFWQRACEhIKDkNIQUlOQ09ERV9OT0RFEAMSCQoFQ09SREEQBBIICgRE",
-            "QU1MEAVCPQodb3JnLnR0aS50b2tlbnMubW9kZWwuYXJ0aWZhY3RQAaoCGVRU",
-            "Ri5Ub2tlbnMuTW9kZWwuQXJ0aWZhY3RiBnByb3RvMw=="));
+            "eG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMicQoSTmV3QXJ0aWZhY3RSZXF1",
+            "ZXN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5B",
+            "cnRpZmFjdFR5cGUSJgoIYXJ0aWZhY3QYAiABKAsyFC5nb29nbGUucHJvdG9i",
+            "dWYuQW55In4KE05ld0FydGlmYWN0UmVzcG9uc2USMwoEdHlwZRgBIAEoDjIl",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIyChRhcnRp",
+            "ZmFjdF90eXBlX29iamVjdBgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki",
+            "gAEKFVVwZGF0ZUFydGlmYWN0UmVxdWVzdBIzCgR0eXBlGAEgASgOMiUudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEjIKFGFydGlmYWN0",
+            "X3R5cGVfb2JqZWN0GAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKSAQoW",
+            "VXBkYXRlQXJ0aWZhY3RSZXNwb25zZRIzCgR0eXBlGAEgASgOMiUudGF4b25v",
+            "bXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEg8KB3VwZGF0ZWQYAiAB",
+            "KAgSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QYAyABKAsyFC5nb29nbGUucHJv",
+            "dG9idWYuQW55Io4BChVEZWxldGVBcnRpZmFjdFJlcXVlc3QSMwoEdHlwZRgB",
+            "IAEoDjIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRJA",
+            "Cg9hcnRpZmFjdF9zeW1ib2wYAiABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5BcnRpZmFjdFN5bWJvbCIpChZEZWxldGVBcnRpZmFjdFJlc3BvbnNl",
+            "Eg8KB2RlbGV0ZWQYASABKAgquwEKCVRva2VuVHlwZRIMCghGVU5HSUJMRRAA",
+            "EhAKDE5PTl9GVU5HSUJMRRABEhgKFEhZQlJJRF9GVU5HSUJMRV9ST09UEAIS",
+            "HAoYSFlCUklEX05PTl9GVU5HSUJMRV9ST09UEAMSKAokSFlCUklEX0ZVTkdJ",
+            "QkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAQSLAooSFlCUklEX05PTl9GVU5H",
+            "SUJMRV9ST09UX0hZQlJJRF9DSElMRFJFThAFKmAKDEFydGlmYWN0VHlwZRII",
+            "CgRCQVNFEAASDAoIQkVIQVZJT1IQARISCg5CRUhBVklPUl9HUk9VUBACEhAK",
+            "DFBST1BFUlRZX1NFVBADEhIKDlRPS0VOX1RFTVBMQVRFEAQqQgoPQXJ0aWZh",
+            "Y3RDb250ZW50Eg4KCkRFRklOSVRJT04QABILCgdDT05UUk9MEAESBwoDVU1M",
+            "EAISCQoFT1RIRVIQAypACgtNYXBwaW5nVHlwZRIPCgtTT1VSQ0VfQ09ERRAA",
+            "EhIKDklNUExFTUVOVEFUSU9OEAESDAoIUkVTT1VSQ0UQAip2Cg5UYXJnZXRQ",
+            "bGF0Zm9ybRIVChFFVEhFUkVVTV9TT0xJRElUWRAAEhAKDENIQUlOQ09ERV9H",
+            "TxABEhIKDkNIQUlOQ09ERV9KQVZBEAISEgoOQ0hBSU5DT0RFX05PREUQAxIJ",
+            "CgVDT1JEQRAEEggKBERBTUwQBUI3ChpvcmcudHRpLnR0Zi5tb2RlbC5hcnRp",
+            "ZmFjdFABqgIWVFRJLlRURi5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTF.Tokens.Model.Artifact.TokenType), typeof(global::TTF.Tokens.Model.Artifact.ArtifactType), typeof(global::TTF.Tokens.Model.Artifact.ArtifactContent), typeof(global::TTF.Tokens.Model.Artifact.MappingType), typeof(global::TTF.Tokens.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.Artifact), global::TTF.Tokens.Model.Artifact.Artifact.Parser, new[]{ "Type", "Name", "Aliases", "ArtifactSymbol", "ControlUri", "ArtifactDefinition", "IncompatibleWithSymbols", "InfluencedBySymbols", "ArtifactFiles", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactSymbol), global::TTF.Tokens.Model.Artifact.ArtifactSymbol.Parser, new[]{ "VisualSymbol", "ToolingSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.SymbolInfluence), global::TTF.Tokens.Model.Artifact.SymbolInfluence.Parser, new[]{ "Description", "Symbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactDefinition), global::TTF.Tokens.Model.Artifact.ArtifactDefinition.Parser, new[]{ "BusinessDescription", "BusinessExample", "Analogies", "Comments", "Artifact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactAnalogy), global::TTF.Tokens.Model.Artifact.ArtifactAnalogy.Parser, new[]{ "Name", "Description", "ArtifactDefinition" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.ArtifactFile), global::TTF.Tokens.Model.Artifact.ArtifactFile.Parser, new[]{ "Content", "FileName", "FileData", "Artifact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.Maps), global::TTF.Tokens.Model.Artifact.Maps.Parser, new[]{ "CodeReferences", "ImplementationReferences", "Resources", "Artifact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.MapReference), global::TTF.Tokens.Model.Artifact.MapReference.Parser, new[]{ "MappingType", "Name", "Platform", "ReferencePath", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.MapResourceEntry), global::TTF.Tokens.Model.Artifact.MapResourceEntry.Parser, new[]{ "MappingType", "Name", "Description", "ResourcePath", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.NewArtifactRequest), global::TTF.Tokens.Model.Artifact.NewArtifactRequest.Parser, new[]{ "Type", "Name", "TokenType" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.NewArtifactResponse), global::TTF.Tokens.Model.Artifact.NewArtifactResponse.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.UpdateArtifactRequest), global::TTF.Tokens.Model.Artifact.UpdateArtifactRequest.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.UpdateArtifactResponse), global::TTF.Tokens.Model.Artifact.UpdateArtifactResponse.Parser, new[]{ "Type", "Updated", "ArtifactTypeObject" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.DeleteArtifactRequest), global::TTF.Tokens.Model.Artifact.DeleteArtifactRequest.Parser, new[]{ "Type", "ArtifactSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTF.Tokens.Model.Artifact.DeleteArtifactResponse), global::TTF.Tokens.Model.Artifact.DeleteArtifactResponse.Parser, new[]{ "Deleted" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Model.Artifact.TokenType), typeof(global::TTI.TTF.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Model.Artifact.MappingType), typeof(global::TTI.TTF.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.Artifact), global::TTI.TTF.Model.Artifact.Artifact.Parser, new[]{ "Type", "Name", "Aliases", "ArtifactSymbol", "ControlUri", "ArtifactDefinition", "IncompatibleWithSymbols", "InfluencedBySymbols", "ArtifactFiles", "Maps" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.ArtifactSymbol), global::TTI.TTF.Model.Artifact.ArtifactSymbol.Parser, new[]{ "VisualSymbol", "ToolingSymbol" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.SymbolInfluence), global::TTI.TTF.Model.Artifact.SymbolInfluence.Parser, new[]{ "Description", "Symbol" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.ArtifactDefinition), global::TTI.TTF.Model.Artifact.ArtifactDefinition.Parser, new[]{ "BusinessDescription", "BusinessExample", "Analogies", "Comments", "Artifact" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.ArtifactAnalogy), global::TTI.TTF.Model.Artifact.ArtifactAnalogy.Parser, new[]{ "Name", "Description", "ArtifactDefinition" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.ArtifactFile), global::TTI.TTF.Model.Artifact.ArtifactFile.Parser, new[]{ "Content", "FileName", "FileData", "Artifact" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.Maps), global::TTI.TTF.Model.Artifact.Maps.Parser, new[]{ "CodeReferences", "ImplementationReferences", "Resources", "Artifact" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.MapReference), global::TTI.TTF.Model.Artifact.MapReference.Parser, new[]{ "MappingType", "Name", "Platform", "ReferencePath", "Maps" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.MapResourceEntry), global::TTI.TTF.Model.Artifact.MapResourceEntry.Parser, new[]{ "MappingType", "Name", "Description", "ResourcePath", "Maps" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.NewArtifactRequest), global::TTI.TTF.Model.Artifact.NewArtifactRequest.Parser, new[]{ "Type", "Artifact" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.NewArtifactResponse), global::TTI.TTF.Model.Artifact.NewArtifactResponse.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.UpdateArtifactRequest), global::TTI.TTF.Model.Artifact.UpdateArtifactRequest.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.UpdateArtifactResponse), global::TTI.TTF.Model.Artifact.UpdateArtifactResponse.Parser, new[]{ "Type", "Updated", "ArtifactTypeObject" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.DeleteArtifactRequest), global::TTI.TTF.Model.Artifact.DeleteArtifactRequest.Parser, new[]{ "Type", "ArtifactSymbol" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.DeleteArtifactResponse), global::TTI.TTF.Model.Artifact.DeleteArtifactResponse.Parser, new[]{ "Deleted" }, null, null, null)
           }));
     }
     #endregion
@@ -195,7 +194,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -232,9 +231,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Model.Artifact.ArtifactType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactType Type {
+    public global::TTI.TTF.Model.Artifact.ArtifactType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -264,9 +263,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "artifact_symbol" field.</summary>
     public const int ArtifactSymbolFieldNumber = 4;
-    private global::TTF.Tokens.Model.Artifact.ArtifactSymbol artifactSymbol_;
+    private global::TTI.TTF.Model.Artifact.ArtifactSymbol artifactSymbol_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactSymbol ArtifactSymbol {
+    public global::TTI.TTF.Model.Artifact.ArtifactSymbol ArtifactSymbol {
       get { return artifactSymbol_; }
       set {
         artifactSymbol_ = value;
@@ -286,12 +285,12 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "artifact_definition" field.</summary>
     public const int ArtifactDefinitionFieldNumber = 6;
-    private global::TTF.Tokens.Model.Artifact.ArtifactDefinition artifactDefinition_;
+    private global::TTI.TTF.Model.Artifact.ArtifactDefinition artifactDefinition_;
     /// <summary>
     ///Base, Behavior or Behavior group type indicated by ArtifactType
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactDefinition ArtifactDefinition {
+    public global::TTI.TTF.Model.Artifact.ArtifactDefinition ArtifactDefinition {
       get { return artifactDefinition_; }
       set {
         artifactDefinition_ = value;
@@ -300,45 +299,45 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "incompatible_with_symbols" field.</summary>
     public const int IncompatibleWithSymbolsFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> _repeated_incompatibleWithSymbols_codec
-        = pb::FieldCodec.ForMessage(58, global::TTF.Tokens.Model.Artifact.ArtifactSymbol.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> incompatibleWithSymbols_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.ArtifactSymbol> _repeated_incompatibleWithSymbols_codec
+        = pb::FieldCodec.ForMessage(58, global::TTI.TTF.Model.Artifact.ArtifactSymbol.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactSymbol> incompatibleWithSymbols_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactSymbol>();
     /// <summary>
     ///for behaviors that have opposites, or if another behavior or property-set
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactSymbol> IncompatibleWithSymbols {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactSymbol> IncompatibleWithSymbols {
       get { return incompatibleWithSymbols_; }
     }
 
     /// <summary>Field number for the "influenced_by_symbols" field.</summary>
     public const int InfluencedBySymbolsFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.SymbolInfluence> _repeated_influencedBySymbols_codec
-        = pb::FieldCodec.ForMessage(66, global::TTF.Tokens.Model.Artifact.SymbolInfluence.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.SymbolInfluence> influencedBySymbols_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.SymbolInfluence>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.SymbolInfluence> _repeated_influencedBySymbols_codec
+        = pb::FieldCodec.ForMessage(66, global::TTI.TTF.Model.Artifact.SymbolInfluence.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.SymbolInfluence> influencedBySymbols_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.SymbolInfluence>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.SymbolInfluence> InfluencedBySymbols {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.SymbolInfluence> InfluencedBySymbols {
       get { return influencedBySymbols_; }
     }
 
     /// <summary>Field number for the "artifact_files" field.</summary>
     public const int ArtifactFilesFieldNumber = 9;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.ArtifactFile> _repeated_artifactFiles_codec
-        = pb::FieldCodec.ForMessage(74, global::TTF.Tokens.Model.Artifact.ArtifactFile.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactFile> artifactFiles_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactFile>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.ArtifactFile> _repeated_artifactFiles_codec
+        = pb::FieldCodec.ForMessage(74, global::TTI.TTF.Model.Artifact.ArtifactFile.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactFile> artifactFiles_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactFile>();
     /// <summary>
     ///loop through the files and read them in as bytes to produce a complete artifact object model instance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactFile> ArtifactFiles {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactFile> ArtifactFiles {
       get { return artifactFiles_; }
     }
 
     /// <summary>Field number for the "maps" field.</summary>
     public const int MapsFieldNumber = 10;
-    private global::TTF.Tokens.Model.Artifact.Maps maps_;
+    private global::TTI.TTF.Model.Artifact.Maps maps_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.Maps Maps {
+    public global::TTI.TTF.Model.Artifact.Maps Maps {
       get { return maps_; }
       set {
         maps_ = value;
@@ -475,7 +474,7 @@ namespace TTF.Tokens.Model.Artifact {
       aliases_.Add(other.aliases_);
       if (other.artifactSymbol_ != null) {
         if (artifactSymbol_ == null) {
-          ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+          ArtifactSymbol = new global::TTI.TTF.Model.Artifact.ArtifactSymbol();
         }
         ArtifactSymbol.MergeFrom(other.ArtifactSymbol);
       }
@@ -484,7 +483,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactDefinition_ != null) {
         if (artifactDefinition_ == null) {
-          ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+          ArtifactDefinition = new global::TTI.TTF.Model.Artifact.ArtifactDefinition();
         }
         ArtifactDefinition.MergeFrom(other.ArtifactDefinition);
       }
@@ -493,7 +492,7 @@ namespace TTF.Tokens.Model.Artifact {
       artifactFiles_.Add(other.artifactFiles_);
       if (other.maps_ != null) {
         if (maps_ == null) {
-          Maps = new global::TTF.Tokens.Model.Artifact.Maps();
+          Maps = new global::TTI.TTF.Model.Artifact.Maps();
         }
         Maps.MergeFrom(other.Maps);
       }
@@ -509,7 +508,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTI.TTF.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -522,7 +521,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 34: {
             if (artifactSymbol_ == null) {
-              ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+              ArtifactSymbol = new global::TTI.TTF.Model.Artifact.ArtifactSymbol();
             }
             input.ReadMessage(ArtifactSymbol);
             break;
@@ -533,7 +532,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 50: {
             if (artifactDefinition_ == null) {
-              ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+              ArtifactDefinition = new global::TTI.TTF.Model.Artifact.ArtifactDefinition();
             }
             input.ReadMessage(ArtifactDefinition);
             break;
@@ -552,7 +551,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 82: {
             if (maps_ == null) {
-              Maps = new global::TTF.Tokens.Model.Artifact.Maps();
+              Maps = new global::TTI.TTF.Model.Artifact.Maps();
             }
             input.ReadMessage(Maps);
             break;
@@ -571,7 +570,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -728,7 +727,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -771,9 +770,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 2;
-    private global::TTF.Tokens.Model.Artifact.ArtifactSymbol symbol_;
+    private global::TTI.TTF.Model.Artifact.ArtifactSymbol symbol_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactSymbol Symbol {
+    public global::TTI.TTF.Model.Artifact.ArtifactSymbol Symbol {
       get { return symbol_; }
       set {
         symbol_ = value;
@@ -854,7 +853,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.symbol_ != null) {
         if (symbol_ == null) {
-          Symbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+          Symbol = new global::TTI.TTF.Model.Artifact.ArtifactSymbol();
         }
         Symbol.MergeFrom(other.Symbol);
       }
@@ -875,7 +874,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 18: {
             if (symbol_ == null) {
-              Symbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+              Symbol = new global::TTI.TTF.Model.Artifact.ArtifactSymbol();
             }
             input.ReadMessage(Symbol);
             break;
@@ -894,7 +893,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -948,11 +947,11 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "analogies" field.</summary>
     public const int AnalogiesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.ArtifactAnalogy> _repeated_analogies_codec
-        = pb::FieldCodec.ForMessage(26, global::TTF.Tokens.Model.Artifact.ArtifactAnalogy.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactAnalogy> analogies_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactAnalogy>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.ArtifactAnalogy> _repeated_analogies_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Model.Artifact.ArtifactAnalogy.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactAnalogy> analogies_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactAnalogy>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.ArtifactAnalogy> Analogies {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.ArtifactAnalogy> Analogies {
       get { return analogies_; }
     }
 
@@ -969,12 +968,12 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "artifact" field.</summary>
     public const int ArtifactFieldNumber = 5;
-    private global::TTF.Tokens.Model.Artifact.Artifact artifact_;
+    private global::TTI.TTF.Model.Artifact.Artifact artifact_;
     /// <summary>
     ///navigation to parent
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.Artifact Artifact {
+    public global::TTI.TTF.Model.Artifact.Artifact Artifact {
       get { return artifact_; }
       set {
         artifact_ = value;
@@ -1084,7 +1083,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTI.TTF.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1117,7 +1116,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 42: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTI.TTF.Model.Artifact.Artifact();
             }
             input.ReadMessage(Artifact);
             break;
@@ -1136,7 +1135,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1188,12 +1187,12 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "artifact_definition" field.</summary>
     public const int ArtifactDefinitionFieldNumber = 3;
-    private global::TTF.Tokens.Model.Artifact.ArtifactDefinition artifactDefinition_;
+    private global::TTI.TTF.Model.Artifact.ArtifactDefinition artifactDefinition_;
     /// <summary>
     ///navigation to parent
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactDefinition ArtifactDefinition {
+    public global::TTI.TTF.Model.Artifact.ArtifactDefinition ArtifactDefinition {
       get { return artifactDefinition_; }
       set {
         artifactDefinition_ = value;
@@ -1286,7 +1285,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactDefinition_ != null) {
         if (artifactDefinition_ == null) {
-          ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+          ArtifactDefinition = new global::TTI.TTF.Model.Artifact.ArtifactDefinition();
         }
         ArtifactDefinition.MergeFrom(other.ArtifactDefinition);
       }
@@ -1311,7 +1310,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 26: {
             if (artifactDefinition_ == null) {
-              ArtifactDefinition = new global::TTF.Tokens.Model.Artifact.ArtifactDefinition();
+              ArtifactDefinition = new global::TTI.TTF.Model.Artifact.ArtifactDefinition();
             }
             input.ReadMessage(ArtifactDefinition);
             break;
@@ -1330,7 +1329,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1361,9 +1360,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "content" field.</summary>
     public const int ContentFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.ArtifactContent content_ = 0;
+    private global::TTI.TTF.Model.Artifact.ArtifactContent content_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactContent Content {
+    public global::TTI.TTF.Model.Artifact.ArtifactContent Content {
       get { return content_; }
       set {
         content_ = value;
@@ -1394,12 +1393,12 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "artifact" field.</summary>
     public const int ArtifactFieldNumber = 4;
-    private global::TTF.Tokens.Model.Artifact.Artifact artifact_;
+    private global::TTI.TTF.Model.Artifact.Artifact artifact_;
     /// <summary>
     ///navigation to parent
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.Artifact Artifact {
+    public global::TTI.TTF.Model.Artifact.Artifact Artifact {
       get { return artifact_; }
       set {
         artifact_ = value;
@@ -1504,7 +1503,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTI.TTF.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1520,7 +1519,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Content = (global::TTF.Tokens.Model.Artifact.ArtifactContent) input.ReadEnum();
+            Content = (global::TTI.TTF.Model.Artifact.ArtifactContent) input.ReadEnum();
             break;
           }
           case 18: {
@@ -1533,7 +1532,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 34: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTI.TTF.Model.Artifact.Artifact();
             }
             input.ReadMessage(Artifact);
             break;
@@ -1552,7 +1551,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1583,42 +1582,42 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "code_references" field.</summary>
     public const int CodeReferencesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.MapReference> _repeated_codeReferences_codec
-        = pb::FieldCodec.ForMessage(10, global::TTF.Tokens.Model.Artifact.MapReference.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapReference> codeReferences_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapReference>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.MapReference> _repeated_codeReferences_codec
+        = pb::FieldCodec.ForMessage(10, global::TTI.TTF.Model.Artifact.MapReference.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapReference> codeReferences_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapReference> CodeReferences {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapReference> CodeReferences {
       get { return codeReferences_; }
     }
 
     /// <summary>Field number for the "implementation_references" field.</summary>
     public const int ImplementationReferencesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.MapReference> _repeated_implementationReferences_codec
-        = pb::FieldCodec.ForMessage(18, global::TTF.Tokens.Model.Artifact.MapReference.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapReference> implementationReferences_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapReference>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.MapReference> _repeated_implementationReferences_codec
+        = pb::FieldCodec.ForMessage(18, global::TTI.TTF.Model.Artifact.MapReference.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapReference> implementationReferences_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapReference> ImplementationReferences {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapReference> ImplementationReferences {
       get { return implementationReferences_; }
     }
 
     /// <summary>Field number for the "resources" field.</summary>
     public const int ResourcesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTF.Tokens.Model.Artifact.MapResourceEntry> _repeated_resources_codec
-        = pb::FieldCodec.ForMessage(26, global::TTF.Tokens.Model.Artifact.MapResourceEntry.Parser);
-    private readonly pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapResourceEntry> resources_ = new pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapResourceEntry>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.MapResourceEntry> _repeated_resources_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Model.Artifact.MapResourceEntry.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceEntry> resources_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceEntry>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTF.Tokens.Model.Artifact.MapResourceEntry> Resources {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceEntry> Resources {
       get { return resources_; }
     }
 
     /// <summary>Field number for the "artifact" field.</summary>
     public const int ArtifactFieldNumber = 4;
-    private global::TTF.Tokens.Model.Artifact.Artifact artifact_;
+    private global::TTI.TTF.Model.Artifact.Artifact artifact_;
     /// <summary>
     ///navigation to parent
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.Artifact Artifact {
+    public global::TTI.TTF.Model.Artifact.Artifact Artifact {
       get { return artifact_; }
       set {
         artifact_ = value;
@@ -1702,7 +1701,7 @@ namespace TTF.Tokens.Model.Artifact {
       resources_.Add(other.resources_);
       if (other.artifact_ != null) {
         if (artifact_ == null) {
-          Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+          Artifact = new global::TTI.TTF.Model.Artifact.Artifact();
         }
         Artifact.MergeFrom(other.Artifact);
       }
@@ -1731,7 +1730,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 34: {
             if (artifact_ == null) {
-              Artifact = new global::TTF.Tokens.Model.Artifact.Artifact();
+              Artifact = new global::TTI.TTF.Model.Artifact.Artifact();
             }
             input.ReadMessage(Artifact);
             break;
@@ -1750,7 +1749,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1782,9 +1781,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "mapping_type" field.</summary>
     public const int MappingTypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.MappingType mappingType_ = 0;
+    private global::TTI.TTF.Model.Artifact.MappingType mappingType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.MappingType MappingType {
+    public global::TTI.TTF.Model.Artifact.MappingType MappingType {
       get { return mappingType_; }
       set {
         mappingType_ = value;
@@ -1804,9 +1803,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 3;
-    private global::TTF.Tokens.Model.Artifact.TargetPlatform platform_ = 0;
+    private global::TTI.TTF.Model.Artifact.TargetPlatform platform_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.TargetPlatform Platform {
+    public global::TTI.TTF.Model.Artifact.TargetPlatform Platform {
       get { return platform_; }
       set {
         platform_ = value;
@@ -1826,12 +1825,12 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "maps" field.</summary>
     public const int MapsFieldNumber = 5;
-    private global::TTF.Tokens.Model.Artifact.Maps maps_;
+    private global::TTI.TTF.Model.Artifact.Maps maps_;
     /// <summary>
     ///navigation to parent
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.Maps Maps {
+    public global::TTI.TTF.Model.Artifact.Maps Maps {
       get { return maps_; }
       set {
         maps_ = value;
@@ -1948,7 +1947,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.maps_ != null) {
         if (maps_ == null) {
-          Maps = new global::TTF.Tokens.Model.Artifact.Maps();
+          Maps = new global::TTI.TTF.Model.Artifact.Maps();
         }
         Maps.MergeFrom(other.Maps);
       }
@@ -1964,7 +1963,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            MappingType = (global::TTF.Tokens.Model.Artifact.MappingType) input.ReadEnum();
+            MappingType = (global::TTI.TTF.Model.Artifact.MappingType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -1972,7 +1971,7 @@ namespace TTF.Tokens.Model.Artifact {
             break;
           }
           case 24: {
-            Platform = (global::TTF.Tokens.Model.Artifact.TargetPlatform) input.ReadEnum();
+            Platform = (global::TTI.TTF.Model.Artifact.TargetPlatform) input.ReadEnum();
             break;
           }
           case 34: {
@@ -1981,7 +1980,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 42: {
             if (maps_ == null) {
-              Maps = new global::TTF.Tokens.Model.Artifact.Maps();
+              Maps = new global::TTI.TTF.Model.Artifact.Maps();
             }
             input.ReadMessage(Maps);
             break;
@@ -2000,7 +1999,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2032,9 +2031,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "mapping_type" field.</summary>
     public const int MappingTypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.MappingType mappingType_ = 0;
+    private global::TTI.TTF.Model.Artifact.MappingType mappingType_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.MappingType MappingType {
+    public global::TTI.TTF.Model.Artifact.MappingType MappingType {
       get { return mappingType_; }
       set {
         mappingType_ = value;
@@ -2076,12 +2075,12 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "maps" field.</summary>
     public const int MapsFieldNumber = 5;
-    private global::TTF.Tokens.Model.Artifact.Maps maps_;
+    private global::TTI.TTF.Model.Artifact.Maps maps_;
     /// <summary>
     ///navigation to parent
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.Maps Maps {
+    public global::TTI.TTF.Model.Artifact.Maps Maps {
       get { return maps_; }
       set {
         maps_ = value;
@@ -2198,7 +2197,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.maps_ != null) {
         if (maps_ == null) {
-          Maps = new global::TTF.Tokens.Model.Artifact.Maps();
+          Maps = new global::TTI.TTF.Model.Artifact.Maps();
         }
         Maps.MergeFrom(other.Maps);
       }
@@ -2214,7 +2213,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            MappingType = (global::TTF.Tokens.Model.Artifact.MappingType) input.ReadEnum();
+            MappingType = (global::TTI.TTF.Model.Artifact.MappingType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -2231,7 +2230,7 @@ namespace TTF.Tokens.Model.Artifact {
           }
           case 42: {
             if (maps_ == null) {
-              Maps = new global::TTF.Tokens.Model.Artifact.Maps();
+              Maps = new global::TTI.TTF.Model.Artifact.Maps();
             }
             input.ReadMessage(Maps);
             break;
@@ -2250,7 +2249,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[9]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2268,8 +2267,7 @@ namespace TTF.Tokens.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NewArtifactRequest(NewArtifactRequest other) : this() {
       type_ = other.type_;
-      name_ = other.name_;
-      tokenType_ = other.tokenType_;
+      artifact_ = other.artifact_ != null ? other.artifact_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2280,37 +2278,23 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Model.Artifact.ArtifactType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactType Type {
+    public global::TTI.TTF.Model.Artifact.ArtifactType Type {
       get { return type_; }
       set {
         type_ = value;
       }
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
+    /// <summary>Field number for the "artifact" field.</summary>
+    public const int ArtifactFieldNumber = 2;
+    private global::Google.Protobuf.WellKnownTypes.Any artifact_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
+    public global::Google.Protobuf.WellKnownTypes.Any Artifact {
+      get { return artifact_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "token_type" field.</summary>
-    public const int TokenTypeFieldNumber = 3;
-    private global::TTF.Tokens.Model.Artifact.TokenType tokenType_ = 0;
-    /// <summary>
-    ///if ArtifactType Base or TokenTemplate
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.TokenType TokenType {
-      get { return tokenType_; }
-      set {
-        tokenType_ = value;
+        artifact_ = value;
       }
     }
 
@@ -2328,8 +2312,7 @@ namespace TTF.Tokens.Model.Artifact {
         return true;
       }
       if (Type != other.Type) return false;
-      if (Name != other.Name) return false;
-      if (TokenType != other.TokenType) return false;
+      if (!object.Equals(Artifact, other.Artifact)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2337,8 +2320,7 @@ namespace TTF.Tokens.Model.Artifact {
     public override int GetHashCode() {
       int hash = 1;
       if (Type != 0) hash ^= Type.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (TokenType != 0) hash ^= TokenType.GetHashCode();
+      if (artifact_ != null) hash ^= Artifact.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2356,13 +2338,9 @@ namespace TTF.Tokens.Model.Artifact {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
-      if (Name.Length != 0) {
+      if (artifact_ != null) {
         output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (TokenType != 0) {
-        output.WriteRawTag(24);
-        output.WriteEnum((int) TokenType);
+        output.WriteMessage(Artifact);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2375,11 +2353,8 @@ namespace TTF.Tokens.Model.Artifact {
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (TokenType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
+      if (artifact_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2395,11 +2370,11 @@ namespace TTF.Tokens.Model.Artifact {
       if (other.Type != 0) {
         Type = other.Type;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.TokenType != 0) {
-        TokenType = other.TokenType;
+      if (other.artifact_ != null) {
+        if (artifact_ == null) {
+          Artifact = new global::Google.Protobuf.WellKnownTypes.Any();
+        }
+        Artifact.MergeFrom(other.Artifact);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2413,15 +2388,14 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTI.TTF.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
-            Name = input.ReadString();
-            break;
-          }
-          case 24: {
-            TokenType = (global::TTF.Tokens.Model.Artifact.TokenType) input.ReadEnum();
+            if (artifact_ == null) {
+              Artifact = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(Artifact);
             break;
           }
         }
@@ -2438,7 +2412,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[10]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2467,9 +2441,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Model.Artifact.ArtifactType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactType Type {
+    public global::TTI.TTF.Model.Artifact.ArtifactType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -2580,7 +2554,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTI.TTF.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -2604,7 +2578,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[11]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2633,9 +2607,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Model.Artifact.ArtifactType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactType Type {
+    public global::TTI.TTF.Model.Artifact.ArtifactType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -2746,7 +2720,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTI.TTF.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -2770,7 +2744,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[12]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2800,9 +2774,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Model.Artifact.ArtifactType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactType Type {
+    public global::TTI.TTF.Model.Artifact.ArtifactType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -2936,7 +2910,7 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTI.TTF.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 16: {
@@ -2964,7 +2938,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[13]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2993,9 +2967,9 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTF.Tokens.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Model.Artifact.ArtifactType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactType Type {
+    public global::TTI.TTF.Model.Artifact.ArtifactType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -3004,12 +2978,12 @@ namespace TTF.Tokens.Model.Artifact {
 
     /// <summary>Field number for the "artifact_symbol" field.</summary>
     public const int ArtifactSymbolFieldNumber = 2;
-    private global::TTF.Tokens.Model.Artifact.ArtifactSymbol artifactSymbol_;
+    private global::TTI.TTF.Model.Artifact.ArtifactSymbol artifactSymbol_;
     /// <summary>
     ///deserialize based on type
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTF.Tokens.Model.Artifact.ArtifactSymbol ArtifactSymbol {
+    public global::TTI.TTF.Model.Artifact.ArtifactSymbol ArtifactSymbol {
       get { return artifactSymbol_; }
       set {
         artifactSymbol_ = value;
@@ -3090,7 +3064,7 @@ namespace TTF.Tokens.Model.Artifact {
       }
       if (other.artifactSymbol_ != null) {
         if (artifactSymbol_ == null) {
-          ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+          ArtifactSymbol = new global::TTI.TTF.Model.Artifact.ArtifactSymbol();
         }
         ArtifactSymbol.MergeFrom(other.ArtifactSymbol);
       }
@@ -3106,12 +3080,12 @@ namespace TTF.Tokens.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::TTF.Tokens.Model.Artifact.ArtifactType) input.ReadEnum();
+            Type = (global::TTI.TTF.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
           case 18: {
             if (artifactSymbol_ == null) {
-              ArtifactSymbol = new global::TTF.Tokens.Model.Artifact.ArtifactSymbol();
+              ArtifactSymbol = new global::TTI.TTF.Model.Artifact.ArtifactSymbol();
             }
             input.ReadMessage(ArtifactSymbol);
             break;
@@ -3130,7 +3104,7 @@ namespace TTF.Tokens.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[14]; }
+      get { return global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

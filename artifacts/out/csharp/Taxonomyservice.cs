@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TTT.TTF.Taxonomy {
+namespace TTI.TTF.Taxonomy {
 
   /// <summary>Holder for reflection information generated from taxonomyservice.proto</summary>
   public static partial class TaxonomyserviceReflection {
@@ -48,14 +48,14 @@ namespace TTT.TTF.Taxonomy {
             "ZmFjdFJlc3BvbnNlIgAScwoORGVsZXRlQXJ0aWZhY3QSLi50YXhvbm9teS5t",
             "b2RlbC5hcnRpZmFjdC5EZWxldGVBcnRpZmFjdFJlcXVlc3QaLy50YXhvbm9t",
             "eS5tb2RlbC5hcnRpZmFjdC5EZWxldGVBcnRpZmFjdFJlc3BvbnNlIgBCKwoU",
-            "b3JnLnR0aS50dGYudGF4b25vbXlQAaoCEFRUVC5UVEYuVGF4b25vbXliBnBy",
+            "b3JnLnR0aS50dGYudGF4b25vbXlQAaoCEFRUSS5UVEYuVGF4b25vbXliBnBy",
             "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTF.Tokens.Model.Core.CoreReflection.Descriptor, global::TTF.Tokens.Model.Artifact.ArtifactReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTI.TTF.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.TaxonomyVersion), global::TTT.TTF.Taxonomy.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.Symbol), global::TTT.TTF.Taxonomy.Symbol.Parser, new[]{ "ArtifactSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTT.TTF.Taxonomy.TaxonomyFormula), global::TTT.TTF.Taxonomy.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.TaxonomyVersion), global::TTI.TTF.Taxonomy.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Symbol), global::TTI.TTF.Taxonomy.Symbol.Parser, new[]{ "ArtifactSymbol" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.TaxonomyFormula), global::TTI.TTF.Taxonomy.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null)
           }));
     }
     #endregion
@@ -70,7 +70,7 @@ namespace TTT.TTF.Taxonomy {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTT.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TTI.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -199,7 +199,7 @@ namespace TTT.TTF.Taxonomy {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTT.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TTI.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -331,7 +331,7 @@ namespace TTT.TTF.Taxonomy {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTT.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TTI.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

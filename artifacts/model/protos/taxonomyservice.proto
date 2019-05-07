@@ -5,7 +5,7 @@ import "taxonomy.proto";
 import "core.proto";
 import "artifact.proto";
 
-option csharp_namespace = "TTT.TTF.Taxonomy";
+option csharp_namespace = "TTI.TTF.Taxonomy";
 option java_package = "org.tti.ttf.taxonomy";
 option java_multiple_files = true;
 

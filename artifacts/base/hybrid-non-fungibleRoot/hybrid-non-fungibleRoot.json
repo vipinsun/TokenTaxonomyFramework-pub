@@ -7,8 +7,8 @@
       "alias2"
     ],
     "artifactSymbol": {
-      "visualSymbol": "&tau;<sub>N</sub>()",
-      "toolingSymbol": "tN()"
+      "visualSymbol": "&tau;<sub>N</sub>(&tau;)",
+      "toolingSymbol": "tN(t)"
     },
     "controlUri": "../../../../../../artifacts/base/hybrid-non-fungibleRoot/hybrid-non-fungibleRoot.proto",
     "artifactDefinition": {
