@@ -230,56 +230,56 @@ namespace TaxonomyHost.Controllers
 					break;
 				case ArtifactType.Behavior:
 					var newBehavior = artifactRequest.Artifact.Unpack<Behavior>();
-					if (!CheckForUniqueArtifact(ArtifactType.Behavior, newBehavior.Artifact))
+					if (!ModelManager.CheckForUniqueArtifact(ArtifactType.Behavior, newBehavior.Artifact))
 					{
-						newBehavior.Artifact = MakeUniqueArtifact(newBehavior.Artifact);
+						newBehavior.Artifact = ModelManager.MakeUniqueArtifact(newBehavior.Artifact);
 					}
 
 					artifactName = newBehavior.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorFolder + _folderSeparator + newBehavior.Artifact.Name.ToLower());
+					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorFolder + _folderSeparator + artifactName);
 					if(newBehavior.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newBehavior.Artifact.ArtifactFiles, outputFolder);
+						CreateArtifactFiles(newBehavior.Artifact.ArtifactFiles, outputFolder, artifactName);
 					artifactJson = jsf.Format(newBehavior);
 					retVal.ArtifactTypeObject= Any.Pack(newBehavior);
 					break;
 				case ArtifactType.BehaviorGroup:
 					var newBehaviorGroup = artifactRequest.Artifact.Unpack<BehaviorGroup>();
-					if (!CheckForUniqueArtifact(ArtifactType.BehaviorGroup, newBehaviorGroup.Artifact))
+					if (!ModelManager.CheckForUniqueArtifact(ArtifactType.BehaviorGroup, newBehaviorGroup.Artifact))
 					{
-						newBehaviorGroup.Artifact = MakeUniqueArtifact(newBehaviorGroup.Artifact);
+						newBehaviorGroup.Artifact = ModelManager.MakeUniqueArtifact(newBehaviorGroup.Artifact);
 					}
 					artifactName = newBehaviorGroup.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorGroupFolder + _folderSeparator + newBehaviorGroup.Artifact.Name.ToLower());
+					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorGroupFolder + _folderSeparator + artifactName);
 					if(newBehaviorGroup.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newBehaviorGroup.Artifact.ArtifactFiles, outputFolder);
+						CreateArtifactFiles(newBehaviorGroup.Artifact.ArtifactFiles, outputFolder, artifactName);
 					artifactJson = jsf.Format(newBehaviorGroup);
 					retVal.ArtifactTypeObject= Any.Pack(newBehaviorGroup);
 					break;
 				case ArtifactType.PropertySet:
 					var newPropertySet = artifactRequest.Artifact.Unpack<PropertySet>();
-					if (!CheckForUniqueArtifact(ArtifactType.PropertySet, newPropertySet.Artifact))
+					if (!ModelManager.CheckForUniqueArtifact(ArtifactType.PropertySet, newPropertySet.Artifact))
 					{
-						newPropertySet.Artifact = MakeUniqueArtifact(newPropertySet.Artifact);
+						newPropertySet.Artifact = ModelManager.MakeUniqueArtifact(newPropertySet.Artifact);
 					}
 					artifactName = newPropertySet.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + PropertySetFolder + _folderSeparator + newPropertySet.Artifact.Name.ToLower());
+					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + PropertySetFolder + _folderSeparator + artifactName);
 					if(newPropertySet.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newPropertySet.Artifact.ArtifactFiles, outputFolder);
+						CreateArtifactFiles(newPropertySet.Artifact.ArtifactFiles, outputFolder, artifactName);
 					retVal.ArtifactTypeObject= Any.Pack(newPropertySet);
 					artifactJson = jsf.Format(newPropertySet);
 					break;
 				case ArtifactType.TokenTemplate:
 					var newTokenTemplate = artifactRequest.Artifact.Unpack<TokenTemplate>();
-					if (!CheckForUniqueArtifact(ArtifactType.PropertySet, newTokenTemplate.Artifact))
+					if (!ModelManager.CheckForUniqueArtifact(ArtifactType.PropertySet, newTokenTemplate.Artifact))
 					{
-						newTokenTemplate.Artifact = MakeUniqueArtifact(newTokenTemplate.Artifact);
+						newTokenTemplate.Artifact = ModelManager.MakeUniqueArtifact(newTokenTemplate.Artifact);
 					}
 					artifactName = Utils.FirstToUpper(newTokenTemplate.Artifact.Name);
 					newTokenTemplate.Artifact.Name = artifactName;
 					
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + TokenTemplatesFolder + _folderSeparator + newTokenTemplate.Artifact.Name.ToLower());
+					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + TokenTemplatesFolder + _folderSeparator + artifactName);
 					if(newTokenTemplate.Artifact.ArtifactFiles.Count > 0)
-						CreateArtifactFiles(newTokenTemplate.Artifact.ArtifactFiles, outputFolder);
+						CreateArtifactFiles(newTokenTemplate.Artifact.ArtifactFiles, outputFolder, artifactName);
 					retVal.ArtifactTypeObject= Any.Pack(newTokenTemplate);
 					artifactJson = jsf.Format(newTokenTemplate);
 					break;
@@ -339,7 +339,7 @@ namespace TaxonomyHost.Controllers
 				artifactStream.Write(formattedJson);
 				artifactStream.Close();
 			}
-
+			
 			_log.Info("Complete");
 			return retVal;
 		}
@@ -347,8 +347,8 @@ namespace TaxonomyHost.Controllers
 		//HERE
 		public static UpdateArtifactResponse UpdateArtifact(UpdateArtifactRequest artifactRequest)
 		{
-			var artifactJson = "";
-			DirectoryInfo outputFolder = null;
+			string artifactJson;
+			DirectoryInfo outputFolder;
 		
 			var jsf = new JsonFormatter(new JsonFormatter.Settings(true));
 			var artifactType = artifactRequest.Type;
@@ -358,7 +358,7 @@ namespace TaxonomyHost.Controllers
 				Type = artifactType
 			};
 
-			var artifactName = "";
+			string artifactName;
 			switch (artifactType)
 			{
 				case ArtifactType.Base:
@@ -378,7 +378,7 @@ namespace TaxonomyHost.Controllers
 					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + BehaviorFolder + _folderSeparator + artifactName);
 					artifactJson = jsf.Format(existingBehavior);
 					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
-						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingBehavior));
+						ModelManager.AddOrUpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingBehavior));
 
 					retVal.ArtifactTypeObject= Any.Pack(existingBehavior);
 					return retVal;
@@ -396,7 +396,7 @@ namespace TaxonomyHost.Controllers
 					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + BehaviorGroupFolder + _folderSeparator + artifactName);
 					artifactJson = jsf.Format(existingBehaviorGroup);
 					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
-						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingBehaviorGroup));
+						ModelManager.AddOrUpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingBehaviorGroup));
 
 					retVal.ArtifactTypeObject= Any.Pack(existingBehaviorGroup);
 					return retVal;
@@ -414,7 +414,7 @@ namespace TaxonomyHost.Controllers
 					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + PropertySetFolder + _folderSeparator + artifactName);
 					artifactJson = jsf.Format(existingPropertySet);
 					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
-						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingPropertySet));
+						ModelManager.AddOrUpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingPropertySet));
 
 					retVal.ArtifactTypeObject= Any.Pack(existingPropertySet);
 					return retVal;
@@ -432,7 +432,7 @@ namespace TaxonomyHost.Controllers
 					outputFolder = new DirectoryInfo(_artifactPath + _folderSeparator + TokenTemplatesFolder + _folderSeparator + artifactName);
 					artifactJson = jsf.Format(existingTokenTemplate);
 					if (SaveArtifact(artifactRequest.Type, artifactName, artifactJson, outputFolder))
-						ModelManager.UpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingTokenTemplate));
+						ModelManager.AddOrUpdateInMemoryArtifact(artifactRequest.Type, Any.Pack(existingTokenTemplate));
 
 					retVal.ArtifactTypeObject= Any.Pack(existingTokenTemplate);
 					return retVal;
@@ -503,28 +503,106 @@ namespace TaxonomyHost.Controllers
 			return false;
 		}
 
-		public static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
+		internal static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
 		{
-			throw new NotImplementedException();
+			_log.Info("DeleteArtifact of type: " + artifactRequest.Type + " with tooling symbol: " + artifactRequest.ArtifactSymbol);
+			DeleteArtifactResponse response;
+			var artifactFolderName =
+				ModelManager.GetArtifactFolderNameBySymbol(artifactRequest.Type,artifactRequest.ArtifactSymbol
+					.ToolingSymbol);
+			try
+			{
+				switch (artifactRequest.Type)
+				{
+					case ArtifactType.Base:
+						DeleteArtifactFolder(BaseFolder, artifactFolderName);
+						break;
+					case ArtifactType.Behavior:
+						DeleteArtifactFolder(BehaviorFolder, artifactFolderName);
+						break;
+					case ArtifactType.BehaviorGroup:
+						DeleteArtifactFolder(BehaviorGroupFolder, artifactFolderName);
+						break;
+					case ArtifactType.PropertySet:
+						DeleteArtifactFolder(PropertySetFolder, artifactFolderName);
+						break;
+					case ArtifactType.TokenTemplate:
+						DeleteArtifactFolder(TokenTemplatesFolder, artifactFolderName);
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
+				response = new DeleteArtifactResponse
+				{
+					Deleted = true
+				};
+			}
+			catch (Exception e)
+			{
+				_log.Error("Error attempting to delete artifact of type: " + artifactRequest.Type + " with tooling symbol: " + artifactRequest.ArtifactSymbol);
+				_log.Error(e);
+				response = new DeleteArtifactResponse
+				{
+					Deleted = false
+				};
+			}
+
+			return response;
 		}
 		
 		#endregion
 		
 		#region Artifact Utils
 
-		private static void CreateArtifactFiles(RepeatedField<ArtifactFile> artifactArtifactFiles, DirectoryInfo outputFolder)
+		private static void DeleteArtifactFolder(string artifactTypeFolderName, string artifactFolderName)
 		{
-			
-		}
-
-		private static bool CheckForUniqueArtifact(ArtifactType artifactType, Artifact artifact)
-		{
-			return true;
+			try
+			{
+				Directory.Delete(
+					_artifactPath + _folderSeparator + artifactTypeFolderName + _folderSeparator +
+					artifactFolderName, true);
+			} 
+			catch (Exception e) 
+			{
+				_log.Error("Unable to Delete Artifact Folder: " + artifactTypeFolderName + _folderSeparator + artifactFolderName);
+				_log.Error(e);
+			} 
 		}
 		
-		private static Artifact MakeUniqueArtifact(Artifact artifact)
+		private static void CreateArtifactFiles(RepeatedField<ArtifactFile> artifactArtifactFiles, FileSystemInfo outputFolder, string artifactName)
 		{
-			return artifact;
+			foreach (var af in artifactArtifactFiles)
+			{
+				switch (af.Content)
+				{
+					case ArtifactContent.Uml:
+					{
+						_log.Info("Creating Artifact MD UML File");
+						var md  = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName+".md");
+						md.Write(af.FileData.ToStringUtf8());
+						md.Close();
+						break;
+					}
+					case ArtifactContent.Other:
+					{
+						_log.Info("Creating Artifact Other File");
+						var other  = File.Create(outputFolder.FullName + _folderSeparator + af.FileName);
+						other.Write(af.FileData.ToByteArray());
+						other.Close();
+						break;
+					}
+					case ArtifactContent.Definition:
+						break;
+					case ArtifactContent.Control:
+						_log.Info("Creating Artifact Proto Control");
+						var proto  = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName+".proto");
+						proto.Write(af.FileData.ToStringUtf8());
+						proto.Close();
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
+			}
 		}
 
 		private static Artifact CreateGenericArtifactObject(string name, ArtifactType artifactType)

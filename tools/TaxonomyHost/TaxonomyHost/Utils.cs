@@ -16,19 +16,27 @@ namespace TaxonomyHost
 			try
 			{
 				if (Os.IsWindows())
-					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\log4net.config"));
+					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +
+					                               "\\log4net.config"));
 				else
-					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "/log4net.config"));
+					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +
+					                               "/log4net.config"));
 			}
 			catch (Exception)
 			{
 				if (Os.IsWindows())
-					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log4net.config"));
+					xmlDocument.Load(File.OpenRead(
+						Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log4net.config"));
 				else
-					xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/log4net.config"));
+					xmlDocument.Load(File.OpenRead(
+						Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/log4net.config"));
 			}
-			XmlConfigurator.Configure(LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof (log4net.Repository.Hierarchy.Hierarchy)), xmlDocument["log4net"]);
+
+			XmlConfigurator.Configure(
+				LogManager.CreateRepository(Assembly.GetEntryAssembly(),
+					typeof(log4net.Repository.Hierarchy.Hierarchy)), xmlDocument["log4net"]);
 		}
+
 		public static string FirstToUpper(string nameString)
 		{
 			var ch = nameString.ToCharArray();
@@ -48,7 +56,25 @@ namespace TaxonomyHost
 
 			return ch.ToString();
 		}
+
+		public static (string Name, string VisualSymbol, string ToolingSymbol) GetRandomArtifactFromArtifact(string name,
+			string visualSymbol ,string toolingSymbol)
+		{
+			const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+			var stringChars = new char[1];
+			var random = new Random();
+
+			for (int i = 0; i < stringChars.Length; i++)
+			{
+				stringChars[i] = chars[random.Next(chars.Length)];
+			}
+
+			var randStr = new string(stringChars);
+			return (name + randStr, visualSymbol + random, toolingSymbol + randStr);
+
+		}
 	}
+
 	public static class Os
 	{
 		public static bool IsWindows()

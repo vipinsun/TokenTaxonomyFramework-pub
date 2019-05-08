@@ -67,6 +67,5 @@ namespace TaxonomyHost
             _log.Info("gRpc request for: DeleteArtifact");
             return Task.FromResult(ModelManager.DeleteArtifact(artifactRequest));
         }
-        
     }
 }
