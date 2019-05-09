@@ -15,6 +15,7 @@
           <e p="Artifact.cs" t="Include" />
           <e p="Core.cs" t="Include" />
           <e p="Grammar.cs" t="Include" />
+          <e p="model.sql" t="Include" />
           <e p="Taxonomy.cs" t="Include" />
           <e p="Taxonomyservice.cs" t="Include" />
         </e>
@@ -36,7 +37,7 @@
       <e p="TaxonomyHost.sln" t="IncludeFlat" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_TaxonomyHost.-1439679956.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_TaxonomyHost.1819159890.00" t="ExcludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/rust_expanded_macros/jNUjIywJ/expansions" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
     <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />

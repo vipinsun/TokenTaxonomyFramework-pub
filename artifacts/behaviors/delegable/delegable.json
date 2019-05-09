@@ -83,32 +83,32 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [
     {
       "name": "Allowance",
       "description": "A Request by a party or account to the owner of a token(s) to have the right to perform a delegated behavior on their behalf.",
       "request": {
         "controlMessageName": "AllowanceRequest",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "Quantity",
             "valueDescription": "Number of Tokens to be allowed."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "AllowanceResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation receipt or denial be returned to the allowance requestor."
           }
-        ],
-        "description": "The response"
+        ]
       }
     },
     {
@@ -116,25 +116,25 @@
       "description": "Same control message as the AllowanceRequest.  This could allow for an AllowanceRequest to be forwarded to multiple parties needed to Approve and shield this from the requestor. When all Approvals are obtained, an AllowanceResponse could be sent.",
       "request": {
         "controlMessageName": "AllowanceRequest",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "Quantity",
             "valueDescription": "Number of Tokens to be allowed."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "ApproveResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation response from the owner approving the an allowance request, indicating a allowance quantity the requestor has the option to invoke the Delegable behaviors on the token(s)."
           }
-        ],
-        "description": "The response"
+        ]
       }
     }
   ],
-  "behavioralProperties": []
+  "properties": []
 }

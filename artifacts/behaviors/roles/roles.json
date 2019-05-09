@@ -83,36 +83,36 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "Constructor",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [
+  "isExternal": false,
+  "constructorName": "Constructor",
+  "constructor": null,
+  "invocations": [
     {
       "name": "RoleCheck",
       "description": "Internal invocation when the applied behavior is called to check if the requestor is a member of the role.",
       "request": {
         "controlMessageName": "IsInRole",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "AccountId",
             "valueDescription": "AccountId of the requestor."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "True/False",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "IsInRole",
             "valueDescription": "True/False"
           }
-        ],
-        "description": "The response"
+        ]
       }
     }
   ],
-  "behavioralProperties": [
+  "properties": [
     {
       "name": "Role",
       "valueDescription": "Name of a role that can have a list of accounts in the role.",
@@ -122,23 +122,23 @@
           "description": "The property value.",
           "request": {
             "controlMessageName": "GetRoleMembersRequest",
+            "description": "",
             "inputParameters": [
               {
                 "name": "RoleName",
                 "valueDescription": "Name of the Role"
               }
-            ],
-            "description": ""
+            ]
           },
           "response": {
             "controlMessageName": "GetRoleMembersResponse",
+            "description": "Return value",
             "outputParameters": [
               {
                 "name": "Accounts",
                 "valueDescription": "value of property"
               }
-            ],
-            "description": "Return value"
+            ]
           }
         },
         {
@@ -146,6 +146,7 @@
           "description": "Add a party or account to a particular role.",
           "request": {
             "controlMessageName": "AddRoleMemberRequest",
+            "description": "",
             "inputParameters": [
               {
                 "name": "RoleId",
@@ -155,18 +156,17 @@
                 "name": "AccountId",
                 "valueDescription": "Id of account to add to the Role"
               }
-            ],
-            "description": ""
+            ]
           },
           "response": {
             "controlMessageName": "AddRoleMemberResponse",
+            "description": "Return value",
             "outputParameters": [
               {
                 "name": "Confirmation",
                 "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the request."
               }
-            ],
-            "description": "Return value"
+            ]
           }
         },
         {
@@ -174,6 +174,7 @@
           "description": "Remove a party or account to a particular role",
           "request": {
             "controlMessageName": "RemoveRoleMemberRequest",
+            "description": "",
             "inputParameters": [
               {
                 "name": "RoleId",
@@ -183,18 +184,17 @@
                 "name": "AccountId",
                 "valueDescription": "Id of account to add to the Role"
               }
-            ],
-            "description": ""
+            ]
           },
           "response": {
             "controlMessageName": "RemoveRoleMemberResponse",
+            "description": "Return value",
             "outputParameters": [
               {
                 "name": "Confirmation",
                 "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the request."
               }
-            ],
-            "description": "Return value"
+            ]
           }
         }
       ]

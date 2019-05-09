@@ -274,8 +274,8 @@ namespace ArtifactGenerator
 					var artifactBehavior = new Behavior
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "Behaviors"),
-						BehaviorConstructorName = "",
-						BehaviorInvocations = { new Invocation
+						ConstructorName = "",
+						Invocations = { new Invocation
 						{
 							Name = "InvocationRequest1",
 							Description = "Describe the what the this invocation triggers in the behavior",
@@ -301,7 +301,7 @@ namespace ArtifactGenerator
 							}
 						}}
 					};
-					artifactBehavior.BehavioralProperties.Add(new Property
+					artifactBehavior.Properties.Add(new Property
 					{
 						Name = "Property1",
 						ValueDescription = "Some Value",
@@ -551,8 +551,8 @@ namespace ArtifactGenerator
 
 			var hybrid = new HybridTokenFormula
 			{
-				HybridChildrenStart = "(",
-				HybridChildrenEnd = ")",
+				ChildrenStart = "(",
+				ChildrenEnd = ")",
 				Parent = singleToken
 			};
 			hybrid.ChildTokens.Add(singleToken);
@@ -566,8 +566,8 @@ namespace ArtifactGenerator
 				HybridChildrenEnd = ")",
 				Parent = singleToken
 			};
-			hybridHybrids.ChildTokens.Add(hybrid);
-			hybridHybrids.ChildTokens.Add(hybrid);
+			hybridHybrids.HybridChildTokens.Add(hybrid);
+			hybridHybrids.HybridChildTokens.Add(hybrid);
 			formula.HybridWithHybrids = hybridHybrids;
 			
 			

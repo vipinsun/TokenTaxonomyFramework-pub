@@ -32,11 +32,11 @@ message Base{
 
 message Behavior{
     taxonomy.model.artifact.Artifact artifact = 1;
-    bool external = 2;
-    string behavior_constructor_name = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
-    google.protobuf.Any behavior_constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
-    repeated Invocation behavior_invocations = 5;
-    repeated Property behavioral_properties = 6; //for any properties that should be added to the token if the behavior is implemented.
+    bool is_external = 2;
+    string constructor_name = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
+    google.protobuf.Any constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
+    repeated Invocation invocations = 5;
+    repeated Property properties = 6; //for any properties that should be added to the token if the behavior is implemented.
 }
 
 message BehaviorGroup{
@@ -73,14 +73,15 @@ message Invocation{
 
 message InvocationRequest{
     string control_message_name = 1;
-    repeated InvocationParameter input_parameters = 2;
-    string description = 3;
+    string description = 2;
+    repeated InvocationParameter input_parameters = 3;
 }
 
 message InvocationResponse{
     string control_message_name = 1;
-    repeated InvocationParameter output_parameters = 2;
-    string description = 3;
+    string description = 2;
+    repeated InvocationParameter output_parameters = 3;
+
 }
 
 message InvocationParameter{

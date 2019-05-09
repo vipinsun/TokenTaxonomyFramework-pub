@@ -4,5 +4,6 @@
   "behaviors": {},
   "behaviorGroups": {},
   "propertySets": {},
-  "tokenTemplates": {}
+  "tokenTemplates": {},
+  "formulaGrammar": null
 }

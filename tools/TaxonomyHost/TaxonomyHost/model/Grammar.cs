@@ -29,33 +29,33 @@ namespace TTI.TTF.Model.Grammar {
             "eS5tb2RlbC5ncmFtbWFyLlNpbmdsZVRva2VuEjoKBmh5YnJpZBgCIAEoCzIq",
             "LnRheG9ub215Lm1vZGVsLmdyYW1tYXIuSHlicmlkVG9rZW5Gb3JtdWxhElkK",
             "E2h5YnJpZF93aXRoX2h5YnJpZHMYAyABKAsyPC50YXhvbm9teS5tb2RlbC5n",
-            "cmFtbWFyLkh5YnJpZFRva2VuV2l0aEh5YnJpZENoaWxkcmVuRm9ybXVsYSLA",
+            "cmFtbWFyLkh5YnJpZFRva2VuV2l0aEh5YnJpZENoaWxkcmVuRm9ybXVsYSKy",
             "AQoSSHlicmlkVG9rZW5Gb3JtdWxhEjMKBnBhcmVudBgBIAEoCzIjLnRheG9u",
-            "b215Lm1vZGVsLmdyYW1tYXIuU2luZ2xlVG9rZW4SHQoVaHlicmlkX2NoaWxk",
-            "cmVuX3N0YXJ0GAIgASgJEjkKDGNoaWxkX3Rva2VucxgDIAMoCzIjLnRheG9u",
-            "b215Lm1vZGVsLmdyYW1tYXIuU2luZ2xlVG9rZW4SGwoTaHlicmlkX2NoaWxk",
-            "cmVuX2VuZBgEIAEoCSLZAQokSHlicmlkVG9rZW5XaXRoSHlicmlkQ2hpbGRy",
-            "ZW5Gb3JtdWxhEjMKBnBhcmVudBgBIAEoCzIjLnRheG9ub215Lm1vZGVsLmdy",
-            "YW1tYXIuU2luZ2xlVG9rZW4SHQoVaHlicmlkX2NoaWxkcmVuX3N0YXJ0GAIg",
-            "ASgJEkAKDGNoaWxkX3Rva2VucxgDIAMoCzIqLnRheG9ub215Lm1vZGVsLmdy",
-            "YW1tYXIuSHlicmlkVG9rZW5Gb3JtdWxhEhsKE2h5YnJpZF9jaGlsZHJlbl9l",
-            "bmQYBCABKAki6QEKC1NpbmdsZVRva2VuEhMKC2dyb3VwX3N0YXJ0GAEgASgJ",
-            "EjUKCmJhc2VfdG9rZW4YAiABKAsyIS50YXhvbm9teS5tb2RlbC5ncmFtbWFy",
-            "LlRva2VuQmFzZRI3CgliZWhhdmlvcnMYAyABKAsyJC50YXhvbm9teS5tb2Rl",
-            "bC5ncmFtbWFyLkJlaGF2aW9yTGlzdBJCCg1wcm9wZXJ0eV9zZXRzGAQgAygL",
-            "MisudGF4b25vbXkubW9kZWwuZ3JhbW1hci5Qcm9wZXJ0eVNldExpc3RJdGVt",
-            "EhEKCWdyb3VwX2VuZBgFIAEoCSIgCglUb2tlbkJhc2USEwoLYmFzZV9zeW1i",
-            "b2wYASABKAkiTQoMQmVoYXZpb3JMaXN0EhIKCmxpc3Rfc3RhcnQYASABKAkS",
-            "FwoPYmVoYXZpb3Jfc3ltYm9sGAIgAygJEhAKCGxpc3RfZW5kGAMgASgJIkYK",
-            "E1Byb3BlcnR5U2V0TGlzdEl0ZW0SEgoKbGlzdF9zdGFydBgBIAEoCRIbChNw",
-            "cm9wZXJ0eV9zZXRfc3ltYm9sGAIgASgJQjUKGW9yZy50dGkudHRmLm1vZGVs",
-            "LmdyYW1tYXJQAaoCFVRUSS5UVEYuTW9kZWwuR3JhbW1hcmIGcHJvdG8z"));
+            "b215Lm1vZGVsLmdyYW1tYXIuU2luZ2xlVG9rZW4SFgoOY2hpbGRyZW5fc3Rh",
+            "cnQYAiABKAkSOQoMY2hpbGRfdG9rZW5zGAMgAygLMiMudGF4b25vbXkubW9k",
+            "ZWwuZ3JhbW1hci5TaW5nbGVUb2tlbhIUCgxjaGlsZHJlbl9lbmQYBCABKAki",
+            "4AEKJEh5YnJpZFRva2VuV2l0aEh5YnJpZENoaWxkcmVuRm9ybXVsYRIzCgZw",
+            "YXJlbnQYASABKAsyIy50YXhvbm9teS5tb2RlbC5ncmFtbWFyLlNpbmdsZVRv",
+            "a2VuEh0KFWh5YnJpZF9jaGlsZHJlbl9zdGFydBgCIAEoCRJHChNoeWJyaWRf",
+            "Y2hpbGRfdG9rZW5zGAMgAygLMioudGF4b25vbXkubW9kZWwuZ3JhbW1hci5I",
+            "eWJyaWRUb2tlbkZvcm11bGESGwoTaHlicmlkX2NoaWxkcmVuX2VuZBgEIAEo",
+            "CSLpAQoLU2luZ2xlVG9rZW4SEwoLZ3JvdXBfc3RhcnQYASABKAkSNQoKYmFz",
+            "ZV90b2tlbhgCIAEoCzIhLnRheG9ub215Lm1vZGVsLmdyYW1tYXIuVG9rZW5C",
+            "YXNlEjcKCWJlaGF2aW9ycxgDIAEoCzIkLnRheG9ub215Lm1vZGVsLmdyYW1t",
+            "YXIuQmVoYXZpb3JMaXN0EkIKDXByb3BlcnR5X3NldHMYBCADKAsyKy50YXhv",
+            "bm9teS5tb2RlbC5ncmFtbWFyLlByb3BlcnR5U2V0TGlzdEl0ZW0SEQoJZ3Jv",
+            "dXBfZW5kGAUgASgJIiAKCVRva2VuQmFzZRITCgtiYXNlX3N5bWJvbBgBIAEo",
+            "CSJNCgxCZWhhdmlvckxpc3QSEgoKbGlzdF9zdGFydBgBIAEoCRIXCg9iZWhh",
+            "dmlvcl9zeW1ib2wYAiADKAkSEAoIbGlzdF9lbmQYAyABKAkiRgoTUHJvcGVy",
+            "dHlTZXRMaXN0SXRlbRISCgpsaXN0X3N0YXJ0GAEgASgJEhsKE3Byb3BlcnR5",
+            "X3NldF9zeW1ib2wYAiABKAlCNQoZb3JnLnR0aS50dGYubW9kZWwuZ3JhbW1h",
+            "clABqgIVVFRJLlRURi5Nb2RlbC5HcmFtbWFyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.FormulaGrammar), global::TTI.TTF.Model.Grammar.FormulaGrammar.Parser, new[]{ "SingleToken", "Hybrid", "HybridWithHybrids" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.HybridTokenFormula), global::TTI.TTF.Model.Grammar.HybridTokenFormula.Parser, new[]{ "Parent", "HybridChildrenStart", "ChildTokens", "HybridChildrenEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula), global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula.Parser, new[]{ "Parent", "HybridChildrenStart", "ChildTokens", "HybridChildrenEnd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.HybridTokenFormula), global::TTI.TTF.Model.Grammar.HybridTokenFormula.Parser, new[]{ "Parent", "ChildrenStart", "ChildTokens", "ChildrenEnd" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula), global::TTI.TTF.Model.Grammar.HybridTokenWithHybridChildrenFormula.Parser, new[]{ "Parent", "HybridChildrenStart", "HybridChildTokens", "HybridChildrenEnd" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.SingleToken), global::TTI.TTF.Model.Grammar.SingleToken.Parser, new[]{ "GroupStart", "BaseToken", "Behaviors", "PropertySets", "GroupEnd" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.TokenBase), global::TTI.TTF.Model.Grammar.TokenBase.Parser, new[]{ "BaseSymbol" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Grammar.BehaviorList), global::TTI.TTF.Model.Grammar.BehaviorList.Parser, new[]{ "ListStart", "BehaviorSymbol", "ListEnd" }, null, null, null),
@@ -295,9 +295,9 @@ namespace TTI.TTF.Model.Grammar {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public HybridTokenFormula(HybridTokenFormula other) : this() {
       parent_ = other.parent_ != null ? other.parent_.Clone() : null;
-      hybridChildrenStart_ = other.hybridChildrenStart_;
+      childrenStart_ = other.childrenStart_;
       childTokens_ = other.childTokens_.Clone();
-      hybridChildrenEnd_ = other.hybridChildrenEnd_;
+      childrenEnd_ = other.childrenEnd_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -317,17 +317,17 @@ namespace TTI.TTF.Model.Grammar {
       }
     }
 
-    /// <summary>Field number for the "hybrid_children_start" field.</summary>
-    public const int HybridChildrenStartFieldNumber = 2;
-    private string hybridChildrenStart_ = "";
+    /// <summary>Field number for the "children_start" field.</summary>
+    public const int ChildrenStartFieldNumber = 2;
+    private string childrenStart_ = "";
     /// <summary>
     /// "("
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string HybridChildrenStart {
-      get { return hybridChildrenStart_; }
+    public string ChildrenStart {
+      get { return childrenStart_; }
       set {
-        hybridChildrenStart_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        childrenStart_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -341,17 +341,17 @@ namespace TTI.TTF.Model.Grammar {
       get { return childTokens_; }
     }
 
-    /// <summary>Field number for the "hybrid_children_end" field.</summary>
-    public const int HybridChildrenEndFieldNumber = 4;
-    private string hybridChildrenEnd_ = "";
+    /// <summary>Field number for the "children_end" field.</summary>
+    public const int ChildrenEndFieldNumber = 4;
+    private string childrenEnd_ = "";
     /// <summary>
     /// ")"
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string HybridChildrenEnd {
-      get { return hybridChildrenEnd_; }
+    public string ChildrenEnd {
+      get { return childrenEnd_; }
       set {
-        hybridChildrenEnd_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        childrenEnd_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -369,9 +369,9 @@ namespace TTI.TTF.Model.Grammar {
         return true;
       }
       if (!object.Equals(Parent, other.Parent)) return false;
-      if (HybridChildrenStart != other.HybridChildrenStart) return false;
+      if (ChildrenStart != other.ChildrenStart) return false;
       if(!childTokens_.Equals(other.childTokens_)) return false;
-      if (HybridChildrenEnd != other.HybridChildrenEnd) return false;
+      if (ChildrenEnd != other.ChildrenEnd) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -379,9 +379,9 @@ namespace TTI.TTF.Model.Grammar {
     public override int GetHashCode() {
       int hash = 1;
       if (parent_ != null) hash ^= Parent.GetHashCode();
-      if (HybridChildrenStart.Length != 0) hash ^= HybridChildrenStart.GetHashCode();
+      if (ChildrenStart.Length != 0) hash ^= ChildrenStart.GetHashCode();
       hash ^= childTokens_.GetHashCode();
-      if (HybridChildrenEnd.Length != 0) hash ^= HybridChildrenEnd.GetHashCode();
+      if (ChildrenEnd.Length != 0) hash ^= ChildrenEnd.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -399,14 +399,14 @@ namespace TTI.TTF.Model.Grammar {
         output.WriteRawTag(10);
         output.WriteMessage(Parent);
       }
-      if (HybridChildrenStart.Length != 0) {
+      if (ChildrenStart.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(HybridChildrenStart);
+        output.WriteString(ChildrenStart);
       }
       childTokens_.WriteTo(output, _repeated_childTokens_codec);
-      if (HybridChildrenEnd.Length != 0) {
+      if (ChildrenEnd.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(HybridChildrenEnd);
+        output.WriteString(ChildrenEnd);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -419,12 +419,12 @@ namespace TTI.TTF.Model.Grammar {
       if (parent_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Parent);
       }
-      if (HybridChildrenStart.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(HybridChildrenStart);
+      if (ChildrenStart.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ChildrenStart);
       }
       size += childTokens_.CalculateSize(_repeated_childTokens_codec);
-      if (HybridChildrenEnd.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(HybridChildrenEnd);
+      if (ChildrenEnd.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ChildrenEnd);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -443,12 +443,12 @@ namespace TTI.TTF.Model.Grammar {
         }
         Parent.MergeFrom(other.Parent);
       }
-      if (other.HybridChildrenStart.Length != 0) {
-        HybridChildrenStart = other.HybridChildrenStart;
+      if (other.ChildrenStart.Length != 0) {
+        ChildrenStart = other.ChildrenStart;
       }
       childTokens_.Add(other.childTokens_);
-      if (other.HybridChildrenEnd.Length != 0) {
-        HybridChildrenEnd = other.HybridChildrenEnd;
+      if (other.ChildrenEnd.Length != 0) {
+        ChildrenEnd = other.ChildrenEnd;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -469,7 +469,7 @@ namespace TTI.TTF.Model.Grammar {
             break;
           }
           case 18: {
-            HybridChildrenStart = input.ReadString();
+            ChildrenStart = input.ReadString();
             break;
           }
           case 26: {
@@ -477,7 +477,7 @@ namespace TTI.TTF.Model.Grammar {
             break;
           }
           case 34: {
-            HybridChildrenEnd = input.ReadString();
+            ChildrenEnd = input.ReadString();
             break;
           }
         }
@@ -513,7 +513,7 @@ namespace TTI.TTF.Model.Grammar {
     public HybridTokenWithHybridChildrenFormula(HybridTokenWithHybridChildrenFormula other) : this() {
       parent_ = other.parent_ != null ? other.parent_.Clone() : null;
       hybridChildrenStart_ = other.hybridChildrenStart_;
-      childTokens_ = other.childTokens_.Clone();
+      hybridChildTokens_ = other.hybridChildTokens_.Clone();
       hybridChildrenEnd_ = other.hybridChildrenEnd_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -548,14 +548,14 @@ namespace TTI.TTF.Model.Grammar {
       }
     }
 
-    /// <summary>Field number for the "child_tokens" field.</summary>
-    public const int ChildTokensFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Grammar.HybridTokenFormula> _repeated_childTokens_codec
+    /// <summary>Field number for the "hybrid_child_tokens" field.</summary>
+    public const int HybridChildTokensFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Grammar.HybridTokenFormula> _repeated_hybridChildTokens_codec
         = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Model.Grammar.HybridTokenFormula.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula> childTokens_ = new pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula>();
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula> hybridChildTokens_ = new pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula> ChildTokens {
-      get { return childTokens_; }
+    public pbc::RepeatedField<global::TTI.TTF.Model.Grammar.HybridTokenFormula> HybridChildTokens {
+      get { return hybridChildTokens_; }
     }
 
     /// <summary>Field number for the "hybrid_children_end" field.</summary>
@@ -587,7 +587,7 @@ namespace TTI.TTF.Model.Grammar {
       }
       if (!object.Equals(Parent, other.Parent)) return false;
       if (HybridChildrenStart != other.HybridChildrenStart) return false;
-      if(!childTokens_.Equals(other.childTokens_)) return false;
+      if(!hybridChildTokens_.Equals(other.hybridChildTokens_)) return false;
       if (HybridChildrenEnd != other.HybridChildrenEnd) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -597,7 +597,7 @@ namespace TTI.TTF.Model.Grammar {
       int hash = 1;
       if (parent_ != null) hash ^= Parent.GetHashCode();
       if (HybridChildrenStart.Length != 0) hash ^= HybridChildrenStart.GetHashCode();
-      hash ^= childTokens_.GetHashCode();
+      hash ^= hybridChildTokens_.GetHashCode();
       if (HybridChildrenEnd.Length != 0) hash ^= HybridChildrenEnd.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -620,7 +620,7 @@ namespace TTI.TTF.Model.Grammar {
         output.WriteRawTag(18);
         output.WriteString(HybridChildrenStart);
       }
-      childTokens_.WriteTo(output, _repeated_childTokens_codec);
+      hybridChildTokens_.WriteTo(output, _repeated_hybridChildTokens_codec);
       if (HybridChildrenEnd.Length != 0) {
         output.WriteRawTag(34);
         output.WriteString(HybridChildrenEnd);
@@ -639,7 +639,7 @@ namespace TTI.TTF.Model.Grammar {
       if (HybridChildrenStart.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(HybridChildrenStart);
       }
-      size += childTokens_.CalculateSize(_repeated_childTokens_codec);
+      size += hybridChildTokens_.CalculateSize(_repeated_hybridChildTokens_codec);
       if (HybridChildrenEnd.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(HybridChildrenEnd);
       }
@@ -663,7 +663,7 @@ namespace TTI.TTF.Model.Grammar {
       if (other.HybridChildrenStart.Length != 0) {
         HybridChildrenStart = other.HybridChildrenStart;
       }
-      childTokens_.Add(other.childTokens_);
+      hybridChildTokens_.Add(other.hybridChildTokens_);
       if (other.HybridChildrenEnd.Length != 0) {
         HybridChildrenEnd = other.HybridChildrenEnd;
       }
@@ -690,7 +690,7 @@ namespace TTI.TTF.Model.Grammar {
             break;
           }
           case 26: {
-            childTokens_.AddEntriesFrom(input, _repeated_childTokens_codec);
+            hybridChildTokens_.AddEntriesFrom(input, _repeated_hybridChildTokens_codec);
             break;
           }
           case 34: {

@@ -14,15 +14,15 @@ message FormulaGrammar{
 
 message HybridTokenFormula{
     SingleToken parent = 1;
-    string hybrid_children_start = 2; // "("
+    string children_start = 2; // "("
     repeated SingleToken child_tokens = 3;
-    string hybrid_children_end = 4; // ")"
+    string children_end = 4; // ")"
 }
 
 message HybridTokenWithHybridChildrenFormula{
     SingleToken parent = 1;
     string hybrid_children_start = 2; // "("
-    repeated HybridTokenFormula child_tokens = 3;
+    repeated HybridTokenFormula hybrid_child_tokens = 3;
     string hybrid_children_end = 4; // ")"
 }
 

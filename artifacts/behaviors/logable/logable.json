@@ -84,31 +84,31 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [
     {
       "name": "CreateEntrySeries",
       "description": "A request create a series of log entries.",
       "request": {
         "controlMessageName": "CreateEntrySeriesRequest",
-        "inputParameters": [],
-        "description": "The request"
+        "description": "The request",
+        "inputParameters": []
       },
       "response": {
         "controlMessageName": "CreateEntrySeriesResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "SeriesId",
             "valueDescription": "A response containing a unique SeriesId that should be set for each entry's RecordEntryRequest message in the series."
           }
-        ],
-        "description": "The response"
+        ]
       }
     }
   ],
-  "behavioralProperties": [
+  "properties": [
     {
       "name": "Entries",
       "valueDescription": "List of Entry as described in entry.proto",
@@ -118,23 +118,23 @@
           "description": "A request to record an log entry.",
           "request": {
             "controlMessageName": "RecordEntryRequest",
+            "description": "The request",
             "inputParameters": [
               {
                 "name": "Entry",
                 "valueDescription": "Data to be logged."
               }
-            ],
-            "description": "The request"
+            ]
           },
           "response": {
             "controlMessageName": "RecordEntryResponse",
+            "description": "The response",
             "outputParameters": [
               {
                 "name": "Confirmation",
                 "valueDescription": "A confirmation of recording the entry"
               }
-            ],
-            "description": "The response"
+            ]
           }
         },
         {
@@ -142,23 +142,23 @@
           "description": "A request to retrieve a specific Entry by its unique identifier.",
           "request": {
             "controlMessageName": "GetEntryRequest",
+            "description": "The request",
             "inputParameters": [
               {
                 "name": "Identifier",
                 "valueDescription": "Id of the Log Entry to retrieve."
               }
-            ],
-            "description": "The request"
+            ]
           },
           "response": {
             "controlMessageName": "RecordEntryResponse",
+            "description": "The response",
             "outputParameters": [
               {
                 "name": "Entry",
                 "valueDescription": "A response containing the specific log entry if found."
               }
-            ],
-            "description": "The response"
+            ]
           }
         },
         {
@@ -166,18 +166,18 @@
           "description": "A request to retrieve the last log entry needing no parameters.",
           "request": {
             "controlMessageName": "GetLastEntryRequest",
-            "inputParameters": [],
-            "description": "The request"
+            "description": "The request",
+            "inputParameters": []
           },
           "response": {
             "controlMessageName": "GetLastEntryResponse",
+            "description": "The response",
             "outputParameters": [
               {
                 "name": "Entry",
                 "valueDescription": " response container the last log entry if it exists."
               }
-            ],
-            "description": "The response"
+            ]
           }
         },
         {
@@ -185,23 +185,23 @@
           "description": "A request retrieve all the log entries for a particular series by SeriesId.",
           "request": {
             "controlMessageName": "GetEntrySeriesRequest",
+            "description": "The request",
             "inputParameters": [
               {
                 "name": "SeriesId",
                 "valueDescription": "Id for the series to retrieve."
               }
-            ],
-            "description": "The request"
+            ]
           },
           "response": {
             "controlMessageName": "GetEntrySeriesResponse",
+            "description": "The response",
             "outputParameters": [
               {
                 "name": "Entries",
                 "valueDescription": "A response containing a list of all the log entries for the requested SeriesId, if found."
               }
-            ],
-            "description": "The response"
+            ]
           }
         }
       ]

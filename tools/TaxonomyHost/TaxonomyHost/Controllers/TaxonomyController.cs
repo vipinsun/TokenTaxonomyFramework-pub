@@ -706,8 +706,8 @@ namespace TaxonomyHost.Controllers
 
 			var hybrid = new HybridTokenFormula
 			{
-				HybridChildrenStart = "(",
-				HybridChildrenEnd = ")",
+				ChildrenStart = "(",
+				ChildrenEnd = ")",
 				Parent = singleToken
 			};
 			hybrid.ChildTokens.Add(singleToken);
@@ -721,8 +721,8 @@ namespace TaxonomyHost.Controllers
 				HybridChildrenEnd = ")",
 				Parent = singleToken
 			};
-			hybridHybrids.ChildTokens.Add(hybrid);
-			hybridHybrids.ChildTokens.Add(hybrid);
+			hybridHybrids.HybridChildTokens.Add(hybrid);
+			hybridHybrids.HybridChildTokens.Add(hybrid);
 			formula.HybridWithHybrids = hybridHybrids;
 			
 			

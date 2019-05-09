@@ -936,12 +936,12 @@ proto.taxonomy.model.core.Behavior.prototype.toObject = function(opt_includeInst
 proto.taxonomy.model.core.Behavior.toObject = function(includeInstance, msg) {
   var obj = {
     artifact: (f = msg.getArtifact()) && artifact_pb.Artifact.toObject(includeInstance, f),
-    external: jspb.Message.getFieldWithDefault(msg, 2, false),
-    behaviorConstructorName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    behaviorConstructor: (f = msg.getBehaviorConstructor()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
-    behaviorInvocationsList: jspb.Message.toObjectList(msg.getBehaviorInvocationsList(),
+    isExternal: jspb.Message.getFieldWithDefault(msg, 2, false),
+    constructorName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    constructor: (f = msg.getConstructor()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
+    invocationsList: jspb.Message.toObjectList(msg.getInvocationsList(),
     proto.taxonomy.model.core.Invocation.toObject, includeInstance),
-    behavioralPropertiesList: jspb.Message.toObjectList(msg.getBehavioralPropertiesList(),
+    propertiesList: jspb.Message.toObjectList(msg.getPropertiesList(),
     proto.taxonomy.model.core.Property.toObject, includeInstance)
   };
 
@@ -986,26 +986,26 @@ proto.taxonomy.model.core.Behavior.deserializeBinaryFromReader = function(msg, r
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setExternal(value);
+      msg.setIsExternal(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBehaviorConstructorName(value);
+      msg.setConstructorName(value);
       break;
     case 4:
       var value = new google_protobuf_any_pb.Any;
       reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
-      msg.setBehaviorConstructor(value);
+      msg.setConstructor(value);
       break;
     case 5:
       var value = new proto.taxonomy.model.core.Invocation;
       reader.readMessage(value,proto.taxonomy.model.core.Invocation.deserializeBinaryFromReader);
-      msg.addBehaviorInvocations(value);
+      msg.addInvocations(value);
       break;
     case 6:
       var value = new proto.taxonomy.model.core.Property;
       reader.readMessage(value,proto.taxonomy.model.core.Property.deserializeBinaryFromReader);
-      msg.addBehavioralProperties(value);
+      msg.addProperties(value);
       break;
     default:
       reader.skipField();
@@ -1044,21 +1044,21 @@ proto.taxonomy.model.core.Behavior.serializeBinaryToWriter = function(message, w
       artifact_pb.Artifact.serializeBinaryToWriter
     );
   }
-  f = message.getExternal();
+  f = message.getIsExternal();
   if (f) {
     writer.writeBool(
       2,
       f
     );
   }
-  f = message.getBehaviorConstructorName();
+  f = message.getConstructorName();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getBehaviorConstructor();
+  f = message.getConstructor();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -1066,7 +1066,7 @@ proto.taxonomy.model.core.Behavior.serializeBinaryToWriter = function(message, w
       google_protobuf_any_pb.Any.serializeBinaryToWriter
     );
   }
-  f = message.getBehaviorInvocationsList();
+  f = message.getInvocationsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
@@ -1074,7 +1074,7 @@ proto.taxonomy.model.core.Behavior.serializeBinaryToWriter = function(message, w
       proto.taxonomy.model.core.Invocation.serializeBinaryToWriter
     );
   }
-  f = message.getBehavioralPropertiesList();
+  f = message.getPropertiesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       6,
@@ -1119,49 +1119,49 @@ proto.taxonomy.model.core.Behavior.prototype.hasArtifact = function() {
 
 
 /**
- * optional bool external = 2;
+ * optional bool is_external = 2;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.taxonomy.model.core.Behavior.prototype.getExternal = function() {
+proto.taxonomy.model.core.Behavior.prototype.getIsExternal = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
 };
 
 
 /** @param {boolean} value */
-proto.taxonomy.model.core.Behavior.prototype.setExternal = function(value) {
+proto.taxonomy.model.core.Behavior.prototype.setIsExternal = function(value) {
   jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
 /**
- * optional string behavior_constructor_name = 3;
+ * optional string constructor_name = 3;
  * @return {string}
  */
-proto.taxonomy.model.core.Behavior.prototype.getBehaviorConstructorName = function() {
+proto.taxonomy.model.core.Behavior.prototype.getConstructorName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.taxonomy.model.core.Behavior.prototype.setBehaviorConstructorName = function(value) {
+proto.taxonomy.model.core.Behavior.prototype.setConstructorName = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional google.protobuf.Any behavior_constructor = 4;
+ * optional google.protobuf.Any constructor = 4;
  * @return {?proto.google.protobuf.Any}
  */
-proto.taxonomy.model.core.Behavior.prototype.getBehaviorConstructor = function() {
+proto.taxonomy.model.core.Behavior.prototype.getConstructor = function() {
   return /** @type{?proto.google.protobuf.Any} */ (
     jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 4));
 };
 
 
 /** @param {?proto.google.protobuf.Any|undefined} value */
-proto.taxonomy.model.core.Behavior.prototype.setBehaviorConstructor = function(value) {
+proto.taxonomy.model.core.Behavior.prototype.setConstructor = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -1169,8 +1169,8 @@ proto.taxonomy.model.core.Behavior.prototype.setBehaviorConstructor = function(v
 /**
  * Clears the message field making it undefined.
  */
-proto.taxonomy.model.core.Behavior.prototype.clearBehaviorConstructor = function() {
-  this.setBehaviorConstructor(undefined);
+proto.taxonomy.model.core.Behavior.prototype.clearConstructor = function() {
+  this.setConstructor(undefined);
 };
 
 
@@ -1178,23 +1178,23 @@ proto.taxonomy.model.core.Behavior.prototype.clearBehaviorConstructor = function
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.taxonomy.model.core.Behavior.prototype.hasBehaviorConstructor = function() {
+proto.taxonomy.model.core.Behavior.prototype.hasConstructor = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated Invocation behavior_invocations = 5;
+ * repeated Invocation invocations = 5;
  * @return {!Array<!proto.taxonomy.model.core.Invocation>}
  */
-proto.taxonomy.model.core.Behavior.prototype.getBehaviorInvocationsList = function() {
+proto.taxonomy.model.core.Behavior.prototype.getInvocationsList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.Invocation>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.Invocation, 5));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.Invocation>} value */
-proto.taxonomy.model.core.Behavior.prototype.setBehaviorInvocationsList = function(value) {
+proto.taxonomy.model.core.Behavior.prototype.setInvocationsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
@@ -1204,7 +1204,7 @@ proto.taxonomy.model.core.Behavior.prototype.setBehaviorInvocationsList = functi
  * @param {number=} opt_index
  * @return {!proto.taxonomy.model.core.Invocation}
  */
-proto.taxonomy.model.core.Behavior.prototype.addBehaviorInvocations = function(opt_value, opt_index) {
+proto.taxonomy.model.core.Behavior.prototype.addInvocations = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.taxonomy.model.core.Invocation, opt_index);
 };
 
@@ -1212,23 +1212,23 @@ proto.taxonomy.model.core.Behavior.prototype.addBehaviorInvocations = function(o
 /**
  * Clears the list making it empty but non-null.
  */
-proto.taxonomy.model.core.Behavior.prototype.clearBehaviorInvocationsList = function() {
-  this.setBehaviorInvocationsList([]);
+proto.taxonomy.model.core.Behavior.prototype.clearInvocationsList = function() {
+  this.setInvocationsList([]);
 };
 
 
 /**
- * repeated Property behavioral_properties = 6;
+ * repeated Property properties = 6;
  * @return {!Array<!proto.taxonomy.model.core.Property>}
  */
-proto.taxonomy.model.core.Behavior.prototype.getBehavioralPropertiesList = function() {
+proto.taxonomy.model.core.Behavior.prototype.getPropertiesList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.Property>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.Property, 6));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.Property>} value */
-proto.taxonomy.model.core.Behavior.prototype.setBehavioralPropertiesList = function(value) {
+proto.taxonomy.model.core.Behavior.prototype.setPropertiesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
@@ -1238,7 +1238,7 @@ proto.taxonomy.model.core.Behavior.prototype.setBehavioralPropertiesList = funct
  * @param {number=} opt_index
  * @return {!proto.taxonomy.model.core.Property}
  */
-proto.taxonomy.model.core.Behavior.prototype.addBehavioralProperties = function(opt_value, opt_index) {
+proto.taxonomy.model.core.Behavior.prototype.addProperties = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.taxonomy.model.core.Property, opt_index);
 };
 
@@ -1246,8 +1246,8 @@ proto.taxonomy.model.core.Behavior.prototype.addBehavioralProperties = function(
 /**
  * Clears the list making it empty but non-null.
  */
-proto.taxonomy.model.core.Behavior.prototype.clearBehavioralPropertiesList = function() {
-  this.setBehavioralPropertiesList([]);
+proto.taxonomy.model.core.Behavior.prototype.clearPropertiesList = function() {
+  this.setPropertiesList([]);
 };
 
 
@@ -2491,7 +2491,7 @@ proto.taxonomy.model.core.Invocation.prototype.hasResponse = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.taxonomy.model.core.InvocationRequest.repeatedFields_ = [2];
+proto.taxonomy.model.core.InvocationRequest.repeatedFields_ = [3];
 
 
 
@@ -2523,9 +2523,9 @@ proto.taxonomy.model.core.InvocationRequest.prototype.toObject = function(opt_in
 proto.taxonomy.model.core.InvocationRequest.toObject = function(includeInstance, msg) {
   var obj = {
     controlMessageName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     inputParametersList: jspb.Message.toObjectList(msg.getInputParametersList(),
-    proto.taxonomy.model.core.InvocationParameter.toObject, includeInstance),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+    proto.taxonomy.model.core.InvocationParameter.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2567,13 +2567,13 @@ proto.taxonomy.model.core.InvocationRequest.deserializeBinaryFromReader = functi
       msg.setControlMessageName(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 3:
       var value = new proto.taxonomy.model.core.InvocationParameter;
       reader.readMessage(value,proto.taxonomy.model.core.InvocationParameter.deserializeBinaryFromReader);
       msg.addInputParameters(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -2611,19 +2611,19 @@ proto.taxonomy.model.core.InvocationRequest.serializeBinaryToWriter = function(m
       f
     );
   }
-  f = message.getInputParametersList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      proto.taxonomy.model.core.InvocationParameter.serializeBinaryToWriter
-    );
-  }
   f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
+    );
+  }
+  f = message.getInputParametersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      proto.taxonomy.model.core.InvocationParameter.serializeBinaryToWriter
     );
   }
 };
@@ -2645,18 +2645,33 @@ proto.taxonomy.model.core.InvocationRequest.prototype.setControlMessageName = fu
 
 
 /**
- * repeated InvocationParameter input_parameters = 2;
+ * optional string description = 2;
+ * @return {string}
+ */
+proto.taxonomy.model.core.InvocationRequest.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.taxonomy.model.core.InvocationRequest.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated InvocationParameter input_parameters = 3;
  * @return {!Array<!proto.taxonomy.model.core.InvocationParameter>}
  */
 proto.taxonomy.model.core.InvocationRequest.prototype.getInputParametersList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.InvocationParameter>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.InvocationParameter, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.InvocationParameter, 3));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.InvocationParameter>} value */
 proto.taxonomy.model.core.InvocationRequest.prototype.setInputParametersList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -2666,7 +2681,7 @@ proto.taxonomy.model.core.InvocationRequest.prototype.setInputParametersList = f
  * @return {!proto.taxonomy.model.core.InvocationParameter}
  */
 proto.taxonomy.model.core.InvocationRequest.prototype.addInputParameters = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.taxonomy.model.core.InvocationParameter, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.taxonomy.model.core.InvocationParameter, opt_index);
 };
 
 
@@ -2678,28 +2693,13 @@ proto.taxonomy.model.core.InvocationRequest.prototype.clearInputParametersList =
 };
 
 
-/**
- * optional string description = 3;
- * @return {string}
- */
-proto.taxonomy.model.core.InvocationRequest.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.taxonomy.model.core.InvocationRequest.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.taxonomy.model.core.InvocationResponse.repeatedFields_ = [2];
+proto.taxonomy.model.core.InvocationResponse.repeatedFields_ = [3];
 
 
 
@@ -2731,9 +2731,9 @@ proto.taxonomy.model.core.InvocationResponse.prototype.toObject = function(opt_i
 proto.taxonomy.model.core.InvocationResponse.toObject = function(includeInstance, msg) {
   var obj = {
     controlMessageName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     outputParametersList: jspb.Message.toObjectList(msg.getOutputParametersList(),
-    proto.taxonomy.model.core.InvocationParameter.toObject, includeInstance),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+    proto.taxonomy.model.core.InvocationParameter.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2775,13 +2775,13 @@ proto.taxonomy.model.core.InvocationResponse.deserializeBinaryFromReader = funct
       msg.setControlMessageName(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 3:
       var value = new proto.taxonomy.model.core.InvocationParameter;
       reader.readMessage(value,proto.taxonomy.model.core.InvocationParameter.deserializeBinaryFromReader);
       msg.addOutputParameters(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
       break;
     default:
       reader.skipField();
@@ -2819,19 +2819,19 @@ proto.taxonomy.model.core.InvocationResponse.serializeBinaryToWriter = function(
       f
     );
   }
-  f = message.getOutputParametersList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
-      f,
-      proto.taxonomy.model.core.InvocationParameter.serializeBinaryToWriter
-    );
-  }
   f = message.getDescription();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
+    );
+  }
+  f = message.getOutputParametersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      proto.taxonomy.model.core.InvocationParameter.serializeBinaryToWriter
     );
   }
 };
@@ -2853,18 +2853,33 @@ proto.taxonomy.model.core.InvocationResponse.prototype.setControlMessageName = f
 
 
 /**
- * repeated InvocationParameter output_parameters = 2;
+ * optional string description = 2;
+ * @return {string}
+ */
+proto.taxonomy.model.core.InvocationResponse.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.taxonomy.model.core.InvocationResponse.prototype.setDescription = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * repeated InvocationParameter output_parameters = 3;
  * @return {!Array<!proto.taxonomy.model.core.InvocationParameter>}
  */
 proto.taxonomy.model.core.InvocationResponse.prototype.getOutputParametersList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.InvocationParameter>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.InvocationParameter, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.InvocationParameter, 3));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.InvocationParameter>} value */
 proto.taxonomy.model.core.InvocationResponse.prototype.setOutputParametersList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -2874,7 +2889,7 @@ proto.taxonomy.model.core.InvocationResponse.prototype.setOutputParametersList =
  * @return {!proto.taxonomy.model.core.InvocationParameter}
  */
 proto.taxonomy.model.core.InvocationResponse.prototype.addOutputParameters = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.taxonomy.model.core.InvocationParameter, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.taxonomy.model.core.InvocationParameter, opt_index);
 };
 
 
@@ -2883,21 +2898,6 @@ proto.taxonomy.model.core.InvocationResponse.prototype.addOutputParameters = fun
  */
 proto.taxonomy.model.core.InvocationResponse.prototype.clearOutputParametersList = function() {
   this.setOutputParametersList([]);
-};
-
-
-/**
- * optional string description = 3;
- * @return {string}
- */
-proto.taxonomy.model.core.InvocationResponse.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.taxonomy.model.core.InvocationResponse.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -84,32 +84,32 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [
     {
       "name": "Mint",
       "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission.  Requires a Quantity field in the request.",
       "request": {
         "controlMessageName": "MintRequest",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "Quantity",
             "valueDescription": "Number of new tokens to create."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "MintResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the mint request."
           }
-        ],
-        "description": "The response"
+        ]
       }
     },
     {
@@ -117,6 +117,7 @@
       "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
       "request": {
         "controlMessageName": "MintToRequest",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "ToAccount",
@@ -126,20 +127,19 @@
             "name": "Quantity",
             "valueDescription": "Number of new tokens to create."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "MintToResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the MintTo request."
           }
-        ],
-        "description": "The response"
+        ]
       }
     }
   ],
-  "behavioralProperties": []
+  "properties": []
 }

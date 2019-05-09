@@ -105,7 +105,7 @@
       "groupEnd": "]"
     },
     "hybridChildrenStart": "(",
-    "childTokens": [
+    "hybridChildTokens": [
       {
         "parent": {
           "groupStart": "[",
@@ -125,7 +125,7 @@
           ],
           "groupEnd": "]"
         },
-        "hybridChildrenStart": "(",
+        "childrenStart": "(",
         "childTokens": [
           {
             "groupStart": "[",
@@ -164,7 +164,7 @@
             "groupEnd": "]"
           }
         ],
-        "hybridChildrenEnd": ")"
+        "childrenEnd": ")"
       },
       {
         "parent": {
@@ -185,7 +185,7 @@
           ],
           "groupEnd": "]"
         },
-        "hybridChildrenStart": "(",
+        "childrenStart": "(",
         "childTokens": [
           {
             "groupStart": "[",
@@ -224,7 +224,7 @@
             "groupEnd": "]"
           }
         ],
-        "hybridChildrenEnd": ")"
+        "childrenEnd": ")"
       }
     ],
     "hybridChildrenEnd": ")"

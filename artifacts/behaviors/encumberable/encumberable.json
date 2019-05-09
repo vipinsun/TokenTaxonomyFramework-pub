@@ -84,15 +84,16 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [
     {
       "name": "EncumberRequest",
       "description": "A Request by a party or account, perhaps a contract or another token, to encumber the token.",
       "request": {
         "controlMessageName": "EncumberRequest",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "Name of Encumber",
@@ -106,18 +107,17 @@
             "name": "Signature",
             "valueDescription": "A digital signature or attestation, optional."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "EncumberResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation response from the token for the encumber request."
           }
-        ],
-        "description": "The response"
+        ]
       }
     },
     {
@@ -130,13 +130,13 @@
       },
       "response": {
         "controlMessageName": "AcceptEncumberResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation response returned to the owner of their acceptance."
           }
-        ],
-        "description": "The response"
+        ]
       }
     },
     {
@@ -149,17 +149,17 @@
       },
       "response": {
         "controlMessageName": "RemoveEncumberResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation receipt or denial be returned to the RemoveEncumber requestor."
           }
-        ],
-        "description": "The response"
+        ]
       }
     }
   ],
-  "behavioralProperties": [
+  "properties": [
     {
       "name": "Encumbrances",
       "valueDescription": "List of Encumbered",
@@ -194,18 +194,18 @@
           "description": "The property value.",
           "request": {
             "controlMessageName": "GetEncumberedRequest",
-            "inputParameters": [],
-            "description": ""
+            "description": "",
+            "inputParameters": []
           },
           "response": {
             "controlMessageName": "GetEncumberedResponse",
+            "description": "Return value",
             "outputParameters": [
               {
                 "name": "Encumbered",
                 "valueDescription": "True or False"
               }
-            ],
-            "description": "Return value"
+            ]
           }
         }
       ]

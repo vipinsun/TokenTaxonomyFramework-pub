@@ -442,10 +442,10 @@ proto.taxonomy.model.grammar.HybridTokenFormula.prototype.toObject = function(op
 proto.taxonomy.model.grammar.HybridTokenFormula.toObject = function(includeInstance, msg) {
   var obj = {
     parent: (f = msg.getParent()) && proto.taxonomy.model.grammar.SingleToken.toObject(includeInstance, f),
-    hybridChildrenStart: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    childrenStart: jspb.Message.getFieldWithDefault(msg, 2, ""),
     childTokensList: jspb.Message.toObjectList(msg.getChildTokensList(),
     proto.taxonomy.model.grammar.SingleToken.toObject, includeInstance),
-    hybridChildrenEnd: jspb.Message.getFieldWithDefault(msg, 4, "")
+    childrenEnd: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -489,7 +489,7 @@ proto.taxonomy.model.grammar.HybridTokenFormula.deserializeBinaryFromReader = fu
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHybridChildrenStart(value);
+      msg.setChildrenStart(value);
       break;
     case 3:
       var value = new proto.taxonomy.model.grammar.SingleToken;
@@ -498,7 +498,7 @@ proto.taxonomy.model.grammar.HybridTokenFormula.deserializeBinaryFromReader = fu
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHybridChildrenEnd(value);
+      msg.setChildrenEnd(value);
       break;
     default:
       reader.skipField();
@@ -537,7 +537,7 @@ proto.taxonomy.model.grammar.HybridTokenFormula.serializeBinaryToWriter = functi
       proto.taxonomy.model.grammar.SingleToken.serializeBinaryToWriter
     );
   }
-  f = message.getHybridChildrenStart();
+  f = message.getChildrenStart();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -552,7 +552,7 @@ proto.taxonomy.model.grammar.HybridTokenFormula.serializeBinaryToWriter = functi
       proto.taxonomy.model.grammar.SingleToken.serializeBinaryToWriter
     );
   }
-  f = message.getHybridChildrenEnd();
+  f = message.getChildrenEnd();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -596,16 +596,16 @@ proto.taxonomy.model.grammar.HybridTokenFormula.prototype.hasParent = function()
 
 
 /**
- * optional string hybrid_children_start = 2;
+ * optional string children_start = 2;
  * @return {string}
  */
-proto.taxonomy.model.grammar.HybridTokenFormula.prototype.getHybridChildrenStart = function() {
+proto.taxonomy.model.grammar.HybridTokenFormula.prototype.getChildrenStart = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.taxonomy.model.grammar.HybridTokenFormula.prototype.setHybridChildrenStart = function(value) {
+proto.taxonomy.model.grammar.HybridTokenFormula.prototype.setChildrenStart = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -645,16 +645,16 @@ proto.taxonomy.model.grammar.HybridTokenFormula.prototype.clearChildTokensList =
 
 
 /**
- * optional string hybrid_children_end = 4;
+ * optional string children_end = 4;
  * @return {string}
  */
-proto.taxonomy.model.grammar.HybridTokenFormula.prototype.getHybridChildrenEnd = function() {
+proto.taxonomy.model.grammar.HybridTokenFormula.prototype.getChildrenEnd = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
-proto.taxonomy.model.grammar.HybridTokenFormula.prototype.setHybridChildrenEnd = function(value) {
+proto.taxonomy.model.grammar.HybridTokenFormula.prototype.setChildrenEnd = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -698,7 +698,7 @@ proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.toObject = fun
   var obj = {
     parent: (f = msg.getParent()) && proto.taxonomy.model.grammar.SingleToken.toObject(includeInstance, f),
     hybridChildrenStart: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    childTokensList: jspb.Message.toObjectList(msg.getChildTokensList(),
+    hybridChildTokensList: jspb.Message.toObjectList(msg.getHybridChildTokensList(),
     proto.taxonomy.model.grammar.HybridTokenFormula.toObject, includeInstance),
     hybridChildrenEnd: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -749,7 +749,7 @@ proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.deserializeBin
     case 3:
       var value = new proto.taxonomy.model.grammar.HybridTokenFormula;
       reader.readMessage(value,proto.taxonomy.model.grammar.HybridTokenFormula.deserializeBinaryFromReader);
-      msg.addChildTokens(value);
+      msg.addHybridChildTokens(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -799,7 +799,7 @@ proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.serializeBinar
       f
     );
   }
-  f = message.getChildTokensList();
+  f = message.getHybridChildTokensList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
@@ -866,17 +866,17 @@ proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.setH
 
 
 /**
- * repeated HybridTokenFormula child_tokens = 3;
+ * repeated HybridTokenFormula hybrid_child_tokens = 3;
  * @return {!Array<!proto.taxonomy.model.grammar.HybridTokenFormula>}
  */
-proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.getChildTokensList = function() {
+proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.getHybridChildTokensList = function() {
   return /** @type{!Array<!proto.taxonomy.model.grammar.HybridTokenFormula>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.grammar.HybridTokenFormula, 3));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.grammar.HybridTokenFormula>} value */
-proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.setChildTokensList = function(value) {
+proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.setHybridChildTokensList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
@@ -886,7 +886,7 @@ proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.setC
  * @param {number=} opt_index
  * @return {!proto.taxonomy.model.grammar.HybridTokenFormula}
  */
-proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.addChildTokens = function(opt_value, opt_index) {
+proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.addHybridChildTokens = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.taxonomy.model.grammar.HybridTokenFormula, opt_index);
 };
 
@@ -894,8 +894,8 @@ proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.addC
 /**
  * Clears the list making it empty but non-null.
  */
-proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.clearChildTokensList = function() {
-  this.setChildTokensList([]);
+proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula.prototype.clearHybridChildTokensList = function() {
+  this.setHybridChildTokensList([]);
 };
 
 
