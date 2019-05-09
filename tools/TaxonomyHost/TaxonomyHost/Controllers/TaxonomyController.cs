@@ -1,5 +1,3 @@
-
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -777,6 +775,7 @@ namespace TaxonomyHost.Controllers
 						FileData = ByteString.CopyFromUtf8(protoFile),
 						Content = ArtifactContent.Control
 					});
+					continue;
 				}
 
 				if (af.Name.EndsWith("md"))
@@ -789,18 +788,22 @@ namespace TaxonomyHost.Controllers
 						FileData = ByteString.CopyFromUtf8(mdFile),
 						Content = ArtifactContent.Uml
 					});
+					continue;
 				}
-				else
-				{
-					var otherFile = GetArtifactBytes(af);
 
-					artifact.ArtifactFiles.Add(new ArtifactFile
-					{
-						FileName = af.Name,
-						FileData = ByteString.CopyFrom(otherFile),
-						Content = ArtifactContent.Other
-					});
+				if (af.Name.EndsWith("json"))
+				{
+					continue;
 				}
+
+				var otherFile = GetArtifactBytes(af);
+
+				artifact.ArtifactFiles.Add(new ArtifactFile
+				{
+					FileName = af.Name,
+					FileData = ByteString.CopyFrom(otherFile),
+					Content = ArtifactContent.Other
+				});
 			}
 
 			return artifact;

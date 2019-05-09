@@ -61,8 +61,8 @@ message Artifact {
 }
 
 message ArtifactSymbol{
-    string visual_symbol = 4;
-    string tooling_symbol = 5;
+    string visual_symbol = 1;
+    string tooling_symbol = 2;
 }
 
 message SymbolInfluence{

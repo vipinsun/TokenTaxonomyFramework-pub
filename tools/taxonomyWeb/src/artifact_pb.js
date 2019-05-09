@@ -896,8 +896,8 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.toObject = function(opt_i
  */
 proto.taxonomy.model.artifact.ArtifactSymbol.toObject = function(includeInstance, msg) {
   var obj = {
-    visualSymbol: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    toolingSymbol: jspb.Message.getFieldWithDefault(msg, 5, "")
+    visualSymbol: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    toolingSymbol: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -934,11 +934,11 @@ proto.taxonomy.model.artifact.ArtifactSymbol.deserializeBinaryFromReader = funct
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 4:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setVisualSymbol(value);
       break;
-    case 5:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setToolingSymbol(value);
       break;
@@ -974,14 +974,14 @@ proto.taxonomy.model.artifact.ArtifactSymbol.serializeBinaryToWriter = function(
   f = message.getVisualSymbol();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      1,
       f
     );
   }
   f = message.getToolingSymbol();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      2,
       f
     );
   }
@@ -989,32 +989,32 @@ proto.taxonomy.model.artifact.ArtifactSymbol.serializeBinaryToWriter = function(
 
 
 /**
- * optional string visual_symbol = 4;
+ * optional string visual_symbol = 1;
  * @return {string}
  */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getVisualSymbol = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setVisualSymbol = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string tooling_symbol = 5;
+ * optional string tooling_symbol = 2;
  * @return {string}
  */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getToolingSymbol = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setToolingSymbol = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

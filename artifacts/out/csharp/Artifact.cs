@@ -37,8 +37,8 @@ namespace TTI.TTF.Model.Artifact {
             "LmFydGlmYWN0LlN5bWJvbEluZmx1ZW5jZRI9Cg5hcnRpZmFjdF9maWxlcxgJ",
             "IAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0RmlsZRIr",
             "CgRtYXBzGAogASgLMh0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuTWFwcyI/",
-            "Cg5BcnRpZmFjdFN5bWJvbBIVCg12aXN1YWxfc3ltYm9sGAQgASgJEhYKDnRv",
-            "b2xpbmdfc3ltYm9sGAUgASgJIl8KD1N5bWJvbEluZmx1ZW5jZRITCgtkZXNj",
+            "Cg5BcnRpZmFjdFN5bWJvbBIVCg12aXN1YWxfc3ltYm9sGAEgASgJEhYKDnRv",
+            "b2xpbmdfc3ltYm9sGAIgASgJIl8KD1N5bWJvbEluZmx1ZW5jZRITCgtkZXNj",
             "cmlwdGlvbhgBIAEoCRI3CgZzeW1ib2wYAiABKAsyJy50YXhvbm9teS5tb2Rl",
             "bC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbCLQAQoSQXJ0aWZhY3REZWZpbml0",
             "aW9uEhwKFGJ1c2luZXNzX2Rlc2NyaXB0aW9uGAEgASgJEhgKEGJ1c2luZXNz",
@@ -599,7 +599,7 @@ namespace TTI.TTF.Model.Artifact {
     }
 
     /// <summary>Field number for the "visual_symbol" field.</summary>
-    public const int VisualSymbolFieldNumber = 4;
+    public const int VisualSymbolFieldNumber = 1;
     private string visualSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string VisualSymbol {
@@ -610,7 +610,7 @@ namespace TTI.TTF.Model.Artifact {
     }
 
     /// <summary>Field number for the "tooling_symbol" field.</summary>
-    public const int ToolingSymbolFieldNumber = 5;
+    public const int ToolingSymbolFieldNumber = 2;
     private string toolingSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ToolingSymbol {
@@ -657,11 +657,11 @@ namespace TTI.TTF.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (VisualSymbol.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(10);
         output.WriteString(VisualSymbol);
       }
       if (ToolingSymbol.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(18);
         output.WriteString(ToolingSymbol);
       }
       if (_unknownFields != null) {
@@ -706,11 +706,11 @@ namespace TTI.TTF.Model.Artifact {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 34: {
+          case 10: {
             VisualSymbol = input.ReadString();
             break;
           }
-          case 42: {
+          case 18: {
             ToolingSymbol = input.ReadString();
             break;
           }
