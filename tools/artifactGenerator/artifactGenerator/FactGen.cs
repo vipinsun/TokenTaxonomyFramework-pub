@@ -205,7 +205,7 @@ namespace ArtifactGenerator
 						Platform = TargetPlatform.ChaincodeGo,
 						ReferencePath = ""
 					}},
-					Resources = { new MapResourceEntry
+					Resources = { new MapResourceReference
 					{
 						MappingType = MappingType.Resource,
 						Name = "Regulation Reference 1",

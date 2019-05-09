@@ -95,7 +95,7 @@ message ArtifactFile{
 message Maps{
     repeated MapReference code_references = 1;
     repeated MapReference implementation_references = 2;
-    repeated MapResourceEntry resources = 3;
+    repeated MapResourceReference resources = 3;
     Artifact artifact = 4; //navigation to parent
 }
 
@@ -107,13 +107,15 @@ message MapReference{
     Maps maps = 5; //navigation to parent
 }
 
-message MapResourceEntry{
+message MapResourceReference{
     MappingType mapping_type = 1;
     string name = 2;
     string description = 3;
     string resource_path = 4;
     Maps maps = 5; //navigation to parent
 }
+
+//Commands
 
 message NewArtifactRequest{
     ArtifactType type = 1;

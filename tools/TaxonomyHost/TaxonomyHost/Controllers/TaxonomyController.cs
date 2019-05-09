@@ -654,7 +654,7 @@ namespace TaxonomyHost.Controllers
 					},
 					Resources =
 					{
-						new MapResourceEntry
+						new MapResourceReference
 						{
 							MappingType = MappingType.Resource,
 							Name = "Regulation Reference 1",

@@ -51,51 +51,52 @@ namespace TTI.TTF.Model.Artifact {
             "dGlvbiKkAQoMQXJ0aWZhY3RGaWxlEjkKB2NvbnRlbnQYASABKA4yKC50YXhv",
             "bm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdENvbnRlbnQSEQoJZmlsZV9u",
             "YW1lGAIgASgJEhEKCWZpbGVfZGF0YRgDIAEoDBIzCghhcnRpZmFjdBgEIAEo",
-            "CzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0IoMCCgRNYXBz",
+            "CzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0IocCCgRNYXBz",
             "Ej4KD2NvZGVfcmVmZXJlbmNlcxgBIAMoCzIlLnRheG9ub215Lm1vZGVsLmFy",
             "dGlmYWN0Lk1hcFJlZmVyZW5jZRJIChlpbXBsZW1lbnRhdGlvbl9yZWZlcmVu",
             "Y2VzGAIgAygLMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuTWFwUmVmZXJl",
-            "bmNlEjwKCXJlc291cmNlcxgDIAMoCzIpLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0Lk1hcFJlc291cmNlRW50cnkSMwoIYXJ0aWZhY3QYBCABKAsyIS50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdCLYAQoMTWFwUmVmZXJlbmNl",
-            "EjoKDG1hcHBpbmdfdHlwZRgBIAEoDjIkLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0Lk1hcHBpbmdUeXBlEgwKBG5hbWUYAiABKAkSOQoIcGxhdGZvcm0YAyAB",
-            "KA4yJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5UYXJnZXRQbGF0Zm9ybRIW",
-            "Cg5yZWZlcmVuY2VfcGF0aBgEIAEoCRIrCgRtYXBzGAUgASgLMh0udGF4b25v",
-            "bXkubW9kZWwuYXJ0aWZhY3QuTWFwcyK1AQoQTWFwUmVzb3VyY2VFbnRyeRI6",
-            "CgxtYXBwaW5nX3R5cGUYASABKA4yJC50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
-            "dC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMg",
-            "ASgJEhUKDXJlc291cmNlX3BhdGgYBCABKAkSKwoEbWFwcxgFIAEoCzIdLnRh",
-            "eG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMicQoSTmV3QXJ0aWZhY3RSZXF1",
-            "ZXN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5B",
-            "cnRpZmFjdFR5cGUSJgoIYXJ0aWZhY3QYAiABKAsyFC5nb29nbGUucHJvdG9i",
-            "dWYuQW55In4KE05ld0FydGlmYWN0UmVzcG9uc2USMwoEdHlwZRgBIAEoDjIl",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIyChRhcnRp",
-            "ZmFjdF90eXBlX29iamVjdBgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5Bbnki",
-            "gAEKFVVwZGF0ZUFydGlmYWN0UmVxdWVzdBIzCgR0eXBlGAEgASgOMiUudGF4",
-            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEjIKFGFydGlmYWN0",
-            "X3R5cGVfb2JqZWN0GAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKSAQoW",
-            "VXBkYXRlQXJ0aWZhY3RSZXNwb25zZRIzCgR0eXBlGAEgASgOMiUudGF4b25v",
-            "bXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEg8KB3VwZGF0ZWQYAiAB",
-            "KAgSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QYAyABKAsyFC5nb29nbGUucHJv",
-            "dG9idWYuQW55Io4BChVEZWxldGVBcnRpZmFjdFJlcXVlc3QSMwoEdHlwZRgB",
-            "IAEoDjIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRJA",
-            "Cg9hcnRpZmFjdF9zeW1ib2wYAiABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5BcnRpZmFjdFN5bWJvbCIpChZEZWxldGVBcnRpZmFjdFJlc3BvbnNl",
-            "Eg8KB2RlbGV0ZWQYASABKAgquwEKCVRva2VuVHlwZRIMCghGVU5HSUJMRRAA",
-            "EhAKDE5PTl9GVU5HSUJMRRABEhgKFEhZQlJJRF9GVU5HSUJMRV9ST09UEAIS",
-            "HAoYSFlCUklEX05PTl9GVU5HSUJMRV9ST09UEAMSKAokSFlCUklEX0ZVTkdJ",
-            "QkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAQSLAooSFlCUklEX05PTl9GVU5H",
-            "SUJMRV9ST09UX0hZQlJJRF9DSElMRFJFThAFKmAKDEFydGlmYWN0VHlwZRII",
-            "CgRCQVNFEAASDAoIQkVIQVZJT1IQARISCg5CRUhBVklPUl9HUk9VUBACEhAK",
-            "DFBST1BFUlRZX1NFVBADEhIKDlRPS0VOX1RFTVBMQVRFEAQqQgoPQXJ0aWZh",
-            "Y3RDb250ZW50Eg4KCkRFRklOSVRJT04QABILCgdDT05UUk9MEAESBwoDVU1M",
-            "EAISCQoFT1RIRVIQAypACgtNYXBwaW5nVHlwZRIPCgtTT1VSQ0VfQ09ERRAA",
-            "EhIKDklNUExFTUVOVEFUSU9OEAESDAoIUkVTT1VSQ0UQAip2Cg5UYXJnZXRQ",
-            "bGF0Zm9ybRIVChFFVEhFUkVVTV9TT0xJRElUWRAAEhAKDENIQUlOQ09ERV9H",
-            "TxABEhIKDkNIQUlOQ09ERV9KQVZBEAISEgoOQ0hBSU5DT0RFX05PREUQAxIJ",
-            "CgVDT1JEQRAEEggKBERBTUwQBUI3ChpvcmcudHRpLnR0Zi5tb2RlbC5hcnRp",
-            "ZmFjdFABqgIWVFRJLlRURi5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
+            "bmNlEkAKCXJlc291cmNlcxgDIAMoCzItLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0Lk1hcFJlc291cmNlUmVmZXJlbmNlEjMKCGFydGlmYWN0GAQgASgLMiEu",
+            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3Qi2AEKDE1hcFJlZmVy",
+            "ZW5jZRI6CgxtYXBwaW5nX3R5cGUYASABKA4yJC50YXhvbm9teS5tb2RlbC5h",
+            "cnRpZmFjdC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIgASgJEjkKCHBsYXRmb3Jt",
+            "GAMgASgOMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVGFyZ2V0UGxhdGZv",
+            "cm0SFgoOcmVmZXJlbmNlX3BhdGgYBCABKAkSKwoEbWFwcxgFIAEoCzIdLnRh",
+            "eG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMiuQEKFE1hcFJlc291cmNlUmVm",
+            "ZXJlbmNlEjoKDG1hcHBpbmdfdHlwZRgBIAEoDjIkLnRheG9ub215Lm1vZGVs",
+            "LmFydGlmYWN0Lk1hcHBpbmdUeXBlEgwKBG5hbWUYAiABKAkSEwoLZGVzY3Jp",
+            "cHRpb24YAyABKAkSFQoNcmVzb3VyY2VfcGF0aBgEIAEoCRIrCgRtYXBzGAUg",
+            "ASgLMh0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuTWFwcyJxChJOZXdBcnRp",
+            "ZmFjdFJlcXVlc3QSMwoEdHlwZRgBIAEoDjIlLnRheG9ub215Lm1vZGVsLmFy",
+            "dGlmYWN0LkFydGlmYWN0VHlwZRImCghhcnRpZmFjdBgCIAEoCzIULmdvb2ds",
+            "ZS5wcm90b2J1Zi5BbnkifgoTTmV3QXJ0aWZhY3RSZXNwb25zZRIzCgR0eXBl",
+            "GAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBl",
+            "EjIKFGFydGlmYWN0X3R5cGVfb2JqZWN0GAIgASgLMhQuZ29vZ2xlLnByb3Rv",
+            "YnVmLkFueSKAAQoVVXBkYXRlQXJ0aWZhY3RSZXF1ZXN0EjMKBHR5cGUYASAB",
+            "KA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSMgoU",
+            "YXJ0aWZhY3RfdHlwZV9vYmplY3QYAiABKAsyFC5nb29nbGUucHJvdG9idWYu",
+            "QW55IpIBChZVcGRhdGVBcnRpZmFjdFJlc3BvbnNlEjMKBHR5cGUYASABKA4y",
+            "JS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSDwoHdXBk",
+            "YXRlZBgCIAEoCBIyChRhcnRpZmFjdF90eXBlX29iamVjdBgDIAEoCzIULmdv",
+            "b2dsZS5wcm90b2J1Zi5BbnkijgEKFURlbGV0ZUFydGlmYWN0UmVxdWVzdBIz",
+            "CgR0eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
+            "Y3RUeXBlEkAKD2FydGlmYWN0X3N5bWJvbBgCIAEoCzInLnRheG9ub215Lm1v",
+            "ZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sIikKFkRlbGV0ZUFydGlmYWN0",
+            "UmVzcG9uc2USDwoHZGVsZXRlZBgBIAEoCCq7AQoJVG9rZW5UeXBlEgwKCEZV",
+            "TkdJQkxFEAASEAoMTk9OX0ZVTkdJQkxFEAESGAoUSFlCUklEX0ZVTkdJQkxF",
+            "X1JPT1QQAhIcChhIWUJSSURfTk9OX0ZVTkdJQkxFX1JPT1QQAxIoCiRIWUJS",
+            "SURfRlVOR0lCTEVfUk9PVF9IWUJSSURfQ0hJTERSRU4QBBIsCihIWUJSSURf",
+            "Tk9OX0ZVTkdJQkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAUqYAoMQXJ0aWZh",
+            "Y3RUeXBlEggKBEJBU0UQABIMCghCRUhBVklPUhABEhIKDkJFSEFWSU9SX0dS",
+            "T1VQEAISEAoMUFJPUEVSVFlfU0VUEAMSEgoOVE9LRU5fVEVNUExBVEUQBCpC",
+            "Cg9BcnRpZmFjdENvbnRlbnQSDgoKREVGSU5JVElPThAAEgsKB0NPTlRST0wQ",
+            "ARIHCgNVTUwQAhIJCgVPVEhFUhADKkAKC01hcHBpbmdUeXBlEg8KC1NPVVJD",
+            "RV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJT04QARIMCghSRVNPVVJDRRACKnYK",
+            "DlRhcmdldFBsYXRmb3JtEhUKEUVUSEVSRVVNX1NPTElESVRZEAASEAoMQ0hB",
+            "SU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RFX0pBVkEQAhISCg5DSEFJTkNPREVf",
+            "Tk9ERRADEgkKBUNPUkRBEAQSCAoEREFNTBAFQjcKGm9yZy50dGkudHRmLm1v",
+            "ZGVsLmFydGlmYWN0UAGqAhZUVEkuVFRGLk1vZGVsLkFydGlmYWN0YgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Model.Artifact.TokenType), typeof(global::TTI.TTF.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Model.Artifact.MappingType), typeof(global::TTI.TTF.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
@@ -107,7 +108,7 @@ namespace TTI.TTF.Model.Artifact {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.ArtifactFile), global::TTI.TTF.Model.Artifact.ArtifactFile.Parser, new[]{ "Content", "FileName", "FileData", "Artifact" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.Maps), global::TTI.TTF.Model.Artifact.Maps.Parser, new[]{ "CodeReferences", "ImplementationReferences", "Resources", "Artifact" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.MapReference), global::TTI.TTF.Model.Artifact.MapReference.Parser, new[]{ "MappingType", "Name", "Platform", "ReferencePath", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.MapResourceEntry), global::TTI.TTF.Model.Artifact.MapResourceEntry.Parser, new[]{ "MappingType", "Name", "Description", "ResourcePath", "Maps" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.MapResourceReference), global::TTI.TTF.Model.Artifact.MapResourceReference.Parser, new[]{ "MappingType", "Name", "Description", "ResourcePath", "Maps" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.NewArtifactRequest), global::TTI.TTF.Model.Artifact.NewArtifactRequest.Parser, new[]{ "Type", "Artifact" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.NewArtifactResponse), global::TTI.TTF.Model.Artifact.NewArtifactResponse.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Model.Artifact.UpdateArtifactRequest), global::TTI.TTF.Model.Artifact.UpdateArtifactRequest.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
@@ -1602,11 +1603,11 @@ namespace TTI.TTF.Model.Artifact {
 
     /// <summary>Field number for the "resources" field.</summary>
     public const int ResourcesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.MapResourceEntry> _repeated_resources_codec
-        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Model.Artifact.MapResourceEntry.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceEntry> resources_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceEntry>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Model.Artifact.MapResourceReference> _repeated_resources_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Model.Artifact.MapResourceReference.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceReference> resources_ = new pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceReference>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceEntry> Resources {
+    public pbc::RepeatedField<global::TTI.TTF.Model.Artifact.MapResourceReference> Resources {
       get { return resources_; }
     }
 
@@ -1991,11 +1992,11 @@ namespace TTI.TTF.Model.Artifact {
 
   }
 
-  public sealed partial class MapResourceEntry : pb::IMessage<MapResourceEntry> {
-    private static readonly pb::MessageParser<MapResourceEntry> _parser = new pb::MessageParser<MapResourceEntry>(() => new MapResourceEntry());
+  public sealed partial class MapResourceReference : pb::IMessage<MapResourceReference> {
+    private static readonly pb::MessageParser<MapResourceReference> _parser = new pb::MessageParser<MapResourceReference>(() => new MapResourceReference());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<MapResourceEntry> Parser { get { return _parser; } }
+    public static pb::MessageParser<MapResourceReference> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -2008,14 +2009,14 @@ namespace TTI.TTF.Model.Artifact {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MapResourceEntry() {
+    public MapResourceReference() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MapResourceEntry(MapResourceEntry other) : this() {
+    public MapResourceReference(MapResourceReference other) : this() {
       mappingType_ = other.mappingType_;
       name_ = other.name_;
       description_ = other.description_;
@@ -2025,8 +2026,8 @@ namespace TTI.TTF.Model.Artifact {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public MapResourceEntry Clone() {
-      return new MapResourceEntry(this);
+    public MapResourceReference Clone() {
+      return new MapResourceReference(this);
     }
 
     /// <summary>Field number for the "mapping_type" field.</summary>
@@ -2089,11 +2090,11 @@ namespace TTI.TTF.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as MapResourceEntry);
+      return Equals(other as MapResourceReference);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(MapResourceEntry other) {
+    public bool Equals(MapResourceReference other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2179,7 +2180,7 @@ namespace TTI.TTF.Model.Artifact {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(MapResourceEntry other) {
+    public void MergeFrom(MapResourceReference other) {
       if (other == null) {
         return;
       }
