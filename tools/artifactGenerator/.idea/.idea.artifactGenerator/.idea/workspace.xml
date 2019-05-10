@@ -2,38 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18e5c737-78d3-41aa-b57a-849c6df3dc6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/Client.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/TaxonomyClient.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/Taxonomyservice.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/TaxonomyserviceGrpc.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/Utils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/log4net.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Artifact.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Core.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Grammar.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Taxonomy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/TaxonomyModel.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Taxonomyservice.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/OutputLib.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/model.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/model.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../artifacts/build-model.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/build-model.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/artifact.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Artifact.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomy.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomy.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomyservice.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/model/protos/taxonomyservice.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../artifacts/out/csharp/Taxonomyservice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../token-taxonomy.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../token-taxonomy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TaxonomyHost/.idea/.idea.TaxonomyHost/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/.idea/.idea.TaxonomyHost/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TaxonomyHost/.idea/.idea.TaxonomyHost/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/.idea/.idea.TaxonomyHost/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/Client.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/Client.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/Taxonomyservice.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/TaxonomyserviceGrpc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/TaxonomyserviceGrpc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/log4net.config" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyClient/log4net.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/Controllers/TaxonomyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/Controllers/TaxonomyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/ModelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/ModelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/TaxonomyHost.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/TaxonomyHost.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/model/Artifact.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/model/Core.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/model/Grammar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/model/Taxonomy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/model/Taxonomyservice.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/model/model.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/TaxonomyserviceGrpc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyHost/TaxonomyserviceGrpc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Taxonomy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Taxonomy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../TaxonomyHost/TaxonomyModel/Taxonomyservice.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.artifactGenerator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.artifactGenerator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artifactGenerator/FactGen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/artifactGenerator/FactGen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artifactGenerator/model/Artifact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/artifactGenerator/model/Artifact.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../taxonomyWeb/src/artifact_pb.js" beforeDir="false" afterPath="$PROJECT_DIR$/../taxonomyWeb/src/artifact_pb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.artifactGenerator/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.artifactGenerator/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifactGenerator/model/Taxonomy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/artifactGenerator/model/Taxonomy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifactGenerator/model/Taxonomyservice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/artifactGenerator/model/Taxonomyservice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../taxonomyWeb/src/taxonomy_pb.js" beforeDir="false" afterPath="$PROJECT_DIR$/../taxonomyWeb/src/taxonomy_pb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../taxonomyWeb/src/taxonomyservice_grpc_web_pb.js" beforeDir="false" afterPath="$PROJECT_DIR$/../taxonomyWeb/src/taxonomyservice_grpc_web_pb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../taxonomyWeb/src/taxonomyservice_pb.js" beforeDir="false" afterPath="$PROJECT_DIR$/../taxonomyWeb/src/taxonomyservice_pb.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArtifactGenerator/FactGen.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+            <state relative-caret-position="159">
+              <caret line="89" column="94" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="94" />
               <folding>
                 <marker date="1557428445016" expanded="false" signature="6:260" ph="..." />
                 <marker date="1557428445016" expanded="true" signature="289:20973" ph="{...}" />
@@ -203,7 +197,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../artifacts/build-model.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="527">
               <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
             </state>
           </provider>
@@ -286,7 +280,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="3440" />
     <option name="height" value="1325" />
@@ -299,7 +293,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -310,28 +303,14 @@
             <path>
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="ArtifactGenerator" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="scripts" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="ArtifactGenerator" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ArtifactGenerator" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="ArtifactGenerator" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ArtifactGenerator" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Model" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="protos" type="9a108dff:SolutionExplorerFileNode" />
             </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
     </panes>
   </component>
@@ -386,11 +365,12 @@
       <workItem from="1557328841271" duration="1428000" />
       <workItem from="1557389636162" duration="4249000" />
       <workItem from="1557408536317" duration="4334000" />
+      <workItem from="1557512961569" duration="1122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59476000" />
+    <option name="totallyTimeSpent" value="60598000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,9 +383,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="3440" height="1325" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11653914" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.117127724" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Azure Explorer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -434,7 +413,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Cargo" order="3" />
       <window_info anchor="right" id="Errors In Solution" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.08505003" />
+      <window_info anchor="right" id="Database" order="5" visible="true" weight="0.08505003" />
       <window_info anchor="right" id="Unit Tests Coverage" order="6" />
     </layout>
   </component>
@@ -1005,68 +984,11 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6f32e223-e00b-4005-bd16-2fc75daf28d1/console.sql" />
-    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/artifactGenerator.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../artifacts/build-model.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/Utils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-62">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-          <folding>
-            <marker date="1557151321688" expanded="false" signature="6:148" ph="..." />
-            <marker date="1557151321688" expanded="true" signature="177:1579" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="206:1062" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="241:1058" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="300:582" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="603:893" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="1086:1577" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="1122:1193" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="1225:1292" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="1324:1393" ph="{...}" />
-            <marker date="1557151321688" expanded="true" signature="1426:1574" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/Model/model.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="7" column="2" lean-forward="true" selection-end-line="205" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../artifacts/model/protos/core.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/Model/model.sql" />
     <entry file="file://$PROJECT_DIR$/ArtifactGenerator/FactGen.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="84" column="31" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="31" />
+        <state relative-caret-position="159">
+          <caret line="89" column="94" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="94" />
           <folding>
             <marker date="1557428445016" expanded="false" signature="6:260" ph="..." />
             <marker date="1557428445016" expanded="true" signature="289:20973" ph="{...}" />
@@ -1168,6 +1090,57 @@
             <marker date="1557428445016" expanded="true" signature="20149:20965" ph="{...}" />
             <marker date="1557428445016" expanded="true" signature="20341:20428" ph="{...}" />
             <marker date="1557428445016" expanded="true" signature="20876:20960" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../artifacts/model/protos/core.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/artifactGenerator.csproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../artifacts/build-model.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArtifactGenerator/Utils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-62">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <marker date="1557151321688" expanded="false" signature="6:148" ph="..." />
+            <marker date="1557151321688" expanded="true" signature="177:1579" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="206:1062" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="241:1058" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="300:582" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="603:893" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="1086:1577" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="1122:1193" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="1225:1292" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="1324:1393" ph="{...}" />
+            <marker date="1557151321688" expanded="true" signature="1426:1574" ph="{...}" />
           </folding>
         </state>
       </provider>

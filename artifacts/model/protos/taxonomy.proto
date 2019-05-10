@@ -18,3 +18,15 @@ message Taxonomy{
     map<string, taxonomy.model.core.TokenTemplate> token_templates = 6;
     taxonomy.model.grammar.FormulaGrammar formula_grammar = 7;
 }
+
+message TaxonomyVersion{
+    string version = 1;
+}
+
+message Symbol{
+    string artifact_symbol = 1; //should always be the tooling symbol.
+}
+
+message TaxonomyFormula{
+    string formula = 1;
+}

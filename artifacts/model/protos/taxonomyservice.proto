@@ -11,28 +11,16 @@ option java_multiple_files = true;
 
 service TaxonomyService {
     //gets
-    rpc GetFullTaxonomy (TaxonomyVersion) returns (taxonomy.model.Taxonomy) {}
-    rpc GetBaseArtifact (Symbol) returns (taxonomy.model.core.Base) {}
-    rpc GetBehaviorArtifact (Symbol) returns (taxonomy.model.core.Behavior) {}
-    rpc GetBehaviorGroupArtifact (Symbol) returns (taxonomy.model.core.BehaviorGroup) {}
-    rpc GetPropertySetArtifact (Symbol) returns (taxonomy.model.core.PropertySet) {}
-    rpc GetTokenTemplateArtifact (TaxonomyFormula) returns (taxonomy.model.core.TokenTemplate) {}
+    rpc GetFullTaxonomy (taxonomy.model.TaxonomyVersion) returns (taxonomy.model.Taxonomy) {}
+    rpc GetBaseArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.Base) {}
+    rpc GetBehaviorArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.Behavior) {}
+    rpc GetBehaviorGroupArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.BehaviorGroup) {}
+    rpc GetPropertySetArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.PropertySet) {}
+    rpc GetTokenTemplateArtifact (taxonomy.model.TaxonomyFormula) returns (taxonomy.model.core.TokenTemplate) {}
     
     //sets
     rpc CreateArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactResponse) {}
     rpc UpdateArtifact (taxonomy.model.artifact.UpdateArtifactRequest) returns (taxonomy.model.artifact.UpdateArtifactResponse) {}
     rpc DeleteArtifact (taxonomy.model.artifact.DeleteArtifactRequest) returns (taxonomy.model.artifact.DeleteArtifactResponse) {}
-}
-
-message TaxonomyVersion{
-    string version = 1;
-}
-
-message Symbol{
-    string artifact_symbol = 1; //should always be the tooling symbol.
-}
-
-message TaxonomyFormula{
-    string formula = 1;
 }
 

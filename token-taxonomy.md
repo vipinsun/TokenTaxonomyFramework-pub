@@ -157,7 +157,7 @@ Behavior groups are represented in the taxonomy by a capital letter or acronym, 
 
 Artifacts are primarily defined using a platform neutral model that provides type safety and strong schema validation as well as independence from the client display or interface.
 
-![TaxonomyModel](images/taxonomy-model.png)
+![TaxonomyModel](images/model.png)
 
 Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior-groups, property-sets and templates.
 
@@ -169,7 +169,7 @@ Below is an example of a token template in the model showing the collection of a
 - Property Set
 - Token Templates
 
-![TokenTemplate](images/template.png)
+![TokenTemplate](images/TokenTemplates.png)
 
 Written in protocol buffers, the schema supports a data structure to hold artifact definitions that anyone can understand what it does.  Storing the artifact definition in an object model allows for artifacts to be added or updated using any client interface or imported from files like Word or Google Docs.  The model serializes/saves to the artifact folder in JSON format so changes are tracked by GitHub.
 
