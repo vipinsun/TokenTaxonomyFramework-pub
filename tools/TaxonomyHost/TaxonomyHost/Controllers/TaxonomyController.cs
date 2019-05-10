@@ -567,7 +567,7 @@ namespace TaxonomyHost.Controllers
 			} 
 		}
 		
-		private static void CreateArtifactFiles(RepeatedField<ArtifactFile> artifactArtifactFiles, FileSystemInfo outputFolder, string artifactName)
+		private static void CreateArtifactFiles(IEnumerable<ArtifactFile> artifactArtifactFiles, FileSystemInfo outputFolder, string artifactName)
 		{
 			foreach (var af in artifactArtifactFiles)
 			{
