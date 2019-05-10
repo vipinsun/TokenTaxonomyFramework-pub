@@ -157,6 +157,8 @@ Behavior groups are represented in the taxonomy by a capital letter or acronym, 
 
 Artifacts are primarily defined using a platform neutral model that provides type safety and strong schema validation as well as independence from the client display or interface.
 
+> Note, the visualizations of the taxonomy model can be viewed as relational or an object model.  The image below is using a relational view for simplicity.  The Taxonomy model is an object model that is very much like a ORM (object to relational model) that is native to most platforms and can serialize to binary, Json or Sql formats.
+
 ![TaxonomyModel](images/model.png)
 
 Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior-groups, property-sets and templates.

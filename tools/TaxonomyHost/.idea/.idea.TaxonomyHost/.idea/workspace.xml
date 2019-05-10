@@ -676,7 +676,7 @@
     </option>
     <option name="contentProportion" value="0.076524" />
   </component>
-  <component name="RunManager" selected="Compound.Both">
+  <component name="RunManager" selected=".NET Project.Default">
     <configuration name="Both" type="CompoundRunConfigurationType">
       <toRun name="Service" type="DotNetProject" />
       <toRun name="Client" type="DotNetProject" />
@@ -687,10 +687,27 @@
       <toRun name="Client" type="DotNetProject" />
       <method v="2" />
     </configuration>
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue=".NET Project.Service" />
-      <item itemvalue=".NET Project.Client" />
       <item itemvalue="Compound.Both" />
+      <item itemvalue=".NET Project.Default" />
     </list>
   </component>
   <component name="SvnConfiguration">
