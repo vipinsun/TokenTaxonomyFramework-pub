@@ -3,9 +3,18 @@ syntax = "proto3";
 package taxonomy.model.artifact;
 import "google/protobuf/any.proto";
 
-option csharp_namespace = "TTF.Tokens.Model.Artifact";
-option java_package = "org.tti.tokens.model.artifact";
+option csharp_namespace = "TTI.TTF.Model.Artifact";
+option java_package = "org.tti.ttf.model.artifact";
 option java_multiple_files = true;
+
+enum TokenType {
+    FUNGIBLE = 0;
+    NON_FUNGIBLE = 1;
+    HYBRID_FUNGIBLE_ROOT = 2;
+    HYBRID_NON_FUNGIBLE_ROOT = 3;
+    HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN = 4;
+    HYBRID_NON_FUNGIBLE_ROOT_HYBRID_CHILDREN = 5;
+}
 
 enum ArtifactType{
     BASE = 0; //from core.Type
@@ -52,8 +61,8 @@ message Artifact {
 }
 
 message ArtifactSymbol{
-    string visual_symbol = 4;
-    string tooling_symbol = 5;
+    string visual_symbol = 1;
+    string tooling_symbol = 2;
 }
 
 message SymbolInfluence{
@@ -86,7 +95,7 @@ message ArtifactFile{
 message Maps{
     repeated MapReference code_references = 1;
     repeated MapReference implementation_references = 2;
-    repeated MapResourceEntry resources = 3;
+    repeated MapResourceReference resources = 3;
     Artifact artifact = 4; //navigation to parent
 }
 
@@ -98,7 +107,7 @@ message MapReference{
     Maps maps = 5; //navigation to parent
 }
 
-message MapResourceEntry{
+message MapResourceReference{
     MappingType mapping_type = 1;
     string name = 2;
     string description = 3;
@@ -106,9 +115,11 @@ message MapResourceEntry{
     Maps maps = 5; //navigation to parent
 }
 
+//Commands
+
 message NewArtifactRequest{
     ArtifactType type = 1;
-    string name = 2;
+    google.protobuf.Any artifact = 2;
 }
 
 message NewArtifactResponse{
@@ -123,5 +134,15 @@ message UpdateArtifactRequest{
 
 message UpdateArtifactResponse{
     ArtifactType type = 1;
-    google.protobuf.Any artifact_type_object = 2; //deserialize based on type
+    bool updated = 2;
+    google.protobuf.Any artifact_type_object = 3; //updated type, deserialize based on type
+}
+
+message DeleteArtifactRequest{
+    ArtifactType type = 1;
+    ArtifactSymbol artifact_symbol = 2;//deserialize based on type
+}
+
+message DeleteArtifactResponse{
+    bool deleted = 1;
 }

@@ -3,16 +3,32 @@
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
-      <e p="TaxonomyHost" t="IncludeRecursive">
+      <e p="TaxonomyClient" t="IncludeRecursive">
+        <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Client.cs" t="Include" />
         <e p="log4net.config" t="Include" />
-        <e p="model" t="Include">
-          <e p="Artifact.cs" t="Include" />
-          <e p="Core.cs" t="Include" />
-          <e p="Map.cs" t="Include" />
-          <e p="Taxonomy.cs" t="Include" />
-          <e p="Taxonomyservice.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="TaxonomyClient.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
         </e>
+        <e p="OutputLib.cs" t="Include" />
+        <e p="TaxonomyClient.csproj" t="IncludeRecursive" />
+        <e p="TaxonomyserviceGrpc.cs" t="Include" />
+        <e p="Utils.cs" t="Include" />
+      </e>
+      <e p="TaxonomyHost" t="IncludeRecursive">
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="TaxonomyController.cs" t="Include" />
+        </e>
+        <e p="Host.cs" t="Include" />
+        <e p="log4net.config" t="Include" />
+        <e p="ModelManager.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -20,11 +36,32 @@
             </e>
           </e>
         </e>
-        <e p="Program.cs" t="Include" />
+        <e p="startTx.sh" t="Include" />
+        <e p="TaxonomyCache.cs" t="Include" />
         <e p="TaxonomyHost.csproj" t="IncludeRecursive" />
+        <e p="Taxonomyservice.cs" t="Include" />
         <e p="TaxonomyserviceGrpc.cs" t="Include" />
+        <e p="Utils.cs" t="Include" />
       </e>
       <e p="TaxonomyHost.sln" t="IncludeFlat" />
+      <e p="TaxonomyModel" t="IncludeRecursive">
+        <e p="Artifact.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Core.cs" t="Include" />
+        <e p="Grammar.cs" t="Include" />
+        <e p="model.png" t="Include" />
+        <e p="model.uml" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="TaxonomyModel.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Taxonomy.cs" t="Include" />
+        <e p="TaxonomyModel.csproj" t="IncludeRecursive" />
+        <e p="Taxonomyservice.cs" t="Include" />
+      </e>
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_TaxonomyHost.-1439679956.00" t="ExcludeRecursive" />

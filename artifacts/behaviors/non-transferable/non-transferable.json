@@ -1,0 +1,89 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR",
+    "name": "Non-transferable",
+    "aliases": [],
+    "artifactSymbol": {
+      "visualSymbol": "<i>~t</i>",
+      "toolingSymbol": "~t"
+    },
+    "controlUri": "../../../../../../artifacts/behaviors/transferable/non-transferable.proto",
+    "artifactDefinition": {
+      "businessDescription": "Every token instance has an owner. The Non-transferable behavior prevents the owner of a token from changing.",
+      "businessExample": "A vote token, for a citizen in a public election would be non-transferable.",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "transferable analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "<i>t</i>",
+        "toolingSymbol": "t"
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "",
+        "symbol": {
+          "visualSymbol": "",
+          "toolingSymbol": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "non-transferable.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "non-transferable.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [],
+  "properties": []
+}

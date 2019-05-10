@@ -23,8 +23,8 @@
     },
     "incompatibleWithSymbols": [
       {
-        "visualSymbol": "",
-        "toolingSymbol": ""
+        "visualSymbol": "<i>~t</i>",
+        "toolingSymbol": "~t"
       }
     ],
     "influencedBySymbols": [
@@ -81,15 +81,16 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [
     {
       "name": "Transfer",
       "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
       "request": {
         "controlMessageName": "TransferRequest",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "To",
@@ -99,18 +100,17 @@
             "name": "Quantity",
             "valueDescription": "Number of tokens to transfer."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "TransferResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation receipt or error may be returned to the owner based on the outcome of the transfer request."
           }
-        ],
-        "description": "The response"
+        ]
       }
     },
     {
@@ -118,6 +118,7 @@
       "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
       "request": {
         "controlMessageName": "TransferFromRequest",
+        "description": "The request",
         "inputParameters": [
           {
             "name": "From",
@@ -131,20 +132,19 @@
             "name": "Quantity",
             "valueDescription": "Number of tokens to transfer."
           }
-        ],
-        "description": "The request"
+        ]
       },
       "response": {
         "controlMessageName": "TransferFromResponse",
+        "description": "The response",
         "outputParameters": [
           {
             "name": "Confirmation",
             "valueDescription": "A confirmation receipt or error may be returned to the owner based on the outcome of the transfer from request."
           }
-        ],
-        "description": "The response"
+        ]
       }
     }
   ],
-  "behavioralProperties": []
+  "properties": []
 }

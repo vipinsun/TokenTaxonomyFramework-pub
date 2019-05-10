@@ -157,7 +157,9 @@ Behavior groups are represented in the taxonomy by a capital letter or acronym, 
 
 Artifacts are primarily defined using a platform neutral model that provides type safety and strong schema validation as well as independence from the client display or interface.
 
-![TaxonomyModel](images/taxonomy-model.png)
+> Note, the visualizations of the taxonomy model can be viewed as relational or an object model. The image below is using a relational view for simplicity. The Taxonomy model is an object model that is very much like a ORM (object to relational model) that is native to most platforms and can serialize to binary, JSON or Sql formats.
+
+![TaxonomyModel](images/model.png)
 
 Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior-groups, property-sets and templates.
 
@@ -169,7 +171,7 @@ Below is an example of a token template in the model showing the collection of a
 - Property Set
 - Token Templates
 
-![TokenTemplate](images/template.png)
+![TokenTemplate](images/TokenTemplates.png)
 
 Written in protocol buffers, the schema supports a data structure to hold artifact definitions that anyone can understand what it does.  Storing the artifact definition in an object model allows for artifacts to be added or updated using any client interface or imported from files like Word or Google Docs.  The model serializes/saves to the artifact folder in JSON format so changes are tracked by GitHub.
 
@@ -192,7 +194,9 @@ A behavior may also include things like a sequence diagram to clearly define how
 ## Taxonomy Grammar
 
 Grammar defines how to construct a token or behavior group as a formula that is recorded as metadata in the artifact for the respective token, behavior or group.
-The grammar has a visual representation and one for tooling that does not include presentation characters for italics, Greek, super or subscript, etc.
+The grammar has a visual representation and one for tooling that does not include presentation characters for italics,Greek, super or subscript, etc. Using the grammar, a Token Formula can be written to have a shorthand definition for the template used in classifying the token.
+
+The formula uses brackets, braces and parentheses to combine the token parts.
 
 Token definitions start with the token base type:
 
@@ -201,16 +205,19 @@ Token definitions start with the token base type:
 | Fungible      |  **&tau;<sub>F</sub>** | tF |
 | Non-fungible  | **&tau;<sub>N</sub>**   |   tN |
 | Hybrid – class in (,)|      |     |
-| Non-fungible with a class of fungibles|**&tau;<sub>N</sub>(&tau;<sub>F</sub>)**      |    tN(tF) |
-| Fungible with a class of non-fungibles| **&tau;<sub>F</sub>(&tau;<sub>N</sub>)**      |    tF(tN)|
-| Fungible with a class of non-fungibles and fungibles| **&tau;<sub>F</sub>(&tau;<sub>N</sub>, &tau;<sub>F</sub>)** |   tF(tN,tF) |
-| Non-fungible with a class of fungibles and non-fungibles| **&tau;<sub>N</sub>(&tau;<sub>F</sub>, &tau;<sub>N</sub>)**| tN(tF,tN) |
+| Non-fungible with a class of fungibles|[&tau;<sub>N</sub>] (&tau;<sub>F</sub>)      |   `[tN](tF)` |
+| Fungible with a class of non-fungibles| [&tau;<sub>F</sub>] (&tau;<sub>N</sub>)      |    `[tF](tN)`|
+| Fungible with a class of non-fungibles and fungibles| [&tau;<sub>F</sub>](&tau;<sub>N</sub>, &tau;<sub>F</sub>) |   `[tF](tN,tF)` |
+| Non-fungible with a class of fungibles and non-fungibles| [&tau;<sub>N</sub>](&tau;<sub>F</sub>, &tau;<sub>N</sub>)| `[tN](tF,tN)` |
+| Non-fungible with a class of fungibles and non-fungibles, with each child having formulas| [&tau;<sub>N</sub>]([&tau;<sub>F</sub>], [&tau;<sub>N</sub>)]| `[tN]([tF],[tN])` |
 | etc.|      |     |
 
 - Behavior is a single *italic* lower-case letter or letters that is unique.
 - Behavior Group is an upper-case letter or letters that is unique with behavior formula encased in `{,}` Supply Control: `SC{m,b,r}`
-- Property Sets are prefixed with **&phi;** followed by a upper case letter or acronym that is unique to the taxonomy. **&phi** is the visual format and `ph` is the tooling. If multiple sets are used they should be group using (,).
-- Token Node is indicated surrounding the generic token formula in brackets `[]` and adds using `+` the unique non-behavioral properties, property sets, defined within them. i.e. **[&tau;<sub>N</sub>(&tau;<sub>F</sub>, &tau;<sub>N</sub>)+&phi;SKU]**
+- Property Sets are prefixed with **&phi;** followed by a upper case letter or acronym that is unique to the taxonomy. **&phi** is the visual format and `ph` is the tooling. to add a property set to a template, enclose the token definition within [] adding the property set after the behaviors with a + for each set needed. All of the token's behaviors and properties are contained within the surrounding brackets [].
+- For example, a Token Branch can be a Formula with just the base and behaviors and can then have a Node that had the Branch formula surround by brackets `[]` and adds using `+` the unique property sets, added within the brackets. i.e. **[&tau;<sub>N</sub>(&tau;<sub>F</sub>, &tau;<sub>N</sub>)+&phi;SKU]**
+- Hybrid tokens, represented as children of a base parent are added after the base's [] and contained with in parenthesis (,).  These child tokens are also contained within brackets resulting in a formula grouping like: `[]([],[])`
+- For hybrid tokens, you can apply behaviors to the entire hybrid definition by ending the formula with a list of behaviors in {,}.
 
 Whole Token Formulas start with the base token type, followed by a collection of behaviors and groups within {,}, ending in any property-sets.
 
@@ -306,7 +313,7 @@ For example, in the Ethereum community [OpenZeppelin](https://github.com/OpenZep
 
 Using a taxonomy code map, tools can be built to generate code for specific platforms by combining the code from the formula into new source composite source code to speed development.
 
-Similarly, an implementation map can be used to provide navigation from a specific token formula like >**&tau;<sub>F</sub>{~d,SC}** or `tF{~d,SC}` to map to a vendor or open source complete implementation in as open source or packaged solution.
+Similarly, an implementation map can be used to provide navigation from a specific token formula like **&tau;<sub>F</sub>{~d,SC}** or `tF{~d,SC}` to map to a vendor or open source complete implementation in as open source or packaged solution.
 
 ![TaxonomyImplementationMap](images/implementationMap.png)
 
@@ -314,7 +321,7 @@ Similarly, an implementation map can be used to provide navigation from a specif
 
 Using the taxonomy when creating or defining an existing token can also generically apply to a token implementation as well. The high-level design phases are:
 
-- Workshop - this is the initial phase when starting from scratch defining the token for your business needs. During this process you can create new taxonomy artifacts and when complete have a resulting token taxonomy definition which looks like a mathematical formula: **&tau;<sub>F</sub>{~d,SC}** or `tF{d~,SC}`
+- Workshop - this is the initial phase when starting from scratch defining the token for your business needs. During this process you can create new taxonomy artifacts and when complete have a resulting token taxonomy definition which looks like a mathematical formula: **&tau;<sub>F</sub>{~d,SC}** or `tF{~d,SC}`
 - Hierarchy Location - Once you have your taxonomy definition, you may be able to find an existing definition in the taxonomy with the same formula.  This doesn't mean that the token you defined is **exactly** the same as the existing definition. If your token definition has defined a non-behavioral property set or sets that are specific to your token, like a `phSKU` or  `phCU` you can create a new token definition for this formula in the taxonomy. See [Taxonomy Hierarchy](taxonomy-hierarchy).
 - Implementation - You can use maps in the taxonomy to locate platform specific implementation code or complete token solutions from open source, vendors to get create or find an implementation suitable for your deployment platform target. i.e. Ethereum, Hyperledger Fabric, Corda or Digital Asset.
 
@@ -336,9 +343,7 @@ For each complete token definition these interactions can be defined as an artif
 
 The behavior artifacts and groups are not fixed, nor do they represent complete implementation specific values. But they do represent a common base set of messages which similar to Ethereum's [ERC-20](https://eips.ethereum.org/EIPS/eip-20) standard allows for working with tokens in a generic way and supports implementation of specific properties and features without breaking the base messaging interface.
 
-The `TokenTaxonomyDefinition` represents the token interface and contains the taxonomy identifiers for its root and the standard behavior artifacts and groups it has as well as a collection of custom behaviors.
-
-![TaxonomyRoot](images/taxonomyRoot.png)
+The `TokenTaxonomyDefinition` represents the token interface and contains the taxonomy identifiers for its root, behaviors and behavior groups it has, followed by any property-sets.
 
 A `GetTaxonomyRequest` message sent to a token will respond with a `GetTaxonomyResponse` and be able to understand the token interface as well as any custom behaviors, internal or external, to begin interacting with it.
 

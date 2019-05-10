@@ -11,3 +11,13 @@ Consuming an artifact folder to generate a artifact from the model would populat
 ## Model of Artifacts
 
 The model is used in conjunction with the artifact folders.
+
+## Prerequisites
+
+- install the protoc [gRpcWeb](https://github.com/grpc/grpc-web/releases) extension and [install](https://github.com/grpc/grpc-web).  OSX:
+
+```bash
+sudo mv ~/Downloads/protoc-gen-grpc-web-1.0.4-darwin-x86_64 \
+  /usr/local/bin/protoc-gen-grpc-web
+chmod +x /usr/local/bin/protoc-gen-grpc-web
+```

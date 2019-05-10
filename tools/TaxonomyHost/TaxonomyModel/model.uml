@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>1d301624-d192-40d8-963e-76d524c68999.SCHEMA:ttf.dbo</OriginalElement>
+  <nodes>
+    <node x="182.0" y="149.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenType</node>
+    <node x="609.75" y="1096.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationResponses</node>
+    <node x="3312.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroupLists</node>
+    <node x="2160.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplateBehaviors</node>
+    <node x="2618.0" y="0.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactType</node>
+    <node x="728.8098716759432" y="427.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertySets</node>
+    <node x="3917.25" y="149.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactContent</node>
+    <node x="2452.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplateBehaviorGroups</node>
+    <node x="138.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBaseTokenTypes</node>
+    <node x="2607.5" y="127.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts</node>
+    <node x="433.75" y="673.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Properties</node>
+    <node x="430.75" y="925.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocations</node>
+    <node x="2799.75" y="925.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Invocations</node>
+    <node x="4085.0" y="427.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MappingType</node>
+    <node x="3444.0" y="427.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Maps</node>
+    <node x="91.25" y="328.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Bases</node>
+    <node x="12.25" y="685.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BaseProperties</node>
+    <node x="0.0" y="149.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenFormula</node>
+    <node x="2779.625" y="673.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Behaviors</node>
+    <node x="3020.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroupBehaviors</node>
+    <node x="3872.0" y="405.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactFiles</node>
+    <node x="554.75" y="1267.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationResponsesParameters</node>
+    <node x="1587.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBehaviors</node>
+    <node x="491.8098716759432" y="416.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactAnalogies</node>
+    <node x="2324.0" y="416.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactDefinitions</node>
+    <node x="2108.125" y="684.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplates</node>
+    <node x="3657.0" y="427.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactAliases</node>
+    <node x="169.25" y="1096.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationRequests</node>
+    <node x="3335.75" y="663.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MapReference</node>
+    <node x="689.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyPropertySets</node>
+    <node x="3104.125" y="695.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroups</node>
+    <node x="2557.75" y="1267.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationRequestParameters</node>
+    <node x="2593.0" y="416.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactSymbols</node>
+    <node x="2591.75" y="1096.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationRequests</node>
+    <node x="2949.75" y="1096.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationResponses</node>
+    <node x="3768.5" y="663.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MapResourceReference</node>
+    <node x="1406.7682050092762" y="695.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyVersion</node>
+    <node x="3236.291666666667" y="427.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TargetPlatform</node>
+    <node x="1295.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyTokenTemplates</node>
+    <node x="970.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplatePropertySets</node>
+    <node x="2904.75" y="1267.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationResponsesParameters</node>
+    <node x="119.75" y="1267.0">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationRequestParameters</node>
+    <node x="1868.75" y="947.5">1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBehaviorGroups</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBaseTokenTypes" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Bases">
+      <point x="-68.0" y="-38.0" />
+      <point x="0.0" y="137.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactFiles" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="-48.25" y="-60.0" />
+      <point x="3920.25" y="268.0" />
+      <point x="2782.181818181818" y="268.0" />
+      <point x="83.18181818181802" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MapResourceReference" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MappingType">
+      <point x="62.5" y="-71.0" />
+      <point x="3956.0" y="643.0" />
+      <point x="4198.25" y="643.0" />
+      <point x="37.75" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactType">
+      <point x="0.0" y="-60.5" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplateBehaviors" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Behaviors">
+      <point x="68.0" y="-38.0" />
+      <point x="2364.75" y="885.0" />
+      <point x="2852.0" y="885.0" />
+      <point x="-24.125" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyPropertySets" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertySets">
+      <point x="-65.25" y="-38.0" />
+      <point x="755.0" y="643.0" />
+      <point x="825.3098716759432" y="643.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBehaviorGroups" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroups">
+      <point x="68.0" y="-38.0" />
+      <point x="2072.75" y="895.0" />
+      <point x="3128.25" y="895.0" />
+      <point x="-72.375" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactSymbols" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationRequestParameters" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationRequests">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplateBehaviorGroups" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplates">
+      <point x="-81.75" y="-38.0" />
+      <point x="2534.5" y="865.0" />
+      <point x="2277.0" y="865.0" />
+      <point x="72.375" y="49.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyTokenTemplates" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyVersion">
+      <point x="-68.0" y="-38.0" />
+      <point x="1363.75" y="845.0" />
+      <point x="1504.2682050092762" y="845.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactFiles" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactContent">
+      <point x="48.25" y="-60.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplates" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="48.25" y="-49.5" />
+      <point x="2252.875" y="298.0" />
+      <point x="2665.7272727272725" y="298.0" />
+      <point x="-33.27272727272748" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroupBehaviors" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Behaviors">
+      <point x="-68.0" y="-38.0" />
+      <point x="3088.75" y="885.0" />
+      <point x="2948.5" y="885.0" />
+      <point x="72.375" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyTokenTemplates" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplates">
+      <point x="68.0" y="-38.0" />
+      <point x="1499.75" y="865.0" />
+      <point x="2180.5" y="865.0" />
+      <point x="-24.125" y="49.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroupLists" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroups">
+      <point x="0.0" y="-38.0" />
+      <point x="3433.25" y="905.0" />
+      <point x="3273.0" y="905.0" />
+      <point x="72.375" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationResponses" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocations">
+      <point x="0.0" y="-60.5" />
+      <point x="773.25" y="1071.0" />
+      <point x="610.0" y="1071.0" />
+      <point x="59.75" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplatePropertySets" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplates">
+      <point x="76.25" y="-38.0" />
+      <point x="1199.5" y="855.0" />
+      <point x="2132.25" y="855.0" />
+      <point x="-72.375" y="49.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationResponsesParameters" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationResponses">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyPropertySets" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyVersion">
+      <point x="65.25" y="-38.0" />
+      <point x="885.5" y="835.0" />
+      <point x="1465.2682050092762" y="835.0" />
+      <point x="-39.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Behaviors" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-60.5" />
+      <point x="2876.125" y="308.0" />
+      <point x="2715.6363636363635" y="308.0" />
+      <point x="16.636363636363512" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplatePropertySets" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertySets">
+      <point x="-76.25" y="-38.0" />
+      <point x="1047.0" y="643.0" />
+      <point x="889.6432050092765" y="643.0" />
+      <point x="64.33333333333326" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationRequestParameters" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationRequests">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactAliases" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-38.0" />
+      <point x="3754.5" y="278.0" />
+      <point x="2765.5454545454545" y="278.0" />
+      <point x="66.5454545454545" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationRequests" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Invocations">
+      <point x="0.0" y="-60.5" />
+      <point x="2721.25" y="1071.0" />
+      <point x="2850.0" y="1071.0" />
+      <point x="-50.25" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Invocations" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Behaviors">
+      <point x="0.0" y="-60.5" />
+      <point x="24.125" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BaseProperties" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Bases">
+      <point x="0.0" y="-49.0" />
+      <point x="104.25" y="643.0" />
+      <point x="129.75" y="643.0" />
+      <point x="-77.0" y="137.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBehaviors" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyVersion">
+      <point x="-65.25" y="-38.0" />
+      <point x="1653.0" y="845.0" />
+      <point x="1543.2682050092762" y="845.0" />
+      <point x="39.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Bases" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenFormula">
+      <point x="-77.0" y="-137.5" />
+      <point x="129.75" y="308.0" />
+      <point x="81.0" y="308.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MapResourceReference" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Maps">
+      <point x="-62.5" y="-71.0" />
+      <point x="3831.0" y="623.0" />
+      <point x="3588.75" y="623.0" />
+      <point x="48.25" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Bases" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="77.0" y="-137.5" />
+      <point x="283.75" y="268.0" />
+      <point x="2615.818181818182" y="268.0" />
+      <point x="-83.18181818181802" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocations" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Properties">
+      <point x="0.0" y="-60.5" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocationRequests" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertyInvocations">
+      <point x="0.0" y="-60.5" />
+      <point x="327.25" y="1071.0" />
+      <point x="490.5" y="1071.0" />
+      <point x="-59.75" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationResponses" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Invocations">
+      <point x="0.0" y="-60.5" />
+      <point x="3079.25" y="1071.0" />
+      <point x="2950.5" y="1071.0" />
+      <point x="50.25" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactDefinitions" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-49.0" />
+      <point x="2448.5" y="308.0" />
+      <point x="2682.3636363636365" y="308.0" />
+      <point x="-16.636363636363512" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.ArtifactAnalogies" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-49.0" />
+      <point x="600.3098716759432" y="278.0" />
+      <point x="2632.4545454545455" y="278.0" />
+      <point x="-66.5454545454545" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MapReference" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Maps">
+      <point x="0.0" y="-71.0" />
+      <point x="3444.75" y="643.0" />
+      <point x="3492.25" y="643.0" />
+      <point x="-48.25" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Properties" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertySets">
+      <point x="0.0" y="-60.5" />
+      <point x="550.25" y="633.0" />
+      <point x="760.9765383426097" y="633.0" />
+      <point x="-64.33333333333337" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.PropertySets" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-38.5" />
+      <point x="825.3098716759432" y="288.0" />
+      <point x="2649.090909090909" y="288.0" />
+      <point x="-49.90909090909099" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBaseTokenTypes" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyVersion">
+      <point x="68.0" y="-38.0" />
+      <point x="342.75" y="825.0" />
+      <point x="1426.2682050092762" y="825.0" />
+      <point x="-78.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBehaviorGroups" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyVersion">
+      <point x="-68.0" y="-38.0" />
+      <point x="1936.75" y="835.0" />
+      <point x="1582.2682050092762" y="835.0" />
+      <point x="78.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationResponsesParameters" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.InvocationResponses">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Bases" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenType">
+      <point x="0.0" y="-137.5" />
+      <point x="206.75" y="308.0" />
+      <point x="255.5" y="308.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplates" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Bases">
+      <point x="-48.25" y="-49.5" />
+      <point x="2156.375" y="623.0" />
+      <point x="283.75" y="623.0" />
+      <point x="77.0" y="137.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Maps" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-38.5" />
+      <point x="3540.5" y="288.0" />
+      <point x="2748.909090909091" y="288.0" />
+      <point x="49.90909090909099" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplateBehaviorGroups" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroups">
+      <point x="81.75" y="-38.0" />
+      <point x="2698.0" y="905.0" />
+      <point x="3176.5" y="905.0" />
+      <point x="-24.125" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MapReference" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TargetPlatform">
+      <point x="-72.66666666666652" y="-71.0" />
+      <point x="3372.0833333333335" y="643.0" />
+      <point x="3328.291666666667" y="643.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroupBehaviors" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroups">
+      <point x="68.0" y="-38.0" />
+      <point x="24.125" y="38.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TaxonomyBehaviors" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Behaviors">
+      <point x="65.25" y="-38.0" />
+      <point x="1783.5" y="875.0" />
+      <point x="2803.75" y="875.0" />
+      <point x="-72.375" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.BehaviorGroups" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.Artifacts">
+      <point x="0.0" y="-38.5" />
+      <point x="3200.625" y="298.0" />
+      <point x="2732.2727272727275" y="298.0" />
+      <point x="33.27272727272748" y="60.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplateBehaviors" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.TokenTemplates">
+      <point x="-68.0" y="-38.0" />
+      <point x="24.125" y="49.5" />
+    </edge>
+    <edge source="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MapReference" target="1d301624-d192-40d8-963e-76d524c68999.TABLE:ttf.dbo.MappingType">
+      <point x="72.66666666666652" y="-71.0" />
+      <point x="3517.4166666666665" y="633.0" />
+      <point x="4122.75" y="633.0" />
+      <point x="-37.75" y="38.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6365116279069768" x="2140.0" y="682.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

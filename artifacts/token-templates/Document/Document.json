@@ -8,8 +8,8 @@
       "PDF"
     ],
     "artifactSymbol": {
-      "visualSymbol": "[&tau<sub>N</sub>{d',t,s,e,b}+&phi;File]",
-      "toolingSymbol": "[tN{d',t,s,e,b}+phFile]"
+      "visualSymbol": "[&tau<sub>N</sub>{~d,t,s,e,b}+&phi;File]",
+      "toolingSymbol": "[tN{~d,t,s,e,b}+phFile]"
     },
     "controlUri": "../../../../../../artifacts/token-templates/Document/Document.proto",
     "artifactDefinition": {

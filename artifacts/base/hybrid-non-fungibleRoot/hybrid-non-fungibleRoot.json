@@ -7,8 +7,8 @@
       "alias2"
     ],
     "artifactSymbol": {
-      "visualSymbol": "&tau;<sub>N</sub>()",
-      "toolingSymbol": "tN()"
+      "visualSymbol": "&tau;<sub>N</sub>(&tau;)",
+      "toolingSymbol": "tN(t)"
     },
     "controlUri": "../../../../../../artifacts/base/hybrid-non-fungibleRoot/hybrid-non-fungibleRoot.proto",
     "artifactDefinition": {
@@ -85,6 +85,66 @@
     }
   },
   "tokenType": "HYBRID_NON_FUNGIBLE_ROOT",
+  "hybrid": {
+    "parent": {
+      "groupStart": "[",
+      "baseToken": {
+        "baseSymbol": ""
+      },
+      "behaviors": {
+        "listStart": "{",
+        "behaviorSymbol": [],
+        "listEnd": "}"
+      },
+      "propertySets": [
+        {
+          "listStart": "+",
+          "propertySetSymbol": ""
+        }
+      ],
+      "groupEnd": "]"
+    },
+    "childrenStart": "(",
+    "childTokens": [
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      },
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      }
+    ],
+    "childrenEnd": ")"
+  },
   "name": "",
   "symbol": "",
   "owner": "",

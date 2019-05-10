@@ -7,8 +7,8 @@
       "alias2"
     ],
     "artifactSymbol": {
-      "visualSymbol": "&tau;<sub>F</sub>()",
-      "toolingSymbol": "tF()"
+      "visualSymbol": "&tau;<sub>F</sub>(&tau;)",
+      "toolingSymbol": "tF(t)"
     },
     "controlUri": "../../../../../../artifacts/base/hybrid-fungibleRoot/hybrid-fungibleRoot.proto",
     "artifactDefinition": {
@@ -85,6 +85,66 @@
     }
   },
   "tokenType": "HYBRID_FUNGIBLE_ROOT",
+  "hybrid": {
+    "parent": {
+      "groupStart": "[",
+      "baseToken": {
+        "baseSymbol": ""
+      },
+      "behaviors": {
+        "listStart": "{",
+        "behaviorSymbol": [],
+        "listEnd": "}"
+      },
+      "propertySets": [
+        {
+          "listStart": "+",
+          "propertySetSymbol": ""
+        }
+      ],
+      "groupEnd": "]"
+    },
+    "childrenStart": "(",
+    "childTokens": [
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      },
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      }
+    ],
+    "childrenEnd": ")"
+  },
   "name": "",
   "symbol": "",
   "owner": "",

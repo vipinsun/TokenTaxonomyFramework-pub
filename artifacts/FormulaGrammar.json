@@ -1,0 +1,224 @@
+{
+  "singleToken": {
+    "groupStart": "[",
+    "baseToken": {
+      "baseSymbol": ""
+    },
+    "behaviors": {
+      "listStart": "{",
+      "behaviorSymbol": [],
+      "listEnd": "}"
+    },
+    "propertySets": [
+      {
+        "listStart": "+",
+        "propertySetSymbol": ""
+      }
+    ],
+    "groupEnd": "]"
+  },
+  "hybrid": {
+    "parent": {
+      "groupStart": "[",
+      "baseToken": {
+        "baseSymbol": ""
+      },
+      "behaviors": {
+        "listStart": "{",
+        "behaviorSymbol": [],
+        "listEnd": "}"
+      },
+      "propertySets": [
+        {
+          "listStart": "+",
+          "propertySetSymbol": ""
+        }
+      ],
+      "groupEnd": "]"
+    },
+    "childrenStart": "(",
+    "childTokens": [
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      },
+      {
+        "groupStart": "[",
+        "baseToken": {
+          "baseSymbol": ""
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbol": [],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbol": ""
+          }
+        ],
+        "groupEnd": "]"
+      }
+    ],
+    "childrenEnd": ")"
+  },
+  "hybridWithHybrids": {
+    "parent": {
+      "groupStart": "[",
+      "baseToken": {
+        "baseSymbol": ""
+      },
+      "behaviors": {
+        "listStart": "{",
+        "behaviorSymbol": [],
+        "listEnd": "}"
+      },
+      "propertySets": [
+        {
+          "listStart": "+",
+          "propertySetSymbol": ""
+        }
+      ],
+      "groupEnd": "]"
+    },
+    "hybridChildrenStart": "(",
+    "hybridChildTokens": [
+      {
+        "parent": {
+          "groupStart": "[",
+          "baseToken": {
+            "baseSymbol": ""
+          },
+          "behaviors": {
+            "listStart": "{",
+            "behaviorSymbol": [],
+            "listEnd": "}"
+          },
+          "propertySets": [
+            {
+              "listStart": "+",
+              "propertySetSymbol": ""
+            }
+          ],
+          "groupEnd": "]"
+        },
+        "childrenStart": "(",
+        "childTokens": [
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          },
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          }
+        ],
+        "childrenEnd": ")"
+      },
+      {
+        "parent": {
+          "groupStart": "[",
+          "baseToken": {
+            "baseSymbol": ""
+          },
+          "behaviors": {
+            "listStart": "{",
+            "behaviorSymbol": [],
+            "listEnd": "}"
+          },
+          "propertySets": [
+            {
+              "listStart": "+",
+              "propertySetSymbol": ""
+            }
+          ],
+          "groupEnd": "]"
+        },
+        "childrenStart": "(",
+        "childTokens": [
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          },
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          }
+        ],
+        "childrenEnd": ")"
+      }
+    ],
+    "hybridChildrenEnd": ")"
+  }
+}

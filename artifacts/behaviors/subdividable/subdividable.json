@@ -12,8 +12,8 @@
     },
     "controlUri": "../../../../../../artifacts/behaviors/subdividable/subdividable.proto",
     "artifactDefinition": {
-      "businessDescription": "An ability or restriction on the token where it can or cannot be subdivided from a single whole token into fractions, which are represented as decimal places. Setting the base token Decimals property to 0 will make the token non-sub-dividable, any value greater will indicate how many fractions are possible where the smallest fraction is also the smallest ownable unit of the token.",
-      "businessExample": "Sub-dividable is common for crypto-currencies or tokens of fiat currency.  For example, the US Dollar is sub-dividable to 2 decimal places, where a value like .42 is possible.  Bitcoin, is sub-dividable up to 8 decimal places. Non-subdividable is common for items where subdivision does not make sense, like a property title, inventory item or invoice.",
+      "businessDescription": "An ability for the token to be subdivided from a single whole token into fractions, which are represented as decimal places. Any value greater than 0 will indicate how many fractions are possible where the smallest fraction is also the smallest ownable unit of the token.",
+      "businessExample": "Sub-dividable is common for crypto-currencies or tokens of fiat currency.  For example, the US Dollar is sub-dividable to 2 decimal places, where a value like .42 is possible.  Bitcoin, is sub-dividable up to 8 decimal places.",
       "analogies": [
         {
           "name": "Analogy 1",
@@ -26,8 +26,8 @@
     },
     "incompatibleWithSymbols": [
       {
-        "visualSymbol": "",
-        "toolingSymbol": ""
+        "visualSymbol": "<i>~d</i>",
+        "toolingSymbol": "~d"
       }
     ],
     "influencedBySymbols": [
@@ -84,9 +84,9 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [],
-  "behavioralProperties": []
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [],
+  "properties": []
 }

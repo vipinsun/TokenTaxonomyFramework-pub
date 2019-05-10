@@ -2,9 +2,10 @@ syntax = "proto3";
 
 package taxonomy.model;
 import "core.proto";
+import "grammar.proto";
 
-option csharp_namespace = "TTF.Tokens.Model.Taxonomy";
-option java_package = "org.tokentaxonomyinitiative.tokens.model.taxonomy";
+option csharp_namespace = "TTI.TTF.Taxonomy.Model";
+option java_package = "org.tti.ttf.taxonomy.model";
 option java_multiple_files = true;
 
 //each collection defined in a map with the index being the symbol of the artifact for the collection.
@@ -15,4 +16,17 @@ message Taxonomy{
     map<string, taxonomy.model.core.BehaviorGroup> behavior_groups = 4;
     map<string, taxonomy.model.core.PropertySet> property_sets = 5;
     map<string, taxonomy.model.core.TokenTemplate> token_templates = 6;
+    taxonomy.model.grammar.FormulaGrammar formula_grammar = 7;
+}
+
+message TaxonomyVersion{
+    string version = 1;
+}
+
+message Symbol{
+    string artifact_symbol = 1; //should always be the tooling symbol.
+}
+
+message TaxonomyFormula{
+    string formula = 1;
 }

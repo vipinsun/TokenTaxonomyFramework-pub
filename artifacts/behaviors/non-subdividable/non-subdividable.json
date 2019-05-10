@@ -1,0 +1,92 @@
+{
+  "artifact": {
+    "type": "BEHAVIOR",
+    "name": "Non-Subdividable",
+    "aliases": [
+      "alias1",
+      "alias2"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "<i>~d</i>",
+      "toolingSymbol": "~d"
+    },
+    "controlUri": "../../../../../../artifacts/behaviors/subdividable/non-subdividable.proto",
+    "artifactDefinition": {
+      "businessDescription": "An ability or restriction on the token where it cannot be subdivided from a single whole token into fractions. Sets the base token Decimals property to 0 which will make the token non-sub-dividable and a whole token is the smallest ownable unit of the token.",
+      "businessExample": "Non-subdividable is common for items where subdivision does not make sense, like a property title, inventory item or invoice.",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "non-subdividable analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "<i>d</i>",
+        "toolingSymbol": "d"
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "",
+        "symbol": {
+          "visualSymbol": "",
+          "toolingSymbol": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "non-subdividable.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "non-subdividable.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [],
+  "properties": []
+}

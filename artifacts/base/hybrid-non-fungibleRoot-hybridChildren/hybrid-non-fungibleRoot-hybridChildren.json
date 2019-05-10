@@ -1,0 +1,241 @@
+{
+  "artifact": {
+    "type": "BASE",
+    "name": "hybrid-non-fungibleRoot-hybridChildren",
+    "aliases": [
+      "alias1",
+      "alias2"
+    ],
+    "artifactSymbol": {
+      "visualSymbol": "&tau;<sub>N</sub>([&tau;(&tau;))",
+      "toolingSymbol": "tN([t(t)]"
+    },
+    "controlUri": "../../../../../../artifacts/base/hybrid-non-fungibleRoot-hybridChildren/hybrid-non-fungibleRoot-hybridChildren.proto",
+    "artifactDefinition": {
+      "businessDescription": "This is a hybrid-non-fungibleRoot-hybridChildren of type: Base",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "hybrid-non-fungibleRoot-hybridChildren analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "incompatibleWithSymbols": [
+      {
+        "visualSymbol": "",
+        "toolingSymbol": ""
+      }
+    ],
+    "influencedBySymbols": [
+      {
+        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+        "symbol": {
+          "visualSymbol": "~d",
+          "toolingSymbol": "~d"
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "hybrid-non-fungibleRoot-hybridChildren.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "hybrid-non-fungibleRoot-hybridChildren.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "tokenType": "HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN",
+  "hybridWithHybrids": {
+    "parent": {
+      "groupStart": "[",
+      "baseToken": {
+        "baseSymbol": ""
+      },
+      "behaviors": {
+        "listStart": "{",
+        "behaviorSymbol": [],
+        "listEnd": "}"
+      },
+      "propertySets": [
+        {
+          "listStart": "+",
+          "propertySetSymbol": ""
+        }
+      ],
+      "groupEnd": "]"
+    },
+    "hybridChildrenStart": "(",
+    "hybridChildTokens": [
+      {
+        "parent": {
+          "groupStart": "[",
+          "baseToken": {
+            "baseSymbol": ""
+          },
+          "behaviors": {
+            "listStart": "{",
+            "behaviorSymbol": [],
+            "listEnd": "}"
+          },
+          "propertySets": [
+            {
+              "listStart": "+",
+              "propertySetSymbol": ""
+            }
+          ],
+          "groupEnd": "]"
+        },
+        "childrenStart": "(",
+        "childTokens": [
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          },
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          }
+        ],
+        "childrenEnd": ")"
+      },
+      {
+        "parent": {
+          "groupStart": "[",
+          "baseToken": {
+            "baseSymbol": ""
+          },
+          "behaviors": {
+            "listStart": "{",
+            "behaviorSymbol": [],
+            "listEnd": "}"
+          },
+          "propertySets": [
+            {
+              "listStart": "+",
+              "propertySetSymbol": ""
+            }
+          ],
+          "groupEnd": "]"
+        },
+        "childrenStart": "(",
+        "childTokens": [
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          },
+          {
+            "groupStart": "[",
+            "baseToken": {
+              "baseSymbol": ""
+            },
+            "behaviors": {
+              "listStart": "{",
+              "behaviorSymbol": [],
+              "listEnd": "}"
+            },
+            "propertySets": [
+              {
+                "listStart": "+",
+                "propertySetSymbol": ""
+              }
+            ],
+            "groupEnd": "]"
+          }
+        ],
+        "childrenEnd": ")"
+      }
+    ],
+    "hybridChildrenEnd": ")"
+  },
+  "name": "",
+  "symbol": "",
+  "owner": "",
+  "quantity": "",
+  "decimals": 0,
+  "tokenProperties": {},
+  "constructorName": "",
+  "constructor": null,
+  "childTokens": []
+}

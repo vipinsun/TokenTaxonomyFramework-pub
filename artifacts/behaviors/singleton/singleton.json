@@ -88,9 +88,9 @@
       "artifact": null
     }
   },
-  "external": false,
-  "behaviorConstructorName": "",
-  "behaviorConstructor": null,
-  "behaviorInvocations": [],
-  "behavioralProperties": []
+  "isExternal": false,
+  "constructorName": "",
+  "constructor": null,
+  "invocations": [],
+  "properties": []
 }

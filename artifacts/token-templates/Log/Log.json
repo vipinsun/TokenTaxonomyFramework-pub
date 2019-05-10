@@ -8,8 +8,8 @@
       "Audit"
     ],
     "artifactSymbol": {
-      "visualSymbol": "&tau<sub>N</sub>{t', d', b, s, r, l}",
-      "toolingSymbol": "tN{t', d', b, s, r, l}"
+      "visualSymbol": "&tau<sub>N</sub>{~t, ~d, b, s, r, l}",
+      "toolingSymbol": "tN{~t, ~d, b, s, r, l}"
     },
     "controlUri": "../../../../../../artifacts/token-templates/Log/Log.proto",
     "artifactDefinition": {
