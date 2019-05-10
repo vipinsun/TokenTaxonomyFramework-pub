@@ -15,8 +15,8 @@
             </e>
           </e>
         </e>
+        <e p="OutputLib.cs" t="Include" />
         <e p="TaxonomyClient.csproj" t="IncludeRecursive" />
-        <e p="Taxonomyservice.cs" t="Include" />
         <e p="TaxonomyserviceGrpc.cs" t="Include" />
         <e p="Utils.cs" t="Include" />
       </e>
@@ -49,6 +49,8 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Core.cs" t="Include" />
         <e p="Grammar.cs" t="Include" />
+        <e p="model.png" t="Include" />
+        <e p="model.uml" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">

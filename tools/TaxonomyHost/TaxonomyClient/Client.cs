@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using log4net;
 using Microsoft.Extensions.Configuration;
 using TTI.TTF.Model.Artifact;
 using TTI.TTF.Model.Core;
 using TTI.TTF.Taxonomy;
+using TTI.TTF.Taxonomy.Model;
 
 namespace TaxonomyClient
 {
@@ -16,7 +19,9 @@ namespace TaxonomyClient
 		private static ILog _log;
 		private static string _gRpcHost;
 		private static int _gRpcPort;
-
+		internal static TaxonomyService.TaxonomyServiceClient TaxonomyClient;
+		private static bool _saveArtifact;
+		
 		private static void Main(string[] args)
 		{
 			#region config
@@ -38,106 +43,270 @@ namespace TaxonomyClient
 			var symbol = "";
 			var artifactType = ArtifactType.Base;
 			var artifactSet = false;
+			var create = false;
+			var newArtifactName = "";
+			var newSymbol = "";
 
-			if (args.Length == 1||args.Length == 4)
+			if (args.Length > 0 &&  args.Length < 6 )
 			{
 				_gRpcHost = _config["gRpcHost"];
 				_gRpcPort = Convert.ToInt32(_config["gRpcPort"]);
 			
 				_log.Info("Connection to TaxonomyService: " + _gRpcHost + " port: " + _gRpcPort);
-				var taxonomyClient = new TaxonomyService.TaxonomyServiceClient(
+				TaxonomyClient = new TaxonomyService.TaxonomyServiceClient(
 					new Channel(_gRpcHost, _gRpcPort, ChannelCredentials.Insecure));
-				if (args.Length == 1)
+				switch (args.Length)
 				{
-					if (args[0] == "--f")
-					{
-						GetFullTaxonomy(taxonomyClient);
+					case 1 when args[0] == "--f":
+						GetFullTaxonomy(TaxonomyClient);
 						return;
-					}
-
-					OutputUsage();
-					return;
-				}
-				
-				for (var i = 0; i < args.Length; i++)
-				{
-					var arg = args[i];
-					switch (arg)
-					{
-						case "--s":
-							i++;
-							symbol = args[i];
-							continue;
-						case "--t":
-							i++;
-							var t = Convert.ToInt32(args[i]);
-							artifactType = (ArtifactType) t;
-							artifactSet = true;
-							continue;
-						default:
-							continue;
-					}
-				}
-
-				if (string.IsNullOrEmpty(symbol))
-				{
-					Console.WriteLine("Missing Symbol for Taxonomy Query, include --s [TOOLING_SYMBOL]");
-					return;
-				}
-
-				if (!artifactSet)
-				{
-					Console.WriteLine("Missing Artifact Type, include --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
-					return;
-				}
-
-				var symbolQuery = new Symbol
-				{
-					ArtifactSymbol = symbol
-				};
-				
-				switch (artifactType)
-				{
-					case ArtifactType.Base:
-						var baseType = taxonomyClient.GetBaseArtifact(symbolQuery);
-						OutputBaseType(symbol, baseType);
+					case 1:
+						OutputUsage();
 						return;
-					case ArtifactType.Behavior:
-						var behavior = taxonomyClient.GetBehaviorArtifact(symbolQuery);
-						OutputBehavior(symbol, behavior);
+					case 2:
+						OutputUsage();
 						return;
-					case ArtifactType.BehaviorGroup:
-						var behaviorGroup = taxonomyClient.GetBehaviorGroupArtifact(symbolQuery);
-						OutputBehaviorGroup(symbol, behaviorGroup);
+					case 3:
+						OutputUsage();
 						return;
-					case ArtifactType.PropertySet:
-						var propertySet = taxonomyClient.GetPropertySetArtifact(symbolQuery);
-						OutputPropertySet(symbol, propertySet);
-						return;
-					case ArtifactType.TokenTemplate:
-						var tokenTemplate = taxonomyClient.GetTokenTemplateArtifact(new TaxonomyFormula
+					case 4:
+						var artifactFolder = "";
+						for (var i = 0; i < args.Length; i++)
 						{
-							Formula = symbol
-						});
-						OutputTemplate(symbol, tokenTemplate);
+							switch (args[i])
+							{
+								case "--u":
+									i++;
+									artifactFolder = args[i];
+									continue;
+								case "--t":
+									i++;
+									var t = Convert.ToInt32(args[i]);
+									artifactType = (ArtifactType) t;
+									artifactSet = true;
+									continue;
+								default:
+									continue;
+							}
+						}
+						if(artifactSet && !string.IsNullOrEmpty(artifactFolder))
+							UpdateArtifact(artifactType, artifactFolder);
+						else
+							GetArtifact(args, symbol, artifactType);
 						return;
+					case 5:
+						foreach (var t in args)
+						{
+							switch (t)
+							{
+								case "--s":
+									_saveArtifact = true;
+									GetArtifact(args, symbol, artifactType);
+									return;
+								
+								default:
+									continue;
+							}
+						}
+						OutputUsage();
+						return;
+					case 6:
+					{
+						for (var i = 0; i < args.Length; i++)
+						{
+							var arg = args[i];
+							switch (arg)
+							{
+								case "--c":
+									i++;
+									create = true;
+									newSymbol = args[1];
+									continue;
+								case "--t":
+									i++;
+									var t = Convert.ToInt32(args[i]);
+									artifactType = (ArtifactType) t;
+									artifactSet = true;
+									continue;
+								case "--n":
+									i++;
+									newArtifactName = args[i];
+									continue;
+								default:
+									continue;
+							}
+						}
+
+						if (string.IsNullOrEmpty(newArtifactName))
+						{
+							Console.WriteLine("Missing New Artifact Name, include --n [NEW_ARTIFACT_NAME]");
+							return;
+						}
+						
+						if (string.IsNullOrEmpty(newSymbol))
+						{
+							Console.WriteLine("Missing New Artifact Symbol, include --c [NEW_ARTIFACT_SYMBOL]");
+							return;
+						}
+
+						if (!artifactSet)
+						{
+							Console.WriteLine(
+								"Missing New Artifact Type, include --ts [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+							return;
+						}
+						
+						if (!create)
+						{
+							Console.WriteLine(
+								"Missing Create Switch, include --c to create a new artifact.");
+							return;
+						}
+
+						if (artifactType == ArtifactType.Base)
+						{
+							Console.WriteLine("This tool does not support creating a new base token type or --t 0");
+							return;
+						}
+						
+						var newArtifactRequest = new NewArtifactRequest
+						{
+							Type = artifactType
+						};
+						
+						Any newType;
+						switch (artifactType)
+						{
+							case ArtifactType.Base:
+								return;
+							case ArtifactType.Behavior:
+								var newBehavior = new Behavior
+								{
+									Artifact = new Artifact
+									{
+										Name = newArtifactName,
+										ArtifactSymbol = new ArtifactSymbol
+										{
+											ToolingSymbol = newSymbol.ToLower(),
+											VisualSymbol = "<i>" + newSymbol.ToLower()+"</i>"
+										}
+									}
+								};
+								newType = Any.Pack(newBehavior);
+								break;
+							case ArtifactType.BehaviorGroup:
+								var newBehaviorGroup = new BehaviorGroup
+								{
+									Artifact = new Artifact
+									{
+										Name = newArtifactName,
+										ArtifactSymbol = new ArtifactSymbol
+										{
+											ToolingSymbol = newSymbol.ToUpper(),
+											VisualSymbol = "<i>" + newSymbol.ToUpper()+"</i>"
+										}
+									}
+								};
+								newType = Any.Pack(newBehaviorGroup);
+								break;
+							case ArtifactType.PropertySet:
+								var newPropertySet = new PropertySet
+								{
+									Artifact = new Artifact
+									{
+										Name = newArtifactName,
+										ArtifactSymbol = new ArtifactSymbol
+										{
+											ToolingSymbol = "ph" + newSymbol,
+											VisualSymbol = "&phi;" + newSymbol
+										}
+									}
+								};
+								newType = Any.Pack(newPropertySet);
+								break;
+							case ArtifactType.TokenTemplate:
+								var newTokenTemplate = new TokenTemplate
+								{
+									Artifact = new Artifact
+									{
+										Name = newArtifactName,
+										ArtifactSymbol = new ArtifactSymbol
+										{
+											ToolingSymbol = newSymbol,
+											VisualSymbol = newSymbol
+										}
+									}
+								};
+								newType = Any.Pack(newTokenTemplate);
+								break;
+							default:
+								throw new ArgumentOutOfRangeException();
+						}
+
+						newArtifactRequest.Artifact = newType;
+						
+						_log.Error("Create New Artifact of Type: " + artifactType);
+						if (artifactType == ArtifactType.TokenTemplate)
+						{
+							_log.Warn("	& Token Tooling Formula = " + symbol);
+						}
+						else
+						{
+							_log.Warn("	& Tooling Symbol" + symbol);
+						}
+						_log.Info("-----------------------------------------");
+
+						var newArtifactResponse = TaxonomyClient.CreateArtifact(newArtifactRequest); 
+						_log.Error("New Artifact Response");
+						switch (newArtifactResponse.Type)
+						{
+							case ArtifactType.Base:
+								break;
+							case ArtifactType.Behavior:
+								var newBehavior = newArtifactResponse.ArtifactTypeObject.Unpack<Behavior>();
+								OutputLib.OutputBehavior(newBehavior.Artifact.ArtifactSymbol.ToolingSymbol, newBehavior);
+								return;
+							case ArtifactType.BehaviorGroup:
+								var newBehaviorGroup = newArtifactResponse.ArtifactTypeObject.Unpack<BehaviorGroup>();
+								OutputLib.OutputBehaviorGroup(newBehaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol, newBehaviorGroup);
+								return;
+							case ArtifactType.PropertySet:
+								var newPropertySet = newArtifactResponse.ArtifactTypeObject.Unpack<PropertySet>();
+								OutputLib.OutputPropertySet(newPropertySet.Artifact.ArtifactSymbol.ToolingSymbol, newPropertySet);
+								return;
+							case ArtifactType.TokenTemplate:
+								var newTokenTemplate = newArtifactResponse.ArtifactTypeObject.Unpack<TokenTemplate>();
+								OutputLib.OutputTemplate(newTokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol, newTokenTemplate);
+								return;
+							default:
+								throw new ArgumentOutOfRangeException();
+						}
+						return;
+					}
 					default:
-						throw new ArgumentOutOfRangeException();
+						OutputUsage();
+						return;
 				}
 			}
 			OutputUsage();
 		}
 
+		private static void UpdateArtifact(ArtifactType type, string updateFolder)
+		{
+			OutputLib.UpdateArtifact(type, updateFolder);
+		}
+
 		private static void OutputUsage()
 		{
-			
-				Console.WriteLine(
-					"Usage: dotnet TaxonomyClient --f");
-				Console.WriteLine("	Retrieves the entire Taxonomy and writes it to the console.");
-				Console.WriteLine(
-					"Usage: dotnet TaxonomyClient --s [TOOLING_SYMBOL] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
-				Console.WriteLine("	Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");
-
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --f");
+			Console.WriteLine("	Retrieves the entire Taxonomy and writes it to the console.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+			Console.WriteLine("	Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+			Console.WriteLine("	Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");
 		}
 
 		private static void GetFullTaxonomy(TaxonomyService.TaxonomyServiceClient taxonomyClient)
@@ -156,14 +325,14 @@ namespace TaxonomyClient
 			_log.Error("-> Base Token Types <-");
 			foreach (var (symbol, baseType) in taxonomy.BaseTokenTypes)
 			{
-				OutputBaseType(symbol, baseType);
+				OutputLib.OutputBaseType(symbol, baseType);
 			}
 
 			_log.Error("-> Base Token Types End <-");
 			_log.Warn("-> Behaviors <-");
 			foreach (var (symbol, behavior) in taxonomy.Behaviors)
 			{
-				OutputBehavior(symbol, behavior);
+				OutputLib.OutputBehavior(symbol, behavior);
 			}
 
 			_log.Warn("-> Behaviors End <-");
@@ -171,7 +340,7 @@ namespace TaxonomyClient
 
 			foreach (var (symbol, bg) in taxonomy.BehaviorGroups)
 			{
-				OutputBehaviorGroup(symbol, bg);
+				OutputLib.OutputBehaviorGroup(symbol, bg);
 			}
 
 			_log.Error("-> BehaviorGroups End <-");
@@ -179,297 +348,119 @@ namespace TaxonomyClient
 			_log.Warn("-> PropertySets <-");
 			foreach (var (symbol, propSet) in taxonomy.PropertySets)
 			{
-				OutputPropertySet(symbol, propSet);
+				OutputLib.OutputPropertySet(symbol, propSet);
 			}
 
 			_log.Warn("-> PropertySets End <-");
 			_log.Error("-> TokenTemplates <-");
 			foreach (var (symbol, value) in taxonomy.TokenTemplates)
 			{
-				OutputTemplate(symbol, value);
+				OutputLib.OutputTemplate(symbol, value);
 			}
 
 			_log.Warn("-> TokenTemplates End <-");
 			_log.Warn("-----------------------------Taxonomy   End----------------------------------------");
 		}
-
-		private static void OutputPropertySet(string symbol, PropertySet propSet)
+		
+		private static void GetArtifact(IReadOnlyList<string> args, string symbol, ArtifactType artifactType)
 		{
-			_log.Error("	***PropertySet***");
-			_log.Info("		-Symbol: " + symbol);
-			OutputArtifact(propSet.Artifact);
-			foreach (var prop in propSet.Properties)
+			var artifactSet = false;
+			for (var i = 0; i < args.Count; i++)
 			{
-				_log.Warn("		***Non-Behavioral Property***");
-				_log.Info("			-Name: " + prop.Name);
-				_log.Info("			-ValueDescription: " + prop.ValueDescription);
-				OutputInvocations(prop.PropertyInvocations);
-				_log.Warn("		***Non-Behavioral Property End***");
+				var arg = args[i];
+				switch (arg)
+				{
+					case "--ts":
+						i++;
+						symbol = args[i];
+						continue;
+					case "--t":
+						i++;
+						var t = Convert.ToInt32(args[i]);
+						artifactType = (ArtifactType) t;
+						artifactSet = true;
+						continue;
+					default:
+						continue;
+				}
 			}
 
-			_log.Error("	***PropertySet End***");
-		}
-
-		private static void OutputInvocations(IEnumerable<Invocation> propPropertyInvocations)
-		{
-			foreach (var i in propPropertyInvocations)
+			if (string.IsNullOrEmpty(symbol))
 			{
-				_log.Error("				-Invocation");
-				_log.Info("					-Name: " + i.Name);
-				_log.Info("					-Description: " + i.Description);
-				OutputInvocationRequest(i.Request);
-				OutputInvocationResponse(i.Response);
-				_log.Error("					-----------------------------------------------------");
+				Console.WriteLine("Missing Symbol for Taxonomy Query, include --ts [TOOLING_SYMBOL]");
+				return;
 			}
-		}
 
-		private static void OutputInvocationResponse(InvocationResponse iResponse)
-		{
-			_log.Warn("					[Response]");
-			_log.Info("						-Name: " + iResponse.ControlMessageName);
-			_log.Info("						-Description: " + iResponse.Description);
-			_log.Info(" 						[Output] ");
-			foreach (var p in iResponse.OutputParameters)
+			if (!artifactSet)
 			{
-				_log.Info("  						[Parameter] ");
-				_log.Info("   							-Parameter Name: " + p.Name);
-				_log.Info("   							-Parameter Value Description: " + p.ValueDescription);
+				Console.WriteLine(
+					"Missing Artifact Type, include --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+				return;
 			}
-		}
 
-		private static void OutputInvocationRequest(InvocationRequest iRequest)
-		{
-			_log.Warn("					[Request]");
-			_log.Info("						-Name: " + iRequest.ControlMessageName);
-			_log.Info("						-Description: " + iRequest.Description);
-			_log.Info(" 						[Input] ");
-			foreach (var p in iRequest.InputParameters)
+			var symbolQuery = new Symbol
 			{
-				_log.Info("  						[Parameter] ");
-				_log.Info("   							-Parameter Name: " + p.Name);
-				_log.Info("   							-Parameter Value Description: " + p.ValueDescription);
-			}
-		}
+				ArtifactSymbol = symbol
+			};
 
-		private static void OutputBehaviorGroup(string symbol, BehaviorGroup bg)
-		{
-			_log.Info("	***BehaviorGroup***");
-			_log.Info("			-Symbol: " + symbol);
-			OutputArtifact(bg.Artifact);
-			OutputBehaviorSymbols(bg.BehaviorSymbols);
-			_log.Info("	***BehaviorGroup End***");
-		}
-
-		private static void OutputBehaviorSymbols(IEnumerable<ArtifactSymbol> bgBehaviorSymbols)
-		{
-			_log.Info("		***Behavior Symbols***");
-			foreach (var s in bgBehaviorSymbols)
+			_log.Error("Taxonomy Artifact Symbol Query for Type: " + artifactType);
+			if (artifactType == ArtifactType.TokenTemplate)
 			{
-				_log.Error("		----------------------------------------------");
-				_log.Info("			ToolingSymbol: " + s.ToolingSymbol);
-				_log.Error("		----------------------------------------------");
+				_log.Warn("	& Token Tooling Formula = " + symbol);
 			}
-			_log.Info("		***Behavior Symbols End***");
-		}
-
-		private static void OutputBehavior(string symbol, Behavior behavior)
-		{
-			_log.Info("		***Behavior***");
-			_log.Info(" 			-Symbol: " + symbol);
-			OutputArtifact(behavior.Artifact);
-			_log.Info(" 			-IsExternal: " + behavior.IsExternal);
-			_log.Info(" 			-Constructor: " + behavior.ConstructorName);
-			OutputInvocations(behavior.Invocations);
-			OutputBehaviorProperties(behavior.Properties);
-			_log.Info("		***Behavior End***");
-		}
-
-		private static void OutputBehaviorProperties(IEnumerable<Property> behaviorProperties)
-		{
-			foreach (var prop in behaviorProperties)
+			else
 			{
-				_log.Warn("		***Behavioral Property***");
-				_log.Info(" 			-Name: " + prop.Name);
-				_log.Info("			-ValueDescription: " + prop.ValueDescription);
-				OutputInvocations(prop.PropertyInvocations);
-				_log.Warn("		***Behavioral Property End***");
+				_log.Warn("	& Tooling Symbol" + symbol);
 			}
-		}
 
-		private static void OutputBaseType(string symbol, Base baseType)
-		{
-			_log.Warn("	***Base Token Type***");
-			_log.Info("		-Symbol: " + symbol);
-			_log.Info("		-Name: " + baseType.Name);
-			_log.Info("		-Type: " + baseType.TokenType);
+			_log.Info("-----------------------------------------");
 			
-			OutputArtifact(baseType.Artifact);
-			_log.Warn("		-Formula:");
-			_log.Info("			" + baseType.TokenFormulaCase);
-			_log.Info("		-Constructor: " + baseType.ConstructorName);
-			_log.Info("		-TokenSymbol: " + baseType.Symbol);
-			_log.Info("		-Owner: " + baseType.Owner);
-			_log.Info("		-Decimals: " + baseType.Decimals);
-			_log.Info("		-Quantity: " + baseType.Quantity);
-			_log.Error("		***Properties***");
-			foreach (var tp in baseType.TokenProperties)
-			{
-				_log.Info("  		[Properties]");
-				_log.Info("   			" + tp);
-			}
+			var jsf = new JsonFormatter(new JsonFormatter.Settings(true));
 
-			_log.Info("		***PropertiesEnd***");
-			_log.Info("		***Children***");
-			foreach (var c in baseType.ChildTokens)
+			switch (artifactType)
 			{
-				_log.Info("			***Child Token***");
-				OutputTemplate(c.Artifact.ArtifactSymbol.ToolingSymbol, c);
-				_log.Info("			***Child Token End***");
-			}
-
-			_log.Info("		***ChildrenEnd***");
-			_log.Warn("	***Base Token Type End***");
-		}
-
-		private static void OutputTemplate(string symbol, TokenTemplate template)
-		{
-			_log.Warn("	***TokenTemplate***");
-			_log.Info("		-Formula: " + symbol);
-			OutputArtifact(template.Artifact);
-			OutputBaseType(template.Base.Artifact.ArtifactSymbol.ToolingSymbol, template.Base);
-			_log.Error("		***Behaviors***");
-			foreach (var b in template.Behaviors)
-			{
-				OutputBehavior(b.Artifact.ArtifactSymbol.ToolingSymbol, b);
-			}
-			_log.Error("		***Behaviors End***");
-			_log.Warn("		***BehaviorGroups ***");
-			foreach (var b in template.BehaviorGroups)
-			{
-				OutputBehaviorGroup(b.Artifact.ArtifactSymbol.ToolingSymbol, b);
-			}
-			_log.Warn("		***BehaviorGroups End***");
-			_log.Error("		***PropertySets***");
-			foreach (var b in template.PropertySets)
-			{
-				OutputPropertySet(b.Artifact.ArtifactSymbol.ToolingSymbol, b);
-			}
-			_log.Error("		***PropertySets End***");
-			_log.Warn("	***TokenTemplate End***");
-		}
-
-	
-		private static void OutputArtifact(Artifact artifact)
-		{
-			_log.Error("		[Details]:");
-			_log.Info("			-ArtifactName: " + artifact.Name);
-			_log.Info("			-Type: " + artifact.Type);
-			OutputSymbol(artifact.ArtifactSymbol);
-			_log.Info("			-Aliases: " + artifact.Aliases);
-			OutputArtifactDefinition(artifact.ArtifactDefinition);
-			_log.Info("			-ControlUri: " + artifact.ControlUri);
-			OutputInfluencedBy(artifact.InfluencedBySymbols);
-			OutputIncompatible(artifact.IncompatibleWithSymbols);
-			_log.Warn("			-ArtifactFiles:");
-			OutputArtifactFiles("			", artifact.ArtifactFiles);
-			OutputMaps(artifact.Maps);
-		}
-
-		private static void OutputArtifactFiles(string buffer, IEnumerable<ArtifactFile> artifactFiles)
-		{
-			foreach (var f in artifactFiles)
-			{
-				_log.Info(buffer + "-FileContent: " + f.Content);
-				_log.Info(buffer + "-FileName: " + f.FileName);
-				_log.Info(buffer + "-FileContents:");
-				_log.Error(buffer + "---------------------------------------------------------------------------------------");
-				
-				if (f.Content != ArtifactContent.Other)
-					_log.Info(f.FileData.ToStringUtf8());
-				_log.Error(buffer + "---------------------------------------------------------------------------------------");
+				case ArtifactType.Base:
+					var baseType = TaxonomyClient.GetBaseArtifact(symbolQuery);
+					OutputLib.OutputBaseType(symbol, baseType);
+					if (!_saveArtifact) return;
+					var typedJson = jsf.Format(baseType);
+					OutputLib.SaveArtifact(artifactType, baseType.Artifact.Name, typedJson);
+					return;
+				case ArtifactType.Behavior:
+					var behavior = TaxonomyClient.GetBehaviorArtifact(symbolQuery);
+					OutputLib.OutputBehavior(symbol, behavior);
+					if (!_saveArtifact) return;
+					var typedBehaviorJson = jsf.Format(behavior);
+					OutputLib.SaveArtifact(artifactType, behavior.Artifact.Name, typedBehaviorJson);
+					return;
+				case ArtifactType.BehaviorGroup:
+					var behaviorGroup = TaxonomyClient.GetBehaviorGroupArtifact(symbolQuery);
+					OutputLib.OutputBehaviorGroup(symbol, behaviorGroup);
+					if (!_saveArtifact) return;
+					var typedBehaviorGroupJson = jsf.Format(behaviorGroup);
+					OutputLib.SaveArtifact(artifactType, behaviorGroup.Artifact.Name, typedBehaviorGroupJson);
+					return;
+				case ArtifactType.PropertySet:
+					var propertySet = TaxonomyClient.GetPropertySetArtifact(symbolQuery);
+					OutputLib.OutputPropertySet(symbol, propertySet);
+					if (!_saveArtifact) return;
+					var typedPropertySetJson = jsf.Format(propertySet);
+					OutputLib.SaveArtifact(artifactType, propertySet.Artifact.Name, typedPropertySetJson);
+					return;
+				case ArtifactType.TokenTemplate:
+					var tokenTemplate = TaxonomyClient.GetTokenTemplateArtifact(new TaxonomyFormula
+					{
+						Formula = symbol
+					});
+					OutputLib.OutputTemplate(symbol, tokenTemplate);
+					if (!_saveArtifact) return;
+					var typedTemplateJson = jsf.Format(tokenTemplate);
+					OutputLib.SaveArtifact(artifactType, tokenTemplate.Artifact.Name, typedTemplateJson);
+					return;
+				default:
+					throw new ArgumentOutOfRangeException();
 			}
 		}
 
-		private static void OutputMaps(Maps artifactMaps)
-		{
-			_log.Error("			[Maps]:");
-			_log.Warn("				-Implementation Maps:");
-			foreach (var m in artifactMaps.ImplementationReferences)
-			{
-				_log.Error("				---------------------------------------------------");
-				_log.Info("				-Name: " + m.Name);
-				_log.Info("				-Type: " + m.MappingType);
-				_log.Info("				-Supported Platform: " + m.Platform);
-				_log.Info("				-Reference: " + m.ReferencePath);
-				_log.Error("				---------------------------------------------------");
-			}
-			_log.Warn("				-Code Maps:");
-			foreach (var m in artifactMaps.CodeReferences)
-			{
-				_log.Error("				---------------------------------------------------");
-				_log.Info("				-Name: " + m.Name);
-				_log.Info("				-Type: " + m.MappingType);
-				_log.Info("				-Supported Platform: " + m.Platform);
-				_log.Info("				-Reference: " + m.ReferencePath);
-				_log.Error("				---------------------------------------------------");
-			}
-			_log.Warn("				-Resource Maps:");
-			foreach (var m in artifactMaps.Resources)
-			{
-				_log.Error("				---------------------------------------------------");
-				_log.Info("				-Name: " + m.Name);
-				_log.Info("				-Type: " + m.MappingType);
-				_log.Info("				-Description: " + m.Description);
-				_log.Info("				-Reference: " + m.ResourcePath);
-				_log.Error("				---------------------------------------------------");
-			}
-		}
-
-		private static void OutputIncompatible(IEnumerable<ArtifactSymbol> artifactIncompatibleWithSymbols)
-		{
-			_log.Warn("			-Incompatible With: ");
-			foreach (var i in artifactIncompatibleWithSymbols)
-			{
-				_log.Error("				---------------------------------------------------");
-				_log.Info("				-Symbol: " + i.ToolingSymbol);
-				_log.Error("				---------------------------------------------------");
-			}
-		}
-
-		private static void OutputSymbol(ArtifactSymbol symbol)
-		{
-			_log.Warn("			-Symbol: ");
-			_log.Error("				---------------------------------------------------");
-			_log.Info("				-Tooling: " + symbol.ToolingSymbol);
-			_log.Info("				-Visual: " + symbol.VisualSymbol);
-			_log.Error("				---------------------------------------------------");
-		}
-		private static void OutputInfluencedBy(IEnumerable<SymbolInfluence> artifactInfluencedBySymbols)
-		{
-			_log.Warn("			-Influenced By: ");
-			foreach (var i in artifactInfluencedBySymbols)
-			{
-				_log.Error("				---------------------------------------------------");
-				_log.Info("				-Symbol: " + i.Symbol);
-				_log.Info("				-Description: " + i.Description);
-				_log.Error("				---------------------------------------------------");
-			}
-		}
-
-		private static void OutputArtifactDefinition(ArtifactDefinition artifactArtifactDefinition)
-		{
-			_log.Warn("			-Definition: ");
-			_log.Info("				-Description: " + artifactArtifactDefinition.BusinessDescription);
-			_log.Info("");
-			_log.Info("				-Example: " + artifactArtifactDefinition.BusinessExample);
-			_log.Info("");
-			_log.Warn("				-Analogies: ");
-			foreach (var a in artifactArtifactDefinition.Analogies)
-			{
-				_log.Info("				-Analogy: " + a.Name);
-				_log.Info("				-Description: " + a.Description);
-			}
-			_log.Info("				-Comments: " + artifactArtifactDefinition.Comments);
-		}
 	}
 }

@@ -1,16 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
 using Newtonsoft.Json.Linq;
 using TTI.TTF.Model.Artifact;
 using TTI.TTF.Model.Core;
 using TTI.TTF.Model.Grammar;
-using TTI.TTF.Taxonomy;
 using TTI.TTF.Taxonomy.Model;
 
 namespace TaxonomyHost.Controllers
@@ -234,7 +233,7 @@ namespace TaxonomyHost.Controllers
 					}
 
 					artifactName = newBehavior.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorFolder + _folderSeparator + artifactName);
+					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newBehavior.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newBehavior.Artifact.ArtifactFiles, outputFolder, artifactName);
 					artifactJson = jsf.Format(newBehavior);
@@ -247,7 +246,7 @@ namespace TaxonomyHost.Controllers
 						newBehaviorGroup.Artifact = ModelManager.MakeUniqueArtifact(newBehaviorGroup.Artifact);
 					}
 					artifactName = newBehaviorGroup.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + BehaviorGroupFolder + _folderSeparator + artifactName);
+					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newBehaviorGroup.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newBehaviorGroup.Artifact.ArtifactFiles, outputFolder, artifactName);
 					artifactJson = jsf.Format(newBehaviorGroup);
@@ -260,7 +259,7 @@ namespace TaxonomyHost.Controllers
 						newPropertySet.Artifact = ModelManager.MakeUniqueArtifact(newPropertySet.Artifact);
 					}
 					artifactName = newPropertySet.Artifact.Name.ToLower();
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + PropertySetFolder + _folderSeparator + artifactName);
+					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newPropertySet.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newPropertySet.Artifact.ArtifactFiles, outputFolder, artifactName);
 					retVal.ArtifactTypeObject= Any.Pack(newPropertySet);
@@ -275,7 +274,7 @@ namespace TaxonomyHost.Controllers
 					artifactName = Utils.FirstToUpper(newTokenTemplate.Artifact.Name);
 					newTokenTemplate.Artifact.Name = artifactName;
 					
-					outputFolder = Directory.CreateDirectory(_artifactPath + _folderSeparator + TokenTemplatesFolder + _folderSeparator + artifactName);
+					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newTokenTemplate.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newTokenTemplate.Artifact.ArtifactFiles, outputFolder, artifactName);
 					retVal.ArtifactTypeObject= Any.Pack(newTokenTemplate);
@@ -552,6 +551,34 @@ namespace TaxonomyHost.Controllers
 		
 		#region Artifact Utils
 
+		private static DirectoryInfo GetArtifactFolder(ArtifactType type, string artifactName)
+		{
+			string typeFolderName;
+			switch (type)
+			{
+				case ArtifactType.Base:
+					typeFolderName = BaseFolder;
+					break;
+				case ArtifactType.Behavior:
+					typeFolderName = BehaviorFolder;
+					break;
+				case ArtifactType.BehaviorGroup:
+					typeFolderName = BehaviorGroupFolder;
+					break;
+				case ArtifactType.PropertySet:
+					typeFolderName = PropertySetFolder;
+					break;
+				case ArtifactType.TokenTemplate:
+					typeFolderName = TokenTemplatesFolder;
+					break;
+				default:
+					throw new ArgumentOutOfRangeException(nameof(type), type, null);
+			}
+
+			var path = _artifactPath + _folderSeparator + typeFolderName + _folderSeparator + artifactName;
+			return Directory.Exists(path) ? new DirectoryInfo(_artifactPath + _folderSeparator + typeFolderName + _folderSeparator + artifactName) : Directory.CreateDirectory(path);
+		}
+		
 		private static void DeleteArtifactFolder(string artifactTypeFolderName, string artifactFolderName)
 		{
 			try
@@ -921,8 +948,7 @@ namespace TaxonomyHost.Controllers
 			
 			var behaviorList = new List<Behavior>();
 			var behaviorGroupList = new List<BehaviorGroup>();
-			var propertySetList = new List<PropertySet>();
-			
+
 			foreach (var t in behaviors)
 			{
 				if (char.IsUpper(t[0]))
@@ -943,16 +969,7 @@ namespace TaxonomyHost.Controllers
 			var props1 = formula.Split("}");
 			var props2 = props1[1].Split("]");
 			var props = props2[0].Split("+");
-			foreach (var t in props)
-			{
-				if (t.StartsWith("ph"))
-				{
-					propertySetList.Add(ModelManager.GetPropertySetArtifact(new Symbol
-					{
-						ArtifactSymbol = t
-					}));
-				}
-			}
+			var propertySetList = (from t in props where t.StartsWith("ph") select ModelManager.GetPropertySetArtifact(new Symbol {ArtifactSymbol = t})).ToList();
 
 			return (baseToken, behaviorList, behaviorGroupList, propertySetList);
 		}
