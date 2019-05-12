@@ -6,12 +6,11 @@ using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using log4net;
 using Microsoft.Extensions.Configuration;
-using TTI.TTF.Model.Artifact;
-using TTI.TTF.Model.Core;
-using TTI.TTF.Taxonomy;
 using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Artifact;
+using TTI.TTF.Taxonomy.Model.Core;
 
-namespace TaxonomyClient
+namespace TTI.TTF.Taxonomy
 {
 	public static class Client
 	{

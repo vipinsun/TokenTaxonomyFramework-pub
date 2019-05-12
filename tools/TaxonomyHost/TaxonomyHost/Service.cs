@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace TTI.TTF.Taxonomy
 {
-	internal static class TaxonomyService
+	internal static class Service
 	{
 		private static IConfigurationRoot _config;
 		private static ILog _log;
@@ -41,7 +41,7 @@ namespace TTI.TTF.Taxonomy
 			
 			_apiServer = new Server
 			{
-				Services = {TTI.TTF.Taxonomy.Model.TaxonomyService.BindService(new Host())},
+				Services = {TaxonomyService.BindService(new Host())},
 				Ports = {new ServerPort(_gRpcHost, _gRpcPort, ServerCredentials.Insecure)}
 			};
 			

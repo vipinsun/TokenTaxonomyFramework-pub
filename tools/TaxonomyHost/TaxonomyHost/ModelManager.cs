@@ -3,18 +3,17 @@ using System.Linq;
 using System.Reflection;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
-using TaxonomyHost.Controllers;
-using TTI.TTF.Model.Artifact;
-using TTI.TTF.Model.Core;
-using TTI.TTF.Taxonomy;
+using TTI.TTF.Taxonomy.Controllers;
 using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Artifact;
+using TTI.TTF.Taxonomy.Model.Core;
 
-namespace TaxonomyHost
+namespace TTI.TTF.Taxonomy
 {
 	public static class ModelManager
 	{
 		private static readonly ILog _log;
-		private static Taxonomy Taxonomy { get; set; }
+		private static Model.Taxonomy Taxonomy { get; set; }
 		static ModelManager()
 		{
 			Utils.InitLog();
@@ -28,13 +27,13 @@ namespace TaxonomyHost
 			TaxonomyCache.SaveToCache(Taxonomy.Version, Taxonomy, DateTime.Now.AddDays(1));
 		}
 
-		internal static Taxonomy GetFullTaxonomy(TaxonomyVersion version)
+		internal static Model.Taxonomy GetFullTaxonomy(TaxonomyVersion version)
 		{
 			_log.Info("GetFullTaxonomy version " + version.Version);
 			return Taxonomy.Version == version.Version ? Taxonomy : TaxonomyCache.GetFromCache(version.Version);
 		}
 		
-		internal static Taxonomy RefreshTaxonomy(TaxonomyVersion version)
+		internal static Model.Taxonomy RefreshTaxonomy(TaxonomyVersion version)
 		{
 			_log.Info("RefreshTaxonomy version " + version.Version);
 			Taxonomy = TaxonomyController.Load();

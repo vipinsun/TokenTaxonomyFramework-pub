@@ -7,12 +7,12 @@ using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
 using Newtonsoft.Json.Linq;
-using TTI.TTF.Model.Artifact;
-using TTI.TTF.Model.Core;
-using TTI.TTF.Model.Grammar;
 using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Artifact;
+using TTI.TTF.Taxonomy.Model.Core;
+using TTI.TTF.Taxonomy.Model.Grammar;
 
-namespace TaxonomyHost.Controllers
+namespace TTI.TTF.Taxonomy.Controllers
 {
 	public static class TaxonomyController
 	{
@@ -22,7 +22,7 @@ namespace TaxonomyHost.Controllers
 		private const string PropertySetFolder = "property-sets";
 		private const string TokenTemplatesFolder = "token-templates";
 		private static readonly string _artifactPath;
-		private static readonly string _folderSeparator = TaxonomyService.FolderSeparator;
+		private static readonly string _folderSeparator = Service.FolderSeparator;
 		private static readonly ILog _log;
 
 		static TaxonomyController()
@@ -30,11 +30,11 @@ namespace TaxonomyHost.Controllers
 			Utils.InitLog();
 			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 			_artifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + _folderSeparator +
-			               TaxonomyService.ArtifactPath;
+			               Service.ArtifactPath;
 		}	
 		
 		#region load
-		internal static Taxonomy Load()
+		internal static Model.Taxonomy Load()
 		{
 			if (!Directory.Exists(_artifactPath))
 			{
@@ -45,12 +45,12 @@ namespace TaxonomyHost.Controllers
 
 			_log.Info("Artifact Folder Found, loading to Taxonomy.");
 			var root = new DirectoryInfo(_artifactPath);
-			Taxonomy taxonomy;
+			Model.Taxonomy taxonomy;
 			var rJson = root.GetFiles("Taxonomy.json");
 			var fJson = root.GetFiles("FormulaGrammar.json");
 			try
 			{
-				taxonomy = GetArtifact<Taxonomy>(rJson[0]);
+				taxonomy = GetArtifact<Model.Taxonomy>(rJson[0]);
 				taxonomy.FormulaGrammar = GetArtifact<FormulaGrammar>(fJson[0]);
 				_log.Info("Loaded Taxonomy Version: " + taxonomy.Version);
 				_log.Info("Taxonomy Formula Grammar loaded");

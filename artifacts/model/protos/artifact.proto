@@ -3,8 +3,8 @@ syntax = "proto3";
 package taxonomy.model.artifact;
 import "google/protobuf/any.proto";
 
-option csharp_namespace = "TTI.TTF.Model.Artifact";
-option java_package = "org.tti.ttf.model.artifact";
+option csharp_namespace = "TTI.TTF.Taxonomy.Model.Artifact";
+option java_package = "org.tti.tti.taxonomy.model.artifact";
 option java_multiple_files = true;
 
 enum TokenType {

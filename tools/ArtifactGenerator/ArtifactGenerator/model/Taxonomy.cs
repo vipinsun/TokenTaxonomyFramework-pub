@@ -47,10 +47,10 @@ namespace TTI.TTF.Taxonomy.Model {
             "b2RlbC5jb3JlLlRva2VuVGVtcGxhdGU6AjgBIiIKD1RheG9ub215VmVyc2lv",
             "bhIPCgd2ZXJzaW9uGAEgASgJIiEKBlN5bWJvbBIXCg9hcnRpZmFjdF9zeW1i",
             "b2wYASABKAkiIgoPVGF4b25vbXlGb3JtdWxhEg8KB2Zvcm11bGEYASABKAlC",
-            "Nwoab3JnLnR0aS50dGYudGF4b25vbXkubW9kZWxQAaoCFlRUSS5UVEYuVGF4",
+            "Nwoab3JnLnR0aS50dGkudGF4b25vbXkubW9kZWxQAaoCFlRUSS5UVEYuVGF4",
             "b25vbXkuTW9kZWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TTI.TTF.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Model.Grammar.GrammarReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Grammar.GrammarReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null),
@@ -118,59 +118,59 @@ namespace TTI.TTF.Taxonomy.Model {
 
     /// <summary>Field number for the "base_token_types" field.</summary>
     public const int BaseTokenTypesFieldNumber = 2;
-    private static readonly pbc::MapField<string, global::TTI.TTF.Model.Core.Base>.Codec _map_baseTokenTypes_codec
-        = new pbc::MapField<string, global::TTI.TTF.Model.Core.Base>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Model.Core.Base.Parser), 18);
-    private readonly pbc::MapField<string, global::TTI.TTF.Model.Core.Base> baseTokenTypes_ = new pbc::MapField<string, global::TTI.TTF.Model.Core.Base>();
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base>.Codec _map_baseTokenTypes_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.Base.Parser), 18);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base> baseTokenTypes_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::TTI.TTF.Model.Core.Base> BaseTokenTypes {
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base> BaseTokenTypes {
       get { return baseTokenTypes_; }
     }
 
     /// <summary>Field number for the "behaviors" field.</summary>
     public const int BehaviorsFieldNumber = 3;
-    private static readonly pbc::MapField<string, global::TTI.TTF.Model.Core.Behavior>.Codec _map_behaviors_codec
-        = new pbc::MapField<string, global::TTI.TTF.Model.Core.Behavior>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Model.Core.Behavior.Parser), 26);
-    private readonly pbc::MapField<string, global::TTI.TTF.Model.Core.Behavior> behaviors_ = new pbc::MapField<string, global::TTI.TTF.Model.Core.Behavior>();
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>.Codec _map_behaviors_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser), 26);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior> behaviors_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::TTI.TTF.Model.Core.Behavior> Behaviors {
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior> Behaviors {
       get { return behaviors_; }
     }
 
     /// <summary>Field number for the "behavior_groups" field.</summary>
     public const int BehaviorGroupsFieldNumber = 4;
-    private static readonly pbc::MapField<string, global::TTI.TTF.Model.Core.BehaviorGroup>.Codec _map_behaviorGroups_codec
-        = new pbc::MapField<string, global::TTI.TTF.Model.Core.BehaviorGroup>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Model.Core.BehaviorGroup.Parser), 34);
-    private readonly pbc::MapField<string, global::TTI.TTF.Model.Core.BehaviorGroup> behaviorGroups_ = new pbc::MapField<string, global::TTI.TTF.Model.Core.BehaviorGroup>();
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>.Codec _map_behaviorGroups_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup.Parser), 34);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> behaviorGroups_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::TTI.TTF.Model.Core.BehaviorGroup> BehaviorGroups {
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> BehaviorGroups {
       get { return behaviorGroups_; }
     }
 
     /// <summary>Field number for the "property_sets" field.</summary>
     public const int PropertySetsFieldNumber = 5;
-    private static readonly pbc::MapField<string, global::TTI.TTF.Model.Core.PropertySet>.Codec _map_propertySets_codec
-        = new pbc::MapField<string, global::TTI.TTF.Model.Core.PropertySet>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Model.Core.PropertySet.Parser), 42);
-    private readonly pbc::MapField<string, global::TTI.TTF.Model.Core.PropertySet> propertySets_ = new pbc::MapField<string, global::TTI.TTF.Model.Core.PropertySet>();
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet>.Codec _map_propertySets_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.PropertySet.Parser), 42);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet> propertySets_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::TTI.TTF.Model.Core.PropertySet> PropertySets {
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet> PropertySets {
       get { return propertySets_; }
     }
 
     /// <summary>Field number for the "token_templates" field.</summary>
     public const int TokenTemplatesFieldNumber = 6;
-    private static readonly pbc::MapField<string, global::TTI.TTF.Model.Core.TokenTemplate>.Codec _map_tokenTemplates_codec
-        = new pbc::MapField<string, global::TTI.TTF.Model.Core.TokenTemplate>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Model.Core.TokenTemplate.Parser), 50);
-    private readonly pbc::MapField<string, global::TTI.TTF.Model.Core.TokenTemplate> tokenTemplates_ = new pbc::MapField<string, global::TTI.TTF.Model.Core.TokenTemplate>();
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec _map_tokenTemplates_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser), 50);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> tokenTemplates_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::TTI.TTF.Model.Core.TokenTemplate> TokenTemplates {
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> TokenTemplates {
       get { return tokenTemplates_; }
     }
 
     /// <summary>Field number for the "formula_grammar" field.</summary>
     public const int FormulaGrammarFieldNumber = 7;
-    private global::TTI.TTF.Model.Grammar.FormulaGrammar formulaGrammar_;
+    private global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar formulaGrammar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Model.Grammar.FormulaGrammar FormulaGrammar {
+    public global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar FormulaGrammar {
       get { return formulaGrammar_; }
       set {
         formulaGrammar_ = value;
@@ -276,7 +276,7 @@ namespace TTI.TTF.Taxonomy.Model {
       tokenTemplates_.Add(other.tokenTemplates_);
       if (other.formulaGrammar_ != null) {
         if (formulaGrammar_ == null) {
-          FormulaGrammar = new global::TTI.TTF.Model.Grammar.FormulaGrammar();
+          FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar();
         }
         FormulaGrammar.MergeFrom(other.FormulaGrammar);
       }
@@ -317,7 +317,7 @@ namespace TTI.TTF.Taxonomy.Model {
           }
           case 58: {
             if (formulaGrammar_ == null) {
-              FormulaGrammar = new global::TTI.TTF.Model.Grammar.FormulaGrammar();
+              FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar();
             }
             input.ReadMessage(FormulaGrammar);
             break;

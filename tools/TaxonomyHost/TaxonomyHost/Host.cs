@@ -2,14 +2,13 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Grpc.Core;
 using log4net;
-using TTI.TTF.Model.Artifact;
-using TTI.TTF.Model.Core;
-using TTI.TTF.Taxonomy;
 using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Artifact;
+using TTI.TTF.Taxonomy.Model.Core;
 
-namespace TaxonomyHost
+namespace TTI.TTF.Taxonomy
 {
-    internal class Host : TTI.TTF.Taxonomy.TaxonomyService.TaxonomyServiceBase
+    internal class Host: TaxonomyService.TaxonomyServiceBase
     {
         private static ILog _log;
 
@@ -19,7 +18,7 @@ namespace TaxonomyHost
             _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         }
 
-        public override Task<Taxonomy> GetFullTaxonomy(TaxonomyVersion version, ServerCallContext ctx)
+        public override Task<Model.Taxonomy> GetFullTaxonomy(TaxonomyVersion version, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetFullTaxonomy");
             return Task.FromResult(ModelManager.GetFullTaxonomy(version));

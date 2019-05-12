@@ -12,4 +12,13 @@ dotnet factgen --p ../artifacts --n myArtifactName --type 1
 
 The above creates a folder, if it doesn't already exist, in the artifacts folder for the type of artifact and the name of the artifact.  In this folder you will find a Json definition, proto control and md for diagrams.
 
-- [Taxonomy Host](TaxonomyHost) is a gRpc service that allows you to request the artifact model, or just query for a symbol or receive a collection of artifact types.
+- [Taxonomy Host](TaxonomyHost) is a gRpc service that allows you to request the artifact model, or just query for a symbol or receive a collection of artifact types as well as perform CRUD operations on the taxonomy.  There is also a sample client for the taxonomy.
+
+ - From your cloned copy of the repo.
+ 
+ ```bash
+cd tools/TaxonomyHost
+./docker-build.sh
+docker compose service-compose.yaml up
+
+ ```

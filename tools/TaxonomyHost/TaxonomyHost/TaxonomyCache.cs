@@ -1,21 +1,20 @@
 using System;
 using Microsoft.Extensions.Caching.Memory;
-using TTI.TTF.Taxonomy.Model;
 
-namespace TaxonomyHost
+namespace TTI.TTF.Taxonomy
 {
 	internal static class TaxonomyCache
 	{
 		private static readonly MemoryCache _cache = new MemoryCache(new MemoryCacheOptions());
 
-		public static void SaveToCache(string cacheKey, Taxonomy taxonomy, DateTime absoluteExpiration)
+		public static void SaveToCache(string cacheKey, Model.Taxonomy taxonomy, DateTime absoluteExpiration)
 		{
 			_cache.Set(cacheKey.ToLower(), taxonomy, absoluteExpiration);
 		}
 
-		public static Taxonomy GetFromCache(string cacheKey)
+		public static Model.Taxonomy GetFromCache(string cacheKey)
 		{
-			return _cache.Get(cacheKey.ToLower()) as Taxonomy;
+			return _cache.Get(cacheKey.ToLower()) as Model.Taxonomy;
 		}
 
 		public static void RemoveFromCache(string cacheKey)

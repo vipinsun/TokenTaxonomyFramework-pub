@@ -6,10 +6,10 @@ using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
 using Newtonsoft.Json.Linq;
-using TTI.TTF.Model.Artifact;
-using TTI.TTF.Model.Core;
+using TTI.TTF.Taxonomy.Model.Artifact;
+using TTI.TTF.Taxonomy.Model.Core;
 
-namespace TaxonomyClient
+namespace TTI.TTF.Taxonomy
 {
 	public static class OutputLib
 	{

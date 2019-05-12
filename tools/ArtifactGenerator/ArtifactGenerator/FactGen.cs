@@ -4,11 +4,11 @@ using System.Reflection;
 using Google.Protobuf;
 using log4net;
 using Newtonsoft.Json.Linq;
-using TTI.TTF.Model.Artifact;
-using TTI.TTF.Model.Core;
-using TTI.TTF.Model.Grammar;
+using TTI.TTF.Taxonomy.Model.Artifact;
+using TTI.TTF.Taxonomy.Model.Core;
+using TTI.TTF.Taxonomy.Model.Grammar;
 using TTI.TTF.Taxonomy;
-using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Model;
 
 namespace ArtifactGenerator
 {

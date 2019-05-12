@@ -6,7 +6,7 @@ using System.Xml;
 using log4net;
 using log4net.Config;
 
-namespace TaxonomyClient
+namespace TTI.TTF.Taxonomy
 {
 	public static class Utils
 	{

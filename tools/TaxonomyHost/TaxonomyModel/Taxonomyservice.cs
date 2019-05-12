@@ -48,7 +48,7 @@ namespace TTI.TTF.Taxonomy {
             "Y3RSZXNwb25zZSIAQisKFG9yZy50dGkudHRmLnRheG9ub215UAGqAhBUVEku",
             "VFRGLlRheG9ub215YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTI.TTF.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Model.Artifact.ArtifactReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null));
     }
     #endregion

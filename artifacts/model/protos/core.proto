@@ -6,8 +6,8 @@ import "google/protobuf/any.proto";
 import "artifact.proto";
 import "grammar.proto";
 
-option csharp_namespace = "TTI.TTF.Model.Core";
-option java_package = "org.tti.ttf.model.core";
+option csharp_namespace = "TTI.TTF.Taxonomy.Model.Core";
+option java_package = "org.tti.tti.taxonomy.model.core";
 option java_multiple_files = true;
 
 //all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
