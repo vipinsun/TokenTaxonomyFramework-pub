@@ -1,11 +1,11 @@
 version: "2"
 services:
 
-  dotnet-proxy-bootsrapper:
+  ttf-taxnomomy-service:
     image: tti/ttf/taxonomyservice
     container_name: taxonomyservice
     volumes:
-        - ./artifacts:/artifacts
+        - ../../artifacts:/app/artifacts
     environment:
         - gRpcHost=localhost
         - gRpcPort=8086

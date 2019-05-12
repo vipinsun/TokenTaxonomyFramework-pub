@@ -1,0 +1,12 @@
+version: "2"
+services:
+
+  ttf-taxonomy-client:
+    image: tti/ttf/taxonomyclient
+    container_name: taxonomyclient
+    volumes:
+        - ./artifacts:/artifacts
+    environment:
+        - gRpcHost=localhost
+        - gRpcPort=8086
+    network_mode: "host"

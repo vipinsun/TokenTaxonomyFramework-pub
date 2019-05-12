@@ -20,5 +20,5 @@ The above creates a folder, if it doesn't already exist, in the artifacts folder
 cd tools/TaxonomyHost
 ./docker-build.sh
 docker compose service-compose.yaml up
-
+docker compose service.client.yaml up
  ```
