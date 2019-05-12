@@ -4,7 +4,7 @@ using Grpc.Core;
 using log4net;
 using Microsoft.Extensions.Configuration;
 
-namespace TaxonomyHost
+namespace TTI.TTF.Taxonomy
 {
 	internal static class TaxonomyService
 	{
@@ -41,7 +41,7 @@ namespace TaxonomyHost
 			
 			_apiServer = new Server
 			{
-				Services = {TTI.TTF.Taxonomy.TaxonomyService.BindService(new Host())},
+				Services = {TTI.TTF.Taxonomy.Model.TaxonomyService.BindService(new Host())},
 				Ports = {new ServerPort(_gRpcHost, _gRpcPort, ServerCredentials.Insecure)}
 			};
 			
