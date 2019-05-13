@@ -8,7 +8,7 @@ This file format enables tooling to navigate these artifacts and for creators to
 
 Artifacts should for a token definition, behavior or behavior group should be placed within a folder under the artifact type folder.  Within this folder there can be many files that are used to define the artifact, not all of them are required.
 
-- Artifact Definition: this is a JSON formated file that is generated from the artifactGenerator and updated manually or through the Taxonomy Service. This file holds most of the metadata as well as the descriptions, analogies and aliases.
+- Artifact Definition: this is a JSON formated file that is generated from the artifactGenerator or TaxonomyService and updated manually or through the Taxonomy Service. This file holds most of the metadata as well as the descriptions, analogies and aliases.
 - Proto: this is a protocol buffer file that is used to describe the control messages used in an interaction with the artifact.
 - Artifact Markdown:  this is used to host UML diagrams, primarily sequence diagrams and can use a recommended markdown plugin or custom implementation based on the requirements of the artifact owners. In the examples [plantUml](http://plantuml.com) is used for for [sequence diagrams](http://plantuml.com/sequence-diagram) because it has a GitHub supported rendering capability and a Visual Studio Code [plugin](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#markdown-integrating).  However, other options like
 [mermaid](https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview) could be used.
@@ -20,7 +20,7 @@ An artifact can be generated using the artifactGenerator tool to create the arti
 
 If an artifact's definition is captured using a Word or other template, the artifact data can be imported manually via cut and paste and submitted to the Taxonomy Service to update the artifact in the taxonomy.  Other tools to allow for the artifact to be populated through a web interface or automated import can be developed in the future.
 
-- Artifact summary: one paragraph description of artifact
+- Artifact Definition: Business Description, Examples and Analogies using non-technical language.
 - Optional list of artifact property-sets.
 - Optional list of artifact behaviors: list of implemented behaviors as links to the associated behavior artifact.  A behavior would not have any of these, but a token definition or a behavior collection would.
 - List of analogies and aliases
@@ -33,14 +33,14 @@ Proto files are optional, but recommended for behaviors as they are useful in un
 ```protobuf
 syntax = "proto3";
 
-package transferable;
+package taxonomy.model.core;
 
-import "tokens.proto";
 import "google/protobuf/any.proto";
-import "google/protobuf/timestamp.proto";
+import "artifact.proto";
+import "grammar.proto";
 
-option csharp_namespace = "TTF.Tokens.tokens";
-option java_package = "org.tti.tokens";
+option csharp_namespace = "TTI.TTF.Taxonomy.Model.Core";
+option java_package = "org.tti.tti.taxonomy.model.core";
 option java_multiple_files = true;
 ```
 

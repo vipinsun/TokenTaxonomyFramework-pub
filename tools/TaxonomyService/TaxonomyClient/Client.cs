@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Reflection.Metadata;
 using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
@@ -302,17 +303,32 @@ namespace TTI.TTF.Taxonomy
 			Console.WriteLine("	Retrieves the entire Taxonomy and writes it to the console.");
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
-			Console.WriteLine("	Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");
+			Console.WriteLine("	 Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");
 			Console.WriteLine(
-				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
-			Console.WriteLine("	Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");
+				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --s --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+			Console.WriteLine("	 Retrieves the Taxonomy Artifact by Tooling Symbol and SAVES it locally in a folder and writes it to the console.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --u [UPDATE_ARTIFACT_FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+			Console.WriteLine("	 Updates an artifact edited locally if updated from a saved query using --s.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --c [NEW_ARTIFACT_SYMBOL] --n [NEW_ARTIFACT_NAME] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+			Console.WriteLine("	 Creates a new Taxonomy Artifact and returns it after creation.");
 		}
 
 		private static void GetFullTaxonomy(TaxonomyService.TaxonomyServiceClient taxonomyClient)
 		{
 			_log.Warn("Fetching 1.0 version of the Taxonomy");
-
-			var taxonomy = taxonomyClient.GetFullTaxonomy(new TaxonomyVersion {Version = "1.0"});
+			Model.Taxonomy taxonomy;
+			try
+			{
+				taxonomy = taxonomyClient.GetFullTaxonomy(new TaxonomyVersion {Version = "1.0"});
+			}
+			catch (Exception e)
+			{
+				_log.Error(e.Message);
+				_log.Error("Cannot connect to Taxonomy Service: " + _gRpcHost + " on port: " +_gRpcPort);
+				return;
+			}
 
 			_log.Warn("-----------------------------Taxonomy Start---------------------------------------");
 			_log.Info("-Taxonomy Version: " + taxonomy.Version);

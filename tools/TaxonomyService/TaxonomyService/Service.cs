@@ -44,10 +44,10 @@ namespace TTI.TTF.Taxonomy
 				Services = {TaxonomyService.BindService(new Host())},
 				Ports = {new ServerPort(_gRpcHost, _gRpcPort, ServerCredentials.Insecure)}
 			};
-			
+			_log.Info("TaxonomyService listening on: " + _gRpcHost + " Port: " + _gRpcPort );
 			
 			_apiServer.Start();
-			_log.Info("Api open on port: " + _gRpcPort);
+			_log.Info("Api open on host: " + _gRpcHost + " port: " + _gRpcPort);
 			Console.WriteLine("Taxonomy Ready");
 			Console.WriteLine("Press \'q\' to close the Taxonomy.Service");
 			while (Console.Read() != 'q')

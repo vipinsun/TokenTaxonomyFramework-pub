@@ -153,7 +153,7 @@ For example, an oil token may allow oil producers to mint new tokens as they int
 Behavior groups are represented in the taxonomy by a capital letter or acronym, *SC*, from their full name and equal to the symbols for the behaviors they include.
 *SC = {m, b, r}*
 
-## Taxonomy Artifact
+## Taxonomy Model and Artifacts
 
 Artifacts are primarily defined using a platform neutral model that provides type safety and strong schema validation as well as independence from the client display or interface.
 
@@ -180,6 +180,8 @@ Written in protocol buffers, the schema supports a data structure to hold artifa
 An artifact is more than just a single JSON model file, but all the artifact's supporting documentation that can include protocol buffer control definitions, sequence diagrams, PowerPoint slides, etc.  All of an artifacts documents are contained within a single folder in the file structure based on the artifact type, token, behavior or behavior group.
 
 ![ArtifactModel](images/artifact-model.png)
+
+For an in-depth technical overview of the model see [Taxonomy Model](taxonomy-model.md).
 
 ### Behavior Artifact
 

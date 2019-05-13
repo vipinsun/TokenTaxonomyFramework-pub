@@ -1,0 +1,13 @@
+version: "3.5"
+services:
+    ttf-taxnomomy-service:
+        image: tti/ttf/taxonomyservice
+        container_name: taxonomyservice
+        volumes:
+            - ../../artifacts:/app/artifacts
+        environment:
+            - gRpcHost=taxonomyservice
+            - gRpcPort=8086
+            - artifactPath=artifacts
+        ports:
+            - 8086:8086
