@@ -11,7 +11,7 @@ The contents of this repo contain the Token Taxonomy Framework (TTF) comprised o
 - [Q/A](rude-qa.md) - suggested answers for difficult or common questions.
 - [Artifacts](artifacts) - starting artifacts for base token types and a handful of common behaviors and a single behavior group.  These are samples/template artifacts.
 - [Presentations](presentations) - PowerPoint presentations
-- [Tools](...) - coming soon.
+- [Tools](tools) - coming soon.
 
 ## Legal Notices
 
