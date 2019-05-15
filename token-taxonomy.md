@@ -27,7 +27,7 @@ See the [Token Hall](https://medium.com/tokenhall) for a backgrounder for busine
 
 ## Taxonomy
 
-The taxonomy employs a composition framework that breaks tokens down into basic parts.  Base token types, properties and behaviors, which are then placed into a category by type and can support grouping.  Each decomposed part is documented in a taxonomy [artifact](taxonomy-file-format.md). Composing these token parts together also generates a taxonomy artifact defining a complete token referencing its component artifacts.
+The TTF is a composition framework that breaks tokens down into basic parts.  Base token types, properties and behaviors, which are then placed into a category by type and can support grouping.  Each decomposed part is documented in a taxonomy [artifact](taxonomy-file-format.md). Composing these token parts together also generates a taxonomy artifact defining a complete token referencing its component artifacts.
 
 The taxonomy uses these terms for all tokens:
 
@@ -37,6 +37,34 @@ The taxonomy uses these terms for all tokens:
 
 ![DefinitionStructure](images/definition-structure.png)
 
+### Token Template
+
+A template is a complete token definition that is ready to be matched with an implementation. As a template it is a recipe for creating numerous copies of itself and is represented by a formula made of symbols that are references to taxonomy artifacts.
+
+![Token Template](images/formula.png)
+
+## Token Class vs. Instance
+
+A token class is a deployed template using a specific implementation of the template definition.  Depending on the target blockchain platform the template implementation may be a complete set of source code or a software package from a 3rd party.
+
+![Token Terms](images/terms.png)
+
+A token instance is an owned token of a particular class. Depending on the platform how this notion is actually implemented will vary. Instances of a token that you may own, or have in your digital wallet, represent your account balance of that token class.
+
+### Taxonomy Artifacts and Categories
+
+The taxonomy is comprised of artifacts that are categorized into 5 basic types:
+
+- Base Types: the foundation of any token is its base token type.
+- Behaviors: capabilities or restrictions that can apply to a token.
+- Behavior-Groups: a bundle of behaviors that are frequently used together.
+- Property-Sets: a defined property(s) that if applied a token can be queried against and support a value for.
+-Token Templates: a collection of artifacts composed together to define a ready to implement definition of a token.
+
+Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md),
+
+### Base Token Types
+
 The taxonomy is anchored by single root token followed by two implementable or base types which provide the foundation for deriving specific tokens that differentiate themselves based on their behaviors and non-behavioral properties.
 
 The root token is abstract, meaning you can't actually create one of them, and contains properties and a single behavior called constructable.  This behavior provides the ability for each token to have the ability to be a template, or to create a clone of itself.  Constructable simply means that every token will have a constructor control message when it is operating as a template and is defined in the token template artifact.  
@@ -45,39 +73,37 @@ The two base types can also be used together to create hybrid token definitions.
 
 The taxonomy uses symbols to represent token bases and possible behaviors that are used to create a token definition as a formula.  The symbols and token formulas can be used to create hierarchical relationships useful for visualizations and to aid in learning and design.
 
-## Base Tokens
-
-### Fungible
+#### Fungible
 
 Physical cash or a crypto currency is a good example of a fungible token. These tokens have interchangeable value with one another, where any quantity of them has the same value as another equal quantity as long as they are in the same class or series.
 
 A fungible token is identified by **&tau;<sub>F</sub>**.
 
-### Non-fungible
+#### Non-fungible
 
 Every non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the title to a broken-down shack is not of the same value as a mansion.
 
 A fungible token is identified by **&tau;<sub>N</sub>**.
 
-### Hybrids
+#### Hybrids
 
-#### Shared base with fungible classes
+##### Shared base with fungible classes
 
 These tokens often share a common non-fungible parent or base token and then can have classes of fungible tokens that are possessed by owners.  An example of this hybrid is a rock concert, where the parent token represents the specific date or showing of the concert then a class for general admission and one for the "mosh pit".  General admission is fungible only in its class.
 
 This hybrid **&tau;<sub>N</sub>(&tau;<sub>F</sub>)** is a non-fungible token (&tau;<sub>N</sub>) with a class(s) of fungible sub-tokens (&tau;<sub>F</sub>).
 
-#### Fungible class owns many non-fungible (usually singletons)
+##### Fungible class owns many non-fungible (usually singletons)
 
 A token can be the owner of another token or any number of tokens to represent the compound value of the underlying tokens.  For example, a **&tau;<sub>F</sub>**(&tau;<sub>N</sub>) has a fungible token class that is the owner one or more non-fungible tokens.
 
 This would allow you to create a token that could be subdivided to allow each token to own a percentage of the pool of non-fungible tokens.  A mortgage backed security is a good example.
 
-#### Fungible class owns many non-fungible and fungible classes
+##### Fungible class owns many non-fungible and fungible classes
 
 The rock concert example above could have an added "reserved" section where each seat is a non-fungible token.  Which would represent a **&tau;<sub>N</sub>**(&tau;<sub>F</sub>, &tau;<sub>N</sub>).
 
-## Properties - Behavioral and Non-Behavioral Sets
+### Properties - Behavioral and Non-Behavioral Sets
 
 Tokens usually have a common name, a symbol or unique identifier a quantity and an owner.  When you create a token, you are initially creating a token or asset class that represents the specific type of token that will represent instances of the token.
 
@@ -95,13 +121,13 @@ Some base token properties may have different values or meaning depending on the
 
 Token Templates start out with a common set of base properties and then diverge based on the behaviors the token will support and any non-behavioral property sets required.
 
-## Behaviors
+### Behaviors
 
 Behaviors can be capabilities or restrictions and can be common across fungible and non-fungible types, or only apply to one of them.  Behaviors also have supporting properties that become a part of the token schema and definition.  Behaviors use the first letter of the behavior as its representation in the taxonomy.  Collisions of letters are avoided by adding additional letters from a single word name or the letter of a second word.
 
 Behaviors are very business specific and usually have existing “non-blockchain” implementations which are well understood. Here are some common behaviors.
 
-### Common Behaviors
+#### Common Behaviors
 
 These are some common behaviors and not comprehensive.
 
@@ -125,7 +151,7 @@ Behaviors like Transfer and Burn can be defined as delegable and when they are a
 
 Some behaviors will require setup at token class creation or construction.  A behavior that requires setup should have a Constructor control message that indicates how it should be setup at construction. For example, the behavior *r* Roles requires a role to be defined that is applied to a behavior(s) for a role check to be performed for authorization to invoke the behavior.
 
-### Internal and External Behaviors
+#### Internal and External Behaviors
 
 Behaviors can be internal or external depending on what the behavior effects.  An internal behavior is enabling or restricting properties on the token itself, where an external behavior is enabling or restricting the invocation of the behavior from an external actor.  For example, the behavior Sub-dividable means that the decimals property on the base token is > 0 and Non-transferable means that Owner property is not modifiable from the initial owner that was initially set when the token instance was created.  
 
@@ -133,7 +159,7 @@ An example of an external behavior would be something like Financeable or Encumb
 
 The distinction between internal and external behaviors can seem like nuance at first but is an effective way to distinguish pure token behaviors from contract behaviors.  External behaviors are primarily contract behaviors, that need a supporting token interface to allow the two to be linked together and enable the entire behavior.  External behaviors will have two parts, contract and token,that are required when describing them.
 
-## Token Control Messages
+### Token Control Messages
 
 Interaction with a token and the properties of a token are described using simple message definitions.  The messages can represent token schema and state and also represent a `request/response` message pair for interacting with a token.  Some of these messages are a part of the base token while others come along with behaviors.
 
@@ -145,7 +171,7 @@ Some behaviors, like Transferable *t* are implicit for certain token bases.  A f
 
 The combination of base and behavior messages are generically called `Control` messages for a Token Class and bundled in the token template. These messages are generic for the behavior and not specific to any particular blockchain or programming language. Control messages defined in a separate file using Protocol Buffer syntax representing the lowest level of implementation detail the framework provides.  For more detail on the specification definitions see [Token Control Messages](./token-control-messages.md).
 
-## Behavior Groups
+### Behavior Groups
 
 Behaviors are also grouped together to describe a common set of capabilities.  For example, Supply Control is a group made up of Mint-able, Burnable and Role Support for adding and removing supply and allowing certain accounts to be able to mint new tokens within the class.  
 For example, an oil token may allow oil producers to mint new tokens as they introduce a barrel of oil into the supply chain. And the refiner can burn the token when it has been refined.
@@ -265,7 +291,7 @@ Once completed, you will have defined a token that has a baseline set of propert
 
 The taxonomy can be used in a workshop with stakeholders that want to define an existing or figure out a design for a new token.  This workshop starts by defining a high-level business and functional purpose for the token and then begin to decompose the existing implementation or if starting from scratch begin composing a taxonomy definition that matches the description.
 
-In the workshop, the group will select a base token type and select from the existing behaviors in the taxonomy like choosing from A la Carte menu at a restaurant. If no suitable behavior or group can be found, the participants should create a new one.  Which means they will create a new taxonomy artifact using the artifact templates.
+In the workshop, the group will select a base token type and select from the existing behaviors in the taxonomy like choosing from A la Carte menu at a restaurant. If no suitable behavior or group can be found, the participants should create a new one.  Which means they will create a new taxonomy artifact using the TTF.
 
 The end result of the workshop is to have a complete definition of the token that can be expressed using grammar as a formula.  This formula becomes the token's taxonomy definition like:
 

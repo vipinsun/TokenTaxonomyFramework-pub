@@ -8,6 +8,8 @@ To create a good programable experience and easy integration, a Taxonomy Model i
 
 The [TaxonomyService](tools/readme.md) provides CRUD capabilities for the backend Github (local clone only for now) to be able to interact with the taxonomy without having to program against the Github API directly.
 
+![TTF Architecture](images/TaxonomyArchitecture.png)
+
 This approach will allow for general and business user experiences in Web pages, mobile applications, MS Office, Google Docs, Adobe, etc. to be developed and hosted by anyone. Additionally, developer tool plug-ins for Visual Studio, JetBrains, Eclipse, etc. can be developed for that audience as well.
 
 The Taxonomy Model serializes to JSON, which stores all the metadata and definitions.  [Artifacts](taxonomy-artifact-format.md) are stored in folders underneath a parent based on their type: Base, Behavior, Behavior-Group, Property-Set and TokenTemplates.
@@ -20,3 +22,10 @@ The folder is named after the artifact name and contains 3 files initially:
 
 Other files can be placed in the artifact folder and be read into the model in binary. This is turned off for now, depending on requests if this is necessary.
 
+## TOM - Taxonomy Object Model
+
+The object model provides the structured data for the 5 types of artifacts along with extensible metadata for the artifact.  It serializes to JSON and de-serializes into a native object model using Protocol Buffers, proto3, for all major platforms.
+
+![TOM](images/TaxonomyModel.png)
+
+For a detailed overview of the model see [TTF - Technical Overview](presentations/TTF-Technical.pptx).
