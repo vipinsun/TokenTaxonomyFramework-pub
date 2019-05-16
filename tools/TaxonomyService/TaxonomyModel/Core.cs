@@ -25,63 +25,62 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cgpjb3JlLnByb3RvEhN0YXhvbm9teS5tb2RlbC5jb3JlGhlnb29nbGUvcHJv",
-            "dG9idWYvYW55LnByb3RvGg5hcnRpZmFjdC5wcm90bxoNZ3JhbW1hci5wcm90",
-            "byKuBQoEQmFzZRIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVs",
-            "LmFydGlmYWN0LkFydGlmYWN0EjYKCnRva2VuX3R5cGUYAiABKA4yIi50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5Ub2tlblR5cGUSOwoMc2luZ2xlX3Rva2Vu",
-            "GAMgASgLMiMudGF4b25vbXkubW9kZWwuZ3JhbW1hci5TaW5nbGVUb2tlbkgA",
-            "EjwKBmh5YnJpZBgEIAEoCzIqLnRheG9ub215Lm1vZGVsLmdyYW1tYXIuSHli",
-            "cmlkVG9rZW5Gb3JtdWxhSAASWwoTaHlicmlkX3dpdGhfaHlicmlkcxgFIAEo",
-            "CzI8LnRheG9ub215Lm1vZGVsLmdyYW1tYXIuSHlicmlkVG9rZW5XaXRoSHli",
-            "cmlkQ2hpbGRyZW5Gb3JtdWxhSAASDAoEbmFtZRgGIAEoCRIOCgZzeW1ib2wY",
-            "ByABKAkSDQoFb3duZXIYCCABKAkSEAoIcXVhbnRpdHkYCSABKAwSEAoIZGVj",
-            "aW1hbHMYCiABKAUSSAoQdG9rZW5fcHJvcGVydGllcxgLIAMoCzIuLnRheG9u",
-            "b215Lm1vZGVsLmNvcmUuQmFzZS5Ub2tlblByb3BlcnRpZXNFbnRyeRIYChBj",
-            "b25zdHJ1Y3Rvcl9uYW1lGAwgASgJEikKC2NvbnN0cnVjdG9yGA0gASgLMhQu",
-            "Z29vZ2xlLnByb3RvYnVmLkFueRI4CgxjaGlsZF90b2tlbnMYDiADKAsyIi50",
-            "YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuVGVtcGxhdGUaNgoUVG9rZW5Qcm9w",
-            "ZXJ0aWVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4AUIP",
-            "Cg10b2tlbl9mb3JtdWxhIoICCghCZWhhdmlvchIzCghhcnRpZmFjdBgBIAEo",
-            "CzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0EhMKC2lzX2V4",
-            "dGVybmFsGAIgASgIEhgKEGNvbnN0cnVjdG9yX25hbWUYAyABKAkSKQoLY29u",
-            "c3RydWN0b3IYBCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55EjQKC2ludm9j",
-            "YXRpb25zGAUgAygLMh8udGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9u",
-            "EjEKCnByb3BlcnRpZXMYBiADKAsyHS50YXhvbm9teS5tb2RlbC5jb3JlLlBy",
-            "b3BlcnR5Is4CCg1CZWhhdmlvckdyb3VwEjMKCGFydGlmYWN0GAEgASgLMiEu",
-            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSQQoQYmVoYXZpb3Jf",
-            "c3ltYm9scxgCIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlm",
-            "YWN0U3ltYm9sEmIKGW1lbWJlcl9iZWhhdmlvcl9hcnRpZmFjdHMYAyADKAsy",
-            "Py50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXAuTWVtYmVyQmVo",
-            "YXZpb3JBcnRpZmFjdHNFbnRyeRphChxNZW1iZXJCZWhhdmlvckFydGlmYWN0",
-            "c0VudHJ5EgsKA2tleRgBIAEoCRIwCgV2YWx1ZRgCIAEoCzIhLnRheG9ub215",
-            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0OgI4ASJ1CgtQcm9wZXJ0eVNldBIz",
-            "CghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFy",
-            "dGlmYWN0EjEKCnByb3BlcnRpZXMYAiADKAsyHS50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLlByb3BlcnR5InIKCFByb3BlcnR5EgwKBG5hbWUYASABKAkSGQoRdmFs",
-            "dWVfZGVzY3JpcHRpb24YAiABKAkSPQoUcHJvcGVydHlfaW52b2NhdGlvbnMY",
-            "AyADKAsyHy50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb24ilQIKDVRv",
-            "a2VuVGVtcGxhdGUSMwoIYXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5tb2Rl",
-            "bC5hcnRpZmFjdC5BcnRpZmFjdBInCgRiYXNlGAIgASgLMhkudGF4b25vbXku",
-            "bW9kZWwuY29yZS5CYXNlEjAKCWJlaGF2aW9ycxgDIAMoCzIdLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuQmVoYXZpb3ISOwoPYmVoYXZpb3JfZ3JvdXBzGAQgAygL",
-            "MiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwEjcKDXByb3Bl",
-            "cnR5X3NldHMYBSADKAsyIC50YXhvbm9teS5tb2RlbC5jb3JlLlByb3BlcnR5",
-            "U2V0IqMBCgpJbnZvY2F0aW9uEgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRp",
-            "b24YAiABKAkSNwoHcmVxdWVzdBgDIAEoCzImLnRheG9ub215Lm1vZGVsLmNv",
-            "cmUuSW52b2NhdGlvblJlcXVlc3QSOQoIcmVzcG9uc2UYBCABKAsyJy50YXhv",
-            "bm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25SZXNwb25zZSKKAQoRSW52b2Nh",
-            "dGlvblJlcXVlc3QSHAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkSEwoL",
-            "ZGVzY3JpcHRpb24YAiABKAkSQgoQaW5wdXRfcGFyYW1ldGVycxgDIAMoCzIo",
-            "LnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblBhcmFtZXRlciKMAQoS",
-            "SW52b2NhdGlvblJlc3BvbnNlEhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1lGAEg",
-            "ASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEkMKEW91dHB1dF9wYXJhbWV0ZXJz",
-            "GAMgAygLMigudGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uUGFyYW1l",
-            "dGVyIj4KE0ludm9jYXRpb25QYXJhbWV0ZXISDAoEbmFtZRgBIAEoCRIZChF2",
-            "YWx1ZV9kZXNjcmlwdGlvbhgCIAEoCUJBCh9vcmcudHRpLnR0aS50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlUAGqAhtUVEkuVFRGLlRheG9ub215Lk1vZGVsLkNvcmVi",
-            "BnByb3RvMw=="));
+            "dG9idWYvYW55LnByb3RvGg5hcnRpZmFjdC5wcm90byKxBQoEQmFzZRIzCghh",
+            "cnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlm",
+            "YWN0EjYKCnRva2VuX3R5cGUYAiABKA4yIi50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5Ub2tlblR5cGUSPAoMc2luZ2xlX3Rva2VuGAMgASgLMiQudGF4b25v",
+            "bXkubW9kZWwuYXJ0aWZhY3QuU2luZ2xlVG9rZW5IABI9CgZoeWJyaWQYBCAB",
+            "KAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5IeWJyaWRUb2tlbkZvcm11",
+            "bGFIABJcChNoeWJyaWRfd2l0aF9oeWJyaWRzGAUgASgLMj0udGF4b25vbXku",
+            "bW9kZWwuYXJ0aWZhY3QuSHlicmlkVG9rZW5XaXRoSHlicmlkQ2hpbGRyZW5G",
+            "b3JtdWxhSAASDAoEbmFtZRgGIAEoCRIOCgZzeW1ib2wYByABKAkSDQoFb3du",
+            "ZXIYCCABKAkSEAoIcXVhbnRpdHkYCSABKAwSEAoIZGVjaW1hbHMYCiABKAUS",
+            "SAoQdG9rZW5fcHJvcGVydGllcxgLIAMoCzIuLnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuQmFzZS5Ub2tlblByb3BlcnRpZXNFbnRyeRIYChBjb25zdHJ1Y3Rvcl9u",
+            "YW1lGAwgASgJEikKC2NvbnN0cnVjdG9yGA0gASgLMhQuZ29vZ2xlLnByb3Rv",
+            "YnVmLkFueRI4CgxjaGlsZF90b2tlbnMYDiADKAsyIi50YXhvbm9teS5tb2Rl",
+            "bC5jb3JlLlRva2VuVGVtcGxhdGUaNgoUVG9rZW5Qcm9wZXJ0aWVzRW50cnkS",
+            "CwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4AUIPCg10b2tlbl9mb3Jt",
+            "dWxhIoICCghCZWhhdmlvchIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215",
+            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0EhMKC2lzX2V4dGVybmFsGAIgASgI",
+            "EhgKEGNvbnN0cnVjdG9yX25hbWUYAyABKAkSKQoLY29uc3RydWN0b3IYBCAB",
+            "KAsyFC5nb29nbGUucHJvdG9idWYuQW55EjQKC2ludm9jYXRpb25zGAUgAygL",
+            "Mh8udGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uEjEKCnByb3BlcnRp",
+            "ZXMYBiADKAsyHS50YXhvbm9teS5tb2RlbC5jb3JlLlByb3BlcnR5Is4CCg1C",
+            "ZWhhdmlvckdyb3VwEjMKCGFydGlmYWN0GAEgASgLMiEudGF4b25vbXkubW9k",
+            "ZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSQQoQYmVoYXZpb3Jfc3ltYm9scxgCIAMo",
+            "CzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sEmIK",
+            "GW1lbWJlcl9iZWhhdmlvcl9hcnRpZmFjdHMYAyADKAsyPy50YXhvbm9teS5t",
+            "b2RlbC5jb3JlLkJlaGF2aW9yR3JvdXAuTWVtYmVyQmVoYXZpb3JBcnRpZmFj",
+            "dHNFbnRyeRphChxNZW1iZXJCZWhhdmlvckFydGlmYWN0c0VudHJ5EgsKA2tl",
+            "eRgBIAEoCRIwCgV2YWx1ZRgCIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0LkFydGlmYWN0OgI4ASJ1CgtQcm9wZXJ0eVNldBIzCghhcnRpZmFjdBgB",
+            "IAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0EjEKCnBy",
+            "b3BlcnRpZXMYAiADKAsyHS50YXhvbm9teS5tb2RlbC5jb3JlLlByb3BlcnR5",
+            "InIKCFByb3BlcnR5EgwKBG5hbWUYASABKAkSGQoRdmFsdWVfZGVzY3JpcHRp",
+            "b24YAiABKAkSPQoUcHJvcGVydHlfaW52b2NhdGlvbnMYAyADKAsyHy50YXhv",
+            "bm9teS5tb2RlbC5jb3JlLkludm9jYXRpb24ilQIKDVRva2VuVGVtcGxhdGUS",
+            "MwoIYXJ0aWZhY3QYASABKAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5B",
+            "cnRpZmFjdBInCgRiYXNlGAIgASgLMhkudGF4b25vbXkubW9kZWwuY29yZS5C",
+            "YXNlEjAKCWJlaGF2aW9ycxgDIAMoCzIdLnRheG9ub215Lm1vZGVsLmNvcmUu",
+            "QmVoYXZpb3ISOwoPYmVoYXZpb3JfZ3JvdXBzGAQgAygLMiIudGF4b25vbXku",
+            "bW9kZWwuY29yZS5CZWhhdmlvckdyb3VwEjcKDXByb3BlcnR5X3NldHMYBSAD",
+            "KAsyIC50YXhvbm9teS5tb2RlbC5jb3JlLlByb3BlcnR5U2V0IqMBCgpJbnZv",
+            "Y2F0aW9uEgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSNwoH",
+            "cmVxdWVzdBgDIAEoCzImLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlv",
+            "blJlcXVlc3QSOQoIcmVzcG9uc2UYBCABKAsyJy50YXhvbm9teS5tb2RlbC5j",
+            "b3JlLkludm9jYXRpb25SZXNwb25zZSKKAQoRSW52b2NhdGlvblJlcXVlc3QS",
+            "HAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkSEwoLZGVzY3JpcHRpb24Y",
+            "AiABKAkSQgoQaW5wdXRfcGFyYW1ldGVycxgDIAMoCzIoLnRheG9ub215Lm1v",
+            "ZGVsLmNvcmUuSW52b2NhdGlvblBhcmFtZXRlciKMAQoSSW52b2NhdGlvblJl",
+            "c3BvbnNlEhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1lGAEgASgJEhMKC2Rlc2Ny",
+            "aXB0aW9uGAIgASgJEkMKEW91dHB1dF9wYXJhbWV0ZXJzGAMgAygLMigudGF4",
+            "b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uUGFyYW1ldGVyIj4KE0ludm9j",
+            "YXRpb25QYXJhbWV0ZXISDAoEbmFtZRgBIAEoCRIZChF2YWx1ZV9kZXNjcmlw",
+            "dGlvbhgCIAEoCUJBCh9vcmcudHRpLnR0aS50YXhvbm9teS5tb2RlbC5jb3Jl",
+            "UAGqAhtUVEkuVFRGLlRheG9ub215Lk1vZGVsLkNvcmViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Grammar.GrammarReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Base), global::TTI.TTF.Taxonomy.Model.Core.Base.Parser, new[]{ "Artifact", "TokenType", "SingleToken", "Hybrid", "HybridWithHybrids", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor", "ChildTokens" }, new[]{ "TokenFormula" }, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Behavior), global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser, new[]{ "Artifact", "IsExternal", "ConstructorName", "Constructor", "Invocations", "Properties" }, null, null, null),
@@ -183,8 +182,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     /// <summary>Field number for the "single_token" field.</summary>
     public const int SingleTokenFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Grammar.SingleToken SingleToken {
-      get { return tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken ? (global::TTI.TTF.Taxonomy.Model.Grammar.SingleToken) tokenFormula_ : null; }
+    public global::TTI.TTF.Taxonomy.Model.Artifact.SingleToken SingleToken {
+      get { return tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken ? (global::TTI.TTF.Taxonomy.Model.Artifact.SingleToken) tokenFormula_ : null; }
       set {
         tokenFormula_ = value;
         tokenFormulaCase_ = value == null ? TokenFormulaOneofCase.None : TokenFormulaOneofCase.SingleToken;
@@ -194,8 +193,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     /// <summary>Field number for the "hybrid" field.</summary>
     public const int HybridFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenFormula Hybrid {
-      get { return tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid ? (global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenFormula) tokenFormula_ : null; }
+    public global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenFormula Hybrid {
+      get { return tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid ? (global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenFormula) tokenFormula_ : null; }
       set {
         tokenFormula_ = value;
         tokenFormulaCase_ = value == null ? TokenFormulaOneofCase.None : TokenFormulaOneofCase.Hybrid;
@@ -205,8 +204,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     /// <summary>Field number for the "hybrid_with_hybrids" field.</summary>
     public const int HybridWithHybridsFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenWithHybridChildrenFormula HybridWithHybrids {
-      get { return tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids ? (global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenWithHybridChildrenFormula) tokenFormula_ : null; }
+    public global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenFormula HybridWithHybrids {
+      get { return tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids ? (global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenFormula) tokenFormula_ : null; }
       set {
         tokenFormula_ = value;
         tokenFormulaCase_ = value == null ? TokenFormulaOneofCase.None : TokenFormulaOneofCase.HybridWithHybrids;
@@ -564,19 +563,19 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       switch (other.TokenFormulaCase) {
         case TokenFormulaOneofCase.SingleToken:
           if (SingleToken == null) {
-            SingleToken = new global::TTI.TTF.Taxonomy.Model.Grammar.SingleToken();
+            SingleToken = new global::TTI.TTF.Taxonomy.Model.Artifact.SingleToken();
           }
           SingleToken.MergeFrom(other.SingleToken);
           break;
         case TokenFormulaOneofCase.Hybrid:
           if (Hybrid == null) {
-            Hybrid = new global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenFormula();
+            Hybrid = new global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenFormula();
           }
           Hybrid.MergeFrom(other.Hybrid);
           break;
         case TokenFormulaOneofCase.HybridWithHybrids:
           if (HybridWithHybrids == null) {
-            HybridWithHybrids = new global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenWithHybridChildrenFormula();
+            HybridWithHybrids = new global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenFormula();
           }
           HybridWithHybrids.MergeFrom(other.HybridWithHybrids);
           break;
@@ -605,7 +604,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             break;
           }
           case 26: {
-            global::TTI.TTF.Taxonomy.Model.Grammar.SingleToken subBuilder = new global::TTI.TTF.Taxonomy.Model.Grammar.SingleToken();
+            global::TTI.TTF.Taxonomy.Model.Artifact.SingleToken subBuilder = new global::TTI.TTF.Taxonomy.Model.Artifact.SingleToken();
             if (tokenFormulaCase_ == TokenFormulaOneofCase.SingleToken) {
               subBuilder.MergeFrom(SingleToken);
             }
@@ -614,7 +613,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             break;
           }
           case 34: {
-            global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenFormula subBuilder = new global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenFormula();
+            global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenFormula subBuilder = new global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenFormula();
             if (tokenFormulaCase_ == TokenFormulaOneofCase.Hybrid) {
               subBuilder.MergeFrom(Hybrid);
             }
@@ -623,7 +622,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             break;
           }
           case 42: {
-            global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenWithHybridChildrenFormula subBuilder = new global::TTI.TTF.Taxonomy.Model.Grammar.HybridTokenWithHybridChildrenFormula();
+            global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenFormula subBuilder = new global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenFormula();
             if (tokenFormulaCase_ == TokenFormulaOneofCase.HybridWithHybrids) {
               subBuilder.MergeFrom(HybridWithHybrids);
             }

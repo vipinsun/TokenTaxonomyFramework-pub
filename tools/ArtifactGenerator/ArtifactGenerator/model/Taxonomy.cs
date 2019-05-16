@@ -25,37 +25,33 @@ namespace TTI.TTF.Taxonomy.Model {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg50YXhvbm9teS5wcm90bxIOdGF4b25vbXkubW9kZWwaCmNvcmUucHJvdG8a",
-            "DWdyYW1tYXIucHJvdG8i4QYKCFRheG9ub215Eg8KB3ZlcnNpb24YASABKAkS",
-            "RgoQYmFzZV90b2tlbl90eXBlcxgCIAMoCzIsLnRheG9ub215Lm1vZGVsLlRh",
-            "eG9ub215LkJhc2VUb2tlblR5cGVzRW50cnkSOgoJYmVoYXZpb3JzGAMgAygL",
-            "MicudGF4b25vbXkubW9kZWwuVGF4b25vbXkuQmVoYXZpb3JzRW50cnkSRQoP",
-            "YmVoYXZpb3JfZ3JvdXBzGAQgAygLMiwudGF4b25vbXkubW9kZWwuVGF4b25v",
-            "bXkuQmVoYXZpb3JHcm91cHNFbnRyeRJBCg1wcm9wZXJ0eV9zZXRzGAUgAygL",
-            "MioudGF4b25vbXkubW9kZWwuVGF4b25vbXkuUHJvcGVydHlTZXRzRW50cnkS",
-            "RQoPdG9rZW5fdGVtcGxhdGVzGAYgAygLMiwudGF4b25vbXkubW9kZWwuVGF4",
-            "b25vbXkuVG9rZW5UZW1wbGF0ZXNFbnRyeRI/Cg9mb3JtdWxhX2dyYW1tYXIY",
-            "ByABKAsyJi50YXhvbm9teS5tb2RlbC5ncmFtbWFyLkZvcm11bGFHcmFtbWFy",
-            "GlAKE0Jhc2VUb2tlblR5cGVzRW50cnkSCwoDa2V5GAEgASgJEigKBXZhbHVl",
-            "GAIgASgLMhkudGF4b25vbXkubW9kZWwuY29yZS5CYXNlOgI4ARpPCg5CZWhh",
-            "dmlvcnNFbnRyeRILCgNrZXkYASABKAkSLAoFdmFsdWUYAiABKAsyHS50YXhv",
-            "bm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yOgI4ARpZChNCZWhhdmlvckdyb3Vw",
+            "DmFydGlmYWN0LnByb3RvIuIGCghUYXhvbm9teRIPCgd2ZXJzaW9uGAEgASgJ",
+            "EkYKEGJhc2VfdG9rZW5fdHlwZXMYAiADKAsyLC50YXhvbm9teS5tb2RlbC5U",
+            "YXhvbm9teS5CYXNlVG9rZW5UeXBlc0VudHJ5EjoKCWJlaGF2aW9ycxgDIAMo",
+            "CzInLnRheG9ub215Lm1vZGVsLlRheG9ub215LkJlaGF2aW9yc0VudHJ5EkUK",
+            "D2JlaGF2aW9yX2dyb3VwcxgEIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9u",
+            "b215LkJlaGF2aW9yR3JvdXBzRW50cnkSQQoNcHJvcGVydHlfc2V0cxgFIAMo",
+            "CzIqLnRheG9ub215Lm1vZGVsLlRheG9ub215LlByb3BlcnR5U2V0c0VudHJ5",
+            "EkUKD3Rva2VuX3RlbXBsYXRlcxgGIAMoCzIsLnRheG9ub215Lm1vZGVsLlRh",
+            "eG9ub215LlRva2VuVGVtcGxhdGVzRW50cnkSQAoPZm9ybXVsYV9ncmFtbWFy",
+            "GAcgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuRm9ybXVsYUdyYW1t",
+            "YXIaUAoTQmFzZVRva2VuVHlwZXNFbnRyeRILCgNrZXkYASABKAkSKAoFdmFs",
+            "dWUYAiABKAsyGS50YXhvbm9teS5tb2RlbC5jb3JlLkJhc2U6AjgBGk8KDkJl",
+            "aGF2aW9yc0VudHJ5EgsKA2tleRgBIAEoCRIsCgV2YWx1ZRgCIAEoCzIdLnRh",
+            "eG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3I6AjgBGlkKE0JlaGF2aW9yR3Jv",
+            "dXBzRW50cnkSCwoDa2V5GAEgASgJEjEKBXZhbHVlGAIgASgLMiIudGF4b25v",
+            "bXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwOgI4ARpVChFQcm9wZXJ0eVNl",
+            "dHNFbnRyeRILCgNrZXkYASABKAkSLwoFdmFsdWUYAiABKAsyIC50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLlByb3BlcnR5U2V0OgI4ARpZChNUb2tlblRlbXBsYXRl",
             "c0VudHJ5EgsKA2tleRgBIAEoCRIxCgV2YWx1ZRgCIAEoCzIiLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuQmVoYXZpb3JHcm91cDoCOAEaVQoRUHJvcGVydHlTZXRz",
-            "RW50cnkSCwoDa2V5GAEgASgJEi8KBXZhbHVlGAIgASgLMiAudGF4b25vbXku",
-            "bW9kZWwuY29yZS5Qcm9wZXJ0eVNldDoCOAEaWQoTVG9rZW5UZW1wbGF0ZXNF",
-            "bnRyeRILCgNrZXkYASABKAkSMQoFdmFsdWUYAiABKAsyIi50YXhvbm9teS5t",
-            "b2RlbC5jb3JlLlRva2VuVGVtcGxhdGU6AjgBIiIKD1RheG9ub215VmVyc2lv",
-            "bhIPCgd2ZXJzaW9uGAEgASgJIiEKBlN5bWJvbBIXCg9hcnRpZmFjdF9zeW1i",
-            "b2wYASABKAkiIgoPVGF4b25vbXlGb3JtdWxhEg8KB2Zvcm11bGEYASABKAlC",
-            "Nwoab3JnLnR0aS50dGkudGF4b25vbXkubW9kZWxQAaoCFlRUSS5UVEYuVGF4",
-            "b25vbXkuTW9kZWxiBnByb3RvMw=="));
+            "Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZToCOAEiIgoPVGF4b25vbXlWZXJz",
+            "aW9uEg8KB3ZlcnNpb24YASABKAlCNwoab3JnLnR0aS50dGkudGF4b25vbXku",
+            "bW9kZWxQAaoCFlRUSS5UVEYuVGF4b25vbXkuTW9kZWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Grammar.GrammarReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Symbol), global::TTI.TTF.Taxonomy.Model.Symbol.Parser, new[]{ "ArtifactSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyFormula), global::TTI.TTF.Taxonomy.Model.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null)
           }));
     }
     #endregion
@@ -168,9 +164,9 @@ namespace TTI.TTF.Taxonomy.Model {
 
     /// <summary>Field number for the "formula_grammar" field.</summary>
     public const int FormulaGrammarFieldNumber = 7;
-    private global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar formulaGrammar_;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar formulaGrammar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar FormulaGrammar {
+    public global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar FormulaGrammar {
       get { return formulaGrammar_; }
       set {
         formulaGrammar_ = value;
@@ -276,7 +272,7 @@ namespace TTI.TTF.Taxonomy.Model {
       tokenTemplates_.Add(other.tokenTemplates_);
       if (other.formulaGrammar_ != null) {
         if (formulaGrammar_ == null) {
-          FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar();
+          FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar();
         }
         FormulaGrammar.MergeFrom(other.FormulaGrammar);
       }
@@ -317,7 +313,7 @@ namespace TTI.TTF.Taxonomy.Model {
           }
           case 58: {
             if (formulaGrammar_ == null) {
-              FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Grammar.FormulaGrammar();
+              FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar();
             }
             input.ReadMessage(FormulaGrammar);
             break;
@@ -449,267 +445,6 @@ namespace TTI.TTF.Taxonomy.Model {
             break;
           case 10: {
             Version = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Symbol : pb::IMessage<Symbol> {
-    private static readonly pb::MessageParser<Symbol> _parser = new pb::MessageParser<Symbol>(() => new Symbol());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Symbol> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Symbol() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Symbol(Symbol other) : this() {
-      artifactSymbol_ = other.artifactSymbol_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Symbol Clone() {
-      return new Symbol(this);
-    }
-
-    /// <summary>Field number for the "artifact_symbol" field.</summary>
-    public const int ArtifactSymbolFieldNumber = 1;
-    private string artifactSymbol_ = "";
-    /// <summary>
-    ///should always be the tooling symbol.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ArtifactSymbol {
-      get { return artifactSymbol_; }
-      set {
-        artifactSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Symbol);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Symbol other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ArtifactSymbol != other.ArtifactSymbol) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ArtifactSymbol.Length != 0) hash ^= ArtifactSymbol.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ArtifactSymbol.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ArtifactSymbol);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ArtifactSymbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ArtifactSymbol);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Symbol other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ArtifactSymbol.Length != 0) {
-        ArtifactSymbol = other.ArtifactSymbol;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ArtifactSymbol = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class TaxonomyFormula : pb::IMessage<TaxonomyFormula> {
-    private static readonly pb::MessageParser<TaxonomyFormula> _parser = new pb::MessageParser<TaxonomyFormula>(() => new TaxonomyFormula());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TaxonomyFormula> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TaxonomyFormula() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TaxonomyFormula(TaxonomyFormula other) : this() {
-      formula_ = other.formula_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TaxonomyFormula Clone() {
-      return new TaxonomyFormula(this);
-    }
-
-    /// <summary>Field number for the "formula" field.</summary>
-    public const int FormulaFieldNumber = 1;
-    private string formula_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Formula {
-      get { return formula_; }
-      set {
-        formula_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as TaxonomyFormula);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TaxonomyFormula other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Formula != other.Formula) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Formula.Length != 0) hash ^= Formula.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Formula.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Formula);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Formula.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Formula);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TaxonomyFormula other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Formula.Length != 0) {
-        Formula = other.Formula;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Formula = input.ReadString();
             break;
           }
         }

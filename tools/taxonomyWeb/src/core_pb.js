@@ -15,8 +15,6 @@ var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js'
 goog.object.extend(proto, google_protobuf_any_pb);
 var artifact_pb = require('./artifact_pb.js');
 goog.object.extend(proto, artifact_pb);
-var grammar_pb = require('./grammar_pb.js');
-goog.object.extend(proto, grammar_pb);
 goog.exportSymbol('proto.taxonomy.model.core.Base', null, global);
 goog.exportSymbol('proto.taxonomy.model.core.Behavior', null, global);
 goog.exportSymbol('proto.taxonomy.model.core.BehaviorGroup', null, global);
@@ -303,9 +301,9 @@ proto.taxonomy.model.core.Base.toObject = function(includeInstance, msg) {
   var obj = {
     artifact: (f = msg.getArtifact()) && artifact_pb.Artifact.toObject(includeInstance, f),
     tokenType: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    singleToken: (f = msg.getSingleToken()) && grammar_pb.SingleToken.toObject(includeInstance, f),
-    hybrid: (f = msg.getHybrid()) && grammar_pb.HybridTokenFormula.toObject(includeInstance, f),
-    hybridWithHybrids: (f = msg.getHybridWithHybrids()) && grammar_pb.HybridTokenWithHybridChildrenFormula.toObject(includeInstance, f),
+    singleToken: (f = msg.getSingleToken()) && artifact_pb.SingleToken.toObject(includeInstance, f),
+    hybrid: (f = msg.getHybrid()) && artifact_pb.HybridTokenFormula.toObject(includeInstance, f),
+    hybridWithHybrids: (f = msg.getHybridWithHybrids()) && artifact_pb.HybridTokenWithHybridChildrenFormula.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 6, ""),
     symbol: jspb.Message.getFieldWithDefault(msg, 7, ""),
     owner: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -362,18 +360,18 @@ proto.taxonomy.model.core.Base.deserializeBinaryFromReader = function(msg, reade
       msg.setTokenType(value);
       break;
     case 3:
-      var value = new grammar_pb.SingleToken;
-      reader.readMessage(value,grammar_pb.SingleToken.deserializeBinaryFromReader);
+      var value = new artifact_pb.SingleToken;
+      reader.readMessage(value,artifact_pb.SingleToken.deserializeBinaryFromReader);
       msg.setSingleToken(value);
       break;
     case 4:
-      var value = new grammar_pb.HybridTokenFormula;
-      reader.readMessage(value,grammar_pb.HybridTokenFormula.deserializeBinaryFromReader);
+      var value = new artifact_pb.HybridTokenFormula;
+      reader.readMessage(value,artifact_pb.HybridTokenFormula.deserializeBinaryFromReader);
       msg.setHybrid(value);
       break;
     case 5:
-      var value = new grammar_pb.HybridTokenWithHybridChildrenFormula;
-      reader.readMessage(value,grammar_pb.HybridTokenWithHybridChildrenFormula.deserializeBinaryFromReader);
+      var value = new artifact_pb.HybridTokenWithHybridChildrenFormula;
+      reader.readMessage(value,artifact_pb.HybridTokenWithHybridChildrenFormula.deserializeBinaryFromReader);
       msg.setHybridWithHybrids(value);
       break;
     case 6:
@@ -465,7 +463,7 @@ proto.taxonomy.model.core.Base.serializeBinaryToWriter = function(message, write
     writer.writeMessage(
       3,
       f,
-      grammar_pb.SingleToken.serializeBinaryToWriter
+      artifact_pb.SingleToken.serializeBinaryToWriter
     );
   }
   f = message.getHybrid();
@@ -473,7 +471,7 @@ proto.taxonomy.model.core.Base.serializeBinaryToWriter = function(message, write
     writer.writeMessage(
       4,
       f,
-      grammar_pb.HybridTokenFormula.serializeBinaryToWriter
+      artifact_pb.HybridTokenFormula.serializeBinaryToWriter
     );
   }
   f = message.getHybridWithHybrids();
@@ -481,7 +479,7 @@ proto.taxonomy.model.core.Base.serializeBinaryToWriter = function(message, write
     writer.writeMessage(
       5,
       f,
-      grammar_pb.HybridTokenWithHybridChildrenFormula.serializeBinaryToWriter
+      artifact_pb.HybridTokenWithHybridChildrenFormula.serializeBinaryToWriter
     );
   }
   f = message.getName();
@@ -598,16 +596,16 @@ proto.taxonomy.model.core.Base.prototype.setTokenType = function(value) {
 
 
 /**
- * optional taxonomy.model.grammar.SingleToken single_token = 3;
- * @return {?proto.taxonomy.model.grammar.SingleToken}
+ * optional taxonomy.model.artifact.SingleToken single_token = 3;
+ * @return {?proto.taxonomy.model.artifact.SingleToken}
  */
 proto.taxonomy.model.core.Base.prototype.getSingleToken = function() {
-  return /** @type{?proto.taxonomy.model.grammar.SingleToken} */ (
-    jspb.Message.getWrapperField(this, grammar_pb.SingleToken, 3));
+  return /** @type{?proto.taxonomy.model.artifact.SingleToken} */ (
+    jspb.Message.getWrapperField(this, artifact_pb.SingleToken, 3));
 };
 
 
-/** @param {?proto.taxonomy.model.grammar.SingleToken|undefined} value */
+/** @param {?proto.taxonomy.model.artifact.SingleToken|undefined} value */
 proto.taxonomy.model.core.Base.prototype.setSingleToken = function(value) {
   jspb.Message.setOneofWrapperField(this, 3, proto.taxonomy.model.core.Base.oneofGroups_[0], value);
 };
@@ -631,16 +629,16 @@ proto.taxonomy.model.core.Base.prototype.hasSingleToken = function() {
 
 
 /**
- * optional taxonomy.model.grammar.HybridTokenFormula hybrid = 4;
- * @return {?proto.taxonomy.model.grammar.HybridTokenFormula}
+ * optional taxonomy.model.artifact.HybridTokenFormula hybrid = 4;
+ * @return {?proto.taxonomy.model.artifact.HybridTokenFormula}
  */
 proto.taxonomy.model.core.Base.prototype.getHybrid = function() {
-  return /** @type{?proto.taxonomy.model.grammar.HybridTokenFormula} */ (
-    jspb.Message.getWrapperField(this, grammar_pb.HybridTokenFormula, 4));
+  return /** @type{?proto.taxonomy.model.artifact.HybridTokenFormula} */ (
+    jspb.Message.getWrapperField(this, artifact_pb.HybridTokenFormula, 4));
 };
 
 
-/** @param {?proto.taxonomy.model.grammar.HybridTokenFormula|undefined} value */
+/** @param {?proto.taxonomy.model.artifact.HybridTokenFormula|undefined} value */
 proto.taxonomy.model.core.Base.prototype.setHybrid = function(value) {
   jspb.Message.setOneofWrapperField(this, 4, proto.taxonomy.model.core.Base.oneofGroups_[0], value);
 };
@@ -664,16 +662,16 @@ proto.taxonomy.model.core.Base.prototype.hasHybrid = function() {
 
 
 /**
- * optional taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 5;
- * @return {?proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula}
+ * optional taxonomy.model.artifact.HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 5;
+ * @return {?proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenFormula}
  */
 proto.taxonomy.model.core.Base.prototype.getHybridWithHybrids = function() {
-  return /** @type{?proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula} */ (
-    jspb.Message.getWrapperField(this, grammar_pb.HybridTokenWithHybridChildrenFormula, 5));
+  return /** @type{?proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenFormula} */ (
+    jspb.Message.getWrapperField(this, artifact_pb.HybridTokenWithHybridChildrenFormula, 5));
 };
 
 
-/** @param {?proto.taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula|undefined} value */
+/** @param {?proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenFormula|undefined} value */
 proto.taxonomy.model.core.Base.prototype.setHybridWithHybrids = function(value) {
   jspb.Message.setOneofWrapperField(this, 5, proto.taxonomy.model.core.Base.oneofGroups_[0], value);
 };

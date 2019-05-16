@@ -4,7 +4,6 @@ package taxonomy.model.core;
 
 import "google/protobuf/any.proto";
 import "artifact.proto";
-import "grammar.proto";
 
 option csharp_namespace = "TTI.TTF.Taxonomy.Model.Core";
 option java_package = "org.tti.tti.taxonomy.model.core";
@@ -15,9 +14,9 @@ message Base{
     taxonomy.model.artifact.Artifact artifact = 1;
     taxonomy.model.artifact.TokenType token_type = 2;
     oneof token_formula{
-        taxonomy.model.grammar.SingleToken single_token = 3;
-        taxonomy.model.grammar.HybridTokenFormula hybrid = 4;
-        taxonomy.model.grammar.HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 5;
+        taxonomy.model.artifact.SingleToken single_token = 3;
+        taxonomy.model.artifact.HybridTokenFormula hybrid = 4;
+        taxonomy.model.artifact.HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 5;
     }
     string name = 6;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
     string symbol = 7; //an optionally unique symbol or identifier
@@ -42,7 +41,7 @@ message Behavior{
 message BehaviorGroup{
     taxonomy.model.artifact.Artifact artifact = 1;
     repeated model.artifact.ArtifactSymbol behavior_symbols = 2;
-    map<string, model.artifact.Artifact> member_behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
+    map<string, taxonomy.model.artifact.Artifact> member_behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
 }
 
 message PropertySet{

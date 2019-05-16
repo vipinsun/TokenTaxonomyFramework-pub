@@ -151,12 +151,12 @@ proto.taxonomy.service.TaxonomyServicePromiseClient.prototype.getFullTaxonomy =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.taxonomy.model.Symbol,
+ *   !proto.taxonomy.model.artifact.ArtifactSymbol,
  *   !proto.taxonomy.model.core.Base>}
  */
 const methodInfo_TaxonomyService_GetBaseArtifact = new grpc.web.AbstractClientBase.MethodInfo(
   core_pb.Base,
-  /** @param {!proto.taxonomy.model.Symbol} request */
+  /** @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -165,7 +165,7 @@ const methodInfo_TaxonomyService_GetBaseArtifact = new grpc.web.AbstractClientBa
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -186,7 +186,7 @@ proto.taxonomy.service.TaxonomyServiceClient.prototype.getBaseArtifact =
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -206,12 +206,12 @@ proto.taxonomy.service.TaxonomyServicePromiseClient.prototype.getBaseArtifact =
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.taxonomy.model.Symbol,
+ *   !proto.taxonomy.model.artifact.ArtifactSymbol,
  *   !proto.taxonomy.model.core.Behavior>}
  */
 const methodInfo_TaxonomyService_GetBehaviorArtifact = new grpc.web.AbstractClientBase.MethodInfo(
   core_pb.Behavior,
-  /** @param {!proto.taxonomy.model.Symbol} request */
+  /** @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -220,7 +220,7 @@ const methodInfo_TaxonomyService_GetBehaviorArtifact = new grpc.web.AbstractClie
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -241,7 +241,7 @@ proto.taxonomy.service.TaxonomyServiceClient.prototype.getBehaviorArtifact =
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -261,12 +261,12 @@ proto.taxonomy.service.TaxonomyServicePromiseClient.prototype.getBehaviorArtifac
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.taxonomy.model.Symbol,
+ *   !proto.taxonomy.model.artifact.ArtifactSymbol,
  *   !proto.taxonomy.model.core.BehaviorGroup>}
  */
 const methodInfo_TaxonomyService_GetBehaviorGroupArtifact = new grpc.web.AbstractClientBase.MethodInfo(
   core_pb.BehaviorGroup,
-  /** @param {!proto.taxonomy.model.Symbol} request */
+  /** @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -275,7 +275,7 @@ const methodInfo_TaxonomyService_GetBehaviorGroupArtifact = new grpc.web.Abstrac
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -296,7 +296,7 @@ proto.taxonomy.service.TaxonomyServiceClient.prototype.getBehaviorGroupArtifact 
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -316,12 +316,12 @@ proto.taxonomy.service.TaxonomyServicePromiseClient.prototype.getBehaviorGroupAr
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.taxonomy.model.Symbol,
+ *   !proto.taxonomy.model.artifact.ArtifactSymbol,
  *   !proto.taxonomy.model.core.PropertySet>}
  */
 const methodInfo_TaxonomyService_GetPropertySetArtifact = new grpc.web.AbstractClientBase.MethodInfo(
   core_pb.PropertySet,
-  /** @param {!proto.taxonomy.model.Symbol} request */
+  /** @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -330,7 +330,7 @@ const methodInfo_TaxonomyService_GetPropertySetArtifact = new grpc.web.AbstractC
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -351,7 +351,7 @@ proto.taxonomy.service.TaxonomyServiceClient.prototype.getPropertySetArtifact =
 
 
 /**
- * @param {!proto.taxonomy.model.Symbol} request The
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -371,12 +371,12 @@ proto.taxonomy.service.TaxonomyServicePromiseClient.prototype.getPropertySetArti
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.taxonomy.model.TaxonomyFormula,
+ *   !proto.taxonomy.model.artifact.TaxonomyFormula,
  *   !proto.taxonomy.model.core.TokenTemplate>}
  */
 const methodInfo_TaxonomyService_GetTokenTemplateArtifact = new grpc.web.AbstractClientBase.MethodInfo(
   core_pb.TokenTemplate,
-  /** @param {!proto.taxonomy.model.TaxonomyFormula} request */
+  /** @param {!proto.taxonomy.model.artifact.TaxonomyFormula} request */
   function(request) {
     return request.serializeBinary();
   },
@@ -385,7 +385,7 @@ const methodInfo_TaxonomyService_GetTokenTemplateArtifact = new grpc.web.Abstrac
 
 
 /**
- * @param {!proto.taxonomy.model.TaxonomyFormula} request The
+ * @param {!proto.taxonomy.model.artifact.TaxonomyFormula} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -406,7 +406,7 @@ proto.taxonomy.service.TaxonomyServiceClient.prototype.getTokenTemplateArtifact 
 
 
 /**
- * @param {!proto.taxonomy.model.TaxonomyFormula} request The
+ * @param {!proto.taxonomy.model.artifact.TaxonomyFormula} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata

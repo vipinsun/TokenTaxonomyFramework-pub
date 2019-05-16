@@ -12,11 +12,11 @@ option java_multiple_files = true;
 service TaxonomyService {
     //gets
     rpc GetFullTaxonomy (taxonomy.model.TaxonomyVersion) returns (taxonomy.model.Taxonomy) {}
-    rpc GetBaseArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.Base) {}
-    rpc GetBehaviorArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.Behavior) {}
-    rpc GetBehaviorGroupArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.BehaviorGroup) {}
-    rpc GetPropertySetArtifact (taxonomy.model.Symbol) returns (taxonomy.model.core.PropertySet) {}
-    rpc GetTokenTemplateArtifact (taxonomy.model.TaxonomyFormula) returns (taxonomy.model.core.TokenTemplate) {}
+    rpc GetBaseArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.Base) {}
+    rpc GetBehaviorArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.Behavior) {}
+    rpc GetBehaviorGroupArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.BehaviorGroup) {}
+    rpc GetPropertySetArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.PropertySet) {}
+    rpc GetTokenTemplateArtifact (taxonomy.model.artifact.TaxonomyFormula) returns (taxonomy.model.core.TokenTemplate) {}
     
     //sets
     rpc CreateArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactResponse) {}
