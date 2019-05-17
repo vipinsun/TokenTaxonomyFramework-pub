@@ -65,9 +65,9 @@ Artifacts themselves are just a set of files that share a common set of metadata
 
 ### Base Token Types
 
-The taxonomy is anchored by single root token followed by two implementable or base types which provide the foundation for deriving specific tokens that differentiate themselves based on their behaviors and non-behavioral properties.
+The taxonomy is anchored by single root token that is used to define properties shared by the two implementable or base token types. Properties like a common name, a symbol or unique identifier a quantity and an owner.  When you create a token, you are initially creating a token or asset class that represents the specific type of token that will represent instances of the token.
 
-The root token is abstract, meaning you can't actually create one of them, and contains properties and a single behavior called constructable.  This behavior provides the ability for each token to have the ability to be a template, or to create a clone of itself.  Constructable simply means that every token will have a constructor control message when it is operating as a template and is defined in the token template artifact.  
+The root token also contains a single behavior called constructable.  This behavior provides tokens with the ability to be a template, or to create a clone of itself.  Constructable simply means that every token template will have a constructor control message to define initialization values when a clone of a template is created and is defined in the token template artifact.
 
 The two base types can also be used together to create hybrid token definitions. Using the taxonomy, a token template is defined that is be used to create a token or asset class. The class is essentially a mold for creating instances (printing or minting) of that token type.  An instance of a token class is the smallest unit that can be owned in that class.
 
@@ -87,33 +87,42 @@ A fungible token is identified by **&tau;<sub>N</sub>**.
 
 #### Hybrids
 
-##### Shared base with fungible classes
+##### Shared Non-fungible Parent with Fungible classes
 
 These tokens often share a common non-fungible parent or base token and then can have classes of fungible tokens that are possessed by owners.  An example of this hybrid is a rock concert, where the parent token represents the specific date or showing of the concert then a class for general admission and one for the "mosh pit".  General admission is fungible only in its class.
 
 This hybrid **&tau;<sub>N</sub>(&tau;<sub>F</sub>)** is a non-fungible token (&tau;<sub>N</sub>) with a class(s) of fungible sub-tokens (&tau;<sub>F</sub>).
 
-##### Fungible class owns many non-fungible (usually singletons)
+##### Fungible Parent class owns or has many non-fungible Children (usually singletons)
 
 A token can be the owner of another token or any number of tokens to represent the compound value of the underlying tokens.  For example, a **&tau;<sub>F</sub>**(&tau;<sub>N</sub>) has a fungible token class that is the owner one or more non-fungible tokens.
 
 This would allow you to create a token that could be subdivided to allow each token to own a percentage of the pool of non-fungible tokens.  A mortgage backed security is a good example.
 
-##### Fungible class owns many non-fungible and fungible classes
+##### Fungible Parent Class owns or has many non-fungible and fungible child classes
 
 The rock concert example above could have an added "reserved" section where each seat is a non-fungible token.  Which would represent a **&tau;<sub>N</sub>**(&tau;<sub>F</sub>, &tau;<sub>N</sub>).
 
-### Properties - Behavioral and Non-Behavioral Sets
+### Properties
 
-Tokens usually have a common name, a symbol or unique identifier a quantity and an owner.  When you create a token, you are initially creating a token or asset class that represents the specific type of token that will represent instances of the token.
+Properties of a token are used to define the information or data a token contains about itself and to record its activities.  Some properties are set when the token class is created from a template, like its name and owner while others are set and updated over a tokens lifetime.
 
-There are two types of properties, behavioral and non-behavioral.  Non-behavioral properties can be added to a token without effecting its behavior, like a serial number, reference properties or generic tags and do not fundamentally alter the token definition. However, behavioral properties fundamentally create a new token type.
+A property contains some data value, how that data value is set indicates what type of property it is. If a property's value must be set or read by a behavior, it is called a behavioral property.  If a property can be set independent from any behavior it is called a non-behavioral property.
+
+The difference in these two types is often sematic, but is key to understanding a property's overall scope. Perhaps the best way to determine if a property is behavioral or not is if its value can only be set or changed indirectly by an event triggered by a behavior.  A behavioral property may not have meaning or even be visible to observers outside of a token behavior.
+
+A non-behavioral property should have its own "getter and setter" which means it will have controls for getting and setting its value directly.
+
+- A Behavioral property value is not determined directly, but controlled by logic contained in a behavior. Setting its value is the result of calculation or logic based on an action in its controlling behavior. Visibility of its value may or may not be obtained directly. A behavioral property does not define control messages.
+- A Non-behavioral property's value is retrieved and set directly by its own [control messages](token-control-messages.md).
+
+Non-behavioral properties can be added to a token without effecting its behavior, like a serial number, reference properties or generic tags and do not fundamentally alter the token definition. However, behavioral properties fundamentally create a new token type.
 
 For example, you can create the property title token that uses a base non-fungible token template and adds non-behavioral properties like a map number and plot location to be a fully functional token class.  You can repeat this process for an art token that uses the same base non-fungible token template and adds different non-behavioral properties need to represent it.  Even though these two token classes are based off the same template that are unique by their Name, Symbol and non-behavioral properties.
 
-Behavioral properties are defined within their behavior artifact, non-behavioral properties are defined in a non-behavioral property set, or property set artifact. A property set artifact can contain the definition of a single or multiple non-behavioral properties like a `SKU` property.
+Properties are defined in a property set. A property set artifact can contain the definition of a single or multiple properties like a `SKU` property.  A property set with multiple properties can represent a complex property like a `Customer` that contains properties like `First Name`, `Last Name`, `Address 1`, etc.
 
-Property sets have a **&phi;** prefix and a capital letter or acronym that is unique for the taxonomy. For example, **&phi;SKU** could be used for the `SKU` property set.
+Property sets have a **&phi;** prefix and a capital letter or acronym that is unique for the taxonomy. For example, **&phi;SKU** could be used for the `SKU` property set. Adding a non-behavioral property set to a token template requires it to be specifically added to its formula.  Behavioral property sets are listed as a dependency for the behavior(s) that require them.
 
 Non-behavioral properties are explicitly identified and will require property control messages to query or read and set the values that the property will hold.  The artifact definition for a property set should include these control message definitions.
 

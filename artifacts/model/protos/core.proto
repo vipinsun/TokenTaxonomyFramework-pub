@@ -55,6 +55,7 @@ message Property{
     repeated Invocation property_invocations = 3;
 }
 
+//where to put behahiors that depend on a property set?
 message TokenTemplate {
     taxonomy.model.artifact.Artifact artifact = 1;
     Base base = 2;
