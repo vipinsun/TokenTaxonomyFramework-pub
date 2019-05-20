@@ -9,7 +9,7 @@ The Token Taxonomy Framework bridges the gap between blockchain developers, line
 - Tooling meta-data using the TTF syntax to be able to generate visual representations of classifications and modelling tools to view and create token definitions mapped to the taxonomy.
 - Neutral to programming language and blockchain, distributed ledger or other distributed medium where tokens reside.
 - Open and collaborative workshops to  accelerate the creation of powerful vertical industry applications and innovation for platforms, start-ups and enterprises.
-- Standard artifacts and control message definitions mapped to the taxonomy that are implementation neutral and provide base components and controls that consortia, startups, platforms or regulators can use to work together.
+- Standard artifacts and control message descriptions mapped to the taxonomy that are implementation neutral and provide base components and controls that consortia, startups, platforms or regulators can use to work together.
 - Encourage differentiation and vertical specialization while maintaining an interoperable base.
 - Sandbox environment for legal and regulatory requirement discovery and input
 - Used in taxonomy workshops for defining existing or new tokens which results in a contribution back to the framework to organically grow and expand across industries for maximum re-use.
@@ -61,7 +61,17 @@ The taxonomy is comprised of artifacts that are categorized into 5 basic types:
 - Property-Sets: a defined property(s) that if applied a token can be queried against and support a value for.
 -Token Templates: a collection of artifacts composed together to define a ready to implement definition of a token.
 
-Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md),
+Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md).
+
+### Control Messages
+
+Behavior and Property-Sets contain `Control` message descriptions that are messages used to invoke a behavior or get/set the value of a property. These control messages are described in the artifact for the behavior or property-set. Control messages are named descriptively and come in request and response pairs. Control messages contain optional named parameters of a specific type for requests and responses.
+
+![TransferRequest](images/txfer-request.png)
+
+![TransferResponse](images/txfer-response.png)
+
+These messages are generic for the behavior and not specific to any particular blockchain or programming language. Control messages defined in a separate file using Protocol Buffer syntax representing the lowest level of implementation detail the framework provides.  For more detail on the specification definitions see [Token Control Messages](./token-control-messages.md).
 
 ### Base Token Types
 
@@ -113,7 +123,7 @@ The difference in these two types is often sematic, but is key to understanding 
 
 A non-behavioral property should have its own "getter and setter" which means it will have controls for getting and setting its value directly.
 
-- A Behavioral property value is not determined directly, but controlled by logic contained in a behavior. Setting its value is the result of calculation or logic based on an action in its controlling behavior. Visibility of its value may or may not be obtained directly. A behavioral property does not define control messages.
+- A Behavioral property value is not determined directly, but controlled by logic contained in a behavior. Setting its value is the result of calculation or logic based on an action in its controlling behavior. Visibility of its value may or may not be obtained directly from an explicit control message. A behavioral property does not define a control message to set the property's value.
 - A Non-behavioral property's value is retrieved and set directly by its own [control messages](token-control-messages.md).
 
 Non-behavioral properties can be added to a token without effecting its behavior, like a serial number, reference properties or generic tags and do not fundamentally alter the token definition. However, behavioral properties fundamentally create a new token type.
@@ -124,7 +134,7 @@ Properties are defined in a property set. A property set artifact can contain th
 
 Property sets have a **&phi;** prefix and a capital letter or acronym that is unique for the taxonomy. For example, **&phi;SKU** could be used for the `SKU` property set. Adding a non-behavioral property set to a token template requires it to be specifically added to its formula.  Behavioral property sets are listed as a dependency for the behavior(s) that require them.
 
-Non-behavioral properties are explicitly identified and will require property control messages to query or read and set the values that the property will hold.  The artifact definition for a property set should include these control message definitions.
+Non-behavioral properties are explicitly identified and will require property control messages to query or read and set the value the property will hold.  The artifact definition for a property set should include these control message definitions.
 
 Some base token properties may have different values or meaning depending on the context when evaluating them.  For example, the Owner property in the context of the token class refers to the creator or owner of the token class, which may come with permissions to mint or issue new tokens of the class but does not have permissions on any specific instance of the token class.  In the context of a token instance, Owner is the owner of that token instance and will have all the permissions that come with owning the token itself, like spending or transferring ownership of the token.
 
@@ -162,23 +172,13 @@ Some behaviors will require setup at token class creation or construction.  A be
 
 #### Internal and External Behaviors
 
-Behaviors can be internal or external depending on what the behavior effects.  An internal behavior is enabling or restricting properties on the token itself, where an external behavior is enabling or restricting the invocation of the behavior from an external actor.  For example, the behavior Sub-dividable means that the decimals property on the base token is > 0 and Non-transferable means that Owner property is not modifiable from the initial owner that was initially set when the token instance was created.  
+Behaviors can be internal or external depending on what the behavior effects. An internal behavior is enabling or restricting properties on the token itself, where an external behavior is enabling or restricting the invocation of the behavior from an external actor.  For example, the behavior Sub-dividable means that the decimals property on the base token is > 0 and Non-transferable means that Owner property is not modifiable from the initial owner that was initially set when the token instance was created.  
 
 An example of an external behavior would be something like Financeable or Encumberable.  This behavior would enable an external actor to invoke the behavior and the token would contain the correct properties to record the outcome of this behavior when invoked.  Meaning if a Loan contract where to invoke a FinanceRequest on a token instance the loan contract could expect a FinanceResponse back from the token as to the success or failure of this behavior.
 
 The distinction between internal and external behaviors can seem like nuance at first but is an effective way to distinguish pure token behaviors from contract behaviors.  External behaviors are primarily contract behaviors, that need a supporting token interface to allow the two to be linked together and enable the entire behavior.  External behaviors will have two parts, contract and token,that are required when describing them.
 
-### Token Control Messages
-
-Interaction with a token and the properties of a token are described using simple message definitions.  The messages can represent token schema and state and also represent a `request/response` message pair for interacting with a token.  Some of these messages are a part of the base token while others come along with behaviors.
-
-![TransferRequest](images/txfer-request.png)
-
-![TransferResponse](images/txfer-response.png)
-
 Some behaviors, like Transferable *t* are implicit for certain token bases.  A fungible token, for example, implicitly is Transferable so the taxonomy does not require it to be included for tooling or the definition but can be included for clarity: *&tau;<sub>F</sub> = &tau;<sub>F</sub>{t}*.
-
-The combination of base and behavior messages are generically called `Control` messages for a Token Class and bundled in the token template. These messages are generic for the behavior and not specific to any particular blockchain or programming language. Control messages defined in a separate file using Protocol Buffer syntax representing the lowest level of implementation detail the framework provides.  For more detail on the specification definitions see [Token Control Messages](./token-control-messages.md).
 
 ### Behavior Groups
 

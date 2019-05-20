@@ -58,10 +58,38 @@ message Property{
 //where to put behahiors that depend on a property set?
 message TokenTemplate {
     taxonomy.model.artifact.Artifact artifact = 1;
-    Base base = 2;
-    repeated Behavior behaviors = 3;
-    repeated BehaviorGroup behavior_groups = 4;
-    repeated PropertySet property_sets = 5;
+    TemplateBase base = 2;
+    repeated TemplateBehavior behaviors = 3;
+    repeated TemplateBehaviorGroup behavior_groups = 4;
+    repeated TemplatePropertySet property_sets = 5;
+}
+
+//used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition.
+message TemplateBase{
+    taxonomy.model.artifact.ArtifactSymbol symbol = 1;
+    string implementation_details = 2;
+    Base base = 3;
+}
+
+//used to wrap the base token type for a template with implementation details specific for the behavior's use in this token template definition.
+message TemplateBehavior{
+    taxonomy.model.artifact.ArtifactSymbol symbol = 1;
+    string implementation_details = 2;
+    Behavior behavior = 3;
+}
+
+//used to wrap the base token type for a template with implementation details specific for the BehaviorGroup's use in this token template definition.
+message TemplateBehaviorGroup{
+    taxonomy.model.artifact.ArtifactSymbol symbol = 1;
+    string implementation_details = 2;
+    BehaviorGroup behavior_group = 3;
+}
+
+//used to wrap the base token type for a template with implementation details specific for the Property-set's use in this token template definition.
+message TemplatePropertySet{
+    taxonomy.model.artifact.ArtifactSymbol symbol = 1;
+    string implementation_details = 2;
+    PropertySet property_set = 3;
 }
 
 message Invocation{
