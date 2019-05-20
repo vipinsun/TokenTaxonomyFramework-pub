@@ -196,7 +196,7 @@ Starting with a base type, then collections of behaviors, groups and properties 
 
 ![TokenTemplateImplementationDetail](images/templateImpl.png)
 
-For example, in the above example template artifact, for the implementation of the `phSKU` property you can specify that the property must be 16 characters in length, with all UPPERCASE and the 7th character being a `-`.
+In the above example, we can specify in the template artifact implementation detail for the `phSKU` property that its value must be 16 characters in length, with all UPPERCASE and the 7th character being a `-`.
 
 You can provide implementation detail for each artifact in your token template formula.
 
