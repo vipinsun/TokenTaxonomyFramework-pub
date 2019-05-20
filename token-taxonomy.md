@@ -192,7 +192,13 @@ Behavior groups are represented in the taxonomy by a capital letter or acronym, 
 
 Templates are where a token definition all comes together. Selecting artifacts from the previous categories, a template lists the artifacts that define what a token created from the template will be.
 
-Starting with a base type, then collections of behaviors, groups and properties all of the ingredients are identified. Because artifacts themselves are described generically in isolation, when you include them in a template you then provide implementation details to fill in the blanks an artifact may not specify until it is used.
+Starting with a base type, then collections of behaviors, groups and properties all of the ingredients are identified. Because artifacts themselves are described generically in isolation, when you include them in a template you can provide implementation details to fill in the blanks an artifact may not specify until it is used.
+
+![TokenTemplateImplementationDetail](images/templateImpl.png)
+
+For example, in the above example template artifact, for the implementation of the `phSKU` property you can specify that the property must be 16 characters in length, with all UPPERCASE and the 7th character being a `-`.
+
+You can provide implementation detail for each artifact in your token template formula.
 
 ## Taxonomy Model and Artifacts
 
@@ -273,8 +279,6 @@ A token formula uses the taxonomy symbols, which are references to artifacts, ca
 ![TokenTaxonomy](images/tokens.png)
 
 A Token Formula is a Token Template, which is a collection of artifacts in a folder, where the artifact folder and the artifacts within start with an uppercase letter, i.e Loyalty. The template's artifacts have references to the artifacts of its constituent parts.
-
-![TokenTemplate](imageps/template.png)
 
 ## Classification Hierarchy
 
