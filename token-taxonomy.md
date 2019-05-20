@@ -188,6 +188,12 @@ For example, an oil token may allow oil producers to mint new tokens as they int
 Behavior groups are represented in the taxonomy by a capital letter or acronym, *SC*, from their full name and equal to the symbols for the behaviors they include.
 *SC = {m, b, r}*
 
+### Token Templates
+
+Templates are where a token definition all comes together. Selecting artifacts from the previous categories, a template lists the artifacts that define what a token created from the template will be.
+
+Starting with a base type, then collections of behaviors, groups and properties all of the ingredients are identified. Because artifacts themselves are described generically in isolation, when you include them in a template you then provide implementation details to fill in the blanks an artifact may not specify until it is used.
+
 ## Taxonomy Model and Artifacts
 
 Artifacts are primarily defined using a platform neutral model that provides type safety and strong schema validation as well as independence from the client display or interface.
