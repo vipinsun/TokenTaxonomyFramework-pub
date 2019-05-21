@@ -6,9 +6,7 @@ using log4net;
 using Newtonsoft.Json.Linq;
 using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
-using TTI.TTF.Taxonomy.Model.Grammar;
-using TTI.TTF.Taxonomy;
-using TTI.TTF.Taxonomy.Model.Model;
+using TTI.TTF.Taxonomy.Model;
 
 namespace ArtifactGenerator
 {
@@ -172,11 +170,12 @@ namespace ArtifactGenerator
 			var artifact =  new Artifact
 			{
 				Name = ArtifactName,
-				Type = ArtifactType,
 				ArtifactSymbol = new ArtifactSymbol
 				{
+					Type = ArtifactType,
 					ToolingSymbol = "",
-					VisualSymbol = ""
+					VisualSymbol = "",
+					ArtifactVersion = "1.0"
 				},
 				ArtifactDefinition = new ArtifactDefinition
 				{
@@ -218,6 +217,16 @@ namespace ArtifactGenerator
 					ToolingSymbol = "",
 					VisualSymbol = ""
 				}},
+				InfluencedBySymbols = { new SymbolInfluence
+				{
+					Symbol = new ArtifactSymbol(),
+					Description = ""
+				}},
+				Dependencies = { new SymbolDependency
+				{
+					Description = "",
+					Symbol = new ArtifactSymbol()
+				}},
 				Aliases = { "alias1", "alias2"}
 				
 			};
@@ -237,8 +246,10 @@ namespace ArtifactGenerator
 						Description = "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
 						Symbol = new ArtifactSymbol
 						{
+							Type = ArtifactType.Behavior,
 							ToolingSymbol = "~d",
-							VisualSymbol = "~d"
+							VisualSymbol = "~d",
+							ArtifactVersion = ""
 						}
 					});
 					switch (BaseType)
@@ -343,6 +354,16 @@ namespace ArtifactGenerator
 							VisualSymbol = ""
 						}
 					});
+					artifactBehavior.Artifact.Dependencies.Add(new SymbolDependency()
+					{
+						Description = "",
+						Symbol = new ArtifactSymbol
+						{
+							ToolingSymbol = "",
+							VisualSymbol = ""
+						}
+					});
+					artifact.IncompatibleWithSymbols.Add(new ArtifactSymbol());
 					artifactJson = jsf.Format(artifactBehavior);
 					break;
 				case ArtifactType.BehaviorGroup:
@@ -459,7 +480,34 @@ namespace ArtifactGenerator
 					var artifactTokenTemplate = new TokenTemplate
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "TokenTemplates"),
-						Base = GetTokenTypeBase(fullPath, folderSeparator)
+						Base = GetTokenTypeBase(fullPath, folderSeparator),
+						Behaviors = { new TemplateBehavior
+						{
+							ImplementationDetails = "",
+							Behavior = new Behavior(),
+							Symbol = new ArtifactSymbol
+							{
+								Type = ArtifactType.Behavior
+							}
+						}},
+						BehaviorGroups = { new TemplateBehaviorGroup
+						{
+							BehaviorGroup = new BehaviorGroup(),
+							ImplementationDetails = "",
+							Symbol = new ArtifactSymbol
+							{
+								Type = ArtifactType.BehaviorGroup
+							}
+						}},
+						PropertySets = { new TemplatePropertySet
+						{
+							PropertySet = new PropertySet(),
+							ImplementationDetails = "",
+							Symbol = new ArtifactSymbol
+							{
+								Type = ArtifactType.PropertySet
+							}
+						}}
 					};
 					artifactJson = jsf.Format(artifactTokenTemplate);
 					break;
@@ -529,7 +577,7 @@ namespace ArtifactGenerator
 			{
 				BaseToken = new TokenBase
 				{
-					BaseSymbol = ""
+					ArtifactSymbol = new ArtifactSymbol()
 				},
 				Behaviors = new BehaviorList
 				{
@@ -543,7 +591,7 @@ namespace ArtifactGenerator
 			var psli = new PropertySetListItem
 			{
 				ListStart = "+",
-				PropertySetSymbol = ""
+				PropertySetSymbols = new ArtifactSymbol()
 			};
 			singleToken.PropertySets.Add(psli);
 
@@ -574,7 +622,7 @@ namespace ArtifactGenerator
 			return formula;
 		}
 
-		private static Base GetTokenTypeBase(string fullPath,  string folderSeparator)
+		private static TemplateBase GetTokenTypeBase(string fullPath,  string folderSeparator)
 		{
 			string baseName;
 			const string typeFolder = "base";
@@ -604,7 +652,15 @@ namespace ArtifactGenerator
 			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + baseName+".json");
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
-			return JsonParser.Default.Parse<Base>(formattedJson);
+			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
+			var templateBase = new TemplateBase
+			{
+				Base = baseType,
+				Symbol = baseType.Artifact.ArtifactSymbol,
+				ImplementationDetails = ""
+			};
+			
+			return templateBase;
 		}
 
 		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, Artifact parent, string nameSpaceAdd)

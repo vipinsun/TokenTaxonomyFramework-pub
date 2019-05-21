@@ -13,6 +13,7 @@ Artifacts should for a token definition, behavior or behavior group should be pl
 - Artifact Markdown:  this is used to host UML diagrams, primarily sequence diagrams and can use a recommended markdown plugin or custom implementation based on the requirements of the artifact owners. In the examples [plantUml](http://plantuml.com) is used for for [sequence diagrams](http://plantuml.com/sequence-diagram) because it has a GitHub supported rendering capability and a Visual Studio Code [plugin](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#markdown-integrating).  However, other options like
 [mermaid](https://marketplace.visualstudio.com/items?itemName=vstirbu.vscode-mermaid-preview) could be used.
 - Custom: the artifact owners can also place an appropriate artifact files that are useful for the framework like PowerPoint slides, etc. It is recommend to use similar metadata tags and file naming to support consistency in the artifact's supporting documentation.
+- Versioning Folder: multiple versions of an artifact are supported using a sub-folder named after the version that contains that version's artifact files. *not implemented yet*
 
 ## Primary JSON Artifact File Format
 

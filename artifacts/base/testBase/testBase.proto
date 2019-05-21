@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package testBase;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "TTI.TTF.Base.testBase";
+option java_package = "org.tti.ttf.Base.testBase";
+option java_multiple_files = true;

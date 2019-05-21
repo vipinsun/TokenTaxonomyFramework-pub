@@ -1,15 +1,17 @@
 {
   "artifact": {
-    "type": "BASE",
+    "artifact": {
+      "artifactSymbol": {
+        "type": "BASE",
+        "visualSymbol": "&tau;<sub>F</sub>(&tau;)",
+        "toolingSymbol": "tF(t)",
+        "artifactVersion": "1.0"
+      },
     "name": "Hybrid-FungibleRoot",
     "aliases": [
       "alias1",
       "alias2"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "&tau;<sub>F</sub>(&tau;)",
-      "toolingSymbol": "tF(t)"
-    },
     "controlUri": "../../../../../../artifacts/base/hybrid-fungibleRoot/hybrid-fungibleRoot.proto",
     "artifactDefinition": {
       "businessDescription": "This is a hybrid-fungibleRoot of type: Base",
@@ -24,10 +26,23 @@
       "comments": "",
       "artifact": null
     },
+    "dependencies": [
+      {
+        "description": "Fungible Token Definition",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau;F",
+          "toolingSymbol": "tF",
+          "artifactVersion": ""
+        }
+      }
+    ],
     "incompatibleWithSymbols": [
       {
+        "type": "BASE",
         "visualSymbol": "",
-        "toolingSymbol": ""
+        "toolingSymbol": "",
+        "artifactVersion": ""
       }
     ],
     "influencedBySymbols": [
@@ -99,7 +114,12 @@
       "propertySets": [
         {
           "listStart": "+",
-          "propertySetSymbol": ""
+          "propertySetSymbols": {
+            "type": "PROPERTY_SET",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
         }
       ],
       "groupEnd": "]"

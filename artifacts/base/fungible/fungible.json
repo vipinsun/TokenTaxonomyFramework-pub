@@ -1,15 +1,16 @@
 {
   "artifact": {
-    "type": "BASE",
+    "artifactSymbol": {
+      "type": "BASE",
+      "visualSymbol": "",
+      "toolingSymbol": "",
+      "artifactVersion": "1.0"
+    },
     "name": "Fungible Token",
     "aliases": [
       "Liquid",
       "Physical Cash"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "&tau;<sub>F</sub>",
-      "toolingSymbol": "tF"
-    },
     "controlUri": "../../../../../../artifacts/base/fungible/fungible.proto",
     "artifactDefinition": {
       "businessDescription": "Fungible tokens have interchangeable value with each other, where any quantity of them from the same class has the same value as another equal quantity. Similar to physical cash money, a crypto-currency is an example of a fungible token.",
@@ -24,18 +25,25 @@
       "comments": "",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
+    "dependencies": [
       {
-        "visualSymbol": "",
-        "toolingSymbol": ""
+        "description": "Base Token Definition",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau;",
+          "toolingSymbol": "t",
+          "artifactVersion": ""
+        }
       }
     ],
     "influencedBySymbols": [
       {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "~d",
-          "toolingSymbol": "~d"
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
         }
       }
     ],
@@ -88,7 +96,12 @@
   "singleToken": {
     "groupStart": "[",
     "baseToken": {
-      "baseSymbol": ""
+      "artifactSymbol": {
+        "type": "BASE",
+        "visualSymbol": "&tau;F",
+        "toolingSymbol": "tF",
+        "artifactVersion": ""
+      }
     },
     "behaviors": {
       "listStart": "{",
@@ -98,7 +111,12 @@
     "propertySets": [
       {
         "listStart": "+",
-        "propertySetSymbol": ""
+        "propertySetSymbols": {
+          "type": "PROPERTY_SET",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
       }
     ],
     "groupEnd": "]"

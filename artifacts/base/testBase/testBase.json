@@ -2,23 +2,23 @@
   "artifact": {
     "artifactSymbol": {
       "type": "BASE",
-      "visualSymbol": "&tau<sub>N</sub>",
-      "toolingSymbol": "tN",
+      "visualSymbol": "",
+      "toolingSymbol": "",
       "artifactVersion": "1.0"
     },
-    "name": "Non-Fungible Token",
+    "name": "testBase",
     "aliases": [
-      "Title",
-      "Deed"
+      "alias1",
+      "alias2"
     ],
-    "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
+    "controlUri": "../../../../../../artifacts/base/testBase/testBase.proto",
     "artifactDefinition": {
-      "businessDescription": "Every non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
+      "businessDescription": "This is a testBase of type: Base",
       "businessExample": "",
       "analogies": [
         {
           "name": "Analogy 1",
-          "description": "non-fungible analogy 1 description",
+          "description": "testBase analogy 1 description",
           "artifactDefinition": null
         }
       ],
@@ -27,34 +27,53 @@
     },
     "dependencies": [
       {
-        "description": "Base Token Definition",
+        "description": "",
         "symbol": {
           "type": "BASE",
-          "visualSymbol": "&tau;",
-          "toolingSymbol": "t",
+          "visualSymbol": "",
+          "toolingSymbol": "",
           "artifactVersion": ""
         }
       }
     ],
+    "incompatibleWithSymbols": [
+      {
+        "type": "BASE",
+        "visualSymbol": "",
+        "toolingSymbol": "",
+        "artifactVersion": ""
+      }
+    ],
     "influencedBySymbols": [
+      {
+        "description": "",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
+      },
       {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "~d",
-          "toolingSymbol": "~d"
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
         }
       }
     ],
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "non-fungible.proto",
+        "fileName": "testBase.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "non-fungible.md",
+        "fileName": "testBase.md",
         "fileData": "",
         "artifact": null
       }
@@ -90,22 +109,27 @@
       "artifact": null
     }
   },
-  "tokenType": "NON_FUNGIBLE",
+  "tokenType": "FUNGIBLE",
   "singleToken": {
     "groupStart": "[",
     "baseToken": {
-      "baseSymbol": ""
+      "artifactSymbol": {
+        "type": "BASE",
+        "visualSymbol": "",
+        "toolingSymbol": "",
+        "artifactVersion": ""
+      }
     },
     "behaviors": {
       "listStart": "{",
-      "behaviorSymbol": [],
+      "behaviorSymbols": [],
       "listEnd": "}"
     },
     "propertySets": [
       {
         "listStart": "+",
         "propertySetSymbols": {
-          "type": "PROPERTY_SET",
+          "type": "BASE",
           "visualSymbol": "",
           "toolingSymbol": "",
           "artifactVersion": ""
