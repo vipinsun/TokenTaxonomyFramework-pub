@@ -41,28 +41,28 @@ namespace TTI.TTF.Taxonomy
 			return Taxonomy;
 		}
 
-		public static Base GetBaseArtifact(Symbol symbol)
+		public static Base GetBaseArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBaseArtifact Symbol " + symbol.ArtifactSymbol);
-			return Taxonomy.BaseTokenTypes.Single(e => e.Key == symbol.ArtifactSymbol).Value;
+			_log.Info("GetBaseArtifact Symbol " + symbol.ToolingSymbol);
+			return Taxonomy.BaseTokenTypes.Single(e => e.Key == symbol.ToolingSymbol).Value;
 		}
 
-		public static Behavior GetBehaviorArtifact(Symbol symbol)
+		public static Behavior GetBehaviorArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBehaviorArtifact Symbol " + symbol.ArtifactSymbol);
-			return Taxonomy.Behaviors.Single(e => e.Key == symbol.ArtifactSymbol).Value;
+			_log.Info("GetBehaviorArtifact Symbol " + symbol.ToolingSymbol);
+			return Taxonomy.Behaviors.Single(e => e.Key == symbol.ToolingSymbol).Value;
 		}
 
-		public static BehaviorGroup GetBehaviorGroupArtifact(Symbol symbol)
+		public static BehaviorGroup GetBehaviorGroupArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBehaviorGroupArtifact Symbol " + symbol.ArtifactSymbol);
-			return Taxonomy.BehaviorGroups.Single(e => e.Key == symbol.ArtifactSymbol).Value;
+			_log.Info("GetBehaviorGroupArtifact Symbol " + symbol.ToolingSymbol);
+			return Taxonomy.BehaviorGroups.Single(e => e.Key == symbol.ToolingSymbol).Value;
 		}
 
-		public static PropertySet GetPropertySetArtifact(Symbol symbol)
+		public static PropertySet GetPropertySetArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetPropertySetArtifact Symbol " + symbol.ArtifactSymbol);
-			return Taxonomy.PropertySets.Single(e => e.Key == symbol.ArtifactSymbol).Value;		
+			_log.Info("GetPropertySetArtifact Symbol " + symbol.ToolingSymbol);
+			return Taxonomy.PropertySets.Single(e => e.Key == symbol.ToolingSymbol).Value;		
 		}
 
 		public static TokenTemplate GetTokenTemplateArtifact(TaxonomyFormula formula)

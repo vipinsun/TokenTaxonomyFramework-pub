@@ -1,0 +1,115 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "type": "PROPERTY_SET",
+      "visualSymbol": "&phi;D",
+      "toolingSymbol": "phD",
+      "artifactVersion": "1.0"
+    },
+    "name": "Decimals",
+    "aliases": [
+      "Fractions"
+    ],
+    "controlUri": "../../../../../../artifacts/property-sets/decimals/decimals.proto",
+    "artifactDefinition": {
+      "businessDescription": "The decimals property is a part of the token base and does not need to be implemented.",
+      "businessExample": "",
+      "analogies": [],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [
+      {
+        "description": "Indicates that decimals value should be more greater than 0.",
+        "symbol": {
+          "type": "BEHAVIOR",
+          "visualSymbol": "<i>d</i>",
+          "toolingSymbol": "d",
+          "artifactVersion": ""
+        }
+      },
+      {
+        "description": "Indicates that decimals value should be 0.",
+        "symbol": {
+          "type": "BEHAVIOR",
+          "visualSymbol": "<i>~d</i>",
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "decimals.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "decimals.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "properties": [
+    {
+      "name": "Decimals",
+      "valueDescription": "Integer indicating the number of decimal places a whole number can be subdivided into.",
+      "propertyInvocations": [
+        {
+          "name": "GetDecimals",
+          "description": "The property value.",
+          "request": {
+            "controlMessageName": "GetDecimalsRequest",
+            "description": "",
+            "inputParameters": []
+          },
+          "response": {
+            "controlMessageName": "GetDecimalsResponse",
+            "description": "Return value",
+            "outputParameters": [
+              {
+                "name": "Decimals",
+                "valueDescription": "value of property"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

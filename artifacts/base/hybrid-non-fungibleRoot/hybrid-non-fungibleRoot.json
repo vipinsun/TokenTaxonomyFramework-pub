@@ -1,15 +1,16 @@
 {
   "artifact": {
-    "type": "BASE",
-    "name": "hybrid-non-fungibleRoot",
+    "artifactSymbol": {
+      "type": "BASE",
+      "visualSymbol": "&tau;<sub>N</sub>(&tau;)",
+      "toolingSymbol": "tN(t)",
+      "artifactVersion": "1.0"
+    },
+    "name": "Hybrid-non-fungibleRoot",
     "aliases": [
       "alias1",
       "alias2"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "&tau;<sub>N</sub>(&tau;)",
-      "toolingSymbol": "tN(t)"
-    },
     "controlUri": "../../../../../../artifacts/base/hybrid-non-fungibleRoot/hybrid-non-fungibleRoot.proto",
     "artifactDefinition": {
       "businessDescription": "This is a hybrid-non-fungibleRoot of type: Base",
@@ -24,18 +25,33 @@
       "comments": "",
       "artifact": null
     },
+    "dependencies": [
+      {
+        "description": "",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau;<sub>N</sub>",
+          "toolingSymbol": "tN",
+          "artifactVersion": ""
+        }
+      }
+    ],
     "incompatibleWithSymbols": [
       {
+        "type": "BASE",
         "visualSymbol": "",
-        "toolingSymbol": ""
+        "toolingSymbol": "",
+        "artifactVersion": ""
       }
     ],
     "influencedBySymbols": [
       {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "~d",
-          "toolingSymbol": "~d"
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
         }
       }
     ],
@@ -89,17 +105,34 @@
     "parent": {
       "groupStart": "[",
       "baseToken": {
-        "baseSymbol": ""
+        "artifactSymbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau;<sub>N</sub>(&tau;)",
+          "toolingSymbol": "tN(t)",
+          "artifactVersion": ""
+        }
       },
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbol": [],
+        "behaviorSymbols": [
+          {
+            "type": "BEHAVIOR",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
+        ],
         "listEnd": "}"
       },
       "propertySets": [
         {
           "listStart": "+",
-          "propertySetSymbol": ""
+          "propertySetSymbols": {
+            "type": "PROPERTY_SET",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
         }
       ],
       "groupEnd": "]"
@@ -109,17 +142,34 @@
       {
         "groupStart": "[",
         "baseToken": {
-          "baseSymbol": ""
+          "artifactSymbol": {
+            "type": "BASE",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
         },
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbol": [],
+          "behaviorSymbols": [
+            {
+              "type": "BEHAVIOR",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
+          ],
           "listEnd": "}"
         },
         "propertySets": [
           {
             "listStart": "+",
-            "propertySetSymbol": ""
+            "propertySetSymbols": {
+              "type": "PROPERTY_SET",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
           }
         ],
         "groupEnd": "]"
@@ -127,17 +177,34 @@
       {
         "groupStart": "[",
         "baseToken": {
-          "baseSymbol": ""
+          "artifactSymbol": {
+            "type": "BASE",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
         },
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbol": [],
+          "behaviorSymbols": [
+            {
+              "type": "BEHAVIOR",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
+          ],
           "listEnd": "}"
         },
         "propertySets": [
           {
             "listStart": "+",
-            "propertySetSymbol": ""
+            "propertySetSymbols": {
+              "type": "PROPERTY_SET",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
           }
         ],
         "groupEnd": "]"

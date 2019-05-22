@@ -1,16 +1,17 @@
 {
   "artifact": {
-    "type": "TOKEN_TEMPLATE",
+    "artifactSymbol": {
+      "type": "TOKEN_TEMPLATE",
+      "visualSymbol": "[&tau<sub>N</sub>{~d,t,s,e,b}+&phi;File]",
+      "toolingSymbol": "[tN{~d,t,s,e,b}+phFile]",
+      "artifactVersion": "1.0"
+    },
     "name": "Document Token",
     "aliases": [
       "File",
       "Invoice",
       "PDF"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "[&tau<sub>N</sub>{~d,t,s,e,b}+&phi;File]",
-      "toolingSymbol": "[tN{~d,t,s,e,b}+phFile]"
-    },
     "controlUri": "../../../../../../artifacts/token-templates/Document/Document.proto",
     "artifactDefinition": {
       "businessDescription": "Used to represent a document that may be a scanned or PDF printed document. It records the document hash to check for tampering, a file path to fetch the file from storage as well as the ability to be encumbered. Implements the File property-set.",
@@ -18,19 +19,15 @@
       "analogies": [
         {
           "name": "Analogy 1",
-          "description": "tt analogy 1 description",
+          "description": "Analogy 1 description",
           "artifactDefinition": null
         }
       ],
       "comments": "",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
-      {
-        "visualSymbol": "",
-        "toolingSymbol": ""
-      }
-    ],
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
     "artifactFiles": [
       {
@@ -78,17 +75,26 @@
     }
   },
   "base": {
-    "artifact": {
+    "symbol": {
       "type": "BASE",
+      "visualSymbol": "&tau<sub>N</sub>",
+      "toolingSymbol": "tN",
+      "artifactVersion": "1.0"
+    },
+    "implementationDetails": "",
+    "base": {
+      "artifact": {
+        "artifactSymbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau<sub>N</sub>",
+          "toolingSymbol": "tN",
+          "artifactVersion": "1.0"
+        },
       "name": "Non-Fungible Token",
       "aliases": [
         "Title",
         "Deed"
       ],
-      "artifactSymbol": {
-        "visualSymbol": "&tau<sub>N</sub>",
-        "toolingSymbol": "tN"
-      },
       "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
       "artifactDefinition": {
         "businessDescription": "Every non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
@@ -102,19 +108,27 @@
         ],
         "comments": "",
         "artifact": null
-      },
-      "incompatibleWithSymbols": [
+      },        
+      "dependencies": [
         {
-          "visualSymbol": "",
-          "toolingSymbol": ""
+          "description": "Base Token Definition",
+          "symbol": {
+            "type": "BASE",
+            "visualSymbol": "&tau;",
+            "toolingSymbol": "t",
+            "artifactVersion": ""
+          }
         }
       ],
+      "incompatibleWithSymbols": [],
       "influencedBySymbols": [
         {
           "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
           "symbol": {
+            "type": "BEHAVIOR",
             "visualSymbol": "~d",
-            "toolingSymbol": "~d"
+            "toolingSymbol": "~d",
+            "artifactVersion": ""
           }
         }
       ],
@@ -164,6 +178,41 @@
       }
     },
     "tokenType": "NON_FUNGIBLE",
+    "singleToken": {
+      "groupStart": "[",
+      "baseToken": {
+        "artifactSymbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau;<sub>N</sub>",
+          "toolingSymbol": "tN",
+          "artifactVersion": ""
+        }
+      },
+      "behaviors": {
+        "listStart": "{",
+        "behaviorSymbols": [
+          {
+            "type": "BEHAVIOR",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
+        ],
+        "listEnd": "}"
+      },
+      "propertySets": [
+        {
+          "listStart": "+",
+          "propertySetSymbols": {
+            "type": "PROPERTY_SET",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
+        }
+      ],
+      "groupEnd": "]"
+    },
     "name": "",
     "symbol": "",
     "owner": "",
@@ -173,8 +222,72 @@
     "constructorName": "Constructor",
     "constructor": null,
     "childTokens": []
+  }
+},
+"behaviors": [
+  {
+    "symbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>~d</i>",
+      "toolingSymbol": "~d",
+      "artifactVersion": ""
+    },
+    "implementationDetails": "",
+    "behavior": {}
   },
-  "behaviors": [],
-  "behaviorGroups": [],
-  "propertySets": []
+  {
+    "symbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>t</i>",
+      "toolingSymbol": "~t",
+      "artifactVersion": ""
+    },
+    "implementationDetails": "",
+    "behavior": {}
+  },
+  {
+    "symbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>s</i>",
+      "toolingSymbol": "s",
+      "artifactVersion": ""
+    },
+    "implementationDetails": "",
+    "behavior": {}
+  },
+  {
+    "symbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>e</i>",
+      "toolingSymbol": "e",
+      "artifactVersion": ""
+    },
+    "implementationDetails": "",
+    "behavior": {}
+  },
+  {
+    "symbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>b</i>",
+      "toolingSymbol": "b",
+      "artifactVersion": ""
+    },
+    "implementationDetails": "",
+    "behavior": {}
+  }
+],
+"behaviorGroups": [],
+"propertySets": [
+  {
+    "symbol": {
+      "type": "PROPERTY_SET",
+      "visualSymbol": "+&phi;File",
+      "toolingSymbol": "phFile",
+      "artifactVersion": ""
+    },
+    "implementationDetails": "",
+    "propertySet": {}
+  }
+]
 }
+  

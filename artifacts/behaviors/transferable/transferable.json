@@ -1,12 +1,13 @@
 {
   "artifact": {
-    "type": "BEHAVIOR",
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>t</i>",
+      "toolingSymbol": "t",
+      "artifactVersion": "1.0"
+    },
     "name": "Transferable",
     "aliases": [],
-    "artifactSymbol": {
-      "visualSymbol": "<i>t</i>",
-      "toolingSymbol": "t"
-    },
     "controlUri": "../../../../../../artifacts/behaviors/transferable/transferable.proto",
     "artifactDefinition": {
       "businessDescription": "Every token instance has an owner. The Transferable behavior provides the owner the ability to transfer the ownership to another party or account. This behavior is often inferred by other behaviors that might exist like Redeem, Sell, etc. This behavior is Delegable. If the token definition is Delegable, TransferFrom will be available.",
@@ -21,18 +22,23 @@
       "comments": "",
       "artifact": null
     },
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "type": "BEHAVIOR",
         "visualSymbol": "<i>~t</i>",
-        "toolingSymbol": "~t"
+        "toolingSymbol": "~t",
+        "artifactVersion": ""
       }
     ],
     "influencedBySymbols": [
       {
         "description": "If the token is Delegable, TransferFrom should be enabled.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "<i>g</o>",
-          "toolingSymbol": "g"
+          "toolingSymbol": "g",
+          "artifactVersion": ""
         }
       }
     ],

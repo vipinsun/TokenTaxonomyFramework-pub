@@ -26,7 +26,7 @@
       "artifact": null
     },
     "dependencies": [
-      {
+      {        
         "description": "Base Token Definition",
         "symbol": {
           "type": "BASE",
@@ -36,12 +36,23 @@
         }
       }
     ],
+    "incompatibleWithSymbols": [
+      {
+        "type": "BASE",
+        "visualSymbol": "",
+        "toolingSymbol": "",
+        "artifactVersion": ""
+      }
+    ],
     "influencedBySymbols": [
+
       {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
-          "visualSymbol": "~d",
-          "toolingSymbol": "~d"
+          "type": "BEHAVIOR",
+          "visualSymbol": "<i>~d</i>",
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
         }
       }
     ],
@@ -94,11 +105,23 @@
   "singleToken": {
     "groupStart": "[",
     "baseToken": {
-      "baseSymbol": ""
+      "artifactSymbol": {
+        "type": "BASE",
+        "visualSymbol": "&tau;<sub>N</sub>",
+        "toolingSymbol": "tN",
+        "artifactVersion": ""
+      }
     },
     "behaviors": {
       "listStart": "{",
-      "behaviorSymbol": [],
+      "behaviorSymbols": [
+        {
+          "type": "BEHAVIOR",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
+      ],
       "listEnd": "}"
     },
     "propertySets": [

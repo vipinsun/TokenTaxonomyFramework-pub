@@ -1,15 +1,16 @@
 {
   "artifact": {
-    "type": "BEHAVIOR",
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>e</i>",
+      "toolingSymbol": "e",
+      "artifactVersion": "1.0"
+    },
     "name": "Encumberable",
     "aliases": [
       "Locked",
       "Frozen"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "<i>e</i>",
-      "toolingSymbol": "e"
-    },
     "controlUri": "../../../../../../artifacts/behaviors/encumberable/encumberable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will have restrictions preventing certain behaviors like transferable, burnable, etc. from working while it is encumbered. The encumbering party should make a request to encumber, the owner should be notified about the request, and accept the request, which will finalize the encumbrance and send the EncumberResponse message to the requestor.",
@@ -24,21 +25,9 @@
       "comments": "The token definition should have a Encumbered property or structure that may allow only one encumber or allow multiple.",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
-      {
-        "visualSymbol": "",
-        "toolingSymbol": ""
-      }
-    ],
-    "influencedBySymbols": [
-      {
-        "description": "",
-        "symbol": {
-          "visualSymbol": "",
-          "toolingSymbol": ""
-        }
-      }
-    ],
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
     "artifactFiles": [
       {
         "content": "CONTROL",

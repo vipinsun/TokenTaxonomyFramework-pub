@@ -1,14 +1,15 @@
 {
   "artifact": {
-    "type": "BEHAVIOR",
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>b</i>",
+      "toolingSymbol": "b",
+      "artifactVersion": "1.0"
+    },
     "name": "Burnable",
     "aliases": [
       "Retire"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "<i>b</i>",
-      "toolingSymbol": "b"
-    },
     "controlUri": "../../../../../../artifacts/behaviors/burnable/burnable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the burning or decommissioning of token instances of the class. This does not delete a token, but rather places it in a permanent non-use state.  Burning is a one way operation and cannot be reversed. This behavior is Delegable. If the token definition is Delegable, BurnFrom will be available.",
@@ -23,18 +24,16 @@
       "comments": "",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
-      {
-        "visualSymbol": "",
-        "toolingSymbol": ""
-      }
-    ],
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
     "influencedBySymbols": [
       {
         "description": "Delegable or not, will determine if the BurnFrom Control will be available in the implementation.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "<i>g</i>",
-          "toolingSymbol": "g"
+          "toolingSymbol": "g",
+          "artifactVersion": ""
         }
       }
     ],

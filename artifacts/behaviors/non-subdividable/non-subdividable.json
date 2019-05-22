@@ -1,15 +1,16 @@
 {
   "artifact": {
-    "type": "BEHAVIOR",
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>~d</i>",
+      "toolingSymbol": "~d",
+      "artifactVersion": "1.0"
+    },
     "name": "Non-Subdividable",
     "aliases": [
       "alias1",
       "alias2"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "<i>~d</i>",
-      "toolingSymbol": "~d"
-    },
     "controlUri": "../../../../../../artifacts/behaviors/subdividable/non-subdividable.proto",
     "artifactDefinition": {
       "businessDescription": "An ability or restriction on the token where it cannot be subdivided from a single whole token into fractions. Sets the base token Decimals property to 0 which will make the token non-sub-dividable and a whole token is the smallest ownable unit of the token.",
@@ -24,21 +25,16 @@
       "comments": "",
       "artifact": null
     },
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "type": "BEHAVIOR",
         "visualSymbol": "<i>d</i>",
-        "toolingSymbol": "d"
+        "toolingSymbol": "d",
+        "artifactVersion": ""
       }
     ],
-    "influencedBySymbols": [
-      {
-        "description": "",
-        "symbol": {
-          "visualSymbol": "",
-          "toolingSymbol": ""
-        }
-      }
-    ],
+    "influencedBySymbols": [],
     "artifactFiles": [
       {
         "content": "CONTROL",

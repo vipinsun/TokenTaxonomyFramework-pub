@@ -2,14 +2,15 @@
   "artifact": {
     "artifactSymbol": {
       "type": "BASE",
-      "visualSymbol": "",
-      "toolingSymbol": "",
+      "visualSymbol": "&tau;<sub>F</sub>",
+      "toolingSymbol": "tF",
       "artifactVersion": "1.0"
     },
-    "name": "Fungible Token",
+    "name": "Fungible",
     "aliases": [
       "Liquid",
-      "Physical Cash"
+      "Physical Money",
+      "Cash"
     ],
     "controlUri": "../../../../../../artifacts/base/fungible/fungible.proto",
     "artifactDefinition": {
@@ -34,6 +35,14 @@
           "toolingSymbol": "t",
           "artifactVersion": ""
         }
+      }
+    ],
+    "incompatibleWithSymbols": [
+      {
+        "type": "BASE",
+        "visualSymbol": "",
+        "toolingSymbol": "",
+        "artifactVersion": ""
       }
     ],
     "influencedBySymbols": [
@@ -98,14 +107,21 @@
     "baseToken": {
       "artifactSymbol": {
         "type": "BASE",
-        "visualSymbol": "&tau;F",
+        "visualSymbol": "&tau;<sub>F</sub>",
         "toolingSymbol": "tF",
         "artifactVersion": ""
       }
     },
     "behaviors": {
       "listStart": "{",
-      "behaviorSymbol": [],
+      "behaviorSymbols": [
+        {
+          "type": "BEHAVIOR",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
+      ],
       "listEnd": "}"
     },
     "propertySets": [

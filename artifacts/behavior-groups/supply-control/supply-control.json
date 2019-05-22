@@ -1,14 +1,15 @@
 {
   "artifact": {
-    "type": "BEHAVIOR_GROUP",
+    "artifactSymbol": {
+      "type": "BEHAVIOR_GROUP",
+      "visualSymbol": "<i>SC</i>",
+      "toolingSymbol": "SC",
+      "artifactVersion": "1.0"
+    },
     "name": "Supply Control",
     "aliases": [
       "Central Bank"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "<i>SC</i>",
-      "toolingSymbol": "SC"
-    },
     "controlUri": "../../../../../../artifacts/behavior-groups/supply-control/supply-control.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will provide controls to increase and decrease supply of tokens within the class.  Additionally, it will include the ability to support a role, like Minters, that will be allowed to invoke the Mintable behavior. The owner can add accounts to the role and any account that is a member of the role will be able to mint tokens in the class.",
@@ -23,18 +24,33 @@
       "comments": "",
       "artifact": null
     },
+    "dependencies": [
+      {
+        "description": "",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
+      }
+    ],
     "incompatibleWithSymbols": [
       {
+        "type": "BEHAVIOR",
         "visualSymbol": "<i>s</i>",
-        "toolingSymbol": "s"
+        "toolingSymbol": "s",
+        "artifactVersion": ""
       }
     ],
     "influencedBySymbols": [
       {
         "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "<i>r</i>",
-          "toolingSymbol": "r"
+          "toolingSymbol": "r",
+          "artifactVersion": ""
         }
       }
     ],
@@ -85,16 +101,22 @@
   },
   "behaviorSymbols": [
     {
+      "type": "BEHAVIOR",
       "visualSymbol": "m",
-      "toolingSymbol": "<i>m</i>"
+      "toolingSymbol": "<i>m</i>",
+      "artifactVersion": ""
     },
     {
+      "type": "BEHAVIOR",
       "visualSymbol": "b",
-      "toolingSymbol": "<i>b</i>"
+      "toolingSymbol": "<i>b</i>",
+      "artifactVersion": ""
     },
     {
+      "type": "BEHAVIOR",
       "visualSymbol": "r",
-      "toolingSymbol": "<i>r</i>"
+      "toolingSymbol": "<i>r</i>",
+      "artifactVersion": ""
     }
   ],
   "memberBehaviorArtifacts": {}

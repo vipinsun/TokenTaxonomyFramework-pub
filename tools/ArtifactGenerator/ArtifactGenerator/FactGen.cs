@@ -214,13 +214,9 @@ namespace ArtifactGenerator
 				},
 				IncompatibleWithSymbols = { new ArtifactSymbol
 				{
+					Type = ArtifactType,
 					ToolingSymbol = "",
 					VisualSymbol = ""
-				}},
-				InfluencedBySymbols = { new SymbolInfluence
-				{
-					Symbol = new ArtifactSymbol(),
-					Description = ""
 				}},
 				Dependencies = { new SymbolDependency
 				{
@@ -252,6 +248,7 @@ namespace ArtifactGenerator
 							ArtifactVersion = ""
 						}
 					});
+					artifactBase.TokenType = BaseType;
 					switch (BaseType)
 					{
 						case TokenType.Fungible:
@@ -354,7 +351,7 @@ namespace ArtifactGenerator
 							VisualSymbol = ""
 						}
 					});
-					artifactBehavior.Artifact.Dependencies.Add(new SymbolDependency()
+					artifactBehavior.Artifact.Dependencies.Add(new SymbolDependency
 					{
 						Description = "",
 						Symbol = new ArtifactSymbol
@@ -582,6 +579,10 @@ namespace ArtifactGenerator
 				Behaviors = new BehaviorList
 				{
 					ListStart = "{",
+					BehaviorSymbols = { new ArtifactSymbol
+					{
+						Type = ArtifactType.Behavior
+					}},
 					ListEnd = "}"
 				},
 				GroupStart = "[",
@@ -591,7 +592,10 @@ namespace ArtifactGenerator
 			var psli = new PropertySetListItem
 			{
 				ListStart = "+",
-				PropertySetSymbols = new ArtifactSymbol()
+				PropertySetSymbols = new ArtifactSymbol
+				{
+					Type = ArtifactType.PropertySet
+				}
 			};
 			singleToken.PropertySets.Add(psli);
 

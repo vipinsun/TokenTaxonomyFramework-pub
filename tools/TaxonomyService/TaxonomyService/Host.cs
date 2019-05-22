@@ -24,24 +24,24 @@ namespace TTI.TTF.Taxonomy
             return Task.FromResult(ModelManager.GetFullTaxonomy(version));
         }
 
-        public override Task<Base> GetBaseArtifact(Symbol symbol, ServerCallContext ctx)
+        public override Task<Base> GetBaseArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetBaseArtifact");
             return Task.FromResult(ModelManager.GetBaseArtifact(symbol));
         }
         
-        public override Task<Behavior> GetBehaviorArtifact(Symbol symbol, ServerCallContext ctx)
+        public override Task<Behavior> GetBehaviorArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetBehaviorArtifact");
             return Task.FromResult(ModelManager.GetBehaviorArtifact(symbol));
         }
         
-        public override Task<BehaviorGroup> GetBehaviorGroupArtifact(Symbol symbol, ServerCallContext ctx)
+        public override Task<BehaviorGroup> GetBehaviorGroupArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetBehaviorGroupArtifact");
             return Task.FromResult(ModelManager.GetBehaviorGroupArtifact(symbol));
         }
-        public override Task<PropertySet> GetPropertySetArtifact(Symbol symbol, ServerCallContext ctx)
+        public override Task<PropertySet> GetPropertySetArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetPropertySetArtifact");
             return Task.FromResult(ModelManager.GetPropertySetArtifact(symbol));

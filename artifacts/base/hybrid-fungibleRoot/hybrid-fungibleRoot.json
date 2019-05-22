@@ -1,13 +1,12 @@
 {
   "artifact": {
-    "artifact": {
-      "artifactSymbol": {
-        "type": "BASE",
-        "visualSymbol": "&tau;<sub>F</sub>(&tau;)",
-        "toolingSymbol": "tF(t)",
-        "artifactVersion": "1.0"
-      },
-    "name": "Hybrid-FungibleRoot",
+    "artifactSymbol": {
+      "type": "BASE",
+      "visualSymbol": "&tau;<sub>F</sub>(&tau;)",
+      "toolingSymbol": "tF(t)",
+      "artifactVersion": "1.0"
+    },
+    "name": "Hybrid-fungibleRoot",
     "aliases": [
       "alias1",
       "alias2"
@@ -47,10 +46,21 @@
     ],
     "influencedBySymbols": [
       {
+        "description": "",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
+      },
+      {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "~d",
-          "toolingSymbol": "~d"
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
         }
       }
     ],
@@ -104,11 +114,23 @@
     "parent": {
       "groupStart": "[",
       "baseToken": {
-        "baseSymbol": ""
+        "artifactSymbol": {
+          "type": "BASE",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
       },
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbol": [],
+        "behaviorSymbols": [
+          {
+            "type": "BEHAVIOR",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
+        ],
         "listEnd": "}"
       },
       "propertySets": [
@@ -129,17 +151,34 @@
       {
         "groupStart": "[",
         "baseToken": {
-          "baseSymbol": ""
+          "artifactSymbol": {
+            "type": "BASE",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
         },
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbol": [],
+          "behaviorSymbols": [
+            {
+              "type": "BEHAVIOR",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
+          ],
           "listEnd": "}"
         },
         "propertySets": [
           {
             "listStart": "+",
-            "propertySetSymbol": ""
+            "propertySetSymbols": {
+              "type": "PROPERTY_SET",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
           }
         ],
         "groupEnd": "]"
@@ -147,17 +186,34 @@
       {
         "groupStart": "[",
         "baseToken": {
-          "baseSymbol": ""
+          "artifactSymbol": {
+            "type": "BASE",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
         },
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbol": [],
+          "behaviorSymbols": [
+            {
+              "type": "BEHAVIOR",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
+          ],
           "listEnd": "}"
         },
         "propertySets": [
           {
             "listStart": "+",
-            "propertySetSymbol": ""
+            "propertySetSymbols": {
+              "type": "PROPERTY_SET",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
           }
         ],
         "groupEnd": "]"

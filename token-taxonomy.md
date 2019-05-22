@@ -142,7 +142,7 @@ Token Templates start out with a common set of base properties and then diverge 
 
 ### Behaviors
 
-Behaviors can be capabilities or restrictions and can be common across fungible and non-fungible types, or only apply to one of them.  Behaviors also have supporting properties that become a part of the token schema and definition.  Behaviors use the first letter of the behavior as its representation in the taxonomy.  Collisions of letters are avoided by adding additional letters from a single word name or the letter of a second word.
+Behaviors can be capabilities or restrictions, logic, and can be common across fungible and non-fungible types, or only apply to one of them.  Behaviors also have can supporting properties that become a part of the token schema and definition.  Behaviors use the first letter of the behavior as its representation in the taxonomy. Collisions of letters are avoided by adding additional letters from a single word name or the letter of a second word.
 
 Behaviors are very business specific and usually have existing “non-blockchain” implementations which are well understood. Here are some common behaviors.
 

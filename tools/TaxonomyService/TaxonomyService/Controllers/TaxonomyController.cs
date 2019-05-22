@@ -7,10 +7,8 @@ using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
 using Newtonsoft.Json.Linq;
-using TTI.TTF.Taxonomy.Model;
 using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
-using TTI.TTF.Taxonomy.Model.Grammar;
 
 namespace TTI.TTF.Taxonomy.Controllers
 {
@@ -364,9 +362,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case ArtifactType.Behavior:
 					var updateBehavior = artifactRequest.ArtifactTypeObject.Unpack<Behavior>();
 
-					var existingBehavior = ModelManager.GetBehaviorArtifact(new Symbol
+					var existingBehavior = ModelManager.GetBehaviorArtifact(new ArtifactSymbol
 					{
-						ArtifactSymbol = updateBehavior.Artifact.ArtifactSymbol.ToolingSymbol
+						ToolingSymbol = updateBehavior.Artifact.ArtifactSymbol.ToolingSymbol
 					});
 
 					existingBehavior?.MergeFrom(updateBehavior);
@@ -382,9 +380,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case ArtifactType.BehaviorGroup:
 					var updateBehaviorGroup = artifactRequest.ArtifactTypeObject.Unpack<BehaviorGroup>();
 
-					var existingBehaviorGroup = ModelManager.GetBehaviorGroupArtifact(new Symbol
+					var existingBehaviorGroup = ModelManager.GetBehaviorGroupArtifact(new ArtifactSymbol
 					{
-						ArtifactSymbol = updateBehaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol
+						ToolingSymbol = updateBehaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol
 					});
 
 					existingBehaviorGroup?.MergeFrom(updateBehaviorGroup);
@@ -400,9 +398,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case ArtifactType.PropertySet:
 					var updatePropertySet = artifactRequest.ArtifactTypeObject.Unpack<PropertySet>();
 
-					var existingPropertySet = ModelManager.GetPropertySetArtifact(new Symbol
+					var existingPropertySet = ModelManager.GetPropertySetArtifact(new ArtifactSymbol
 					{
-						ArtifactSymbol = updatePropertySet.Artifact.ArtifactSymbol.ToolingSymbol
+						ToolingSymbol = updatePropertySet.Artifact.ArtifactSymbol.ToolingSymbol
 					});
 
 					existingPropertySet?.MergeFrom(updatePropertySet);
@@ -502,14 +500,14 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 		internal static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
 		{
-			_log.Info("DeleteArtifact of type: " + artifactRequest.Type + " with tooling symbol: " + artifactRequest.ArtifactSymbol);
+			_log.Info("DeleteArtifact of type: " + artifactRequest.ArtifactSymbol.Type + " with tooling symbol: " + artifactRequest.ArtifactSymbol);
 			DeleteArtifactResponse response;
 			var artifactFolderName =
-				ModelManager.GetArtifactFolderNameBySymbol(artifactRequest.Type,artifactRequest.ArtifactSymbol
+				ModelManager.GetArtifactFolderNameBySymbol(artifactRequest.ArtifactSymbol.Type, artifactRequest.ArtifactSymbol
 					.ToolingSymbol);
 			try
 			{
-				switch (artifactRequest.Type)
+				switch (artifactRequest.ArtifactSymbol.Type)
 				{
 					case ArtifactType.Base:
 						DeleteArtifactFolder(BaseFolder, artifactFolderName);
@@ -536,7 +534,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 			catch (Exception e)
 			{
-				_log.Error("Error attempting to delete artifact of type: " + artifactRequest.Type + " with tooling symbol: " + artifactRequest.ArtifactSymbol);
+				_log.Error("Error attempting to delete artifact of type: " + artifactRequest.ArtifactSymbol.Type + " with tooling symbol: " + artifactRequest.ArtifactSymbol);
 				_log.Error(e);
 				response = new DeleteArtifactResponse
 				{
@@ -632,72 +630,66 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 		private static Artifact CreateGenericArtifactObject(string name, ArtifactType artifactType)
 		{
-			var artifact = new Artifact
+			var artifact =  new Artifact
 			{
 				Name = name,
-				Type = artifactType,
 				ArtifactSymbol = new ArtifactSymbol
 				{
+					Type = artifactType,
 					ToolingSymbol = "",
-					VisualSymbol = ""
+					VisualSymbol = "",
+					ArtifactVersion = "1.0"
 				},
 				ArtifactDefinition = new ArtifactDefinition
 				{
 					BusinessDescription = "This is a " + name + " of type: " + artifactType,
 					BusinessExample = "",
 					Comments = "",
-					Analogies =
+					Analogies = { new ArtifactAnalogy
 					{
-						new ArtifactAnalogy
-						{
-							Name = "Analogy 1",
-							Description = name + " analogy 1 description"
-						}
-					}
+						Name = "Analogy 1",
+						Description = name + " analogy 1 description"
+					}}
 				},
 				Maps = new Maps
 				{
-					CodeReferences =
+					CodeReferences = { new MapReference
 					{
-						new MapReference
-						{
-							MappingType = MappingType.SourceCode,
-							Name = "Code 1",
-							Platform = TargetPlatform.Daml,
-							ReferencePath = ""
-						}
-					},
-					ImplementationReferences =
+						MappingType = MappingType.SourceCode,
+						Name = "Code 1",
+						Platform = TargetPlatform.Daml,
+						ReferencePath = ""
+					}},
+					ImplementationReferences = { new MapReference
 					{
-						new MapReference
-						{
-							MappingType = MappingType.Implementation,
-							Name = "Implementation 1",
-							Platform = TargetPlatform.ChaincodeGo,
-							ReferencePath = ""
-						}
-					},
-					Resources =
+						MappingType = MappingType.Implementation,
+						Name = "Implementation 1",
+						Platform = TargetPlatform.ChaincodeGo,
+						ReferencePath = ""
+					}},
+					Resources = { new MapResourceReference
 					{
-						new MapResourceReference
-						{
-							MappingType = MappingType.Resource,
-							Name = "Regulation Reference 1",
-							Description = "",
-							ResourcePath = ""
-						}
-					}
+						MappingType = MappingType.Resource,
+						Name = "Regulation Reference 1",
+						Description = "",
+						ResourcePath = ""
+					}}
 				},
-				IncompatibleWithSymbols =
+				IncompatibleWithSymbols = { new ArtifactSymbol
 				{
-					new ArtifactSymbol
-					{
-						ToolingSymbol = "",
-						VisualSymbol = ""
-					}
-				},
-				Aliases = {"alias1", "alias2"}
+					Type = artifactType,
+					ToolingSymbol = "",
+					VisualSymbol = ""
+				}},
+				Dependencies = { new SymbolDependency
+				{
+					Description = "",
+					Symbol = new ArtifactSymbol()
+				}},
+				Aliases = { "alias1", "alias2"}
+				
 			};
+
 			return artifact;
 		}
 
@@ -709,11 +701,15 @@ namespace TTI.TTF.Taxonomy.Controllers
 			{
 				BaseToken = new TokenBase
 				{
-					BaseSymbol = ""
+					ArtifactSymbol = new ArtifactSymbol()
 				},
 				Behaviors = new BehaviorList
 				{
 					ListStart = "{",
+					BehaviorSymbols = { new ArtifactSymbol
+					{
+						Type = ArtifactType.Behavior
+					}},
 					ListEnd = "}"
 				},
 				GroupStart = "[",
@@ -723,7 +719,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 			var psli = new PropertySetListItem
 			{
 				ListStart = "+",
-				PropertySetSymbol = ""
+				PropertySetSymbols = new ArtifactSymbol
+				{
+					Type = ArtifactType.PropertySet
+				}
 			};
 			singleToken.PropertySets.Add(psli);
 
@@ -754,7 +753,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return formula;
 		}
 
-		private static Base GetTokenTypeBase(TokenType baseType)
+		
+		private static TemplateBase GetTokenTypeBase(TokenType baseType)
 		{
 			string baseName;
 			const string typeFolder = "base";
@@ -784,7 +784,15 @@ namespace TTI.TTF.Taxonomy.Controllers
 			var baseFile = File.OpenText(_artifactPath + typeFolder + _folderSeparator + baseName + _folderSeparator + baseName+".json");
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
-			return JsonParser.Default.Parse<Base>(formattedJson);
+			var baseTypeJson = JsonParser.Default.Parse<Base>(formattedJson);
+			var templateBase = new TemplateBase
+			{
+				Base = baseTypeJson,
+				Symbol = baseTypeJson.Artifact.ArtifactSymbol,
+				ImplementationDetails = ""
+			};
+			
+			return templateBase;
 		}
 		
 
@@ -862,117 +870,82 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 		internal static TokenTemplate GetTokenTemplateTree(TokenTemplate template)
 		{
-			var formula = template.Artifact.ArtifactSymbol.ToolingSymbol.Trim();
-			string rootToken;
-			if (template.Base.TokenType == TokenType.Fungible || template.Base.TokenType == TokenType.NonFungible)
-			{
-				if (formula.StartsWith("["))
-				{
-					var rootToken1 = formula.Split("[");
-					var rootToken2 = rootToken1[0].Split("]");
-					rootToken = rootToken2[0];
-				}
-				else
-				{
-					rootToken = formula;
-				}
+			var retVal = template.Clone();
+			var (baseToken, behaviors, behaviorGroups, propertySets) = GetTokenComponents(template);
 
-				var (_, behaviors, behaviorGroups, propertySets) = GetTokenComponentsFromInsideBraces(rootToken);
-				template.Behaviors.Add(behaviors);
-				template.BehaviorGroups.Add(behaviorGroups);
-				template.PropertySets.Add(propertySets);
+			retVal.Base.Base = baseToken;
+			foreach (var b in behaviors)
+			{
+				var behavior = retVal.Behaviors.SingleOrDefault(e =>
+					e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+				if (behavior != null) behavior.Behavior = b;
 			}
-
-			if (template.Base.TokenType == TokenType.HybridFungibleRoot ||
-			    template.Base.TokenType == TokenType.HybridNonFungibleRoot)
+			foreach (var b in behaviorGroups)
 			{
-				string children;
-				if (formula.StartsWith("["))
-				{
-					var rootToken1 = formula.Split("[");
-					var rootToken2 = rootToken1[0].Split("]");
-					rootToken = rootToken2[0];
-					children = rootToken2[1];
-				}
-				else
-				{
-					var rootToken1 = formula.Split("(");
-					rootToken = rootToken1[0];
-					children = rootToken1[1];
-				}
+				var behaviorGroup = retVal.BehaviorGroups.SingleOrDefault(e =>
+					e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+				if (behaviorGroup != null) behaviorGroup.BehaviorGroup = b;
+			}
+			foreach (var p in propertySets)
+			{
+				var propertySet = retVal.PropertySets.SingleOrDefault(e =>
+					e.Symbol.ToolingSymbol == p.Artifact.ArtifactSymbol.ToolingSymbol);
+				if (propertySet != null) propertySet.PropertySet = p;
+			}
+			
+			//iterate through any children
+			foreach (var child in retVal.Base.Base.ChildTokens){
+				var (childToken, childBehaviors, childBehaviorGroups, childPropertySets) = GetTokenComponents(template);
 
-				var (_, behaviors, behaviorGroups, propertySets) = GetTokenComponentsFromInsideBraces(rootToken);
-				template.Behaviors.Add(behaviors);
-				template.BehaviorGroups.Add(behaviorGroups);
-				template.PropertySets.Add(propertySets);
-
-				if (children.StartsWith("(["))
+				child.Base.Base = childToken;
+				foreach (var b in childBehaviors)
 				{
-					var outerChild = children.Split("(");
-					var childTokens = outerChild[0].Split("[");
-					var firstChild = childTokens[1].Split("]");
-					foreach (var child in firstChild)
-					{
-						var (childBase, childBehaviors, childBehaviorGroups, childPropertySets) = GetTokenComponentsFromInsideBraces(child);
-						var newChild = new TokenTemplate
-						{
-							Base = childBase
-						};
-						newChild.Behaviors.Add(childBehaviors);
-						newChild.BehaviorGroups.Add(childBehaviorGroups);
-						newChild.PropertySets.Add(childPropertySets);
-						template.Base.ChildTokens.Add(newChild);
-					}
+					var behavior = child.Behaviors.SingleOrDefault(e =>
+						e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+					if (behavior != null) behavior.Behavior = b;
+				}
+				foreach (var b in childBehaviorGroups)
+				{
+					var behaviorGroup = child.BehaviorGroups.SingleOrDefault(e =>
+						e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+					if (behaviorGroup != null) behaviorGroup.BehaviorGroup = b;
+				}
+				foreach (var p in childPropertySets)
+				{
+					var propertySet = child.PropertySets.SingleOrDefault(e =>
+						e.Symbol.ToolingSymbol == p.Artifact.ArtifactSymbol.ToolingSymbol);
+					if (propertySet != null) propertySet.PropertySet = p;
 				}
 			}
 			
-			if (template.Base.TokenType == TokenType.HybridFungibleRootHybridChildren ||
-			    template.Base.TokenType == TokenType.HybridNonFungibleRootHybridChildren)
-			{
-				
-			}
-			
-			return template;
+			return retVal;
 		}
 
-		private static (Base, IEnumerable<Behavior>, IEnumerable<BehaviorGroup>, IEnumerable<PropertySet>) GetTokenComponentsFromInsideBraces(string formula)
+		private static (Base, IEnumerable<Behavior>, IEnumerable<BehaviorGroup>, IEnumerable<PropertySet>) GetTokenComponents(TokenTemplate template)
 		{
-			var behaviors1 = formula.Split("{");
-			var behaviors2 = behaviors1[1].Split("}");
-			var behaviors = behaviors2[0].Split(",");
 
-			var baseToken = ModelManager.GetBaseArtifact(new Symbol
-			{
-				ArtifactSymbol = behaviors1[0]
-			});
+			var baseToken = ModelManager.GetBaseArtifact(template.Artifact.ArtifactSymbol);
 			
 			var behaviorList = new List<Behavior>();
 			var behaviorGroupList = new List<BehaviorGroup>();
+			var propertySetList = new List<PropertySet>();
 
-			foreach (var t in behaviors)
+			foreach (var t in template.Behaviors)
 			{
-				if (char.IsUpper(t[0]))
-				{
-					behaviorGroupList.Add(ModelManager.GetBehaviorGroupArtifact(new Symbol
-					{
-						ArtifactSymbol = t
-					}));
-					continue;
-				}
-
-				behaviorList.Add(ModelManager.GetBehaviorArtifact(new Symbol
-				{
-					ArtifactSymbol = t
-				}));
+				behaviorList.Add(ModelManager.GetBehaviorArtifact(t.Symbol));
 			}
-
-			var props1 = formula.Split("}");
-			var props2 = props1[1].Split("]");
-			var props = props2[0].Split("+");
-			var propertySetList = (from t in props where t.StartsWith("ph") select ModelManager.GetPropertySetArtifact(new Symbol {ArtifactSymbol = t})).ToList();
-
+			foreach (var t in template.BehaviorGroups)
+			{
+				behaviorGroupList.Add(ModelManager.GetBehaviorGroupArtifact(t.Symbol));
+			}
+			foreach (var t in template.PropertySets)
+			{
+				propertySetList.Add(ModelManager.GetPropertySetArtifact(t.Symbol));
+			}
+			 
 			return (baseToken, behaviorList, behaviorGroupList, propertySetList);
 		}
+
 		#endregion
 	}
 }

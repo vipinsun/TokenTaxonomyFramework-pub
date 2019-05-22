@@ -1,15 +1,16 @@
 {
   "artifact": {
-    "type": "BEHAVIOR",
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>d</i>",
+      "toolingSymbol": "d",
+      "artifactVersion": "1.0"
+    },
     "name": "Subdividable",
     "aliases": [
       "alias1",
       "alias2"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "<i>d</i>",
-      "toolingSymbol": "d"
-    },
     "controlUri": "../../../../../../artifacts/behaviors/subdividable/subdividable.proto",
     "artifactDefinition": {
       "businessDescription": "An ability for the token to be subdivided from a single whole token into fractions, which are represented as decimal places. Any value greater than 0 will indicate how many fractions are possible where the smallest fraction is also the smallest ownable unit of the token.",
@@ -24,21 +25,26 @@
       "comments": "",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
+    "dependencies": [
       {
-        "visualSymbol": "<i>~d</i>",
-        "toolingSymbol": "~d"
-      }
-    ],
-    "influencedBySymbols": [
-      {
-        "description": "",
+        "description": "Decimals property for indicating how many decimal places the a whole token can be subdivided into.",
         "symbol": {
-          "visualSymbol": "",
-          "toolingSymbol": ""
+          "type": "PROPERTY_SET",
+          "visualSymbol": "&phi;D",
+          "toolingSymbol": "phD",
+          "artifactVersion": ""
         }
       }
     ],
+    "incompatibleWithSymbols": [
+      {
+        "type": "BEHAVIOR",
+        "visualSymbol": "<i>~d</i>",
+        "toolingSymbol": "~d",
+        "artifactVersion": ""
+      }
+    ],
+    "influencedBySymbols": [],
     "artifactFiles": [
       {
         "content": "CONTROL",

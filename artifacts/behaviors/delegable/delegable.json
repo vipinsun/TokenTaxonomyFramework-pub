@@ -1,14 +1,15 @@
 {
   "artifact": {
-    "type": "BEHAVIOR",
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>g</i>",
+      "toolingSymbol": "g",
+      "artifactVersion": "1.0"
+    },
     "name": "Delegable",
     "aliases": [
       "To Delegate"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "<i>g</i>",
-      "toolingSymbol": "g"
-    },
     "controlUri": "../../../../../../artifacts/behaviors/delegable/delegable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the delegation of certain behaviors to another party or account to invoke them on the behalf of the owner. When applied to a token, behaviors that are Delegable will enable delegated request invocations. This is useful to provide another party to automatically be able to perform the behaviors that can be delegated without seeking permission up to a certain allowance.",
@@ -23,21 +24,9 @@
       "comments": "Applied to behaviors that are Delegable.",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
-      {
-        "visualSymbol": "",
-        "toolingSymbol": ""
-      }
-    ],
-    "influencedBySymbols": [
-      {
-        "description": "",
-        "symbol": {
-          "visualSymbol": "",
-          "toolingSymbol": ""
-        }
-      }
-    ],
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
     "artifactFiles": [
       {
         "content": "CONTROL",

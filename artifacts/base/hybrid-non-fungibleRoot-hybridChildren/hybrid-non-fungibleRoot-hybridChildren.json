@@ -1,15 +1,16 @@
 {
   "artifact": {
-    "type": "BASE",
-    "name": "hybrid-non-fungibleRoot-hybridChildren",
+    "artifactSymbol": {
+      "type": "BASE",
+      "visualSymbol": "&tau;<sub>N</sub>([&tau;(&tau;))",
+      "toolingSymbol": "tN([t(t)]",
+      "artifactVersion": "1.0"
+    },
+    "name": "Hybrid-non-fungibleRoot-hybridChildren",
     "aliases": [
       "alias1",
       "alias2"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "&tau;<sub>N</sub>([&tau;(&tau;))",
-      "toolingSymbol": "tN([t(t)]"
-    },
     "controlUri": "../../../../../../artifacts/base/hybrid-non-fungibleRoot-hybridChildren/hybrid-non-fungibleRoot-hybridChildren.proto",
     "artifactDefinition": {
       "businessDescription": "This is a hybrid-non-fungibleRoot-hybridChildren of type: Base",
@@ -24,18 +25,42 @@
       "comments": "",
       "artifact": null
     },
+    "dependencies": [
+      {
+        "description": "",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau;<sub>N</sub>",
+          "toolingSymbol": "tN",
+          "artifactVersion": ""
+        }
+      }
+    ],
     "incompatibleWithSymbols": [
       {
+        "type": "BASE",
         "visualSymbol": "",
-        "toolingSymbol": ""
+        "toolingSymbol": "",
+        "artifactVersion": ""
       }
     ],
     "influencedBySymbols": [
       {
+        "description": "",
+        "symbol": {
+          "type": "BASE",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        }
+      },
+      {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
+          "type": "BEHAVIOR",
           "visualSymbol": "~d",
-          "toolingSymbol": "~d"
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
         }
       }
     ],
@@ -84,22 +109,39 @@
       "artifact": null
     }
   },
-  "tokenType": "HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN",
+  "tokenType": "HYBRID_NON_FUNGIBLE_ROOT_HYBRID_CHILDREN",
   "hybridWithHybrids": {
     "parent": {
       "groupStart": "[",
       "baseToken": {
-        "baseSymbol": ""
+        "artifactSymbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau<sub>N</sub>",
+          "toolingSymbol": "tN",
+          "artifactVersion": ""
+        }
       },
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbol": [],
+        "behaviorSymbols": [
+          {
+            "type": "BEHAVIOR",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
+        ],
         "listEnd": "}"
       },
       "propertySets": [
         {
           "listStart": "+",
-          "propertySetSymbol": ""
+          "propertySetSymbols": {
+            "type": "PROPERTY_SET",
+            "visualSymbol": "",
+            "toolingSymbol": "",
+            "artifactVersion": ""
+          }
         }
       ],
       "groupEnd": "]"
@@ -110,17 +152,34 @@
         "parent": {
           "groupStart": "[",
           "baseToken": {
-            "baseSymbol": ""
+            "artifactSymbol": {
+              "type": "BASE",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
           },
           "behaviors": {
             "listStart": "{",
-            "behaviorSymbol": [],
+            "behaviorSymbols": [
+              {
+                "type": "BEHAVIOR",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
+            ],
             "listEnd": "}"
           },
           "propertySets": [
             {
               "listStart": "+",
-              "propertySetSymbol": ""
+              "propertySetSymbols": {
+                "type": "PROPERTY_SET",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
             }
           ],
           "groupEnd": "]"
@@ -130,17 +189,34 @@
           {
             "groupStart": "[",
             "baseToken": {
-              "baseSymbol": ""
+              "artifactSymbol": {
+                "type": "BASE",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
             },
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbol": [],
+              "behaviorSymbols": [
+                {
+                  "type": "BEHAVIOR",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
+              ],
               "listEnd": "}"
             },
             "propertySets": [
               {
                 "listStart": "+",
-                "propertySetSymbol": ""
+                "propertySetSymbols": {
+                  "type": "PROPERTY_SET",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
               }
             ],
             "groupEnd": "]"
@@ -148,17 +224,34 @@
           {
             "groupStart": "[",
             "baseToken": {
-              "baseSymbol": ""
+              "artifactSymbol": {
+                "type": "BASE",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
             },
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbol": [],
+              "behaviorSymbols": [
+                {
+                  "type": "BEHAVIOR",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
+              ],
               "listEnd": "}"
             },
             "propertySets": [
               {
                 "listStart": "+",
-                "propertySetSymbol": ""
+                "propertySetSymbols": {
+                  "type": "PROPERTY_SET",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
               }
             ],
             "groupEnd": "]"
@@ -170,17 +263,34 @@
         "parent": {
           "groupStart": "[",
           "baseToken": {
-            "baseSymbol": ""
+            "artifactSymbol": {
+              "type": "BASE",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
           },
           "behaviors": {
             "listStart": "{",
-            "behaviorSymbol": [],
+            "behaviorSymbols": [
+              {
+                "type": "BEHAVIOR",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
+            ],
             "listEnd": "}"
           },
           "propertySets": [
             {
               "listStart": "+",
-              "propertySetSymbol": ""
+              "propertySetSymbols": {
+                "type": "PROPERTY_SET",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
             }
           ],
           "groupEnd": "]"
@@ -190,17 +300,34 @@
           {
             "groupStart": "[",
             "baseToken": {
-              "baseSymbol": ""
+              "artifactSymbol": {
+                "type": "BASE",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
             },
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbol": [],
+              "behaviorSymbols": [
+                {
+                  "type": "BEHAVIOR",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
+              ],
               "listEnd": "}"
             },
             "propertySets": [
               {
                 "listStart": "+",
-                "propertySetSymbol": ""
+                "propertySetSymbols": {
+                  "type": "PROPERTY_SET",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
               }
             ],
             "groupEnd": "]"
@@ -208,17 +335,34 @@
           {
             "groupStart": "[",
             "baseToken": {
-              "baseSymbol": ""
+              "artifactSymbol": {
+                "type": "BASE",
+                "visualSymbol": "",
+                "toolingSymbol": "",
+                "artifactVersion": ""
+              }
             },
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbol": [],
+              "behaviorSymbols": [
+                {
+                  "type": "BEHAVIOR",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
+              ],
               "listEnd": "}"
             },
             "propertySets": [
               {
                 "listStart": "+",
-                "propertySetSymbol": ""
+                "propertySetSymbols": {
+                  "type": "PROPERTY_SET",
+                  "visualSymbol": "",
+                  "toolingSymbol": "",
+                  "artifactVersion": ""
+                }
               }
             ],
             "groupEnd": "]"

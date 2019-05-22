@@ -1,14 +1,15 @@
 {
   "artifact": {
-    "type": "BEHAVIOR",
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>r</i>",
+      "toolingSymbol": "r",
+      "artifactVersion": "1.0"
+    },
     "name": "Roles",
     "aliases": [
       "Groups"
     ],
-    "artifactSymbol": {
-      "visualSymbol": "<i>r</i>",
-      "toolingSymbol": "r"
-    },
     "controlUri": "../../../../../../artifacts/behaviors/roles/roles.proto",
     "artifactDefinition": {
       "businessDescription": "A token can have behaviors that the class will restrict invocations to a select set of parties or accounts that are members of a role or group.  This is a generic behavior that can apply to a token many times to represent many role definitions within the template.",
@@ -23,21 +24,19 @@
       "comments": "Roles has a constructor control that creates roles and applies them to certain behaviors of the token at creation of the class from the template.",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
-      {
-        "visualSymbol": "",
-        "toolingSymbol": ""
-      }
-    ],
-    "influencedBySymbols": [
+    "dependencies": [
       {
         "description": "",
         "symbol": {
-          "visualSymbol": "",
-          "toolingSymbol": ""
+          "type": "PROPERTY_SET",
+          "visualSymbol": "&phi;ROLE",
+          "toolingSymbol": "phRole",
+          "artifactVersion": "1.0"
         }
       }
     ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
     "artifactFiles": [
       {
         "content": "CONTROL",
@@ -112,92 +111,5 @@
       }
     }
   ],
-  "properties": [
-    {
-      "name": "Role",
-      "valueDescription": "Name of a role that can have a list of accounts in the role.",
-      "propertyInvocations": [
-        {
-          "name": "GetRoleMembers",
-          "description": "The property value.",
-          "request": {
-            "controlMessageName": "GetRoleMembersRequest",
-            "description": "",
-            "inputParameters": [
-              {
-                "name": "RoleName",
-                "valueDescription": "Name of the Role"
-              }
-            ]
-          },
-          "response": {
-            "controlMessageName": "GetRoleMembersResponse",
-            "description": "Return value",
-            "outputParameters": [
-              {
-                "name": "Accounts",
-                "valueDescription": "value of property"
-              }
-            ]
-          }
-        },
-        {
-          "name": "AddRoleMember",
-          "description": "Add a party or account to a particular role.",
-          "request": {
-            "controlMessageName": "AddRoleMemberRequest",
-            "description": "",
-            "inputParameters": [
-              {
-                "name": "RoleId",
-                "valueDescription": "Name or Id of the Role"
-              },
-              {
-                "name": "AccountId",
-                "valueDescription": "Id of account to add to the Role"
-              }
-            ]
-          },
-          "response": {
-            "controlMessageName": "AddRoleMemberResponse",
-            "description": "Return value",
-            "outputParameters": [
-              {
-                "name": "Confirmation",
-                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the request."
-              }
-            ]
-          }
-        },
-        {
-          "name": "RemoveRoleMember",
-          "description": "Remove a party or account to a particular role",
-          "request": {
-            "controlMessageName": "RemoveRoleMemberRequest",
-            "description": "",
-            "inputParameters": [
-              {
-                "name": "RoleId",
-                "valueDescription": "Name or Id of the Role"
-              },
-              {
-                "name": "AccountId",
-                "valueDescription": "Id of account to add to the Role"
-              }
-            ]
-          },
-          "response": {
-            "controlMessageName": "RemoveRoleMemberResponse",
-            "description": "Return value",
-            "outputParameters": [
-              {
-                "name": "Confirmation",
-                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the request."
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ]
+  "properties": []
 }
