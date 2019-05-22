@@ -250,11 +250,10 @@ namespace TTI.TTF.Taxonomy
 		internal static Artifact MakeUniqueArtifact(Artifact artifact)
 		{
 			var newArtifact = artifact.Clone();
-			var newIdentifiers =
-				Utils.GetRandomArtifactFromArtifact(artifact.Name, artifact.ArtifactSymbol.VisualSymbol, artifact.ArtifactSymbol.ToolingSymbol);
-			newArtifact.Name = newIdentifiers.Name;
-			newArtifact.ArtifactSymbol.VisualSymbol = newIdentifiers.VisualSymbol;
-			newArtifact.ArtifactSymbol.ToolingSymbol = newIdentifiers.ToolingSymbol;
+			var (name, visualSymbol, toolingSymbol) = Utils.GetRandomArtifactFromArtifact(artifact.Name, artifact.ArtifactSymbol.VisualSymbol, artifact.ArtifactSymbol.ToolingSymbol);
+			newArtifact.Name = name;
+			newArtifact.ArtifactSymbol.VisualSymbol = visualSymbol;
+			newArtifact.ArtifactSymbol.ToolingSymbol = toolingSymbol;
 			return newArtifact;
 		}
 	}

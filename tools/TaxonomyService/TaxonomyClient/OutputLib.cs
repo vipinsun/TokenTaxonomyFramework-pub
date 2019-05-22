@@ -14,8 +14,8 @@ namespace TTI.TTF.Taxonomy
 	public static class OutputLib
 	{
 		private static readonly ILog _log;
-		private static string FolderSeparator = Os.IsWindows() ? "\\" : "/";
-		private static string ArtifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		private static readonly string _folderSeparator = Os.IsWindows() ? "\\" : "/";
+		private static readonly string _artifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
 		static OutputLib()
 		{
@@ -85,8 +85,12 @@ namespace TTI.TTF.Taxonomy
 		{
 			_log.Warn("	***BehaviorGroup***");
 			_log.Info("			-Symbol: " + symbol);
-			OutputArtifact(bg.Artifact);
-			OutputBehaviorSymbols(bg.BehaviorSymbols);
+			if (bg.Artifact != null)
+			{
+				OutputArtifact(bg.Artifact);
+				OutputBehaviorSymbols(bg.BehaviorSymbols);
+			}
+
 			_log.Warn("	***BehaviorGroup End***");
 		}
 
@@ -106,11 +110,14 @@ namespace TTI.TTF.Taxonomy
 		{
 			_log.Warn("		***Behavior***");
 			_log.Info(" 			-Symbol: " + symbol);
-			OutputArtifact(behavior.Artifact);
-			_log.Info(" 			-IsExternal: " + behavior.IsExternal);
-			_log.Info(" 			-Constructor: " + behavior.ConstructorName);
-			OutputInvocations(behavior.Invocations);
-			OutputBehaviorProperties(behavior.Properties);
+			if (behavior.Artifact != null)
+			{
+				OutputArtifact(behavior.Artifact);
+				_log.Info(" 			-IsExternal: " + behavior.IsExternal);
+				_log.Info(" 			-Constructor: " + behavior.ConstructorName);
+				OutputInvocations(behavior.Invocations);
+				OutputBehaviorProperties(behavior.Properties);
+			}
 			_log.Warn("		***Behavior End***");
 		}
 
@@ -166,23 +173,23 @@ namespace TTI.TTF.Taxonomy
 			_log.Warn("	***TokenTemplate***");
 			_log.Info("		-Formula: " + symbol);
 			OutputArtifact(template.Artifact);
-			OutputBaseType(template.Base.Artifact.ArtifactSymbol.ToolingSymbol, template.Base);
+			OutputBaseType(template.Base.Base.Artifact.ArtifactSymbol.ToolingSymbol, template.Base.Base);
 			_log.Error("		***Behaviors***");
 			foreach (var b in template.Behaviors)
 			{
-				OutputBehavior(b.Artifact.ArtifactSymbol.ToolingSymbol, b);
+				OutputBehavior(b.Symbol.ToolingSymbol, b.Behavior);
 			}
 			_log.Error("		***Behaviors End***");
 			_log.Warn("		***BehaviorGroups ***");
 			foreach (var b in template.BehaviorGroups)
 			{
-				OutputBehaviorGroup(b.Artifact.ArtifactSymbol.ToolingSymbol, b);
+				OutputBehaviorGroup(b.Symbol.ToolingSymbol, b.BehaviorGroup);
 			}
 			_log.Warn("		***BehaviorGroups End***");
 			_log.Error("		***PropertySets***");
 			foreach (var b in template.PropertySets)
 			{
-				OutputPropertySet(b.Artifact.ArtifactSymbol.ToolingSymbol, b);
+				OutputPropertySet(b.Symbol.ToolingSymbol, b.PropertySet);
 			}
 			_log.Error("		***PropertySets End***");
 			_log.Warn("	***TokenTemplate End***");
@@ -191,18 +198,32 @@ namespace TTI.TTF.Taxonomy
 	
 		private static void OutputArtifact(Artifact artifact)
 		{
+			if (artifact == null) return;
 			_log.Error("		[Details]:");
 			_log.Info("			-ArtifactName: " + artifact.Name);
-			_log.Info("			-Type: " + artifact.Type);
+			_log.Info("			-Type: " + artifact.ArtifactSymbol.Type);
 			OutputSymbol(artifact.ArtifactSymbol);
 			_log.Info("			-Aliases: " + artifact.Aliases);
 			OutputArtifactDefinition(artifact.ArtifactDefinition);
 			_log.Info("			-ControlUri: " + artifact.ControlUri);
+			OutputDependencies(artifact.Dependencies);
 			OutputInfluencedBy(artifact.InfluencedBySymbols);
 			OutputIncompatible(artifact.IncompatibleWithSymbols);
 			_log.Warn("			-ArtifactFiles:");
 			OutputArtifactFiles("			", artifact.ArtifactFiles);
 			OutputMaps(artifact.Maps);
+		}
+
+		private static void OutputDependencies(IEnumerable<SymbolDependency> artifactDependencies)
+		{
+			_log.Warn("			-Dependencies: ");
+               foreach (var i in artifactDependencies)
+               {
+               	_log.Error("				---------------------------------------------------");
+               	_log.Info("				-Symbol: " + i.Symbol);
+               	_log.Info("				-Description: " + i.Description);
+               	_log.Error("				---------------------------------------------------");
+               }
 		}
 
 		private static void OutputArtifactFiles(string buffer, IEnumerable<ArtifactFile> artifactFiles)
@@ -270,8 +291,10 @@ namespace TTI.TTF.Taxonomy
 		{
 			_log.Warn("			-Symbol: ");
 			_log.Error("				---------------------------------------------------");
+			_log.Info("				-Type: " + symbol.Type);
 			_log.Info("				-Tooling: " + symbol.ToolingSymbol);
 			_log.Info("				-Visual: " + symbol.VisualSymbol);
+			_log.Info("				-Version: " + symbol.ArtifactVersion);
 			_log.Error("				---------------------------------------------------");
 		}
 		private static void OutputInfluencedBy(IEnumerable<SymbolInfluence> artifactInfluencedBySymbols)
@@ -304,7 +327,7 @@ namespace TTI.TTF.Taxonomy
 		
 		internal static void SaveArtifact(ArtifactType type, string artifactName, string artifactJson)
 		{
-			_log.Info("Artifact Destination: " + ArtifactPath + FolderSeparator + type + " folder");
+			_log.Info("Artifact Destination: " + _artifactPath + _folderSeparator + type + " folder");
 			var formattedJson = JToken.Parse(artifactJson).ToString();
 
 			//test to make sure formattedJson will Deserialize.
@@ -348,12 +371,15 @@ namespace TTI.TTF.Taxonomy
 				return;
 			}
 
-			_log.Info("Saving Artifact: " + formattedJson);
-			if (ArtifactPath != null)
+			_log.Info("Saving Artifact: " + artifactName);
+			if (_artifactPath != null)
 			{
-				var artifactStream = File.CreateText(ArtifactPath + FolderSeparator + artifactName + ".json");
+				var savedTo =Directory.CreateDirectory(_artifactPath + _folderSeparator + artifactName);
+				var artifactStream = File.CreateText(_artifactPath + _folderSeparator + artifactName 
+				                                     + _folderSeparator + artifactName + ".json");
 				artifactStream.Write(formattedJson);
 				artifactStream.Close();
+				_log.Info("Saved to folder: " + savedTo.Name);
 			}
 
 			_log.Info("Local Artifact Save Complete");
@@ -362,7 +388,7 @@ namespace TTI.TTF.Taxonomy
 		internal static void UpdateArtifact(ArtifactType type, string folderName)
 		{
 			_log.Error("Updating: " + type + " name = " + folderName);
-			var path = ArtifactPath + FolderSeparator + folderName;
+			var path = _artifactPath + _folderSeparator + folderName;
 			if (Directory.Exists(path))
 			{
 				var artifactFolder = new DirectoryInfo(path);

@@ -60,6 +60,12 @@ namespace TTI.TTF.Taxonomy
 		public static (string Name, string VisualSymbol, string ToolingSymbol) GetRandomArtifactFromArtifact(string name,
 			string visualSymbol ,string toolingSymbol)
 		{
+			var randStr = Randomize("");
+			return (name + randStr, visualSymbol + randStr, toolingSymbol + randStr);
+		}
+
+		public static string Randomize(string input)
+		{
 			const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 			var stringChars = new char[1];
 			var random = new Random();
@@ -69,9 +75,7 @@ namespace TTI.TTF.Taxonomy
 				stringChars[i] = chars[random.Next(chars.Length)];
 			}
 
-			var randStr = new string(stringChars);
-			return (name + randStr, visualSymbol + random, toolingSymbol + randStr);
-
+			return new string(input+stringChars);
 		}
 	}
 

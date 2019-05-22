@@ -18,6 +18,7 @@ namespace ArtifactGenerator
 		private static ArtifactType ArtifactType { get; set; }
 		private static TokenType BaseType { get; set; }
 		private static TaxonomyVersion TaxonomyVersion { get; set; }
+		private static string Latest { get; set; }
 		public static void Main(string[] args)
 		{
 			if (args.Length == 6 || args.Length == 8 || args.Length == 4)
@@ -93,6 +94,8 @@ namespace ArtifactGenerator
 			}
 			else
 				fullPath += "/" + ArtifactPath + "/";
+
+			Latest = folderSeparator + "latest";
 
 			
 			string artifactTypeFolder;
@@ -231,7 +234,7 @@ namespace ArtifactGenerator
 				case ArtifactType.Base:
 					var formula = GenerateFormula();
 					artifactTypeFolder = "base";
-					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
+					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactBase = new Base
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "Base"),
@@ -278,7 +281,7 @@ namespace ArtifactGenerator
 				case ArtifactType.Behavior:
 					
 					artifactTypeFolder = "behaviors";
-					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
+					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactBehavior = new Behavior
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "Behaviors"),
@@ -365,7 +368,7 @@ namespace ArtifactGenerator
 					break;
 				case ArtifactType.BehaviorGroup:
 					artifactTypeFolder = "behavior-groups";
-					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
+					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactBehaviorGroup = new BehaviorGroup
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "BehaviorGroups")
@@ -386,7 +389,7 @@ namespace ArtifactGenerator
 					break;
 				case ArtifactType.PropertySet:
 					artifactTypeFolder = "property-sets";
-					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
+					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactPropertySet = new PropertySet
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "PropertySets"),
@@ -473,7 +476,7 @@ namespace ArtifactGenerator
 					break;
 				case ArtifactType.TokenTemplate:
 					artifactTypeFolder = "token-templates";
-					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName);
+					outputFolder = Directory.CreateDirectory(fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactTokenTemplate = new TokenTemplate
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator, artifact, "TokenTemplates"),

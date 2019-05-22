@@ -11,6 +11,7 @@ namespace TTI.TTF.Taxonomy
 		private static IConfigurationRoot _config;
 		private static ILog _log;
 		internal static string ArtifactPath { get; set; }
+		internal static string Latest { get; set; }
 		private static string _gRpcHost;
 		private static int _gRpcPort;
 		private static Server _apiServer;
@@ -36,6 +37,7 @@ namespace TTI.TTF.Taxonomy
 			_gRpcPort = Convert.ToInt32(_config["gRpcPort"]);
 
 			FolderSeparator = Os.IsWindows() ? "\\" : "/";
+			Latest = FolderSeparator + "latest";
 
 			ModelManager.Init();
 			

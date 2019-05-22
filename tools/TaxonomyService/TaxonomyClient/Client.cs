@@ -412,9 +412,9 @@ namespace TTI.TTF.Taxonomy
 				return;
 			}
 
-			var symbolQuery = new Symbol
+			var symbolQuery = new ArtifactSymbol
 			{
-				ArtifactSymbol = symbol
+				ToolingSymbol = symbol
 			};
 
 			_log.Error("Taxonomy Artifact Symbol Query for Type: " + artifactType);

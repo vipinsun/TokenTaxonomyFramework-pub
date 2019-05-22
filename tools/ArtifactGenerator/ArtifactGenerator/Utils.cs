@@ -13,7 +13,7 @@ namespace ArtifactGenerator
 
 		public static void InitLog()
 		{
-			XmlDocument xmlDocument = new XmlDocument();
+			var xmlDocument = new XmlDocument();
 			try
 			{
 				if (Os.IsWindows())
