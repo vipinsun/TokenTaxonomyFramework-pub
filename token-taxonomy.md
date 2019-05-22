@@ -228,6 +228,10 @@ An artifact is more than just a single JSON model file, but all the artifact's s
 
 ![ArtifactModel](images/artifact-model.png)
 
+Artifacts are versioned as well, using a version folder and a version number defined in the ArtifactSymbol.  The most recent version, regardless of its number is stored in a folder called `latest` within the artifact folder name. Previous versions will be in version number folders, where each artifact file for that version is maintained.
+
+An artifact is referenced by its ArtifactSymbol, which includes its version.  A reference that does not specify a version will default to latest.
+
 For an in-depth technical overview of the model see [Taxonomy Model](taxonomy-model.md).
 
 ### Behavior Artifact

@@ -800,7 +800,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         = pb::FieldCodec.ForMessage(50, global::TTI.TTF.Taxonomy.Model.Core.Property.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property> properties_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property>();
     /// <summary>
-    ///for any properties that should be added to the token if the behavior is implemented.
+    ///for any properties that should be added to the token if the behavior is implemented, should consider moving these to a dependent property-set.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property> Properties {
