@@ -46,7 +46,7 @@ namespace TTI.TTF.Taxonomy
 			var newArtifactName = "";
 			var newSymbol = "";
 
-			if (args.Length > 0 &&  args.Length < 6 )
+			if (args.Length > 0 &&  args.Length < 7 )
 			{
 				_gRpcHost = _config["gRpcHost"];
 				_gRpcPort = Convert.ToInt32(_config["gRpcPort"]);

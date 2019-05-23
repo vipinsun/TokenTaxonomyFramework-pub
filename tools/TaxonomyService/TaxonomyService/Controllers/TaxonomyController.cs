@@ -278,6 +278,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newBehavior.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newBehavior.Artifact.ArtifactFiles, outputFolder, artifactName);
+					else
+					{
+						AddArtifactFiles(outputFolder, artifactName, "Behaviors", artifactType);
+					}
 					artifactJson = jsf.Format(newBehavior);
 					retVal.ArtifactTypeObject= Any.Pack(newBehavior);
 					break;
@@ -291,6 +295,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newBehaviorGroup.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newBehaviorGroup.Artifact.ArtifactFiles, outputFolder, artifactName);
+					else
+					{
+						AddArtifactFiles(outputFolder, artifactName, "BehaviorGroups", artifactType);
+					}
 					artifactJson = jsf.Format(newBehaviorGroup);
 					retVal.ArtifactTypeObject= Any.Pack(newBehaviorGroup);
 					break;
@@ -304,6 +312,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newPropertySet.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newPropertySet.Artifact.ArtifactFiles, outputFolder, artifactName);
+					else
+					{
+						AddArtifactFiles(outputFolder, artifactName, "PropertySets", artifactType);
+					}
 					retVal.ArtifactTypeObject= Any.Pack(newPropertySet);
 					artifactJson = jsf.Format(newPropertySet);
 					break;
@@ -319,6 +331,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newTokenTemplate.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newTokenTemplate.Artifact.ArtifactFiles, outputFolder, artifactName);
+					else
+					{
+						AddArtifactFiles(outputFolder, artifactName, "TokenTemplates", artifactType);
+					}
 					retVal.ArtifactTypeObject= Any.Pack(newTokenTemplate);
 					artifactJson = jsf.Format(newTokenTemplate);
 					break;
@@ -414,7 +430,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					artifactName = updateBehavior.Artifact.Name.ToLower();
 					artifactJson = jsf.Format(existingBehavior);
 					var (outcomeB, messageB) = VersionArtifact(BehaviorFolder, artifactName,
-						existingVersion,artifactJson, artifactType);
+						existingVersion, artifactJson, artifactType);
 					if (outcomeB)
 					{
 						ModelManager.AddOrUpdateInMemoryArtifact(artifactRequest.Type,
@@ -427,6 +443,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 						retVal.Updated = false;
 						_log.Error(messageB);
 					}
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				case ArtifactType.BehaviorGroup:
 					var updateBehaviorGroup = artifactRequest.ArtifactTypeObject.Unpack<BehaviorGroup>();
@@ -454,7 +471,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 						retVal.Updated = false;
 						_log.Error(messageBg);
 					}
-					
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				case ArtifactType.PropertySet:
 					var updatePropertySet = artifactRequest.ArtifactTypeObject.Unpack<PropertySet>();
@@ -482,7 +499,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 						retVal.Updated = false;
 						_log.Error(messagePs);
 					}
-					
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				case ArtifactType.TokenTemplate:
 					var updateTokenTemplate = artifactRequest.ArtifactTypeObject.Unpack<TokenTemplate>();
@@ -510,7 +527,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 						retVal.Updated = false;
 						_log.Error(messageT);
 					}
-					
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				default:
 					_log.Error("No matching type found for: " + artifactType);
@@ -521,7 +538,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 		}
 
 		private static bool SaveArtifact(ArtifactType type, string artifactName, string artifactJson,
-			DirectoryInfo outputFolder)
+			FileSystemInfo outputFolder)
 		{
 			_log.Info("Artifact Destination: " + _artifactPath + _folderSeparator + type + " folder");
 			var formattedJson = JToken.Parse(artifactJson).ToString();
@@ -576,7 +593,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 
 			_log.Info("Complete");
-			return false;
+			return true;
 		}
 
 		internal static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
@@ -1040,14 +1057,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 				if (string.IsNullOrEmpty(artifactVersion))
 					artifactVersion = "1.0";
 				var oldLatestPath = _artifactPath + _folderSeparator + artifactTypeFolder + _folderSeparator +
-				                    artifactName + artifactVersion;
+				                    artifactName + _folderSeparator + artifactVersion;
 				var (outcome, message) = CreateArtifactVersion(latestPath, oldLatestPath);
 				if (!outcome) return (false, message);
 				var outputFolder =
 					new DirectoryInfo(latestPath);
 
 				return (SaveArtifact(artifactType, artifactName, artifactJson, outputFolder), "latest");
-
 			}
 			catch (Exception e)
 			{
@@ -1071,12 +1087,16 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 			
 			// If the destination directory doesn't exist, create it.
-			if (!Directory.Exists(destDirName))
+			if (Directory.Exists(destDirName))
 			{
 				_log.Error(destDirName + " already exists, creating a backup.");
 				destDirName = Utils.Randomize(destDirName);
+			}
+			if (!Directory.Exists(destDirName))
+			{
+
 				Directory.CreateDirectory(destDirName);
-				_log.Error(destDirName + " is backup.");
+				_log.Error(destDirName + " is previous version.");
 			}
         
 			// Get the files in the directory and copy them to the new location.
@@ -1088,6 +1108,45 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 
 			return (true, "");
+		}
+		
+		private static void AddArtifactFiles(DirectoryInfo outputFolder, string artifactName, string nameSpaceAdd, ArtifactType artifactType)
+		{
+			try
+			{
+				CreateMarkdown(outputFolder, artifactName, artifactType);
+				CreateProto(outputFolder, artifactName, nameSpaceAdd);
+			}
+			catch (Exception e)
+			{
+				_log.Error("Error creating new artifact files");
+				_log.Error(e);
+			}
+		}
+		private static void CreateMarkdown(DirectoryInfo outputFolder, string artifactName, ArtifactType artifactType)
+		{
+			_log.Info("Creating Artifact Markdown");
+			var md = File.CreateText(outputFolder + _folderSeparator + artifactName + ".md");
+			md.Write("# " + artifactName + " a TTF " + artifactType);
+			md.Close();
+
+		}
+		
+		private static void CreateProto(DirectoryInfo outputFolder, string artifactName, string nameSpaceAdd)
+		{
+			_log.Info("Creating Artifact Proto");
+			var pFile = outputFolder + _folderSeparator + artifactName + ".proto";
+			
+			var proto  = File.CreateText(pFile);
+			var templateProto =
+				File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + 
+				                 _folderSeparator + "templates" + _folderSeparator + "artifact.proto");
+			
+			var ns = templateProto.Replace("BASE", nameSpaceAdd);
+			ns = ns.Replace("NAME", artifactName);
+			ns = ns.Replace("bASE", nameSpaceAdd.ToLower());
+			proto.Write(ns.Replace("ARTIFACT", artifactName));
+			proto.Close();
 		}
 		#endregion
 	}

@@ -212,7 +212,7 @@ namespace TTI.TTF.Taxonomy
 			_log.Info("CheckForUniqueArtifact: " + artifactType +": " + name);
 			try
 			{
-				if(string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(artifactType, artifact.ArtifactSymbol.ToolingSymbol)))
+				if(!string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(artifactType, artifact.ArtifactSymbol.ToolingSymbol)))
 					throw new Exception("Tooling Symbol Found.");
 				switch (artifactType)
 				{
@@ -242,9 +242,9 @@ namespace TTI.TTF.Taxonomy
 			}
 			catch (Exception)
 			{
-				return false;
+				return true;
 			}
-			return true;
+			return false;
 		}
 		
 		internal static Artifact MakeUniqueArtifact(Artifact artifact)
