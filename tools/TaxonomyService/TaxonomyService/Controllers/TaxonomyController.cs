@@ -117,7 +117,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 						try
 						{
 							behavior = GetArtifact<Behavior>(bJson[0]);
-
 						}
 						catch (Exception e)
 						{

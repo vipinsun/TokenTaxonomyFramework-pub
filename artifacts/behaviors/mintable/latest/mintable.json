@@ -1,12 +1,10 @@
 {
   "artifact": {
-    "artifact": {
-      "artifactSymbol": {
-        "type": "BEHAVIOR",
-        "visualSymbol": "<i>m</i>",
-        "toolingSymbol": "m",
-        "artifactVersion": "1.0"
-      }
+    "artifactSymbol": {
+      "type": "BEHAVIOR",
+      "visualSymbol": "<i>m</i>",
+      "toolingSymbol": "m",
+      "artifactVersion": "1.0"
     },
     "name": "Mintable",
     "aliases": [
