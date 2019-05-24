@@ -1,0 +1,65 @@
+@using TTI.TTF.Taxonomy.Model.Artifact
+@using TTI.TTF.WebExplorer.Controllers
+@model TTI.TTF.Taxonomy.Model.Taxonomy
+
+@{
+    ViewBag.Title = "Token Taxonomy Framework";
+    Layout = "_Layout";
+}
+
+<h2>Artifacts</h2>
+
+<h3>Token Bases</h3> 
+
+
+@foreach (var baseToken in Model.BaseTokenTypes.Values)
+{
+    <h4>Symbol: @Html.Raw(baseToken.Artifact.ArtifactSymbol.VisualSymbol)</h4>
+    <p>Name: @baseToken.Artifact.Name</p>
+    <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =baseToken.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+}
+
+<h3>Behaviors</h3> 
+
+@foreach (var behavior in Model.Behaviors.Values)
+{
+    <li>
+        <p>Symbol: @Html.Raw(behavior.Artifact.ArtifactSymbol.VisualSymbol)</p>
+        <p>Name: @behavior.Artifact.Name</p>
+        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behavior.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+    </li>                                                                                     
+}
+
+<h3>Behavior-Groups</h3> 
+
+@foreach (var behaviorGroup in Model.BehaviorGroups.Values)
+{
+    <li>
+        <p>Symbol: @Html.Raw(behaviorGroup.Artifact.ArtifactSymbol.VisualSymbol)</p>
+        <p>Name: @behaviorGroup.Artifact.Name</p>
+        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behavior.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+    </li>                                                                                     
+}
+
+<h3>Property-Sets</h3> 
+
+@foreach (var propertySet in Model.PropertySets.Values)
+{
+    <li>
+        <p>Symbol: @Html.Raw(propertySet.Artifact.ArtifactSymbol.VisualSymbol)</p>
+        <p>Name: @propertySet.Artifact.Name</p>
+        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behavior.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+    </li>                                                                                     
+}
+
+<h3>Token-Templates</h3> 
+
+@foreach (var tokenTemplate in Model.TokenTemplates.Values)
+{
+    <li>
+        <p>Symbol: @Html.Raw(tokenTemplate.Artifact.ArtifactSymbol.VisualSymbol)</p>
+        <p>Name: @tokenTemplate.Artifact.Name</p>
+        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behavior.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+    </li>
+
+}

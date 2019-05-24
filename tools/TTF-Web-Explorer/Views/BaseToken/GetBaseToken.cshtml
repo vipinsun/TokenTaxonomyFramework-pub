@@ -1,0 +1,10 @@
+@model TTI.TTF.Taxonomy.Model.Core.Base
+
+@{
+    ViewBag.Title = "Token Base Type";
+    Layout = "_Layout";
+}
+
+<h2>@Model.Artifact.Name</h2>
+<h3>@Html.Raw(Model.Artifact.ArtifactSymbol.VisualSymbol)</h3>
+
