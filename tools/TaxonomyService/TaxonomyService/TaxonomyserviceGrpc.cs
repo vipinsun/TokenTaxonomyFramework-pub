@@ -98,6 +98,7 @@ namespace TTI.TTF.Taxonomy {
     }
 
     /// <summary>Base class for server-side implementations of TaxonomyService</summary>
+    [grpc::BindServiceMethod(typeof(TaxonomyService), "BindService")]
     public abstract partial class TaxonomyServiceBase
     {
       /// <summary>

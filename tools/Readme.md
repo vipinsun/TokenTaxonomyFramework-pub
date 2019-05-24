@@ -1,12 +1,6 @@
-# Sample TTF Tools
+# TTF Tools
 
-- [Artifact Generator](artifactGenerator) is a simple artifact generator to create stubbed artifacts of a particular type.  This is a console based application that takes 3 arguments, a relative path to the TTF [artifacts](../artifacts) folder, an artifact name and artifact type.  Artifact types are: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate
-
-```bash
-dotnet factgen --p ../artifacts --n myArtifactName --type 1
-```
-
-The above creates a folder, if it doesn't already exist, in the artifacts folder for the type of artifact and the name of the artifact.  In this folder you will find a Json definition, proto control and md for diagrams.
+## Taxonomy Service
 
 - [Taxonomy Service](TaxonomyService/TaxonomyService) is a gRpc service that provides CRUD (create, read, update and delete) capabilities for the repo.  You can run this service from your local clone or use the published service from the [TTI Site](http://tokentaxonomy.org) once it is published. When the service starts, it is passed the path to the artifacts folder and then reads the taxonomy folder structure and files into the [Taxonomy Model](./taxonomy-model.md).  
 
@@ -21,7 +15,7 @@ cd tools/TaxonomyHost
 
 This will build the Client and Service, starting the later awaiting client requests.  You can now start testing out the taxonomy.
 
-## Test the Taxonomy
+### Test the Taxonomy
 
 - To fetch the entire taxonomy model (using Docker to host the client):
 
@@ -48,3 +42,13 @@ Examples:
 - `--ts r --t 1 --s` is a query for a behavior with the symbol `r` and save it locally.  This will fetch the roles behavior and save it in a folder `roles`.
 - `--u roles --t 1` will update the artifact from the roles folder saved in the previous example.
 - `--c phSKU --n sku --t 3` will create a new artifact, a behavior-set, called `sku` with a symbol phSKU.
+
+## Artifact Generator
+
+[Artifact Generator](artifactGenerator) is a simple artifact generator to create stubbed artifacts of a particular type.  This is a console based application that takes 3 arguments, a relative path to the TTF [artifacts](../artifacts) folder, an artifact name and artifact type.  Artifact types are: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate
+
+```bash
+dotnet factgen --p ../artifacts --n myArtifactName --type 1
+```
+
+The above creates a folder, if it doesn't already exist, in the artifacts folder for the type of artifact and the name of the artifact.  In this folder you will find a Json definition, proto control and md for diagrams.
