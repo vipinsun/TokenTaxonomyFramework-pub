@@ -1,4 +1,4 @@
-@model TTI.TTF.Taxonomy.Model.Core.Base
+﻿@model TTI.TTF.Taxonomy.Model.Core.Base
 
 @{
     ViewBag.Title = "Token Base Type";
@@ -8,3 +8,35 @@
 <h2>@Model.Artifact.Name</h2>
 <h3>@Html.Raw(Model.Artifact.ArtifactSymbol.VisualSymbol)</h3>
 
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Artifact.Name)
+        </th>
+        <th>
+            Property
+        </th>
+        <th>
+            Value
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.Artifact.Name)</td>
+        <td>@Html.TextBox(Model.Artifact.Name)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.Artifact.ControlUri)</td>
+        <td>@Html.TextBox(Model.Artifact.ControlUri)</td>
+    </tr>
+            <tr>
+                <td></td>
+                <td>@Html.DisplayName(Model.Artifact.ArtifactDefinition.BusinessDescription)</td>
+                <td>@Html.TextArea(Model.Artifact.ArtifactDefinition.BusinessDescription)</td>
+            </tr>
+    </tbody>
+</table>

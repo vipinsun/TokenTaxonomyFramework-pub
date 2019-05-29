@@ -37,7 +37,7 @@
     <li>
         <p>Symbol: @Html.Raw(behaviorGroup.Artifact.ArtifactSymbol.VisualSymbol)</p>
         <p>Name: @behaviorGroup.Artifact.Name</p>
-        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behavior.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
     </li>                                                                                     
 }
 
@@ -48,7 +48,7 @@
     <li>
         <p>Symbol: @Html.Raw(propertySet.Artifact.ArtifactSymbol.VisualSymbol)</p>
         <p>Name: @propertySet.Artifact.Name</p>
-        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behavior.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol = propertySet.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
     </li>                                                                                     
 }
 
@@ -59,7 +59,7 @@
     <li>
         <p>Symbol: @Html.Raw(tokenTemplate.Artifact.ArtifactSymbol.VisualSymbol)</p>
         <p>Name: @tokenTemplate.Artifact.Name</p>
-        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =behavior.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
+        <p>@Html.ActionLink("Details", "GetBaseToken", "BaseToken", new {symbol =tokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol}, null)</p>
     </li>
 
 }
