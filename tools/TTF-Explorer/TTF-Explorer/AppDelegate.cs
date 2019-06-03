@@ -1,7 +1,7 @@
 ﻿using AppKit;
 using Foundation;
 
-namespace TTFExplorer
+namespace TTI.TTF.TTFExplorer
 {
     [Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate
