@@ -1,4 +1,5 @@
-﻿@model TTI.TTF.Taxonomy.Model.Core.Base
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model TTI.TTF.Taxonomy.Model.Core.Base
 
 @{
     ViewBag.Title = "Token Base Type";
@@ -25,18 +26,53 @@
     <tbody>
     <tr>
         <td></td>
-        <td>@Html.DisplayName(Model.Artifact.Name)</td>
-        <td>@Html.TextBox(Model.Artifact.Name)</td>
+        <td></td>
+        <td>
+            @{Html.RenderPartial("", "_Artifact", "Artifact", Model.Artifact);}
+        </td>
     </tr>
     <tr>
         <td></td>
-        <td>@Html.DisplayName(Model.Artifact.ControlUri)</td>
-        <td>@Html.TextBox(Model.Artifact.ControlUri)</td>
+        <td>@Html.DisplayName(Model.Name)</td>
+        <td>@Html.TextBox(Model.Name)</td>
     </tr>
-            <tr>
-                <td></td>
-                <td>@Html.DisplayName(Model.Artifact.ArtifactDefinition.BusinessDescription)</td>
-                <td>@Html.TextArea(Model.Artifact.ArtifactDefinition.BusinessDescription)</td>
-            </tr>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.Owner)</td>
+        <td>@Html.TextBox(Model.Owner)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.Symbol)</td>
+        <td>@Html.TextBox(Model.Symbol)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.ConstructorName)</td>
+        <td>@Html.TextBox(Model.ConstructorName)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.Decimals.ToString())</td>
+        <td>@Html.TextBox(Model.Decimals.ToString())</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.Quantity.ToStringUtf8())</td>
+        <td>@Html.TextBox(Model.Quantity.ToStringUtf8())</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>@Html.DisplayName(Model.TokenType.ToString())</td>
+        <td>@Html.TextBox(Model.TokenType.ToString())</td>
+    </tr>
+    @foreach (var p in Model.TokenProperties)
+    {
+        <tr>
+            <td></td>
+            <td>@Html.DisplayName(p.Key)</td>
+            <td>@Html.TextBox(p.Value)</td>
+        </tr>
+    }
     </tbody>
 </table>
