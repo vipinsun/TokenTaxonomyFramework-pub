@@ -13,8 +13,8 @@
     ],
     "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
     "artifactDefinition": {
-      "businessDescription": "Every non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
-      "businessExample": "",
+      "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
+      "businessExample": "CryptoKitties, Art, Reserved Seat,",
       "analogies": [
         {
           "name": "Analogy 1",
