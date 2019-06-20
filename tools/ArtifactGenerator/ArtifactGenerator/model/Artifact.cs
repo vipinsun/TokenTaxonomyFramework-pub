@@ -112,21 +112,26 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "aWZhY3RTeW1ib2wSEAoIbGlzdF9lbmQYAyABKAkicAoTUHJvcGVydHlTZXRM",
             "aXN0SXRlbRISCgpsaXN0X3N0YXJ0GAEgASgJEkUKFHByb3BlcnR5X3NldF9z",
             "eW1ib2xzGAIgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
-            "Y3RTeW1ib2wiIgoPVGF4b25vbXlGb3JtdWxhEg8KB2Zvcm11bGEYASABKAkq",
-            "uwEKCVRva2VuVHlwZRIMCghGVU5HSUJMRRAAEhAKDE5PTl9GVU5HSUJMRRAB",
-            "EhgKFEhZQlJJRF9GVU5HSUJMRV9ST09UEAISHAoYSFlCUklEX05PTl9GVU5H",
-            "SUJMRV9ST09UEAMSKAokSFlCUklEX0ZVTkdJQkxFX1JPT1RfSFlCUklEX0NI",
-            "SUxEUkVOEAQSLAooSFlCUklEX05PTl9GVU5HSUJMRV9ST09UX0hZQlJJRF9D",
-            "SElMRFJFThAFKmAKDEFydGlmYWN0VHlwZRIICgRCQVNFEAASDAoIQkVIQVZJ",
-            "T1IQARISCg5CRUhBVklPUl9HUk9VUBACEhAKDFBST1BFUlRZX1NFVBADEhIK",
-            "DlRPS0VOX1RFTVBMQVRFEAQqQgoPQXJ0aWZhY3RDb250ZW50Eg4KCkRFRklO",
-            "SVRJT04QABILCgdDT05UUk9MEAESBwoDVU1MEAISCQoFT1RIRVIQAypACgtN",
-            "YXBwaW5nVHlwZRIPCgtTT1VSQ0VfQ09ERRAAEhIKDklNUExFTUVOVEFUSU9O",
-            "EAESDAoIUkVTT1VSQ0UQAip2Cg5UYXJnZXRQbGF0Zm9ybRIVChFFVEhFUkVV",
-            "TV9TT0xJRElUWRAAEhAKDENIQUlOQ09ERV9HTxABEhIKDkNIQUlOQ09ERV9K",
-            "QVZBEAISEgoOQ0hBSU5DT0RFX05PREUQAxIJCgVDT1JEQRAEEggKBERBTUwQ",
-            "BUJJCiNvcmcudHRpLnR0aS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdFABqgIf",
-            "VFRJLlRURi5UYXhvbm9teS5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
+            "Y3RTeW1ib2wiIgoPVGF4b25vbXlGb3JtdWxhEg8KB2Zvcm11bGEYASABKAki",
+            "LgoUQ29tbWl0VXBkYXRlc1JlcXVlc3QSFgoOY29tbWl0X21lc3NhZ2UYASAB",
+            "KAkiJwoVQ29tbWl0VXBkYXRlc1Jlc3BvbnNlEg4KBnJlc3VsdBgBIAEoCSIS",
+            "ChBJc3N1ZVB1bGxSZXF1ZXN0IiUKEUlzc3VlUHVsbFJlc3BvbnNlEhAKCHJl",
+            "c3BvbnNlGAEgASgJIk0KFFNlcnZpY2VDb25maWd1cmF0aW9uEhEKCXJlYWRf",
+            "b25seRgBIAEoCBIOCgZnaXRfaWQYAiABKAkSEgoKZ2l0X2JyYW5jaBgDIAEo",
+            "CSq7AQoJVG9rZW5UeXBlEgwKCEZVTkdJQkxFEAASEAoMTk9OX0ZVTkdJQkxF",
+            "EAESGAoUSFlCUklEX0ZVTkdJQkxFX1JPT1QQAhIcChhIWUJSSURfTk9OX0ZV",
+            "TkdJQkxFX1JPT1QQAxIoCiRIWUJSSURfRlVOR0lCTEVfUk9PVF9IWUJSSURf",
+            "Q0hJTERSRU4QBBIsCihIWUJSSURfTk9OX0ZVTkdJQkxFX1JPT1RfSFlCUklE",
+            "X0NISUxEUkVOEAUqYAoMQXJ0aWZhY3RUeXBlEggKBEJBU0UQABIMCghCRUhB",
+            "VklPUhABEhIKDkJFSEFWSU9SX0dST1VQEAISEAoMUFJPUEVSVFlfU0VUEAMS",
+            "EgoOVE9LRU5fVEVNUExBVEUQBCpCCg9BcnRpZmFjdENvbnRlbnQSDgoKREVG",
+            "SU5JVElPThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhADKkAK",
+            "C01hcHBpbmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJ",
+            "T04QARIMCghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVUSEVS",
+            "RVVNX1NPTElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RF",
+            "X0pBVkEQAhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoEREFN",
+            "TBAFQkkKI29yZy50dGkudHRpLnRheG9ub215Lm1vZGVsLmFydGlmYWN0UAGq",
+            "Ah9UVEkuVFRGLlRheG9ub215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
@@ -153,7 +158,12 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenBase), global::TTI.TTF.Taxonomy.Model.Artifact.TokenBase.Parser, new[]{ "ArtifactSymbol" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.BehaviorList), global::TTI.TTF.Taxonomy.Model.Artifact.BehaviorList.Parser, new[]{ "ListStart", "BehaviorSymbols", "ListEnd" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetListItem), global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetListItem.Parser, new[]{ "ListStart", "PropertySetSymbols" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula), global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula), global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula.Parser, new[]{ "Formula" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest.Parser, new[]{ "CommitMessage" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse.Parser, new[]{ "Result" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser, new[]{ "Response" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null)
           }));
     }
     #endregion
@@ -4959,6 +4969,679 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             break;
           case 10: {
             Formula = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CommitUpdatesRequest : pb::IMessage<CommitUpdatesRequest> {
+    private static readonly pb::MessageParser<CommitUpdatesRequest> _parser = new pb::MessageParser<CommitUpdatesRequest>(() => new CommitUpdatesRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CommitUpdatesRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[24]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommitUpdatesRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommitUpdatesRequest(CommitUpdatesRequest other) : this() {
+      commitMessage_ = other.commitMessage_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommitUpdatesRequest Clone() {
+      return new CommitUpdatesRequest(this);
+    }
+
+    /// <summary>Field number for the "commit_message" field.</summary>
+    public const int CommitMessageFieldNumber = 1;
+    private string commitMessage_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string CommitMessage {
+      get { return commitMessage_; }
+      set {
+        commitMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CommitUpdatesRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CommitUpdatesRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CommitMessage != other.CommitMessage) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CommitMessage.Length != 0) hash ^= CommitMessage.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (CommitMessage.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(CommitMessage);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (CommitMessage.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CommitMessage);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CommitUpdatesRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CommitMessage.Length != 0) {
+        CommitMessage = other.CommitMessage;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            CommitMessage = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class CommitUpdatesResponse : pb::IMessage<CommitUpdatesResponse> {
+    private static readonly pb::MessageParser<CommitUpdatesResponse> _parser = new pb::MessageParser<CommitUpdatesResponse>(() => new CommitUpdatesResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<CommitUpdatesResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[25]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommitUpdatesResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommitUpdatesResponse(CommitUpdatesResponse other) : this() {
+      result_ = other.result_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommitUpdatesResponse Clone() {
+      return new CommitUpdatesResponse(this);
+    }
+
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 1;
+    private string result_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Result {
+      get { return result_; }
+      set {
+        result_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as CommitUpdatesResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(CommitUpdatesResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Result != other.Result) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Result.Length != 0) hash ^= Result.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Result.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Result);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Result.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Result);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(CommitUpdatesResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Result.Length != 0) {
+        Result = other.Result;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Result = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class IssuePullRequest : pb::IMessage<IssuePullRequest> {
+    private static readonly pb::MessageParser<IssuePullRequest> _parser = new pb::MessageParser<IssuePullRequest>(() => new IssuePullRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<IssuePullRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[26]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public IssuePullRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public IssuePullRequest(IssuePullRequest other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public IssuePullRequest Clone() {
+      return new IssuePullRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as IssuePullRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(IssuePullRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(IssuePullRequest other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class IssuePullResponse : pb::IMessage<IssuePullResponse> {
+    private static readonly pb::MessageParser<IssuePullResponse> _parser = new pb::MessageParser<IssuePullResponse>(() => new IssuePullResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<IssuePullResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[27]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public IssuePullResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public IssuePullResponse(IssuePullResponse other) : this() {
+      response_ = other.response_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public IssuePullResponse Clone() {
+      return new IssuePullResponse(this);
+    }
+
+    /// <summary>Field number for the "response" field.</summary>
+    public const int ResponseFieldNumber = 1;
+    private string response_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Response {
+      get { return response_; }
+      set {
+        response_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as IssuePullResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(IssuePullResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Response != other.Response) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Response.Length != 0) hash ^= Response.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Response.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Response);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Response.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Response);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(IssuePullResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Response.Length != 0) {
+        Response = other.Response;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Response = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class ServiceConfiguration : pb::IMessage<ServiceConfiguration> {
+    private static readonly pb::MessageParser<ServiceConfiguration> _parser = new pb::MessageParser<ServiceConfiguration>(() => new ServiceConfiguration());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ServiceConfiguration> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[28]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ServiceConfiguration() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ServiceConfiguration(ServiceConfiguration other) : this() {
+      readOnly_ = other.readOnly_;
+      gitId_ = other.gitId_;
+      gitBranch_ = other.gitBranch_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ServiceConfiguration Clone() {
+      return new ServiceConfiguration(this);
+    }
+
+    /// <summary>Field number for the "read_only" field.</summary>
+    public const int ReadOnlyFieldNumber = 1;
+    private bool readOnly_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool ReadOnly {
+      get { return readOnly_; }
+      set {
+        readOnly_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "git_id" field.</summary>
+    public const int GitIdFieldNumber = 2;
+    private string gitId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GitId {
+      get { return gitId_; }
+      set {
+        gitId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "git_branch" field.</summary>
+    public const int GitBranchFieldNumber = 3;
+    private string gitBranch_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string GitBranch {
+      get { return gitBranch_; }
+      set {
+        gitBranch_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ServiceConfiguration);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ServiceConfiguration other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ReadOnly != other.ReadOnly) return false;
+      if (GitId != other.GitId) return false;
+      if (GitBranch != other.GitBranch) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ReadOnly != false) hash ^= ReadOnly.GetHashCode();
+      if (GitId.Length != 0) hash ^= GitId.GetHashCode();
+      if (GitBranch.Length != 0) hash ^= GitBranch.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ReadOnly != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(ReadOnly);
+      }
+      if (GitId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(GitId);
+      }
+      if (GitBranch.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(GitBranch);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ReadOnly != false) {
+        size += 1 + 1;
+      }
+      if (GitId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GitId);
+      }
+      if (GitBranch.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GitBranch);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ServiceConfiguration other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ReadOnly != false) {
+        ReadOnly = other.ReadOnly;
+      }
+      if (other.GitId.Length != 0) {
+        GitId = other.GitId;
+      }
+      if (other.GitBranch.Length != 0) {
+        GitBranch = other.GitBranch;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ReadOnly = input.ReadBool();
+            break;
+          }
+          case 18: {
+            GitId = input.ReadString();
+            break;
+          }
+          case 26: {
+            GitBranch = input.ReadString();
             break;
           }
         }

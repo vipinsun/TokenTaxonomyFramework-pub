@@ -27,6 +27,12 @@ namespace TTI.TTF.Taxonomy {
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse> __Marshaller_taxonomy_model_artifact_UpdateArtifactResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest> __Marshaller_taxonomy_model_artifact_DeleteArtifactRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse> __Marshaller_taxonomy_model_artifact_DeleteArtifactResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest> __Marshaller_taxonomy_model_artifact_CommitUpdatesRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> __Marshaller_taxonomy_model_artifact_CommitUpdatesResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest> __Marshaller_taxonomy_model_artifact_IssuePullRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse> __Marshaller_taxonomy_model_artifact_IssuePullResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Empty.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> __Marshaller_taxonomy_model_artifact_ServiceConfiguration = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser.ParseFrom);
 
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy> __Method_GetFullTaxonomy = new grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy>(
         grpc::MethodType.Unary,
@@ -90,6 +96,27 @@ namespace TTI.TTF.Taxonomy {
         "DeleteArtifact",
         __Marshaller_taxonomy_model_artifact_DeleteArtifactRequest,
         __Marshaller_taxonomy_model_artifact_DeleteArtifactResponse);
+
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> __Method_CommitLocalUpdates = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CommitLocalUpdates",
+        __Marshaller_taxonomy_model_artifact_CommitUpdatesRequest,
+        __Marshaller_taxonomy_model_artifact_CommitUpdatesResponse);
+
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest, global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse> __Method_PullRequest = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest, global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "PullRequest",
+        __Marshaller_taxonomy_model_artifact_IssuePullRequest,
+        __Marshaller_taxonomy_model_artifact_IssuePullResponse);
+
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> __Method_GetConfig = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetConfig",
+        __Marshaller_google_protobuf_Empty,
+        __Marshaller_taxonomy_model_artifact_ServiceConfiguration);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -319,6 +346,54 @@ namespace TTI.TTF.Taxonomy {
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse> DeleteArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteArtifact, null, options, request);
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse CommitLocalUpdates(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CommitLocalUpdates(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse CommitLocalUpdates(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CommitLocalUpdates, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> CommitLocalUpdatesAsync(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CommitLocalUpdatesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> CommitLocalUpdatesAsync(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CommitLocalUpdates, null, options, request);
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse PullRequest(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PullRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse PullRequest(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_PullRequest, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse> PullRequestAsync(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return PullRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse> PullRequestAsync(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_PullRequest, null, options, request);
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration GetConfig(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetConfig(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration GetConfig(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetConfig, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfigAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetConfigAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfigAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetConfig, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override TaxonomyServiceClient NewInstance(ClientBaseConfiguration configuration)

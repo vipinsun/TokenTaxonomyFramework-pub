@@ -199,3 +199,25 @@ message PropertySetListItem{
 message TaxonomyFormula{
     string formula = 1;
 }
+
+message CommitUpdatesRequest{
+    string commit_message = 1;
+}
+
+message CommitUpdatesResponse{
+    string result = 1;
+}
+
+message IssuePullRequest{
+
+}
+
+message IssuePullResponse{
+    string response = 1;
+}
+
+message ServiceConfiguration{
+    bool read_only = 1;
+    string git_id = 2;
+    string git_branch = 3;
+}

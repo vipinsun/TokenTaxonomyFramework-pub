@@ -1,7 +1,9 @@
 using System.Reflection;
 using System.Threading.Tasks;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using log4net;
+using TTI.TTF.Taxonomy.Controllers;
 using TTI.TTF.Taxonomy.Model;
 using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
@@ -65,6 +67,24 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("gRpc request for: DeleteArtifact");
             return Task.FromResult(ModelManager.DeleteArtifact(artifactRequest));
+        }
+        
+        public override Task<CommitUpdatesResponse> CommitLocalUpdates(CommitUpdatesRequest request, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: Commit Local Updates");
+            return Task.FromResult(GitController.Commit(request.CommitMessage));
+        }
+        
+        public override Task<IssuePullResponse> PullRequest(IssuePullRequest request, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: GetFullTaxonomy");
+            return Task.FromResult(GitController.Pull());
+        }
+        
+        public override Task<ServiceConfiguration> GetConfig(Empty request, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: GetFullTaxonomy");
+            return Task.FromResult(GitController.GetConfig());
         }
     }
 }
