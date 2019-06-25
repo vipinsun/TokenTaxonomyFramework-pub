@@ -29,6 +29,10 @@ message Base{
     repeated TokenTemplate child_tokens = 14; //if hybrid, this can contain the list of child token classes.
 }
 
+message Bases{
+    repeated Base base = 1;
+}
+
 message Behavior{
     taxonomy.model.artifact.Artifact artifact = 1;
     bool is_external = 2;
@@ -38,15 +42,27 @@ message Behavior{
     repeated Property properties = 6; //for any properties that should be added to the token if the behavior is implemented, should consider moving these to a dependent property-set.
 }
 
+message Behaviors{
+    repeated Behavior behavior = 1;
+}
+
 message BehaviorGroup{
     taxonomy.model.artifact.Artifact artifact = 1;
     repeated model.artifact.ArtifactSymbol behavior_symbols = 2;
     map<string, taxonomy.model.artifact.Artifact> member_behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
 }
 
+message BehaviorGroups{
+    repeated BehaviorGroup behavior_group = 1;
+}
+
 message PropertySet{
     taxonomy.model.artifact.Artifact artifact = 1;
     repeated Property properties = 2;
+}
+
+message PropertySets{
+    repeated PropertySet property_set = 1;
 }
 
 message Property{
@@ -62,6 +78,10 @@ message TokenTemplate {
     repeated TemplateBehavior behaviors = 3;
     repeated TemplateBehaviorGroup behavior_groups = 4;
     repeated TemplatePropertySet property_sets = 5;
+}
+
+message TokenTemplates{
+    repeated TokenTemplate token_template = 1;
 }
 
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition.

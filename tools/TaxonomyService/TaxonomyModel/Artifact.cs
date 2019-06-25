@@ -118,20 +118,28 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "ChBJc3N1ZVB1bGxSZXF1ZXN0IiUKEUlzc3VlUHVsbFJlc3BvbnNlEhAKCHJl",
             "c3BvbnNlGAEgASgJIk0KFFNlcnZpY2VDb25maWd1cmF0aW9uEhEKCXJlYWRf",
             "b25seRgBIAEoCBIOCgZnaXRfaWQYAiABKAkSEgoKZ2l0X2JyYW5jaBgDIAEo",
-            "CSq7AQoJVG9rZW5UeXBlEgwKCEZVTkdJQkxFEAASEAoMTk9OX0ZVTkdJQkxF",
-            "EAESGAoUSFlCUklEX0ZVTkdJQkxFX1JPT1QQAhIcChhIWUJSSURfTk9OX0ZV",
-            "TkdJQkxFX1JPT1QQAxIoCiRIWUJSSURfRlVOR0lCTEVfUk9PVF9IWUJSSURf",
-            "Q0hJTERSRU4QBBIsCihIWUJSSURfTk9OX0ZVTkdJQkxFX1JPT1RfSFlCUklE",
-            "X0NISUxEUkVOEAUqYAoMQXJ0aWZhY3RUeXBlEggKBEJBU0UQABIMCghCRUhB",
-            "VklPUhABEhIKDkJFSEFWSU9SX0dST1VQEAISEAoMUFJPUEVSVFlfU0VUEAMS",
-            "EgoOVE9LRU5fVEVNUExBVEUQBCpCCg9BcnRpZmFjdENvbnRlbnQSDgoKREVG",
-            "SU5JVElPThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhADKkAK",
-            "C01hcHBpbmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJ",
-            "T04QARIMCghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVUSEVS",
-            "RVVNX1NPTElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RF",
-            "X0pBVkEQAhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoEREFN",
-            "TBAFQkkKI29yZy50dGkudHRpLnRheG9ub215Lm1vZGVsLmFydGlmYWN0UAGq",
-            "Ah9UVEkuVFRGLlRheG9ub215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
+            "CSJ+CgxRdWVyeU9wdGlvbnMSPAoNYXJ0aWZhY3RfdHlwZRgBIAEoDjIlLnRh",
+            "eG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIXCg9tYXhfaXRl",
+            "bV9yZXR1cm4YAiABKAUSFwoPbGFzdF9pdGVtX2luZGV4GAMgASgFItQBCgtR",
+            "dWVyeVJlc3VsdBI8Cg1hcnRpZmFjdF90eXBlGAEgASgOMiUudGF4b25vbXku",
+            "bW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEhgKEGZpcnN0X2l0ZW1faW5k",
+            "ZXgYAiABKAUSFwoPbGFzdF9pdGVtX2luZGV4GAMgASgFEiEKGXRvdGFsX2l0",
+            "ZW1zX2luX2NvbGxlY3Rpb24YBCABKAUSMQoTYXJ0aWZhY3RfY29sbGVjdGlv",
+            "bhgFIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkquwEKCVRva2VuVHlwZRIM",
+            "CghGVU5HSUJMRRAAEhAKDE5PTl9GVU5HSUJMRRABEhgKFEhZQlJJRF9GVU5H",
+            "SUJMRV9ST09UEAISHAoYSFlCUklEX05PTl9GVU5HSUJMRV9ST09UEAMSKAok",
+            "SFlCUklEX0ZVTkdJQkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAQSLAooSFlC",
+            "UklEX05PTl9GVU5HSUJMRV9ST09UX0hZQlJJRF9DSElMRFJFThAFKmAKDEFy",
+            "dGlmYWN0VHlwZRIICgRCQVNFEAASDAoIQkVIQVZJT1IQARISCg5CRUhBVklP",
+            "Ul9HUk9VUBACEhAKDFBST1BFUlRZX1NFVBADEhIKDlRPS0VOX1RFTVBMQVRF",
+            "EAQqQgoPQXJ0aWZhY3RDb250ZW50Eg4KCkRFRklOSVRJT04QABILCgdDT05U",
+            "Uk9MEAESBwoDVU1MEAISCQoFT1RIRVIQAypACgtNYXBwaW5nVHlwZRIPCgtT",
+            "T1VSQ0VfQ09ERRAAEhIKDklNUExFTUVOVEFUSU9OEAESDAoIUkVTT1VSQ0UQ",
+            "Aip2Cg5UYXJnZXRQbGF0Zm9ybRIVChFFVEhFUkVVTV9TT0xJRElUWRAAEhAK",
+            "DENIQUlOQ09ERV9HTxABEhIKDkNIQUlOQ09ERV9KQVZBEAISEgoOQ0hBSU5D",
+            "T0RFX05PREUQAxIJCgVDT1JEQRAEEggKBERBTUwQBUJJCiNvcmcudHRpLnR0",
+            "aS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdFABqgIfVFRJLlRURi5UYXhvbm9t",
+            "eS5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
@@ -163,7 +171,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse.Parser, new[]{ "Result" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser, new[]{ "Response" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null)
           }));
     }
     #endregion
@@ -5642,6 +5652,447 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
           }
           case 26: {
             GitBranch = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class QueryOptions : pb::IMessage<QueryOptions> {
+    private static readonly pb::MessageParser<QueryOptions> _parser = new pb::MessageParser<QueryOptions>(() => new QueryOptions());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<QueryOptions> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[29]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public QueryOptions() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public QueryOptions(QueryOptions other) : this() {
+      artifactType_ = other.artifactType_;
+      maxItemReturn_ = other.maxItemReturn_;
+      lastItemIndex_ = other.lastItemIndex_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public QueryOptions Clone() {
+      return new QueryOptions(this);
+    }
+
+    /// <summary>Field number for the "artifact_type" field.</summary>
+    public const int ArtifactTypeFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType ArtifactType {
+      get { return artifactType_; }
+      set {
+        artifactType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_item_return" field.</summary>
+    public const int MaxItemReturnFieldNumber = 2;
+    private int maxItemReturn_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int MaxItemReturn {
+      get { return maxItemReturn_; }
+      set {
+        maxItemReturn_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_item_index" field.</summary>
+    public const int LastItemIndexFieldNumber = 3;
+    private int lastItemIndex_;
+    /// <summary>
+    ///set to the QuertResult.LastItemIndex from the previous QueryResult. Manually override from QueryResult FirstItemIndex + count in results array
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LastItemIndex {
+      get { return lastItemIndex_; }
+      set {
+        lastItemIndex_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as QueryOptions);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(QueryOptions other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ArtifactType != other.ArtifactType) return false;
+      if (MaxItemReturn != other.MaxItemReturn) return false;
+      if (LastItemIndex != other.LastItemIndex) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ArtifactType != 0) hash ^= ArtifactType.GetHashCode();
+      if (MaxItemReturn != 0) hash ^= MaxItemReturn.GetHashCode();
+      if (LastItemIndex != 0) hash ^= LastItemIndex.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ArtifactType != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ArtifactType);
+      }
+      if (MaxItemReturn != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(MaxItemReturn);
+      }
+      if (LastItemIndex != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(LastItemIndex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ArtifactType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArtifactType);
+      }
+      if (MaxItemReturn != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxItemReturn);
+      }
+      if (LastItemIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LastItemIndex);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(QueryOptions other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ArtifactType != 0) {
+        ArtifactType = other.ArtifactType;
+      }
+      if (other.MaxItemReturn != 0) {
+        MaxItemReturn = other.MaxItemReturn;
+      }
+      if (other.LastItemIndex != 0) {
+        LastItemIndex = other.LastItemIndex;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ArtifactType = (global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            MaxItemReturn = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            LastItemIndex = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class QueryResult : pb::IMessage<QueryResult> {
+    private static readonly pb::MessageParser<QueryResult> _parser = new pb::MessageParser<QueryResult>(() => new QueryResult());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<QueryResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[30]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public QueryResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public QueryResult(QueryResult other) : this() {
+      artifactType_ = other.artifactType_;
+      firstItemIndex_ = other.firstItemIndex_;
+      lastItemIndex_ = other.lastItemIndex_;
+      totalItemsInCollection_ = other.totalItemsInCollection_;
+      artifactCollection_ = other.artifactCollection_ != null ? other.artifactCollection_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public QueryResult Clone() {
+      return new QueryResult(this);
+    }
+
+    /// <summary>Field number for the "artifact_type" field.</summary>
+    public const int ArtifactTypeFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType ArtifactType {
+      get { return artifactType_; }
+      set {
+        artifactType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "first_item_index" field.</summary>
+    public const int FirstItemIndexFieldNumber = 2;
+    private int firstItemIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int FirstItemIndex {
+      get { return firstItemIndex_; }
+      set {
+        firstItemIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_item_index" field.</summary>
+    public const int LastItemIndexFieldNumber = 3;
+    private int lastItemIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int LastItemIndex {
+      get { return lastItemIndex_; }
+      set {
+        lastItemIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_items_in_collection" field.</summary>
+    public const int TotalItemsInCollectionFieldNumber = 4;
+    private int totalItemsInCollection_;
+    /// <summary>
+    ///total count in the collection if iterating through all the items on the service of the specified type.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int TotalItemsInCollection {
+      get { return totalItemsInCollection_; }
+      set {
+        totalItemsInCollection_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "artifact_collection" field.</summary>
+    public const int ArtifactCollectionFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Any artifactCollection_;
+    /// <summary>
+    ///deserialize to the collection object for the ArtifactType, i.e. Base will be a Bases, Behavior will be Behaviors, etc.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Any ArtifactCollection {
+      get { return artifactCollection_; }
+      set {
+        artifactCollection_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as QueryResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(QueryResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ArtifactType != other.ArtifactType) return false;
+      if (FirstItemIndex != other.FirstItemIndex) return false;
+      if (LastItemIndex != other.LastItemIndex) return false;
+      if (TotalItemsInCollection != other.TotalItemsInCollection) return false;
+      if (!object.Equals(ArtifactCollection, other.ArtifactCollection)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ArtifactType != 0) hash ^= ArtifactType.GetHashCode();
+      if (FirstItemIndex != 0) hash ^= FirstItemIndex.GetHashCode();
+      if (LastItemIndex != 0) hash ^= LastItemIndex.GetHashCode();
+      if (TotalItemsInCollection != 0) hash ^= TotalItemsInCollection.GetHashCode();
+      if (artifactCollection_ != null) hash ^= ArtifactCollection.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ArtifactType != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) ArtifactType);
+      }
+      if (FirstItemIndex != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(FirstItemIndex);
+      }
+      if (LastItemIndex != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(LastItemIndex);
+      }
+      if (TotalItemsInCollection != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(TotalItemsInCollection);
+      }
+      if (artifactCollection_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ArtifactCollection);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ArtifactType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArtifactType);
+      }
+      if (FirstItemIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FirstItemIndex);
+      }
+      if (LastItemIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LastItemIndex);
+      }
+      if (TotalItemsInCollection != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalItemsInCollection);
+      }
+      if (artifactCollection_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ArtifactCollection);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(QueryResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ArtifactType != 0) {
+        ArtifactType = other.ArtifactType;
+      }
+      if (other.FirstItemIndex != 0) {
+        FirstItemIndex = other.FirstItemIndex;
+      }
+      if (other.LastItemIndex != 0) {
+        LastItemIndex = other.LastItemIndex;
+      }
+      if (other.TotalItemsInCollection != 0) {
+        TotalItemsInCollection = other.TotalItemsInCollection;
+      }
+      if (other.artifactCollection_ != null) {
+        if (artifactCollection_ == null) {
+          ArtifactCollection = new global::Google.Protobuf.WellKnownTypes.Any();
+        }
+        ArtifactCollection.MergeFrom(other.ArtifactCollection);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ArtifactType = (global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            FirstItemIndex = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            LastItemIndex = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            TotalItemsInCollection = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            if (artifactCollection_ == null) {
+              ArtifactCollection = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(ArtifactCollection);
             break;
           }
         }

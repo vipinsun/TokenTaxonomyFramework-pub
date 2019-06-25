@@ -13,6 +13,7 @@ protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/
 protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/TaxonomyObjectModel/out/java --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/js  --grpc-web_out=import_style=commonjs,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/js --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools  --grpc_out ../tools/TaxonomyService/TaxonomyService ./model/protos/taxonomyservice.proto --plugin=protoc-gen-grpc=../../../../.nuget/packages/grpc.tools/1.21.0/tools/macosx_x64/grpc_csharp_plugin --plugin=protoc-gen-web
 protoc --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools  --grpc_out=no_server:../tools/TaxonomyService/TaxonomyClient ./model/protos/taxonomyservice.proto --plugin=protoc-gen-grpc=../../../../.nuget/packages/grpc.tools/1.21.0/tools/macosx_x64/grpc_csharp_plugin
 protoc --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools  --grpc_out=no_server:../tools/TTF-Web-Explorer/Model ./model/protos/taxonomyservice.proto --plugin=protoc-gen-grpc=../../../../.nuget/packages/grpc.tools/1.21.0/tools/macosx_x64/grpc_csharp_plugin
+protoc --proto_path=./model/protos --proto_path=../../../../.nuget/packages/google.protobuf.tools/3.7.0/tools  --grpc_out=no_server:../tools/TTF-Mac-Explorer/TTF-Mac-Explorer/Model ./model/protos/taxonomyservice.proto --plugin=protoc-gen-grpc=../../../../.nuget/packages/grpc.tools/1.21.0/tools/macosx_x64/grpc_csharp_plugin
 
 
 
@@ -20,7 +21,7 @@ cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/Artifact
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TaxonomyService/TaxonomyModel
 
-cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Explorer/TTF-Explorer/Model
+cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Mac-Explorer/TTF-Mac-Explorer/Model
 
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Web-Explorer/Model

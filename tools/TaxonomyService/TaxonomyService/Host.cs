@@ -86,5 +86,11 @@ namespace TTI.TTF.Taxonomy
             _log.Info("gRpc request for: GetFullTaxonomy");
             return Task.FromResult(GitController.GetConfig());
         }
+        
+        public override Task<QueryResult> GetArtifactsOfType(QueryOptions options, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: GetFullTaxonomy");
+            return Task.FromResult(ModelManager.GetArtifactsOfType(options));
+        }
     }
 }
