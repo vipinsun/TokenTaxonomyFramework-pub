@@ -89,6 +89,7 @@
     {
       "name": "Decimals",
       "valueDescription": "Integer indicating the number of decimal places a whole number can be subdivided into.",
+      "templateValue": "",
       "propertyInvocations": [
         {
           "name": "GetDecimals",

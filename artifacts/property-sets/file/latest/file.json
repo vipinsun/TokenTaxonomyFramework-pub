@@ -86,6 +86,7 @@
     {
       "name": "File",
       "valueDescription": "Contains the file for the token.",
+      "templateValue": "",
       "propertyInvocations": [
         {
           "name": "GetFile",

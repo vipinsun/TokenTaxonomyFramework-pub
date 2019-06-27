@@ -49,7 +49,7 @@ message Behaviors{
 message BehaviorGroup{
     taxonomy.model.artifact.Artifact artifact = 1;
     repeated model.artifact.ArtifactSymbol behavior_symbols = 2;
-    map<string, taxonomy.model.artifact.Artifact> member_behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
+    map<string, taxonomy.model.artifact.Artifact> behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
 }
 
 message BehaviorGroups{
@@ -68,10 +68,10 @@ message PropertySets{
 message Property{
     string name = 1;
     string value_description = 2; 
-    repeated Invocation property_invocations = 3;
+    string template_value = 3; //value, if needed, when applied to template
+    repeated Invocation property_invocations = 4; //needed for non-behavioral properties
 }
 
-//where to put behahiors that depend on a property set?
 message TokenTemplate {
     taxonomy.model.artifact.Artifact artifact = 1;
     TemplateBase base = 2;
@@ -88,7 +88,7 @@ message TokenTemplates{
 message TemplateBase{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    Base base = 3;
+    Base base = 3; //set values for the template
 }
 
 //used to wrap the base token type for a template with implementation details specific for the behavior's use in this token template definition.

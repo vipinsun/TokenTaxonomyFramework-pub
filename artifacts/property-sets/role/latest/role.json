@@ -86,6 +86,7 @@
     {
       "name": "Role",
       "valueDescription": "Name of a role that can have a list of accounts in the role.",
+      "templateValue": "",
       "propertyInvocations": [
         {
           "name": "GetRoleMembers",
