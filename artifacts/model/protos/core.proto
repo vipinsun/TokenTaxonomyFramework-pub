@@ -29,6 +29,10 @@ message Base{
     repeated TokenTemplate child_tokens = 14; //if hybrid, this can contain the list of child token classes.
 }
 
+message Bases{
+    repeated Base base = 1;
+}
+
 message Behavior{
     taxonomy.model.artifact.Artifact artifact = 1;
     bool is_external = 2;
@@ -38,10 +42,18 @@ message Behavior{
     repeated Property properties = 6; //for any properties that should be added to the token if the behavior is implemented, should consider moving these to a dependent property-set.
 }
 
+message Behaviors{
+    repeated Behavior behavior = 1;
+}
+
 message BehaviorGroup{
     taxonomy.model.artifact.Artifact artifact = 1;
     repeated model.artifact.ArtifactSymbol behavior_symbols = 2;
-    map<string, taxonomy.model.artifact.Artifact> member_behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
+    map<string, taxonomy.model.artifact.Artifact> behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
+}
+
+message BehaviorGroups{
+    repeated BehaviorGroup behavior_group = 1;
 }
 
 message PropertySet{
@@ -49,13 +61,17 @@ message PropertySet{
     repeated Property properties = 2;
 }
 
+message PropertySets{
+    repeated PropertySet property_set = 1;
+}
+
 message Property{
     string name = 1;
     string value_description = 2; 
-    repeated Invocation property_invocations = 3;
+    string template_value = 3; //value, if needed, when applied to template
+    repeated Invocation property_invocations = 4; //needed for non-behavioral properties
 }
 
-//where to put behahiors that depend on a property set?
 message TokenTemplate {
     taxonomy.model.artifact.Artifact artifact = 1;
     TemplateBase base = 2;
@@ -64,32 +80,36 @@ message TokenTemplate {
     repeated TemplatePropertySet property_sets = 5;
 }
 
-//used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition.
+message TokenTemplates{
+    repeated TokenTemplate token_template = 1;
+}
+
+//used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TemplateBase{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    Base base = 3;
+    Base base = 3; //set values for the template
 }
 
 //used to wrap the base token type for a template with implementation details specific for the behavior's use in this token template definition.
 message TemplateBehavior{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    Behavior behavior = 3;
+    Behavior behavior = 3; //if template values are set include a copy when serialized. If empty the reference will be used with no values set.
 }
 
 //used to wrap the base token type for a template with implementation details specific for the BehaviorGroup's use in this token template definition.
 message TemplateBehaviorGroup{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    BehaviorGroup behavior_group = 3;
+    BehaviorGroup behavior_group = 3; //if template values are set include a copy when serialized. If empty the reference will be used with no values set.
 }
 
 //used to wrap the base token type for a template with implementation details specific for the Property-set's use in this token template definition.
 message TemplatePropertySet{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    PropertySet property_set = 3;
+    PropertySet property_set = 3; //if template values are set include a copy when serialized. If empty the reference will be used with no values set.
 }
 
 message Invocation{

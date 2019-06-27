@@ -21,6 +21,9 @@ namespace ArtifactGenerator
 		private static string Latest { get; set; }
 		public static void Main(string[] args)
 		{
+			
+			Utils.InitLog();
+			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 			if (args.Length == 6 || args.Length == 8 || args.Length == 4)
 			{
 				for (var i = 0; i < args.Length; i++)
@@ -81,8 +84,6 @@ namespace ArtifactGenerator
 				throw new Exception("Missing required parameters.");
 			}
 
-			Utils.InitLog();
-			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 			_log.Info("Generating Artifact: " + ArtifactName + " of type: " + ArtifactType);
 
 			var folderSeparator = "/";

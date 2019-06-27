@@ -199,3 +199,39 @@ message PropertySetListItem{
 message TaxonomyFormula{
     string formula = 1;
 }
+
+message CommitUpdatesRequest{
+    string commit_message = 1;
+}
+
+message CommitUpdatesResponse{
+    string result = 1;
+}
+
+message IssuePullRequest{
+
+}
+
+message IssuePullResponse{
+    string response = 1;
+}
+
+message ServiceConfiguration{
+    bool read_only = 1;
+    string git_id = 2;
+    string git_branch = 3;
+}
+
+message QueryOptions{
+    ArtifactType artifact_type = 1;
+    int32 max_item_return = 2;
+    int32 last_item_index = 3; //set to the QuertResult.LastItemIndex from the previous QueryResult. Manually override from QueryResult FirstItemIndex + count in results array
+}
+
+message QueryResult{
+    ArtifactType artifact_type = 1;
+    int32 first_item_index = 2;
+    int32 last_item_index = 3;
+    int32 total_items_in_collection = 4; //total count in the collection if iterating through all the items on the service of the specified type.
+    google.protobuf.Any artifact_collection = 5; //deserialize to the collection object for the ArtifactType, i.e. Base will be a Bases, Behavior will be Behaviors, etc.
+}

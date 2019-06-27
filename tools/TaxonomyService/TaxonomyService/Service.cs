@@ -10,10 +10,13 @@ namespace TTI.TTF.Taxonomy
 	{
 		private static IConfigurationRoot _config;
 		private static ILog _log;
-		internal static string ArtifactPath { get; set; }
-		internal static string Latest { get; set; }
+		internal static string ArtifactPath { get; private set; }
+		internal static string Latest { get; private set; }
 		private static string _gRpcHost;
 		private static int _gRpcPort;
+		internal static string GitId { get; private set; }
+		private static string _gitPwd;
+		internal static bool ReadOnlyMode { get; private set; }
 		private static Server _apiServer;
 		internal static string FolderSeparator { get; private set; }
 		private static void Main()
@@ -35,6 +38,10 @@ namespace TTI.TTF.Taxonomy
 			ArtifactPath = _config["artifactPath"];
 			_gRpcHost = _config["gRpcHost"];
 			_gRpcPort = Convert.ToInt32(_config["gRpcPort"]);
+			
+			GitId = _config["gitId"];
+			_gitPwd = _config["gitPwd"];
+			ReadOnlyMode = Convert.ToBoolean(_config["readOnlyMode"]);
 
 			FolderSeparator = Os.IsWindows() ? "\\" : "/";
 			Latest = FolderSeparator + "latest";

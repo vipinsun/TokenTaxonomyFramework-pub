@@ -86,6 +86,7 @@
     {
       "name": "SKU",
       "valueDescription": "Contains the SKU for the token.",
+      "templateValue": "",
       "propertyInvocations": [
         {
           "name": "GetSKU",

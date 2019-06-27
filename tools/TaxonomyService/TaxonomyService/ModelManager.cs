@@ -71,6 +71,122 @@ namespace TTI.TTF.Taxonomy
 			return Taxonomy.TokenTemplates.Single(e => e.Key == formula.Formula).Value;		
 		}
 
+		public static QueryResult GetArtifactsOfType(QueryOptions options)
+		{
+			var result = new QueryResult
+			{
+				ArtifactType = options.ArtifactType,
+				FirstItemIndex = options.LastItemIndex - 1
+			};
+			try
+			{
+				switch (options.ArtifactType)
+				{
+					case ArtifactType.Base:
+						var bases = new Bases();
+						bases.Base.AddRange(Taxonomy.BaseTokenTypes
+							.Values); //unlikely to be more than a handful of these.	
+						result.ArtifactCollection = Any.Pack(bases);
+						result.FirstItemIndex = 0;
+						result.LastItemIndex = bases.Base.Count - 1;
+						result.TotalItemsInCollection = Taxonomy.BaseTokenTypes.Count;
+						break;
+					case ArtifactType.Behavior:
+						var behaviors = new Behaviors();
+						if (Taxonomy.Behaviors.Count <= options.MaxItemReturn
+						) //if max return is greater than the total count, just send back all of them.
+						{
+							behaviors.Behavior.AddRange(Taxonomy.Behaviors.Values);
+							result.FirstItemIndex = 0;
+							result.LastItemIndex = behaviors.Behavior.Count - 1;
+						}
+						else
+						{
+							behaviors.Behavior.AddRange(behaviors.Behavior.ToList()
+								.GetRange(options.LastItemIndex, options.MaxItemReturn));
+							result.ArtifactCollection = Any.Pack(behaviors);
+							result.LastItemIndex = options.LastItemIndex + behaviors.Behavior.Count - 1;
+						}
+
+						result.TotalItemsInCollection = behaviors.Behavior.Count;
+						result.ArtifactCollection = Any.Pack(behaviors);
+						break;
+					case ArtifactType.BehaviorGroup:
+						var behaviorGroups = new BehaviorGroups();
+						if (Taxonomy.BehaviorGroups.Count <= options.MaxItemReturn
+						) //if max return is greater than the total count, just send back all of them.
+						{
+							behaviorGroups.BehaviorGroup.AddRange(Taxonomy.BehaviorGroups.Values);
+							result.FirstItemIndex = 0;
+							result.LastItemIndex = behaviorGroups.BehaviorGroup.Count - 1;
+						}
+						else
+						{
+							behaviorGroups.BehaviorGroup.AddRange(behaviorGroups.BehaviorGroup.ToList()
+								.GetRange(options.LastItemIndex, options.MaxItemReturn));
+							result.ArtifactCollection = Any.Pack(behaviorGroups);
+							result.LastItemIndex =
+								options.LastItemIndex + behaviorGroups.BehaviorGroup.Count - 1;
+						}
+
+						result.TotalItemsInCollection = behaviorGroups.BehaviorGroup.Count;
+						result.ArtifactCollection = Any.Pack(behaviorGroups);
+						break;
+					case ArtifactType.PropertySet:
+						var propertySets = new PropertySets();
+						if (Taxonomy.PropertySets.Count <= options.MaxItemReturn
+						) //if max return is greater than the total count, just send back all of them.
+						{
+							propertySets.PropertySet.AddRange(Taxonomy.PropertySets.Values);
+							result.FirstItemIndex = 0;
+							result.LastItemIndex = propertySets.PropertySet.Count - 1;
+						}
+						else
+						{
+							propertySets.PropertySet.AddRange(propertySets.PropertySet.ToList()
+								.GetRange(options.LastItemIndex, options.MaxItemReturn));
+							result.ArtifactCollection = Any.Pack(propertySets);
+							result.LastItemIndex = options.LastItemIndex + propertySets.PropertySet.Count - 1;
+						}
+
+						result.TotalItemsInCollection = propertySets.PropertySet.Count;
+						result.ArtifactCollection = Any.Pack(propertySets);
+						break;
+					case ArtifactType.TokenTemplate:
+						var tokenTemplates = new TokenTemplates();
+						if (Taxonomy.TokenTemplates.Count <= options.MaxItemReturn
+						) //if max return is greater than the total count, just send back all of them.
+						{
+							tokenTemplates.TokenTemplate.AddRange(Taxonomy.TokenTemplates.Values);
+							result.FirstItemIndex = 0;
+							result.LastItemIndex = tokenTemplates.TokenTemplate.Count - 1;
+						}
+						else
+						{
+							tokenTemplates.TokenTemplate.AddRange(tokenTemplates.TokenTemplate.ToList()
+								.GetRange(options.LastItemIndex, options.MaxItemReturn));
+							result.ArtifactCollection = Any.Pack(tokenTemplates);
+							result.LastItemIndex =
+								options.LastItemIndex + tokenTemplates.TokenTemplate.Count - 1;
+						}
+
+						result.TotalItemsInCollection = tokenTemplates.TokenTemplate.Count;
+						result.ArtifactCollection = Any.Pack(tokenTemplates);
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
+
+				return result;
+			}
+			catch (Exception ex)
+			{
+				_log.Error("Error retrieving artifact collection of type: " + options.ArtifactType);
+				_log.Error(ex);
+				return result;
+			}
+		}
+		
 		public static NewArtifactResponse CreateArtifact(NewArtifactRequest artifactRequest)
 		{
 			_log.Info("CreateArtifact: " + artifactRequest.Type);
