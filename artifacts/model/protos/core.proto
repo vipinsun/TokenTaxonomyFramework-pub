@@ -84,7 +84,7 @@ message TokenTemplates{
     repeated TokenTemplate token_template = 1;
 }
 
-//used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition.
+//used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TemplateBase{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
@@ -95,21 +95,21 @@ message TemplateBase{
 message TemplateBehavior{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    Behavior behavior = 3;
+    Behavior behavior = 3; //if template values are set include a copy when serialized. If empty the reference will be used with no values set.
 }
 
 //used to wrap the base token type for a template with implementation details specific for the BehaviorGroup's use in this token template definition.
 message TemplateBehaviorGroup{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    BehaviorGroup behavior_group = 3;
+    BehaviorGroup behavior_group = 3; //if template values are set include a copy when serialized. If empty the reference will be used with no values set.
 }
 
 //used to wrap the base token type for a template with implementation details specific for the Property-set's use in this token template definition.
 message TemplatePropertySet{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    PropertySet property_set = 3;
+    PropertySet property_set = 3; //if template values are set include a copy when serialized. If empty the reference will be used with no values set.
 }
 
 message Invocation{
