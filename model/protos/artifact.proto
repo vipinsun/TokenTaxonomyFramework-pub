@@ -1,0 +1,245 @@
+syntax = "proto3";
+
+package taxonomy.model.artifact;
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "TTI.TTF.Taxonomy.Model.Artifact";
+option java_package = "org.tti.tti.taxonomy.model.artifact";
+option java_multiple_files = true;
+
+enum TokenType {
+    FUNGIBLE = 0;
+    NON_FUNGIBLE = 1;
+    HYBRID_FUNGIBLE_ROOT = 2;
+    HYBRID_NON_FUNGIBLE_ROOT = 3;
+    HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN = 4;
+    HYBRID_NON_FUNGIBLE_ROOT_HYBRID_CHILDREN = 5;
+}
+
+enum ArtifactType{
+    BASE = 0; //from core.Type
+    BEHAVIOR = 1; 
+    BEHAVIOR_GROUP = 2;
+    PROPERTY_SET = 3;
+    TOKEN_TEMPLATE = 4; //complete token definition
+}
+
+enum ArtifactContent {
+    DEFINITION = 0; //html, MD, etc.
+    CONTROL = 1; //proto
+    UML = 2; //md or other host UML
+    OTHER = 3; //any
+}
+
+enum MappingType{
+    SOURCE_CODE = 0;
+    IMPLEMENTATION = 1;
+    RESOURCE = 2; //to an external informational source like a regulatory framework or related issue
+}
+
+enum TargetPlatform{
+    ETHEREUM_SOLIDITY = 0;
+    CHAINCODE_GO = 1;
+    CHAINCODE_JAVA = 2;
+    CHAINCODE_NODE = 3;
+    CORDA = 4;
+    DAML = 5;
+}
+
+//contains artifact metadata structure
+message Artifact {
+    ArtifactSymbol artifact_symbol = 1;
+    string name = 2;
+    repeated string aliases = 3;
+    string control_uri = 4;
+    ArtifactDefinition artifact_definition = 5; //Base, Behavior or Behavior group type indicated by ArtifactType
+    repeated SymbolDependency dependencies = 6; //Typically used for a behavior that has a dependency on a property-set.
+    repeated ArtifactSymbol incompatible_with_symbols = 7; //for behaviors that have opposites, or if another behavior or property-set
+    repeated SymbolInfluence influenced_by_symbols = 8;
+    repeated ArtifactFile artifact_files = 9; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    Maps maps = 10;
+}
+
+message ArtifactSymbol{
+    ArtifactType type = 1;
+    string visual_symbol = 2;
+    string tooling_symbol = 3;
+    string artifact_version = 4;
+}
+
+message SymbolInfluence{
+    string description = 1; //describe how the symbol influences this artifact, like non-sub-dividable or delegable.
+    ArtifactSymbol symbol = 2;
+}
+
+message SymbolDependency{
+    string description = 1; //describe how the symbol influences this artifact, like non-sub-dividable or delegable.
+    ArtifactSymbol symbol = 2;
+}
+
+message ArtifactDefinition{
+    string business_description = 1;
+    string business_example = 2;
+    repeated ArtifactAnalogy analogies = 3;
+    string comments = 4;
+    Artifact artifact = 5; //navigation to parent
+}
+
+message ArtifactAnalogy{
+    string name = 1;
+    string description = 2;
+    ArtifactDefinition artifact_definition = 3; //navigation to parent
+}
+
+message ArtifactFile{
+    ArtifactContent content = 1; 
+    string file_name = 2;
+    bytes file_data = 3;
+    Artifact artifact = 4; //navigation to parent
+}
+
+message Maps{
+    repeated MapReference code_references = 1;
+    repeated MapReference implementation_references = 2;
+    repeated MapResourceReference resources = 3;
+    Artifact artifact = 4; //navigation to parent
+}
+
+message MapReference{
+    MappingType mapping_type = 1;
+    string name = 2;
+    TargetPlatform platform = 3;
+    string reference_path = 4;
+    Maps maps = 5; //navigation to parent
+}
+
+message MapResourceReference{
+    MappingType mapping_type = 1;
+    string name = 2;
+    string description = 3;
+    string resource_path = 4;
+    Maps maps = 5; //navigation to parent
+}
+
+//Commands
+
+message NewArtifactRequest{
+    ArtifactType type = 1;
+    google.protobuf.Any artifact = 2;
+}
+
+message NewArtifactResponse{
+    ArtifactType type = 1;
+    google.protobuf.Any artifact_type_object = 2; //deserialize based on type
+}
+
+message UpdateArtifactRequest{
+    ArtifactType type = 1;
+    google.protobuf.Any artifact_type_object = 2;//deserialize based on type
+}
+
+message UpdateArtifactResponse{
+    ArtifactType type = 1;
+    bool updated = 2;
+    google.protobuf.Any artifact_type_object = 3; //updated type, deserialize based on type
+}
+
+message DeleteArtifactRequest{
+    ArtifactSymbol artifact_symbol = 1;//deserialize based on type
+}
+
+message DeleteArtifactResponse{
+    bool deleted = 1;
+}
+
+message FormulaGrammar{
+    SingleToken single_token = 1;
+    HybridTokenFormula hybrid = 2;
+    HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 3;
+}
+
+message HybridTokenFormula{
+    SingleToken parent = 1;
+    string children_start = 2; // "("
+    repeated SingleToken child_tokens = 3;
+    string children_end = 4; // ")"
+}
+
+message HybridTokenWithHybridChildrenFormula{
+    SingleToken parent = 1;
+    string hybrid_children_start = 2; // "("
+    repeated HybridTokenFormula hybrid_child_tokens = 3;
+    string hybrid_children_end = 4; // ")"
+}
+
+//outermost grouping container for the formula for a whole template either a parent or hybrid child.
+message SingleToken{
+    //classification for Templates starts here
+    enum ClassificationBranch{
+        FRACTIONAL_FUNGIBLE = 0; //tF{d}
+        WHOLE_FUNGIBLE = 1; //tF{~d}
+        FRACTIONAL_NON_FUNGIBLE = 2; //tN{d}
+        SINGLETON = 3; //tN{~s}
+    }
+    ClassificationBranch classification_branch = 1; //the TOM uses this as the first input for building and validating the Template Formula. 
+    string group_start = 2; // "["
+    TokenBase base_token = 3;
+    BehaviorList behaviors = 4;
+    repeated PropertySetListItem property_sets = 5;
+    string group_end = 6; // "]"
+}
+
+message TokenBase{
+    ArtifactSymbol artifact_symbol = 1;//deserialize based on type
+}
+
+message BehaviorList{
+    string list_start = 1; // "{"
+    repeated ArtifactSymbol behavior_symbols = 2; // lowercase letters for individual behaviors, UPPERCASE for behaviorGroup
+    string list_end = 3; // "}"
+}
+
+message PropertySetListItem{
+    string list_start = 1; // "+"
+    ArtifactSymbol property_set_symbols = 2; // starts with ph followed by Camel case name or symbol.
+}
+
+message TaxonomyFormula{
+    string formula = 1;
+}
+
+message CommitUpdatesRequest{
+    string commit_message = 1;
+}
+
+message CommitUpdatesResponse{
+    string result = 1;
+}
+
+message IssuePullRequest{
+
+}
+
+message IssuePullResponse{
+    string response = 1;
+}
+
+message ServiceConfiguration{
+    bool read_only = 1;
+    string git_id = 2;
+    string git_branch = 3;
+}
+
+message QueryOptions{
+    ArtifactType artifact_type = 1;
+    int32 max_item_return = 2;
+    int32 last_item_index = 3; //set to the QuertResult.LastItemIndex from the previous QueryResult. Manually override from QueryResult FirstItemIndex + count in results array
+}
+
+message QueryResult{
+    ArtifactType artifact_type = 1;
+    int32 first_item_index = 2;
+    int32 last_item_index = 3;
+    int32 total_items_in_collection = 4; //total count in the collection if iterating through all the items on the service of the specified type.
+    google.protobuf.Any artifact_collection = 5; //deserialize to the collection object for the ArtifactType, i.e. Base will be a Bases, Behavior will be Behaviors, etc.
+}
