@@ -51,7 +51,7 @@ A token class is a deployed template using a specific implementation of the temp
 
 A token instance is an owned token of a particular class. Depending on the platform how this notion is actually implemented will vary. Instances of a token that you may own, or have in your digital wallet, represent your account balance of that token class.
 
-### Taxonomy Artifacts and Categories
+### Taxonomy Artifacts, Categories & Templates
 
 The taxonomy is comprised of artifacts that are categorized into 5 basic types:
 
@@ -59,7 +59,8 @@ The taxonomy is comprised of artifacts that are categorized into 5 basic types:
 - Behaviors: capabilities or restrictions that can apply to a token.
 - Behavior-Groups: a bundle of behaviors that are frequently used together.
 - Property-Sets: a defined property(s) that if applied a token can be queried against and support a value for.
--Token Templates: a collection of artifacts composed together to define a ready to implement definition of a token.
+
+Token Templates are a composite consisting of a collection of artifacts composed together to define a ready to implement definition.
 
 Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md).
 
@@ -196,7 +197,11 @@ Starting with a base type, then collections of behaviors, groups and properties 
 
 ![TokenTemplateImplementationDetail](images/templateImpl.png)
 
-In the above example, we can specify in the template artifact implementation detail for the `phSKU` property that its value must be 16 characters in length, with all UPPERCASE and the 7th character being a `-`.
+In the above example, we can specify in the template artifact implementation detail for the `phSKU` property that its value must be 16 characters in length, with all UPPERCASE and the 7th character being a `-`. A template's formula is calculated and validated by the TTF.
+
+#### Classification
+
+A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` that is also classified as either a `Fractional Fungible`, `Whole Fungible`, `Fractional Non-Fungible` or a `Singleton`. Classification applies to the root or parent token for a hybrid as well as each child token.
 
 You can provide implementation detail for each artifact in your token template formula.
 
@@ -216,7 +221,6 @@ Below is an example of a token template in the model showing the collection of a
 - Behavior
 - Behavior Groups
 - Property Set
-- Token Templates
 
 ![TokenTemplate](images/TokenTemplates.png)
 
@@ -296,7 +300,7 @@ The root of the tree is a common base token or **&tau;** which has an owner Id, 
 
 There is also a base behavior artifact that includes simple GetTokenRequest/Response and GetTaxonomyRequest/Response.  
 
-Then two branches for fungible *&tau;<sub>F</sub>* and non-fungible *&tau;<sub>N</sub>* and under them are branches for sub-dividable *d* and whole *~d* to create the first three relationships.  
+Then two branches for fungible *&tau;<sub>F</sub>* and non-fungible *&tau;<sub>N</sub>* and under them are branches for sub-dividable *d* and whole *~d* to create the first three relationships. These branches are represented for a template using a classification of Fractional Fungible and Non-Fungible where sub-division is enabled and Whole Fungible or Singleton, where the later is shorthand for a Non-sub-dividable  Non-Fungible token.
 
 ![Hierarchy](images/hierarchy.png)
 

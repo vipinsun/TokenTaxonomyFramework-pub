@@ -73,11 +73,13 @@ message Property{
 }
 
 message TokenTemplate {
-    taxonomy.model.artifact.Artifact artifact = 1;
-    TemplateBase base = 2;
-    repeated TemplateBehavior behaviors = 3;
-    repeated TemplateBehaviorGroup behavior_groups = 4;
-    repeated TemplatePropertySet property_sets = 5;
+    string formula = 1; //this is calculated using the Base.Classification and adding in the artifacts in the definition.
+    string name = 2;
+    string version = 3;
+    TemplateBase base = 4;
+    repeated TemplateBehavior behaviors = 5;
+    repeated TemplateBehaviorGroup behavior_groups = 6;
+    repeated TemplatePropertySet property_sets = 7;
 }
 
 message TokenTemplates{
@@ -86,7 +88,6 @@ message TokenTemplates{
 
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TemplateBase{
-    taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
     Base base = 3; //set values for the template
 }
@@ -129,7 +130,6 @@ message InvocationResponse{
     string control_message_name = 1;
     string description = 2;
     repeated InvocationParameter output_parameters = 3;
-
 }
 
 message InvocationParameter{

@@ -174,11 +174,19 @@ message HybridTokenWithHybridChildrenFormula{
 
 //outermost grouping container for the formula for a whole template either a parent or hybrid child.
 message SingleToken{
-    string group_start = 1; // "["
-    TokenBase base_token = 2;
-    BehaviorList behaviors = 3;
-    repeated PropertySetListItem property_sets = 4;
-    string group_end = 5; // "]"
+    //classification for Templates starts here
+    enum ClassificationBranch{
+        FRACTIONAL_FUNGIBLE = 0; //tF{d}
+        WHOLE_FUNGIBLE = 1; //tF{~d}
+        FRACTIONAL_NON_FUNGIBLE = 2; //tN{d}
+        SINGLETON = 3; //tN{~s}
+    }
+    ClassificationBranch classification_branch = 1; //the TOM uses this as the first input for building and validating the Template Formula. 
+    string group_start = 2; // "["
+    TokenBase base_token = 3;
+    BehaviorList behaviors = 4;
+    repeated PropertySetListItem property_sets = 5;
+    string group_end = 6; // "]"
 }
 
 message TokenBase{
