@@ -342,7 +342,7 @@ Contract designers can also attach contract logic to token behaviors and visuall
 
 If you have created a token definition that is already defined, but your token has specific non-behavioral properties like a `SKU` or  `CUSIP` property you can create a new token definition for this formula in the taxonomy.
 
-In this case the generic taxonomy definition: &tau;<sub>F</sub>{~d,SC} or `tF{~d,SC}` can be named `Whole Fungible Token with Supply Control` and represents a `branch` in the hierarchy and your token definition will be a `node` or `leaf` on the branch named `Inventory Item Token`.  Your new token equal to the generic branch formula plus the definition containing the `SKU` non-behavioral property i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
+In this case the generic taxonomy definition: &tau;<sub>F</sub>{~d,SC} or `tF{~d,SC}` can be named `Whole Fungible Token with Supply Control` and represents a `branch` off the `Whole Fungible branch` in the hierarchy and your token definition will be a `node` or `leaf` on this branch named `Inventory Item Token`.  Your new token equal to the generic branch formula plus the definition containing the `SKU` non-behavioral property i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
 
 ## Tooling and Taxonomy
 
