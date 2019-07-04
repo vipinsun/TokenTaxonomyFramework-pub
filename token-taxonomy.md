@@ -163,11 +163,17 @@ Where hybrid tokens are being defined, behaviors can be defined that are common 
 
 For Boolean behaviors like Sub-dividable *d* or Whole *~d* the absence of *~d* would imply *d*, but should usually be included for clarity if it is a restriction on a base property value like decimals or changing the owner.
 
-Some behaviors, when applied, will effect other behaviors within the token definition.  These behaviors or traits can be thought of as inherited traits that will alter a particular behavior. An example of this is the behavior, delegable, which is the ability to delegate a behavior to another party to perform on your behalf as the owner.  Delegable is implied, so an absence of *~g* would imply that the token class or behavior is delegable.
+#### Special Behaviors and Interactions
+
+Some behaviors, when applied, will effect other behaviors within the token definition.  These behaviors influence other behaviors that indicate they are influenced by the other behavior. An example of this is the behavior is delegable, which is the ability to delegate a behavior to another party to perform on your behalf as the owner.  Delegable is implied or the default, so an absence of *~g* the token class and any behaviors that are influenced by it behavior will be delegable.
 
 delegable *g*
 
 Behaviors like Transfer and Burn can be defined as delegable and when they are applied to a Token Template that is delegable, these behaviors will enable delegated invocations like TransferFrom and BurnFrom that allows an account the owner has approved to invoke these on their behalf.
+
+Behaviors can be incompatible with each other and cause validation errors.  A behavior and its opposite `~` are obviously incompatible. A behavior will indicate what behaviors it will be incompatible with, for example if `Singleton`, *s* and `Mintable`, *m* are applied in the same token, validation will fail as a singleton can only have a quantity of 1 whole token.
+
+Behaviors will also have dependencies on any property-sets required for their implementation.  For example, the behavior `Roles` has a dependency on the `role`, &phi;ROLE property-set to ensure that the underlying properties the behavior will need are present in the token definition.
 
 Some behaviors will require setup at token class creation or construction.  A behavior that requires setup should have a Constructor control message that indicates how it should be setup at construction. For example, the behavior *r* Roles requires a role to be defined that is applied to a behavior(s) for a role check to be performed for authorization to invoke the behavior.
 
