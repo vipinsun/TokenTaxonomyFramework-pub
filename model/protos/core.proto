@@ -6,7 +6,7 @@ import "google/protobuf/any.proto";
 import "artifact.proto";
 
 option csharp_namespace = "TTI.TTF.Taxonomy.Model.Core";
-option java_package = "org.tti.tti.taxonomy.model.core";
+option java_package = "org.tti.ttf.taxonomy.model.core";
 option java_multiple_files = true;
 
 //all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
@@ -72,14 +72,16 @@ message Property{
     repeated Invocation property_invocations = 4; //needed for non-behavioral properties
 }
 
-message TokenTemplate {
+//Used for either a parent or child definition within a TokenTemplate only.
+message TemplateToken {
     string formula = 1; //this is calculated using the Base.Classification and adding in the artifacts in the definition.
     string name = 2;
     string version = 3;
-    TemplateBase base = 4;
-    repeated TemplateBehavior behaviors = 5;
-    repeated TemplateBehaviorGroup behavior_groups = 6;
-    repeated TemplatePropertySet property_sets = 7;
+    taxonomy.model.artifact.ArtifactDefinition definition = 4;
+    Base base = 5;
+    repeated TemplateBehavior behaviors = 6;
+    repeated TemplateBehaviorGroup behavior_groups = 7;
+    repeated TemplatePropertySet property_sets = 8;
 }
 
 message TokenTemplates{
@@ -87,9 +89,9 @@ message TokenTemplates{
 }
 
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
-message TemplateBase{
-    string implementation_details = 2;
-    Base base = 3; //set values for the template
+message TokenTemplate{
+    TemplateToken base = 1; //set values for the template
+    repeated TemplateToken child_tokens = 2;
 }
 
 //used to wrap the base token type for a template with implementation details specific for the behavior's use in this token template definition.
