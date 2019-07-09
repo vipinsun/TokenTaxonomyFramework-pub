@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -78,7 +79,7 @@ namespace ArtifactGenerator
 				if (args.Length == 0)
 				{
 					_log.Info(
-						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate] --n [ARTIFACT_NAME] (optional if artifactType is Base or TokenTemplate.");
+						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate] --n [ARTIFACT_NAME],");
 					_log.Info(
 						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot, 4 = hybrid-fungibleRoot-hybridChildren, 5 = hybrid-non-fungibleRoot-hybridChildren]");
 					_log.Info(
@@ -89,7 +90,7 @@ namespace ArtifactGenerator
 				}
 
 				_log.Error(
-					"Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate], (optional if artifactType is Base or TokenTemplate ");
+					"Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate],");
 				_log.Error(
 					"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot, 4 = hybrid-fungibleRoot-hybridChildren, 5 = hybrid-non-fungibleRoot-hybridChildren]");
 				_log.Error(
@@ -371,6 +372,7 @@ namespace ArtifactGenerator
 						{
 							Name = "Property1",
 							ValueDescription = "Some Value",
+							TemplateValue = "",
 							PropertyInvocations =
 							{
 								new Invocation
@@ -470,6 +472,7 @@ namespace ArtifactGenerator
 									Name = "Property1",
 									ValueDescription =
 										"This is the property required to be implemented and should be able to contain data of type X.",
+									TemplateValue = "",
 									PropertyInvocations =
 									{
 										new Invocation
@@ -605,15 +608,37 @@ namespace ArtifactGenerator
 			{
 				//template mode
 				artifactTypeFolder = "token-templates";
+				var classificationFolder = "";
+				switch (Classification)
+				{
+					case ClassificationBranch.FractionalFungible:
+						classificationFolder = folderSeparator + "fungible" + folderSeparator + "fractional" + folderSeparator;
+						break;
+					case ClassificationBranch.WholeFungible:
+						classificationFolder = folderSeparator + "fungible" + folderSeparator + "whole" + folderSeparator;
+						break;
+					case ClassificationBranch.FractionalNonFungible:
+						classificationFolder = folderSeparator + "non-fungible" + folderSeparator + "fractional" + folderSeparator;
+						break;
+					case ClassificationBranch.Singleton:
+						classificationFolder = folderSeparator + "non-fungible" + folderSeparator + "singleton" + folderSeparator;
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
 				var outputFolder =
 					Directory.CreateDirectory(
-						fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
-
-				var templateToken = new TokenTemplate();
-
-				templateToken.Base = GetTokenTemplate(fullPath, folderSeparator);
+						fullPath + artifactTypeFolder + classificationFolder + ArtifactName + Latest);
 				
-				if (BaseType != TokenType.Fungible || BaseType != TokenType.NonFungible)
+				var (uri, artifactFiles) = AddTemplateFiles(outputFolder, artifactTypeFolder, folderSeparator, "TokenTemplates", classificationFolder);
+				var templateToken = new TokenTemplate
+				{
+					Base = GetTokenTemplate(fullPath, folderSeparator),
+					ControlUri = uri,
+					ArtifactFiles = { artifactFiles }
+				};
+				
+				if (BaseType == TokenType.HybridFungibleRoot | BaseType == TokenType.HybridNonFungibleRoot | BaseType == TokenType.HybridFungibleRootHybridChildren | BaseType == TokenType.HybridNonFungibleRootHybridChildren)
 				{
 					templateToken.ChildTokens.Add(GetTokenTemplate(fullPath, folderSeparator));
 				}
@@ -778,7 +803,7 @@ namespace ArtifactGenerator
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
-			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + baseName+".json");
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + Latest + folderSeparator + baseName+".json");
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
 			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
@@ -854,32 +879,22 @@ namespace ArtifactGenerator
 		private static BehaviorList GetDividable(BehaviorList list)
 		{
 			var retVal = list.Clone();
+			retVal.BehaviorSymbols.Clear();
 			if (Classification == ClassificationBranch.Singleton ||
 			    Classification == ClassificationBranch.WholeFungible)
 			{
-				var notSub =
-					list.BehaviorSymbols.SingleOrDefault(e => e.ToolingSymbol == "~d");
-				if (notSub == null)
+				retVal.BehaviorSymbols.Add(new ArtifactSymbol
 				{
-					retVal.BehaviorSymbols.Add(new ArtifactSymbol
-					{
-						ToolingSymbol = "~d"
-					});
-				}
+					ToolingSymbol = "~d"
+				});
+
 			}
 			else
 			{
-				var sub =
-					list.BehaviorSymbols.SingleOrDefault(e =>
-						e.ToolingSymbol == "d");
-				if (sub == null)
+				retVal.BehaviorSymbols.Add(new ArtifactSymbol
 				{
-					retVal.BehaviorSymbols.Add(new ArtifactSymbol
-					{
-						ToolingSymbol = "d"
-					});
-				}
-
+					ToolingSymbol = "d"
+				});
 			}
 
 			return retVal;
@@ -897,7 +912,17 @@ namespace ArtifactGenerator
 			};
 			
 		}
-		
+
+
+		private static (string, IEnumerable<ArtifactFile>) AddTemplateFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, string nameSpaceAdd, string classification)
+		{
+			var md = CreateMarkdown(outputFolder, folderSeparator);
+			var proto = CreateProto(outputFolder, folderSeparator, nameSpaceAdd);
+			var files = new List<ArtifactFile> {proto, md};
+			return (ArtifactPath + folderSeparator + typeFolder + classification + ArtifactName + Latest +
+			        folderSeparator + proto.FileName, files);
+		}
+
 		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, Artifact parent, string nameSpaceAdd)
 		{
 			var md = CreateMarkdown(outputFolder, folderSeparator);
@@ -905,7 +930,7 @@ namespace ArtifactGenerator
 			var retArtifact = parent.Clone();
 			
 			retArtifact.ArtifactFiles.Add(proto);
-			retArtifact.ControlUri = ArtifactPath + folderSeparator + typeFolder + folderSeparator + ArtifactName + folderSeparator + Latest + proto.FileName;
+			retArtifact.ControlUri = ArtifactPath + folderSeparator + typeFolder + folderSeparator + ArtifactName + Latest + folderSeparator + proto.FileName;
 			retArtifact.ArtifactFiles.Add(md);
 			return retArtifact;
 		}

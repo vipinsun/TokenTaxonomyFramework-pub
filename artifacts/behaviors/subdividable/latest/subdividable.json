@@ -94,5 +94,32 @@
   "constructorName": "",
   "constructor": null,
   "invocations": [],
-  "properties": []
+  "properties": [
+    {
+      "name": "Decimals",
+      "valueDescription": "Set to a number greater than Zero, allowing subdivision",
+      "templateValue": "0",
+      "propertyInvocations": [
+        {
+          "name": "GetDecimals",
+          "description": "Return the value",
+          "request": {
+            "controlMessageName": "GetDecimalsRequest",
+            "description": "",
+            "inputParameters": []
+          },
+          "response": {
+            "controlMessageName": "GetDecimalsResponse",
+            "description": "Return number of decimal places",
+            "outputParameters": [
+              {
+                "name": "Decimals",
+                "valueDescription": "integer"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

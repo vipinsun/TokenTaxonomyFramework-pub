@@ -152,6 +152,7 @@
     {
       "name": "Encumbrances",
       "valueDescription": "List of Encumbered",
+      "templateValue": "",
       "propertyInvocations": [
         {
           "name": "GetEncumbrancesRequest",
@@ -177,6 +178,7 @@
     {
       "name": "Encumbered",
       "valueDescription": "True or False",
+      "templateValue": "",
       "propertyInvocations": [
         {
           "name": "GetEncumberedRequest",

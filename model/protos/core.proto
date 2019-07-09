@@ -90,8 +90,10 @@ message TokenTemplates{
 
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TokenTemplate{
-    TemplateToken base = 1; //set values for the template
-    repeated TemplateToken child_tokens = 2;
+    string control_uri = 1;
+    repeated taxonomy.model.artifact.ArtifactFile artifact_files = 2; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    TemplateToken base = 3; //set values for the template
+    repeated TemplateToken child_tokens = 4;
 }
 
 //used to wrap the base token type for a template with implementation details specific for the behavior's use in this token template definition.

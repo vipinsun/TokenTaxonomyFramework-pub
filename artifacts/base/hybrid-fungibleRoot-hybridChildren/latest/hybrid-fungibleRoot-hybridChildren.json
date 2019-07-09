@@ -103,6 +103,7 @@
   "tokenType": "HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN",
   "hybridWithHybrids": {
     "parent": {
+      "classificationBranch": "FRACTIONAL_FUNGIBLE",
       "groupStart": "[",
       "baseToken": {
         "artifactSymbol": {
@@ -141,6 +142,7 @@
     "hybridChildTokens": [
       {
         "parent": {
+          "classificationBranch": "SINGLETON",
           "groupStart": "[",
           "baseToken": {
             "artifactSymbol": {
@@ -178,6 +180,7 @@
         "childrenStart": "(",
         "childTokens": [
           {
+            "classificationBranch": "FRACTIONAL_FUNGIBLE",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {
@@ -213,6 +216,7 @@
             "groupEnd": "]"
           },
           {
+            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {
@@ -252,6 +256,7 @@
       },
       {
         "parent": {
+          "classificationBranch": "FRACTIONAL_FUNGIBLE",
           "groupStart": "[",
           "baseToken": {
             "artifactSymbol": {
@@ -289,6 +294,7 @@
         "childrenStart": "(",
         "childTokens": [
           {
+            "classificationBranch": "SINGLETON",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {
@@ -324,6 +330,7 @@
             "groupEnd": "]"
           },
           {
+            "classificationBranch": "FRACTIONAL_FUNGIBLE",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {

@@ -112,6 +112,7 @@
   "tokenType": "HYBRID_FUNGIBLE_ROOT",
   "hybrid": {
     "parent": {
+      "classificationBranch": "FRACTIONAL_FUNGIBLE",
       "groupStart": "[",
       "baseToken": {
         "artifactSymbol": {
@@ -149,6 +150,7 @@
     "childrenStart": "(",
     "childTokens": [
       {
+        "classificationBranch": "FRACTIONAL_NON_FUNGIBLE",
         "groupStart": "[",
         "baseToken": {
           "artifactSymbol": {

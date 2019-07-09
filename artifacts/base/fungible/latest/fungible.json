@@ -103,6 +103,7 @@
   },
   "tokenType": "FUNGIBLE",
   "singleToken": {
+    "classificationBranch": "FRACTIONAL_FUNGIBLE",
     "groupStart": "[",
     "baseToken": {
       "artifactSymbol": {

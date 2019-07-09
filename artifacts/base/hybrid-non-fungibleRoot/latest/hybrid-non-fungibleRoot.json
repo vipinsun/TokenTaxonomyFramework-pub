@@ -103,6 +103,7 @@
   "tokenType": "HYBRID_NON_FUNGIBLE_ROOT",
   "hybrid": {
     "parent": {
+      "classificationBranch": "SINGLETON",
       "groupStart": "[",
       "baseToken": {
         "artifactSymbol": {
@@ -140,6 +141,7 @@
     "childrenStart": "(",
     "childTokens": [
       {
+        "classificationBranch": "FRACTIONAL_FUNGIBLE",
         "groupStart": "[",
         "baseToken": {
           "artifactSymbol": {

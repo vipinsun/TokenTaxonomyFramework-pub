@@ -25,15 +25,15 @@ This paper does not provide a backgrounder on Tokens and their function, but rat
 
 See the [Token Hall](https://medium.com/tokenhall) for a backgrounder for business and technical audiences.
 
-## Taxonomy
+## Common Terminology
 
 The TTF is a composition framework that breaks tokens down into basic parts.  Base token types, properties and behaviors, which are then placed into a category by type and can support grouping.  Each decomposed part is documented in a taxonomy [artifact](taxonomy-file-format.md). Composing these token parts together also generates a taxonomy artifact defining a complete token referencing its component artifacts.
 
 The taxonomy uses these terms for all tokens:
 
-- Token Template - is a complete token definition that is used to create a token of the defined type. A template is able to create a clone of itself, which is a class.
-- Token Class - is an deployed token from a defined template.
-- Token Instance - a single token in a particular token class.
+- Token Template - is a complete token definition that is used to create a token of the defined type. A template is able to create a clone of itself, which is a class. (i.e. Crypto-currency Token Template)
+- Token Class - is an deployed token from a defined template. (i.e. Bitcoin created from the crypto-currency template)
+- Token Instance - a single token in a particular token class. (i.e. satoshi balance in your crypto-currency wallet)
 
 ![DefinitionStructure](images/definition-structure.png)
 
@@ -74,7 +74,7 @@ Behavior and Property-Sets contain `Control` message descriptions that are messa
 
 These messages are generic for the behavior and not specific to any particular blockchain or programming language. Control messages defined in a separate file using Protocol Buffer syntax representing the lowest level of implementation detail the framework provides.  For more detail on the specification definitions see [Token Control Messages](./token-control-messages.md).
 
-### Base Token Types
+## Base Token Types
 
 The taxonomy is anchored by single root token that is used to define properties shared by the two implementable or base token types. Properties like a common name, a symbol or unique identifier a quantity and an owner.  When you create a token, you are initially creating a token or asset class that represents the specific type of token that will represent instances of the token.
 
@@ -84,37 +84,39 @@ The two base types can also be used together to create hybrid token definitions.
 
 The taxonomy uses symbols to represent token bases and possible behaviors that are used to create a token definition as a formula.  The symbols and token formulas can be used to create hierarchical relationships useful for visualizations and to aid in learning and design.
 
-#### Fungible
+### Fungible
 
 Physical cash or a crypto currency is a good example of a fungible token. These tokens have interchangeable value with one another, where any quantity of them has the same value as another equal quantity as long as they are in the same class or series.
 
 A fungible token is identified by **&tau;<sub>F</sub>**.
 
-#### Non-fungible
+### Non-fungible
 
 Every non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the title to a broken-down shack is not of the same value as a mansion.
 
 A fungible token is identified by **&tau;<sub>N</sub>**.
 
-#### Hybrids
+### Hybrids
 
-##### Shared Non-fungible Parent with Fungible classes
+#### Shared Non-fungible Parent with Fungible classes
 
 These tokens often share a common non-fungible parent or base token and then can have classes of fungible tokens that are possessed by owners.  An example of this hybrid is a rock concert, where the parent token represents the specific date or showing of the concert then a class for general admission and one for the "mosh pit".  General admission is fungible only in its class.
 
 This hybrid **&tau;<sub>N</sub>(&tau;<sub>F</sub>)** is a non-fungible token (&tau;<sub>N</sub>) with a class(s) of fungible sub-tokens (&tau;<sub>F</sub>).
 
-##### Fungible Parent class owns or has many non-fungible Children (usually singletons)
+#### Fungible Parent class owns or has many non-fungible Children (usually singletons)
 
 A token can be the owner of another token or any number of tokens to represent the compound value of the underlying tokens.  For example, a **&tau;<sub>F</sub>**(&tau;<sub>N</sub>) has a fungible token class that is the owner one or more non-fungible tokens.
 
 This would allow you to create a token that could be subdivided to allow each token to own a percentage of the pool of non-fungible tokens.  A mortgage backed security is a good example.
 
-##### Fungible Parent Class owns or has many non-fungible and fungible child classes
+When a child token is declared a Singleton, by default it can contain one or more Singletons from the same template.
+
+#### Fungible Parent Class owns or has many non-fungible and fungible child classes
 
 The rock concert example above could have an added "reserved" section where each seat is a non-fungible token.  Which would represent a **&tau;<sub>N</sub>**(&tau;<sub>F</sub>, &tau;<sub>N</sub>).
 
-### Properties
+## Properties
 
 Properties of a token are used to define the information or data a token contains about itself and to record its activities.  Some properties are set when the token class is created from a template, like its name and owner while others are set and updated over a tokens lifetime.
 
@@ -141,13 +143,13 @@ Some base token properties may have different values or meaning depending on the
 
 Token Templates start out with a common set of base properties and then diverge based on the behaviors the token will support and any non-behavioral property sets required.
 
-### Behaviors
+## Behaviors
 
 Behaviors can be capabilities or restrictions, logic, and can be common across fungible and non-fungible types, or only apply to one of them.  Behaviors also have can supporting properties that become a part of the token schema and definition.  Behaviors use the first letter of the behavior as its representation in the taxonomy. Collisions of letters are avoided by adding additional letters from a single word name or the letter of a second word.
 
 Behaviors are very business specific and usually have existing “non-blockchain” implementations which are well understood. Here are some common behaviors.
 
-#### Common Behaviors
+### Common Behaviors
 
 These are some common behaviors and not comprehensive.
 
@@ -163,7 +165,7 @@ Where hybrid tokens are being defined, behaviors can be defined that are common 
 
 For Boolean behaviors like Sub-dividable *d* or Whole *~d* the absence of *~d* would imply *d*, but should usually be included for clarity if it is a restriction on a base property value like decimals or changing the owner.
 
-#### Special Behaviors and Interactions
+### Special Behaviors and Interactions
 
 Some behaviors, when applied, will effect other behaviors within the token definition.  These behaviors influence other behaviors that indicate they are influenced by the other behavior. An example of this is the behavior is delegable, which is the ability to delegate a behavior to another party to perform on your behalf as the owner.  Delegable is implied or the default, so an absence of *~g* the token class and any behaviors that are influenced by it behavior will be delegable.
 
@@ -177,7 +179,7 @@ Behaviors will also have dependencies on any property-sets required for their im
 
 Some behaviors will require setup at token class creation or construction.  A behavior that requires setup should have a Constructor control message that indicates how it should be setup at construction. For example, the behavior *r* Roles requires a role to be defined that is applied to a behavior(s) for a role check to be performed for authorization to invoke the behavior.
 
-#### Internal and External Behaviors
+### Internal and External Behaviors
 
 Behaviors can be internal or external depending on what the behavior effects. An internal behavior is enabling or restricting properties on the token itself, where an external behavior is enabling or restricting the invocation of the behavior from an external actor.  For example, the behavior Sub-dividable means that the decimals property on the base token is > 0 and Non-transferable means that Owner property is not modifiable from the initial owner that was initially set when the token instance was created.  
 
@@ -187,7 +189,7 @@ The distinction between internal and external behaviors can seem like nuance at 
 
 Some behaviors, like Transferable *t* are implicit for certain token bases.  A fungible token, for example, implicitly is Transferable so the taxonomy does not require it to be included for tooling or the definition but can be included for clarity: *&tau;<sub>F</sub> = &tau;<sub>F</sub>{t}*.
 
-### Behavior Groups
+## Behavior Groups
 
 Behaviors are also grouped together to describe a common set of capabilities.  For example, Supply Control is a group made up of Mint-able, Burnable and Role Support for adding and removing supply and allowing certain accounts to be able to mint new tokens within the class.  
 For example, an oil token may allow oil producers to mint new tokens as they introduce a barrel of oil into the supply chain. And the refiner can burn the token when it has been refined.
@@ -195,7 +197,7 @@ For example, an oil token may allow oil producers to mint new tokens as they int
 Behavior groups are represented in the taxonomy by a capital letter or acronym, *SC*, from their full name and equal to the symbols for the behaviors they include.
 *SC = {m, b, r}*
 
-### Token Templates
+## Token Templates
 
 Templates are where a token definition all comes together. Selecting artifacts from the previous categories, a template lists the artifacts that define what a token created from the template will be.
 
@@ -205,7 +207,7 @@ Starting with a base type, then collections of behaviors, groups and properties 
 
 In the above example, we can specify in the template artifact implementation detail for the `phSKU` property that its value must be 16 characters in length, with all UPPERCASE and the 7th character being a `-`. A template's formula is calculated and validated by the TTF.
 
-#### Classification
+### Classification
 
 A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` that is also classified as either a `Fractional Fungible`, `Whole Fungible`, `Fractional Non-Fungible` or a `Singleton`. Classification applies to the root or parent token for a hybrid as well as each child token.
 
@@ -217,7 +219,7 @@ Artifacts are primarily defined using a platform neutral model that provides typ
 
 > Note, the visualizations of the taxonomy model can be viewed as relational or an object model. The image below is using a relational view for simplicity. The Taxonomy model is an object model that is very much like a ORM (object to relational model) that is native to most platforms and can serialize to binary, JSON or Sql formats.
 
-![TaxonomyModel](images/model.png)
+![TaxonomyModel](images/taxonomy-model.png)
 
 Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior-groups, property-sets and templates.
 
@@ -306,49 +308,43 @@ The root of the tree is a common base token or **&tau;** which has an owner Id, 
 
 There is also a base behavior artifact that includes simple GetTokenRequest/Response and GetTaxonomyRequest/Response.  
 
-Then two branches for fungible *&tau;<sub>F</sub>* and non-fungible *&tau;<sub>N</sub>* and under them are branches for sub-dividable *d* and whole *~d* to create the first three relationships. These branches are represented for a template using a classification of Fractional Fungible and Non-Fungible where sub-division is enabled and Whole Fungible or Singleton, where the later is shorthand for a Non-sub-dividable  Non-Fungible token.
+Then two branches for fungible *&tau;<sub>F</sub>* and non-fungible *&tau;<sub>N</sub>* and under them are branches for sub-dividable *d* and whole *~d* to create the first three relationships.
+
+This logically these branches are used to classify templates from three roots, Fungible, Non-Fungible and Hybrid. Fungible and Non-fungible branches based on subdivision and the hybrid branch duplicates it's peer branches indicated by the hybrid parent token type.
+
+- Fractional Fungible (sub-dividable)
+- Fractional Non-Fungible (sub-dividable)
+- Whole Fungible (non-sub-dividable)
+- Singleton (non-sub-dividable, non-fungible)
 
 ![Hierarchy](images/hierarchy.png)
 
-[Hybrid tokens](#hybrids) are not shown in the hierarchy, but there will be a design surface using the taxonomy to combine two tokens in a hybrid relationship.
+[Hybrid tokens](#hybrids) can reference another branch within the tree to prevent duplication.
 
-From here the tree begins to get wider as behavior artifacts and behavior groups are added.  The tree visualization makes a good eye chart, but the token design surface becomes a powerful business tool.
+Branches on the tree begin to get wider as behavior artifacts and behavior groups are added.  The tree visualization makes a good eye chart, but the token design surface becomes a powerful business tool.
 
-When designing a token using the taxonomy, you will pick from one of these four lower branches of fungible (sub-dividable or whole) and non-fungible (sub-dividable or whole) and select it as a starting design surface.
-
-Behavior artifacts and groups appear in lists like a menu that you can drag and drop inside your design surface to design a new token.  The taxonomy will block behaviors or behavior combinations that do not mix for the base token type you have selected.
-
-Once completed, you will have defined a token that has a baseline set of properties and behavior messages to serve as a starting point for implementing a platform specific token.
-
-## Taxonomy Workshops and Formulas
-
-The taxonomy can be used in a workshop with stakeholders that want to define an existing or figure out a design for a new token.  This workshop starts by defining a high-level business and functional purpose for the token and then begin to decompose the existing implementation or if starting from scratch begin composing a taxonomy definition that matches the description.
-
-In the workshop, the group will select a base token type and select from the existing behaviors in the taxonomy like choosing from A la Carte menu at a restaurant. If no suitable behavior or group can be found, the participants should create a new one.  Which means they will create a new taxonomy artifact using the TTF.
-
-The end result of the workshop is to have a complete definition of the token that can be expressed using grammar as a formula.  This formula becomes the token's taxonomy definition like:
-
- >**&tau;<sub>F</sub>{~d,SC}**
-
-When a workshops is completed, the artifacts should be recorded, any new behaviors, groups and token definitions and a pull request be issued for these to be merged after approval to be part of the framework and available for reuse by other workshops.
-
-![Workshop](images/workshopProcess.png)
-
-## Example Design
+### Example Design
 
 As an example, let’s see what a fungible token with supply control or &tau;<sub>F</sub>{<i>SC</i>} or for clarity &tau;<sub>F</sub>{<i>~d, SC</i>} could look like with a design tool.
 
 ![Design](images/design.png)
 
-The designer would drag one of the bottom base tokens to start the process.  Then from the behavior palate, select *SC* from the Behavior Groups and drag it over, which brings over the properties *{m, b, r}* and additionally *~d* from Behaviors to design the token.
 
-Contract designers can also attach contract logic to token behaviors and visually represent the relationships between a contract and its underlying tokens.
+When designing a token using the taxonomy, you will pick from one of these four lower branches of fungible (fractional or whole) and non-fungible (fractional or singleton) and select it as a starting design surface.
+
+Behavior artifacts and properties appear in lists like menu palets you can drag and drop inside your design surface to design a new token.  The taxonomy will block behaviors or behavior combinations that do not mix for the base token type you have selected.
+
+Once completed, you will have defined a token that has a baseline set of properties and behavior messages to serve as a starting point for implementing a platform specific token.
 
 ## Taxonomy Hierarchy
 
 If you have created a token definition that is already defined, but your token has specific non-behavioral properties like a `SKU` or  `CUSIP` property you can create a new token definition for this formula in the taxonomy.
 
-In this case the generic taxonomy definition: &tau;<sub>F</sub>{~d,SC} or `tF{~d,SC}` can be named `Whole Fungible Token with Supply Control` and represents a `branch` off the `Whole Fungible branch` in the hierarchy and your token definition will be a `node` or `leaf` on this branch named `Inventory Item Token`.  Your new token equal to the generic branch formula plus the definition containing the `SKU` non-behavioral property i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
+In this case the generic taxonomy definition: &tau;<sub>F</sub>{~d,SC} or `tF{~d,SC}` can be named `Whole Fungible Token with Supply Control` and represents a `branch` off the `Whole Fungible branch` in the hierarchy.
+
+The template token definition adding the SKU property-set will be a `node` or `leaf` on this branch named `Inventory Item Token`.  Your new token equal to the generic branch formula plus the definition containing the `SKU` non-behavioral property i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
+
+![Branch-Leaf](images/branch-leaf.png)
 
 ## Tooling and Taxonomy
 
@@ -399,6 +395,20 @@ Putting all of these taxonomy concepts together allows for interaction models to
 For each complete token definition these interactions can be defined as an artifact in the behavior folder.
 
 [Interaction Models](logicalIM.md)
+
+## Taxonomy Workshops and Formulas
+
+The taxonomy can be used in a workshop with stakeholders that want to define an existing or figure out a design for a new token.  This workshop starts by defining a high-level business and functional purpose for the token and then begin to decompose the existing implementation or if starting from scratch begin composing a taxonomy definition that matches the description.
+
+In the workshop, the group will select a base token type and select from the existing behaviors in the taxonomy like choosing from A la Carte menu at a restaurant. If no suitable behavior or group can be found, the participants should create a new one.  Which means they will create a new taxonomy artifact using the TTF.
+
+The end result of the workshop is to have a complete definition of the token that can be expressed using grammar as a formula.  This formula becomes the token's taxonomy definition like:
+
+ >**&tau;<sub>F</sub>{~d,SC}**
+
+When a workshops is completed, the artifacts should be recorded, any new behaviors, groups, properties and token templates and a pull request be issued for these to be merged after approval to be part of the framework and available for reuse by other workshops.
+
+![Workshop](images/workshopProcess.png)
 
 ## Benefits of the framework
 

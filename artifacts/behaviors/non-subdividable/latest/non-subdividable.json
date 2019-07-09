@@ -84,5 +84,32 @@
   "constructorName": "",
   "constructor": null,
   "invocations": [],
-  "properties": []
+  "properties": [
+    {
+      "name": "Decimals",
+      "valueDescription": "Set to Zero, not allowing any subdivision",
+      "templateValue": "0",
+      "propertyInvocations": [
+        {
+          "name": "GetDecimals",
+          "description": "Should return 0",
+          "request": {
+            "controlMessageName": "GetDecimalsRequest",
+            "description": "",
+            "inputParameters": []
+          },
+          "response": {
+            "controlMessageName": "GetDecimalsResponse",
+            "description": "Return 0",
+            "outputParameters": [
+              {
+                "name": "Decimals",
+                "valueDescription": "0"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }
