@@ -21,8 +21,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 		private const string TokenTemplatesFolder = "token-templates";
 
 		private static readonly string _artifactPath;
-		private static readonly string _folderSeparator = Service.FolderSeparator;
-		private static readonly string _latest = Service.Latest;
+		private static readonly string _folderSeparator = TxService.FolderSeparator;
+		private static readonly string _latest = TxService.Latest;
 		private static readonly ILog _log;
 
 		static TaxonomyController()
@@ -30,7 +30,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			Utils.InitLog();
 			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 			_artifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + _folderSeparator +
-			               Service.ArtifactPath;
+			               TxService.ArtifactPath;
 		}	
 		
 		#region load
@@ -235,9 +235,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 						continue;
 					}
 
-					tokenTemplate.Artifact = GetArtifactFiles(ad, tokenTemplate.Artifact);
+					var (uri, artifactFiles) = GetTemplateFiles(ad);
+					tokenTemplate.ControlUri = uri;
+					tokenTemplate.ArtifactFiles.AddRange(artifactFiles);
 					//tokenTemplate = GetTokenTemplateTree(tokenTemplate);
-					taxonomy.TokenTemplates.Add(tokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol, tokenTemplate);
+					taxonomy.TokenTemplates.Add(tokenTemplate.Base.Formula, tokenTemplate);
 				}
 			}
 
@@ -320,7 +322,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					break;
 				case ArtifactType.TokenTemplate:
 					var newTokenTemplate = artifactRequest.Artifact.Unpack<TokenTemplate>();
-					if (!ModelManager.CheckForUniqueArtifact(ArtifactType.PropertySet, newTokenTemplate.Artifact))
+					if (!ModelManager.CheckForUniqueArtifact(ArtifactType.TokenTemplate, newTokenTemplate.Artifact))
 					{
 						newTokenTemplate.Artifact = ModelManager.MakeUniqueArtifact(newTokenTemplate.Artifact);
 					}
@@ -943,6 +945,58 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return artifact;
 		}
 
+		private static (string,IEnumerable<ArtifactFile>) GetTemplateFiles(DirectoryInfo ad)
+		{
+			var retVal = new List<ArtifactFile>();
+			var uri = "";
+			foreach (var af in ad.EnumerateFiles())
+			{
+				if (af.Name.EndsWith("proto"))
+				{
+					var protoFile = GetArtifactText(af);
+					uri = af.Name;
+					retVal.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(protoFile),
+						Content = ArtifactContent.Control
+					});
+					continue;
+				}
+
+				if (af.Name.EndsWith("md"))
+				{
+					var mdFile = GetArtifactText(af);
+
+					retVal.Add(new ArtifactFile
+					{
+						FileName = af.Name,
+						FileData = ByteString.CopyFromUtf8(mdFile),
+						Content = ArtifactContent.Uml
+					});
+					continue;
+				}
+
+				if (af.Name.EndsWith("json"))
+				{
+					continue;
+				}
+
+				var otherFile = GetArtifactBytes(af);
+
+				var other = new ArtifactFile
+				{
+					FileName = af.Name,
+					Content = ArtifactContent.Other
+				};
+				if (!af.Name.EndsWith(".DS_Store"))
+					other.FileData = ByteString.CopyFrom(otherFile);
+				retVal.Add(other);
+			}
+
+			return (uri, retVal);
+		}
+		
 		private static T GetArtifact<T>(FileInfo artifact) where T : IMessage, new()
 		{
 			var typeFile = artifact.OpenText();

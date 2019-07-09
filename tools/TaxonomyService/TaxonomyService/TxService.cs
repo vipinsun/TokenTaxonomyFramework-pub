@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace TTI.TTF.Taxonomy
 {
-	internal static class Service
+	internal static class TxService
 	{
 		private static IConfigurationRoot _config;
 		private static ILog _log;

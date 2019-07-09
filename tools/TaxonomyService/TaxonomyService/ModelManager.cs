@@ -269,14 +269,14 @@ namespace TTI.TTF.Taxonomy
 					var tokenTemplate = artifact.Unpack<TokenTemplate>();
 					try
 					{
-						Taxonomy.TokenTemplates.Remove(tokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol);
-						Taxonomy.TokenTemplates.Add(tokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol, tokenTemplate);
+						Taxonomy.TokenTemplates.Remove(tokenTemplate.Base.Formula);
+						Taxonomy.TokenTemplates.Add(tokenTemplate.Base.Formula, tokenTemplate);
 					}
 					catch (Exception)
 					{
-						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + tokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol);
+						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + tokenTemplate.Base.Formula);
 						_log.Info("Adding artifact to Taxonomy.");
-						Taxonomy.TokenTemplates.Add(tokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol, tokenTemplate);
+						Taxonomy.TokenTemplates.Add(tokenTemplate.Base.Formula, tokenTemplate);
 					}
 					return true;
 				default:
@@ -309,8 +309,8 @@ namespace TTI.TTF.Taxonomy
 						return propertySetFolder.Value.Artifact.Name;
 					case ArtifactType.TokenTemplate:
 						var tokenTemplateFolder = Taxonomy.TokenTemplates.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == toolingSymbol);
-						return tokenTemplateFolder.Value.Artifact.Name;
+							e.Value.Base.Formula == toolingSymbol);
+						return tokenTemplateFolder.Value.Base.Name;
 					default:
 						throw new ArgumentOutOfRangeException(nameof(artifactType), artifactType, null);
 				}
@@ -338,19 +338,17 @@ namespace TTI.TTF.Taxonomy
 						break;
 					case ArtifactType.Behavior:
 						var behaviorFolder = Taxonomy.Behaviors.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == name);
+							e.Value.Artifact.Name == name);
 						break;
 					case ArtifactType.BehaviorGroup:
 						var behaviorGroupFolder = Taxonomy.BehaviorGroups.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == name);
+							e.Value.Artifact.Name == name);
 						break;
 					case ArtifactType.PropertySet:
 						var propertySetFolder = Taxonomy.PropertySets.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == name);
+							e.Value.Artifact.Name == name);
 						break;
 					case ArtifactType.TokenTemplate:
-						var tokenTemplateFolder = Taxonomy.TokenTemplates.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == name);
 						break;
 					default:
 						throw new ArgumentOutOfRangeException(nameof(artifactType), artifactType, null);
@@ -363,6 +361,20 @@ namespace TTI.TTF.Taxonomy
 			return false;
 		}
 		
+		internal static bool CheckForUniqueTemplate(string formula, string name)
+		{
+			_log.Info("CheckForUniqueTemplate: " + name);
+			try
+			{
+				if(!string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(ArtifactType.TokenTemplate, formula)))
+					throw new Exception("Tooling Symbol Found.");
+			}
+			catch (Exception)
+			{
+				return true;
+			}
+			return false;
+		}
 		internal static Artifact MakeUniqueArtifact(Artifact artifact)
 		{
 			var newArtifact = artifact.Clone();
