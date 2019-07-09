@@ -1,0 +1,263 @@
+{
+  "controlUri": "../../../../../../artifacts/token-templates/non-fungible/singleton/Document/Document.proto",
+  "artifactFiles": [
+    {
+      "content": "CONTROL",
+      "fileName": "Document.proto",
+      "fileData": "",
+      "artifact": null
+    },
+    {
+      "content": "UML",
+      "fileName": "Document.md",
+      "fileData": "",
+      "artifact": null
+    }
+  ],
+  "base": {
+    "formula": "[tN{~d,t,s,e,b}+phFile]",
+    "name": "Document Token",
+    "version": "1.0",
+    "definition": {
+      "businessDescription": "Used to represent a document that may be a scanned or PDF printed document. It records the document hash to check for tampering, a file path to fetch the file from storage as well as the ability to be encumbered. Implements the File property-set.",
+      "businessExample": "For example: you may choose to create an invoice token from an invoice document.  You can then allow another token or contract representing a loan or proof of financing to encumber the document establishing a link between the two.",
+      "analogies": [
+        {
+          "name": "Scanned Document",
+          "description": "A scanned copy of a certificate, like a diploma or industry certification",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "base": {
+      "artifact": {
+        "artifactSymbol": {
+          "type": "BASE",
+          "visualSymbol": "&tau<sub>N</sub>",
+          "toolingSymbol": "tN",
+          "artifactVersion": "1.0"
+        },
+        "name": "Non-Fungible Token",
+        "aliases": [
+          "File",
+          "Invoice",
+          "PDF"
+        ],
+        "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
+        "artifactDefinition": {
+          "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
+          "businessExample": "CryptoKitties, Art, Reserved Seat,",
+          "analogies": [
+            {
+              "name": "Analogy 1",
+              "description": "non-fungible analogy 1 description",
+              "artifactDefinition": null
+            }
+          ],
+          "comments": "",
+          "artifact": null
+        },
+        "dependencies": [
+          {
+            "description": "Base Token Definition",
+            "symbol": {
+              "type": "BASE",
+              "visualSymbol": "&tau;",
+              "toolingSymbol": "t",
+              "artifactVersion": ""
+            }
+          }
+        ],
+        "incompatibleWithSymbols": [
+          {
+            "type": "BASE",
+            "visualSymbol": "<i>d</i>",
+            "toolingSymbol": "d",
+            "artifactVersion": ""
+          }
+        ],
+        "influencedBySymbols": [
+          {
+            "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+            "symbol": {
+              "type": "BEHAVIOR",
+              "visualSymbol": "<i>~d</i>",
+              "toolingSymbol": "~d",
+              "artifactVersion": ""
+            }
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "non-fungible.proto",
+            "fileData": "",
+            "artifact": null
+          },
+          {
+            "content": "UML",
+            "fileName": "non-fungible.md",
+            "fileData": "",
+            "artifact": null
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "mappingType": "SOURCE_CODE",
+              "name": "Code 1",
+              "platform": "DAML",
+              "referencePath": "",
+              "maps": null
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO",
+              "referencePath": "",
+              "maps": null
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1",
+              "description": "",
+              "resourcePath": "",
+              "maps": null
+            }
+          ],
+          "artifact": null
+        }
+      },
+      "tokenType": "NON_FUNGIBLE",
+      "singleToken": {
+        "classificationBranch": "SINGLETON",
+        "groupStart": "[",
+        "baseToken": {
+          "artifactSymbol": {
+            "type": "BASE",
+            "visualSymbol": "&tau;<sub>N</sub>",
+            "toolingSymbol": "tN",
+            "artifactVersion": ""
+          }
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbols": [
+            {
+              "type": "BASE",
+              "visualSymbol": "",
+              "toolingSymbol": "~d",
+              "artifactVersion": ""
+            }
+          ],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbols": {
+              "type": "PROPERTY_SET",
+              "visualSymbol": "",
+              "toolingSymbol": "",
+              "artifactVersion": ""
+            }
+          }
+        ],
+        "groupEnd": "]"
+      },
+      "name": "",
+      "symbol": "",
+      "owner": "",
+      "quantity": "",
+      "decimals": 0,
+      "tokenProperties": {},
+      "constructorName": "",
+      "constructor": null,
+      "childTokens": []
+    },
+    "behaviors": [
+      {
+        "symbol": {
+          "type": "BEHAVIOR",
+          "visualSymbol": "<i>~d</i>",
+          "toolingSymbol": "~d",
+          "artifactVersion": ""
+        },
+        "implementationDetails": "",
+        "behavior": {
+          "artifact": null,
+          "isExternal": false,
+          "constructorName": "",
+          "constructor": null,
+          "invocations": [],
+          "properties": [
+            {
+              "name": "Decimals",
+              "valueDescription": "Set to Zero, not allowing any subdivision",
+              "templateValue": "0",
+              "propertyInvocations": [
+                {
+                  "name": "GetDecimals",
+                  "description": "Should return 0",
+                  "request": {
+                    "controlMessageName": "GetDecimalsRequest",
+                    "description": "",
+                    "inputParameters": []
+                  },
+                  "response": {
+                    "controlMessageName": "GetDecimalsResponse",
+                    "description": "Return 0",
+                    "outputParameters": [
+                      {
+                        "name": "Decimals",
+                        "valueDescription": "0"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "behaviorGroups": [
+      {
+        "symbol": {
+          "type": "BEHAVIOR_GROUP",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        },
+        "implementationDetails": "",
+        "behaviorGroup": {
+          "artifact": null,
+          "behaviorSymbols": [],
+          "behaviorArtifacts": {}
+        }
+      }
+    ],
+    "propertySets": [
+      {
+        "symbol": {
+          "type": "PROPERTY_SET",
+          "visualSymbol": "",
+          "toolingSymbol": "",
+          "artifactVersion": ""
+        },
+        "implementationDetails": "",
+        "propertySet": {
+          "artifact": null,
+          "properties": []
+        }
+      }
+    ]
+  },
+  "childTokens": []
+}
