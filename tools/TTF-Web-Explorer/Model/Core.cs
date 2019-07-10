@@ -79,47 +79,52 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             "b3JlLlRlbXBsYXRlQnJhbmNoEkUKGGZyYWN0aW9uYWxfbm9uX2Z1bmdpYmxl",
             "cxgDIAEoCzIjLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVCcmFuY2gS",
             "NwoKc2luZ2xldG9ucxgEIAEoCzIjLnRheG9ub215Lm1vZGVsLmNvcmUuVGVt",
-            "cGxhdGVCcmFuY2giigEKDlRlbXBsYXRlQnJhbmNoEjsKBG5hbWUYASABKA4y",
+            "cGxhdGVCcmFuY2giwAEKDlRlbXBsYXRlQnJhbmNoEjsKBG5hbWUYASABKA4y",
             "LS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5j",
             "aBI7Cg90b2tlbl90ZW1wbGF0ZXMYAiADKAsyIi50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLlRva2VuVGVtcGxhdGUi0QEKDVRva2VuVGVtcGxhdGUSEwoLY29udHJv",
-            "bF91cmkYASABKAkSPQoOYXJ0aWZhY3RfZmlsZXMYAiADKAsyJS50YXhvbm9t",
-            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdEZpbGUSMgoGcGFyZW50GAMgASgL",
-            "MiIudGF4b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZVRva2VuEjgKDGNoaWxk",
-            "X3Rva2VucxgEIAMoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVU",
-            "b2tlbiKBAwoNVGVtcGxhdGVUb2tlbhI4Cgdmb3JtdWxhGAEgASgLMicudGF4",
-            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wSDAoEbmFtZRgC",
-            "IAEoCRI/CgpkZWZpbml0aW9uGAMgASgLMisudGF4b25vbXkubW9kZWwuYXJ0",
-            "aWZhY3QuQXJ0aWZhY3REZWZpbml0aW9uEicKBGJhc2UYBCABKAsyGS50YXhv",
-            "bm9teS5tb2RlbC5jb3JlLkJhc2USOAoJYmVoYXZpb3JzGAUgAygLMiUudGF4",
-            "b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZUJlaGF2aW9yEkMKD2JlaGF2aW9y",
-            "X2dyb3VwcxgGIAMoCzIqLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVC",
-            "ZWhhdmlvckdyb3VwEj8KDXByb3BlcnR5X3NldHMYByADKAsyKC50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlLlRlbXBsYXRlUHJvcGVydHlTZXQinAEKEFRlbXBsYXRl",
-            "QmVoYXZpb3ISNwoGc3ltYm9sGAEgASgLMicudGF4b25vbXkubW9kZWwuYXJ0",
-            "aWZhY3QuQXJ0aWZhY3RTeW1ib2wSHgoWaW1wbGVtZW50YXRpb25fZGV0YWls",
-            "cxgCIAEoCRIvCghiZWhhdmlvchgDIAEoCzIdLnRheG9ub215Lm1vZGVsLmNv",
-            "cmUuQmVoYXZpb3IirAEKFVRlbXBsYXRlQmVoYXZpb3JHcm91cBI3CgZzeW1i",
-            "b2wYASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5",
-            "bWJvbBIeChZpbXBsZW1lbnRhdGlvbl9kZXRhaWxzGAIgASgJEjoKDmJlaGF2",
-            "aW9yX2dyb3VwGAMgASgLMiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlv",
-            "ckdyb3VwIqYBChNUZW1wbGF0ZVByb3BlcnR5U2V0EjcKBnN5bWJvbBgBIAEo",
-            "CzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sEh4K",
-            "FmltcGxlbWVudGF0aW9uX2RldGFpbHMYAiABKAkSNgoMcHJvcGVydHlfc2V0",
-            "GAMgASgLMiAudGF4b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0eVNldCKjAQoK",
-            "SW52b2NhdGlvbhIMCgRuYW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJ",
-            "EjcKB3JlcXVlc3QYAyABKAsyJi50YXhvbm9teS5tb2RlbC5jb3JlLkludm9j",
-            "YXRpb25SZXF1ZXN0EjkKCHJlc3BvbnNlGAQgASgLMicudGF4b25vbXkubW9k",
-            "ZWwuY29yZS5JbnZvY2F0aW9uUmVzcG9uc2UiigEKEUludm9jYXRpb25SZXF1",
-            "ZXN0EhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1lGAEgASgJEhMKC2Rlc2NyaXB0",
-            "aW9uGAIgASgJEkIKEGlucHV0X3BhcmFtZXRlcnMYAyADKAsyKC50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlLkludm9jYXRpb25QYXJhbWV0ZXIijAEKEkludm9jYXRp",
-            "b25SZXNwb25zZRIcChRjb250cm9sX21lc3NhZ2VfbmFtZRgBIAEoCRITCgtk",
-            "ZXNjcmlwdGlvbhgCIAEoCRJDChFvdXRwdXRfcGFyYW1ldGVycxgDIAMoCzIo",
-            "LnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblBhcmFtZXRlciI+ChNJ",
-            "bnZvY2F0aW9uUGFyYW1ldGVyEgwKBG5hbWUYASABKAkSGQoRdmFsdWVfZGVz",
-            "Y3JpcHRpb24YAiABKAlCQQofb3JnLnR0aS50dGYudGF4b25vbXkubW9kZWwu",
-            "Y29yZVABqgIbVFRJLlRURi5UYXhvbm9teS5Nb2RlbC5Db3JlYgZwcm90bzM="));
+            "b3JlLlRva2VuVGVtcGxhdGUSNAoIYnJhbmNoZXMYAyADKAsyIi50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLkR5bmFtaWNCcmFuY2gihgEKDUR5bmFtaWNCcmFuY2gS",
+            "DAoEbmFtZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRIVCg1icmFuY2hf",
+            "ZmlsdGVyGAMgASgJEjsKD3Rva2VuX3RlbXBsYXRlcxgEIAMoCzIiLnRheG9u",
+            "b215Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZSLRAQoNVG9rZW5UZW1wbGF0",
+            "ZRITCgtjb250cm9sX3VyaRgBIAEoCRI9Cg5hcnRpZmFjdF9maWxlcxgCIAMo",
+            "CzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0RmlsZRIyCgZw",
+            "YXJlbnQYAyABKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlVG9r",
+            "ZW4SOAoMY2hpbGRfdG9rZW5zGAQgAygLMiIudGF4b25vbXkubW9kZWwuY29y",
+            "ZS5UZW1wbGF0ZVRva2VuIoEDCg1UZW1wbGF0ZVRva2VuEjgKB2Zvcm11bGEY",
+            "ASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJv",
+            "bBIMCgRuYW1lGAIgASgJEj8KCmRlZmluaXRpb24YAyABKAsyKy50YXhvbm9t",
+            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdERlZmluaXRpb24SJwoEYmFzZRgE",
+            "IAEoCzIZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZRI4CgliZWhhdmlvcnMY",
+            "BSADKAsyJS50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlQmVoYXZpb3IS",
+            "QwoPYmVoYXZpb3JfZ3JvdXBzGAYgAygLMioudGF4b25vbXkubW9kZWwuY29y",
+            "ZS5UZW1wbGF0ZUJlaGF2aW9yR3JvdXASPwoNcHJvcGVydHlfc2V0cxgHIAMo",
+            "CzIoLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVQcm9wZXJ0eVNldCKc",
+            "AQoQVGVtcGxhdGVCZWhhdmlvchI3CgZzeW1ib2wYASABKAsyJy50YXhvbm9t",
+            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbBIeChZpbXBsZW1lbnRh",
+            "dGlvbl9kZXRhaWxzGAIgASgJEi8KCGJlaGF2aW9yGAMgASgLMh0udGF4b25v",
+            "bXkubW9kZWwuY29yZS5CZWhhdmlvciKsAQoVVGVtcGxhdGVCZWhhdmlvckdy",
+            "b3VwEjcKBnN5bWJvbBgBIAEoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
+            "LkFydGlmYWN0U3ltYm9sEh4KFmltcGxlbWVudGF0aW9uX2RldGFpbHMYAiAB",
+            "KAkSOgoOYmVoYXZpb3JfZ3JvdXAYAyABKAsyIi50YXhvbm9teS5tb2RlbC5j",
+            "b3JlLkJlaGF2aW9yR3JvdXAipgEKE1RlbXBsYXRlUHJvcGVydHlTZXQSNwoG",
+            "c3ltYm9sGAEgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
+            "Y3RTeW1ib2wSHgoWaW1wbGVtZW50YXRpb25fZGV0YWlscxgCIAEoCRI2Cgxw",
+            "cm9wZXJ0eV9zZXQYAyABKAsyIC50YXhvbm9teS5tb2RlbC5jb3JlLlByb3Bl",
+            "cnR5U2V0IqMBCgpJbnZvY2F0aW9uEgwKBG5hbWUYASABKAkSEwoLZGVzY3Jp",
+            "cHRpb24YAiABKAkSNwoHcmVxdWVzdBgDIAEoCzImLnRheG9ub215Lm1vZGVs",
+            "LmNvcmUuSW52b2NhdGlvblJlcXVlc3QSOQoIcmVzcG9uc2UYBCABKAsyJy50",
+            "YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25SZXNwb25zZSKKAQoRSW52",
+            "b2NhdGlvblJlcXVlc3QSHAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkS",
+            "EwoLZGVzY3JpcHRpb24YAiABKAkSQgoQaW5wdXRfcGFyYW1ldGVycxgDIAMo",
+            "CzIoLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblBhcmFtZXRlciKM",
+            "AQoSSW52b2NhdGlvblJlc3BvbnNlEhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1l",
+            "GAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEkMKEW91dHB1dF9wYXJhbWV0",
+            "ZXJzGAMgAygLMigudGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uUGFy",
+            "YW1ldGVyIj4KE0ludm9jYXRpb25QYXJhbWV0ZXISDAoEbmFtZRgBIAEoCRIZ",
+            "ChF2YWx1ZV9kZXNjcmlwdGlvbhgCIAEoCUJBCh9vcmcudHRpLnR0Zi50YXhv",
+            "bm9teS5tb2RlbC5jb3JlUAGqAhtUVEkuVFRGLlRheG9ub215Lk1vZGVsLkNv",
+            "cmViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -133,7 +138,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySets), global::TTI.TTF.Taxonomy.Model.Core.PropertySets.Parser, new[]{ "PropertySet" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Property), global::TTI.TTF.Taxonomy.Model.Core.Property.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Parser, new[]{ "FractionalFungibles", "WholeFungibles", "FractionalNonFungibles", "Singletons", "Hybrids" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch.Parser, new[]{ "FractionalFungibles", "WholeFungibles", "FractionalNonFungibles", "Singletons" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBranch), global::TTI.TTF.Taxonomy.Model.Core.TemplateBranch.Parser, new[]{ "Name", "TokenTemplates" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBranch), global::TTI.TTF.Taxonomy.Model.Core.TemplateBranch.Parser, new[]{ "Name", "TokenTemplates", "Branches" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch), global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch.Parser, new[]{ "Name", "Description", "BranchFilter", "TokenTemplates" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser, new[]{ "ControlUri", "ArtifactFiles", "Parent", "ChildTokens" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateToken), global::TTI.TTF.Taxonomy.Model.Core.TemplateToken.Parser, new[]{ "Formula", "Name", "Definition", "Base", "Behaviors", "BehaviorGroups", "PropertySets" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior), global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior.Parser, new[]{ "Symbol", "ImplementationDetails", "Behavior" }, null, null, null),
@@ -2570,6 +2576,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public TemplateBranch(TemplateBranch other) : this() {
       name_ = other.name_;
       tokenTemplates_ = other.tokenTemplates_.Clone();
+      branches_ = other.branches_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2599,6 +2606,16 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       get { return tokenTemplates_; }
     }
 
+    /// <summary>Field number for the "branches" field.</summary>
+    public const int BranchesFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch> _repeated_branches_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch> branches_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch> Branches {
+      get { return branches_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as TemplateBranch);
@@ -2614,6 +2631,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       }
       if (Name != other.Name) return false;
       if(!tokenTemplates_.Equals(other.tokenTemplates_)) return false;
+      if(!branches_.Equals(other.branches_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2622,6 +2640,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       int hash = 1;
       if (Name != 0) hash ^= Name.GetHashCode();
       hash ^= tokenTemplates_.GetHashCode();
+      hash ^= branches_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2640,6 +2659,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteEnum((int) Name);
       }
       tokenTemplates_.WriteTo(output, _repeated_tokenTemplates_codec);
+      branches_.WriteTo(output, _repeated_branches_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2652,6 +2672,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Name);
       }
       size += tokenTemplates_.CalculateSize(_repeated_tokenTemplates_codec);
+      size += branches_.CalculateSize(_repeated_branches_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2667,6 +2688,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         Name = other.Name;
       }
       tokenTemplates_.Add(other.tokenTemplates_);
+      branches_.Add(other.branches_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2683,6 +2705,215 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             break;
           }
           case 18: {
+            tokenTemplates_.AddEntriesFrom(input, _repeated_tokenTemplates_codec);
+            break;
+          }
+          case 26: {
+            branches_.AddEntriesFrom(input, _repeated_branches_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DynamicBranch : pb::IMessage<DynamicBranch> {
+    private static readonly pb::MessageParser<DynamicBranch> _parser = new pb::MessageParser<DynamicBranch>(() => new DynamicBranch());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DynamicBranch> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DynamicBranch() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DynamicBranch(DynamicBranch other) : this() {
+      name_ = other.name_;
+      description_ = other.description_;
+      branchFilter_ = other.branchFilter_;
+      tokenTemplates_ = other.tokenTemplates_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DynamicBranch Clone() {
+      return new DynamicBranch(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 2;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "branch_filter" field.</summary>
+    public const int BranchFilterFieldNumber = 3;
+    private string branchFilter_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string BranchFilter {
+      get { return branchFilter_; }
+      set {
+        branchFilter_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "token_templates" field.</summary>
+    public const int TokenTemplatesFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> _repeated_tokenTemplates_codec
+        = pb::FieldCodec.ForMessage(34, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> tokenTemplates_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> TokenTemplates {
+      get { return tokenTemplates_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DynamicBranch);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DynamicBranch other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Description != other.Description) return false;
+      if (BranchFilter != other.BranchFilter) return false;
+      if(!tokenTemplates_.Equals(other.tokenTemplates_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (BranchFilter.Length != 0) hash ^= BranchFilter.GetHashCode();
+      hash ^= tokenTemplates_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Description);
+      }
+      if (BranchFilter.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(BranchFilter);
+      }
+      tokenTemplates_.WriteTo(output, _repeated_tokenTemplates_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (BranchFilter.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BranchFilter);
+      }
+      size += tokenTemplates_.CalculateSize(_repeated_tokenTemplates_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DynamicBranch other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      if (other.BranchFilter.Length != 0) {
+        BranchFilter = other.BranchFilter;
+      }
+      tokenTemplates_.Add(other.tokenTemplates_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Description = input.ReadString();
+            break;
+          }
+          case 26: {
+            BranchFilter = input.ReadString();
+            break;
+          }
+          case 34: {
             tokenTemplates_.AddEntriesFrom(input, _repeated_tokenTemplates_codec);
             break;
           }
@@ -2703,7 +2934,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[11]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2915,7 +3146,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[12]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3212,7 +3443,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[13]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3415,7 +3646,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[14]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3618,7 +3849,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[15]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3818,7 +4049,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[16]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4049,7 +4280,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[17]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4226,7 +4457,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[18]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4403,7 +4634,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[19]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

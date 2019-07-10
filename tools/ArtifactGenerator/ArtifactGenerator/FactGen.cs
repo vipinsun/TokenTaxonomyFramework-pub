@@ -18,7 +18,6 @@ namespace ArtifactGenerator
 		private static string ArtifactPath { get; set; }
 		private static ArtifactType ArtifactType { get; set; }
 		private static TokenType BaseType { get; set; }
-
 		private static ClassificationBranch Classification { get; set; }
 		private static TaxonomyVersion TaxonomyVersion { get; set; }
 		private static string Latest { get; set; }
@@ -26,7 +25,6 @@ namespace ArtifactGenerator
 
 		public static void Main(string[] args)
 		{
-
 			Utils.InitLog();
 			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 			if (args.Length == 6 || args.Length == 8 || args.Length == 10 || args.Length == 4)
@@ -781,7 +779,6 @@ namespace ArtifactGenerator
 			hybridHybrids.HybridChildTokens.Add(hybrid);
 			hybridHybrids.HybridChildTokens.Add(hybrid);
 			formula.HybridWithHybrids = hybridHybrids;
-			
 			
 			return formula;
 		}

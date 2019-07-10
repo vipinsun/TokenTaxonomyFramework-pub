@@ -89,6 +89,14 @@ message TokenTemplates{
 message TemplateBranch{
     taxonomy.model.artifact.ClassificationBranch name = 1;
     repeated TokenTemplate token_templates = 2;
+    repeated DynamicBranch branches = 3;
+}
+
+message DynamicBranch {
+    string name = 1;
+    string description = 2;
+    string branch_filter = 3;
+    repeated TokenTemplate token_templates = 4;
 }
 
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
