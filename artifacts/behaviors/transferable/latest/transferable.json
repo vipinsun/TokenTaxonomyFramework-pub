@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>t</i>",
-      "toolingSymbol": "t",
-      "artifactVersion": "1.0"
+      "visual": "<i>t</i>",
+      "tooling": "t",
+      "version": "1.0"
     },
     "name": "Transferable",
     "aliases": [],
@@ -26,9 +27,9 @@
     "incompatibleWithSymbols": [
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>~t</i>",
-        "toolingSymbol": "~t",
-        "artifactVersion": ""
+        "visual": "<i>~t</i>",
+        "tooling": "~t",
+        "version": ""
       }
     ],
     "influencedBySymbols": [
@@ -36,9 +37,9 @@
         "description": "If the token is Delegable, TransferFrom should be enabled.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>g</i>",
-          "toolingSymbol": "g",
-          "artifactVersion": ""
+          "visual": "<i>g</i>",
+          "tooling": "g",
+          "version": ""
         }
       }
     ],

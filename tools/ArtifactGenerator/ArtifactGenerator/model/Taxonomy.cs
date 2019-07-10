@@ -25,33 +25,34 @@ namespace TTI.TTF.Taxonomy.Model {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg50YXhvbm9teS5wcm90bxIOdGF4b25vbXkubW9kZWwaCmNvcmUucHJvdG8a",
-            "DmFydGlmYWN0LnByb3RvIuIGCghUYXhvbm9teRIPCgd2ZXJzaW9uGAEgASgJ",
-            "EkYKEGJhc2VfdG9rZW5fdHlwZXMYAiADKAsyLC50YXhvbm9teS5tb2RlbC5U",
-            "YXhvbm9teS5CYXNlVG9rZW5UeXBlc0VudHJ5EjoKCWJlaGF2aW9ycxgDIAMo",
-            "CzInLnRheG9ub215Lm1vZGVsLlRheG9ub215LkJlaGF2aW9yc0VudHJ5EkUK",
-            "D2JlaGF2aW9yX2dyb3VwcxgEIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9u",
-            "b215LkJlaGF2aW9yR3JvdXBzRW50cnkSQQoNcHJvcGVydHlfc2V0cxgFIAMo",
-            "CzIqLnRheG9ub215Lm1vZGVsLlRheG9ub215LlByb3BlcnR5U2V0c0VudHJ5",
-            "EkUKD3Rva2VuX3RlbXBsYXRlcxgGIAMoCzIsLnRheG9ub215Lm1vZGVsLlRh",
-            "eG9ub215LlRva2VuVGVtcGxhdGVzRW50cnkSQAoPZm9ybXVsYV9ncmFtbWFy",
-            "GAcgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuRm9ybXVsYUdyYW1t",
-            "YXIaUAoTQmFzZVRva2VuVHlwZXNFbnRyeRILCgNrZXkYASABKAkSKAoFdmFs",
-            "dWUYAiABKAsyGS50YXhvbm9teS5tb2RlbC5jb3JlLkJhc2U6AjgBGk8KDkJl",
-            "aGF2aW9yc0VudHJ5EgsKA2tleRgBIAEoCRIsCgV2YWx1ZRgCIAEoCzIdLnRh",
-            "eG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3I6AjgBGlkKE0JlaGF2aW9yR3Jv",
-            "dXBzRW50cnkSCwoDa2V5GAEgASgJEjEKBXZhbHVlGAIgASgLMiIudGF4b25v",
-            "bXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwOgI4ARpVChFQcm9wZXJ0eVNl",
-            "dHNFbnRyeRILCgNrZXkYASABKAkSLwoFdmFsdWUYAiABKAsyIC50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlLlByb3BlcnR5U2V0OgI4ARpZChNUb2tlblRlbXBsYXRl",
-            "c0VudHJ5EgsKA2tleRgBIAEoCRIxCgV2YWx1ZRgCIAEoCzIiLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZToCOAEiIgoPVGF4b25vbXlWZXJz",
-            "aW9uEg8KB3ZlcnNpb24YASABKAlCNwoab3JnLnR0aS50dGYudGF4b25vbXku",
+            "DmFydGlmYWN0LnByb3RvIoMHCghUYXhvbm9teRIwCgd2ZXJzaW9uGAEgASgL",
+            "Mh8udGF4b25vbXkubW9kZWwuVGF4b25vbXlWZXJzaW9uEkYKEGJhc2VfdG9r",
+            "ZW5fdHlwZXMYAiADKAsyLC50YXhvbm9teS5tb2RlbC5UYXhvbm9teS5CYXNl",
+            "VG9rZW5UeXBlc0VudHJ5EjoKCWJlaGF2aW9ycxgDIAMoCzInLnRheG9ub215",
+            "Lm1vZGVsLlRheG9ub215LkJlaGF2aW9yc0VudHJ5EkUKD2JlaGF2aW9yX2dy",
+            "b3VwcxgEIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9ub215LkJlaGF2aW9y",
+            "R3JvdXBzRW50cnkSQQoNcHJvcGVydHlfc2V0cxgFIAMoCzIqLnRheG9ub215",
+            "Lm1vZGVsLlRheG9ub215LlByb3BlcnR5U2V0c0VudHJ5EkUKD3Rva2VuX3Rl",
+            "bXBsYXRlcxgGIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9ub215LlRva2Vu",
+            "VGVtcGxhdGVzRW50cnkSQAoPZm9ybXVsYV9ncmFtbWFyGAcgASgLMicudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuRm9ybXVsYUdyYW1tYXIaUAoTQmFzZVRv",
+            "a2VuVHlwZXNFbnRyeRILCgNrZXkYASABKAkSKAoFdmFsdWUYAiABKAsyGS50",
+            "YXhvbm9teS5tb2RlbC5jb3JlLkJhc2U6AjgBGk8KDkJlaGF2aW9yc0VudHJ5",
+            "EgsKA2tleRgBIAEoCRIsCgV2YWx1ZRgCIAEoCzIdLnRheG9ub215Lm1vZGVs",
+            "LmNvcmUuQmVoYXZpb3I6AjgBGlkKE0JlaGF2aW9yR3JvdXBzRW50cnkSCwoD",
+            "a2V5GAEgASgJEjEKBXZhbHVlGAIgASgLMiIudGF4b25vbXkubW9kZWwuY29y",
+            "ZS5CZWhhdmlvckdyb3VwOgI4ARpVChFQcm9wZXJ0eVNldHNFbnRyeRILCgNr",
+            "ZXkYASABKAkSLwoFdmFsdWUYAiABKAsyIC50YXhvbm9teS5tb2RlbC5jb3Jl",
+            "LlByb3BlcnR5U2V0OgI4ARpZChNUb2tlblRlbXBsYXRlc0VudHJ5EgsKA2tl",
+            "eRgBIAEoCRIxCgV2YWx1ZRgCIAEoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUu",
+            "VG9rZW5UZW1wbGF0ZToCOAEiLgoPVGF4b25vbXlWZXJzaW9uEgoKAmlkGAEg",
+            "ASgJEg8KB3ZlcnNpb24YAiABKAlCNwoab3JnLnR0aS50dGYudGF4b25vbXku",
             "bW9kZWxQAaoCFlRUSS5UVEYuVGF4b25vbXkuTW9kZWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Id", "Version" }, null, null, null)
           }));
     }
     #endregion
@@ -86,7 +87,7 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Taxonomy(Taxonomy other) : this() {
-      version_ = other.version_;
+      version_ = other.version_ != null ? other.version_.Clone() : null;
       baseTokenTypes_ = other.baseTokenTypes_.Clone();
       behaviors_ = other.behaviors_.Clone();
       behaviorGroups_ = other.behaviorGroups_.Clone();
@@ -103,12 +104,12 @@ namespace TTI.TTF.Taxonomy.Model {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 1;
-    private string version_ = "";
+    private global::TTI.TTF.Taxonomy.Model.TaxonomyVersion version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Version {
+    public global::TTI.TTF.Taxonomy.Model.TaxonomyVersion Version {
       get { return version_; }
       set {
-        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        version_ = value;
       }
     }
 
@@ -186,7 +187,7 @@ namespace TTI.TTF.Taxonomy.Model {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Version != other.Version) return false;
+      if (!object.Equals(Version, other.Version)) return false;
       if (!BaseTokenTypes.Equals(other.BaseTokenTypes)) return false;
       if (!Behaviors.Equals(other.Behaviors)) return false;
       if (!BehaviorGroups.Equals(other.BehaviorGroups)) return false;
@@ -199,7 +200,7 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (version_ != null) hash ^= Version.GetHashCode();
       hash ^= BaseTokenTypes.GetHashCode();
       hash ^= Behaviors.GetHashCode();
       hash ^= BehaviorGroups.GetHashCode();
@@ -219,9 +220,9 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Version.Length != 0) {
+      if (version_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Version);
+        output.WriteMessage(Version);
       }
       baseTokenTypes_.WriteTo(output, _map_baseTokenTypes_codec);
       behaviors_.WriteTo(output, _map_behaviors_codec);
@@ -240,8 +241,8 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Version.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      if (version_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Version);
       }
       size += baseTokenTypes_.CalculateSize(_map_baseTokenTypes_codec);
       size += behaviors_.CalculateSize(_map_behaviors_codec);
@@ -262,8 +263,11 @@ namespace TTI.TTF.Taxonomy.Model {
       if (other == null) {
         return;
       }
-      if (other.Version.Length != 0) {
-        Version = other.Version;
+      if (other.version_ != null) {
+        if (version_ == null) {
+          Version = new global::TTI.TTF.Taxonomy.Model.TaxonomyVersion();
+        }
+        Version.MergeFrom(other.Version);
       }
       baseTokenTypes_.Add(other.baseTokenTypes_);
       behaviors_.Add(other.behaviors_);
@@ -288,7 +292,10 @@ namespace TTI.TTF.Taxonomy.Model {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Version = input.ReadString();
+            if (version_ == null) {
+              Version = new global::TTI.TTF.Taxonomy.Model.TaxonomyVersion();
+            }
+            input.ReadMessage(Version);
             break;
           }
           case 18: {
@@ -349,6 +356,7 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TaxonomyVersion(TaxonomyVersion other) : this() {
+      id_ = other.id_;
       version_ = other.version_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -358,8 +366,19 @@ namespace TTI.TTF.Taxonomy.Model {
       return new TaxonomyVersion(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "version" field.</summary>
-    public const int VersionFieldNumber = 1;
+    public const int VersionFieldNumber = 2;
     private string version_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Version {
@@ -382,6 +401,7 @@ namespace TTI.TTF.Taxonomy.Model {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (Version != other.Version) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -389,6 +409,7 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -403,8 +424,12 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Version.Length != 0) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Version.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Version);
       }
       if (_unknownFields != null) {
@@ -415,6 +440,9 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
       if (Version.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
       }
@@ -428,6 +456,9 @@ namespace TTI.TTF.Taxonomy.Model {
     public void MergeFrom(TaxonomyVersion other) {
       if (other == null) {
         return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
       }
       if (other.Version.Length != 0) {
         Version = other.Version;
@@ -444,6 +475,10 @@ namespace TTI.TTF.Taxonomy.Model {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
             Version = input.ReadString();
             break;
           }

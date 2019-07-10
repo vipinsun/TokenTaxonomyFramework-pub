@@ -92,7 +92,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					}
 
 					baseType.Artifact = GetArtifactFiles(ad, baseType.Artifact);
-					taxonomy.BaseTokenTypes.Add(baseType.Artifact.ArtifactSymbol.ToolingSymbol, baseType);
+					taxonomy.BaseTokenTypes.Add(baseType.Artifact.ArtifactSymbol.tooling, baseType);
 				}
 			}
 			else
@@ -131,7 +131,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					}
 
 					behavior.Artifact = GetArtifactFiles(ad, behavior.Artifact);
-					taxonomy.Behaviors.Add(behavior.Artifact.ArtifactSymbol.ToolingSymbol, behavior);
+					taxonomy.Behaviors.Add(behavior.Artifact.ArtifactSymbol.tooling, behavior);
 				}
 			}
 
@@ -167,7 +167,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					}
 
 					behaviorGroup.Artifact = GetArtifactFiles(ad, behaviorGroup.Artifact);
-					taxonomy.BehaviorGroups.Add(behaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol, behaviorGroup);
+					taxonomy.BehaviorGroups.Add(behaviorGroup.Artifact.ArtifactSymbol.tooling, behaviorGroup);
 				}
 			}
 			
@@ -202,7 +202,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 
 					propertySet.Artifact = GetArtifactFiles(ad, propertySet.Artifact);
-					taxonomy.PropertySets.Add(propertySet.Artifact.ArtifactSymbol.ToolingSymbol, propertySet);
+					taxonomy.PropertySets.Add(propertySet.Artifact.ArtifactSymbol.tooling, propertySet);
 				}
 			}
 
@@ -424,9 +424,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 					var existingBehavior = ModelManager.GetBehaviorArtifact(new ArtifactSymbol
 					{
-						ToolingSymbol = updateBehavior.Artifact.ArtifactSymbol.ToolingSymbol
+						tooling = updateBehavior.Artifact.ArtifactSymbol.tooling
 					});
-					existingVersion = existingBehavior.Artifact.ArtifactSymbol.ArtifactVersion;
+					existingVersion = existingBehavior.Artifact.ArtifactSymbol.version;
 					existingBehavior.MergeFrom(updateBehavior);
 					artifactName = updateBehavior.Artifact.Name.ToLower();
 					artifactJson = jsf.Format(existingBehavior);
@@ -451,9 +451,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 					var existingBehaviorGroup = ModelManager.GetBehaviorGroupArtifact(new ArtifactSymbol
 					{
-						ToolingSymbol = updateBehaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol
+						tooling = updateBehaviorGroup.Artifact.ArtifactSymbol.tooling
 					});
-					existingVersion = existingBehaviorGroup.Artifact.ArtifactSymbol.ArtifactVersion;
+					existingVersion = existingBehaviorGroup.Artifact.ArtifactSymbol.version;
 					existingBehaviorGroup.MergeFrom(updateBehaviorGroup);
 					artifactName = updateBehaviorGroup.Artifact.Name.ToLower();
 
@@ -479,9 +479,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 					var existingPropertySet = ModelManager.GetPropertySetArtifact(new ArtifactSymbol
 					{
-						ToolingSymbol = updatePropertySet.Artifact.ArtifactSymbol.ToolingSymbol
+						tooling = updatePropertySet.Artifact.ArtifactSymbol.tooling
 					});
-					existingVersion = existingPropertySet.Artifact.ArtifactSymbol.ArtifactVersion;
+					existingVersion = existingPropertySet.Artifact.ArtifactSymbol.version;
 					existingPropertySet.MergeFrom(updatePropertySet);
 					artifactName = updatePropertySet.Artifact.Name.ToLower();
 					
@@ -507,9 +507,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 					var existingTokenTemplate = ModelManager.GetTokenTemplateArtifact( new TaxonomyFormula
 					{
-						Formula = updateTokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol
+						Formula = updateTokenTemplate.Artifact.ArtifactSymbol.tooling
 					});
-					existingVersion = existingTokenTemplate.Artifact.ArtifactSymbol.ArtifactVersion;
+					existingVersion = existingTokenTemplate.Artifact.ArtifactSymbol.version;
 					existingTokenTemplate.MergeFrom(updateTokenTemplate);
 					artifactName = updateTokenTemplate.Artifact.Name.ToLower();
 					
@@ -603,7 +603,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			DeleteArtifactResponse response;
 			var artifactFolderName =
 				ModelManager.GetArtifactFolderNameBySymbol(artifactRequest.ArtifactSymbol.Type, artifactRequest.ArtifactSymbol
-					.ToolingSymbol);
+					.tooling);
 			try
 			{
 				switch (artifactRequest.ArtifactSymbol.Type)
@@ -735,9 +735,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 				ArtifactSymbol = new ArtifactSymbol
 				{
 					Type = artifactType,
-					ToolingSymbol = "",
-					VisualSymbol = "",
-					ArtifactVersion = "1.0"
+					tooling = "",
+					visual = "",
+					version = "1.0"
 				},
 				ArtifactDefinition = new ArtifactDefinition
 				{
@@ -777,8 +777,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 				IncompatibleWithSymbols = { new ArtifactSymbol
 				{
 					Type = artifactType,
-					ToolingSymbol = "",
-					VisualSymbol = ""
+					tooling = "",
+					visual = ""
 				}},
 				Dependencies = { new SymbolDependency
 				{
@@ -1030,19 +1030,19 @@ namespace TTI.TTF.Taxonomy.Controllers
 			foreach (var b in behaviors)
 			{
 				var behavior = retVal.Behaviors.SingleOrDefault(e =>
-					e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+					e.Symbol.tooling == b.Artifact.ArtifactSymbol.tooling);
 				if (behavior != null) behavior.Behavior = b;
 			}
 			foreach (var b in behaviorGroups)
 			{
 				var behaviorGroup = retVal.BehaviorGroups.SingleOrDefault(e =>
-					e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+					e.Symbol.tooling == b.Artifact.ArtifactSymbol.tooling);
 				if (behaviorGroup != null) behaviorGroup.BehaviorGroup = b;
 			}
 			foreach (var p in propertySets)
 			{
 				var propertySet = retVal.PropertySets.SingleOrDefault(e =>
-					e.Symbol.ToolingSymbol == p.Artifact.ArtifactSymbol.ToolingSymbol);
+					e.Symbol.tooling == p.Artifact.ArtifactSymbol.tooling);
 				if (propertySet != null) propertySet.PropertySet = p;
 			}
 			
@@ -1054,19 +1054,19 @@ namespace TTI.TTF.Taxonomy.Controllers
 				foreach (var b in childBehaviors)
 				{
 					var behavior = child.Behaviors.SingleOrDefault(e =>
-						e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+						e.Symbol.tooling == b.Artifact.ArtifactSymbol.tooling);
 					if (behavior != null) behavior.Behavior = b;
 				}
 				foreach (var b in childBehaviorGroups)
 				{
 					var behaviorGroup = child.BehaviorGroups.SingleOrDefault(e =>
-						e.Symbol.ToolingSymbol == b.Artifact.ArtifactSymbol.ToolingSymbol);
+						e.Symbol.tooling == b.Artifact.ArtifactSymbol.tooling);
 					if (behaviorGroup != null) behaviorGroup.BehaviorGroup = b;
 				}
 				foreach (var p in childPropertySets)
 				{
 					var propertySet = child.PropertySets.SingleOrDefault(e =>
-						e.Symbol.ToolingSymbol == p.Artifact.ArtifactSymbol.ToolingSymbol);
+						e.Symbol.tooling == p.Artifact.ArtifactSymbol.tooling);
 					if (propertySet != null) propertySet.PropertySet = p;
 				}
 			}
@@ -1099,7 +1099,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return (baseToken, behaviorList, behaviorGroupList, propertySetList);
 		}
 
-		private static (bool, string) VersionArtifact(string artifactTypeFolder, string artifactName, string artifactVersion,
+		private static (bool, string) VersionArtifact(string artifactTypeFolder, string artifactName, string version,
 				string artifactJson, ArtifactType artifactType)
 		{
 			try
@@ -1107,11 +1107,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 				var latestPath = _artifactPath + _folderSeparator + artifactTypeFolder + _folderSeparator +
 				                 artifactName + _latest;
 
-				if (string.IsNullOrEmpty(artifactVersion))
-					artifactVersion = "1.0";
+				if (string.IsNullOrEmpty(version))
+					version = "1.0";
 				var oldLatestPath = _artifactPath + _folderSeparator + artifactTypeFolder + _folderSeparator +
-				                    artifactName + _folderSeparator + artifactVersion;
-				var (outcome, message) = CreateArtifactVersion(latestPath, oldLatestPath);
+				                    artifactName + _folderSeparator + version;
+				var (outcome, message) = Createversion(latestPath, oldLatestPath);
 				if (!outcome) return (false, message);
 				var outputFolder =
 					new DirectoryInfo(latestPath);
@@ -1125,7 +1125,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 		}
 		
-		private static (bool, string) CreateArtifactVersion(string sourceDirName, string destDirName)
+		private static (bool, string) Createversion(string sourceDirName, string destDirName)
 		{
 			// Get the subdirectories for the specified directory.
 			var dir = new DirectoryInfo(sourceDirName);

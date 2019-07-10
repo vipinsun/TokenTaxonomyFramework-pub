@@ -43,26 +43,26 @@ namespace TTI.TTF.Taxonomy
 
 		public static Base GetBaseArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBaseArtifact Symbol " + symbol.ToolingSymbol);
-			return Taxonomy.BaseTokenTypes.Single(e => e.Key == symbol.ToolingSymbol).Value;
+			_log.Info("GetBaseArtifact Symbol " + symbol.tooling);
+			return Taxonomy.BaseTokenTypes.Single(e => e.Key == symbol.tooling).Value;
 		}
 
 		public static Behavior GetBehaviorArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBehaviorArtifact Symbol " + symbol.ToolingSymbol);
-			return Taxonomy.Behaviors.Single(e => e.Key == symbol.ToolingSymbol).Value;
+			_log.Info("GetBehaviorArtifact Symbol " + symbol.tooling);
+			return Taxonomy.Behaviors.Single(e => e.Key == symbol.tooling).Value;
 		}
 
 		public static BehaviorGroup GetBehaviorGroupArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBehaviorGroupArtifact Symbol " + symbol.ToolingSymbol);
-			return Taxonomy.BehaviorGroups.Single(e => e.Key == symbol.ToolingSymbol).Value;
+			_log.Info("GetBehaviorGroupArtifact Symbol " + symbol.tooling);
+			return Taxonomy.BehaviorGroups.Single(e => e.Key == symbol.tooling).Value;
 		}
 
 		public static PropertySet GetPropertySetArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetPropertySetArtifact Symbol " + symbol.ToolingSymbol);
-			return Taxonomy.PropertySets.Single(e => e.Key == symbol.ToolingSymbol).Value;		
+			_log.Info("GetPropertySetArtifact Symbol " + symbol.tooling);
+			return Taxonomy.PropertySets.Single(e => e.Key == symbol.tooling).Value;		
 		}
 
 		public static TokenTemplate GetTokenTemplateArtifact(TaxonomyFormula formula)
@@ -201,7 +201,7 @@ namespace TTI.TTF.Taxonomy
 
 		public static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
 		{
-			_log.Info("DeleteArtifact: " + artifactRequest.ArtifactSymbol.ToolingSymbol);
+			_log.Info("DeleteArtifact: " + artifactRequest.ArtifactSymbol.tooling);
 			return TaxonomyController.DeleteArtifact(artifactRequest);
 		}
 
@@ -213,56 +213,56 @@ namespace TTI.TTF.Taxonomy
 					var baseType = artifact.Unpack<Base>();
 					try
 					{
-						Taxonomy.BaseTokenTypes.Remove(baseType.Artifact.ArtifactSymbol.ToolingSymbol);
-						Taxonomy.BaseTokenTypes.Add(baseType.Artifact.ArtifactSymbol.ToolingSymbol, baseType);
+						Taxonomy.BaseTokenTypes.Remove(baseType.Artifact.ArtifactSymbol.tooling);
+						Taxonomy.BaseTokenTypes.Add(baseType.Artifact.ArtifactSymbol.tooling, baseType);
 					}
 					catch (Exception)
 					{
-						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + baseType.Artifact.ArtifactSymbol.ToolingSymbol);
+						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + baseType.Artifact.ArtifactSymbol.tooling);
 						_log.Info("Adding artifact to Taxonomy.");
-						Taxonomy.BaseTokenTypes.Add(baseType.Artifact.ArtifactSymbol.ToolingSymbol, baseType);
+						Taxonomy.BaseTokenTypes.Add(baseType.Artifact.ArtifactSymbol.tooling, baseType);
 					}
 					return true;
 				case ArtifactType.Behavior:
 					var behavior = artifact.Unpack<Behavior>();
 					try
 					{
-						Taxonomy.Behaviors.Remove(behavior.Artifact.ArtifactSymbol.ToolingSymbol);
-						Taxonomy.Behaviors.Add(behavior.Artifact.ArtifactSymbol.ToolingSymbol, behavior);
+						Taxonomy.Behaviors.Remove(behavior.Artifact.ArtifactSymbol.tooling);
+						Taxonomy.Behaviors.Add(behavior.Artifact.ArtifactSymbol.tooling, behavior);
 					}
 					catch (Exception)
 					{
-						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + behavior.Artifact.ArtifactSymbol.ToolingSymbol);
+						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + behavior.Artifact.ArtifactSymbol.tooling);
 						_log.Info("Adding artifact to Taxonomy.");
-						Taxonomy.Behaviors.Add(behavior.Artifact.ArtifactSymbol.ToolingSymbol, behavior);
+						Taxonomy.Behaviors.Add(behavior.Artifact.ArtifactSymbol.tooling, behavior);
 					}
 					return true;
 				case ArtifactType.BehaviorGroup:
 					var behaviorGroup = artifact.Unpack<BehaviorGroup>();
 					try
 					{
-						Taxonomy.BehaviorGroups.Remove(behaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol);
-						Taxonomy.BehaviorGroups.Add(behaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol, behaviorGroup);
+						Taxonomy.BehaviorGroups.Remove(behaviorGroup.Artifact.ArtifactSymbol.tooling);
+						Taxonomy.BehaviorGroups.Add(behaviorGroup.Artifact.ArtifactSymbol.tooling, behaviorGroup);
 					}
 					catch (Exception)
 					{
-						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + behaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol);
+						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + behaviorGroup.Artifact.ArtifactSymbol.tooling);
 						_log.Info("Adding artifact to Taxonomy.");
-						Taxonomy.BehaviorGroups.Add(behaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol, behaviorGroup);
+						Taxonomy.BehaviorGroups.Add(behaviorGroup.Artifact.ArtifactSymbol.tooling, behaviorGroup);
 					}
 					return true;
 				case ArtifactType.PropertySet:
 					var propertySet = artifact.Unpack<PropertySet>();
 					try
 					{
-						Taxonomy.PropertySets.Remove(propertySet.Artifact.ArtifactSymbol.ToolingSymbol);
-						Taxonomy.PropertySets.Add(propertySet.Artifact.ArtifactSymbol.ToolingSymbol, propertySet);
+						Taxonomy.PropertySets.Remove(propertySet.Artifact.ArtifactSymbol.tooling);
+						Taxonomy.PropertySets.Add(propertySet.Artifact.ArtifactSymbol.tooling, propertySet);
 					}
 					catch (Exception)
 					{
-						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + propertySet.Artifact.ArtifactSymbol.ToolingSymbol);
+						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + propertySet.Artifact.ArtifactSymbol.tooling);
 						_log.Info("Adding artifact to Taxonomy.");
-						Taxonomy.PropertySets.Add(propertySet.Artifact.ArtifactSymbol.ToolingSymbol, propertySet);
+						Taxonomy.PropertySets.Add(propertySet.Artifact.ArtifactSymbol.tooling, propertySet);
 					}
 					return true;
 				case ArtifactType.TokenTemplate:
@@ -284,32 +284,32 @@ namespace TTI.TTF.Taxonomy
 			}
 		}
 		
-		internal static string GetArtifactFolderNameBySymbol(ArtifactType artifactType, string toolingSymbol)
+		internal static string GetArtifactFolderNameBySymbol(ArtifactType artifactType, string tooling)
 		{
-			_log.Info("GetArtifactFolderNameBySymbol: " + artifactType +": " + toolingSymbol);
+			_log.Info("GetArtifactFolderNameBySymbol: " + artifactType +": " + tooling);
 			try
 			{
 				switch (artifactType)
 				{
 					case ArtifactType.Base:
 						var baseFolder = Taxonomy.BaseTokenTypes.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == toolingSymbol);
+							e.Value.Artifact.ArtifactSymbol.tooling == tooling);
 						return baseFolder.Value.Artifact.Name;
 					case ArtifactType.Behavior:
 						var behaviorFolder = Taxonomy.Behaviors.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == toolingSymbol);
+							e.Value.Artifact.ArtifactSymbol.tooling == tooling);
 						return behaviorFolder.Value.Artifact.Name;
 					case ArtifactType.BehaviorGroup:
 						var behaviorGroupFolder = Taxonomy.BehaviorGroups.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == toolingSymbol);
+							e.Value.Artifact.ArtifactSymbol.tooling == tooling);
 						return behaviorGroupFolder.Value.Artifact.Name;
 					case ArtifactType.PropertySet:
 						var propertySetFolder = Taxonomy.PropertySets.Single(e =>
-							e.Value.Artifact.ArtifactSymbol.ToolingSymbol == toolingSymbol);
+							e.Value.Artifact.ArtifactSymbol.tooling == tooling);
 						return propertySetFolder.Value.Artifact.Name;
 					case ArtifactType.TokenTemplate:
 						var tokenTemplateFolder = Taxonomy.TokenTemplates.Single(e =>
-							e.Value.Base.Formula == toolingSymbol);
+							e.Value.Base.Formula == tooling);
 						return tokenTemplateFolder.Value.Base.Name;
 					default:
 						throw new ArgumentOutOfRangeException(nameof(artifactType), artifactType, null);
@@ -317,7 +317,7 @@ namespace TTI.TTF.Taxonomy
 			}
 			catch (Exception)
 			{
-				_log.Info("No matching artifact folder of type: " + artifactType + " with symbol: " + toolingSymbol);
+				_log.Info("No matching artifact folder of type: " + artifactType + " with symbol: " + tooling);
 				return "";
 			}
 		}
@@ -328,7 +328,7 @@ namespace TTI.TTF.Taxonomy
 			_log.Info("CheckForUniqueArtifact: " + artifactType +": " + name);
 			try
 			{
-				if(!string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(artifactType, artifact.ArtifactSymbol.ToolingSymbol)))
+				if(!string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(artifactType, artifact.ArtifactSymbol.tooling)))
 					throw new Exception("Tooling Symbol Found.");
 				switch (artifactType)
 				{
@@ -378,10 +378,10 @@ namespace TTI.TTF.Taxonomy
 		internal static Artifact MakeUniqueArtifact(Artifact artifact)
 		{
 			var newArtifact = artifact.Clone();
-			var (name, visualSymbol, toolingSymbol) = Utils.GetRandomArtifactFromArtifact(artifact.Name, artifact.ArtifactSymbol.VisualSymbol, artifact.ArtifactSymbol.ToolingSymbol);
+			var (name, visual, tooling) = Utils.GetRandomArtifactFromArtifact(artifact.Name, artifact.ArtifactSymbol.visual, artifact.ArtifactSymbol.tooling);
 			newArtifact.Name = name;
-			newArtifact.ArtifactSymbol.VisualSymbol = visualSymbol;
-			newArtifact.ArtifactSymbol.ToolingSymbol = toolingSymbol;
+			newArtifact.ArtifactSymbol.visual = visual;
+			newArtifact.ArtifactSymbol.tooling = tooling;
 			return newArtifact;
 		}
 	}

@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"91cb89b6-a2ce-44ff-b3a0-f0cb3f117e56",
       "type": "BEHAVIOR_GROUP",
-      "visualSymbol": "<i>SC</i>",
-      "toolingSymbol": "SC",
-      "artifactVersion": "1.0"
+      "visual": "<i>SC</i>",
+      "tooling": "SC",
+      "version": "1.0"
     },
     "name": "Supply Control",
     "aliases": [
@@ -29,18 +30,18 @@
         "description": "",
         "symbol": {
           "type": "BASE",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+          "visual": "",
+          "tooling": "",
+          "version": ""
         }
       }
     ],
     "incompatibleWithSymbols": [
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>s</i>",
-        "toolingSymbol": "s",
-        "artifactVersion": ""
+        "visual": "<i>s</i>",
+        "tooling": "s",
+        "version": ""
       }
     ],
     "influencedBySymbols": [
@@ -48,9 +49,9 @@
         "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>r</i>",
-          "toolingSymbol": "r",
-          "artifactVersion": ""
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": ""
         }
       }
     ],
@@ -102,21 +103,21 @@
   "behaviorSymbols": [
     {
       "type": "BEHAVIOR",
-      "visualSymbol": "m",
-      "toolingSymbol": "<i>m</i>",
-      "artifactVersion": ""
+      "visual": "m",
+      "tooling": "<i>m</i>",
+      "version": ""
     },
     {
       "type": "BEHAVIOR",
-      "visualSymbol": "b",
-      "toolingSymbol": "<i>b</i>",
-      "artifactVersion": ""
+      "visual": "b",
+      "tooling": "<i>b</i>",
+      "version": ""
     },
     {
       "type": "BEHAVIOR",
-      "visualSymbol": "r",
-      "toolingSymbol": "<i>r</i>",
-      "artifactVersion": ""
+      "visual": "r",
+      "tooling": "<i>r</i>",
+      "version": ""
     }
   ],
   "behaviorArtifacts": {}

@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>r</i>",
-      "toolingSymbol": "r",
-      "artifactVersion": "1.0"
+      "visual": "<i>r</i>",
+      "tooling": "r",
+      "version": "1.0"
     },
     "name": "Roles",
     "aliases": [
@@ -29,9 +30,9 @@
         "description": "",
         "symbol": {
           "type": "PROPERTY_SET",
-          "visualSymbol": "&phi;ROLE",
-          "toolingSymbol": "phRole",
-          "artifactVersion": "1.0"
+          "visual": "&phi;ROLE",
+          "tooling": "phRole",
+          "version": "1.0"
         }
       }
     ],

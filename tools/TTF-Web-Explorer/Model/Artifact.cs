@@ -37,118 +37,118 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "eG9ub215Lm1vZGVsLmFydGlmYWN0LlN5bWJvbEluZmx1ZW5jZRI9Cg5hcnRp",
             "ZmFjdF9maWxlcxgJIAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFy",
             "dGlmYWN0RmlsZRIrCgRtYXBzGAogASgLMh0udGF4b25vbXkubW9kZWwuYXJ0",
-            "aWZhY3QuTWFwcyKOAQoOQXJ0aWZhY3RTeW1ib2wSMwoEdHlwZRgBIAEoDjIl",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIVCg12aXN1",
-            "YWxfc3ltYm9sGAIgASgJEhYKDnRvb2xpbmdfc3ltYm9sGAMgASgJEhgKEGFy",
-            "dGlmYWN0X3ZlcnNpb24YBCABKAkiXwoPU3ltYm9sSW5mbHVlbmNlEhMKC2Rl",
-            "c2NyaXB0aW9uGAEgASgJEjcKBnN5bWJvbBgCIAEoCzInLnRheG9ub215Lm1v",
-            "ZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sImAKEFN5bWJvbERlcGVuZGVu",
-            "Y3kSEwoLZGVzY3JpcHRpb24YASABKAkSNwoGc3ltYm9sGAIgASgLMicudGF4",
-            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wi0AEKEkFydGlm",
-            "YWN0RGVmaW5pdGlvbhIcChRidXNpbmVzc19kZXNjcmlwdGlvbhgBIAEoCRIY",
-            "ChBidXNpbmVzc19leGFtcGxlGAIgASgJEjsKCWFuYWxvZ2llcxgDIAMoCzIo",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0QW5hbG9neRIQCghj",
-            "b21tZW50cxgEIAEoCRIzCghhcnRpZmFjdBgFIAEoCzIhLnRheG9ub215Lm1v",
-            "ZGVsLmFydGlmYWN0LkFydGlmYWN0In4KD0FydGlmYWN0QW5hbG9neRIMCgRu",
-            "YW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEkgKE2FydGlmYWN0X2Rl",
-            "ZmluaXRpb24YAyABKAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRp",
-            "ZmFjdERlZmluaXRpb24ipAEKDEFydGlmYWN0RmlsZRI5Cgdjb250ZW50GAEg",
-            "ASgOMigudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RDb250ZW50",
-            "EhEKCWZpbGVfbmFtZRgCIAEoCRIRCglmaWxlX2RhdGEYAyABKAwSMwoIYXJ0",
-            "aWZhY3QYBCABKAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFj",
-            "dCKHAgoETWFwcxI+Cg9jb2RlX3JlZmVyZW5jZXMYASADKAsyJS50YXhvbm9t",
-            "eS5tb2RlbC5hcnRpZmFjdC5NYXBSZWZlcmVuY2USSAoZaW1wbGVtZW50YXRp",
-            "b25fcmVmZXJlbmNlcxgCIAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
-            "Lk1hcFJlZmVyZW5jZRJACglyZXNvdXJjZXMYAyADKAsyLS50YXhvbm9teS5t",
-            "b2RlbC5hcnRpZmFjdC5NYXBSZXNvdXJjZVJlZmVyZW5jZRIzCghhcnRpZmFj",
-            "dBgEIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0ItgB",
-            "CgxNYXBSZWZlcmVuY2USOgoMbWFwcGluZ190eXBlGAEgASgOMiQudGF4b25v",
-            "bXkubW9kZWwuYXJ0aWZhY3QuTWFwcGluZ1R5cGUSDAoEbmFtZRgCIAEoCRI5",
-            "CghwbGF0Zm9ybRgDIAEoDjInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlRh",
-            "cmdldFBsYXRmb3JtEhYKDnJlZmVyZW5jZV9wYXRoGAQgASgJEisKBG1hcHMY",
-            "BSABKAsyHS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5NYXBzIrkBChRNYXBS",
-            "ZXNvdXJjZVJlZmVyZW5jZRI6CgxtYXBwaW5nX3R5cGUYASABKA4yJC50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIgASgJ",
-            "EhMKC2Rlc2NyaXB0aW9uGAMgASgJEhUKDXJlc291cmNlX3BhdGgYBCABKAkS",
+            "aWZhY3QuTWFwcyKWAQoOQXJ0aWZhY3RTeW1ib2wSCgoCaWQYASABKAkSMwoE",
+            "dHlwZRgCIAEoDjIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0",
+            "VHlwZRIOCgZ2aXN1YWwYAyABKAkSDwoHdG9vbGluZxgEIAEoCRIPCgd2ZXJz",
+            "aW9uGAUgASgJEhEKCXZhbGlkYXRlZBgGIAEoCCJfCg9TeW1ib2xJbmZsdWVu",
+            "Y2USEwoLZGVzY3JpcHRpb24YASABKAkSNwoGc3ltYm9sGAIgASgLMicudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wiYAoQU3ltYm9s",
+            "RGVwZW5kZW5jeRITCgtkZXNjcmlwdGlvbhgBIAEoCRI3CgZzeW1ib2wYAiAB",
+            "KAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbCLQ",
+            "AQoSQXJ0aWZhY3REZWZpbml0aW9uEhwKFGJ1c2luZXNzX2Rlc2NyaXB0aW9u",
+            "GAEgASgJEhgKEGJ1c2luZXNzX2V4YW1wbGUYAiABKAkSOwoJYW5hbG9naWVz",
+            "GAMgAygLMigudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RBbmFs",
+            "b2d5EhAKCGNvbW1lbnRzGAQgASgJEjMKCGFydGlmYWN0GAUgASgLMiEudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QifgoPQXJ0aWZhY3RBbmFs",
+            "b2d5EgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSSAoTYXJ0",
+            "aWZhY3RfZGVmaW5pdGlvbhgDIAEoCzIrLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0LkFydGlmYWN0RGVmaW5pdGlvbiKkAQoMQXJ0aWZhY3RGaWxlEjkKB2Nv",
+            "bnRlbnQYASABKA4yKC50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFj",
+            "dENvbnRlbnQSEQoJZmlsZV9uYW1lGAIgASgJEhEKCWZpbGVfZGF0YRgDIAEo",
+            "DBIzCghhcnRpZmFjdBgEIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
+            "LkFydGlmYWN0IocCCgRNYXBzEj4KD2NvZGVfcmVmZXJlbmNlcxgBIAMoCzIl",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcFJlZmVyZW5jZRJIChlpbXBs",
+            "ZW1lbnRhdGlvbl9yZWZlcmVuY2VzGAIgAygLMiUudGF4b25vbXkubW9kZWwu",
+            "YXJ0aWZhY3QuTWFwUmVmZXJlbmNlEkAKCXJlc291cmNlcxgDIAMoCzItLnRh",
+            "eG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcFJlc291cmNlUmVmZXJlbmNlEjMK",
+            "CGFydGlmYWN0GAQgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0",
+            "aWZhY3Qi2AEKDE1hcFJlZmVyZW5jZRI6CgxtYXBwaW5nX3R5cGUYASABKA4y",
+            "JC50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5NYXBwaW5nVHlwZRIMCgRuYW1l",
+            "GAIgASgJEjkKCHBsYXRmb3JtGAMgASgOMicudGF4b25vbXkubW9kZWwuYXJ0",
+            "aWZhY3QuVGFyZ2V0UGxhdGZvcm0SFgoOcmVmZXJlbmNlX3BhdGgYBCABKAkS",
             "KwoEbWFwcxgFIAEoCzIdLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMi",
-            "cQoSTmV3QXJ0aWZhY3RSZXF1ZXN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9t",
-            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSJgoIYXJ0aWZhY3QYAiAB",
-            "KAsyFC5nb29nbGUucHJvdG9idWYuQW55In4KE05ld0FydGlmYWN0UmVzcG9u",
-            "c2USMwoEdHlwZRgBIAEoDjIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFy",
-            "dGlmYWN0VHlwZRIyChRhcnRpZmFjdF90eXBlX29iamVjdBgCIAEoCzIULmdv",
-            "b2dsZS5wcm90b2J1Zi5BbnkigAEKFVVwZGF0ZUFydGlmYWN0UmVxdWVzdBIz",
-            "CgR0eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
-            "Y3RUeXBlEjIKFGFydGlmYWN0X3R5cGVfb2JqZWN0GAIgASgLMhQuZ29vZ2xl",
-            "LnByb3RvYnVmLkFueSKSAQoWVXBkYXRlQXJ0aWZhY3RSZXNwb25zZRIzCgR0",
-            "eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RU",
-            "eXBlEg8KB3VwZGF0ZWQYAiABKAgSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QY",
-            "AyABKAsyFC5nb29nbGUucHJvdG9idWYuQW55IlkKFURlbGV0ZUFydGlmYWN0",
-            "UmVxdWVzdBJACg9hcnRpZmFjdF9zeW1ib2wYASABKAsyJy50YXhvbm9teS5t",
-            "b2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbCIpChZEZWxldGVBcnRpZmFj",
-            "dFJlc3BvbnNlEg8KB2RlbGV0ZWQYASABKAgi5QEKDkZvcm11bGFHcmFtbWFy",
-            "EjoKDHNpbmdsZV90b2tlbhgBIAEoCzIkLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LlNpbmdsZVRva2VuEjsKBmh5YnJpZBgCIAEoCzIrLnRheG9ub215Lm1v",
-            "ZGVsLmFydGlmYWN0Lkh5YnJpZFRva2VuRm9ybXVsYRJaChNoeWJyaWRfd2l0",
-            "aF9oeWJyaWRzGAMgASgLMj0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuSHli",
-            "cmlkVG9rZW5XaXRoSHlicmlkQ2hpbGRyZW5Gb3JtdWxhIrQBChJIeWJyaWRU",
-            "b2tlbkZvcm11bGESNAoGcGFyZW50GAEgASgLMiQudGF4b25vbXkubW9kZWwu",
-            "YXJ0aWZhY3QuU2luZ2xlVG9rZW4SFgoOY2hpbGRyZW5fc3RhcnQYAiABKAkS",
-            "OgoMY2hpbGRfdG9rZW5zGAMgAygLMiQudGF4b25vbXkubW9kZWwuYXJ0aWZh",
-            "Y3QuU2luZ2xlVG9rZW4SFAoMY2hpbGRyZW5fZW5kGAQgASgJIuIBCiRIeWJy",
-            "aWRUb2tlbldpdGhIeWJyaWRDaGlsZHJlbkZvcm11bGESNAoGcGFyZW50GAEg",
-            "ASgLMiQudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuU2luZ2xlVG9rZW4SHQoV",
-            "aHlicmlkX2NoaWxkcmVuX3N0YXJ0GAIgASgJEkgKE2h5YnJpZF9jaGlsZF90",
-            "b2tlbnMYAyADKAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5IeWJyaWRU",
-            "b2tlbkZvcm11bGESGwoTaHlicmlkX2NoaWxkcmVuX2VuZBgEIAEoCSK6AgoL",
-            "U2luZ2xlVG9rZW4STAoVY2xhc3NpZmljYXRpb25fYnJhbmNoGAEgASgOMi0u",
-            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQ2xhc3NpZmljYXRpb25CcmFuY2gS",
-            "EwoLZ3JvdXBfc3RhcnQYAiABKAkSNgoKYmFzZV90b2tlbhgDIAEoCzIiLnRh",
-            "eG9ub215Lm1vZGVsLmFydGlmYWN0LlRva2VuQmFzZRI4CgliZWhhdmlvcnMY",
-            "BCABKAsyJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5CZWhhdmlvckxpc3QS",
-            "QwoNcHJvcGVydHlfc2V0cxgFIAMoCzIsLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LlByb3BlcnR5U2V0TGlzdEl0ZW0SEQoJZ3JvdXBfZW5kGAYgASgJIk0K",
-            "CVRva2VuQmFzZRJACg9hcnRpZmFjdF9zeW1ib2wYASABKAsyJy50YXhvbm9t",
-            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbCJ3CgxCZWhhdmlvckxp",
-            "c3QSEgoKbGlzdF9zdGFydBgBIAEoCRJBChBiZWhhdmlvcl9zeW1ib2xzGAIg",
-            "AygLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wS",
-            "EAoIbGlzdF9lbmQYAyABKAkicAoTUHJvcGVydHlTZXRMaXN0SXRlbRISCgps",
-            "aXN0X3N0YXJ0GAEgASgJEkUKFHByb3BlcnR5X3NldF9zeW1ib2xzGAIgASgL",
-            "MicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wiIgoP",
-            "VGF4b25vbXlGb3JtdWxhEg8KB2Zvcm11bGEYASABKAkiLgoUQ29tbWl0VXBk",
-            "YXRlc1JlcXVlc3QSFgoOY29tbWl0X21lc3NhZ2UYASABKAkiJwoVQ29tbWl0",
-            "VXBkYXRlc1Jlc3BvbnNlEg4KBnJlc3VsdBgBIAEoCSISChBJc3N1ZVB1bGxS",
-            "ZXF1ZXN0IiUKEUlzc3VlUHVsbFJlc3BvbnNlEhAKCHJlc3BvbnNlGAEgASgJ",
-            "Ik0KFFNlcnZpY2VDb25maWd1cmF0aW9uEhEKCXJlYWRfb25seRgBIAEoCBIO",
-            "CgZnaXRfaWQYAiABKAkSEgoKZ2l0X2JyYW5jaBgDIAEoCSJ+CgxRdWVyeU9w",
-            "dGlvbnMSPAoNYXJ0aWZhY3RfdHlwZRgBIAEoDjIlLnRheG9ub215Lm1vZGVs",
-            "LmFydGlmYWN0LkFydGlmYWN0VHlwZRIXCg9tYXhfaXRlbV9yZXR1cm4YAiAB",
-            "KAUSFwoPbGFzdF9pdGVtX2luZGV4GAMgASgFItQBCgtRdWVyeVJlc3VsdBI8",
-            "Cg1hcnRpZmFjdF90eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZh",
-            "Y3QuQXJ0aWZhY3RUeXBlEhgKEGZpcnN0X2l0ZW1faW5kZXgYAiABKAUSFwoP",
-            "bGFzdF9pdGVtX2luZGV4GAMgASgFEiEKGXRvdGFsX2l0ZW1zX2luX2NvbGxl",
-            "Y3Rpb24YBCABKAUSMQoTYXJ0aWZhY3RfY29sbGVjdGlvbhgFIAEoCzIULmdv",
-            "b2dsZS5wcm90b2J1Zi5BbnkquwEKCVRva2VuVHlwZRIMCghGVU5HSUJMRRAA",
-            "EhAKDE5PTl9GVU5HSUJMRRABEhgKFEhZQlJJRF9GVU5HSUJMRV9ST09UEAIS",
-            "HAoYSFlCUklEX05PTl9GVU5HSUJMRV9ST09UEAMSKAokSFlCUklEX0ZVTkdJ",
-            "QkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAQSLAooSFlCUklEX05PTl9GVU5H",
-            "SUJMRV9ST09UX0hZQlJJRF9DSElMRFJFThAFKm8KFENsYXNzaWZpY2F0aW9u",
-            "QnJhbmNoEhcKE0ZSQUNUSU9OQUxfRlVOR0lCTEUQABISCg5XSE9MRV9GVU5H",
-            "SUJMRRABEhsKF0ZSQUNUSU9OQUxfTk9OX0ZVTkdJQkxFEAISDQoJU0lOR0xF",
-            "VE9OEAMqYAoMQXJ0aWZhY3RUeXBlEggKBEJBU0UQABIMCghCRUhBVklPUhAB",
-            "EhIKDkJFSEFWSU9SX0dST1VQEAISEAoMUFJPUEVSVFlfU0VUEAMSEgoOVE9L",
-            "RU5fVEVNUExBVEUQBCpCCg9BcnRpZmFjdENvbnRlbnQSDgoKREVGSU5JVElP",
-            "ThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhADKkAKC01hcHBp",
-            "bmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJT04QARIM",
-            "CghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVUSEVSRVVNX1NP",
-            "TElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RFX0pBVkEQ",
-            "AhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoEREFNTBAFQkkK",
-            "I29yZy50dGkudHRmLnRheG9ub215Lm1vZGVsLmFydGlmYWN0UAGqAh9UVEku",
-            "VFRGLlRheG9ub215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
+            "uQEKFE1hcFJlc291cmNlUmVmZXJlbmNlEjoKDG1hcHBpbmdfdHlwZRgBIAEo",
+            "DjIkLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHBpbmdUeXBlEgwKBG5h",
+            "bWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSFQoNcmVzb3VyY2VfcGF0",
+            "aBgEIAEoCRIrCgRtYXBzGAUgASgLMh0udGF4b25vbXkubW9kZWwuYXJ0aWZh",
+            "Y3QuTWFwcyJxChJOZXdBcnRpZmFjdFJlcXVlc3QSMwoEdHlwZRgBIAEoDjIl",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRImCghhcnRp",
+            "ZmFjdBgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkifgoTTmV3QXJ0aWZh",
+            "Y3RSZXNwb25zZRIzCgR0eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0",
+            "aWZhY3QuQXJ0aWZhY3RUeXBlEjIKFGFydGlmYWN0X3R5cGVfb2JqZWN0GAIg",
+            "ASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKAAQoVVXBkYXRlQXJ0aWZhY3RS",
+            "ZXF1ZXN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
+            "dC5BcnRpZmFjdFR5cGUSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QYAiABKAsy",
+            "FC5nb29nbGUucHJvdG9idWYuQW55IpIBChZVcGRhdGVBcnRpZmFjdFJlc3Bv",
+            "bnNlEjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5B",
+            "cnRpZmFjdFR5cGUSDwoHdXBkYXRlZBgCIAEoCBIyChRhcnRpZmFjdF90eXBl",
+            "X29iamVjdBgDIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkiWQoVRGVsZXRl",
+            "QXJ0aWZhY3RSZXF1ZXN0EkAKD2FydGlmYWN0X3N5bWJvbBgBIAEoCzInLnRh",
+            "eG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sIikKFkRlbGV0",
+            "ZUFydGlmYWN0UmVzcG9uc2USDwoHZGVsZXRlZBgBIAEoCCLlAQoORm9ybXVs",
+            "YUdyYW1tYXISOgoMc2luZ2xlX3Rva2VuGAEgASgLMiQudGF4b25vbXkubW9k",
+            "ZWwuYXJ0aWZhY3QuU2luZ2xlVG9rZW4SOwoGaHlicmlkGAIgASgLMisudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuSHlicmlkVG9rZW5Gb3JtdWxhEloKE2h5",
+            "YnJpZF93aXRoX2h5YnJpZHMYAyABKAsyPS50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5IeWJyaWRUb2tlbldpdGhIeWJyaWRDaGlsZHJlbkZvcm11bGEitAEK",
+            "Ekh5YnJpZFRva2VuRm9ybXVsYRI0CgZwYXJlbnQYASABKAsyJC50YXhvbm9t",
+            "eS5tb2RlbC5hcnRpZmFjdC5TaW5nbGVUb2tlbhIWCg5jaGlsZHJlbl9zdGFy",
+            "dBgCIAEoCRI6CgxjaGlsZF90b2tlbnMYAyADKAsyJC50YXhvbm9teS5tb2Rl",
+            "bC5hcnRpZmFjdC5TaW5nbGVUb2tlbhIUCgxjaGlsZHJlbl9lbmQYBCABKAki",
+            "4gEKJEh5YnJpZFRva2VuV2l0aEh5YnJpZENoaWxkcmVuRm9ybXVsYRI0CgZw",
+            "YXJlbnQYASABKAsyJC50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5TaW5nbGVU",
+            "b2tlbhIdChVoeWJyaWRfY2hpbGRyZW5fc3RhcnQYAiABKAkSSAoTaHlicmlk",
+            "X2NoaWxkX3Rva2VucxgDIAMoCzIrLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
+            "Lkh5YnJpZFRva2VuRm9ybXVsYRIbChNoeWJyaWRfY2hpbGRyZW5fZW5kGAQg",
+            "ASgJIroCCgtTaW5nbGVUb2tlbhJMChVjbGFzc2lmaWNhdGlvbl9icmFuY2gY",
+            "ASABKA4yLS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlv",
+            "bkJyYW5jaBITCgtncm91cF9zdGFydBgCIAEoCRI2CgpiYXNlX3Rva2VuGAMg",
+            "ASgLMiIudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVG9rZW5CYXNlEjgKCWJl",
+            "aGF2aW9ycxgEIAEoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkJlaGF2",
+            "aW9yTGlzdBJDCg1wcm9wZXJ0eV9zZXRzGAUgAygLMiwudGF4b25vbXkubW9k",
+            "ZWwuYXJ0aWZhY3QuUHJvcGVydHlTZXRMaXN0SXRlbRIRCglncm91cF9lbmQY",
+            "BiABKAkiTQoJVG9rZW5CYXNlEkAKD2FydGlmYWN0X3N5bWJvbBgBIAEoCzIn",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sIncKDEJl",
+            "aGF2aW9yTGlzdBISCgpsaXN0X3N0YXJ0GAEgASgJEkEKEGJlaGF2aW9yX3N5",
+            "bWJvbHMYAiADKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFj",
+            "dFN5bWJvbBIQCghsaXN0X2VuZBgDIAEoCSJwChNQcm9wZXJ0eVNldExpc3RJ",
+            "dGVtEhIKCmxpc3Rfc3RhcnQYASABKAkSRQoUcHJvcGVydHlfc2V0X3N5bWJv",
+            "bHMYAiABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5",
+            "bWJvbCIiCg9UYXhvbm9teUZvcm11bGESDwoHZm9ybXVsYRgBIAEoCSIuChRD",
+            "b21taXRVcGRhdGVzUmVxdWVzdBIWCg5jb21taXRfbWVzc2FnZRgBIAEoCSIn",
+            "ChVDb21taXRVcGRhdGVzUmVzcG9uc2USDgoGcmVzdWx0GAEgASgJIhIKEElz",
+            "c3VlUHVsbFJlcXVlc3QiJQoRSXNzdWVQdWxsUmVzcG9uc2USEAoIcmVzcG9u",
+            "c2UYASABKAkiTQoUU2VydmljZUNvbmZpZ3VyYXRpb24SEQoJcmVhZF9vbmx5",
+            "GAEgASgIEg4KBmdpdF9pZBgCIAEoCRISCgpnaXRfYnJhbmNoGAMgASgJIn4K",
+            "DFF1ZXJ5T3B0aW9ucxI8Cg1hcnRpZmFjdF90eXBlGAEgASgOMiUudGF4b25v",
+            "bXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEhcKD21heF9pdGVtX3Jl",
+            "dHVybhgCIAEoBRIXCg9sYXN0X2l0ZW1faW5kZXgYAyABKAUi1AEKC1F1ZXJ5",
+            "UmVzdWx0EjwKDWFydGlmYWN0X3R5cGUYASABKA4yJS50YXhvbm9teS5tb2Rl",
+            "bC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSGAoQZmlyc3RfaXRlbV9pbmRleBgC",
+            "IAEoBRIXCg9sYXN0X2l0ZW1faW5kZXgYAyABKAUSIQoZdG90YWxfaXRlbXNf",
+            "aW5fY29sbGVjdGlvbhgEIAEoBRIxChNhcnRpZmFjdF9jb2xsZWN0aW9uGAUg",
+            "ASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSq7AQoJVG9rZW5UeXBlEgwKCEZV",
+            "TkdJQkxFEAASEAoMTk9OX0ZVTkdJQkxFEAESGAoUSFlCUklEX0ZVTkdJQkxF",
+            "X1JPT1QQAhIcChhIWUJSSURfTk9OX0ZVTkdJQkxFX1JPT1QQAxIoCiRIWUJS",
+            "SURfRlVOR0lCTEVfUk9PVF9IWUJSSURfQ0hJTERSRU4QBBIsCihIWUJSSURf",
+            "Tk9OX0ZVTkdJQkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAUqbwoUQ2xhc3Np",
+            "ZmljYXRpb25CcmFuY2gSFwoTRlJBQ1RJT05BTF9GVU5HSUJMRRAAEhIKDldI",
+            "T0xFX0ZVTkdJQkxFEAESGwoXRlJBQ1RJT05BTF9OT05fRlVOR0lCTEUQAhIN",
+            "CglTSU5HTEVUT04QAypgCgxBcnRpZmFjdFR5cGUSCAoEQkFTRRAAEgwKCEJF",
+            "SEFWSU9SEAESEgoOQkVIQVZJT1JfR1JPVVAQAhIQCgxQUk9QRVJUWV9TRVQQ",
+            "AxISCg5UT0tFTl9URU1QTEFURRAEKkIKD0FydGlmYWN0Q29udGVudBIOCgpE",
+            "RUZJTklUSU9OEAASCwoHQ09OVFJPTBABEgcKA1VNTBACEgkKBU9USEVSEAMq",
+            "QAoLTWFwcGluZ1R5cGUSDwoLU09VUkNFX0NPREUQABISCg5JTVBMRU1FTlRB",
+            "VElPThABEgwKCFJFU09VUkNFEAIqdgoOVGFyZ2V0UGxhdGZvcm0SFQoRRVRI",
+            "RVJFVU1fU09MSURJVFkQABIQCgxDSEFJTkNPREVfR08QARISCg5DSEFJTkNP",
+            "REVfSkFWQRACEhIKDkNIQUlOQ09ERV9OT0RFEAMSCQoFQ09SREEQBBIICgRE",
+            "QU1MEAVCSQojb3JnLnR0aS50dGYudGF4b25vbXkubW9kZWwuYXJ0aWZhY3RQ",
+            "AaoCH1RUSS5UVEYuVGF4b25vbXkuTW9kZWwuQXJ0aWZhY3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Artifact), global::TTI.TTF.Taxonomy.Model.Artifact.Artifact.Parser, new[]{ "ArtifactSymbol", "Name", "Aliases", "ControlUri", "ArtifactDefinition", "Dependencies", "IncompatibleWithSymbols", "InfluencedBySymbols", "ArtifactFiles", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser, new[]{ "Type", "VisualSymbol", "ToolingSymbol", "ArtifactVersion" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser, new[]{ "Id", "Type", "Visual", "Tooling", "Version", "Validated" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence), global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence.Parser, new[]{ "Description", "Symbol" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency), global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency.Parser, new[]{ "Description", "Symbol" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition.Parser, new[]{ "BusinessDescription", "BusinessExample", "Analogies", "Comments", "Artifact" }, null, null, null),
@@ -668,10 +668,12 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ArtifactSymbol(ArtifactSymbol other) : this() {
+      id_ = other.id_;
       type_ = other.type_;
-      visualSymbol_ = other.visualSymbol_;
-      toolingSymbol_ = other.toolingSymbol_;
-      artifactVersion_ = other.artifactVersion_;
+      visual_ = other.visual_;
+      tooling_ = other.tooling_;
+      version_ = other.version_;
+      validated_ = other.validated_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -680,8 +682,19 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       return new ArtifactSymbol(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 1;
+    public const int TypeFieldNumber = 2;
     private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
@@ -691,36 +704,56 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       }
     }
 
-    /// <summary>Field number for the "visual_symbol" field.</summary>
-    public const int VisualSymbolFieldNumber = 2;
-    private string visualSymbol_ = "";
+    /// <summary>Field number for the "visual" field.</summary>
+    public const int VisualFieldNumber = 3;
+    private string visual_ = "";
+    /// <summary>
+    ///symbol for single artifact and formula for templates
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string VisualSymbol {
-      get { return visualSymbol_; }
+    public string Visual {
+      get { return visual_; }
       set {
-        visualSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        visual_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "tooling_symbol" field.</summary>
-    public const int ToolingSymbolFieldNumber = 3;
-    private string toolingSymbol_ = "";
+    /// <summary>Field number for the "tooling" field.</summary>
+    public const int ToolingFieldNumber = 4;
+    private string tooling_ = "";
+    /// <summary>
+    ///symbol for single artifact and formula for templates
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ToolingSymbol {
-      get { return toolingSymbol_; }
+    public string Tooling {
+      get { return tooling_; }
       set {
-        toolingSymbol_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        tooling_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "artifact_version" field.</summary>
-    public const int ArtifactVersionFieldNumber = 4;
-    private string artifactVersion_ = "";
+    /// <summary>Field number for the "version" field.</summary>
+    public const int VersionFieldNumber = 5;
+    private string version_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ArtifactVersion {
-      get { return artifactVersion_; }
+    public string Version {
+      get { return version_; }
       set {
-        artifactVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "validated" field.</summary>
+    public const int ValidatedFieldNumber = 6;
+    private bool validated_;
+    /// <summary>
+    ///for templates only
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Validated {
+      get { return validated_; }
+      set {
+        validated_ = value;
       }
     }
 
@@ -737,20 +770,24 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (Type != other.Type) return false;
-      if (VisualSymbol != other.VisualSymbol) return false;
-      if (ToolingSymbol != other.ToolingSymbol) return false;
-      if (ArtifactVersion != other.ArtifactVersion) return false;
+      if (Visual != other.Visual) return false;
+      if (Tooling != other.Tooling) return false;
+      if (Version != other.Version) return false;
+      if (Validated != other.Validated) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Type != 0) hash ^= Type.GetHashCode();
-      if (VisualSymbol.Length != 0) hash ^= VisualSymbol.GetHashCode();
-      if (ToolingSymbol.Length != 0) hash ^= ToolingSymbol.GetHashCode();
-      if (ArtifactVersion.Length != 0) hash ^= ArtifactVersion.GetHashCode();
+      if (Visual.Length != 0) hash ^= Visual.GetHashCode();
+      if (Tooling.Length != 0) hash ^= Tooling.GetHashCode();
+      if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (Validated != false) hash ^= Validated.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -764,21 +801,29 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
       if (Type != 0) {
-        output.WriteRawTag(8);
+        output.WriteRawTag(16);
         output.WriteEnum((int) Type);
       }
-      if (VisualSymbol.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(VisualSymbol);
-      }
-      if (ToolingSymbol.Length != 0) {
+      if (Visual.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(ToolingSymbol);
+        output.WriteString(Visual);
       }
-      if (ArtifactVersion.Length != 0) {
+      if (Tooling.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(ArtifactVersion);
+        output.WriteString(Tooling);
+      }
+      if (Version.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Version);
+      }
+      if (Validated != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Validated);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -788,17 +833,23 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
       if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
-      if (VisualSymbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(VisualSymbol);
+      if (Visual.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Visual);
       }
-      if (ToolingSymbol.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ToolingSymbol);
+      if (Tooling.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Tooling);
       }
-      if (ArtifactVersion.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ArtifactVersion);
+      if (Version.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      }
+      if (Validated != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -811,17 +862,23 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
       if (other.Type != 0) {
         Type = other.Type;
       }
-      if (other.VisualSymbol.Length != 0) {
-        VisualSymbol = other.VisualSymbol;
+      if (other.Visual.Length != 0) {
+        Visual = other.Visual;
       }
-      if (other.ToolingSymbol.Length != 0) {
-        ToolingSymbol = other.ToolingSymbol;
+      if (other.Tooling.Length != 0) {
+        Tooling = other.Tooling;
       }
-      if (other.ArtifactVersion.Length != 0) {
-        ArtifactVersion = other.ArtifactVersion;
+      if (other.Version.Length != 0) {
+        Version = other.Version;
+      }
+      if (other.Validated != false) {
+        Validated = other.Validated;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -834,20 +891,28 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 16: {
             Type = (global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType) input.ReadEnum();
             break;
           }
-          case 18: {
-            VisualSymbol = input.ReadString();
-            break;
-          }
           case 26: {
-            ToolingSymbol = input.ReadString();
+            Visual = input.ReadString();
             break;
           }
           case 34: {
-            ArtifactVersion = input.ReadString();
+            Tooling = input.ReadString();
+            break;
+          }
+          case 42: {
+            Version = input.ReadString();
+            break;
+          }
+          case 48: {
+            Validated = input.ReadBool();
             break;
           }
         }

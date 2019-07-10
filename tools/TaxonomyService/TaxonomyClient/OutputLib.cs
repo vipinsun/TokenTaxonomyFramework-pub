@@ -100,7 +100,7 @@ namespace TTI.TTF.Taxonomy
 			foreach (var s in bgBehaviorSymbols)
 			{
 				_log.Error("		----------------------------------------------");
-				_log.Info("			ToolingSymbol: " + s.ToolingSymbol);
+				_log.Info("			tooling: " + s.tooling);
 				_log.Error("		----------------------------------------------");
 			}
 			_log.Warn("		***Behavior Symbols End***");
@@ -160,7 +160,7 @@ namespace TTI.TTF.Taxonomy
 			foreach (var c in baseType.ChildTokens)
 			{
 				_log.Info("			***Child Token***");
-				OutputTemplate(c.Artifact.ArtifactSymbol.ToolingSymbol, c);
+				OutputTemplate(c.Artifact.ArtifactSymbol.tooling, c);
 				_log.Info("			***Child Token End***");
 			}
 
@@ -173,23 +173,23 @@ namespace TTI.TTF.Taxonomy
 			_log.Warn("	***TokenTemplate***");
 			_log.Info("		-Formula: " + symbol);
 			OutputArtifact(template.Artifact);
-			OutputBaseType(template.Base.Base.Artifact.ArtifactSymbol.ToolingSymbol, template.Base.Base);
+			OutputBaseType(template.Base.Base.Artifact.ArtifactSymbol.tooling, template.Base.Base);
 			_log.Error("		***Behaviors***");
 			foreach (var b in template.Behaviors)
 			{
-				OutputBehavior(b.Symbol.ToolingSymbol, b.Behavior);
+				OutputBehavior(b.Symbol.tooling, b.Behavior);
 			}
 			_log.Error("		***Behaviors End***");
 			_log.Warn("		***BehaviorGroups ***");
 			foreach (var b in template.BehaviorGroups)
 			{
-				OutputBehaviorGroup(b.Symbol.ToolingSymbol, b.BehaviorGroup);
+				OutputBehaviorGroup(b.Symbol.tooling, b.BehaviorGroup);
 			}
 			_log.Warn("		***BehaviorGroups End***");
 			_log.Error("		***PropertySets***");
 			foreach (var b in template.PropertySets)
 			{
-				OutputPropertySet(b.Symbol.ToolingSymbol, b.PropertySet);
+				OutputPropertySet(b.Symbol.tooling, b.PropertySet);
 			}
 			_log.Error("		***PropertySets End***");
 			_log.Warn("	***TokenTemplate End***");
@@ -282,7 +282,7 @@ namespace TTI.TTF.Taxonomy
 			foreach (var i in artifactIncompatibleWithSymbols)
 			{
 				_log.Error("				---------------------------------------------------");
-				_log.Info("				-Symbol: " + i.ToolingSymbol);
+				_log.Info("				-Symbol: " + i.tooling);
 				_log.Error("				---------------------------------------------------");
 			}
 		}
@@ -292,9 +292,9 @@ namespace TTI.TTF.Taxonomy
 			_log.Warn("			-Symbol: ");
 			_log.Error("				---------------------------------------------------");
 			_log.Info("				-Type: " + symbol.Type);
-			_log.Info("				-Tooling: " + symbol.ToolingSymbol);
-			_log.Info("				-Visual: " + symbol.VisualSymbol);
-			_log.Info("				-Version: " + symbol.ArtifactVersion);
+			_log.Info("				-Tooling: " + symbol.tooling);
+			_log.Info("				-Visual: " + symbol.visual);
+			_log.Info("				-Version: " + symbol.version);
 			_log.Error("				---------------------------------------------------");
 		}
 		private static void OutputInfluencedBy(IEnumerable<SymbolInfluence> artifactInfluencedBySymbols)

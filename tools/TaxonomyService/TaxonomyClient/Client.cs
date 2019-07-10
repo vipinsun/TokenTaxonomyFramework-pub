@@ -186,8 +186,8 @@ namespace TTI.TTF.Taxonomy
 										Name = newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											ToolingSymbol = newSymbol.ToLower(),
-											VisualSymbol = "<i>" + newSymbol.ToLower()+"</i>"
+											tooling = newSymbol.ToLower(),
+											visual = "<i>" + newSymbol.ToLower()+"</i>"
 										}
 									}
 								};
@@ -201,8 +201,8 @@ namespace TTI.TTF.Taxonomy
 										Name = newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											ToolingSymbol = newSymbol.ToUpper(),
-											VisualSymbol = "<i>" + newSymbol.ToUpper()+"</i>"
+											tooling = newSymbol.ToUpper(),
+											visual = "<i>" + newSymbol.ToUpper()+"</i>"
 										}
 									}
 								};
@@ -216,8 +216,8 @@ namespace TTI.TTF.Taxonomy
 										Name = newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											ToolingSymbol = "ph" + newSymbol,
-											VisualSymbol = "&phi;" + newSymbol
+											tooling = "ph" + newSymbol,
+											visual = "&phi;" + newSymbol
 										}
 									}
 								};
@@ -231,8 +231,8 @@ namespace TTI.TTF.Taxonomy
 										Name = newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											ToolingSymbol = newSymbol,
-											VisualSymbol = newSymbol
+											tooling = newSymbol,
+											visual = newSymbol
 										}
 									}
 								};
@@ -263,19 +263,19 @@ namespace TTI.TTF.Taxonomy
 								break;
 							case ArtifactType.Behavior:
 								var newBehavior = newArtifactResponse.ArtifactTypeObject.Unpack<Behavior>();
-								OutputLib.OutputBehavior(newBehavior.Artifact.ArtifactSymbol.ToolingSymbol, newBehavior);
+								OutputLib.OutputBehavior(newBehavior.Artifact.ArtifactSymbol.tooling, newBehavior);
 								return;
 							case ArtifactType.BehaviorGroup:
 								var newBehaviorGroup = newArtifactResponse.ArtifactTypeObject.Unpack<BehaviorGroup>();
-								OutputLib.OutputBehaviorGroup(newBehaviorGroup.Artifact.ArtifactSymbol.ToolingSymbol, newBehaviorGroup);
+								OutputLib.OutputBehaviorGroup(newBehaviorGroup.Artifact.ArtifactSymbol.tooling, newBehaviorGroup);
 								return;
 							case ArtifactType.PropertySet:
 								var newPropertySet = newArtifactResponse.ArtifactTypeObject.Unpack<PropertySet>();
-								OutputLib.OutputPropertySet(newPropertySet.Artifact.ArtifactSymbol.ToolingSymbol, newPropertySet);
+								OutputLib.OutputPropertySet(newPropertySet.Artifact.ArtifactSymbol.tooling, newPropertySet);
 								return;
 							case ArtifactType.TokenTemplate:
 								var newTokenTemplate = newArtifactResponse.ArtifactTypeObject.Unpack<TokenTemplate>();
-								OutputLib.OutputTemplate(newTokenTemplate.Artifact.ArtifactSymbol.ToolingSymbol, newTokenTemplate);
+								OutputLib.OutputTemplate(newTokenTemplate.Artifact.ArtifactSymbol.tooling, newTokenTemplate);
 								return;
 							default:
 								throw new ArgumentOutOfRangeException();
@@ -414,7 +414,7 @@ namespace TTI.TTF.Taxonomy
 
 			var symbolQuery = new ArtifactSymbol
 			{
-				ToolingSymbol = symbol
+				tooling = symbol
 			};
 
 			_log.Error("Taxonomy Artifact Symbol Query for Type: " + artifactType);

@@ -69,10 +69,12 @@ message Artifact {
 }
 
 message ArtifactSymbol{
-    ArtifactType type = 1;
-    string visual_symbol = 2;
-    string tooling_symbol = 3;
-    string artifact_version = 4;
+    string id = 1;
+    ArtifactType type = 2;
+    string visual = 3; //symbol for single artifact and formula for templates
+    string tooling = 4; //symbol for single artifact and formula for templates
+    string version = 5;
+    bool validated = 6; //for templates only
 }
 
 message SymbolInfluence{

@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"c1189d7a-e142-4504-bf26-44c35b76c9d6",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>s</i>",
-      "toolingSymbol": "s",
-      "artifactVersion": "1.0"
+      "visual": "<i>s</i>",
+      "tooling": "s",
+      "version": "1.0"
     },
     "name": "Singleton",
     "aliases": [
@@ -29,15 +30,15 @@
     "incompatibleWithSymbols": [
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>d</i>",
-        "toolingSymbol": "d",
-        "artifactVersion": ""
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": ""
       },
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>m</i>",
-        "toolingSymbol": "m",
-        "artifactVersion": ""
+        "visual": "<i>m</i>",
+        "tooling": "m",
+        "version": ""
       }
     ],
     "influencedBySymbols": [],

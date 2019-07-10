@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"ee696ca3-393a-44e3-a4a8-01a39042f1dd",
       "type": "PROPERTY_SET",
-      "visualSymbol": "&phi;<i>SKU</i>",
-      "toolingSymbol": "phSKU",
-      "artifactVersion": "1.0"
+      "visual": "&phi;<i>SKU</i>",
+      "tooling": "phSKU",
+      "version": "1.0"
     },
     "name": "SKU",
     "aliases": [
@@ -31,9 +32,9 @@
         "description": "Roles should be used to control what accounts can set the SKU Property.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>r</i>",
-          "toolingSymbol": "r",
-          "artifactVersion": ""
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": ""
         }
       }
     ],

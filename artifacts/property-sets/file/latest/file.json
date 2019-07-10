@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"79d40648-02ba-4055-b700-01dce32196ec",
       "type": "PROPERTY_SET",
-      "visualSymbol": "&phi;<i>File</i>",
-      "toolingSymbol": "phFile",
-      "artifactVersion": "1.0"
+      "visual": "&phi;<i>File</i>",
+      "tooling": "phFile",
+      "version": "1.0"
     },
     "name": "File",
     "aliases": [
@@ -31,9 +32,9 @@
         "description": "Roles should be used to control what accounts can set the File Property.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>r</i>",
-          "toolingSymbol": "r",
-          "artifactVersion": ""
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": ""
         }
       }
     ],

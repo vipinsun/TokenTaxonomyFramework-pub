@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>~d</i>",
-      "toolingSymbol": "~d",
-      "artifactVersion": "1.0"
+      "visual": "<i>~d</i>",
+      "tooling": "~d",
+      "version": "1.0"
     },
     "name": "Non-Subdividable",
     "aliases": [
@@ -29,9 +30,9 @@
     "incompatibleWithSymbols": [
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>d</i>",
-        "toolingSymbol": "d",
-        "artifactVersion": ""
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": ""
       }
     ],
     "influencedBySymbols": [],

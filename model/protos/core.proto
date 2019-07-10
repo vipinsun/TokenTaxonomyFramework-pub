@@ -72,35 +72,49 @@ message Property{
     repeated Invocation property_invocations = 4; //needed for non-behavioral properties
 }
 
-//Used for either a parent or child definition within a TokenTemplate only.
-message TemplateToken {
-    string formula = 1; //this is calculated using the Base.Classification and adding in the artifacts in the definition.
-    string name = 2;
-    string version = 3;
-    taxonomy.model.artifact.ArtifactDefinition definition = 4;
-    Base base = 5;
-    repeated TemplateBehavior behaviors = 6;
-    repeated TemplateBehaviorGroup behavior_groups = 7;
-    repeated TemplatePropertySet property_sets = 8;
+message TokenTemplates{
+    TemplateBranch fractional_fungibles = 1;
+    TemplateBranch whole_fungibles = 2;
+    TemplateBranch fractional_non_fungibles = 3;
+    TemplateBranch singletons = 4;
+    message HybridBranch{
+        TemplateBranch fractional_fungibles = 1;
+        TemplateBranch whole_fungibles = 2;
+        TemplateBranch fractional_non_fungibles = 3;
+        TemplateBranch singletons = 4;
+    }
+    HybridBranch hybrids = 5;
 }
 
-message TokenTemplates{
-    repeated TokenTemplate token_template = 1;
+message TemplateBranch{
+    taxonomy.model.artifact.ClassificationBranch name = 1;
+    repeated TokenTemplate token_templates = 2;
 }
 
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TokenTemplate{
     string control_uri = 1;
     repeated taxonomy.model.artifact.ArtifactFile artifact_files = 2; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
-    TemplateToken base = 3; //set values for the template
+    TemplateToken parent = 3; //set values for the template
     repeated TemplateToken child_tokens = 4;
+}
+
+//Used for either a parent or child definition within a TokenTemplate only.
+message TemplateToken {
+    taxonomy.model.artifact.ArtifactSymbol formula = 1; //similar to an artifact in properties, but is a composite.
+    string name = 2;
+    taxonomy.model.artifact.ArtifactDefinition definition = 3;
+    Base base = 4;
+    repeated TemplateBehavior behaviors = 5;
+    repeated TemplateBehaviorGroup behavior_groups = 6;
+    repeated TemplatePropertySet property_sets = 7;
 }
 
 //used to wrap the base token type for a template with implementation details specific for the behavior's use in this token template definition.
 message TemplateBehavior{
     taxonomy.model.artifact.ArtifactSymbol symbol = 1;
     string implementation_details = 2;
-    Behavior behavior = 3; //if template values are set include a copy when serialized. If empty the reference will be used with no values set.
+    Behavior behavior = 3; //only template values (property and variables) are serialized and stored and merged at runtime with the version referenced.  If there are no values set the reference will be used with no values set.
 }
 
 //used to wrap the base token type for a template with implementation details specific for the BehaviorGroup's use in this token template definition.

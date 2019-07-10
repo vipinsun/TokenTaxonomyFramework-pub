@@ -4,9 +4,9 @@
     "baseToken": {
       "artifactSymbol": {
         "type": "BASE",
-        "visualSymbol": "",
-        "toolingSymbol": "",
-        "artifactVersion": ""
+        "visual": "",
+        "tooling": "",
+        "version": ""
       }
     },
     "behaviors": {
@@ -14,9 +14,9 @@
       "behaviorSymbols": [
         {
           "type": "BEHAVIOR",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+          "visual": "",
+          "tooling": "",
+          "version": ""
         }
       ],
       "listEnd": "}"
@@ -26,9 +26,9 @@
         "listStart": "+",
         "propertySetSymbols": {
           "type": "PROPERTY_SET",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+          "visual": "",
+          "tooling": "",
+          "version": ""
         }
       }
     ],
@@ -40,9 +40,9 @@
       "baseToken": {
         "artifactSymbol": {
           "type": "BASE",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+          "visual": "",
+          "tooling": "",
+          "version": ""
         }
       },
       "behaviors": {
@@ -50,9 +50,9 @@
         "behaviorSymbols": [
           {
             "type": "BEHAVIOR",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         ],
         "listEnd": "}"
@@ -62,9 +62,9 @@
           "listStart": "+",
           "propertySetSymbols": {
             "type": "PROPERTY_SET",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         }
       ],
@@ -77,9 +77,9 @@
         "baseToken": {
           "artifactSymbol": {
             "type": "BASE",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         },
         "behaviors": {
@@ -87,9 +87,9 @@
           "behaviorSymbols": [
             {
               "type": "BEHAVIOR",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+              "visual": "",
+              "tooling": "",
+              "version": ""
             }
           ],
           "listEnd": "}"
@@ -99,9 +99,9 @@
             "listStart": "+",
             "propertySetSymbols": {
               "type": "PROPERTY_SET",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+              "visual": "",
+              "tooling": "",
+              "version": ""
             }
           }
         ],
@@ -112,9 +112,9 @@
         "baseToken": {
           "artifactSymbol": {
             "type": "BASE",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         },
         "behaviors": {
@@ -122,9 +122,9 @@
           "behaviorSymbols": [
             {
               "type": "BEHAVIOR",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+              "visual": "",
+              "tooling": "",
+              "version": ""
             }
           ],
           "listEnd": "}"
@@ -134,9 +134,9 @@
             "listStart": "+",
             "propertySetSymbols": {
               "type": "PROPERTY_SET",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+              "visual": "",
+              "tooling": "",
+              "version": ""
             }
           }
         ],
@@ -151,9 +151,9 @@
       "baseToken": {
         "artifactSymbol": {
           "type": "BASE",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+          "visual": "",
+          "tooling": "",
+          "version": ""
         }
       },
       "behaviors": {
@@ -161,9 +161,9 @@
         "behaviorSymbols": [
           {
             "type": "BEHAVIOR",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         ],
         "listEnd": "}"
@@ -173,9 +173,9 @@
           "listStart": "+",
           "propertySetSymbols": {
             "type": "PROPERTY_SET",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         }
       ],
@@ -189,9 +189,9 @@
           "baseToken": {
             "artifactSymbol": {
               "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+              "visual": "",
+              "tooling": "",
+              "version": ""
             }
           },
           "behaviors": {
@@ -199,9 +199,9 @@
             "behaviorSymbols": [
               {
                 "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             ],
             "listEnd": "}"
@@ -211,9 +211,9 @@
               "listStart": "+",
               "propertySetSymbols": {
                 "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             }
           ],
@@ -226,9 +226,9 @@
             "baseToken": {
               "artifactSymbol": {
                 "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             },
             "behaviors": {
@@ -236,9 +236,9 @@
               "behaviorSymbols": [
                 {
                   "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               ],
               "listEnd": "}"
@@ -248,9 +248,9 @@
                 "listStart": "+",
                 "propertySetSymbols": {
                   "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               }
             ],
@@ -261,9 +261,9 @@
             "baseToken": {
               "artifactSymbol": {
                 "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             },
             "behaviors": {
@@ -271,9 +271,9 @@
               "behaviorSymbols": [
                 {
                   "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               ],
               "listEnd": "}"
@@ -283,9 +283,9 @@
                 "listStart": "+",
                 "propertySetSymbols": {
                   "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               }
             ],
@@ -300,9 +300,9 @@
           "baseToken": {
             "artifactSymbol": {
               "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+              "visual": "",
+              "tooling": "",
+              "version": ""
             }
           },
           "behaviors": {
@@ -310,9 +310,9 @@
             "behaviorSymbols": [
               {
                 "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             ],
             "listEnd": "}"
@@ -322,9 +322,9 @@
               "listStart": "+",
               "propertySetSymbols": {
                 "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             }
           ],
@@ -337,9 +337,9 @@
             "baseToken": {
               "artifactSymbol": {
                 "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             },
             "behaviors": {
@@ -347,9 +347,9 @@
               "behaviorSymbols": [
                 {
                   "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               ],
               "listEnd": "}"
@@ -359,9 +359,9 @@
                 "listStart": "+",
                 "propertySetSymbols": {
                   "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               }
             ],
@@ -372,9 +372,9 @@
             "baseToken": {
               "artifactSymbol": {
                 "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+                "visual": "",
+                "tooling": "",
+                "version": ""
               }
             },
             "behaviors": {
@@ -382,9 +382,9 @@
               "behaviorSymbols": [
                 {
                   "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               ],
               "listEnd": "}"
@@ -394,9 +394,9 @@
                 "listStart": "+",
                 "propertySetSymbols": {
                   "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+                  "visual": "",
+                  "tooling": "",
+                  "version": ""
                 }
               }
             ],

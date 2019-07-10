@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"9c8c2373-cf3c-4743-932a-03fee6a192fe",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>l</i>",
-      "toolingSymbol": "l",
-      "artifactVersion": "1.0"
+      "visual": "<i>l</i>",
+      "tooling": "l",
+      "version": "1.0"
     },
     "name": "Logable",
     "aliases": [
@@ -30,9 +31,9 @@
         "description": "Log PropertySet",
         "symbol": {
           "type": "PROPERTY_SET",
-          "visualSymbol": "&phi;Log",
-          "toolingSymbol": "phLog",
-          "artifactVersion": "1.0"
+          "visual": "&phi;Log",
+          "tooling": "phLog",
+          "version": "1.0"
         }
       }
     ],

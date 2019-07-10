@@ -14,10 +14,16 @@
       "artifact": null
     }
   ],
-  "base": {
-    "formula": "[tN{~d,t,s,e,b}+phFile]",
+  "parent": {
+    "formula": {
+      "id": "4c2730f5-dc5f-4949-87e3-71f3a6e6cae9",
+      "type": "TOKEN_TEMPLATE",
+      "visual": "",
+      "tooling": "[tN{~d,t,s,e,b}+phFile]",
+      "version": "1.0",
+      "validated": false
+    },
     "name": "Document Token",
-    "version": "1.0",
     "definition": {
       "businessDescription": "Used to represent a document that may be a scanned or PDF printed document. It records the document hash to check for tampering, a file path to fetch the file from storage as well as the ability to be encumbered. Implements the File property-set.",
       "businessExample": "For example: you may choose to create an invoice token from an invoice document.  You can then allow another token or contract representing a loan or proof of financing to encumber the document establishing a link between the two.",
@@ -34,10 +40,12 @@
     "base": {
       "artifact": {
         "artifactSymbol": {
+          "id": "8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
-          "visualSymbol": "&tau<sub>N</sub>",
-          "toolingSymbol": "tN",
-          "artifactVersion": "1.0"
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "validated": true
         },
         "name": "Non-Fungible Token",
         "aliases": [
@@ -64,28 +72,30 @@
             "description": "Base Token Definition",
             "symbol": {
               "type": "BASE",
-              "visualSymbol": "&tau;",
-              "toolingSymbol": "t",
-              "artifactVersion": ""
+              "visual": "&tau;",
+              "tooling": "t",
+              "version": ""
             }
           }
         ],
         "incompatibleWithSymbols": [
           {
-            "type": "BASE",
-            "visualSymbol": "<i>d</i>",
-            "toolingSymbol": "d",
-            "artifactVersion": ""
+            "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
+            "type": "BEHAVIOR",
+            "visual": "<i>d</i>",
+            "tooling": "d",
+            "version": "1.0"
           }
         ],
         "influencedBySymbols": [
           {
             "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
             "symbol": {
+              "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
               "type": "BEHAVIOR",
-              "visualSymbol": "<i>~d</i>",
-              "toolingSymbol": "~d",
-              "artifactVersion": ""
+              "visual": "<i>~d</i>",
+              "tooling": "~d",
+              "version": "1.0"
             }
           }
         ],
@@ -141,19 +151,20 @@
         "baseToken": {
           "artifactSymbol": {
             "type": "BASE",
-            "visualSymbol": "&tau;<sub>N</sub>",
-            "toolingSymbol": "tN",
-            "artifactVersion": ""
+            "visual": "&tau;<sub>N</sub>",
+            "tooling": "tN",
+            "version": ""
           }
         },
         "behaviors": {
           "listStart": "{",
           "behaviorSymbols": [
             {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "~d",
-              "artifactVersion": ""
+              "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
+              "type": "BEHAVIOR",
+              "visual": "<i>~d</i>",
+              "tooling": "~d",
+              "version": "1.0"
             }
           ],
           "listEnd": "}"
@@ -163,9 +174,9 @@
             "listStart": "+",
             "propertySetSymbols": {
               "type": "PROPERTY_SET",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+              "visual": "",
+              "tooling": "",
+              "version": ""
             }
           }
         ],
@@ -184,12 +195,13 @@
     "behaviors": [
       {
         "symbol": {
+          "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>~d</i>",
-          "toolingSymbol": "~d",
-          "artifactVersion": ""
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "1.0"
         },
-        "implementationDetails": "",
+        "implementationDetails": "Set to 0, non-subdividable",
         "behavior": {
           "artifact": null,
           "isExternal": false,
@@ -231,9 +243,9 @@
       {
         "symbol": {
           "type": "BEHAVIOR_GROUP",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+          "visual": "",
+          "tooling": "",
+          "version": ""
         },
         "implementationDetails": "",
         "behaviorGroup": {
@@ -247,9 +259,9 @@
       {
         "symbol": {
           "type": "PROPERTY_SET",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+          "visual": "",
+          "tooling": "",
+          "version": ""
         },
         "implementationDetails": "",
         "propertySet": {

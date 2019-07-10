@@ -1,10 +1,12 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"56b70ca8-6963-443d-9a70-1c9807c4abc3",
       "type": "BASE",
-      "visualSymbol": "&tau;<sub>N</sub>(&tau;)",
-      "toolingSymbol": "tN(t)",
-      "artifactVersion": "1.0"
+      "visual": "&tau;<sub>N</sub>(&tau;)",
+      "tooling": "tN(t)",
+      "version": "1.0",
+      "validated": true
     },
     "name": "Hybrid-non-fungibleRoot",
     "aliases": [
@@ -29,32 +31,17 @@
       {
         "description": "",
         "symbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
-          "visualSymbol": "&tau;<sub>N</sub>",
-          "toolingSymbol": "tN",
-          "artifactVersion": ""
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "validated": true
         }
       }
     ],
-    "incompatibleWithSymbols": [
-      {
-        "type": "BASE",
-        "visualSymbol": "",
-        "toolingSymbol": "",
-        "artifactVersion": ""
-      }
-    ],
-    "influencedBySymbols": [
-      {
-        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
-        "symbol": {
-          "type": "BEHAVIOR",
-          "visualSymbol": "~d",
-          "toolingSymbol": "~d",
-          "artifactVersion": ""
-        }
-      }
-    ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
     "artifactFiles": [
       {
         "content": "CONTROL",
@@ -107,22 +94,17 @@
       "groupStart": "[",
       "baseToken": {
         "artifactSymbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
-          "visualSymbol": "&tau;<sub>N</sub>(&tau;)",
-          "toolingSymbol": "tN(t)",
-          "artifactVersion": ""
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "validated": true
         }
       },
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbols": [
-          {
-            "type": "BEHAVIOR",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
-        ],
+        "behaviorSymbols": [],
         "listEnd": "}"
       },
       "propertySets": [
@@ -130,88 +112,16 @@
           "listStart": "+",
           "propertySetSymbols": {
             "type": "PROPERTY_SET",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         }
       ],
       "groupEnd": "]"
     },
     "childrenStart": "(",
-    "childTokens": [
-      {
-        "classificationBranch": "FRACTIONAL_FUNGIBLE",
-        "groupStart": "[",
-        "baseToken": {
-          "artifactSymbol": {
-            "type": "BASE",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
-        },
-        "behaviors": {
-          "listStart": "{",
-          "behaviorSymbols": [
-            {
-              "type": "BEHAVIOR",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          ],
-          "listEnd": "}"
-        },
-        "propertySets": [
-          {
-            "listStart": "+",
-            "propertySetSymbols": {
-              "type": "PROPERTY_SET",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          }
-        ],
-        "groupEnd": "]"
-      },
-      {
-        "groupStart": "[",
-        "baseToken": {
-          "artifactSymbol": {
-            "type": "BASE",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
-        },
-        "behaviors": {
-          "listStart": "{",
-          "behaviorSymbols": [
-            {
-              "type": "BEHAVIOR",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          ],
-          "listEnd": "}"
-        },
-        "propertySets": [
-          {
-            "listStart": "+",
-            "propertySetSymbols": {
-              "type": "PROPERTY_SET",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          }
-        ],
-        "groupEnd": "]"
-      }
-    ],
+    "childTokens": [],
     "childrenEnd": ")"
   },
   "name": "",

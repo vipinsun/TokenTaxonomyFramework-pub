@@ -1,10 +1,12 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"a52abf3f-3308-42b2-8ad1-7c32bf6ae5c9",
       "type": "BASE",
-      "visualSymbol": "&tau;<sub>F</sub>([&tau;(&tau;))",
-      "toolingSymbol": "tF([t(t)]",
-      "artifactVersion": "1.0"
+      "visual": "&tau;<sub>F</sub>([&tau;(&tau;))",
+      "tooling": "tF([t(t)]",
+      "version": "1.0",
+      "validated": true
     },
     "name": "Hybrid-fungibleRoot-hybridChildren",
     "aliases": [
@@ -30,18 +32,18 @@
         "description": "",
         "symbol": {
           "type": "BASE",
-          "visualSymbol": "&tau;<sub>F</sub>",
-          "toolingSymbol": "tF",
-          "artifactVersion": ""
+          "visual": "&tau;<sub>F</sub>",
+          "tooling": "tF",
+          "version": ""
         }
       }
     ],
     "incompatibleWithSymbols": [
       {
         "type": "BASE",
-        "visualSymbol": "",
-        "toolingSymbol": "",
-        "artifactVersion": ""
+        "visual": "",
+        "tooling": "",
+        "version": ""
       }
     ],
     "influencedBySymbols": [
@@ -49,9 +51,9 @@
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "~d",
-          "toolingSymbol": "~d",
-          "artifactVersion": ""
+          "visual": "~d",
+          "tooling": "~d",
+          "version": ""
         }
       }
     ],
@@ -108,9 +110,9 @@
       "baseToken": {
         "artifactSymbol": {
           "type": "BASE",
-          "visualSymbol": "&tau<sub>F</sub>",
-          "toolingSymbol": "tF",
-          "artifactVersion": ""
+          "visual": "&tau<sub>F</sub>",
+          "tooling": "tF",
+          "version": ""
         }
       },
       "behaviors": {
@@ -118,9 +120,9 @@
         "behaviorSymbols": [
           {
             "type": "BEHAVIOR",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         ],
         "listEnd": "}"
@@ -130,245 +132,16 @@
           "listStart": "+",
           "propertySetSymbols": {
             "type": "PROPERTY_SET",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         }
       ],
       "groupEnd": "]"
     },
     "hybridChildrenStart": "(",
-    "hybridChildTokens": [
-      {
-        "parent": {
-          "classificationBranch": "SINGLETON",
-          "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          },
-          "behaviors": {
-            "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            ],
-            "listEnd": "}"
-          },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            }
-          ],
-          "groupEnd": "]"
-        },
-        "childrenStart": "(",
-        "childTokens": [
-          {
-            "classificationBranch": "FRACTIONAL_FUNGIBLE",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          },
-          {
-            "classificationBranch": "WHOLE_FUNGIBLE",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          }
-        ],
-        "childrenEnd": ")"
-      },
-      {
-        "parent": {
-          "classificationBranch": "FRACTIONAL_FUNGIBLE",
-          "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          },
-          "behaviors": {
-            "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            ],
-            "listEnd": "}"
-          },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            }
-          ],
-          "groupEnd": "]"
-        },
-        "childrenStart": "(",
-        "childTokens": [
-          {
-            "classificationBranch": "SINGLETON",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          },
-          {
-            "classificationBranch": "FRACTIONAL_FUNGIBLE",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          }
-        ],
-        "childrenEnd": ")"
-      }
-    ],
+    "hybridChildTokens": [],
     "hybridChildrenEnd": ")"
   },
   "name": "",

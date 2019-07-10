@@ -57,11 +57,11 @@ namespace TTI.TTF.Taxonomy
 			return ch.ToString();
 		}
 
-		public static (string Name, string VisualSymbol, string ToolingSymbol) GetRandomArtifactFromArtifact(string name,
-			string visualSymbol ,string toolingSymbol)
+		public static (string Name, string visual, string tooling) GetRandomArtifactFromArtifact(string name,
+			string visual ,string tooling)
 		{
 			var randStr = Randomize("");
-			return (name + randStr, visualSymbol + randStr, toolingSymbol + randStr);
+			return (name + randStr, visual + randStr, tooling + randStr);
 		}
 
 		public static string Randomize(string input)

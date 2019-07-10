@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using Google.Protobuf;
 using log4net;
@@ -127,7 +126,11 @@ namespace ArtifactGenerator
 				_log.Info("Updating Taxonomy Version Only.");
 				var tx = new Taxonomy
 				{
-					Version = TaxonomyVersion.Version
+					Version = new TaxonomyVersion
+					{
+						Id = Guid.NewGuid().ToString(),
+						Version = TaxonomyVersion.Version
+					}
 				};
 				var txVersionJson = jsf.Format(tx);
 
@@ -194,10 +197,11 @@ namespace ArtifactGenerator
 					Name = ArtifactName,
 					ArtifactSymbol = new ArtifactSymbol
 					{
+						Id = Guid.NewGuid().ToString(),
 						Type = ArtifactType,
-						ToolingSymbol = "",
-						VisualSymbol = "",
-						ArtifactVersion = "1.0"
+						Tooling = "",
+						Visual = "",
+						Version = "1.0"
 					},
 					ArtifactDefinition = new ArtifactDefinition
 					{
@@ -251,8 +255,8 @@ namespace ArtifactGenerator
 						new ArtifactSymbol
 						{
 							Type = ArtifactType,
-							ToolingSymbol = "",
-							VisualSymbol = ""
+							Tooling = "",
+							Visual = ""
 						}
 					},
 					Dependencies =
@@ -287,9 +291,9 @@ namespace ArtifactGenerator
 							Symbol = new ArtifactSymbol
 							{
 								Type = ArtifactType.Behavior,
-								ToolingSymbol = "~d",
-								VisualSymbol = "~d",
-								ArtifactVersion = ""
+								Tooling = "~d",
+								Visual = "~d",
+								Version = ""
 							}
 						});
 						artifactBase.TokenType = BaseType;
@@ -413,8 +417,8 @@ namespace ArtifactGenerator
 							Description = "",
 							Symbol = new ArtifactSymbol
 							{
-								ToolingSymbol = "",
-								VisualSymbol = ""
+								Tooling = "",
+								Visual = ""
 							}
 						});
 						artifactBehavior.Artifact.Dependencies.Add(new SymbolDependency
@@ -422,8 +426,8 @@ namespace ArtifactGenerator
 							Description = "",
 							Symbol = new ArtifactSymbol
 							{
-								ToolingSymbol = "",
-								VisualSymbol = ""
+								Tooling = "",
+								Visual = ""
 							}
 						});
 						artifact.IncompatibleWithSymbols.Add(new ArtifactSymbol());
@@ -441,18 +445,18 @@ namespace ArtifactGenerator
 						};
 						artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
 						{
-							ToolingSymbol = "<i>Symbol1</i>",
-							VisualSymbol = "Symbol1"
+							Tooling = "<i>Symbol1</i>",
+							Visual = "Symbol1"
 						});
 						artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
 						{
-							ToolingSymbol = "<i>Symbol2</i>",
-							VisualSymbol = "Symbol2"
+							Tooling = "<i>Symbol2</i>",
+							Visual = "Symbol2"
 						});
 						artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
 						{
-							ToolingSymbol = "<i>Symbol3<i>",
-							VisualSymbol = "Symbol3"
+							Tooling = "<i>Symbol3<i>",
+							Visual = "Symbol3"
 						});
 						artifactJson = jsf.Format(artifactBehaviorGroup);
 						break;
@@ -542,8 +546,8 @@ namespace ArtifactGenerator
 							Description = "",
 							Symbol = new ArtifactSymbol
 							{
-								ToolingSymbol = "",
-								VisualSymbol = ""
+								Tooling = "",
+								Visual = ""
 							}
 						});
 						artifactJson = jsf.Format(artifactPropertySet);
@@ -608,7 +612,7 @@ namespace ArtifactGenerator
 			{
 				//template mode
 				artifactTypeFolder = "token-templates";
-				var classificationFolder = "";
+				string classificationFolder;
 				switch (Classification)
 				{
 					case ClassificationBranch.FractionalFungible:
@@ -633,7 +637,7 @@ namespace ArtifactGenerator
 				var (uri, artifactFiles) = AddTemplateFiles(outputFolder, artifactTypeFolder, folderSeparator, "TokenTemplates", classificationFolder);
 				var templateToken = new TokenTemplate
 				{
-					Base = GetTokenTemplate(fullPath, folderSeparator),
+					Parent = GetTokenTemplate(fullPath, folderSeparator),
 					ControlUri = uri,
 					ArtifactFiles = { artifactFiles }
 				};
@@ -650,7 +654,7 @@ namespace ArtifactGenerator
 				{
 					var testTemplate = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
 					_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
-					          testTemplate.Base.Name);
+					          testTemplate.Parent.Name);
 				}
 				catch (Exception e)
 				{
@@ -673,6 +677,14 @@ namespace ArtifactGenerator
 		{
 			return new TemplateToken
 			{
+				Formula = new ArtifactSymbol
+				{
+					Id = Guid.NewGuid().ToString(),
+					Type = ArtifactType,
+					Tooling = "",
+					Visual = "",
+					Version = "1.0"
+				},
 				Definition = AddDefinition(),
 				Base = GetTokenTypeBase(fullPath, folderSeparator),
 				Behaviors =
@@ -685,7 +697,6 @@ namespace ArtifactGenerator
 						{
 							Type = ArtifactType.Behavior
 						}
-							
 					}
 				},
 				BehaviorGroups =
@@ -826,28 +837,28 @@ namespace ArtifactGenerator
 			{
 
 				case TokenType.Fungible:
-					artifactSymbol.ToolingSymbol = "tF";
-					artifactSymbol.VisualSymbol = "&tau;<sub>F</sub>";
+					artifactSymbol.Tooling = "tF";
+					artifactSymbol.Visual = "&tau;<sub>F</sub>";
 					break;
 				case TokenType.NonFungible:
-					artifactSymbol.ToolingSymbol = "tN";
-					artifactSymbol.VisualSymbol = "&tau;<sub>N</sub>";
+					artifactSymbol.Tooling = "tN";
+					artifactSymbol.Visual = "&tau;<sub>N</sub>";
 					break;
 				case TokenType.HybridFungibleRoot:
-					artifactSymbol.ToolingSymbol = "tF()";
-					artifactSymbol.VisualSymbol = "&tau;<sub>F</sub>()";
+					artifactSymbol.Tooling = "tF()";
+					artifactSymbol.Visual = "&tau;<sub>F</sub>()";
 					break;
 				case TokenType.HybridNonFungibleRoot:
-					artifactSymbol.ToolingSymbol = "tN()";
-					artifactSymbol.VisualSymbol = "&tau;<sub>N</sub>()";
+					artifactSymbol.Tooling = "tN()";
+					artifactSymbol.Visual = "&tau;<sub>N</sub>()";
 					break;
 				case TokenType.HybridFungibleRootHybridChildren:
-					artifactSymbol.ToolingSymbol = "tF(t())";
-					artifactSymbol.VisualSymbol = "&tau;<sub>F</sub>(t())";
+					artifactSymbol.Tooling = "tF(t())";
+					artifactSymbol.Visual = "&tau;<sub>F</sub>(t())";
 					break;
 				case TokenType.HybridNonFungibleRootHybridChildren:
-					artifactSymbol.ToolingSymbol = "tN(t())";
-					artifactSymbol.VisualSymbol = "&tau;<sub>N</sub>(t())";
+					artifactSymbol.Tooling = "tN(t())";
+					artifactSymbol.Visual = "&tau;<sub>N</sub>(t())";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -885,7 +896,7 @@ namespace ArtifactGenerator
 			{
 				retVal.BehaviorSymbols.Add(new ArtifactSymbol
 				{
-					ToolingSymbol = "~d"
+					Tooling = "~d"
 				});
 
 			}
@@ -893,7 +904,7 @@ namespace ArtifactGenerator
 			{
 				retVal.BehaviorSymbols.Add(new ArtifactSymbol
 				{
-					ToolingSymbol = "d"
+					Tooling = "d"
 				});
 			}
 

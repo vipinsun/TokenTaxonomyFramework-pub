@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"dc8d5961-59e8-4a10-8b38-d9e99394d251",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>e</i>",
-      "toolingSymbol": "e",
-      "artifactVersion": "1.0"
+      "visual": "<i>e</i>",
+      "tooling": "e",
+      "version": "1.0"
     },
     "name": "Encumberable",
     "aliases": [

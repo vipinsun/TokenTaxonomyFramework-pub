@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>~t</i>",
-      "toolingSymbol": "~t",
-      "artifactVersion": "1.0"
+      "visual": "<i>~t</i>",
+      "tooling": "~t",
+      "version": "1.0"
     },
     "name": "Non-transferable",
     "aliases": [],
@@ -26,9 +27,9 @@
     "incompatibleWithSymbols": [
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>t</i>",
-        "toolingSymbol": "t",
-        "artifactVersion": ""
+        "visual": "<i>t</i>",
+        "tooling": "t",
+        "version": ""
       }
     ],
     "influencedBySymbols": [],

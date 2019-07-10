@@ -1,10 +1,12 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"dc4ea554-d040-4e10-8365-eb48b7c66bf0",
       "type": "BASE",
-      "visualSymbol": "&tau;<sub>N</sub>([&tau;(&tau;))",
-      "toolingSymbol": "tN([t(t)]",
-      "artifactVersion": "1.0"
+      "visual": "&tau;<sub>N</sub>([&tau;(&tau;))",
+      "tooling": "tN([t(t)]",
+      "version": "1.0",
+      "validated": true
     },
     "name": "Hybrid-non-fungibleRoot-hybridChildren",
     "aliases": [
@@ -29,55 +31,17 @@
       {
         "description": "",
         "symbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
-          "visualSymbol": "&tau;<sub>N</sub>",
-          "toolingSymbol": "tN",
-          "artifactVersion": ""
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "validated": true
         }
       }
     ],
-    "incompatibleWithSymbols": [
-      {
-        "type": "BASE",
-        "visualSymbol": "",
-        "toolingSymbol": "",
-        "artifactVersion": ""
-      }
-    ],
-    "influencedBySymbols": [
-      {
-        "description": "",
-        "symbol": {
-          "type": "BASE",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
-        }
-      },
-      {
-        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
-        "symbol": {
-          "type": "BEHAVIOR",
-          "visualSymbol": "~d",
-          "toolingSymbol": "~d",
-          "artifactVersion": ""
-        }
-      }
-    ],
-    "artifactFiles": [
-      {
-        "content": "CONTROL",
-        "fileName": "hybrid-non-fungibleRoot-hybridChildren.proto",
-        "fileData": "",
-        "artifact": null
-      },
-      {
-        "content": "UML",
-        "fileName": "hybrid-non-fungibleRoot-hybridChildren.md",
-        "fileData": "",
-        "artifact": null
-      }
-    ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
     "maps": {
       "codeReferences": [
         {
@@ -112,26 +76,21 @@
   "tokenType": "HYBRID_NON_FUNGIBLE_ROOT_HYBRID_CHILDREN",
   "hybridWithHybrids": {
     "parent": {
-      "classificationBranch": "FRACTIONAL_FUNGIBLE",
+      "classificationBranch": "FRACTIONAL_NON_FUNGIBLE",
       "groupStart": "[",
       "baseToken": {
         "artifactSymbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
-          "visualSymbol": "&tau<sub>N</sub>",
-          "toolingSymbol": "tN",
-          "artifactVersion": ""
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "validated": true
         }
       },
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbols": [
-          {
-            "type": "BEHAVIOR",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
-        ],
+        "behaviorSymbols": [],
         "listEnd": "}"
       },
       "propertySets": [
@@ -139,245 +98,16 @@
           "listStart": "+",
           "propertySetSymbols": {
             "type": "PROPERTY_SET",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+            "visual": "",
+            "tooling": "",
+            "version": ""
           }
         }
       ],
       "groupEnd": "]"
     },
     "hybridChildrenStart": "(",
-    "hybridChildTokens": [
-      {
-        "parent": {
-          "classificationBranch": "SINGLETON",
-          "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          },
-          "behaviors": {
-            "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            ],
-            "listEnd": "}"
-          },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            }
-          ],
-          "groupEnd": "]"
-        },
-        "childrenStart": "(",
-        "childTokens": [
-          {
-            "classificationBranch": "FRACTIONAL_FUNGIBLE",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          },
-          {
-            "classificationBranch": "FRACTIONAL_NON_FUNGIBLE",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          }
-        ],
-        "childrenEnd": ")"
-      },
-      {
-        "parent": {
-          "classificationBranch": "FRACTIONAL_FUNGIBLE",
-          "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          },
-          "behaviors": {
-            "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            ],
-            "listEnd": "}"
-          },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            }
-          ],
-          "groupEnd": "]"
-        },
-        "childrenStart": "(",
-        "childTokens": [
-          {
-            "classificationBranch": "SINGLETON",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          },
-          {
-            "classificationBranch": "FRACTIONAL_FUNGIBLE",
-            "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
-            "behaviors": {
-              "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              ],
-              "listEnd": "}"
-            },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
-              }
-            ],
-            "groupEnd": "]"
-          }
-        ],
-        "childrenEnd": ")"
-      }
-    ],
+    "hybridChildTokens": [],
     "hybridChildrenEnd": ")"
   },
   "name": "",

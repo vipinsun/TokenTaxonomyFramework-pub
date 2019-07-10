@@ -1,10 +1,12 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"5f5c4e7f-8ff1-4767-b59c-799d49753226",
       "type": "BASE",
-      "visualSymbol": "&tau",
-      "toolingSymbol": "t",
-      "artifactVersion": "1.0"
+      "visual": "&tau",
+      "tooling": "t",
+      "version": "1.0",
+      "validated": true
     },
     "name": "Base Token",
     "controlUri": "../../../../../../artifacts/tokens.proto",
@@ -23,8 +25,8 @@
     },
     "incompatibleWithSymbols": [
       {
-        "visualSymbol": "",
-        "toolingSymbol": ""
+        "visual": "",
+        "tooling": ""
       }
     ],
     "influencedBySymbols": [
@@ -32,9 +34,9 @@
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "~d",
-          "toolingSymbol": "~d",
-          "artifactVersion": ""
+          "visual": "~d",
+          "tooling": "~d",
+          "version": ""
         }
       }
     ],

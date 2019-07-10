@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>b</i>",
-      "toolingSymbol": "b",
-      "artifactVersion": "1.0"
+      "visual": "<i>b</i>",
+      "tooling": "b",
+      "version": "1.0"
     },
     "name": "Burnable",
     "aliases": [
@@ -31,9 +32,9 @@
         "description": "Delegable or not, will determine if the BurnFrom Control will be available in the implementation.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>g</i>",
-          "toolingSymbol": "g",
-          "artifactVersion": ""
+          "visual": "<i>g</i>",
+          "tooling": "g",
+          "version": ""
         }
       }
     ],

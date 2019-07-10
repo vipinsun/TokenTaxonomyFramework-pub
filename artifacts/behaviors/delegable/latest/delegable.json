@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"a3d02076-6009-4a65-9ed4-2deffe5291e1",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>g</i>",
-      "toolingSymbol": "g",
-      "artifactVersion": "1.0"
+      "visual": "<i>g</i>",
+      "tooling": "g",
+      "version": "1.0"
     },
     "name": "Delegable",
     "aliases": [

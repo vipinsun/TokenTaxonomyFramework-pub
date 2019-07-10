@@ -1,10 +1,11 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>d</i>",
-      "toolingSymbol": "d",
-      "artifactVersion": "1.0"
+      "visual": "<i>d</i>",
+      "tooling": "d",
+      "version": "1.0"
     },
     "name": "Subdividable",
     "aliases": [
@@ -30,18 +31,18 @@
         "description": "Decimals property for indicating how many decimal places the a whole token can be subdivided into.",
         "symbol": {
           "type": "PROPERTY_SET",
-          "visualSymbol": "&phi;D",
-          "toolingSymbol": "phD",
-          "artifactVersion": ""
+          "visual": "&phi;D",
+          "tooling": "phD",
+          "version": ""
         }
       }
     ],
     "incompatibleWithSymbols": [
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>~d</i>",
-        "toolingSymbol": "~d",
-        "artifactVersion": ""
+        "visual": "<i>~d</i>",
+        "tooling": "~d",
+        "version": ""
       }
     ],
     "influencedBySymbols": [],
