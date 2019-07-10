@@ -1,22 +1,27 @@
 {
   "singleToken": {
+    "classificationBranch": "WHOLE_FUNGIBLE",
     "groupStart": "[",
     "baseToken": {
       "artifactSymbol": {
+        "id": "",
         "type": "BASE",
         "visual": "",
         "tooling": "",
-        "version": ""
+        "version": "",
+        "validated": false
       }
     },
     "behaviors": {
       "listStart": "{",
       "behaviorSymbols": [
         {
+          "id": "",
           "type": "BEHAVIOR",
           "visual": "",
           "tooling": "",
-          "version": ""
+          "version": "",
+          "validated": false
         }
       ],
       "listEnd": "}"
@@ -25,10 +30,12 @@
       {
         "listStart": "+",
         "propertySetSymbols": {
+          "id": "",
           "type": "PROPERTY_SET",
           "visual": "",
           "tooling": "",
-          "version": ""
+          "version": "",
+          "validated": false
         }
       }
     ],
@@ -36,23 +43,28 @@
   },
   "hybrid": {
     "parent": {
+      "classificationBranch": "WHOLE_FUNGIBLE",
       "groupStart": "[",
       "baseToken": {
         "artifactSymbol": {
+          "id": "",
           "type": "BASE",
           "visual": "",
           "tooling": "",
-          "version": ""
+          "version": "",
+          "validated": false
         }
       },
       "behaviors": {
         "listStart": "{",
         "behaviorSymbols": [
           {
+            "id": "",
             "type": "BEHAVIOR",
             "visual": "",
             "tooling": "",
-            "version": ""
+            "version": "",
+            "validated": false
           }
         ],
         "listEnd": "}"
@@ -61,10 +73,12 @@
         {
           "listStart": "+",
           "propertySetSymbols": {
+            "id": "",
             "type": "PROPERTY_SET",
             "visual": "",
             "tooling": "",
-            "version": ""
+            "version": "",
+            "validated": false
           }
         }
       ],
@@ -73,23 +87,28 @@
     "childrenStart": "(",
     "childTokens": [
       {
+        "classificationBranch": "WHOLE_FUNGIBLE",
         "groupStart": "[",
         "baseToken": {
           "artifactSymbol": {
+            "id": "",
             "type": "BASE",
             "visual": "",
             "tooling": "",
-            "version": ""
+            "version": "",
+            "validated": false
           }
         },
         "behaviors": {
           "listStart": "{",
           "behaviorSymbols": [
             {
+              "id": "",
               "type": "BEHAVIOR",
               "visual": "",
               "tooling": "",
-              "version": ""
+              "version": "",
+              "validated": false
             }
           ],
           "listEnd": "}"
@@ -98,33 +117,40 @@
           {
             "listStart": "+",
             "propertySetSymbols": {
+              "id": "",
               "type": "PROPERTY_SET",
               "visual": "",
               "tooling": "",
-              "version": ""
+              "version": "",
+              "validated": false
             }
           }
         ],
         "groupEnd": "]"
       },
       {
+        "classificationBranch": "WHOLE_FUNGIBLE",
         "groupStart": "[",
         "baseToken": {
           "artifactSymbol": {
+            "id": "",
             "type": "BASE",
             "visual": "",
             "tooling": "",
-            "version": ""
+            "version": "",
+            "validated": false
           }
         },
         "behaviors": {
           "listStart": "{",
           "behaviorSymbols": [
             {
+              "id": "",
               "type": "BEHAVIOR",
               "visual": "",
               "tooling": "",
-              "version": ""
+              "version": "",
+              "validated": false
             }
           ],
           "listEnd": "}"
@@ -133,10 +159,12 @@
           {
             "listStart": "+",
             "propertySetSymbols": {
+              "id": "",
               "type": "PROPERTY_SET",
               "visual": "",
               "tooling": "",
-              "version": ""
+              "version": "",
+              "validated": false
             }
           }
         ],
@@ -147,23 +175,28 @@
   },
   "hybridWithHybrids": {
     "parent": {
+      "classificationBranch": "WHOLE_FUNGIBLE",
       "groupStart": "[",
       "baseToken": {
         "artifactSymbol": {
+          "id": "",
           "type": "BASE",
           "visual": "",
           "tooling": "",
-          "version": ""
+          "version": "",
+          "validated": false
         }
       },
       "behaviors": {
         "listStart": "{",
         "behaviorSymbols": [
           {
+            "id": "",
             "type": "BEHAVIOR",
             "visual": "",
             "tooling": "",
-            "version": ""
+            "version": "",
+            "validated": false
           }
         ],
         "listEnd": "}"
@@ -172,10 +205,12 @@
         {
           "listStart": "+",
           "propertySetSymbols": {
+            "id": "",
             "type": "PROPERTY_SET",
             "visual": "",
             "tooling": "",
-            "version": ""
+            "version": "",
+            "validated": false
           }
         }
       ],
@@ -185,23 +220,28 @@
     "hybridChildTokens": [
       {
         "parent": {
+          "classificationBranch": "WHOLE_FUNGIBLE",
           "groupStart": "[",
           "baseToken": {
             "artifactSymbol": {
+              "id": "",
               "type": "BASE",
               "visual": "",
               "tooling": "",
-              "version": ""
+              "version": "",
+              "validated": false
             }
           },
           "behaviors": {
             "listStart": "{",
             "behaviorSymbols": [
               {
+                "id": "",
                 "type": "BEHAVIOR",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             ],
             "listEnd": "}"
@@ -210,10 +250,12 @@
             {
               "listStart": "+",
               "propertySetSymbols": {
+                "id": "",
                 "type": "PROPERTY_SET",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             }
           ],
@@ -222,23 +264,28 @@
         "childrenStart": "(",
         "childTokens": [
           {
+            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {
+                "id": "",
                 "type": "BASE",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             },
             "behaviors": {
               "listStart": "{",
               "behaviorSymbols": [
                 {
+                  "id": "",
                   "type": "BEHAVIOR",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               ],
               "listEnd": "}"
@@ -247,33 +294,40 @@
               {
                 "listStart": "+",
                 "propertySetSymbols": {
+                  "id": "",
                   "type": "PROPERTY_SET",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               }
             ],
             "groupEnd": "]"
           },
           {
+            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {
+                "id": "",
                 "type": "BASE",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             },
             "behaviors": {
               "listStart": "{",
               "behaviorSymbols": [
                 {
+                  "id": "",
                   "type": "BEHAVIOR",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               ],
               "listEnd": "}"
@@ -282,10 +336,12 @@
               {
                 "listStart": "+",
                 "propertySetSymbols": {
+                  "id": "",
                   "type": "PROPERTY_SET",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               }
             ],
@@ -296,23 +352,28 @@
       },
       {
         "parent": {
+          "classificationBranch": "WHOLE_FUNGIBLE",
           "groupStart": "[",
           "baseToken": {
             "artifactSymbol": {
+              "id": "",
               "type": "BASE",
               "visual": "",
               "tooling": "",
-              "version": ""
+              "version": "",
+              "validated": false
             }
           },
           "behaviors": {
             "listStart": "{",
             "behaviorSymbols": [
               {
+                "id": "",
                 "type": "BEHAVIOR",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             ],
             "listEnd": "}"
@@ -321,10 +382,12 @@
             {
               "listStart": "+",
               "propertySetSymbols": {
+                "id": "",
                 "type": "PROPERTY_SET",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             }
           ],
@@ -333,23 +396,28 @@
         "childrenStart": "(",
         "childTokens": [
           {
+            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {
+                "id": "",
                 "type": "BASE",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             },
             "behaviors": {
               "listStart": "{",
               "behaviorSymbols": [
                 {
+                  "id": "",
                   "type": "BEHAVIOR",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               ],
               "listEnd": "}"
@@ -358,33 +426,40 @@
               {
                 "listStart": "+",
                 "propertySetSymbols": {
+                  "id": "",
                   "type": "PROPERTY_SET",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               }
             ],
             "groupEnd": "]"
           },
           {
+            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
             "baseToken": {
               "artifactSymbol": {
+                "id": "",
                 "type": "BASE",
                 "visual": "",
                 "tooling": "",
-                "version": ""
+                "version": "",
+                "validated": false
               }
             },
             "behaviors": {
               "listStart": "{",
               "behaviorSymbols": [
                 {
+                  "id": "",
                   "type": "BEHAVIOR",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               ],
               "listEnd": "}"
@@ -393,10 +468,12 @@
               {
                 "listStart": "+",
                 "propertySetSymbols": {
+                  "id": "",
                   "type": "PROPERTY_SET",
                   "visual": "",
                   "tooling": "",
-                  "version": ""
+                  "version": "",
+                  "validated": false
                 }
               }
             ],

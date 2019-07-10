@@ -1,5 +1,8 @@
 {
-  "version": "1.0",
+  "version": {
+    "id": "fe39b6bb-ea62-4654-85d1-7288bfa51807",
+    "version": "1.0"
+  },
   "baseTokenTypes": {},
   "behaviors": {},
   "behaviorGroups": {},

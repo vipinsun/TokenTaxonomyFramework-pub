@@ -119,31 +119,34 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "ChVDb21taXRVcGRhdGVzUmVzcG9uc2USDgoGcmVzdWx0GAEgASgJIhIKEElz",
             "c3VlUHVsbFJlcXVlc3QiJQoRSXNzdWVQdWxsUmVzcG9uc2USEAoIcmVzcG9u",
             "c2UYASABKAkiTQoUU2VydmljZUNvbmZpZ3VyYXRpb24SEQoJcmVhZF9vbmx5",
-            "GAEgASgIEg4KBmdpdF9pZBgCIAEoCRISCgpnaXRfYnJhbmNoGAMgASgJIn4K",
-            "DFF1ZXJ5T3B0aW9ucxI8Cg1hcnRpZmFjdF90eXBlGAEgASgOMiUudGF4b25v",
-            "bXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEhcKD21heF9pdGVtX3Jl",
-            "dHVybhgCIAEoBRIXCg9sYXN0X2l0ZW1faW5kZXgYAyABKAUi1AEKC1F1ZXJ5",
-            "UmVzdWx0EjwKDWFydGlmYWN0X3R5cGUYASABKA4yJS50YXhvbm9teS5tb2Rl",
-            "bC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSGAoQZmlyc3RfaXRlbV9pbmRleBgC",
-            "IAEoBRIXCg9sYXN0X2l0ZW1faW5kZXgYAyABKAUSIQoZdG90YWxfaXRlbXNf",
-            "aW5fY29sbGVjdGlvbhgEIAEoBRIxChNhcnRpZmFjdF9jb2xsZWN0aW9uGAUg",
-            "ASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSq7AQoJVG9rZW5UeXBlEgwKCEZV",
-            "TkdJQkxFEAASEAoMTk9OX0ZVTkdJQkxFEAESGAoUSFlCUklEX0ZVTkdJQkxF",
-            "X1JPT1QQAhIcChhIWUJSSURfTk9OX0ZVTkdJQkxFX1JPT1QQAxIoCiRIWUJS",
-            "SURfRlVOR0lCTEVfUk9PVF9IWUJSSURfQ0hJTERSRU4QBBIsCihIWUJSSURf",
-            "Tk9OX0ZVTkdJQkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAUqbwoUQ2xhc3Np",
-            "ZmljYXRpb25CcmFuY2gSFwoTRlJBQ1RJT05BTF9GVU5HSUJMRRAAEhIKDldI",
-            "T0xFX0ZVTkdJQkxFEAESGwoXRlJBQ1RJT05BTF9OT05fRlVOR0lCTEUQAhIN",
-            "CglTSU5HTEVUT04QAypgCgxBcnRpZmFjdFR5cGUSCAoEQkFTRRAAEgwKCEJF",
-            "SEFWSU9SEAESEgoOQkVIQVZJT1JfR1JPVVAQAhIQCgxQUk9QRVJUWV9TRVQQ",
-            "AxISCg5UT0tFTl9URU1QTEFURRAEKkIKD0FydGlmYWN0Q29udGVudBIOCgpE",
-            "RUZJTklUSU9OEAASCwoHQ09OVFJPTBABEgcKA1VNTBACEgkKBU9USEVSEAMq",
-            "QAoLTWFwcGluZ1R5cGUSDwoLU09VUkNFX0NPREUQABISCg5JTVBMRU1FTlRB",
-            "VElPThABEgwKCFJFU09VUkNFEAIqdgoOVGFyZ2V0UGxhdGZvcm0SFQoRRVRI",
-            "RVJFVU1fU09MSURJVFkQABIQCgxDSEFJTkNPREVfR08QARISCg5DSEFJTkNP",
-            "REVfSkFWQRACEhIKDkNIQUlOQ09ERV9OT0RFEAMSCQoFQ09SREEQBBIICgRE",
-            "QU1MEAVCSQojb3JnLnR0aS50dGYudGF4b25vbXkubW9kZWwuYXJ0aWZhY3RQ",
-            "AaoCH1RUSS5UVEYuVGF4b25vbXkuTW9kZWwuQXJ0aWZhY3RiBnByb3RvMw=="));
+            "GAEgASgIEg4KBmdpdF9pZBgCIAEoCRISCgpnaXRfYnJhbmNoGAMgASgJIoIC",
+            "CgxRdWVyeU9wdGlvbnMSPAoNYXJ0aWZhY3RfdHlwZRgBIAEoDjIlLnRheG9u",
+            "b215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIXCg9tYXhfaXRlbV9y",
+            "ZXR1cm4YAiABKAUSFwoPbGFzdF9pdGVtX2luZGV4GAMgASgFEhkKEWJ5X2Ns",
+            "YXNzaWZpY2F0aW9uGAQgASgIEk4KF3RlbXBsYXRlX2NsYXNzaWZpY2F0aW9u",
+            "GAUgASgOMi0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQ2xhc3NpZmljYXRp",
+            "b25CcmFuY2gSFwoPaW5jbHVkZV9oeWJyaWRzGAYgASgIItQBCgtRdWVyeVJl",
+            "c3VsdBI8Cg1hcnRpZmFjdF90eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwu",
+            "YXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEhgKEGZpcnN0X2l0ZW1faW5kZXgYAiAB",
+            "KAUSFwoPbGFzdF9pdGVtX2luZGV4GAMgASgFEiEKGXRvdGFsX2l0ZW1zX2lu",
+            "X2NvbGxlY3Rpb24YBCABKAUSMQoTYXJ0aWZhY3RfY29sbGVjdGlvbhgFIAEo",
+            "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkquwEKCVRva2VuVHlwZRIMCghGVU5H",
+            "SUJMRRAAEhAKDE5PTl9GVU5HSUJMRRABEhgKFEhZQlJJRF9GVU5HSUJMRV9S",
+            "T09UEAISHAoYSFlCUklEX05PTl9GVU5HSUJMRV9ST09UEAMSKAokSFlCUklE",
+            "X0ZVTkdJQkxFX1JPT1RfSFlCUklEX0NISUxEUkVOEAQSLAooSFlCUklEX05P",
+            "Tl9GVU5HSUJMRV9ST09UX0hZQlJJRF9DSElMRFJFThAFKm8KFENsYXNzaWZp",
+            "Y2F0aW9uQnJhbmNoEhcKE0ZSQUNUSU9OQUxfRlVOR0lCTEUQABISCg5XSE9M",
+            "RV9GVU5HSUJMRRABEhsKF0ZSQUNUSU9OQUxfTk9OX0ZVTkdJQkxFEAISDQoJ",
+            "U0lOR0xFVE9OEAMqYAoMQXJ0aWZhY3RUeXBlEggKBEJBU0UQABIMCghCRUhB",
+            "VklPUhABEhIKDkJFSEFWSU9SX0dST1VQEAISEAoMUFJPUEVSVFlfU0VUEAMS",
+            "EgoOVE9LRU5fVEVNUExBVEUQBCpCCg9BcnRpZmFjdENvbnRlbnQSDgoKREVG",
+            "SU5JVElPThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhADKkAK",
+            "C01hcHBpbmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJ",
+            "T04QARIMCghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVUSEVS",
+            "RVVNX1NPTElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RF",
+            "X0pBVkEQAhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoEREFN",
+            "TBAFQkkKI29yZy50dGkudHRmLnRheG9ub215Lm1vZGVsLmFydGlmYWN0UAGq",
+            "Ah9UVEkuVFRGLlRheG9ub215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
@@ -176,7 +179,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser, new[]{ "Response" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex", "ByClassification", "TemplateClassification", "IncludeHybrids" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null)
           }));
     }
@@ -5810,6 +5813,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       artifactType_ = other.artifactType_;
       maxItemReturn_ = other.maxItemReturn_;
       lastItemIndex_ = other.lastItemIndex_;
+      byClassification_ = other.byClassification_;
+      templateClassification_ = other.templateClassification_;
+      includeHybrids_ = other.includeHybrids_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5854,6 +5860,48 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       }
     }
 
+    /// <summary>Field number for the "by_classification" field.</summary>
+    public const int ByClassificationFieldNumber = 4;
+    private bool byClassification_;
+    /// <summary>
+    ///if true, the TemplateClassification value will apply, if false, it will search all templates.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool ByClassification {
+      get { return byClassification_; }
+      set {
+        byClassification_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "template_classification" field.</summary>
+    public const int TemplateClassificationFieldNumber = 5;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch templateClassification_ = 0;
+    /// <summary>
+    ///only if quering templates
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch TemplateClassification {
+      get { return templateClassification_; }
+      set {
+        templateClassification_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "include_hybrids" field.</summary>
+    public const int IncludeHybridsFieldNumber = 6;
+    private bool includeHybrids_;
+    /// <summary>
+    ///only if quering templates
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IncludeHybrids {
+      get { return includeHybrids_; }
+      set {
+        includeHybrids_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as QueryOptions);
@@ -5870,6 +5918,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (ArtifactType != other.ArtifactType) return false;
       if (MaxItemReturn != other.MaxItemReturn) return false;
       if (LastItemIndex != other.LastItemIndex) return false;
+      if (ByClassification != other.ByClassification) return false;
+      if (TemplateClassification != other.TemplateClassification) return false;
+      if (IncludeHybrids != other.IncludeHybrids) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5879,6 +5930,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (ArtifactType != 0) hash ^= ArtifactType.GetHashCode();
       if (MaxItemReturn != 0) hash ^= MaxItemReturn.GetHashCode();
       if (LastItemIndex != 0) hash ^= LastItemIndex.GetHashCode();
+      if (ByClassification != false) hash ^= ByClassification.GetHashCode();
+      if (TemplateClassification != 0) hash ^= TemplateClassification.GetHashCode();
+      if (IncludeHybrids != false) hash ^= IncludeHybrids.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5904,6 +5958,18 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         output.WriteRawTag(24);
         output.WriteInt32(LastItemIndex);
       }
+      if (ByClassification != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(ByClassification);
+      }
+      if (TemplateClassification != 0) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) TemplateClassification);
+      }
+      if (IncludeHybrids != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IncludeHybrids);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5920,6 +5986,15 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       }
       if (LastItemIndex != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(LastItemIndex);
+      }
+      if (ByClassification != false) {
+        size += 1 + 1;
+      }
+      if (TemplateClassification != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TemplateClassification);
+      }
+      if (IncludeHybrids != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5940,6 +6015,15 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       }
       if (other.LastItemIndex != 0) {
         LastItemIndex = other.LastItemIndex;
+      }
+      if (other.ByClassification != false) {
+        ByClassification = other.ByClassification;
+      }
+      if (other.TemplateClassification != 0) {
+        TemplateClassification = other.TemplateClassification;
+      }
+      if (other.IncludeHybrids != false) {
+        IncludeHybrids = other.IncludeHybrids;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5962,6 +6046,18 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
           }
           case 24: {
             LastItemIndex = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            ByClassification = input.ReadBool();
+            break;
+          }
+          case 40: {
+            TemplateClassification = (global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            IncludeHybrids = input.ReadBool();
             break;
           }
         }

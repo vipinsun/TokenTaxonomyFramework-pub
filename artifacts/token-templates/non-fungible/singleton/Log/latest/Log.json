@@ -71,29 +71,33 @@
           {
             "description": "Base Token Definition",
             "symbol": {
+              "id":"5f5c4e7f-8ff1-4767-b59c-799d49753226",
               "type": "BASE",
-              "visualSymbol": "&tau;",
-              "toolingSymbol": "t",
-              "artifactVersion": ""
+              "visual": "&tau",
+              "tooling": "t",
+              "version": "1.0",
+              "validated": true
             }
           }
         ],
         "incompatibleWithSymbols": [
           {
-            "type": "BASE",
-            "visualSymbol": "<i>d</i>",
-            "toolingSymbol": "d",
-            "artifactVersion": ""
+            "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
+            "type": "BEHAVIOR",
+            "visual": "<i>d</i>",
+            "tooling": "d",
+            "version": "1.0"
           }
         ],
         "influencedBySymbols": [
           {
             "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
             "symbol": {
+              "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
               "type": "BEHAVIOR",
-              "visualSymbol": "<i>~d</i>",
-              "toolingSymbol": "~d",
-              "artifactVersion": ""
+              "visual": "<i>~d</i>",
+              "tooling": "~d",
+              "version": "1.0"
             }
           }
         ],
@@ -148,20 +152,23 @@
         "groupStart": "[",
         "baseToken": {
           "artifactSymbol": {
+            "id": "8314a797-df3c-409b-835c-0e80af92714f",
             "type": "BASE",
-            "visualSymbol": "&tau;<sub>N</sub>",
-            "toolingSymbol": "tN",
-            "artifactVersion": ""
+            "visual": "&tau<sub>N</sub>",
+            "tooling": "tN",
+            "version": "1.0",
+            "validated": true
           }
         },
         "behaviors": {
           "listStart": "{",
           "behaviorSymbols": [
             {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "~d",
-              "artifactVersion": ""
+              "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
+              "type": "BEHAVIOR",
+              "visual": "<i>~d</i>",
+              "tooling": "~d",
+              "version": "1.0"
             }
           ],
           "listEnd": "}"
@@ -192,10 +199,11 @@
     "behaviors": [
       {
         "symbol": {
+          "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>~d</i>",
-          "toolingSymbol": "~d",
-          "artifactVersion": ""
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "1.0"
         },
         "implementationDetails": "",
         "behavior": {

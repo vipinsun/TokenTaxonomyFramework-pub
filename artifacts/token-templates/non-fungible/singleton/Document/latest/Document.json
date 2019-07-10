@@ -71,10 +71,12 @@
           {
             "description": "Base Token Definition",
             "symbol": {
+              "id":"5f5c4e7f-8ff1-4767-b59c-799d49753226",
               "type": "BASE",
-              "visual": "&tau;",
+              "visual": "&tau",
               "tooling": "t",
-              "version": ""
+              "version": "1.0",
+              "validated": true
             }
           }
         ],
@@ -164,7 +166,8 @@
               "type": "BEHAVIOR",
               "visual": "<i>~d</i>",
               "tooling": "~d",
-              "version": "1.0"
+              "version": "1.0",
+              "validated": false
             }
           ],
           "listEnd": "}"

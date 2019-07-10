@@ -1,22 +1,22 @@
 {
-  "controlUri": "../../../../../../artifacts/token-templates/non-fungible/singleton/test/latest/test.proto",
+  "controlUri": "../../../../../../artifacts/token-templates/fungible/fractional/ico/latest/ico.proto",
   "artifactFiles": [
     {
       "content": "CONTROL",
-      "fileName": "test.proto",
+      "fileName": "ico.proto",
       "fileData": "",
       "artifact": null
     },
     {
       "content": "UML",
-      "fileName": "test.md",
+      "fileName": "ico.md",
       "fileData": "",
       "artifact": null
     }
   ],
   "parent": {
     "formula": {
-      "id": "0721b065-d04b-467d-801d-1e62da0d5543",
+      "id": "c1f41a3a-86f2-471d-a95f-8e4953988676",
       "type": "TOKEN_TEMPLATE",
       "visual": "",
       "tooling": "",
@@ -34,26 +34,27 @@
     "base": {
       "artifact": {
         "artifactSymbol": {
-          "id": "8314a797-df3c-409b-835c-0e80af92714f",
+          "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
           "type": "BASE",
-          "visual": "&tau<sub>N</sub>",
-          "tooling": "tN",
+          "visual": "&tau;<sub>F</sub>",
+          "tooling": "tF",
           "version": "1.0",
-          "validated": false
+          "validated": true
         },
-        "name": "Non-Fungible Token",
+        "name": "Fungible",
         "aliases": [
-          "Title",
-          "Deed"
+          "Liquid",
+          "Physical Money",
+          "Cash"
         ],
-        "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
+        "controlUri": "../../../../../../artifacts/base/fungible/fungible.proto",
         "artifactDefinition": {
-          "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
-          "businessExample": "CryptoKitties, Art, Reserved Seat,",
+          "businessDescription": "Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token.",
+          "businessExample": "",
           "analogies": [
             {
-              "name": "Analogy 1",
-              "description": "non-fungible analogy 1 description",
+              "name": "Physical Money or Cash",
+              "description": "Cash, or fiat money, is freely accepted between parties and can have varying denominations. Money has a face value, on a coin or bill, and can be summed together to represent higher value.  It can be subdivided, making change, and consolidated from many smaller denominations to larger ones and still have the same value. ",
               "artifactDefinition": null
             }
           ],
@@ -64,48 +65,27 @@
           {
             "description": "Base Token Definition",
             "symbol": {
-              "id": "",
+              "id": "5f5c4e7f-8ff1-4767-b59c-799d49753226",
               "type": "BASE",
-              "visual": "&tau;",
+              "visual": "&tau",
               "tooling": "t",
-              "version": "",
-              "validated": false
+              "version": "1.0",
+              "validated": true
             }
           }
         ],
-        "incompatibleWithSymbols": [
-          {
-            "id": "",
-            "type": "BASE",
-            "visual": "",
-            "tooling": "",
-            "version": "",
-            "validated": false
-          }
-        ],
-        "influencedBySymbols": [
-          {
-            "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
-            "symbol": {
-              "id": "",
-              "type": "BEHAVIOR",
-              "visual": "<i>~d</i>",
-              "tooling": "~d",
-              "version": "",
-              "validated": false
-            }
-          }
-        ],
+        "incompatibleWithSymbols": [],
+        "influencedBySymbols": [],
         "artifactFiles": [
           {
             "content": "CONTROL",
-            "fileName": "non-fungible.proto",
+            "fileName": "fungible.proto",
             "fileData": "",
             "artifact": null
           },
           {
             "content": "UML",
-            "fileName": "non-fungible.md",
+            "fileName": "fungible.md",
             "fileData": "",
             "artifact": null
           }
@@ -141,16 +121,16 @@
           "artifact": null
         }
       },
-      "tokenType": "NON_FUNGIBLE",
+      "tokenType": "FUNGIBLE",
       "singleToken": {
-        "classificationBranch": "SINGLETON",
+        "classificationBranch": "FRACTIONAL_FUNGIBLE",
         "groupStart": "[",
         "baseToken": {
           "artifactSymbol": {
             "id": "",
             "type": "BASE",
-            "visual": "&tau;<sub>N</sub>",
-            "tooling": "tN",
+            "visual": "&tau;<sub>F</sub>",
+            "tooling": "tF",
             "version": "",
             "validated": false
           }
@@ -162,7 +142,7 @@
               "id": "",
               "type": "BASE",
               "visual": "",
-              "tooling": "~d",
+              "tooling": "d",
               "version": "",
               "validated": false
             }

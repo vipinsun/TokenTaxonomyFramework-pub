@@ -72,7 +72,7 @@ message Property{
     repeated Invocation property_invocations = 4; //needed for non-behavioral properties
 }
 
-message TokenTemplates{
+message TokenTemplateHierarchy{
     TemplateBranch fractional_fungibles = 1;
     TemplateBranch whole_fungibles = 2;
     TemplateBranch fractional_non_fungibles = 3;
@@ -99,12 +99,20 @@ message DynamicBranch {
     repeated TokenTemplate token_templates = 4;
 }
 
+message TemplateIndex {
+    map<string, TokenTemplate> templates = 1;
+}
+
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TokenTemplate{
     string control_uri = 1;
     repeated taxonomy.model.artifact.ArtifactFile artifact_files = 2; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
     TemplateToken parent = 3; //set values for the template
     repeated TemplateToken child_tokens = 4;
+}
+
+message TokenTemplates{
+    repeated TokenTemplate templates = 1;
 }
 
 //Used for either a parent or child definition within a TokenTemplate only.

@@ -63,6 +63,13 @@ namespace TTI.TTF.Taxonomy
 			var randStr = Randomize("");
 			return (name + randStr, visual + randStr, tooling + randStr);
 		}
+		
+		public static (string Name, string visual, string tooling) GetRandomTemplate(string name,
+			string visual ,string tooling)
+		{
+			var randStr = Randomize("");
+			return (name + randStr, visual + randStr, tooling + randStr);
+		}
 
 		public static string Randomize(string input)
 		{

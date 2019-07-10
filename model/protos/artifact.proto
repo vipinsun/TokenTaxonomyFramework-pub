@@ -237,6 +237,9 @@ message QueryOptions{
     ArtifactType artifact_type = 1;
     int32 max_item_return = 2;
     int32 last_item_index = 3; //set to the QuertResult.LastItemIndex from the previous QueryResult. Manually override from QueryResult FirstItemIndex + count in results array
+    bool by_classification = 4; //if true, the TemplateClassification value will apply, if false, it will search all templates.
+    ClassificationBranch template_classification = 5; //only if quering templates
+    bool include_hybrids = 6; //only if quering templates
 }
 
 message QueryResult{

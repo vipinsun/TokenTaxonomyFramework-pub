@@ -63,6 +63,7 @@ namespace ArtifactGenerator
 							var v = args[i];
 							TaxonomyVersion = new TaxonomyVersion
 							{
+								Id = Guid.NewGuid().ToString(),
 								Version = v
 							};
 							continue;
@@ -124,11 +125,7 @@ namespace ArtifactGenerator
 				_log.Info("Updating Taxonomy Version Only.");
 				var tx = new Taxonomy
 				{
-					Version = new TaxonomyVersion
-					{
-						Id = Guid.NewGuid().ToString(),
-						Version = TaxonomyVersion.Version
-					}
+					Version = TaxonomyVersion
 				};
 				var txVersionJson = jsf.Format(tx);
 
@@ -697,7 +694,7 @@ namespace ArtifactGenerator
 						}
 					}
 				},
-				BehaviorGroups =kklokokskjfyu fskf;sitduigfudigzifjskdeltfowrpfoekrkko
+				BehaviorGroups =
 				{
 					new TemplateBehaviorGroup
 					{
@@ -730,6 +727,7 @@ namespace ArtifactGenerator
 
 			var singleToken = new SingleToken
 			{
+				ClassificationBranch = ClassificationBranch.WholeFungible,
 				BaseToken = new TokenBase
 				{
 					ArtifactSymbol = new ArtifactSymbol()

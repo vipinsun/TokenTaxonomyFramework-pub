@@ -65,66 +65,72 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             "bC5jb3JlLlByb3BlcnR5U2V0IooBCghQcm9wZXJ0eRIMCgRuYW1lGAEgASgJ",
             "EhkKEXZhbHVlX2Rlc2NyaXB0aW9uGAIgASgJEhYKDnRlbXBsYXRlX3ZhbHVl",
             "GAMgASgJEj0KFHByb3BlcnR5X2ludm9jYXRpb25zGAQgAygLMh8udGF4b25v",
-            "bXkubW9kZWwuY29yZS5JbnZvY2F0aW9uIuYECg5Ub2tlblRlbXBsYXRlcxJB",
-            "ChRmcmFjdGlvbmFsX2Z1bmdpYmxlcxgBIAEoCzIjLnRheG9ub215Lm1vZGVs",
-            "LmNvcmUuVGVtcGxhdGVCcmFuY2gSPAoPd2hvbGVfZnVuZ2libGVzGAIgASgL",
-            "MiMudGF4b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZUJyYW5jaBJFChhmcmFj",
-            "dGlvbmFsX25vbl9mdW5naWJsZXMYAyABKAsyIy50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLlRlbXBsYXRlQnJhbmNoEjcKCnNpbmdsZXRvbnMYBCABKAsyIy50YXhv",
-            "bm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlQnJhbmNoEkEKB2h5YnJpZHMYBSAB",
-            "KAsyMC50YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuVGVtcGxhdGVzLkh5YnJp",
-            "ZEJyYW5jaBqPAgoMSHlicmlkQnJhbmNoEkEKFGZyYWN0aW9uYWxfZnVuZ2li",
-            "bGVzGAEgASgLMiMudGF4b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZUJyYW5j",
-            "aBI8Cg93aG9sZV9mdW5naWJsZXMYAiABKAsyIy50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLlRlbXBsYXRlQnJhbmNoEkUKGGZyYWN0aW9uYWxfbm9uX2Z1bmdpYmxl",
-            "cxgDIAEoCzIjLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVCcmFuY2gS",
-            "NwoKc2luZ2xldG9ucxgEIAEoCzIjLnRheG9ub215Lm1vZGVsLmNvcmUuVGVt",
-            "cGxhdGVCcmFuY2giwAEKDlRlbXBsYXRlQnJhbmNoEjsKBG5hbWUYASABKA4y",
-            "LS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5j",
-            "aBI7Cg90b2tlbl90ZW1wbGF0ZXMYAiADKAsyIi50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLlRva2VuVGVtcGxhdGUSNAoIYnJhbmNoZXMYAyADKAsyIi50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlLkR5bmFtaWNCcmFuY2gihgEKDUR5bmFtaWNCcmFuY2gS",
-            "DAoEbmFtZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEoCRIVCg1icmFuY2hf",
-            "ZmlsdGVyGAMgASgJEjsKD3Rva2VuX3RlbXBsYXRlcxgEIAMoCzIiLnRheG9u",
-            "b215Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZSLRAQoNVG9rZW5UZW1wbGF0",
-            "ZRITCgtjb250cm9sX3VyaRgBIAEoCRI9Cg5hcnRpZmFjdF9maWxlcxgCIAMo",
-            "CzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0RmlsZRIyCgZw",
-            "YXJlbnQYAyABKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlVG9r",
-            "ZW4SOAoMY2hpbGRfdG9rZW5zGAQgAygLMiIudGF4b25vbXkubW9kZWwuY29y",
-            "ZS5UZW1wbGF0ZVRva2VuIoEDCg1UZW1wbGF0ZVRva2VuEjgKB2Zvcm11bGEY",
-            "ASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJv",
-            "bBIMCgRuYW1lGAIgASgJEj8KCmRlZmluaXRpb24YAyABKAsyKy50YXhvbm9t",
-            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdERlZmluaXRpb24SJwoEYmFzZRgE",
-            "IAEoCzIZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZRI4CgliZWhhdmlvcnMY",
-            "BSADKAsyJS50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlQmVoYXZpb3IS",
-            "QwoPYmVoYXZpb3JfZ3JvdXBzGAYgAygLMioudGF4b25vbXkubW9kZWwuY29y",
-            "ZS5UZW1wbGF0ZUJlaGF2aW9yR3JvdXASPwoNcHJvcGVydHlfc2V0cxgHIAMo",
-            "CzIoLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVQcm9wZXJ0eVNldCKc",
-            "AQoQVGVtcGxhdGVCZWhhdmlvchI3CgZzeW1ib2wYASABKAsyJy50YXhvbm9t",
-            "eS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbBIeChZpbXBsZW1lbnRh",
-            "dGlvbl9kZXRhaWxzGAIgASgJEi8KCGJlaGF2aW9yGAMgASgLMh0udGF4b25v",
-            "bXkubW9kZWwuY29yZS5CZWhhdmlvciKsAQoVVGVtcGxhdGVCZWhhdmlvckdy",
-            "b3VwEjcKBnN5bWJvbBgBIAEoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
-            "LkFydGlmYWN0U3ltYm9sEh4KFmltcGxlbWVudGF0aW9uX2RldGFpbHMYAiAB",
-            "KAkSOgoOYmVoYXZpb3JfZ3JvdXAYAyABKAsyIi50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLkJlaGF2aW9yR3JvdXAipgEKE1RlbXBsYXRlUHJvcGVydHlTZXQSNwoG",
+            "bXkubW9kZWwuY29yZS5JbnZvY2F0aW9uIvYEChZUb2tlblRlbXBsYXRlSGll",
+            "cmFyY2h5EkEKFGZyYWN0aW9uYWxfZnVuZ2libGVzGAEgASgLMiMudGF4b25v",
+            "bXkubW9kZWwuY29yZS5UZW1wbGF0ZUJyYW5jaBI8Cg93aG9sZV9mdW5naWJs",
+            "ZXMYAiABKAsyIy50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlQnJhbmNo",
+            "EkUKGGZyYWN0aW9uYWxfbm9uX2Z1bmdpYmxlcxgDIAEoCzIjLnRheG9ub215",
+            "Lm1vZGVsLmNvcmUuVGVtcGxhdGVCcmFuY2gSNwoKc2luZ2xldG9ucxgEIAEo",
+            "CzIjLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVCcmFuY2gSSQoHaHli",
+            "cmlkcxgFIAEoCzI4LnRheG9ub215Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0",
+            "ZUhpZXJhcmNoeS5IeWJyaWRCcmFuY2gajwIKDEh5YnJpZEJyYW5jaBJBChRm",
+            "cmFjdGlvbmFsX2Z1bmdpYmxlcxgBIAEoCzIjLnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuVGVtcGxhdGVCcmFuY2gSPAoPd2hvbGVfZnVuZ2libGVzGAIgASgLMiMu",
+            "dGF4b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZUJyYW5jaBJFChhmcmFjdGlv",
+            "bmFsX25vbl9mdW5naWJsZXMYAyABKAsyIy50YXhvbm9teS5tb2RlbC5jb3Jl",
+            "LlRlbXBsYXRlQnJhbmNoEjcKCnNpbmdsZXRvbnMYBCABKAsyIy50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLlRlbXBsYXRlQnJhbmNoIsABCg5UZW1wbGF0ZUJyYW5j",
+            "aBI7CgRuYW1lGAEgASgOMi0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQ2xh",
+            "c3NpZmljYXRpb25CcmFuY2gSOwoPdG9rZW5fdGVtcGxhdGVzGAIgAygLMiIu",
+            "dGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRlEjQKCGJyYW5jaGVz",
+            "GAMgAygLMiIudGF4b25vbXkubW9kZWwuY29yZS5EeW5hbWljQnJhbmNoIoYB",
+            "Cg1EeW5hbWljQnJhbmNoEgwKBG5hbWUYASABKAkSEwoLZGVzY3JpcHRpb24Y",
+            "AiABKAkSFQoNYnJhbmNoX2ZpbHRlchgDIAEoCRI7Cg90b2tlbl90ZW1wbGF0",
+            "ZXMYBCADKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuVGVtcGxhdGUi",
+            "qwEKDVRlbXBsYXRlSW5kZXgSRAoJdGVtcGxhdGVzGAEgAygLMjEudGF4b25v",
+            "bXkubW9kZWwuY29yZS5UZW1wbGF0ZUluZGV4LlRlbXBsYXRlc0VudHJ5GlQK",
+            "DlRlbXBsYXRlc0VudHJ5EgsKA2tleRgBIAEoCRIxCgV2YWx1ZRgCIAEoCzIi",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZToCOAEi0QEKDVRv",
+            "a2VuVGVtcGxhdGUSEwoLY29udHJvbF91cmkYASABKAkSPQoOYXJ0aWZhY3Rf",
+            "ZmlsZXMYAiADKAsyJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFj",
+            "dEZpbGUSMgoGcGFyZW50GAMgASgLMiIudGF4b25vbXkubW9kZWwuY29yZS5U",
+            "ZW1wbGF0ZVRva2VuEjgKDGNoaWxkX3Rva2VucxgEIAMoCzIiLnRheG9ub215",
+            "Lm1vZGVsLmNvcmUuVGVtcGxhdGVUb2tlbiJHCg5Ub2tlblRlbXBsYXRlcxI1",
+            "Cgl0ZW1wbGF0ZXMYASADKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLlRva2Vu",
+            "VGVtcGxhdGUigQMKDVRlbXBsYXRlVG9rZW4SOAoHZm9ybXVsYRgBIAEoCzIn",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sEgwKBG5h",
+            "bWUYAiABKAkSPwoKZGVmaW5pdGlvbhgDIAEoCzIrLnRheG9ub215Lm1vZGVs",
+            "LmFydGlmYWN0LkFydGlmYWN0RGVmaW5pdGlvbhInCgRiYXNlGAQgASgLMhku",
+            "dGF4b25vbXkubW9kZWwuY29yZS5CYXNlEjgKCWJlaGF2aW9ycxgFIAMoCzIl",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVCZWhhdmlvchJDCg9iZWhh",
+            "dmlvcl9ncm91cHMYBiADKAsyKi50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBs",
+            "YXRlQmVoYXZpb3JHcm91cBI/Cg1wcm9wZXJ0eV9zZXRzGAcgAygLMigudGF4",
+            "b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZVByb3BlcnR5U2V0IpwBChBUZW1w",
+            "bGF0ZUJlaGF2aW9yEjcKBnN5bWJvbBgBIAEoCzInLnRheG9ub215Lm1vZGVs",
+            "LmFydGlmYWN0LkFydGlmYWN0U3ltYm9sEh4KFmltcGxlbWVudGF0aW9uX2Rl",
+            "dGFpbHMYAiABKAkSLwoIYmVoYXZpb3IYAyABKAsyHS50YXhvbm9teS5tb2Rl",
+            "bC5jb3JlLkJlaGF2aW9yIqwBChVUZW1wbGF0ZUJlaGF2aW9yR3JvdXASNwoG",
             "c3ltYm9sGAEgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
-            "Y3RTeW1ib2wSHgoWaW1wbGVtZW50YXRpb25fZGV0YWlscxgCIAEoCRI2Cgxw",
-            "cm9wZXJ0eV9zZXQYAyABKAsyIC50YXhvbm9teS5tb2RlbC5jb3JlLlByb3Bl",
-            "cnR5U2V0IqMBCgpJbnZvY2F0aW9uEgwKBG5hbWUYASABKAkSEwoLZGVzY3Jp",
-            "cHRpb24YAiABKAkSNwoHcmVxdWVzdBgDIAEoCzImLnRheG9ub215Lm1vZGVs",
-            "LmNvcmUuSW52b2NhdGlvblJlcXVlc3QSOQoIcmVzcG9uc2UYBCABKAsyJy50",
-            "YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25SZXNwb25zZSKKAQoRSW52",
-            "b2NhdGlvblJlcXVlc3QSHAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkS",
-            "EwoLZGVzY3JpcHRpb24YAiABKAkSQgoQaW5wdXRfcGFyYW1ldGVycxgDIAMo",
-            "CzIoLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblBhcmFtZXRlciKM",
-            "AQoSSW52b2NhdGlvblJlc3BvbnNlEhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1l",
-            "GAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEkMKEW91dHB1dF9wYXJhbWV0",
-            "ZXJzGAMgAygLMigudGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uUGFy",
-            "YW1ldGVyIj4KE0ludm9jYXRpb25QYXJhbWV0ZXISDAoEbmFtZRgBIAEoCRIZ",
-            "ChF2YWx1ZV9kZXNjcmlwdGlvbhgCIAEoCUJBCh9vcmcudHRpLnR0Zi50YXhv",
-            "bm9teS5tb2RlbC5jb3JlUAGqAhtUVEkuVFRGLlRheG9ub215Lk1vZGVsLkNv",
-            "cmViBnByb3RvMw=="));
+            "Y3RTeW1ib2wSHgoWaW1wbGVtZW50YXRpb25fZGV0YWlscxgCIAEoCRI6Cg5i",
+            "ZWhhdmlvcl9ncm91cBgDIAEoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUuQmVo",
+            "YXZpb3JHcm91cCKmAQoTVGVtcGxhdGVQcm9wZXJ0eVNldBI3CgZzeW1ib2wY",
+            "ASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJv",
+            "bBIeChZpbXBsZW1lbnRhdGlvbl9kZXRhaWxzGAIgASgJEjYKDHByb3BlcnR5",
+            "X3NldBgDIAEoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQi",
+            "owEKCkludm9jYXRpb24SDAoEbmFtZRgBIAEoCRITCgtkZXNjcmlwdGlvbhgC",
+            "IAEoCRI3CgdyZXF1ZXN0GAMgASgLMiYudGF4b25vbXkubW9kZWwuY29yZS5J",
+            "bnZvY2F0aW9uUmVxdWVzdBI5CghyZXNwb25zZRgEIAEoCzInLnRheG9ub215",
+            "Lm1vZGVsLmNvcmUuSW52b2NhdGlvblJlc3BvbnNlIooBChFJbnZvY2F0aW9u",
+            "UmVxdWVzdBIcChRjb250cm9sX21lc3NhZ2VfbmFtZRgBIAEoCRITCgtkZXNj",
+            "cmlwdGlvbhgCIAEoCRJCChBpbnB1dF9wYXJhbWV0ZXJzGAMgAygLMigudGF4",
+            "b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uUGFyYW1ldGVyIowBChJJbnZv",
+            "Y2F0aW9uUmVzcG9uc2USHAoUY29udHJvbF9tZXNzYWdlX25hbWUYASABKAkS",
+            "EwoLZGVzY3JpcHRpb24YAiABKAkSQwoRb3V0cHV0X3BhcmFtZXRlcnMYAyAD",
+            "KAsyKC50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25QYXJhbWV0ZXIi",
+            "PgoTSW52b2NhdGlvblBhcmFtZXRlchIMCgRuYW1lGAEgASgJEhkKEXZhbHVl",
+            "X2Rlc2NyaXB0aW9uGAIgASgJQkEKH29yZy50dGkudHRmLnRheG9ub215Lm1v",
+            "ZGVsLmNvcmVQAaoCG1RUSS5UVEYuVGF4b25vbXkuTW9kZWwuQ29yZWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -137,10 +143,12 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySet), global::TTI.TTF.Taxonomy.Model.Core.PropertySet.Parser, new[]{ "Artifact", "Properties" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySets), global::TTI.TTF.Taxonomy.Model.Core.PropertySets.Parser, new[]{ "PropertySet" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Property), global::TTI.TTF.Taxonomy.Model.Core.Property.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Parser, new[]{ "FractionalFungibles", "WholeFungibles", "FractionalNonFungibles", "Singletons", "Hybrids" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch.Parser, new[]{ "FractionalFungibles", "WholeFungibles", "FractionalNonFungibles", "Singletons" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Parser, new[]{ "FractionalFungibles", "WholeFungibles", "FractionalNonFungibles", "Singletons", "Hybrids" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Types.HybridBranch), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Types.HybridBranch.Parser, new[]{ "FractionalFungibles", "WholeFungibles", "FractionalNonFungibles", "Singletons" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBranch), global::TTI.TTF.Taxonomy.Model.Core.TemplateBranch.Parser, new[]{ "Name", "TokenTemplates", "Branches" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch), global::TTI.TTF.Taxonomy.Model.Core.DynamicBranch.Parser, new[]{ "Name", "Description", "BranchFilter", "TokenTemplates" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateIndex), global::TTI.TTF.Taxonomy.Model.Core.TemplateIndex.Parser, new[]{ "Templates" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser, new[]{ "ControlUri", "ArtifactFiles", "Parent", "ChildTokens" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Parser, new[]{ "Templates" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateToken), global::TTI.TTF.Taxonomy.Model.Core.TemplateToken.Parser, new[]{ "Formula", "Name", "Definition", "Base", "Behaviors", "BehaviorGroups", "PropertySets" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior), global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior.Parser, new[]{ "Symbol", "ImplementationDetails", "Behavior" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.TemplateBehaviorGroup.Parser, new[]{ "Symbol", "ImplementationDetails", "BehaviorGroup" }, null, null, null),
@@ -2034,11 +2042,11 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
   }
 
-  public sealed partial class TokenTemplates : pb::IMessage<TokenTemplates> {
-    private static readonly pb::MessageParser<TokenTemplates> _parser = new pb::MessageParser<TokenTemplates>(() => new TokenTemplates());
+  public sealed partial class TokenTemplateHierarchy : pb::IMessage<TokenTemplateHierarchy> {
+    private static readonly pb::MessageParser<TokenTemplateHierarchy> _parser = new pb::MessageParser<TokenTemplateHierarchy>(() => new TokenTemplateHierarchy());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<TokenTemplates> Parser { get { return _parser; } }
+    public static pb::MessageParser<TokenTemplateHierarchy> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -2051,14 +2059,14 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TokenTemplates() {
+    public TokenTemplateHierarchy() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TokenTemplates(TokenTemplates other) : this() {
+    public TokenTemplateHierarchy(TokenTemplateHierarchy other) : this() {
       fractionalFungibles_ = other.fractionalFungibles_ != null ? other.fractionalFungibles_.Clone() : null;
       wholeFungibles_ = other.wholeFungibles_ != null ? other.wholeFungibles_.Clone() : null;
       fractionalNonFungibles_ = other.fractionalNonFungibles_ != null ? other.fractionalNonFungibles_.Clone() : null;
@@ -2068,8 +2076,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public TokenTemplates Clone() {
-      return new TokenTemplates(this);
+    public TokenTemplateHierarchy Clone() {
+      return new TokenTemplateHierarchy(this);
     }
 
     /// <summary>Field number for the "fractional_fungibles" field.</summary>
@@ -2118,9 +2126,9 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "hybrids" field.</summary>
     public const int HybridsFieldNumber = 5;
-    private global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch hybrids_;
+    private global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Types.HybridBranch hybrids_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch Hybrids {
+    public global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Types.HybridBranch Hybrids {
       get { return hybrids_; }
       set {
         hybrids_ = value;
@@ -2129,11 +2137,11 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as TokenTemplates);
+      return Equals(other as TokenTemplateHierarchy);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(TokenTemplates other) {
+    public bool Equals(TokenTemplateHierarchy other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2219,7 +2227,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(TokenTemplates other) {
+    public void MergeFrom(TokenTemplateHierarchy other) {
       if (other == null) {
         return;
       }
@@ -2249,7 +2257,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       }
       if (other.hybrids_ != null) {
         if (hybrids_ == null) {
-          Hybrids = new global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch();
+          Hybrids = new global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Types.HybridBranch();
         }
         Hybrids.MergeFrom(other.Hybrids);
       }
@@ -2294,7 +2302,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
           }
           case 42: {
             if (hybrids_ == null) {
-              Hybrids = new global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Types.HybridBranch();
+              Hybrids = new global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Types.HybridBranch();
             }
             input.ReadMessage(Hybrids);
             break;
@@ -2304,7 +2312,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the TokenTemplates message type.</summary>
+    /// <summary>Container for nested types declared in the TokenTemplateHierarchy message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class HybridBranch : pb::IMessage<HybridBranch> {
@@ -2315,7 +2323,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Descriptor.NestedTypes[0]; }
+          get { return global::TTI.TTF.Taxonomy.Model.Core.TokenTemplateHierarchy.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2923,6 +2931,127 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
   }
 
+  public sealed partial class TemplateIndex : pb::IMessage<TemplateIndex> {
+    private static readonly pb::MessageParser<TemplateIndex> _parser = new pb::MessageParser<TemplateIndex>(() => new TemplateIndex());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TemplateIndex> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TemplateIndex() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TemplateIndex(TemplateIndex other) : this() {
+      templates_ = other.templates_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TemplateIndex Clone() {
+      return new TemplateIndex(this);
+    }
+
+    /// <summary>Field number for the "templates" field.</summary>
+    public const int TemplatesFieldNumber = 1;
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec _map_templates_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser), 10);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> templates_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> Templates {
+      get { return templates_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TemplateIndex);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TemplateIndex other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!Templates.Equals(other.Templates)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= Templates.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      templates_.WriteTo(output, _map_templates_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += templates_.CalculateSize(_map_templates_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TemplateIndex other) {
+      if (other == null) {
+        return;
+      }
+      templates_.Add(other.templates_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            templates_.AddEntriesFrom(input, _map_templates_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
   /// </summary>
@@ -2934,7 +3063,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[12]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3135,6 +3264,127 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
   }
 
+  public sealed partial class TokenTemplates : pb::IMessage<TokenTemplates> {
+    private static readonly pb::MessageParser<TokenTemplates> _parser = new pb::MessageParser<TokenTemplates>(() => new TokenTemplates());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TokenTemplates> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TokenTemplates() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TokenTemplates(TokenTemplates other) : this() {
+      templates_ = other.templates_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TokenTemplates Clone() {
+      return new TokenTemplates(this);
+    }
+
+    /// <summary>Field number for the "templates" field.</summary>
+    public const int TemplatesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> _repeated_templates_codec
+        = pb::FieldCodec.ForMessage(10, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> templates_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> Templates {
+      get { return templates_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TokenTemplates);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TokenTemplates other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!templates_.Equals(other.templates_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= templates_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      templates_.WriteTo(output, _repeated_templates_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += templates_.CalculateSize(_repeated_templates_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TokenTemplates other) {
+      if (other == null) {
+        return;
+      }
+      templates_.Add(other.templates_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            templates_.AddEntriesFrom(input, _repeated_templates_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   ///Used for either a parent or child definition within a TokenTemplate only.
   /// </summary>
@@ -3146,7 +3396,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[13]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3443,7 +3693,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[14]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3646,7 +3896,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[15]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3849,7 +4099,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[16]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4049,7 +4299,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[17]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4280,7 +4530,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[18]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4457,7 +4707,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[19]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4634,7 +4884,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[20]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
