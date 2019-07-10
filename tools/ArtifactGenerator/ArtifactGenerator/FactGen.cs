@@ -699,7 +699,7 @@ namespace ArtifactGenerator
 						}
 					}
 				},
-				BehaviorGroups =
+				BehaviorGroups =kklokokskjfyu fskf;sitduigfudigzifjskdeltfowrpfoekrkko
 				{
 					new TemplateBehaviorGroup
 					{

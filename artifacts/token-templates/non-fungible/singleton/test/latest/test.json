@@ -1,0 +1,255 @@
+{
+  "controlUri": "../../../../../../artifacts/token-templates/non-fungible/singleton/test/latest/test.proto",
+  "artifactFiles": [
+    {
+      "content": "CONTROL",
+      "fileName": "test.proto",
+      "fileData": "",
+      "artifact": null
+    },
+    {
+      "content": "UML",
+      "fileName": "test.md",
+      "fileData": "",
+      "artifact": null
+    }
+  ],
+  "parent": {
+    "formula": {
+      "id": "0721b065-d04b-467d-801d-1e62da0d5543",
+      "type": "TOKEN_TEMPLATE",
+      "visual": "",
+      "tooling": "",
+      "version": "1.0",
+      "validated": false
+    },
+    "name": "",
+    "definition": {
+      "businessDescription": "Template Token Description",
+      "businessExample": "Template Token Example",
+      "analogies": [],
+      "comments": "template comments",
+      "artifact": null
+    },
+    "base": {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "8314a797-df3c-409b-835c-0e80af92714f",
+          "type": "BASE",
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "validated": false
+        },
+        "name": "Non-Fungible Token",
+        "aliases": [
+          "Title",
+          "Deed"
+        ],
+        "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
+        "artifactDefinition": {
+          "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
+          "businessExample": "CryptoKitties, Art, Reserved Seat,",
+          "analogies": [
+            {
+              "name": "Analogy 1",
+              "description": "non-fungible analogy 1 description",
+              "artifactDefinition": null
+            }
+          ],
+          "comments": "",
+          "artifact": null
+        },
+        "dependencies": [
+          {
+            "description": "Base Token Definition",
+            "symbol": {
+              "id": "",
+              "type": "BASE",
+              "visual": "&tau;",
+              "tooling": "t",
+              "version": "",
+              "validated": false
+            }
+          }
+        ],
+        "incompatibleWithSymbols": [
+          {
+            "id": "",
+            "type": "BASE",
+            "visual": "",
+            "tooling": "",
+            "version": "",
+            "validated": false
+          }
+        ],
+        "influencedBySymbols": [
+          {
+            "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+            "symbol": {
+              "id": "",
+              "type": "BEHAVIOR",
+              "visual": "<i>~d</i>",
+              "tooling": "~d",
+              "version": "",
+              "validated": false
+            }
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "non-fungible.proto",
+            "fileData": "",
+            "artifact": null
+          },
+          {
+            "content": "UML",
+            "fileName": "non-fungible.md",
+            "fileData": "",
+            "artifact": null
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "mappingType": "SOURCE_CODE",
+              "name": "Code 1",
+              "platform": "DAML",
+              "referencePath": "",
+              "maps": null
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO",
+              "referencePath": "",
+              "maps": null
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1",
+              "description": "",
+              "resourcePath": "",
+              "maps": null
+            }
+          ],
+          "artifact": null
+        }
+      },
+      "tokenType": "NON_FUNGIBLE",
+      "singleToken": {
+        "classificationBranch": "SINGLETON",
+        "groupStart": "[",
+        "baseToken": {
+          "artifactSymbol": {
+            "id": "",
+            "type": "BASE",
+            "visual": "&tau;<sub>N</sub>",
+            "tooling": "tN",
+            "version": "",
+            "validated": false
+          }
+        },
+        "behaviors": {
+          "listStart": "{",
+          "behaviorSymbols": [
+            {
+              "id": "",
+              "type": "BASE",
+              "visual": "",
+              "tooling": "~d",
+              "version": "",
+              "validated": false
+            }
+          ],
+          "listEnd": "}"
+        },
+        "propertySets": [
+          {
+            "listStart": "+",
+            "propertySetSymbols": {
+              "id": "",
+              "type": "PROPERTY_SET",
+              "visual": "",
+              "tooling": "",
+              "version": "",
+              "validated": false
+            }
+          }
+        ],
+        "groupEnd": "]"
+      },
+      "name": "",
+      "symbol": "",
+      "owner": "",
+      "quantity": "",
+      "decimals": 0,
+      "tokenProperties": {},
+      "constructorName": "",
+      "constructor": null,
+      "childTokens": []
+    },
+    "behaviors": [
+      {
+        "symbol": {
+          "id": "",
+          "type": "BEHAVIOR",
+          "visual": "",
+          "tooling": "",
+          "version": "",
+          "validated": false
+        },
+        "implementationDetails": "",
+        "behavior": {
+          "artifact": null,
+          "isExternal": false,
+          "constructorName": "",
+          "constructor": null,
+          "invocations": [],
+          "properties": []
+        }
+      }
+    ],
+    "behaviorGroups": [
+      {
+        "symbol": {
+          "id": "",
+          "type": "BEHAVIOR_GROUP",
+          "visual": "",
+          "tooling": "",
+          "version": "",
+          "validated": false
+        },
+        "implementationDetails": "",
+        "behaviorGroup": {
+          "artifact": null,
+          "behaviorSymbols": [],
+          "behaviorArtifacts": {}
+        }
+      }
+    ],
+    "propertySets": [
+      {
+        "symbol": {
+          "id": "",
+          "type": "PROPERTY_SET",
+          "visual": "",
+          "tooling": "",
+          "version": "",
+          "validated": false
+        },
+        "implementationDetails": "",
+        "propertySet": {
+          "artifact": null,
+          "properties": []
+        }
+      }
+    ]
+  },
+  "childTokens": []
+}
