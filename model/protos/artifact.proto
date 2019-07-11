@@ -10,18 +10,14 @@ option java_multiple_files = true;
 enum TokenType {
     FUNGIBLE = 0;
     NON_FUNGIBLE = 1;
-    HYBRID_FUNGIBLE_ROOT = 2;
-    HYBRID_NON_FUNGIBLE_ROOT = 3;
-    HYBRID_FUNGIBLE_ROOT_HYBRID_CHILDREN = 4;
-    HYBRID_NON_FUNGIBLE_ROOT_HYBRID_CHILDREN = 5;
+    HYBRID = 2;
 }
 
 //classification for Templates, parent and any child tokens. 
 enum ClassificationBranch{
-    FRACTIONAL_FUNGIBLE = 0; //tF{d}
-    WHOLE_FUNGIBLE = 1; //tF{~d}
-    FRACTIONAL_NON_FUNGIBLE = 2; //tN{d}
-    SINGLETON = 3; //tN{~s}
+    FRACTIONAL = 0; //tF{d} or tN{d}
+    WHOLE = 1; //tF{~d} or tN{~d}
+    SINGLETON = 2; //tN{~s}
 }
 
 enum ArtifactType{
@@ -74,7 +70,13 @@ message ArtifactSymbol{
     string visual = 3; //symbol for single artifact and formula for templates
     string tooling = 4; //symbol for single artifact and formula for templates
     string version = 5;
-    bool validated = 6; //for templates only
+    bool template_validated = 6; //for templates only
+}
+
+//a reference to another artifact, either TemplateBranch to TemplateBranch, or ArtifactInstance to Artifact.
+message ArtifactReference{
+    string id = 1; 
+    ArtifactType type = 2;
 }
 
 message SymbolInfluence{

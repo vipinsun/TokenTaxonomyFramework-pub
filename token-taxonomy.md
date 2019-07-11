@@ -31,23 +31,26 @@ The TTF is a composition framework that breaks tokens down into basic parts.  Ba
 
 The taxonomy uses these terms for all tokens:
 
-- Token Template - is a complete token definition that is used to create a token of the defined type. A template is able to create a clone of itself, which is a class. (i.e. Crypto-currency Token Template)
-- Token Class - is an deployed token from a defined template. (i.e. Bitcoin created from the crypto-currency template)
+- Token Template - is a template describes a token based on its type and what capabilities or restrictions a token created from the template would have. (i.e. Fractional Fungible Template)
+- Token Definition - is derived from a template, filling in the details to define a token that can be used to deploy as a class. (i.e. Crypto-currency Token Definition)
+- Token Class - is an deployed token from a definition. (i.e. Bitcoin created from the crypto-currency template)
 - Token Instance - a single token in a particular token class. (i.e. satoshi balance in your crypto-currency wallet)
 
 ![DefinitionStructure](images/definition-structure.png)
 
-### Token Template
+### Token Template and Definition
 
-A template is a complete token definition that is ready to be matched with an implementation. As a template it is a recipe for creating numerous copies of itself and is represented by a formula made of symbols that are references to taxonomy artifacts.
+A template is a complete token formula that is ready to be matched with an implementation. A template it is a recipe for creating numerous copies of itself and is represented by a formula made of symbols that are references to taxonomy artifacts.
 
 ![Token Template](images/formula.png)
 
-## Token Class vs. Instance
+A token definition is a reference to a template formula, that provides specific values to represent the complete definition of the token.
 
-A token class is a deployed template using a specific implementation of the template definition.  Depending on the target blockchain platform the template implementation may be a complete set of source code or a software package from a 3rd party.
+### Token Class vs. Instance
 
-![Token Terms](images/terms.png)
+A token class is a deployed definition using a specific implementation or platform, i.e. blockchain.  Depending on the target blockchain platform the implementation may be a complete set of source code or a software package from a 3rd party.
+
+![Token Terms](images/templateContext.png)
 
 A token instance is an owned token of a particular class. Depending on the platform how this notion is actually implemented will vary. Instances of a token that you may own, or have in your digital wallet, represent your account balance of that token class.
 
@@ -59,10 +62,40 @@ The taxonomy is comprised of artifacts that are categorized into 5 basic types:
 - Behaviors: capabilities or restrictions that can apply to a token.
 - Behavior-Groups: a bundle of behaviors that are frequently used together.
 - Property-Sets: a defined property(s) that if applied a token can be queried against and support a value for.
-
-Token Templates are a composite consisting of a collection of artifacts composed together to define a ready to implement definition.
+- Token-Templates: a composition of other artifacts brought together to create a token template and classification.
+- Token-Definitions: a definition based off a template that provides specific details completing the token definition.
 
 Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md).
+
+### Ingredients and Recipes: Artifact, Artifact Instance, Template and Template Instance
+
+Suppose we were baking a cake, using a recipe. An artifact is like an ingredient that can be used in a recipe, i.e. milk, sugar, flour. The recipe pulls together the ingredients by specifying how much of each ingredient to add, when and how long to bake.
+
+In this analogy, ingredients are Artifacts and a recipe is a Token Template. However, in the TTF, you do not specify the quantities of the ingredients, or Artifact Instance Values, in a Token Template, but in a Template Instance. This maximizes reuse of artifacts and templates and will make more sense when classification is covered.
+
+### Artifact References and Token Definitions
+
+Artifacts are templates, to use an artifact you simply reference the artifact and apply the instance values the template has as placeholders.  Like the quantity of an ingredient in the cake recipe.  Setting the quantity of an ingredient outside of an recipe is meaningless to create a composite, i.e. cake. When compositing a Token Template, you are creating references to all of the Artifacts, ingredients, that go into the Token or cake, but not the measurements of the ingredients.
+
+In the TTF, a Template is also an Artifact representing a formula of ingredients (artifacts) and is used in classification. A Token Definition, references a Token Template and supplies the quantity of each ingredient needed for the instance to come out of the oven as a tasty cake.
+
+![References](images/reference.png)
+
+An Artifact Reference contains a link to the artifact as well as the reference values needed to complete a definition.
+
+So, Artifacts are referenced by Token Templates, which are referenced by a Token Definitions which supplies that values for the specific Token, i.e. cake. The Token Definition contains the Artifact References and their values.
+
+### Classification
+
+The TTF creates a hierarchy or tree of Templates where each Template is a branch. A branch can have branches and leafs, or nodes. The hierarchical tree is constructed starting with foundational classifications, like the roots of a tree and branches represented by Templates. Branches are connected to each other using references, described above, to create the hierarchical relationship structure. A leaf or node is an Definition based on a Template.
+
+A Token Definition is a node on a branch/template, is a reference to the Template and the reference values to fill in the template's artifacts.
+
+![Templates](images/branches-nodes.png)
+
+References are followed through the hierarchy and back to the Artifacts to validate and determine what instance values can be set in the instance.
+
+![Templates](images/templateInstance.png)
 
 ### Control Messages
 
@@ -159,7 +192,7 @@ Some of these behaviors are valid for either base type, while others only apply 
 
 A behavior that is only valid for a specific type will include the *&tau;<sub>F</sub>* or *&tau;<sub>N</sub>* as a property such as *&tau;<sub>F</sub>{s}* and *&tau;<sub>N</sub>{~t}*.
 
-Where hybrid tokens are being defined, behaviors can be defined that are common to all tokens, or at different granularities. For example, the following definition is for a fungible token that does not allow new tokens to be minted, which themselves are composed of non-fungible tokens that can be minted. However both classes of token are transferrable:
+Where hybrid tokens are being defined, behaviors can be defined that are common to all tokens, or at different granularity's. For example, the following definition is for a fungible token that does not allow new tokens to be minted, which themselves are composed of non-fungible tokens that can be minted. However both classes of token are transferrable:
 
 > **&tau;<sub>F</sub>{~m} (&tau;<sub>N</sub>{m}) {t}**
 
@@ -187,7 +220,7 @@ An example of an external behavior would be something like Financeable or Encumb
 
 The distinction between internal and external behaviors can seem like nuance at first but is an effective way to distinguish pure token behaviors from contract behaviors.  External behaviors are primarily contract behaviors, that need a supporting token interface to allow the two to be linked together and enable the entire behavior.  External behaviors will have two parts, contract and token,that are required when describing them.
 
-Some behaviors, like Transferable *t* are implicit for certain token bases.  A fungible token, for example, implicitly is Transferable so the taxonomy does not require it to be included for tooling or the definition but can be included for clarity: *&tau;<sub>F</sub> = &tau;<sub>F</sub>{t}*.
+Some behaviors, like Transferable *t* are implicit for certain token bases.  A fungible token, for example, implicitly is Transferable so the taxonomy does not require it to be included for tooling or the template but can be included for clarity: *&tau;<sub>F</sub> = &tau;<sub>F</sub>{t}*.
 
 ## Behavior Groups
 
@@ -199,19 +232,23 @@ Behavior groups are represented in the taxonomy by a capital letter or acronym, 
 
 ## Token Templates
 
-Templates are where a token definition all comes together. Selecting artifacts from the previous categories, a template lists the artifacts that define what a token created from the template will be.
+Templates are where a token's components all comes together. Selecting artifacts from the previous categories, a template lists the artifacts that define what a token created from the template will be.
 
-Starting with a base type, then collections of behaviors, groups and properties all of the ingredients are identified. Because artifacts themselves are described generically in isolation, when you include them in a template you can provide implementation details to fill in the blanks an artifact may not specify until it is used.
+Starting with a base type, then collections of behaviors, groups and properties all of the ingredients are identified. Because artifacts themselves are described generically in isolation, when you include them in a template a formula is calculated and validated by the TTF to enforce grammar and rules.
 
 ![TokenTemplateImplementationDetail](images/templateImpl.png)
 
-In the above example, we can specify in the template artifact implementation detail for the `phSKU` property that its value must be 16 characters in length, with all UPPERCASE and the 7th character being a `-`. A template's formula is calculated and validated by the TTF.
+In the above example, we reference artifact for the `phSKU` property.
 
-### Classification
+## Template to Definition
+
+The token definition
+
+### Branch Classification
 
 A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` that is also classified as either a `Fractional Fungible`, `Whole Fungible`, `Fractional Non-Fungible` or a `Singleton`. Classification applies to the root or parent token for a hybrid as well as each child token.
 
-You can provide implementation detail for each artifact in your token template formula.
+![Branches](images/branch-leaf.png)
 
 ## Taxonomy Model and Artifacts
 
@@ -229,6 +266,8 @@ Below is an example of a token template in the model showing the collection of a
 - Behavior
 - Behavior Groups
 - Property Set
+- Token Templates
+- Token Definitions
 
 ![TokenTemplate](images/TokenTemplates.png)
 
@@ -242,7 +281,7 @@ An artifact is more than just a single JSON model file, but all the artifact's s
 
 Artifacts are versioned as well, using a version folder and a version number defined in the ArtifactSymbol.  The most recent version, regardless of its number is stored in a folder called `latest` within the artifact folder name. Previous versions will be in version number folders, where each artifact file for that version is maintained.
 
-An artifact is referenced by its ArtifactSymbol, which includes its version.  A reference that does not specify a version will default to latest.
+An artifact is referenced by its ArtifactSymbol, which includes its version.  A reference that does not specify an Id will default to latest version.
 
 For an in-depth technical overview of the model see [Taxonomy Model](taxonomy-model.md).
 
@@ -286,15 +325,15 @@ Token definitions start with the token base type:
 
 Whole Token Formulas start with the base token type, followed by a collection of behaviors and groups within {,}, ending in any property-sets.
 
-Now we can begin naming and describing tokens starting with the base type followed by the behaviors or group of behaviors. A Token Artifact represents our complete token definition and is basically documenting its non-behavioral properties and then references to its base token type and a collection of references to these behaviors.
-
-![TokenArtifact](images/tokenArtifact.png)
-
 A token formula uses the taxonomy symbols, which are references to artifacts, can be used to represent a token that is useful for tooling allowing grouping and structures to be represented. Some examples:
 
-![TokenTaxonomy](images/tokens.png)
+![TokenTemplates](images/templates.png)
 
-A Token Formula is a Token Template, which is a collection of artifacts in a folder, where the artifact folder and the artifacts within start with an uppercase letter, i.e Loyalty. The template's artifacts have references to the artifacts of its constituent parts.
+A Token Formula is a Token Template, which is a collection of artifacts start with an uppercase letter, i.e Loyalty. The template's artifacts have references to the artifacts of its constituent parts.
+
+Now we can begin naming and describing tokens starting with the base type followed by the behaviors or group of behaviors. A Token Definition represents our complete token and is basically documenting everything a developer would need to know in order to develop an implementation.
+
+![TokenArtifact](images/definitionFromTemplate.png)
 
 ## Classification Hierarchy
 
@@ -308,14 +347,15 @@ The root of the tree is a common base token or **&tau;** which has an owner Id, 
 
 There is also a base behavior artifact that includes simple GetTokenRequest/Response and GetTaxonomyRequest/Response.  
 
-Then two branches for fungible *&tau;<sub>F</sub>* and non-fungible *&tau;<sub>N</sub>* and under them are branches for sub-dividable *d* and whole *~d* to create the first three relationships.
+There six branches used to classify templates:
 
-This logically these branches are used to classify templates from three roots, Fungible, Non-Fungible and Hybrid. Fungible and Non-fungible branches based on subdivision and the hybrid branch duplicates it's peer branches indicated by the hybrid parent token type.
-
-- Fractional Fungible (sub-dividable)
-- Fractional Non-Fungible (sub-dividable)
-- Whole Fungible (non-sub-dividable)
-- Singleton (non-sub-dividable, non-fungible)
+- Fractional Fungible (sub-dividable) *&tau;<sub>F</sub>{d}*
+- Fractional Non-Fungible (sub-dividable) *&tau;<sub>N</sub>{d}*
+- Whole Fungible (non-sub-dividable) *&tau;<sub>F</sub>{~d}*
+- Whole Non-Fungible (non-sub-dividable) *&tau;<sub>N</sub>{~d}*
+- Singleton *&tau;<sub>N</sub>{s}* (s implies ~d)
+- Hybrid *&tau;<sub>F</sub>(&tau;)*, *&tau;<sub>N</sub>(&tau;)*, etc.
+  - The 1st five of these branches repeat under the hybrid branch based on the hybrid parent type.
 
 ![Hierarchy](images/hierarchy.png)
 
@@ -329,8 +369,7 @@ As an example, let’s see what a fungible token with supply control or &tau;<su
 
 ![Design](images/design.png)
 
-
-When designing a token using the taxonomy, you will pick from one of these four lower branches of fungible (fractional or whole) and non-fungible (fractional or singleton) and select it as a starting design surface.
+When designing a token using the taxonomy, you will pick from one of these six lower branches of fungible (fractional or whole) and non-fungible (fractional, whole or singleton) or hybrid as a starting design surface.
 
 Behavior artifacts and properties appear in lists like menu palets you can drag and drop inside your design surface to design a new token.  The taxonomy will block behaviors or behavior combinations that do not mix for the base token type you have selected.
 
@@ -338,11 +377,11 @@ Once completed, you will have defined a token that has a baseline set of propert
 
 ## Taxonomy Hierarchy
 
-If you have created a token definition that is already defined, but your token has specific non-behavioral properties like a `SKU` or  `CUSIP` property you can create a new token definition for this formula in the taxonomy.
+If you have find a token template that is already defined, but your token has specific non-behavioral properties like a `SKU` or  `CUSIP` property you can create a new token template, reference the existing template and add your properties to create a new template and branch in the taxonomy.
 
 In this case the generic taxonomy definition: &tau;<sub>F</sub>{~d,SC} or `tF{~d,SC}` can be named `Whole Fungible Token with Supply Control` and represents a `branch` off the `Whole Fungible branch` in the hierarchy.
 
-The template token definition adding the SKU property-set will be a `node` or `leaf` on this branch named `Inventory Item Token`.  Your new token equal to the generic branch formula plus the definition containing the `SKU` non-behavioral property i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
+The template token definition adding the SKU property-set will be a `branch` off this branch named `Inventory Item Template`.  Your new token template reuses the templates above adding the `SKU` non-behavioral property to the formula i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
 
 ![Branch-Leaf](images/branch-leaf.png)
 
@@ -356,7 +395,8 @@ The GitHub artifact hierarchical file structure where artifact file names are th
 - behaviors - folder for each behavior.
 - behavior-groups - folder for each behavior group.
 - property-sets - folder for each non-behavioral property set.
-- tokens - complete token definitions contributed by workshops to the framework.
+- token-templates - token templates contributed by workshops to the framework.
+- token-definitions - complete token definitions based of a template.
 
 ![HierarchicalFileStructure](images/fileHierarchy.png)
 
