@@ -19,7 +19,6 @@ namespace TTI.TTF.Taxonomy {
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Core.Behavior> __Marshaller_taxonomy_model_core_Behavior = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> __Marshaller_taxonomy_model_core_BehaviorGroup = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Core.PropertySet> __Marshaller_taxonomy_model_core_PropertySet = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Core.PropertySet.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula> __Marshaller_taxonomy_model_artifact_TaxonomyFormula = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> __Marshaller_taxonomy_model_core_TokenTemplate = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions> __Marshaller_taxonomy_model_artifact_QueryOptions = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult> __Marshaller_taxonomy_model_artifact_QueryResult = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser.ParseFrom);
@@ -71,11 +70,18 @@ namespace TTI.TTF.Taxonomy {
         __Marshaller_taxonomy_model_artifact_ArtifactSymbol,
         __Marshaller_taxonomy_model_core_PropertySet);
 
-    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> __Method_GetTokenTemplateArtifact = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>(
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> __Method_GetTokenTemplateArtifact = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetTokenTemplateArtifact",
-        __Marshaller_taxonomy_model_artifact_TaxonomyFormula,
+        __Marshaller_taxonomy_model_artifact_ArtifactSymbol,
+        __Marshaller_taxonomy_model_core_TokenTemplate);
+
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> __Method_GetTokenDefinition = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetTokenDefinition",
+        __Marshaller_taxonomy_model_artifact_ArtifactSymbol,
         __Marshaller_taxonomy_model_core_TokenTemplate);
 
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions, global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult> __Method_GetArtifactsOfType = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions, global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult>(
@@ -168,7 +174,12 @@ namespace TTI.TTF.Taxonomy {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenTemplateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenTemplateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -347,21 +358,37 @@ namespace TTI.TTF.Taxonomy {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetPropertySetArtifact, null, options, request);
       }
-      public virtual global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate GetTokenTemplateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate GetTokenTemplateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetTokenTemplateArtifact(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate GetTokenTemplateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula request, grpc::CallOptions options)
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate GetTokenTemplateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetTokenTemplateArtifact, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenTemplateArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenTemplateArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetTokenTemplateArtifactAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenTemplateArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenTemplateArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetTokenTemplateArtifact, null, options, request);
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate GetTokenDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTokenDefinition(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate GetTokenDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetTokenDefinition, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTokenDefinitionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> GetTokenDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetTokenDefinition, null, options, request);
       }
       public virtual global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult GetArtifactsOfType(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
@@ -521,6 +548,7 @@ namespace TTI.TTF.Taxonomy {
           .AddMethod(__Method_GetBehaviorGroupArtifact, serviceImpl.GetBehaviorGroupArtifact)
           .AddMethod(__Method_GetPropertySetArtifact, serviceImpl.GetPropertySetArtifact)
           .AddMethod(__Method_GetTokenTemplateArtifact, serviceImpl.GetTokenTemplateArtifact)
+          .AddMethod(__Method_GetTokenDefinition, serviceImpl.GetTokenDefinition)
           .AddMethod(__Method_GetArtifactsOfType, serviceImpl.GetArtifactsOfType)
           .AddMethod(__Method_CreateArtifact, serviceImpl.CreateArtifact)
           .AddMethod(__Method_UpdateArtifact, serviceImpl.UpdateArtifact)
@@ -541,7 +569,8 @@ namespace TTI.TTF.Taxonomy {
       serviceBinder.AddMethod(__Method_GetBehaviorArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.Behavior>(serviceImpl.GetBehaviorArtifact));
       serviceBinder.AddMethod(__Method_GetBehaviorGroupArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>(serviceImpl.GetBehaviorGroupArtifact));
       serviceBinder.AddMethod(__Method_GetPropertySetArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.PropertySet>(serviceImpl.GetPropertySetArtifact));
-      serviceBinder.AddMethod(__Method_GetTokenTemplateArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.TaxonomyFormula, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>(serviceImpl.GetTokenTemplateArtifact));
+      serviceBinder.AddMethod(__Method_GetTokenTemplateArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>(serviceImpl.GetTokenTemplateArtifact));
+      serviceBinder.AddMethod(__Method_GetTokenDefinition, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>(serviceImpl.GetTokenDefinition));
       serviceBinder.AddMethod(__Method_GetArtifactsOfType, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions, global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult>(serviceImpl.GetArtifactsOfType));
       serviceBinder.AddMethod(__Method_CreateArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest, global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse>(serviceImpl.CreateArtifact));
       serviceBinder.AddMethod(__Method_UpdateArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactRequest, global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse>(serviceImpl.UpdateArtifact));

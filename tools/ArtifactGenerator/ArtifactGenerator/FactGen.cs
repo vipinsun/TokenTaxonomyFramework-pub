@@ -11,8 +11,9 @@ using TTI.TTF.Taxonomy.Model;
 
 namespace ArtifactGenerator
 {
-	internal static class FactGen{
-	
+	internal static class FactGen
+	{
+
 		private static ILog _log;
 		private static string ArtifactName { get; set; }
 		private static string ArtifactPath { get; set; }
@@ -183,496 +184,12 @@ namespace ArtifactGenerator
 				throw new Exception("Missing value for  --n ");
 			}
 
-			if (!TemplateMode)
+			string artifactJson;
+			DirectoryInfo outputFolder;
+			var artifact = new Artifact
 			{
-				string artifactJson;
-				DirectoryInfo outputFolder;
-				var artifact = new Artifact
-				{
-					Name = ArtifactName,
-					ArtifactSymbol = new ArtifactSymbol
-					{
-						Id = Guid.NewGuid().ToString(),
-						Type = ArtifactType,
-						Tooling = "",
-						Visual = "",
-						Version = "1.0"
-					},
-					ArtifactDefinition = new ArtifactDefinition
-					{
-						BusinessDescription = "This is a " + ArtifactName + " of type: " + ArtifactType,
-						BusinessExample = "",
-						Comments = "",
-						Analogies =
-						{
-							new ArtifactAnalogy
-							{
-								Name = "Analogy 1",
-								Description = ArtifactName + " analogy 1 description"
-							}
-						}
-					},
-					Maps = new Maps
-					{
-						CodeReferences =
-						{
-							new MapReference
-							{
-								MappingType = MappingType.SourceCode,
-								Name = "Code 1",
-								Platform = TargetPlatform.Daml,
-								ReferencePath = ""
-							}
-						},
-						ImplementationReferences =
-						{
-							new MapReference
-							{
-								MappingType = MappingType.Implementation,
-								Name = "Implementation 1",
-								Platform = TargetPlatform.ChaincodeGo,
-								ReferencePath = ""
-							}
-						},
-						Resources =
-						{
-							new MapResourceReference
-							{
-								MappingType = MappingType.Resource,
-								Name = "Regulation Reference 1",
-								Description = "",
-								ResourcePath = ""
-							}
-						}
-					},
-					IncompatibleWithSymbols =
-					{
-						new ArtifactSymbol
-						{
-							Type = ArtifactType,
-							Tooling = "",
-							Visual = ""
-						}
-					},
-					Dependencies =
-					{
-						new SymbolDependency
-						{
-							Description = "",
-							Symbol = new ArtifactSymbol()
-						}
-					},
-					Aliases = {"alias1", "alias2"}
-
-				};
-				switch (ArtifactType)
-				{
-					case ArtifactType.Base:
-						var formula = GenerateFormula();
-						artifactTypeFolder = "base";
-						outputFolder =
-							Directory.CreateDirectory(
-								fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
-						var artifactBase = new Base
-						{
-							Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
-								artifact, "Base"),
-							TokenType = BaseType
-						};
-						artifactBase.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
-						{
-							Description =
-								"Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
-							Symbol = new ArtifactSymbol
-							{
-								Type = ArtifactType.Behavior,
-								Tooling = "~d",
-								Visual = "~d",
-								Version = ""
-							}
-						});
-						artifactBase.TokenType = BaseType;
-						switch (BaseType)
-						{
-							case TokenType.Fungible:
-								artifactBase.SingleToken = formula.SingleToken;
-								break;
-							case TokenType.NonFungible:
-								artifactBase.SingleToken = formula.SingleToken;
-								break;
-							case TokenType.HybridFungibleRoot:
-								artifactBase.Hybrid = formula.Hybrid;
-								break;
-							case TokenType.HybridNonFungibleRoot:
-								artifactBase.Hybrid = formula.Hybrid;
-								break;
-							case TokenType.HybridFungibleRootHybridChildren:
-								artifactBase.HybridWithHybrids = formula.HybridWithHybrids;
-								break;
-							case TokenType.HybridNonFungibleRootHybridChildren:
-								artifactBase.HybridWithHybrids = formula.HybridWithHybrids;
-								break;
-							default:
-								throw new ArgumentOutOfRangeException();
-						}
-
-						artifactJson = jsf.Format(artifactBase);
-						break;
-					case ArtifactType.Behavior:
-
-						artifactTypeFolder = "behaviors";
-						outputFolder =
-							Directory.CreateDirectory(
-								fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
-						var artifactBehavior = new Behavior
-						{
-							Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
-								artifact, "Behaviors"),
-							ConstructorName = "",
-							Invocations =
-							{
-								new Invocation
-								{
-									Name = "InvocationRequest1",
-									Description =
-										"Describe the what the this invocation triggers in the behavior",
-									Request = new InvocationRequest
-									{
-										ControlMessageName = "InvocationRequest",
-										Description = "The request",
-										InputParameters =
-										{
-											new InvocationParameter
-											{
-												Name = "Input Parameter 1",
-												ValueDescription =
-													"Contains some input data required for the invocation to work."
-											}
-										}
-									},
-									Response = new InvocationResponse
-									{
-										ControlMessageName = "InvocationResponse",
-										Description = "The response",
-										OutputParameters =
-										{
-											new InvocationParameter
-											{
-												Name = "Output Parameter 1",
-												ValueDescription =
-													"One of the values that the invocation should return."
-											}
-										}
-									}
-								}
-							}
-						};
-						artifactBehavior.Properties.Add(new Property
-						{
-							Name = "Property1",
-							ValueDescription = "Some Value",
-							TemplateValue = "",
-							PropertyInvocations =
-							{
-								new Invocation
-								{
-									Name = "PropertyGetter",
-									Description = "The property value.",
-									Request = new InvocationRequest
-									{
-										ControlMessageName = "GetProperty1Request",
-										Description = "",
-										InputParameters =
-										{
-											new InvocationParameter
-											{
-												Name = "input1",
-												ValueDescription = "value"
-											}
-										}
-									},
-									Response = new InvocationResponse
-									{
-										ControlMessageName = "GetProperty1Response",
-										Description = "Return value",
-										OutputParameters =
-										{
-											new InvocationParameter
-											{
-												Name = "Output1",
-												ValueDescription = "value of property"
-											}
-										}
-									}
-								}
-							}
-						});
-						artifactBehavior.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
-						{
-							Description = "",
-							Symbol = new ArtifactSymbol
-							{
-								Tooling = "",
-								Visual = ""
-							}
-						});
-						artifactBehavior.Artifact.Dependencies.Add(new SymbolDependency
-						{
-							Description = "",
-							Symbol = new ArtifactSymbol
-							{
-								Tooling = "",
-								Visual = ""
-							}
-						});
-						artifact.IncompatibleWithSymbols.Add(new ArtifactSymbol());
-						artifactJson = jsf.Format(artifactBehavior);
-						break;
-					case ArtifactType.BehaviorGroup:
-						artifactTypeFolder = "behavior-groups";
-						outputFolder =
-							Directory.CreateDirectory(
-								fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
-						var artifactBehaviorGroup = new BehaviorGroup
-						{
-							Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
-								artifact, "BehaviorGroups")
-						};
-						artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
-						{
-							Tooling = "<i>Symbol1</i>",
-							Visual = "Symbol1"
-						});
-						artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
-						{
-							Tooling = "<i>Symbol2</i>",
-							Visual = "Symbol2"
-						});
-						artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
-						{
-							Tooling = "<i>Symbol3<i>",
-							Visual = "Symbol3"
-						});
-						artifactJson = jsf.Format(artifactBehaviorGroup);
-						break;
-					case ArtifactType.PropertySet:
-						artifactTypeFolder = "property-sets";
-						outputFolder =
-							Directory.CreateDirectory(
-								fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
-						var artifactPropertySet = new PropertySet
-						{
-							Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
-								artifact, "PropertySets"),
-							Properties =
-							{
-								new Property
-								{
-									Name = "Property1",
-									ValueDescription =
-										"This is the property required to be implemented and should be able to contain data of type X.",
-									TemplateValue = "",
-									PropertyInvocations =
-									{
-										new Invocation
-										{
-											Name = "Property1 Getter",
-											Description = "Request the value of the property",
-											Request = new InvocationRequest
-											{
-												ControlMessageName = "GetProperty1Request",
-												Description = "The request"
-											},
-											Response = new InvocationResponse
-											{
-												ControlMessageName = "GetProperty1Response",
-												Description = "The response",
-												OutputParameters =
-												{
-													new InvocationParameter
-													{
-														Name = "Property1.Value",
-														ValueDescription =
-															"Returning the value of the property."
-													}
-												}
-											}
-										},
-										new Invocation
-										{
-											Name = "Property1 Setter",
-											Description =
-												"Set the Value of the Property, note if Roles should be applied to the Setter.",
-											Request = new InvocationRequest
-											{
-												ControlMessageName = "SetProperty1Request",
-												Description = "The request",
-												InputParameters =
-												{
-													new InvocationParameter
-													{
-														Name = "New Value of Property",
-														ValueDescription =
-															"The data to set the property to."
-													}
-												}
-											},
-											Response = new InvocationResponse
-											{
-												ControlMessageName = "SetProperty1Response",
-												Description = "The response",
-												OutputParameters =
-												{
-													new InvocationParameter
-													{
-														Name = "Result, true or false",
-														ValueDescription =
-															"Returning the value of the set request."
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						};
-						artifactPropertySet.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
-						{
-							Description = "",
-							Symbol = new ArtifactSymbol
-							{
-								Tooling = "",
-								Visual = ""
-							}
-						});
-						artifactJson = jsf.Format(artifactPropertySet);
-						break;
-					default:
-						_log.Error("No matching type found for: " + ArtifactType);
-						throw new ArgumentOutOfRangeException();
-				}
-
-				_log.Info("Artifact Destination: " + outputFolder);
-				var formattedJson = JToken.Parse(artifactJson).ToString();
-
-				//test to make sure formattedJson will Deserialize.
-				try
-				{
-					switch (ArtifactType)
-					{
-						case ArtifactType.Base:
-
-							var testBase = JsonParser.Default.Parse<Base>(formattedJson);
-							_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
-							          testBase.Artifact.Name);
-							break;
-						case ArtifactType.Behavior:
-							var testBehavior = JsonParser.Default.Parse<Behavior>(formattedJson);
-							_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
-							          testBehavior.Artifact.Name);
-							break;
-						case ArtifactType.BehaviorGroup:
-							var testBehaviorGroup = JsonParser.Default.Parse<BehaviorGroup>(formattedJson);
-							_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
-							          testBehaviorGroup.Artifact.Name);
-							break;
-						case ArtifactType.PropertySet:
-							var testPropertySet = JsonParser.Default.Parse<PropertySet>(formattedJson);
-							_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
-							          testPropertySet.Artifact.Name);
-							break;
-
-						case ArtifactType.TokenTemplate:
-							break;
-						default:
-							throw new ArgumentOutOfRangeException();
-					}
-				}
-				catch (Exception e)
-				{
-					_log.Error("Json failed to deserialize back into: " + ArtifactType);
-					_log.Error(e);
-					return;
-				}
-
-				_log.Info("Creating Artifact: " + formattedJson);
-				var artifactStream =
-					File.CreateText(outputFolder.FullName + folderSeparator + ArtifactName + ".json");
-				artifactStream.Write(formattedJson);
-				artifactStream.Close();
-
-				_log.Info("Complete");
-			}
-			else
-			{
-				//template mode
-				artifactTypeFolder = "token-templates";
-				string classificationFolder;
-				switch (Classification)
-				{
-					case ClassificationBranch.FractionalFungible:
-						classificationFolder = folderSeparator + "fungible" + folderSeparator + "fractional" + folderSeparator;
-						break;
-					case ClassificationBranch.WholeFungible:
-						classificationFolder = folderSeparator + "fungible" + folderSeparator + "whole" + folderSeparator;
-						break;
-					case ClassificationBranch.FractionalNonFungible:
-						classificationFolder = folderSeparator + "non-fungible" + folderSeparator + "fractional" + folderSeparator;
-						break;
-					case ClassificationBranch.Singleton:
-						classificationFolder = folderSeparator + "non-fungible" + folderSeparator + "singleton" + folderSeparator;
-						break;
-					default:
-						throw new ArgumentOutOfRangeException();
-				}
-				var outputFolder =
-					Directory.CreateDirectory(
-						fullPath + artifactTypeFolder + classificationFolder + ArtifactName + Latest);
-				
-				var (uri, artifactFiles) = AddTemplateFiles(outputFolder, artifactTypeFolder, folderSeparator, "TokenTemplates", classificationFolder);
-				var templateToken = new TokenTemplate
-				{
-					Parent = GetTokenTemplate(fullPath, folderSeparator),
-					ControlUri = uri,
-					ArtifactFiles = { artifactFiles }
-				};
-				
-				if (BaseType == TokenType.HybridFungibleRoot | BaseType == TokenType.HybridNonFungibleRoot | BaseType == TokenType.HybridFungibleRootHybridChildren | BaseType == TokenType.HybridNonFungibleRootHybridChildren)
-				{
-					templateToken.ChildTokens.Add(GetTokenTemplate(fullPath, folderSeparator));
-				}
-				
-				var artifactJson = jsf.Format(templateToken);
-				var formattedJson = JToken.Parse(artifactJson).ToString();
-				
-				try
-				{
-					var testTemplate = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
-					_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
-					          testTemplate.Parent.Name);
-				}
-				catch (Exception e)
-				{
-					_log.Error("Json failed to deserialize back into: " + ArtifactType);
-					_log.Error(e);
-					return;
-				}
-
-				_log.Info("Creating Template: " + formattedJson);
-				var artifactStream =
-					File.CreateText(outputFolder.FullName + folderSeparator + ArtifactName + ".json");
-				artifactStream.Write(formattedJson);
-				artifactStream.Close();
-
-				_log.Info("Complete");
-			}
-		}
-
-		private static TemplateToken GetTokenTemplate(string fullPath, string folderSeparator)
-		{
-			return new TemplateToken
-			{
-				Formula = new ArtifactSymbol
+				Name = ArtifactName,
+				ArtifactSymbol = new ArtifactSymbol
 				{
 					Id = Guid.NewGuid().ToString(),
 					Type = ArtifactType,
@@ -680,58 +197,569 @@ namespace ArtifactGenerator
 					Visual = "",
 					Version = "1.0"
 				},
-				Definition = AddDefinition(),
-				Base = GetTokenTypeBase(fullPath, folderSeparator),
-				Behaviors =
+				ArtifactDefinition = new ArtifactDefinition
 				{
-					new TemplateBehavior
+					BusinessDescription = "This is a " + ArtifactName + " of type: " + ArtifactType,
+					BusinessExample = "",
+					Comments = "",
+					Analogies =
 					{
-						ImplementationDetails = "",
-						Behavior = new Behavior(),
-						Symbol = new ArtifactSymbol
+						new ArtifactAnalogy
 						{
-							Type = ArtifactType.Behavior
+							Name = "Analogy 1",
+							Description = ArtifactName + " analogy 1 description"
 						}
 					}
 				},
-				BehaviorGroups =
+				Maps = new Maps
 				{
-					new TemplateBehaviorGroup
+					CodeReferences =
 					{
-						BehaviorGroup = new BehaviorGroup(),
-						ImplementationDetails = "",
-						Symbol = new ArtifactSymbol
+						new MapReference
 						{
-							Type = ArtifactType.BehaviorGroup
+							MappingType = MappingType.SourceCode,
+							Name = "Code 1",
+							Platform = TargetPlatform.Daml,
+							ReferencePath = ""
+						}
+					},
+					ImplementationReferences =
+					{
+						new MapReference
+						{
+							MappingType = MappingType.Implementation,
+							Name = "Implementation 1",
+							Platform = TargetPlatform.ChaincodeGo,
+							ReferencePath = ""
+						}
+					},
+					Resources =
+					{
+						new MapResourceReference
+						{
+							MappingType = MappingType.Resource,
+							Name = "Regulation Reference 1",
+							Description = "",
+							ResourcePath = ""
 						}
 					}
 				},
-				PropertySets =
+				IncompatibleWithSymbols =
 				{
-					new TemplatePropertySet
+					new ArtifactSymbol
 					{
-						PropertySet = new PropertySet(),
-						ImplementationDetails = "",
-						Symbol = new ArtifactSymbol
-						{
-							Type = ArtifactType.PropertySet
-						}
+						Type = ArtifactType,
+						Tooling = "",
+						Visual = ""
 					}
-				}
-			};
-		}
+				},
+				Dependencies =
+				{
+					new SymbolDependency
+					{
+						Description = "",
+						Symbol = new ArtifactSymbol()
+					}
+				},
+				Aliases = {"alias1", "alias2"}
 
+			};
+
+			switch (ArtifactType)
+			{
+				case ArtifactType.Base:
+					artifactTypeFolder = "base";
+					outputFolder =
+						Directory.CreateDirectory(
+							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
+					var artifactBase = new Base
+					{
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+							artifact, "Base"),
+						TokenType = BaseType
+					};
+					artifactBase.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
+					{
+						Description =
+							"Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+						Symbol = new ArtifactSymbol
+						{
+
+							Id = "d5807a8e-879b-4885-95fa-f09ba2a22172",
+							Type = ArtifactType.Behavior,
+							Tooling = "~d",
+							Visual = "<i>~d</i>",
+							Version = ""
+						}
+					});
+					artifactBase.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
+					{
+						Description =
+							"Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is sub-dividable, the decimals value should be greater than 0.",
+						Symbol = new ArtifactSymbol
+						{
+							Id = "6e3501dc-5800-4c71-b59e-ad11418a998c",
+							Type = ArtifactType.Behavior,
+							Tooling = "d",
+							Visual = "<i>d</i>",
+							Version = ""
+						}
+					});
+					artifactBase.TokenType = BaseType;
+					artifactJson = jsf.Format(artifactBase);
+					break;
+				case ArtifactType.Behavior:
+					artifactTypeFolder = "behaviors";
+					outputFolder =
+						Directory.CreateDirectory(
+							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
+					var artifactBehavior = new Behavior
+					{
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+							artifact, "Behaviors"),
+						Invocations =
+						{
+							new Invocation
+							{
+								Name = "InvocationRequest1",
+								Description =
+									"Describe the what the this invocation triggers in the behavior",
+								Request = new InvocationRequest
+								{
+									ControlMessageName = "InvocationRequest",
+									Description = "The request",
+									InputParameters =
+									{
+										new InvocationParameter
+										{
+											Name = "Input Parameter 1",
+											ValueDescription =
+												"Contains some input data required for the invocation to work."
+										}
+									}
+								},
+								Response = new InvocationResponse
+								{
+									ControlMessageName = "InvocationResponse",
+									Description = "The response",
+									OutputParameters =
+									{
+										new InvocationParameter
+										{
+											Name = "Output Parameter 1",
+											ValueDescription =
+												"One of the values that the invocation should return."
+										}
+									}
+								}
+							}
+						}
+					};
+					artifactBehavior.Properties.Add(new Property
+					{
+						Name = "Property1",
+						ValueDescription = "Some Value",
+						TemplateValue = "",
+						PropertyInvocations =
+						{
+							new Invocation
+							{
+								Name = "PropertyGetter",
+								Description = "The property value.",
+								Request = new InvocationRequest
+								{
+									ControlMessageName = "GetProperty1Request",
+									Description = "",
+									InputParameters =
+									{
+										new InvocationParameter
+										{
+											Name = "input1",
+											ValueDescription = "value"
+										}
+									}
+								},
+								Response = new InvocationResponse
+								{
+									ControlMessageName = "GetProperty1Response",
+									Description = "Return value",
+									OutputParameters =
+									{
+										new InvocationParameter
+										{
+											Name = "Output1",
+											ValueDescription = "value of property"
+										}
+									}
+								}
+							}
+						}
+					});
+					artifactBehavior.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
+					{
+						Description = "",
+						Symbol = new ArtifactSymbol
+						{
+							Tooling = "",
+							Visual = ""
+						}
+					});
+					artifactBehavior.Artifact.Dependencies.Add(new SymbolDependency
+					{
+						Description = "",
+						Symbol = new ArtifactSymbol
+						{
+							Tooling = "",
+							Visual = ""
+						}
+					});
+					artifact.IncompatibleWithSymbols.Add(new ArtifactSymbol());
+					artifactJson = jsf.Format(artifactBehavior);
+					break;
+				case ArtifactType.BehaviorGroup:
+					artifactTypeFolder = "behavior-groups";
+					outputFolder =
+						Directory.CreateDirectory(
+							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
+					var artifactBehaviorGroup = new BehaviorGroup
+					{
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+							artifact, "BehaviorGroups")
+					};
+					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
+					{
+						Tooling = "<i>Symbol1</i>",
+						Visual = "Symbol1"
+					});
+					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
+					{
+						Tooling = "<i>Symbol2</i>",
+						Visual = "Symbol2"
+					});
+					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
+					{
+						Tooling = "<i>Symbol3<i>",
+						Visual = "Symbol3"
+					});
+					artifactJson = jsf.Format(artifactBehaviorGroup);
+					break;
+				case ArtifactType.PropertySet:
+					artifactTypeFolder = "property-sets";
+					outputFolder =
+						Directory.CreateDirectory(
+							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
+					var artifactPropertySet = new PropertySet
+					{
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+							artifact, "PropertySets"),
+						Properties =
+						{
+							new Property
+							{
+								Name = "Property1",
+								ValueDescription =
+									"This is the property required to be implemented and should be able to contain data of type X.",
+								TemplateValue = "",
+								PropertyInvocations =
+								{
+									new Invocation
+									{
+										Name = "Property1 Getter",
+										Description = "Request the value of the property",
+										Request = new InvocationRequest
+										{
+											ControlMessageName = "GetProperty1Request",
+											Description = "The request"
+										},
+										Response = new InvocationResponse
+										{
+											ControlMessageName = "GetProperty1Response",
+											Description = "The response",
+											OutputParameters =
+											{
+												new InvocationParameter
+												{
+													Name = "Property1.Value",
+													ValueDescription =
+														"Returning the value of the property."
+												}
+											}
+										}
+									},
+									new Invocation
+									{
+										Name = "Property1 Setter",
+										Description =
+											"Set the Value of the Property, note if Roles should be applied to the Setter.",
+										Request = new InvocationRequest
+										{
+											ControlMessageName = "SetProperty1Request",
+											Description = "The request",
+											InputParameters =
+											{
+												new InvocationParameter
+												{
+													Name = "New Value of Property",
+													ValueDescription =
+														"The data to set the property to."
+												}
+											}
+										},
+										Response = new InvocationResponse
+										{
+											ControlMessageName = "SetProperty1Response",
+											Description = "The response",
+											OutputParameters =
+											{
+												new InvocationParameter
+												{
+													Name = "Result, true or false",
+													ValueDescription =
+														"Returning the value of the set request."
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					};
+					artifactPropertySet.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
+					{
+						Description = "",
+						Symbol = new ArtifactSymbol
+						{
+							Tooling = "",
+							Visual = ""
+						}
+					});
+					artifactJson = jsf.Format(artifactPropertySet);
+					break;
+				case ArtifactType.TokenTemplate:
+					var formula = GenerateFormula();
+					artifactTypeFolder = "token-templates";
+
+					outputFolder =
+						Directory.CreateDirectory(
+							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
+					
+					
+					
+					var templateToken = new TokenTemplate
+					{
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+							artifact, "TokenTemplates"),
+						Base = GetTemplateBase(fullPath, folderSeparator),
+						Classification = GetClassification(),
+						Behaviors =
+						{
+							new TemplateBehavior
+							{
+								Behavior = new ArtifactSymbol
+								{
+									Type = ArtifactType.Behavior
+								}
+							}
+						},
+						BehaviorGroups =
+						{
+							new TemplateBehaviorGroup
+							{
+								BehaviorGroup =  new ArtifactSymbol
+								{
+									Type = ArtifactType.BehaviorGroup
+								}
+							}
+						},
+						PropertySets =
+						{
+							new TemplatePropertySet
+							{
+								PropertySet = new ArtifactSymbol
+								{
+									Type = ArtifactType.PropertySet
+								}
+							}
+						}
+					};
+					
+					switch (BaseType)
+					{
+						case TokenType.Fungible:
+							templateToken.SingleToken = formula.SingleToken;
+							break;
+						case TokenType.NonFungible:
+							templateToken.SingleToken = formula.SingleToken;
+							break;
+						case TokenType.HybridFungibleBase:
+							templateToken.Hybrid = formula.Hybrid;
+							break;
+						case TokenType.HybridNonFungibleBase:
+							templateToken.Hybrid = formula.Hybrid;
+							break;
+						case TokenType.HybridFungibleBaseHybridChildren:
+							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
+							break;
+						case TokenType.HybridNonFungibleBaseHybridChildren:
+							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
+							break;
+						default:
+							throw new ArgumentOutOfRangeException();
+					}
+					
+					if (BaseType == TokenType.HybridFungibleBase | BaseType == TokenType.HybridNonFungibleBase |
+					    BaseType == TokenType.HybridFungibleBaseHybridChildren |
+					    BaseType == TokenType.HybridNonFungibleBaseHybridChildren)
+					{
+						templateToken.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
+					}
+
+					artifactJson = jsf.Format(templateToken);
+					break;
+				case ArtifactType.TokenDefinition:
+
+					artifactTypeFolder = "token-definitions";
+					outputFolder =
+						Directory.CreateDirectory(
+							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
+
+					var templateBase = GetParentTemplate(fullPath, folderSeparator);
+					var tokenDefinition = new TokenDefinition
+					{
+						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+							artifact, "TokenDefinitions"),
+						Base = new BaseReference
+						{
+							ConstructorName = "Constructor",
+							Decimals = 2,
+							Name = ArtifactName,
+							Reference = new ArtifactReference
+							{
+								Id = templateBase.Base.Id,
+								ReferenceNotes = "Notes about this token definition.",
+								Type = ArtifactType.TokenDefinition,
+								Values = new ArtifactReferenceValues
+								{
+									ControlUri = "a uri path",
+									Maps = new Maps
+									{
+										ImplementationReferences = { new MapReference
+										{
+											MappingType = MappingType.Implementation,
+											Name = "Token Implementation",
+											Platform = TargetPlatform.EthereumSolidity,
+											ReferencePath = "path"
+										}}
+									}
+								}
+							}
+						}
+					};
+					
+											
+					
+					foreach(var b in templateBasef)
+						
+					switch (BaseType)
+					{
+						case TokenType.Fungible:
+							templateToken.SingleToken = formula.SingleToken;
+							break;
+						case TokenType.NonFungible:
+							templateToken.SingleToken = formula.SingleToken;
+							break;
+						case TokenType.HybridFungibleBase:
+							templateToken.Hybrid = formula.Hybrid;
+							break;
+						case TokenType.HybridNonFungibleBase:
+							templateToken.Hybrid = formula.Hybrid;
+							break;
+						case TokenType.HybridFungibleBaseHybridChildren:
+							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
+							break;
+						case TokenType.HybridNonFungibleBaseHybridChildren:
+							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
+							break;
+						default:
+							throw new ArgumentOutOfRangeException();
+					}
+					
+					if (BaseType == TokenType.HybridFungibleBase | BaseType == TokenType.HybridNonFungibleBase |
+					    BaseType == TokenType.HybridFungibleBaseHybridChildren |
+					    BaseType == TokenType.HybridNonFungibleBaseHybridChildren)
+					{
+						templateToken.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
+					}
+
+					artifactJson = jsf.Format(templateToken);
+					artifactJson = "";
+					break;
+				default:
+					_log.Error("No matching type found for: " + ArtifactType);
+					throw new ArgumentOutOfRangeException();
+			}
+
+			_log.Info("Artifact Destination: " + outputFolder);
+			var formattedJson = JToken.Parse(artifactJson).ToString();
+
+			//test to make sure formattedJson will Deserialize.
+			try
+			{
+				switch (ArtifactType)
+				{
+					case ArtifactType.Base:
+
+						var testBase = JsonParser.Default.Parse<Base>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testBase.Artifact.Name);
+						break;
+					case ArtifactType.Behavior:
+						var testBehavior = JsonParser.Default.Parse<Behavior>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testBehavior.Artifact.Name);
+						break;
+					case ArtifactType.BehaviorGroup:
+						var testBehaviorGroup = JsonParser.Default.Parse<BehaviorGroup>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testBehaviorGroup.Artifact.Name);
+						break;
+					case ArtifactType.PropertySet:
+						var testPropertySet = JsonParser.Default.Parse<PropertySet>(formattedJson);
+						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
+						          testPropertySet.Artifact.Name);
+						break;
+					case ArtifactType.TokenTemplate:
+						break;
+					case ArtifactType.TokenDefinition:
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
+			}
+			catch (Exception e)
+			{
+				_log.Error("Json failed to deserialize back into: " + ArtifactType);
+				_log.Error(e);
+				return;
+			}
+
+			_log.Info("Creating Artifact: " + formattedJson);
+			var artifactStream =
+				File.CreateText(outputFolder.FullName + folderSeparator + ArtifactName + ".json");
+			artifactStream.Write(formattedJson);
+			artifactStream.Close();
+
+			_log.Info("Complete");
+		}
+		
 		private static FormulaGrammar GenerateFormula()
 		{
 			var formula = new FormulaGrammar();
 
-			var singleToken = new SingleToken
+			var singleToken = new SingleTokenGrammar
 			{
-				ClassificationBranch = ClassificationBranch.WholeFungible,
-				BaseToken = new TokenBase
-				{
-					ArtifactSymbol = new ArtifactSymbol()
-				},
+				
+				BaseToken = new ArtifactSymbol(),
 				Behaviors = new BehaviorList
 				{
 					ListStart = "{",
@@ -757,7 +785,7 @@ namespace ArtifactGenerator
 
 			formula.SingleToken = singleToken;
 
-			var hybrid = new HybridTokenFormula
+			var hybrid = new HybridTokenGrammar
 			{
 				ChildrenStart = "(",
 				ChildrenEnd = ")",
@@ -768,7 +796,7 @@ namespace ArtifactGenerator
 
 			formula.Hybrid = hybrid;
 			
-			var hybridHybrids = new HybridTokenWithHybridChildrenFormula
+			var hybridHybrids = new HybridTokenWithHybridChildrenGrammar
 			{
 				HybridChildrenStart = "(",
 				HybridChildrenEnd = ")",
@@ -780,8 +808,8 @@ namespace ArtifactGenerator
 			
 			return formula;
 		}
-
-		private static Base GetTokenTypeBase(string fullPath,  string folderSeparator)
+		
+		private static TemplateBase GetTemplateBase(string fullPath, string folderSeparator)
 		{
 			string baseName;
 			const string typeFolder = "base";
@@ -794,17 +822,17 @@ namespace ArtifactGenerator
 				case TokenType.NonFungible:
 					baseName = "non-fungible";
 					break;
-				case TokenType.HybridFungibleRoot:
-					baseName = "hybrid-fungibleRoot";
+				case TokenType.HybridFungibleBase:
+					baseName = "hybrid-fungibleBase";
 					break;
-				case TokenType.HybridNonFungibleRoot:
-					baseName = "hybrid-non-fungibleRoot";
+				case TokenType.HybridNonFungibleBase:
+					baseName = "hybrid-non-fungibleBase";
 					break;
-				case TokenType.HybridFungibleRootHybridChildren:
-					baseName = "hybrid-non-fungibleRoot-hybridChildren";
+				case TokenType.HybridFungibleBaseHybridChildren:
+					baseName = "hybrid-non-fungibleBase-hybridChildren";
 					break;
-				case TokenType.HybridNonFungibleRootHybridChildren:
-					baseName = "hybrid-non-fungibleRoot-hybridChildren";
+				case TokenType.HybridNonFungibleBaseHybridChildren:
+					baseName = "hybrid-non-fungibleBase-hybridChildren";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -813,81 +841,90 @@ namespace ArtifactGenerator
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
 			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
-			
-			//setting classification
-			var classified = SetClassification(baseType);
-
-			return classified;
-		}
-
-		private static Base SetClassification(Base baseToken)
-		{
-			var cloneBase = baseToken.Clone();
-
-			var artifactSymbol = new ArtifactSymbol
+			return new TemplateBase
 			{
-				Type = ArtifactType.Base
+				Base = baseType.Artifact.ArtifactSymbol
 			};
+		}
+		
+		private static Base GetTokenTypeBase(string fullPath, string folderSeparator)
+		{
+			string baseName;
+			const string typeFolder = "base";
+			
+			switch (BaseType)
+			{
+				case TokenType.Fungible:
+					baseName = "fungible";
+					break;
+				case TokenType.NonFungible:
+					baseName = "non-fungible";
+					break;
+				case TokenType.HybridFungibleBase:
+					baseName = "hybrid-fungibleBase";
+					break;
+				case TokenType.HybridNonFungibleBase:
+					baseName = "hybrid-non-fungibleBase";
+					break;
+				case TokenType.HybridFungibleBaseHybridChildren:
+					baseName = "hybrid-non-fungibleBase-hybridChildren";
+					break;
+				case TokenType.HybridNonFungibleBaseHybridChildren:
+					baseName = "hybrid-non-fungibleBase-hybridChildren";
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + Latest + folderSeparator + baseName+".json");
+			var json = baseFile.ReadToEnd();
+			var formattedJson = JToken.Parse(json).ToString();
+			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
+			return baseType;
+		}
+		
+		private static Classification GetClassification()
+		{
+			var classification = new Classification();
 			switch (BaseType)
 			{
 
 				case TokenType.Fungible:
-					artifactSymbol.Tooling = "tF";
-					artifactSymbol.Visual = "&tau;<sub>F</sub>";
+					classification.Branch = ClassificationBranch.Fractional;
+					classification.TokenType = TokenType.Fungible;
 					break;
 				case TokenType.NonFungible:
-					artifactSymbol.Tooling = "tN";
-					artifactSymbol.Visual = "&tau;<sub>N</sub>";
+					classification.Branch = ClassificationBranch.Singleton;
+					classification.TokenType = TokenType.NonFungible;
 					break;
-				case TokenType.HybridFungibleRoot:
-					artifactSymbol.Tooling = "tF()";
-					artifactSymbol.Visual = "&tau;<sub>F</sub>()";
+				case TokenType.HybridFungibleBase:
+					classification.Branch = ClassificationBranch.Fractional;
+					classification.TokenType = TokenType.Fungible;
 					break;
-				case TokenType.HybridNonFungibleRoot:
-					artifactSymbol.Tooling = "tN()";
-					artifactSymbol.Visual = "&tau;<sub>N</sub>()";
+				case TokenType.HybridNonFungibleBase:
+					classification.Branch = ClassificationBranch.Whole;
+					classification.TokenType = TokenType.NonFungible;
 					break;
-				case TokenType.HybridFungibleRootHybridChildren:
-					artifactSymbol.Tooling = "tF(t())";
-					artifactSymbol.Visual = "&tau;<sub>F</sub>(t())";
+				case TokenType.HybridFungibleBaseHybridChildren:
+					classification.Branch = ClassificationBranch.Whole;
+					classification.TokenType = TokenType.Fungible;
 					break;
-				case TokenType.HybridNonFungibleRootHybridChildren:
-					artifactSymbol.Tooling = "tN(t())";
-					artifactSymbol.Visual = "&tau;<sub>N</sub>(t())";
-					break;
-				default:
-					throw new ArgumentOutOfRangeException();
-			}
-
-			switch (baseToken.TokenFormulaCase)
-			{
-				case Base.TokenFormulaOneofCase.SingleToken:
-					cloneBase.SingleToken.ClassificationBranch = Classification;
-					cloneBase.SingleToken.Behaviors = GetDividable(baseToken.SingleToken.Behaviors);
-					break;
-				case Base.TokenFormulaOneofCase.Hybrid:
-					cloneBase.Hybrid.Parent.ClassificationBranch = Classification;
-					cloneBase.Hybrid.Parent.Behaviors = GetDividable(baseToken.SingleToken.Behaviors);
-					break;
-				case Base.TokenFormulaOneofCase.HybridWithHybrids:
-					cloneBase.HybridWithHybrids.Parent.ClassificationBranch = Classification;
-					cloneBase.HybridWithHybrids.Parent.Behaviors = GetDividable(baseToken.SingleToken.Behaviors);
-					break;
-				case Base.TokenFormulaOneofCase.None:
+				case TokenType.HybridNonFungibleBaseHybridChildren:
+					classification.Branch = ClassificationBranch.Whole;
+					classification.TokenType = TokenType.NonFungible;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
 
-			return cloneBase;
+			return classification;
 		}
-
+		
 		private static BehaviorList GetDividable(BehaviorList list)
 		{
 			var retVal = list.Clone();
 			retVal.BehaviorSymbols.Clear();
 			if (Classification == ClassificationBranch.Singleton ||
-			    Classification == ClassificationBranch.WholeFungible)
+			    Classification == ClassificationBranch.Whole)
 			{
 				retVal.BehaviorSymbols.Add(new ArtifactSymbol
 				{
@@ -905,29 +942,7 @@ namespace ArtifactGenerator
 
 			return retVal;
 		}
-
-		//for templates only
-		private static ArtifactDefinition AddDefinition()
-		{
-			
-			return new ArtifactDefinition
-			{
-				BusinessDescription = "Template Token Description",
-				BusinessExample = "Template Token Example",
-				Comments = "template comments"
-			};
-			
-		}
-
-
-		private static (string, IEnumerable<ArtifactFile>) AddTemplateFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, string nameSpaceAdd, string classification)
-		{
-			var md = CreateMarkdown(outputFolder, folderSeparator);
-			var proto = CreateProto(outputFolder, folderSeparator, nameSpaceAdd);
-			var files = new List<ArtifactFile> {proto, md};
-			return (ArtifactPath + folderSeparator + typeFolder + classification + ArtifactName + Latest +
-			        folderSeparator + proto.FileName, files);
-		}
+		
 
 		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, Artifact parent, string nameSpaceAdd)
 		{
@@ -936,7 +951,6 @@ namespace ArtifactGenerator
 			var retArtifact = parent.Clone();
 			
 			retArtifact.ArtifactFiles.Add(proto);
-			retArtifact.ControlUri = ArtifactPath + folderSeparator + typeFolder + folderSeparator + ArtifactName + Latest + folderSeparator + proto.FileName;
 			retArtifact.ArtifactFiles.Add(md);
 			return retArtifact;
 		}
@@ -988,6 +1002,9 @@ namespace ArtifactGenerator
 				Content = ArtifactContent.Control
 			};
 		}
-		
 	}
 }
+
+	
+
+	

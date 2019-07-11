@@ -10,7 +10,10 @@ option java_multiple_files = true;
 enum TokenType {
     FUNGIBLE = 0;
     NON_FUNGIBLE = 1;
-    HYBRID = 2;
+    HYBRID_FUNGIBLE_BASE = 2;
+    HYBRID_NON_FUNGIBLE_BASE = 3;
+    HYBRID_FUNGIBLE_BASE_HYBRID_CHILDREN = 4;
+    HYBRID_NON_FUNGIBLE_BASE_HYBRID_CHILDREN = 5;
 }
 
 //classification for Templates, parent and any child tokens. 
@@ -20,12 +23,18 @@ enum ClassificationBranch{
     SINGLETON = 2; //tN{~s}
 }
 
+message Classification{
+    TokenType token_type = 1;
+    ClassificationBranch branch = 2;
+}
+
 enum ArtifactType{
     BASE = 0; //from core.Type
     BEHAVIOR = 1; 
     BEHAVIOR_GROUP = 2;
     PROPERTY_SET = 3;
-    TOKEN_TEMPLATE = 4; //technically, this does not have an artifact data property.
+    TOKEN_TEMPLATE = 4; 
+    TOKEN_DEFINITION = 5;
 }
 
 enum ArtifactContent {
@@ -50,19 +59,6 @@ enum TargetPlatform{
     DAML = 5;
 }
 
-//contains artifact metadata structure
-message Artifact {
-    ArtifactSymbol artifact_symbol = 1;
-    string name = 2;
-    repeated string aliases = 3;
-    string control_uri = 4;
-    ArtifactDefinition artifact_definition = 5; //Base, Behavior or Behavior group type indicated by ArtifactType
-    repeated SymbolDependency dependencies = 6; //Typically used for a behavior that has a dependency on a property-set.
-    repeated ArtifactSymbol incompatible_with_symbols = 7; //for behaviors that have opposites, or if another behavior or property-set
-    repeated SymbolInfluence influenced_by_symbols = 8;
-    repeated ArtifactFile artifact_files = 9; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
-    Maps maps = 10;
-}
 
 message ArtifactSymbol{
     string id = 1;
@@ -73,15 +69,37 @@ message ArtifactSymbol{
     bool template_validated = 6; //for templates only
 }
 
+//contains artifact metadata structure
+message Artifact {
+    ArtifactSymbol artifact_symbol = 1;
+    string name = 2;
+    repeated string aliases = 3;
+    ArtifactDefinition artifact_definition = 4; //Base, Behavior or Behavior group type indicated by ArtifactType
+    repeated SymbolDependency dependencies = 5; //Typically used for a behavior that has a dependency on a property-set.
+    repeated ArtifactSymbol incompatible_with_symbols = 6; //for behaviors that have opposites, or if another behavior or property-set
+    repeated SymbolInfluence influenced_by_symbols = 7;
+    repeated ArtifactFile artifact_files = 8; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    Maps maps = 9; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
+}
+
+message ArtifactReferenceValues{
+    string control_uri = 1;
+    repeated ArtifactFile artifact_files = 2; //loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    Maps maps = 3;
+}
+
 //a reference to another artifact, either TemplateBranch to TemplateBranch, or ArtifactInstance to Artifact.
 message ArtifactReference{
     string id = 1; 
     ArtifactType type = 2;
+    string reference_notes = 3;
+    ArtifactReferenceValues values = 4;
 }
 
 message SymbolInfluence{
     string description = 1; //describe how the symbol influences this artifact, like non-sub-dividable or delegable.
     ArtifactSymbol symbol = 2;
+    repeated ArtifactSymbol applies_to = 3; //list of behaviors or property-sets that are influenced by this symbol.
 }
 
 message SymbolDependency{
@@ -134,7 +152,6 @@ message MapResourceReference{
 }
 
 //Commands
-
 message NewArtifactRequest{
     ArtifactType type = 1;
     google.protobuf.Any artifact = 2;
@@ -165,37 +182,32 @@ message DeleteArtifactResponse{
 }
 
 message FormulaGrammar{
-    SingleToken single_token = 1;
-    HybridTokenFormula hybrid = 2;
-    HybridTokenWithHybridChildrenFormula hybrid_with_hybrids = 3;
+    SingleTokenGrammar single_token = 1;
+    HybridTokenGrammar hybrid = 2;
+    HybridTokenWithHybridChildrenGrammar hybrid_with_hybrids = 3;
 }
 
-message HybridTokenFormula{
-    SingleToken parent = 1;
+message HybridTokenGrammar{
+    SingleTokenGrammar parent = 1;
     string children_start = 2; // "("
-    repeated SingleToken child_tokens = 3;
+    repeated SingleTokenGrammar child_tokens = 3;
     string children_end = 4; // ")"
 }
 
-message HybridTokenWithHybridChildrenFormula{
-    SingleToken parent = 1;
+message HybridTokenWithHybridChildrenGrammar{
+    SingleTokenGrammar parent = 1;
     string hybrid_children_start = 2; // "("
-    repeated HybridTokenFormula hybrid_child_tokens = 3;
+    repeated HybridTokenGrammar hybrid_child_tokens = 3;
     string hybrid_children_end = 4; // ")"
 }
 
 //outermost grouping container for the formula for a whole template either a parent or hybrid child.
-message SingleToken{
-    ClassificationBranch classification_branch = 1; //the TOM uses this as the first input for building and validating the Template Formula. 
+message SingleTokenGrammar{
     string group_start = 2; // "["
-    TokenBase base_token = 3;
+    ArtifactSymbol base_token = 3;
     BehaviorList behaviors = 4;
     repeated PropertySetListItem property_sets = 5;
     string group_end = 6; // "]"
-}
-
-message TokenBase{
-    ArtifactSymbol artifact_symbol = 1;//deserialize based on type
 }
 
 message BehaviorList{
@@ -207,10 +219,6 @@ message BehaviorList{
 message PropertySetListItem{
     string list_start = 1; // "+"
     ArtifactSymbol property_set_symbols = 2; // starts with ph followed by Camel case name or symbol.
-}
-
-message TaxonomyFormula{
-    string formula = 1;
 }
 
 message CommitUpdatesRequest{

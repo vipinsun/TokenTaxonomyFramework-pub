@@ -335,11 +335,14 @@ Now we can begin naming and describing tokens starting with the base type follow
 
 ![TokenArtifact](images/definitionFromTemplate.png)
 
+A template can have multiple definitions, for example a Fractional Fungible template may `hard code` a number of decimal places for subdivision, while another allows that to be a deployment decision.
+
+![DefinitionToTemplate](images/definitionToTemplate.png)
+
 ## Classification Hierarchy
 
 Using the taxonomy, we can now start to construct basic hierarchical relationships creating a token tree structure.  Using the underlying taxonomy, tools can create visualizations for learning and comparing tokens and their implementations.  The tools become a great design services to define new tokens by composing them from the base token types and adding behavior artifacts and groups.
-
-The root of the tree is a common base token or **&tau;** which has an owner Id, name, symbol, quantity and decimals property.
+The root of the tree is a common base token or **&tau;** which has an owner Id, name, quantity and decimals property.
 
 ![Base Token](images/baseToken.png)
 
