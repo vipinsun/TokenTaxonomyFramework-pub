@@ -1,0 +1,170 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "id": "4c2730f5-dc5f-4949-87e3-71f3a6e6cae9",
+      "type": "TOKEN_TEMPLATE",
+      "visual": "",
+      "tooling": "[tN{~d,t,s,e,b}+phFile]",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "Document Token",
+    "aliases": [
+      "File",
+      "Invoice",
+      "PDF"
+    ],
+    "definition": {
+      "businessDescription": "Used to represent a document that may be a scanned or PDF printed document. It records the document hash to check for tampering, a file path to fetch the file from storage as well as the ability to be encumbered. Implements the File property-set.",
+      "businessExample": "For example: you may choose to create an invoice token from an invoice document.  You can then allow another token or contract representing a loan or proof of financing to encumber the document establishing a link between the two.",
+      "analogies": [
+        {
+          "name": "Scanned Document",
+          "description": "A scanned copy of a certificate, like a diploma or industry certification",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "Document.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "Document.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Code 1",
+          "platform": "DAML",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Implementation 1",
+          "platform": "CHAINCODE_GO",
+          "referencePath": "",
+          "maps": null
+        }
+      ],
+      "resources": [
+        {
+          "mappingType": "RESOURCE",
+          "name": "Regulation Reference 1",
+          "description": "",
+          "resourcePath": "",
+          "maps": null
+        }
+      ],
+      "artifact": null
+    }
+  },
+  "parentReference": null,
+  "singleToken": {
+    "groupStart": "[",
+    "baseToken": {
+      "id": "",
+      "type": "BASE",
+      "visual": "",
+      "tooling": "",
+      "version": "",
+      "templateValidated": false
+    },
+    "behaviors": {
+      "listStart": "{",
+      "behaviorSymbols": [
+        {
+          "id": "",
+          "type": "BEHAVIOR",
+          "visual": "",
+          "tooling": "",
+          "version": "",
+          "templateValidated": false
+        }
+      ],
+      "listEnd": "}"
+    },
+    "propertySets": [
+      {
+        "listStart": "+",
+        "propertySetSymbols": {
+          "id": "",
+          "type": "PROPERTY_SET",
+          "visual": "",
+          "tooling": "",
+          "version": "",
+          "templateValidated": false
+        }
+      }
+    ],
+    "groupEnd": "]"
+  },
+  "classification": {
+    "tokenType": "NON-FUNGIBLE",
+    "branch": "SINGLETON"
+  },
+  "base": {
+    "base": {
+      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "type": "BASE",
+      "visual": "&tau;<sub>F</sub>",
+      "tooling": "tF",
+      "version": "1.0",
+      "templateValidated": true
+    }
+  },
+  "behaviors": [
+    {
+      "behavior": {
+        "id": "",
+        "type": "BEHAVIOR",
+        "visual": "",
+        "tooling": "",
+        "version": "",
+        "templateValidated": false
+      }
+    }
+  ],
+  "behaviorGroups": [
+    {
+      "behaviorGroup": {
+        "id": "",
+        "type": "BEHAVIOR_GROUP",
+        "visual": "",
+        "tooling": "",
+        "version": "",
+        "templateValidated": false
+      }
+    }
+  ],
+  "propertySets": [
+    {
+      "propertySet": {
+        "id": "",
+        "type": "PROPERTY_SET",
+        "visual": "",
+        "tooling": "",
+        "version": "",
+        "templateValidated": false
+      }
+    }
+  ],
+  "childTokens": []
+}
+  

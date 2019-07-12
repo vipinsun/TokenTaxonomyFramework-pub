@@ -21,7 +21,7 @@
       "visual": "",
       "tooling": "",
       "version": "1.0",
-      "validated": false
+      "templateValidated": false
     },
     "name": "",
     "definition": {
@@ -39,7 +39,7 @@
           "visual": "&tau;<sub>F</sub>",
           "tooling": "tF",
           "version": "1.0",
-          "validated": true
+          "templateValidated": true
         },
         "name": "Fungible",
         "aliases": [
@@ -70,7 +70,7 @@
               "visual": "&tau",
               "tooling": "t",
               "version": "1.0",
-              "validated": true
+              "templateValidated": true
             }
           }
         ],
@@ -132,7 +132,7 @@
             "visual": "&tau;<sub>F</sub>",
             "tooling": "tF",
             "version": "",
-            "validated": false
+            "templateValidated": false
           }
         },
         "behaviors": {
@@ -144,7 +144,7 @@
               "visual": "",
               "tooling": "d",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           ],
           "listEnd": "}"
@@ -158,7 +158,7 @@
               "visual": "",
               "tooling": "",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           }
         ],
@@ -182,7 +182,7 @@
           "visual": "",
           "tooling": "",
           "version": "",
-          "validated": false
+          "templateValidated": false
         },
         "implementationDetails": "",
         "behavior": {
@@ -203,7 +203,7 @@
           "visual": "",
           "tooling": "",
           "version": "",
-          "validated": false
+          "templateValidated": false
         },
         "implementationDetails": "",
         "behaviorGroup": {
@@ -221,7 +221,7 @@
           "visual": "",
           "tooling": "",
           "version": "",
-          "validated": false
+          "templateValidated": false
         },
         "implementationDetails": "",
         "propertySet": {

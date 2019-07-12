@@ -1,1 +1,0 @@
-# Log a TTF TokenTemplate

@@ -6,14 +6,13 @@
       "visual": "&tau<sub>N</sub>",
       "tooling": "tN",
       "version": "1.0",
-      "validated": true
+      "templateValidated": true
     },
     "name": "Non-Fungible Token",
     "aliases": [
       "Title",
       "Deed"
     ],
-    "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
     "artifactDefinition": {
       "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
       "businessExample": "CryptoKitties, Art, Reserved Seat,",
@@ -36,12 +35,37 @@
           "visual": "&tau",
           "tooling": "t",
           "version": "1.0",
-          "validated": true
+          "templateValidated": true
         }
       }
     ],
     "incompatibleWithSymbols": [],
-    "influencedBySymbols": [],
+    "influencedBySymbols": [
+      {
+        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+        "symbol": {
+          "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+          "type": "BEHAVIOR",
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "",
+          "templateValidated": false
+        },
+        "appliesTo": []
+      },
+      {
+        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is sub-dividable, the decimals value should be greater than 0.",
+        "symbol": {
+          "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+          "type": "BEHAVIOR",
+          "visual": "<i>d</i>",
+          "tooling": "d",
+          "version": "",
+          "templateValidated": false
+        },
+        "appliesTo": []
+      }
+    ],
     "maps": {
       "codeReferences": [
         {
@@ -73,43 +97,5 @@
       "artifact": null
     }
   },
-  "tokenType": "NON_FUNGIBLE",
-  "singleToken": {
-    "classificationBranch": "FRACTIONAL_NON_FUNGIBLE",
-    "groupStart": "[",
-    "baseToken": {
-      "artifactSymbol": {
-        "type": "BASE",
-        "visual": "&tau;<sub>N</sub>",
-        "tooling": "tN",
-        "version": ""
-      }
-    },
-    "behaviors": {
-      "listStart": "{",
-      "behaviorSymbols": [],
-      "listEnd": "}"
-    },
-    "propertySets": [
-      {
-        "listStart": "+",
-        "propertySetSymbols": {
-          "type": "PROPERTY_SET",
-          "visual": "",
-          "tooling": "",
-          "version": ""
-        }
-      }
-    ],
-    "groupEnd": "]"
-  },
-  "name": "",
-  "symbol": "",
-  "owner": "",
-  "quantity": "",
-  "decimals": 0,
-  "tokenProperties": {},
-  "constructorName": "",
-  "constructor": null,
-  "childTokens": []
+  "tokenType": "NON_FUNGIBLE"
 }

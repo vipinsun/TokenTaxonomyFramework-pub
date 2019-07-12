@@ -9,7 +9,7 @@
         "visual": "",
         "tooling": "",
         "version": "",
-        "validated": false
+        "templateValidated": false
       }
     },
     "behaviors": {
@@ -21,7 +21,7 @@
           "visual": "",
           "tooling": "",
           "version": "",
-          "validated": false
+          "templateValidated": false
         }
       ],
       "listEnd": "}"
@@ -35,7 +35,7 @@
           "visual": "",
           "tooling": "",
           "version": "",
-          "validated": false
+          "templateValidated": false
         }
       }
     ],
@@ -52,7 +52,7 @@
           "visual": "",
           "tooling": "",
           "version": "",
-          "validated": false
+          "templateValidated": false
         }
       },
       "behaviors": {
@@ -64,7 +64,7 @@
             "visual": "",
             "tooling": "",
             "version": "",
-            "validated": false
+            "templateValidated": false
           }
         ],
         "listEnd": "}"
@@ -78,7 +78,7 @@
             "visual": "",
             "tooling": "",
             "version": "",
-            "validated": false
+            "templateValidated": false
           }
         }
       ],
@@ -96,7 +96,7 @@
             "visual": "",
             "tooling": "",
             "version": "",
-            "validated": false
+            "templateValidated": false
           }
         },
         "behaviors": {
@@ -108,7 +108,7 @@
               "visual": "",
               "tooling": "",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           ],
           "listEnd": "}"
@@ -122,7 +122,7 @@
               "visual": "",
               "tooling": "",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           }
         ],
@@ -138,7 +138,7 @@
             "visual": "",
             "tooling": "",
             "version": "",
-            "validated": false
+            "templateValidated": false
           }
         },
         "behaviors": {
@@ -150,7 +150,7 @@
               "visual": "",
               "tooling": "",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           ],
           "listEnd": "}"
@@ -164,7 +164,7 @@
               "visual": "",
               "tooling": "",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           }
         ],
@@ -184,7 +184,7 @@
           "visual": "",
           "tooling": "",
           "version": "",
-          "validated": false
+          "templateValidated": false
         }
       },
       "behaviors": {
@@ -196,7 +196,7 @@
             "visual": "",
             "tooling": "",
             "version": "",
-            "validated": false
+            "templateValidated": false
           }
         ],
         "listEnd": "}"
@@ -210,7 +210,7 @@
             "visual": "",
             "tooling": "",
             "version": "",
-            "validated": false
+            "templateValidated": false
           }
         }
       ],
@@ -229,7 +229,7 @@
               "visual": "",
               "tooling": "",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           },
           "behaviors": {
@@ -241,7 +241,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             ],
             "listEnd": "}"
@@ -255,7 +255,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             }
           ],
@@ -273,7 +273,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             },
             "behaviors": {
@@ -285,7 +285,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               ],
               "listEnd": "}"
@@ -299,7 +299,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               }
             ],
@@ -315,7 +315,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             },
             "behaviors": {
@@ -327,7 +327,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               ],
               "listEnd": "}"
@@ -341,7 +341,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               }
             ],
@@ -361,7 +361,7 @@
               "visual": "",
               "tooling": "",
               "version": "",
-              "validated": false
+              "templateValidated": false
             }
           },
           "behaviors": {
@@ -373,7 +373,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             ],
             "listEnd": "}"
@@ -387,7 +387,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             }
           ],
@@ -405,7 +405,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             },
             "behaviors": {
@@ -417,7 +417,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               ],
               "listEnd": "}"
@@ -431,7 +431,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               }
             ],
@@ -447,7 +447,7 @@
                 "visual": "",
                 "tooling": "",
                 "version": "",
-                "validated": false
+                "templateValidated": false
               }
             },
             "behaviors": {
@@ -459,7 +459,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               ],
               "listEnd": "}"
@@ -473,7 +473,7 @@
                   "visual": "",
                   "tooling": "",
                   "version": "",
-                  "validated": false
+                  "templateValidated": false
                 }
               }
             ],

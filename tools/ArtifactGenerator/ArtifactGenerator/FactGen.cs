@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Google.Protobuf;
@@ -22,8 +21,6 @@ namespace ArtifactGenerator
 		private static ClassificationBranch Classification { get; set; }
 		private static TaxonomyVersion TaxonomyVersion { get; set; }
 		private static string Latest { get; set; }
-		private static bool TemplateMode { get; set; }
-
 		public static void Main(string[] args)
 		{
 			Utils.InitLog();
@@ -57,7 +54,6 @@ namespace ArtifactGenerator
 							i++;
 							var c = Convert.ToInt32(args[i]);
 							Classification = (ClassificationBranch) c;
-							TemplateMode = true;
 							continue;
 						case "--v":
 							i++;
@@ -80,7 +76,7 @@ namespace ArtifactGenerator
 					_log.Info(
 						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate] --n [ARTIFACT_NAME],");
 					_log.Info(
-						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot, 4 = hybrid-fungibleRoot-hybridChildren, 5 = hybrid-non-fungibleRoot-hybridChildren]");
+						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleBase, 3 = hybrid-non-fungibleBase, 4 = hybrid-fungibleBase-hybridChildren, 5 = hybrid-non-fungibleBase-hybridChildren]");
 					_log.Info(
 						"--c [classification: 0 = fractionalFungible, 1 = wholeFungible, 2 = fractionalNonFungible, 3 = singleton] Is required for a Template Type");
 					_log.Info(
@@ -91,7 +87,7 @@ namespace ArtifactGenerator
 				_log.Error(
 					"Required arguments --p [path-to-artifact folder] --n [artifactName] --t [artifactType: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate],");
 				_log.Error(
-					"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleRoot, 3 = hybrid-non-fungibleRoot, 4 = hybrid-fungibleRoot-hybridChildren, 5 = hybrid-non-fungibleRoot-hybridChildren]");
+					"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleBase, 3 = hybrid-non-fungibleBase, 4 = hybrid-fungibleBase-hybridChildren, 5 = hybrid-non-fungibleBase-hybridChildren]");
 				_log.Error(
 					"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] --p [PATH_TO_ARTIFACTS FOLDER]");
 				throw new Exception("Missing required parameters.");
@@ -284,7 +280,6 @@ namespace ArtifactGenerator
 							"Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
 						Symbol = new ArtifactSymbol
 						{
-
 							Id = "d5807a8e-879b-4885-95fa-f09ba2a22172",
 							Type = ArtifactType.Behavior,
 							Tooling = "~d",
@@ -616,6 +611,7 @@ namespace ArtifactGenerator
 
 					artifactJson = jsf.Format(templateToken);
 					break;
+				/*
 				case ArtifactType.TokenDefinition:
 
 					artifactTypeFolder = "token-definitions";
@@ -623,7 +619,7 @@ namespace ArtifactGenerator
 						Directory.CreateDirectory(
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 
-					var templateBase = GetParentTemplate(fullPath, folderSeparator);
+					var templateBase = GetParentTemplate(fullPath, folderSeparator, "Document");
 					var tokenDefinition = new TokenDefinition
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
@@ -655,10 +651,11 @@ namespace ArtifactGenerator
 							}
 						}
 					};
-					
-											
-					
-					foreach(var b in templateBasef)
+
+					foreach (var b in templateBase.Behaviors)
+					{
+						
+					}
 						
 					switch (BaseType)
 					{
@@ -694,6 +691,7 @@ namespace ArtifactGenerator
 					artifactJson = jsf.Format(templateToken);
 					artifactJson = "";
 					break;
+					*/
 				default:
 					_log.Error("No matching type found for: " + ArtifactType);
 					throw new ArgumentOutOfRangeException();
@@ -751,7 +749,17 @@ namespace ArtifactGenerator
 
 			_log.Info("Complete");
 		}
-		
+
+		private static TokenTemplate GetParentTemplate(string fullPath, string folderSeparator, string artifactId)
+		{
+			const string typeFolder = "token-templates";
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + artifactId + folderSeparator + Latest + folderSeparator + artifactId +".json");
+			var json = baseFile.ReadToEnd();
+			var formattedJson = JToken.Parse(json).ToString();
+			var retVal = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
+			return retVal;
+		}
+
 		private static FormulaGrammar GenerateFormula()
 		{
 			var formula = new FormulaGrammar();
