@@ -1,12 +1,13 @@
 {
   "version": {
-    "id": "fe39b6bb-ea62-4654-85d1-7288bfa51807",
+    "id": "bde39a3e-f626-4745-b141-f08a73eb9da9",
     "version": "1.0"
   },
   "baseTokenTypes": {},
   "behaviors": {},
   "behaviorGroups": {},
   "propertySets": {},
-  "tokenTemplates": {},
+  "tokenTemplates": null,
+  "tokenDefinitions": {},
   "formulaGrammar": null
 }

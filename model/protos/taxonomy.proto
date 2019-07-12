@@ -15,7 +15,8 @@ message Taxonomy{
     map<string, taxonomy.model.core.BehaviorGroup> behavior_groups = 4;
     map<string, taxonomy.model.core.PropertySet> property_sets = 5;
     taxonomy.model.core.TokenTemplateHierarchy token_templates = 6;
-    taxonomy.model.artifact.FormulaGrammar formula_grammar = 7;
+    map<string, taxonomy.model.core.TokenDefinition> token_definitions = 7;
+    taxonomy.model.artifact.FormulaGrammar formula_grammar = 8;
 }
 
 message TaxonomyVersion{

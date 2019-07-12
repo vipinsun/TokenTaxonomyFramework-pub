@@ -109,17 +109,12 @@ message TemplateIndex {
 message TokenTemplate{
     taxonomy.model.artifact.Artifact artifact = 1;
     taxonomy.model.artifact.ArtifactReference parent_reference = 2;
-    oneof token_formula{
-        taxonomy.model.artifact.SingleTokenGrammar single_token = 3;
-        taxonomy.model.artifact.HybridTokenGrammar hybrid = 4;
-        taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar hybrid_with_hybrids = 5;
-    }
-    taxonomy.model.artifact.Classification classification = 6;
-    TemplateBase base = 7;
-    repeated TemplateBehavior behaviors = 8;
-    repeated TemplateBehaviorGroup behavior_groups = 9;
-    repeated TemplatePropertySet property_sets = 10;
-    repeated TemplateBase child_tokens = 11; //if hybrid, this can contain the list of child token classes.
+    taxonomy.model.artifact.Classification classification = 3;
+    TemplateBase token_base = 4;
+    repeated TemplateBehavior behaviors = 5;
+    repeated TemplateBehaviorGroup behavior_groups = 6;
+    repeated TemplatePropertySet property_sets = 7;
+    repeated TemplateBase child_tokens = 8; //if hybrid, this can contain the list of child token classes.
 }
 
 message TokenTemplates{
@@ -147,7 +142,7 @@ message TemplatePropertySet{
 message TokenDefinition{
     taxonomy.model.artifact.Artifact artifact = 1;
     taxonomy.model.artifact.ArtifactReference template_reference = 2;
-    BaseReference base = 3;
+    BaseReference token_base = 3;
     repeated BehaviorReference behaviors = 4;
     repeated BehaviorGroupReference behavior_groups = 5;
     repeated PropertySetReference property_sets = 6;
@@ -156,7 +151,7 @@ message TokenDefinition{
 
 //used to dynamically build the entire Token Defintion with all objects connected. Handy for documentation.
 message Token{
-    TokenBase base = 1;
+    TokenBase token_base = 1;
 }
 
 message TokenBase {

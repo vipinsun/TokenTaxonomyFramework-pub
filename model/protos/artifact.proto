@@ -182,9 +182,9 @@ message DeleteArtifactResponse{
 }
 
 message FormulaGrammar{
-    SingleTokenGrammar single_token = 1;
-    HybridTokenGrammar hybrid = 2;
-    HybridTokenWithHybridChildrenGrammar hybrid_with_hybrids = 3;
+    SingleTokenGrammar single_token_grammar = 1;
+    HybridTokenGrammar hybrid_grammar = 2;
+    HybridTokenWithHybridChildrenGrammar hybrid_with_hybrids_grammar = 3;
 }
 
 message HybridTokenGrammar{
@@ -204,21 +204,25 @@ message HybridTokenWithHybridChildrenGrammar{
 //outermost grouping container for the formula for a whole template either a parent or hybrid child.
 message SingleTokenGrammar{
     string group_start = 2; // "["
-    ArtifactSymbol base_token = 3;
+    string base_token_tooling_symbol = 3;
     BehaviorList behaviors = 4;
-    repeated PropertySetListItem property_sets = 5;
+    PropertySetList property_sets = 5;
     string group_end = 6; // "]"
 }
 
 message BehaviorList{
     string list_start = 1; // "{"
-    repeated ArtifactSymbol behavior_symbols = 2; // lowercase letters for individual behaviors, UPPERCASE for behaviorGroup
+    repeated string behavior_tooling_symbols = 2; // lowercase letters for individual behaviors, UPPERCASE for behaviorGroup
     string list_end = 3; // "}"
 }
 
-message PropertySetListItem{
+message PropertySetList{
     string list_start = 1; // "+"
-    ArtifactSymbol property_set_symbols = 2; // starts with ph followed by Camel case name or symbol.
+    repeated PropertySetListItem property_sets = 2; //model builder should put a comma between multiple sets.
+}
+
+message PropertySetListItem{
+    string property_set_symbol = 2; // starts with ph followed by Camel case name or symbol.
 }
 
 message CommitUpdatesRequest{

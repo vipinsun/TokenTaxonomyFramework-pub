@@ -1,350 +1,182 @@
 {
-  "singleToken": {
-    "classificationBranch": "WHOLE_FUNGIBLE",
+  "singleTokenGrammar": {
     "groupStart": "[",
-    "baseToken": {
-      "artifactSymbol": {
-        "id": "",
-        "type": "BASE",
-        "visual": "",
-        "tooling": "",
-        "version": "",
-        "templateValidated": false
-      }
-    },
+    "baseTokenToolingSymbol": "",
     "behaviors": {
       "listStart": "{",
-      "behaviorSymbols": [
-        {
-          "id": "",
-          "type": "BEHAVIOR",
-          "visual": "",
-          "tooling": "",
-          "version": "",
-          "templateValidated": false
-        }
+      "behaviorToolingSymbols": [
+        "",
+        ""
       ],
       "listEnd": "}"
     },
-    "propertySets": [
-      {
-        "listStart": "+",
-        "propertySetSymbols": {
-          "id": "",
-          "type": "PROPERTY_SET",
-          "visual": "",
-          "tooling": "",
-          "version": "",
-          "templateValidated": false
+    "propertySets": {
+      "listStart": "+",
+      "propertySets": [
+        {
+          "propertySetSymbol": ""
         }
-      }
-    ],
+      ]
+    },
     "groupEnd": "]"
   },
-  "hybrid": {
+  "hybridGrammar": {
     "parent": {
-      "classificationBranch": "WHOLE_FUNGIBLE",
       "groupStart": "[",
-      "baseToken": {
-        "artifactSymbol": {
-          "id": "",
-          "type": "BASE",
-          "visual": "",
-          "tooling": "",
-          "version": "",
-          "templateValidated": false
-        }
-      },
+      "baseTokenToolingSymbol": "",
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbols": [
-          {
-            "id": "",
-            "type": "BEHAVIOR",
-            "visual": "",
-            "tooling": "",
-            "version": "",
-            "templateValidated": false
-          }
+        "behaviorToolingSymbols": [
+          "",
+          ""
         ],
         "listEnd": "}"
       },
-      "propertySets": [
-        {
-          "listStart": "+",
-          "propertySetSymbols": {
-            "id": "",
-            "type": "PROPERTY_SET",
-            "visual": "",
-            "tooling": "",
-            "version": "",
-            "templateValidated": false
+      "propertySets": {
+        "listStart": "+",
+        "propertySets": [
+          {
+            "propertySetSymbol": ""
           }
-        }
-      ],
+        ]
+      },
       "groupEnd": "]"
     },
     "childrenStart": "(",
     "childTokens": [
       {
-        "classificationBranch": "WHOLE_FUNGIBLE",
         "groupStart": "[",
-        "baseToken": {
-          "artifactSymbol": {
-            "id": "",
-            "type": "BASE",
-            "visual": "",
-            "tooling": "",
-            "version": "",
-            "templateValidated": false
-          }
-        },
+        "baseTokenToolingSymbol": "",
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbols": [
-            {
-              "id": "",
-              "type": "BEHAVIOR",
-              "visual": "",
-              "tooling": "",
-              "version": "",
-              "templateValidated": false
-            }
+          "behaviorToolingSymbols": [
+            "",
+            ""
           ],
           "listEnd": "}"
         },
-        "propertySets": [
-          {
-            "listStart": "+",
-            "propertySetSymbols": {
-              "id": "",
-              "type": "PROPERTY_SET",
-              "visual": "",
-              "tooling": "",
-              "version": "",
-              "templateValidated": false
+        "propertySets": {
+          "listStart": "+",
+          "propertySets": [
+            {
+              "propertySetSymbol": ""
             }
-          }
-        ],
+          ]
+        },
         "groupEnd": "]"
       },
       {
-        "classificationBranch": "WHOLE_FUNGIBLE",
         "groupStart": "[",
-        "baseToken": {
-          "artifactSymbol": {
-            "id": "",
-            "type": "BASE",
-            "visual": "",
-            "tooling": "",
-            "version": "",
-            "templateValidated": false
-          }
-        },
+        "baseTokenToolingSymbol": "",
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbols": [
-            {
-              "id": "",
-              "type": "BEHAVIOR",
-              "visual": "",
-              "tooling": "",
-              "version": "",
-              "templateValidated": false
-            }
+          "behaviorToolingSymbols": [
+            "",
+            ""
           ],
           "listEnd": "}"
         },
-        "propertySets": [
-          {
-            "listStart": "+",
-            "propertySetSymbols": {
-              "id": "",
-              "type": "PROPERTY_SET",
-              "visual": "",
-              "tooling": "",
-              "version": "",
-              "templateValidated": false
+        "propertySets": {
+          "listStart": "+",
+          "propertySets": [
+            {
+              "propertySetSymbol": ""
             }
-          }
-        ],
+          ]
+        },
         "groupEnd": "]"
       }
     ],
     "childrenEnd": ")"
   },
-  "hybridWithHybrids": {
+  "hybridWithHybridsGrammar": {
     "parent": {
-      "classificationBranch": "WHOLE_FUNGIBLE",
       "groupStart": "[",
-      "baseToken": {
-        "artifactSymbol": {
-          "id": "",
-          "type": "BASE",
-          "visual": "",
-          "tooling": "",
-          "version": "",
-          "templateValidated": false
-        }
-      },
+      "baseTokenToolingSymbol": "",
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbols": [
-          {
-            "id": "",
-            "type": "BEHAVIOR",
-            "visual": "",
-            "tooling": "",
-            "version": "",
-            "templateValidated": false
-          }
+        "behaviorToolingSymbols": [
+          "",
+          ""
         ],
         "listEnd": "}"
       },
-      "propertySets": [
-        {
-          "listStart": "+",
-          "propertySetSymbols": {
-            "id": "",
-            "type": "PROPERTY_SET",
-            "visual": "",
-            "tooling": "",
-            "version": "",
-            "templateValidated": false
+      "propertySets": {
+        "listStart": "+",
+        "propertySets": [
+          {
+            "propertySetSymbol": ""
           }
-        }
-      ],
+        ]
+      },
       "groupEnd": "]"
     },
     "hybridChildrenStart": "(",
     "hybridChildTokens": [
       {
         "parent": {
-          "classificationBranch": "WHOLE_FUNGIBLE",
           "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "id": "",
-              "type": "BASE",
-              "visual": "",
-              "tooling": "",
-              "version": "",
-              "templateValidated": false
-            }
-          },
+          "baseTokenToolingSymbol": "",
           "behaviors": {
             "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "id": "",
-                "type": "BEHAVIOR",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
-              }
+            "behaviorToolingSymbols": [
+              "",
+              ""
             ],
             "listEnd": "}"
           },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "id": "",
-                "type": "PROPERTY_SET",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
+          "propertySets": {
+            "listStart": "+",
+            "propertySets": [
+              {
+                "propertySetSymbol": ""
               }
-            }
-          ],
+            ]
+          },
           "groupEnd": "]"
         },
         "childrenStart": "(",
         "childTokens": [
           {
-            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "id": "",
-                "type": "BASE",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "id": "",
-                  "type": "BEHAVIOR",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "id": "",
-                  "type": "PROPERTY_SET",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           },
           {
-            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "id": "",
-                "type": "BASE",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "id": "",
-                  "type": "BEHAVIOR",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "id": "",
-                  "type": "PROPERTY_SET",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           }
         ],
@@ -352,131 +184,68 @@
       },
       {
         "parent": {
-          "classificationBranch": "WHOLE_FUNGIBLE",
           "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "id": "",
-              "type": "BASE",
-              "visual": "",
-              "tooling": "",
-              "version": "",
-              "templateValidated": false
-            }
-          },
+          "baseTokenToolingSymbol": "",
           "behaviors": {
             "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "id": "",
-                "type": "BEHAVIOR",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
-              }
+            "behaviorToolingSymbols": [
+              "",
+              ""
             ],
             "listEnd": "}"
           },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "id": "",
-                "type": "PROPERTY_SET",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
+          "propertySets": {
+            "listStart": "+",
+            "propertySets": [
+              {
+                "propertySetSymbol": ""
               }
-            }
-          ],
+            ]
+          },
           "groupEnd": "]"
         },
         "childrenStart": "(",
         "childTokens": [
           {
-            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "id": "",
-                "type": "BASE",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "id": "",
-                  "type": "BEHAVIOR",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "id": "",
-                  "type": "PROPERTY_SET",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           },
           {
-            "classificationBranch": "WHOLE_FUNGIBLE",
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "id": "",
-                "type": "BASE",
-                "visual": "",
-                "tooling": "",
-                "version": "",
-                "templateValidated": false
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "id": "",
-                  "type": "BEHAVIOR",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "id": "",
-                  "type": "PROPERTY_SET",
-                  "visual": "",
-                  "tooling": "",
-                  "version": "",
-                  "templateValidated": false
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           }
         ],

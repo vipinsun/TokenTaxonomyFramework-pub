@@ -25,7 +25,7 @@ namespace TTI.TTF.Taxonomy.Model {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg50YXhvbm9teS5wcm90bxIOdGF4b25vbXkubW9kZWwaCmNvcmUucHJvdG8a",
-            "DmFydGlmYWN0LnByb3RvIqcGCghUYXhvbm9teRIwCgd2ZXJzaW9uGAEgASgL",
+            "DmFydGlmYWN0LnByb3RvItEHCghUYXhvbm9teRIwCgd2ZXJzaW9uGAEgASgL",
             "Mh8udGF4b25vbXkubW9kZWwuVGF4b25vbXlWZXJzaW9uEkYKEGJhc2VfdG9r",
             "ZW5fdHlwZXMYAiADKAsyLC50YXhvbm9teS5tb2RlbC5UYXhvbm9teS5CYXNl",
             "VG9rZW5UeXBlc0VudHJ5EjoKCWJlaGF2aW9ycxgDIAMoCzInLnRheG9ub215",
@@ -34,29 +34,33 @@ namespace TTI.TTF.Taxonomy.Model {
             "R3JvdXBzRW50cnkSQQoNcHJvcGVydHlfc2V0cxgFIAMoCzIqLnRheG9ub215",
             "Lm1vZGVsLlRheG9ub215LlByb3BlcnR5U2V0c0VudHJ5EkQKD3Rva2VuX3Rl",
             "bXBsYXRlcxgGIAEoCzIrLnRheG9ub215Lm1vZGVsLmNvcmUuVG9rZW5UZW1w",
-            "bGF0ZUhpZXJhcmNoeRJACg9mb3JtdWxhX2dyYW1tYXIYByABKAsyJy50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5Gb3JtdWxhR3JhbW1hchpQChNCYXNlVG9r",
-            "ZW5UeXBlc0VudHJ5EgsKA2tleRgBIAEoCRIoCgV2YWx1ZRgCIAEoCzIZLnRh",
-            "eG9ub215Lm1vZGVsLmNvcmUuQmFzZToCOAEaTwoOQmVoYXZpb3JzRW50cnkS",
-            "CwoDa2V5GAEgASgJEiwKBXZhbHVlGAIgASgLMh0udGF4b25vbXkubW9kZWwu",
-            "Y29yZS5CZWhhdmlvcjoCOAEaWQoTQmVoYXZpb3JHcm91cHNFbnRyeRILCgNr",
-            "ZXkYASABKAkSMQoFdmFsdWUYAiABKAsyIi50YXhvbm9teS5tb2RlbC5jb3Jl",
-            "LkJlaGF2aW9yR3JvdXA6AjgBGlUKEVByb3BlcnR5U2V0c0VudHJ5EgsKA2tl",
-            "eRgBIAEoCRIvCgV2YWx1ZRgCIAEoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUu",
-            "UHJvcGVydHlTZXQ6AjgBIi4KD1RheG9ub215VmVyc2lvbhIKCgJpZBgBIAEo",
-            "CRIPCgd2ZXJzaW9uGAIgASgJImwKCUhpZXJhcmNoeRIwCgdzaW5nbGVzGAEg",
-            "AygLMh8udGF4b25vbXkubW9kZWwuSGllcmFyY2h5QnJhbmNoEi0KB2h5YnJp",
-            "ZHMYAiABKAsyHC50YXhvbm9teS5tb2RlbC5IeWJyaWRCcmFuY2giYAoPSGll",
-            "cmFyY2h5QnJhbmNoEj0KBmJyYW5jaBgBIAEoDjItLnRheG9ub215Lm1vZGVs",
-            "LmFydGlmYWN0LkNsYXNzaWZpY2F0aW9uQnJhbmNoEg4KBmZvbGRlchgCIAEo",
-            "CSJjCgxIeWJyaWRCcmFuY2gSHAoUaHlicmlkX3BhcmVudF9mb2xkZXIYASAB",
-            "KAkSNQoMY2hpbGRfYnJhbmNoGAIgASgLMh8udGF4b25vbXkubW9kZWwuSGll",
-            "cmFyY2h5QnJhbmNoQjcKGm9yZy50dGkudHRmLnRheG9ub215Lm1vZGVsUAGq",
-            "AhZUVEkuVFRGLlRheG9ub215Lk1vZGVsYgZwcm90bzM="));
+            "bGF0ZUhpZXJhcmNoeRJJChF0b2tlbl9kZWZpbml0aW9ucxgHIAMoCzIuLnRh",
+            "eG9ub215Lm1vZGVsLlRheG9ub215LlRva2VuRGVmaW5pdGlvbnNFbnRyeRJA",
+            "Cg9mb3JtdWxhX2dyYW1tYXIYCCABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5Gb3JtdWxhR3JhbW1hchpQChNCYXNlVG9rZW5UeXBlc0VudHJ5EgsK",
+            "A2tleRgBIAEoCRIoCgV2YWx1ZRgCIAEoCzIZLnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuQmFzZToCOAEaTwoOQmVoYXZpb3JzRW50cnkSCwoDa2V5GAEgASgJEiwK",
+            "BXZhbHVlGAIgASgLMh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvcjoC",
+            "OAEaWQoTQmVoYXZpb3JHcm91cHNFbnRyeRILCgNrZXkYASABKAkSMQoFdmFs",
+            "dWUYAiABKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXA6",
+            "AjgBGlUKEVByb3BlcnR5U2V0c0VudHJ5EgsKA2tleRgBIAEoCRIvCgV2YWx1",
+            "ZRgCIAEoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQ6AjgB",
+            "Gl0KFVRva2VuRGVmaW5pdGlvbnNFbnRyeRILCgNrZXkYASABKAkSMwoFdmFs",
+            "dWUYAiABKAsyJC50YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuRGVmaW5pdGlv",
+            "bjoCOAEiLgoPVGF4b25vbXlWZXJzaW9uEgoKAmlkGAEgASgJEg8KB3ZlcnNp",
+            "b24YAiABKAkibAoJSGllcmFyY2h5EjAKB3NpbmdsZXMYASADKAsyHy50YXhv",
+            "bm9teS5tb2RlbC5IaWVyYXJjaHlCcmFuY2gSLQoHaHlicmlkcxgCIAEoCzIc",
+            "LnRheG9ub215Lm1vZGVsLkh5YnJpZEJyYW5jaCJgCg9IaWVyYXJjaHlCcmFu",
+            "Y2gSPQoGYnJhbmNoGAEgASgOMi0udGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
+            "Q2xhc3NpZmljYXRpb25CcmFuY2gSDgoGZm9sZGVyGAIgASgJImMKDEh5YnJp",
+            "ZEJyYW5jaBIcChRoeWJyaWRfcGFyZW50X2ZvbGRlchgBIAEoCRI1CgxjaGls",
+            "ZF9icmFuY2gYAiABKAsyHy50YXhvbm9teS5tb2RlbC5IaWVyYXJjaHlCcmFu",
+            "Y2hCNwoab3JnLnR0aS50dGYudGF4b25vbXkubW9kZWxQAaoCFlRUSS5UVEYu",
+            "VGF4b25vbXkuTW9kZWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", "TokenDefinitions", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Id", "Version" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Hierarchy), global::TTI.TTF.Taxonomy.Model.Hierarchy.Parser, new[]{ "Singles", "Hybrids" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.HierarchyBranch), global::TTI.TTF.Taxonomy.Model.HierarchyBranch.Parser, new[]{ "Branch", "Folder" }, null, null, null),
@@ -101,6 +105,7 @@ namespace TTI.TTF.Taxonomy.Model {
       behaviorGroups_ = other.behaviorGroups_.Clone();
       propertySets_ = other.propertySets_.Clone();
       tokenTemplates_ = other.tokenTemplates_ != null ? other.tokenTemplates_.Clone() : null;
+      tokenDefinitions_ = other.tokenDefinitions_.Clone();
       formulaGrammar_ = other.formulaGrammar_ != null ? other.formulaGrammar_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -172,8 +177,18 @@ namespace TTI.TTF.Taxonomy.Model {
       }
     }
 
+    /// <summary>Field number for the "token_definitions" field.</summary>
+    public const int TokenDefinitionsFieldNumber = 7;
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenDefinition>.Codec _map_tokenDefinitions_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenDefinition>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TokenDefinition.Parser), 58);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenDefinition> tokenDefinitions_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenDefinition>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenDefinition> TokenDefinitions {
+      get { return tokenDefinitions_; }
+    }
+
     /// <summary>Field number for the "formula_grammar" field.</summary>
-    public const int FormulaGrammarFieldNumber = 7;
+    public const int FormulaGrammarFieldNumber = 8;
     private global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar formulaGrammar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar FormulaGrammar {
@@ -202,6 +217,7 @@ namespace TTI.TTF.Taxonomy.Model {
       if (!BehaviorGroups.Equals(other.BehaviorGroups)) return false;
       if (!PropertySets.Equals(other.PropertySets)) return false;
       if (!object.Equals(TokenTemplates, other.TokenTemplates)) return false;
+      if (!TokenDefinitions.Equals(other.TokenDefinitions)) return false;
       if (!object.Equals(FormulaGrammar, other.FormulaGrammar)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -215,6 +231,7 @@ namespace TTI.TTF.Taxonomy.Model {
       hash ^= BehaviorGroups.GetHashCode();
       hash ^= PropertySets.GetHashCode();
       if (tokenTemplates_ != null) hash ^= TokenTemplates.GetHashCode();
+      hash ^= TokenDefinitions.GetHashCode();
       if (formulaGrammar_ != null) hash ^= FormulaGrammar.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -241,8 +258,9 @@ namespace TTI.TTF.Taxonomy.Model {
         output.WriteRawTag(50);
         output.WriteMessage(TokenTemplates);
       }
+      tokenDefinitions_.WriteTo(output, _map_tokenDefinitions_codec);
       if (formulaGrammar_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(66);
         output.WriteMessage(FormulaGrammar);
       }
       if (_unknownFields != null) {
@@ -263,6 +281,7 @@ namespace TTI.TTF.Taxonomy.Model {
       if (tokenTemplates_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TokenTemplates);
       }
+      size += tokenDefinitions_.CalculateSize(_map_tokenDefinitions_codec);
       if (formulaGrammar_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FormulaGrammar);
       }
@@ -293,6 +312,7 @@ namespace TTI.TTF.Taxonomy.Model {
         }
         TokenTemplates.MergeFrom(other.TokenTemplates);
       }
+      tokenDefinitions_.Add(other.tokenDefinitions_);
       if (other.formulaGrammar_ != null) {
         if (formulaGrammar_ == null) {
           FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar();
@@ -341,6 +361,10 @@ namespace TTI.TTF.Taxonomy.Model {
             break;
           }
           case 58: {
+            tokenDefinitions_.AddEntriesFrom(input, _map_tokenDefinitions_codec);
+            break;
+          }
+          case 66: {
             if (formulaGrammar_ == null) {
               FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar();
             }

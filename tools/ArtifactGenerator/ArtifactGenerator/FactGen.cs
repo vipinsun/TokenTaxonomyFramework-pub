@@ -544,7 +544,7 @@ namespace ArtifactGenerator
 					{
 						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
 							artifact, "TokenTemplates"),
-						Base = GetTemplateBase(fullPath, folderSeparator),
+						TokenBase = GetTemplateBase(fullPath, folderSeparator),
 						Classification = GetClassification(),
 						Behaviors =
 						{
@@ -578,36 +578,18 @@ namespace ArtifactGenerator
 						}
 					};
 					
-					switch (BaseType)
-					{
-						case TokenType.Fungible:
-							templateToken.SingleToken = formula.SingleToken;
-							break;
-						case TokenType.NonFungible:
-							templateToken.SingleToken = formula.SingleToken;
-							break;
-						case TokenType.HybridFungibleBase:
-							templateToken.Hybrid = formula.Hybrid;
-							break;
-						case TokenType.HybridNonFungibleBase:
-							templateToken.Hybrid = formula.Hybrid;
-							break;
-						case TokenType.HybridFungibleBaseHybridChildren:
-							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
-							break;
-						case TokenType.HybridNonFungibleBaseHybridChildren:
-							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
-							break;
-						default:
-							throw new ArgumentOutOfRangeException();
-					}
-					
 					if (BaseType == TokenType.HybridFungibleBase | BaseType == TokenType.HybridNonFungibleBase |
 					    BaseType == TokenType.HybridFungibleBaseHybridChildren |
 					    BaseType == TokenType.HybridNonFungibleBaseHybridChildren)
 					{
 						templateToken.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
 					}
+					
+					templateToken.ParentReference = new ArtifactReference
+					{
+						Id = "6fa235c7-d9d7-4fa2-b2b3-0e8e6838b770",
+						Type = ArtifactType.TokenTemplate
+					};
 
 					artifactJson = jsf.Format(templateToken);
 					break;
@@ -767,31 +749,28 @@ namespace ArtifactGenerator
 			var singleToken = new SingleTokenGrammar
 			{
 				
-				BaseToken = new ArtifactSymbol(),
+				BaseTokenToolingSymbol = "",
 				Behaviors = new BehaviorList
 				{
 					ListStart = "{",
-					BehaviorSymbols = { new ArtifactSymbol
-					{
-						Type = ArtifactType.Behavior
-					}},
+					BehaviorToolingSymbols = {"","" },
 					ListEnd = "}"
 				},
 				GroupStart = "[",
 				GroupEnd = "]"
 			};
 			
-			var psli = new PropertySetListItem
+			var psli = new PropertySetList
 			{
 				ListStart = "+",
-				PropertySetSymbols = new ArtifactSymbol
+				PropertySets = { new PropertySetListItem
 				{
-					Type = ArtifactType.PropertySet
-				}
+					PropertySetSymbol = ""
+				}}
 			};
-			singleToken.PropertySets.Add(psli);
+			singleToken.PropertySets = psli;
 
-			formula.SingleToken = singleToken;
+			formula.SingleTokenGrammar = singleToken;
 
 			var hybrid = new HybridTokenGrammar
 			{
@@ -802,7 +781,7 @@ namespace ArtifactGenerator
 			hybrid.ChildTokens.Add(singleToken);
 			hybrid.ChildTokens.Add(singleToken);
 
-			formula.Hybrid = hybrid;
+			formula.HybridGrammar = hybrid;
 			
 			var hybridHybrids = new HybridTokenWithHybridChildrenGrammar
 			{
@@ -812,7 +791,7 @@ namespace ArtifactGenerator
 			};
 			hybridHybrids.HybridChildTokens.Add(hybrid);
 			hybridHybrids.HybridChildTokens.Add(hybrid);
-			formula.HybridWithHybrids = hybridHybrids;
+			formula.HybridWithHybridsGrammar = hybridHybrids;
 			
 			return formula;
 		}
@@ -930,22 +909,16 @@ namespace ArtifactGenerator
 		private static BehaviorList GetDividable(BehaviorList list)
 		{
 			var retVal = list.Clone();
-			retVal.BehaviorSymbols.Clear();
+			retVal.BehaviorToolingSymbols.Clear();
 			if (Classification == ClassificationBranch.Singleton ||
 			    Classification == ClassificationBranch.Whole)
 			{
-				retVal.BehaviorSymbols.Add(new ArtifactSymbol
-				{
-					Tooling = "~d"
-				});
+				retVal.BehaviorToolingSymbols.Add("~d");
 
 			}
 			else
 			{
-				retVal.BehaviorSymbols.Add(new ArtifactSymbol
-				{
-					Tooling = "d"
-				});
+				retVal.BehaviorToolingSymbols.Add("d");
 			}
 
 			return retVal;
