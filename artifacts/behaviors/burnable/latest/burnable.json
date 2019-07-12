@@ -5,13 +5,13 @@
       "type": "BEHAVIOR",
       "visual": "<i>b</i>",
       "tooling": "b",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Burnable",
     "aliases": [
       "Retire"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/burnable/burnable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the burning or decommissioning of token instances of the class. This does not delete a token, but rather places it in a permanent non-use state.  Burning is a one way operation and cannot be reversed. This behavior is Delegable. If the token definition is Delegable, BurnFrom will be available.",
       "businessExample": "",
@@ -31,10 +31,12 @@
       {
         "description": "Delegable or not, will determine if the BurnFrom Control will be available in the implementation.",
         "symbol": {
+          "id": "a3d02076-6009-4a65-9ed4-2deffe5291e1",
           "type": "BEHAVIOR",
           "visual": "<i>g</i>",
           "tooling": "g",
-          "version": ""
+          "version": "1.0",
+          "templateValidated": false
         }
       }
     ],
@@ -83,9 +85,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [
     {
       "name": "Burn",

@@ -5,14 +5,14 @@
       "type": "BEHAVIOR",
       "visual": "<i>l</i>",
       "tooling": "l",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Logable",
     "aliases": [
       "Audit",
       "Event Recorder"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/logable/logable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will record log entries from its owner with a generic payload.  These entries can be recorded stand alone and be given a unique identifier, EntryId, upon recording or these entries can be recorded in a series or group that will create a SeriesId and a EntryId, where all the entries will have a unique EntryId but have the same SeriesId. Log entries can be queried by their EntryId or you can request an entire series with the SeriesId. The last recorded entry can also be requested without an Id and you can also request entries from a starting point to a finish point. For example, you could request entries 100 through 125, which will return the entries starting at position 100 through 125 or the last entry recorded up to 125. To add entry query by any other property of the token, that property must be specifically defined and cannot be a property in the base token property list.",
       "businessExample": "",
@@ -31,9 +31,10 @@
         "description": "Log PropertySet",
         "symbol": {
           "type": "PROPERTY_SET",
-          "visual": "&phi;Log",
-          "tooling": "phLog",
-          "version": "1.0"
+          "visualSymbol": "&phi;<i>Log</i>",
+          "toolingSymbol": "phLog",
+          "artifactVersion": "1.0",
+          "templateValidated": false
         }
       }
     ],
@@ -84,9 +85,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [
     {
       "name": "CreateEntrySeries",

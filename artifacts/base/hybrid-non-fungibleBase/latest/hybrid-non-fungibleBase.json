@@ -1,33 +1,45 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id":"5f5c4e7f-8ff1-4767-b59c-799d49753226",
+      "id":"56b70ca8-6963-443d-9a70-1c9807c4abc3",
       "type": "BASE",
-      "visual": "&tau",
-      "tooling": "t",
+      "visual": "&tau;<sub>N</sub>(&tau;)",
+      "tooling": "tN(t)",
       "version": "1.0",
       "templateValidated": true
     },
-    "name": "Base Token",
+    "name": "Hybrid-non-fungibleBase",
+    "aliases": [
+      "alias1",
+      "alias2"
+    ],
     "artifactDefinition": {
-      "businessDescription": "All tokens will share a simple set of common properties and provide a base set of expectations when browsing a collection of tokens on a network and also must be provided when creating a new token class. All Tokens are Constructable, a behavior that is not formally defined, but implies that every Token has an ability to create or construct a clone of itself.  This behavior is active when a token is operating as a template and not a class and can receive a request to create a clone or token class of itself.  This control is generically called a constructor.",
+      "businessDescription": "This is a hybrid-non-fungibleBase of type: Base",
       "businessExample": "",
       "analogies": [
         {
-          "name": "Raw Material",
-          "description": "Tokens are like printing plates or coin molds. These plates and molds are made from a type of metal, this base token is like the metal used to make molds or plates.",
+          "name": "Analogy 1",
+          "description": "hybrid-non-fungibleBase analogy 1 description",
           "artifactDefinition": null
         }
       ],
       "comments": "",
       "artifact": null
     },
-    "incompatibleWithSymbols": [
+    "dependencies": [
       {
-        "visual": "",
-        "tooling": ""
+        "description": "",
+        "symbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
+          "type": "BASE",
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "templateValidated": true
+        }
       }
     ],
+    "incompatibleWithSymbols": [],
     "influencedBySymbols": [
       {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
@@ -57,13 +69,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "tokens.proto",
+        "fileName": "hybrid-non-fungibleBase.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "non-fungible.md",
+        "fileName": "hybrid-non-fungibleBase.md",
         "fileData": "",
         "artifact": null
       }
@@ -98,5 +110,6 @@
       ],
       "artifact": null
     }
-  }
+  },
+  "tokenType": "HYBRID_NON_FUNGIBLE_BASE"
 }

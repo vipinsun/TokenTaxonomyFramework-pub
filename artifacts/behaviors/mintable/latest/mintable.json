@@ -5,14 +5,14 @@
       "type": "BEHAVIOR",
       "visual": "<i>m</i>",
       "tooling": "m",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Mintable",
     "aliases": [
       "Issuable",
       "Create"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/mintable/mintable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the minting or issuing of new token instances of the class.  This new tokens can be minted and belong to the owner or minted to another account. This behavior may be overriden by a restrictive behavior like Singleton, where only a single instance of the token can exist.",
       "businessExample": "",
@@ -91,9 +91,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [
     {
       "name": "Mint",

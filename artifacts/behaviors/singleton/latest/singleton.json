@@ -5,14 +5,14 @@
       "type": "BEHAVIOR",
       "visual": "<i>s</i>",
       "tooling": "s",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Singleton",
     "aliases": [
       "Unique",
       "One and Only"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/singleton/singleton.proto",
     "artifactDefinition": {
       "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
       "businessExample": "",
@@ -29,16 +29,20 @@
     "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
         "type": "BEHAVIOR",
         "visual": "<i>d</i>",
         "tooling": "d",
-        "version": ""
+        "version": "1.0",
+        "templateValidated": false
       },
       {
+        "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
         "type": "BEHAVIOR",
         "visual": "<i>m</i>",
         "tooling": "m",
-        "version": ""
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [],
@@ -87,9 +91,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [],
   "properties": []
 }

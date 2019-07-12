@@ -5,13 +5,13 @@
       "type": "BEHAVIOR",
       "visual": "<i>g</i>",
       "tooling": "g",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Delegable",
     "aliases": [
       "To Delegate"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/delegable/delegable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the delegation of certain behaviors to another party or account to invoke them on the behalf of the owner. When applied to a token, behaviors that are Delegable will enable delegated request invocations. This is useful to provide another party to automatically be able to perform the behaviors that can be delegated without seeking permission up to a certain allowance.",
       "businessExample": "",
@@ -73,9 +73,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [
     {
       "name": "Allowance",

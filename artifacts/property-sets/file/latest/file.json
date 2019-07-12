@@ -5,20 +5,22 @@
       "type": "PROPERTY_SET",
       "visual": "&phi;<i>File</i>",
       "tooling": "phFile",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "File",
     "aliases": [
-      "Item Number"
+      "Document",
+      "PDF",
+      "Digital Copy"
     ],
-    "controlUri": "../../../../../../artifacts/property-sets/file/file.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this property set will have a file property or field with a Read/Query and Set control",
       "businessExample": "Storing an authentic reference for a file, hash type, hash, uri path, etc. Can be used to detect file tampering when compared with the file from storage.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "file analogy 1 description",
+          "name": "Cold Storage",
+          "description": "Placing a digital copy of an agreement, receipt, etc. in digital storage and store its tamper detection information and location in a token on the blockchain. ",
           "artifactDefinition": null
         }
       ],
@@ -31,10 +33,12 @@
       {
         "description": "Roles should be used to control what accounts can set the File Property.",
         "symbol": {
+          "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
           "type": "BEHAVIOR",
           "visual": "<i>r</i>",
           "tooling": "r",
-          "version": ""
+          "version": "1.0",
+          "templateValidated": false
         }
       }
     ],

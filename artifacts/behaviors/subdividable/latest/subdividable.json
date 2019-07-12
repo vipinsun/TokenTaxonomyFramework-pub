@@ -5,7 +5,8 @@
       "type": "BEHAVIOR",
       "visual": "<i>d</i>",
       "tooling": "d",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Subdividable",
     "aliases": [
@@ -26,23 +27,15 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "Decimals property for indicating how many decimal places the a whole token can be subdivided into.",
-        "symbol": {
-          "type": "PROPERTY_SET",
-          "visual": "&phi;D",
-          "tooling": "phD",
-          "version": ""
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
         "type": "BEHAVIOR",
         "visual": "<i>~d</i>",
         "tooling": "~d",
-        "version": ""
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [],
@@ -91,9 +84,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [],
   "properties": [
     {

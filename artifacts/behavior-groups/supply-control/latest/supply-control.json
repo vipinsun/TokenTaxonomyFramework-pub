@@ -5,13 +5,13 @@
       "type": "BEHAVIOR_GROUP",
       "visual": "<i>SC</i>",
       "tooling": "SC",
-      "version": "1.0"
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Supply Control",
     "aliases": [
       "Central Bank"
     ],
-    "controlUri": "../../../../../../artifacts/behavior-groups/supply-control/supply-control.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will provide controls to increase and decrease supply of tokens within the class.  Additionally, it will include the ability to support a role, like Minters, that will be allowed to invoke the Mintable behavior. The owner can add accounts to the role and any account that is a member of the role will be able to mint tokens in the class.",
       "businessExample": "",
@@ -25,33 +25,27 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "",
-        "symbol": {
-          "type": "BASE",
-          "visual": "",
-          "tooling": "",
-          "version": ""
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "id":"c1189d7a-e142-4504-bf26-44c35b76c9d6",
         "type": "BEHAVIOR",
         "visual": "<i>s</i>",
         "tooling": "s",
-        "version": ""
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [
       {
         "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
         "symbol": {
+          "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
           "type": "BEHAVIOR",
           "visual": "<i>r</i>",
           "tooling": "r",
-          "version": ""
+          "version": "1.0",
+          "templateValidated": false
         }
       }
     ],
@@ -102,22 +96,28 @@
   },
   "behaviorSymbols": [
     {
+      "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
       "type": "BEHAVIOR",
-      "visual": "m",
-      "tooling": "<i>m</i>",
-      "version": ""
+      "visual": "<i>m</i>",
+      "tooling": "m",
+      "version": "1.0",
+      "templateValidated": false
     },
     {
+      "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
       "type": "BEHAVIOR",
-      "visual": "b",
-      "tooling": "<i>b</i>",
-      "version": ""
+      "visual": "<i>b</i>",
+      "tooling": "b",
+      "version": "1.0",
+      "templateValidated": false
     },
     {
+      "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
       "type": "BEHAVIOR",
-      "visual": "r",
-      "tooling": "<i>r</i>",
-      "version": ""
+      "visual": "<i>r</i>",
+      "tooling": "r",
+      "version": "1.0",
+      "templateValidated": false
     }
   ],
   "behaviorArtifacts": {}
