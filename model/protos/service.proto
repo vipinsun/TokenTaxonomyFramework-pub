@@ -19,7 +19,9 @@ service Service {
     rpc GetBehaviorGroupArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.BehaviorGroup) {}
     rpc GetPropertySetArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.PropertySet) {}
     rpc GetTokenTemplateArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.TokenTemplate) {}
-    rpc GetTokenDefinition (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.TokenTemplate) {}
+    rpc GetTokenDefinitionArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.TokenDefinition) {}
+    rpc GetToken (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.Token) {}
+   
 
     rpc GetArtifactsOfType (taxonomy.model.artifact.QueryOptions) returns (taxonomy.model.artifact.QueryResult) {}
     

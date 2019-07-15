@@ -10,7 +10,7 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy
 {
-    internal class Host: TaxonomyService.TaxonomyServiceBase
+    internal class Host: Service.ServiceBase
     {
         private static ILog _log;
 
@@ -48,11 +48,25 @@ namespace TTI.TTF.Taxonomy
             _log.Info("gRpc request for: GetPropertySetArtifact");
             return Task.FromResult(ModelManager.GetPropertySetArtifact(symbol));
         }
-        public override Task<TokenTemplate> GetTokenTemplateArtifact(TaxonomyFormula formula, ServerCallContext ctx)
+
+        public override Task<TokenTemplate> GetTokenTemplateArtifact(ArtifactSymbol formula, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetTokenTemplateArtifact");
             return Task.FromResult(ModelManager.GetTokenTemplateArtifact(formula));
         }
+        
+        public override Task<TokenDefinition> GetTokenDefinitionArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: GetTokenTemplateArtifact");
+            return Task.FromResult(ModelManager.GetTokenDefinitionArtifact(symbol));
+        }
+        
+        public override Task<Token> GetToken(ArtifactSymbol symbol, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: GetTokenTemplateArtifact");
+            return Task.FromResult(ModelManager.GetToken(symbol));
+        }
+        
         public override Task<NewArtifactResponse> CreateArtifact(NewArtifactRequest artifactRequest, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: CreateArtifact");

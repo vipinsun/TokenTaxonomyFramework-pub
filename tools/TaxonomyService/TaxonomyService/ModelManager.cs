@@ -30,7 +30,6 @@ namespace TTI.TTF.Taxonomy
 			_log.Info("ModelManager Init");
 			Taxonomy = TaxonomyController.Load();
 			TaxonomyCache.SaveToCache(Taxonomy.Version.Id, Taxonomy, DateTime.Now.AddDays(1));
-			BuildTemplateIndexes();
 		}
 
 		internal static Model.Taxonomy GetFullTaxonomy(TaxonomyVersion version)
@@ -275,149 +274,19 @@ namespace TTI.TTF.Taxonomy
 					return true;
 				case ArtifactType.TokenTemplate:
 					var tokenTemplate = artifact.Unpack<TokenTemplate>();
-					var branches = Enum.GetValues(typeof(ClassificationBranch));
+
 					try
 					{
-						if (tokenTemplate.Parent.Base.TokenFormulaCase != Base.TokenFormulaOneofCase.SingleToken)
-						{
-							foreach (var b in branches)
-							{
-								var currentBranch = (ClassificationBranch) b;
-
-								switch (currentBranch)
-								{
-									case ClassificationBranch.FractionalFungible:
-										foreach (var t in Taxonomy.TokenTemplates.Hybrids.FractionalFungibles
-											.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.Hybrids.FractionalFungibles
-												.TokenTemplates.Remove(t);
-											Taxonomy.TokenTemplates.Hybrids.FractionalFungibles
-												.TokenTemplates.Add(tokenTemplate);
-											return true;
-										}
-
-										break;
-									case ClassificationBranch.WholeFungible:
-										foreach (var t in Taxonomy.TokenTemplates.Hybrids.WholeFungibles
-											.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.Hybrids.WholeFungibles.TokenTemplates
-												.Remove(t);
-											Taxonomy.TokenTemplates.Hybrids.WholeFungibles.TokenTemplates
-												.Add(tokenTemplate);
-											return true;
-										}
-
-										break;
-									case ClassificationBranch.FractionalNonFungible:
-										foreach (var t in Taxonomy.TokenTemplates.Hybrids
-											.FractionalNonFungibles.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.Hybrids.FractionalNonFungibles
-												.TokenTemplates.Remove(t);
-											Taxonomy.TokenTemplates.Hybrids.FractionalNonFungibles
-												.TokenTemplates.Add(tokenTemplate);
-											return true;
-										}
-
-										break;
-									case ClassificationBranch.Singleton:
-										foreach (var t in Taxonomy.TokenTemplates.Hybrids.Singletons
-											.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.Hybrids.Singletons.TokenTemplates.Remove(
-												t);
-											Taxonomy.TokenTemplates.Hybrids.Singletons.TokenTemplates.Add(
-												tokenTemplate);
-											return true;
-										}
-
-										break;
-									default:
-										throw new ArgumentOutOfRangeException();
-								}
-
-							}
-
-						}
-						else
-						{
-							foreach (var b in branches)
-							{
-								var currentBranch = (ClassificationBranch) b;
-
-								switch (currentBranch)
-								{
-									case ClassificationBranch.FractionalFungible:
-										foreach (var t in Taxonomy.TokenTemplates.FractionalFungibles
-											.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.FractionalFungibles.TokenTemplates
-												.Remove(t);
-											Taxonomy.TokenTemplates.FractionalFungibles.TokenTemplates.Add(
-												tokenTemplate);
-											return true;
-										}
-
-										break;
-									case ClassificationBranch.WholeFungible:
-										foreach (var t in Taxonomy.TokenTemplates.WholeFungibles
-											.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.WholeFungibles.TokenTemplates.Remove(t);
-											Taxonomy.TokenTemplates.WholeFungibles.TokenTemplates.Add(
-												tokenTemplate);
-											return true;
-										}
-
-										break;
-									case ClassificationBranch.FractionalNonFungible:
-										foreach (var t in Taxonomy.TokenTemplates.FractionalNonFungibles
-											.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.FractionalNonFungibles.TokenTemplates
-												.Remove(t);
-											Taxonomy.TokenTemplates.FractionalNonFungibles.TokenTemplates
-												.Add(tokenTemplate);
-											return true;
-										}
-
-										break;
-									case ClassificationBranch.Singleton:
-										foreach (var t in Taxonomy.TokenTemplates.Singletons.TokenTemplates)
-										{
-											if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-												continue;
-											Taxonomy.TokenTemplates.Singletons.TokenTemplates.Remove(t);
-											Taxonomy.TokenTemplates.Singletons.TokenTemplates.Add(
-												tokenTemplate);
-											return true;
-										}
-
-										break;
-									default:
-										throw new ArgumentOutOfRangeException();
-								}
-
-							}
-						}
-
+						foreach(var t in )
+						if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
+							continue;
+						Taxonomy.TokenTemplates.Singletons.TokenTemplates.Remove(t);
+						Taxonomy.TokenTemplates.Singletons.TokenTemplates.Add(
+							tokenTemplate);
+						return true;
 					}
+
+					
 					catch (Exception)
 					{
 						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + tokenTemplate.Parent.Formula);
@@ -709,6 +578,16 @@ namespace TTI.TTF.Taxonomy
 				TemplateIndexes.SaveToCache(FormulaIndex, formulaIndex, DateTime.Now.AddDays(1));
 				TemplateIndexes.SaveToCache(IdIndex, idIndex, DateTime.Now.AddDays(1));
 			}
+		}
+
+		public static TokenDefinition GetTokenDefinitionArtifact(object formula)
+		{
+			throw new NotImplementedException();
+		}
+
+		public static Token GetToken(ArtifactSymbol symbol)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

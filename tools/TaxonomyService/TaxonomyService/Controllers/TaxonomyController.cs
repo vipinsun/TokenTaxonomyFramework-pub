@@ -702,6 +702,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					break;
 				case ArtifactType.TokenTemplate:
 					typeFolderName = TokenTemplatesFolder;
+					break;
 				case ArtifactType.TokenDefinition:
 					typeFolderName = TokenDefinitionsFolder;
 					break;
@@ -776,7 +777,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					Tooling = "",
 					Visual = "",
 					Version = "1.0",
-					Validated = false
+					TemplateValidated = false
 				},
 				ArtifactDefinition = new ArtifactDefinition
 				{
@@ -831,42 +832,47 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return artifact;
 		}
 
+		private static TokenTemplate GetParentTemplate(string fullPath, string folderSeparator, string artifactId)
+		{
+			const string typeFolder = "token-templates";
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + artifactId + folderSeparator + TxService.Latest + folderSeparator + artifactId +".json");
+			var json = baseFile.ReadToEnd();
+			var formattedJson = JToken.Parse(json).ToString();
+			var retVal = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
+			return retVal;
+		}
+
 		private static FormulaGrammar GenerateFormula()
 		{
 			var formula = new FormulaGrammar();
 
-			var singleToken = new SingleToken
+			var singleToken = new SingleTokenGrammar
 			{
-				BaseToken = new TokenBase
-				{
-					ArtifactSymbol = new ArtifactSymbol()
-				},
+				
+				BaseTokenToolingSymbol = "",
 				Behaviors = new BehaviorList
 				{
 					ListStart = "{",
-					BehaviorSymbols = { new ArtifactSymbol
-					{
-						Type = ArtifactType.Behavior
-					}},
+					BehaviorToolingSymbols = {"","" },
 					ListEnd = "}"
 				},
 				GroupStart = "[",
 				GroupEnd = "]"
 			};
 			
-			var psli = new PropertySetListItem
+			var psli = new PropertySetList
 			{
 				ListStart = "+",
-				PropertySetSymbols = new ArtifactSymbol
+				PropertySets = { new PropertySetListItem
 				{
-					Type = ArtifactType.PropertySet
-				}
+					PropertySetSymbol = ""
+				}}
 			};
-			singleToken.PropertySets.Add(psli);
+			singleToken.PropertySets = psli;
 
-			formula.SingleToken = singleToken;
+			formula.SingleTokenGrammar = singleToken;
 
-			var hybrid = new HybridTokenFormula
+			var hybrid = new HybridTokenGrammar
 			{
 				ChildrenStart = "(",
 				ChildrenEnd = ")",
@@ -875,9 +881,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 			hybrid.ChildTokens.Add(singleToken);
 			hybrid.ChildTokens.Add(singleToken);
 
-			formula.Hybrid = hybrid;
+			formula.HybridGrammar = hybrid;
 			
-			var hybridHybrids = new HybridTokenWithHybridChildrenFormula
+			var hybridHybrids = new HybridTokenWithHybridChildrenGrammar
 			{
 				HybridChildrenStart = "(",
 				HybridChildrenEnd = ")",
@@ -885,14 +891,12 @@ namespace TTI.TTF.Taxonomy.Controllers
 			};
 			hybridHybrids.HybridChildTokens.Add(hybrid);
 			hybridHybrids.HybridChildTokens.Add(hybrid);
-			formula.HybridWithHybrids = hybridHybrids;
-			
+			formula.HybridWithHybridsGrammar = hybridHybrids;
 			
 			return formula;
 		}
-		
-		
-		private static Base GetTokenTypeBase(string fullPath, TokenType tokenType)
+
+		private static Base GetTokenTypeBase(string fullPath, string folderSeparator, TokenType tokenType)
 		{
 			string baseName;
 			const string typeFolder = "base";
@@ -905,34 +909,65 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case TokenType.NonFungible:
 					baseName = "non-fungible";
 					break;
-				case TokenType.HybridFungibleRoot:
-					baseName = "hybrid-fungibleRoot";
+				case TokenType.HybridFungibleBase:
+					baseName = "hybrid-fungibleBase";
 					break;
-				case TokenType.HybridNonFungibleRoot:
-					baseName = "hybrid-non-fungibleRoot";
+				case TokenType.HybridNonFungibleBase:
+					baseName = "hybrid-non-fungibleBase";
 					break;
-				case TokenType.HybridFungibleRootHybridChildren:
-					baseName = "hybrid-non-fungibleRoot-hybridChildren";
+				case TokenType.HybridFungibleBaseHybridChildren:
+					baseName = "hybrid-non-fungibleBase-hybridChildren";
 					break;
-				case TokenType.HybridNonFungibleRootHybridChildren:
-					baseName = "hybrid-non-fungibleRoot-hybridChildren";
+				case TokenType.HybridNonFungibleBaseHybridChildren:
+					baseName = "hybrid-non-fungibleBase-hybridChildren";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
-			var baseFile = File.OpenText(fullPath + typeFolder + _folderSeparator + baseName + _folderSeparator + TxService.Latest + _folderSeparator + baseName+".json");
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + TxService.Latest + folderSeparator + baseName+".json");
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
 			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
 			return baseType;
 		}
-
-
-		private static void AddTemplateFiles(DirectoryInfo outputFolder, string typeFolder, string templateName, string nameSpaceAdd, string classification)
+		
+		private static Classification GetClassification(TokenType baseType)
 		{
-			CreateMarkdown(outputFolder, templateName, ArtifactType.TokenTemplate);
-			CreateProto(outputFolder, templateName, nameSpaceAdd);
+			var classification = new Classification();
+			switch (baseType)
+			{
+
+				case TokenType.Fungible:
+					classification.Branch = ClassificationBranch.Fractional;
+					classification.TokenType = TokenType.Fungible;
+					break;
+				case TokenType.NonFungible:
+					classification.Branch = ClassificationBranch.Singleton;
+					classification.TokenType = TokenType.NonFungible;
+					break;
+				case TokenType.HybridFungibleBase:
+					classification.Branch = ClassificationBranch.Fractional;
+					classification.TokenType = TokenType.Fungible;
+					break;
+				case TokenType.HybridNonFungibleBase:
+					classification.Branch = ClassificationBranch.Whole;
+					classification.TokenType = TokenType.NonFungible;
+					break;
+				case TokenType.HybridFungibleBaseHybridChildren:
+					classification.Branch = ClassificationBranch.Whole;
+					classification.TokenType = TokenType.Fungible;
+					break;
+				case TokenType.HybridNonFungibleBaseHybridChildren:
+					classification.Branch = ClassificationBranch.Whole;
+					classification.TokenType = TokenType.NonFungible;
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+
+			return classification;
 		}
+		
 
 		private static Artifact GetArtifactFiles(DirectoryInfo ad, Artifact artifact)
 		{
@@ -941,7 +976,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 				if (af.Name.EndsWith("proto"))
 				{
 					var protoFile = GetArtifactText(af);
-					artifact.ControlUri = af.Name;
 					artifact.ArtifactFiles.Add(new ArtifactFile
 					{
 						FileName = af.Name,
@@ -1060,12 +1094,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 		}
 
-		internal static TokenTemplate GetTokenTemplateTree(TokenTemplate template)
+		/*
+		internal static Token GetTokenDefinitionBody(TokenDefinition definition)
 		{
-			var retVal = template.Clone();
-			var (baseToken, behaviors, behaviorGroups, propertySets) = GetTokenComponents(template);
+			var retVal = definition.Clone();
+			var (baseToken, behaviors, behaviorGroups, propertySets) = GetTokenComponents(definition);
 
-			retVal.Parent.Base = baseToken;
+			retVal.TokenBase = baseToken;
 			foreach (var b in behaviors)
 			{
 				var behavior = retVal.Parent.Behaviors.SingleOrDefault(e =>
@@ -1087,7 +1122,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			
 			//iterate through any children
 			foreach (var child in retVal.ChildTokens){
-				var (childToken, childBehaviors, childBehaviorGroups, childPropertySets) = GetTokenComponents(template);
+				var (childToken, childBehaviors, childBehaviorGroups, childPropertySets) = GetTokenComponents(definition);
 
 				child.Base = childToken;
 				foreach (var b in childBehaviors)
@@ -1112,18 +1147,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			
 			return retVal;
 		}
-
-		private static (Base, IEnumerable<Behavior>, IEnumerable<BehaviorGroup>, IEnumerable<PropertySet>) GetTokenComponents(TokenTemplate template)
-		{
-
-			var baseToken = ModelManager.GetBaseArtifact(template.Parent.Formula);
-
-			var behaviorList = template.Parent.Behaviors.Select(t => ModelManager.GetBehaviorArtifact(t.Symbol)).ToList();
-			var behaviorGroupList = template.Parent.BehaviorGroups.Select(t => ModelManager.GetBehaviorGroupArtifact(t.Symbol)).ToList();
-			var propertySetList = template.Parent.PropertySets.Select(t => ModelManager.GetPropertySetArtifact(t.Symbol)).ToList();
-
-			return (baseToken, behaviorList, behaviorGroupList, propertySetList);
-		}
+		*/
 
 		private static (bool, string) VersionArtifact(string artifactTypeFolder, string artifactName, string version,
 				string artifactJson, ArtifactType artifactType)

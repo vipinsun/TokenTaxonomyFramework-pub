@@ -50,7 +50,7 @@ namespace TTI.TTF.Taxonomy
 			
 			_apiServer = new Server
 			{
-				Services = {TaxonomyService.BindService(new Host())},
+				Services = {Service.BindService(new Host())},
 				Ports = {new ServerPort(_gRpcHost, _gRpcPort, ServerCredentials.Insecure)}
 			};
 			_log.Info("TaxonomyService listening on: " + _gRpcHost + " Port: " + _gRpcPort );

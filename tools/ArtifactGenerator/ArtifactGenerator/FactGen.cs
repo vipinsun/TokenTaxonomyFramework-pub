@@ -270,7 +270,7 @@ namespace ArtifactGenerator
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactBase = new Base
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "Base"),
 						TokenType = BaseType
 					};
@@ -310,7 +310,7 @@ namespace ArtifactGenerator
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactBehavior = new Behavior
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "Behaviors"),
 						Invocations =
 						{
@@ -418,7 +418,7 @@ namespace ArtifactGenerator
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactBehaviorGroup = new BehaviorGroup
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "BehaviorGroups")
 					};
 					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
@@ -445,7 +445,7 @@ namespace ArtifactGenerator
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					var artifactPropertySet = new PropertySet
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "PropertySets"),
 						Properties =
 						{
@@ -531,18 +531,14 @@ namespace ArtifactGenerator
 					artifactJson = jsf.Format(artifactPropertySet);
 					break;
 				case ArtifactType.TokenTemplate:
-					var formula = GenerateFormula();
 					artifactTypeFolder = "token-templates";
-
 					outputFolder =
 						Directory.CreateDirectory(
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					
-					
-					
 					var templateToken = new TokenTemplate
 					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
+						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "TokenTemplates"),
 						TokenBase = GetTemplateBase(fullPath, folderSeparator),
 						Classification = GetClassification(),
@@ -833,42 +829,7 @@ namespace ArtifactGenerator
 				Base = baseType.Artifact.ArtifactSymbol
 			};
 		}
-		
-		private static Base GetTokenTypeBase(string fullPath, string folderSeparator)
-		{
-			string baseName;
-			const string typeFolder = "base";
-			
-			switch (BaseType)
-			{
-				case TokenType.Fungible:
-					baseName = "fungible";
-					break;
-				case TokenType.NonFungible:
-					baseName = "non-fungible";
-					break;
-				case TokenType.HybridFungibleBase:
-					baseName = "hybrid-fungibleBase";
-					break;
-				case TokenType.HybridNonFungibleBase:
-					baseName = "hybrid-non-fungibleBase";
-					break;
-				case TokenType.HybridFungibleBaseHybridChildren:
-					baseName = "hybrid-non-fungibleBase-hybridChildren";
-					break;
-				case TokenType.HybridNonFungibleBaseHybridChildren:
-					baseName = "hybrid-non-fungibleBase-hybridChildren";
-					break;
-				default:
-					throw new ArgumentOutOfRangeException();
-			}
-			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + Latest + folderSeparator + baseName+".json");
-			var json = baseFile.ReadToEnd();
-			var formattedJson = JToken.Parse(json).ToString();
-			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
-			return baseType;
-		}
-		
+
 		private static Classification GetClassification()
 		{
 			var classification = new Classification();
@@ -905,27 +866,9 @@ namespace ArtifactGenerator
 
 			return classification;
 		}
-		
-		private static BehaviorList GetDividable(BehaviorList list)
-		{
-			var retVal = list.Clone();
-			retVal.BehaviorToolingSymbols.Clear();
-			if (Classification == ClassificationBranch.Singleton ||
-			    Classification == ClassificationBranch.Whole)
-			{
-				retVal.BehaviorToolingSymbols.Add("~d");
 
-			}
-			else
-			{
-				retVal.BehaviorToolingSymbols.Add("d");
-			}
 
-			return retVal;
-		}
-		
-
-		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string typeFolder, string folderSeparator, Artifact parent, string nameSpaceAdd)
+		private static Artifact AddArtifactFiles(DirectoryInfo outputFolder, string folderSeparator, Artifact parent, string nameSpaceAdd)
 		{
 			var md = CreateMarkdown(outputFolder, folderSeparator);
 			var proto = CreateProto(outputFolder, folderSeparator, nameSpaceAdd);
