@@ -1,4 +1,9 @@
 {
+  "parentReference": null,
+  "classification": {
+    "tokenType": "FUNGIBLE",
+    "branch": "FRACTIONAL"
+  },
   "artifact": {
     "artifactSymbol": {
       "id": "41cf2071-68c3-4808-b217-ccdf99cb0543",
@@ -61,11 +66,6 @@
       "resources": [],
       "artifact": null
     }
-  },
-  "parentReference": null,
-  "classification": {
-    "tokenType": "FUNGIBLE",
-    "branch": "FRACTIONAL"
   },
   "tokenBase": {
     "base": {

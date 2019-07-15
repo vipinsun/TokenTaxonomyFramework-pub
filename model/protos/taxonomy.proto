@@ -14,7 +14,7 @@ message Taxonomy{
     map<string, taxonomy.model.core.Behavior> behaviors = 3;
     map<string, taxonomy.model.core.BehaviorGroup> behavior_groups = 4;
     map<string, taxonomy.model.core.PropertySet> property_sets = 5;
-    taxonomy.model.core.TokenTemplateHierarchy token_templates = 6;
+    map<string, taxonomy.model.core.TokenTemplate> token_templates = 6;
     map<string, taxonomy.model.core.TokenDefinition> token_definitions = 7;
     taxonomy.model.artifact.FormulaGrammar formula_grammar = 8;
 }
@@ -24,17 +24,4 @@ message TaxonomyVersion{
     string version = 2;
 }
 
-message Hierarchy{
-    repeated HierarchyBranch singles = 1;
-    HybridBranch hybrids = 2;
-}
 
-message HierarchyBranch {
-    taxonomy.model.artifact.ClassificationBranch branch = 1;
-    string folder = 2;
-}
-
-message HybridBranch {
-    string hybrid_parent_folder = 1;
-    HierarchyBranch child_branch = 2;
-}

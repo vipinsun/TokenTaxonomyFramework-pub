@@ -587,7 +587,7 @@ namespace ArtifactGenerator
 					
 					templateToken.ParentReference = new ArtifactReference
 					{
-						Id = "6fa235c7-d9d7-4fa2-b2b3-0e8e6838b770",
+						Id = "41cf2071-68c3-4808-b217-ccdf99cb0543",
 						Type = ArtifactType.TokenTemplate
 					};
 

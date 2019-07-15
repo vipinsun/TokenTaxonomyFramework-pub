@@ -107,9 +107,9 @@ message TemplateIndex {
 
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TokenTemplate{
-    taxonomy.model.artifact.Artifact artifact = 1;
-    taxonomy.model.artifact.ArtifactReference parent_reference = 2;
-    taxonomy.model.artifact.Classification classification = 3;
+    taxonomy.model.artifact.ArtifactReference parent_reference = 1; //when present, visual and tooling formulas are calculated using the template hierarchy and added artifacts.
+    taxonomy.model.artifact.Classification classification = 2;
+    taxonomy.model.artifact.Artifact artifact = 3;
     TemplateBase token_base = 4;
     repeated TemplateBehavior behaviors = 5;
     repeated TemplateBehaviorGroup behavior_groups = 6;
@@ -149,9 +149,15 @@ message TokenDefinition{
     repeated BaseReference child_tokens = 7;
 }
 
-//used to dynamically build the entire Token Defintion with all objects connected. Handy for documentation.
+//used to dynamically build the entire Token Defintion with all objects merged. Handy for documentation.
 message Token{
-    TokenBase token_base = 1;
+    taxonomy.model.artifact.Artifact artifact = 1;
+    taxonomy.model.artifact.ArtifactReference template_reference = 2;
+    Base token_base = 3;
+    repeated Behavior behaviors = 4;
+    repeated BehaviorGroup behavior_groups = 5;
+    repeated PropertySet property_sets = 6;
+    repeated Base child_tokens = 7;
 }
 
 message TokenBase {

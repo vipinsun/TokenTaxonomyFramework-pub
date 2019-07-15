@@ -17,8 +17,8 @@
       "businessExample": "",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "supply-control analogy 1 description",
+          "name": "Central Bank",
+          "description": "Implementing monetary policy for this token.",
           "artifactDefinition": null
         }
       ],
@@ -63,36 +63,7 @@
         "artifact": null
       }
     ],
-    "maps": {
-      "codeReferences": [
-        {
-          "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
-      "artifact": null
-    }
+    "maps": {}
   },
   "behaviorSymbols": [
     {

@@ -72,11 +72,11 @@ namespace TTI.TTF.Taxonomy
 			return Taxonomy.PropertySets.Single(e => e.Key == symbol.Tooling).Value;		
 		}
 
-		public static TokenTemplate GetTokenTemplateArtifact(TaxonomyFormula formula)
+		public static TokenTemplate GetTokenTemplateArtifact(ArtifactSymbol formula)
 		{
-			_log.Info("GetTokenTemplateArtifact Formula: " + formula.Formula);
+			_log.Info("GetTokenTemplateArtifact Formula: " + formula.Tooling);
 			var formulaIndex = TemplateIndexes.GetFromCache(FormulaIndex);
-			return formulaIndex.Templates.SingleOrDefault(e => e.Key == formula.Formula).Value;	
+			return formulaIndex.Templates.SingleOrDefault(e => e.Key == formula.Tooling).Value;	
 		}
 
 		public static QueryResult GetArtifactsOfType(QueryOptions options)

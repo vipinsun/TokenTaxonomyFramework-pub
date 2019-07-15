@@ -28,18 +28,7 @@
     },
     "dependencies": [
       {
-        "description": "Non-fungible base",
-        "symbol": {
-          "id":"8314a797-df3c-409b-835c-0e80af92714f",
-          "type": "BASE",
-          "visual": "&tau<sub>N</sub>",
-          "tooling": "tN",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      },
-      {
-        "description": "Non-Subdividable",
+        "description": "Non-Fungible",
         "symbol": {
           "id":"8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
