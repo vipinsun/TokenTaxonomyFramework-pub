@@ -2,29 +2,29 @@
   "parentReference": null,
   "classification": {
     "tokenType": "NON-FUNGIBLE",
-    "branch": "SINGLETON"
+    "branch": "HYBRID"
   },
   "artifact": {
     "artifactSymbol": {
       "id":"8314a797-df3c-409b-835c-0e80af92714f",
       "type": "BASE",
-      "visual": "&tau<sub>N</sub><i>{s}</i>",
-      "tooling": "tN{s}",
+      "visual": "&tau<sub>N</sub>",
+      "tooling": "tN",
       "version": "1.0",
       "templateValidated": true
     },
-    "name": "Singleton",
+    "name": "Hybrid with Non-Fungible Parent",
     "aliases": [
-      "Title",
-      "Deed"
+      "",
+      ""
     ],
     "artifactDefinition": {
-      "businessDescription": "This is Single, non-fractional or sub-dividable token. There is a quantity of 1 and only 1.",
-      "businessExample": "A property title or deed.",
+      "businessDescription": "This is a Hybrid with a Non-Fungible parent base.",
+      "businessExample": "Starting branch for creating where a unique token, often a singleton can own child classes of fungible and non-fungible classes.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "Singleton analogy 1 description",
+          "name": "Concert Tickets",
+          "description": "A Ticket is for a specific date and venue, and can have general admision (fungible) as well as reserved seating (non-fungible) ticket classes.",
           "artifactDefinition": null
         }
       ],
@@ -33,7 +33,7 @@
     },
     "dependencies": [
       {
-        "description": "A non-fungible, non-sub-dividable token",
+        "description": "A Hybrid with a Non-Fungible token",
         "symbol": {
           "id":"8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
@@ -46,20 +46,7 @@
     ],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
-    "artifactFiles": [
-      {
-        "content": "CONTROL",
-        "fileName": "Singleton.proto",
-        "fileData": "",
-        "artifact": null
-      },
-      {
-        "content": "UML",
-        "fileName": "Singleton.md",
-        "fileData": "",
-        "artifact": null
-      }
-    ],
+    "artifactFiles": [],
     "maps": {
       "codeReferences": [],
       "implementationReferences": [],
@@ -77,18 +64,7 @@
       "templateValidated": true
     }
   },
-  "behaviors": [
-    {
-      "behavior": {
-        "id":"c1189d7a-e142-4504-bf26-44c35b76c9d6",
-        "type": "BEHAVIOR",
-        "visual": "<i>s</i>",
-        "tooling": "s",
-        "version": "1.0",
-        "templateValidated": false
-      }
-    }
-  ],
+  "behaviors": [],
   "behaviorGroups": [],
   "propertySets": [],
   "childTokens": []

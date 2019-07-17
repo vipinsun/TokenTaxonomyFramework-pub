@@ -1,1 +1,1 @@
-# FractionalFungible a TTF TokenTemplate
+# HybridFungibleParent a TTF TokenTemplate

@@ -31,58 +31,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			               TxService.ArtifactPath;
 		}
 
-		private static Hierarchy BuildHierarchy(IEnumerable<TokenTemplate> templates)
-		{
-			var hybrids = new HybridBranch
-			{
-				Singletons = new Branch(),
-				FractionalFungibles = new Branch(),
-				WholeFungibles = new Branch(),
-				FractionalNonFungibles = new Branch()
-			};
-			
-			var retVal =  new Hierarchy
-			{
-				Hybrids = hybrids,
-				Singletons = new Branch(),
-				FractionalFungibles = new Branch(),
-				WholeFungibles = new Branch(),
-				FractionalNonFungibles = new Branch()
-			};
-
-			var rootBranches = GetBaseBranches(templates);
-			
-			foreach (var t in templates)
-			{
-				if (t.Classification.TokenType == TokenType.Fungible ||
-				    t.Classification.TokenType == TokenType.NonFungible)
-				{
-					switch (t.Classification.Branch)
-					{
-						case ClassificationBranch.Fractional:
-							if(t.Classification.TokenType == TokenType.Fungible)
-								retVal.FractionalFungibles.Branches.Add(new Branch
-								{
-									Id = t.Artifact.ArtifactSymbol.Id,
-									Name = t.Artifact.Name,
-									Template = t,
-									ParentId = rootBranches.
-									
-								});
-							break;
-						case ClassificationBranch.Whole:
-							break;
-						case ClassificationBranch.Singleton:
-							break;
-						default:
-							throw new ArgumentOutOfRangeException();
-					}
-				}
-			}
-
-			return retVal;
-		}
-
 		private static IEnumerable<Branch> GetBaseBranches(IEnumerable<TokenTemplate> templates)
 		{
 			throw new NotImplementedException();
@@ -119,10 +67,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 
 			var aPath = _artifactPath + _folderSeparator;
-			if (Directory.Exists(aPath + BaseFolder))
+			if (Directory.Exists(aPath + ModelMap.BaseFolder))
 			{
 				_log.Info("Base Artifact Folder Found, loading to Base Token Types");
-				var bases = new DirectoryInfo(aPath + BaseFolder);
+				var bases = new DirectoryInfo(aPath + ModelMap.BaseFolder);
 				foreach (var ad in bases.EnumerateDirectories())
 				{
 					Base baseType;
@@ -156,11 +104,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 				_log.Error("Base artifact folder NOT found, moving on to behaviors.");
 			}
 
-			if (Directory.Exists(aPath + BehaviorFolder))
+			if (Directory.Exists(aPath + ModelMap.BehaviorFolder))
 			{
 
 				_log.Info("Behavior Artifact Folder Found, loading to Behaviors");
-				var behaviors = new DirectoryInfo(aPath + BehaviorFolder);
+				var behaviors = new DirectoryInfo(aPath + ModelMap.BehaviorFolder);
 
 				foreach (var ad in behaviors.EnumerateDirectories())
 				{
@@ -191,11 +139,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 				}
 			}
 
-			if (Directory.Exists(aPath + BehaviorGroupFolder))
+			if (Directory.Exists(aPath + ModelMap.BehaviorGroupFolder))
 			{
 
 				_log.Info("BehaviorGroup Artifact Folder Found, loading to BehaviorGroups");
-				var behaviorGroups = new DirectoryInfo(aPath + BehaviorGroupFolder);
+				var behaviorGroups = new DirectoryInfo(aPath + ModelMap.BehaviorGroupFolder);
 				
 				foreach (var ad in behaviorGroups.EnumerateDirectories())
 				{
@@ -227,11 +175,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 				}
 			}
 			
-			if(Directory.Exists(aPath + PropertySetFolder))
+			if(Directory.Exists(aPath + ModelMap.PropertySetFolder))
 			{
 
 				_log.Info("PropertySet Artifact Folder Found, loading to PropertySets");
-				var propertySets = new DirectoryInfo(aPath + PropertySetFolder);
+				var propertySets = new DirectoryInfo(aPath + ModelMap.PropertySetFolder);
 				foreach (var ad in propertySets.EnumerateDirectories())
 				{
 					PropertySet propertySet;
@@ -260,10 +208,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 				}
 			}
 
-			if (!Directory.Exists(aPath + TokenTemplatesFolder)) return taxonomy;
+			if (!Directory.Exists(aPath + ModelMap.TokenTemplatesFolder)) return taxonomy;
 			{
 				_log.Info("TokenTemplates Folder Found, loading to TokenTemplates");
-				var templateFolders = new DirectoryInfo(aPath + TokenTemplatesFolder);
+				var templateFolders = new DirectoryInfo(aPath + ModelMap.TokenTemplatesFolder);
 				var templates = templateFolders.EnumerateDirectories();
 				foreach (var t in templates)
 				{
@@ -296,10 +244,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 				taxonomy.TokenTemplateHierarchy = BuildHierarchy(templatesForHierarchy);
 			}
 
-			if (!Directory.Exists(aPath + TokenDefinitionsFolder)) return taxonomy;
+			if (!Directory.Exists(aPath + ModelMap.TokenDefinitionsFolder)) return taxonomy;
 			{
 				_log.Info("TokenDefinitions Folder Found, loading to TokenDefinitions");
-				var definitionsFolder = new DirectoryInfo(aPath + TokenDefinitionsFolder);
+				var definitionsFolder = new DirectoryInfo(aPath + ModelMap.TokenDefinitionsFolder);
 				var definitions = definitionsFolder.EnumerateDirectories();
 				foreach (var t in definitions)
 				{
@@ -333,7 +281,101 @@ namespace TTI.TTF.Taxonomy.Controllers
 			
 			return taxonomy;
 		}
+
+		private static Hierarchy GetBaseBranches()
+		{
+			var aPath = _artifactPath + _folderSeparator;
+			var bbPath = aPath + ModelMap.TokenTemplatesFolder + TxService.FolderSeparator + ModelMap.BaseBranches;
+			Hierarchy retVal;
+			if (!Directory.Exists(bbPath)) return new Hierarchy();
+			{
+				_log.Info("BaseBranches Folder Found, loading to BaseBranches");
+				var templateFolders = new DirectoryInfo(bbPath);
+				retVal = BuildHierarchy();
+				var templates = templateFolders.EnumerateDirectories();
+				foreach (var t in templates)
+				{
+					TokenTemplate tokenTemplate;
+					_log.Info("Loading " + t.Name);
+
+					var branchName = t.Name;
+
+					var versions = t.GetDirectories("latest");
+					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
+					if (bJson != null)
+					{
+						try
+						{
+							tokenTemplate = GetArtifact<TokenTemplate>(bJson[0]);
+							
+							var branch = new Branch
+							{
+								Id = tokenTemplate.Artifact.ArtifactSymbol.Id,
+								Name = tokenTemplate.Artifact.Name,
+								Template = tokenTemplate
+							};
+							if (branchName == ModelMap.FractionalFungible)
+							{
+								retVal.FractionalFungibles = branch;
+							}
+							if (branchName == ModelMap.FractionalNonFungible)
+							{
+								retVal.FractionalNonFungibles = branch;
+							}
+							if (branchName == ModelMap.Singleton)
+							{
+								retVal.Singletons = branch;
+							}
+							if (branchName == ModelMap.WholeFungible)
+							{
+								retVal.WholeFungibles = branch;
+							}
+							if (branchName == ModelMap.HybridFungible)
+							{
+								retVal.Hybrids = branch;
+								//Ok...the hybrids need to be built out like the single bases, so tN(tF{d...}), tf(tN{s})...
+							}
+
+						}
+						catch (Exception e)
+						{
+							_log.Error("Failed to load BaseBranch: " + t.Name);
+							_log.Error(e);
+							continue;
+						}
+					}
+					else
+					{
+						continue;
+					}
+
+					tokenTemplate.Artifact = GetArtifactFiles(t, tokenTemplate.Artifact);
+					templatesForHierarchy.Add(tokenTemplate);
+				}
+			}
+		}
 		
+		private static Hierarchy BuildHierarchy()
+		{
+			var hybrids = new HybridBranch
+			{
+				Singletons = new Branch(),
+				FractionalFungibles = new Branch(),
+				WholeFungibles = new Branch(),
+				FractionalNonFungibles = new Branch()
+			};
+
+			var retVal = new Hierarchy
+			{
+				Hybrids = hybrids,
+				Singletons = new Branch(),
+				FractionalFungibles = new Branch(),
+				WholeFungibles = new Branch(),
+				FractionalNonFungibles = new Branch()
+			};
+			return retVal;
+		}
+
 		#endregion
 		
 		#region Create, Update, Delete
@@ -520,7 +562,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					existingBehavior.MergeFrom(updateBehavior);
 					artifactName = updateBehavior.Artifact.Name.ToLower();
 					artifactJson = jsf.Format(existingBehavior);
-					var (outcomeB, messageB) = VersionArtifact(BehaviorFolder, artifactName,
+					var (outcomeB, messageB) = VersionArtifact(ModelMap.BehaviorFolder, artifactName,
 						existingVersion, artifactJson, artifactType);
 					if (outcomeB)
 					{
@@ -548,7 +590,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					artifactName = updateBehaviorGroup.Artifact.Name.ToLower();
 
 					artifactJson = jsf.Format(existingBehaviorGroup);
-					var (outcomeBg, messageBg) = VersionArtifact(BehaviorGroupFolder, artifactName,
+					var (outcomeBg, messageBg) = VersionArtifact(ModelMap.BehaviorGroupFolder, artifactName,
 						existingVersion, artifactJson, artifactType);
 					if (outcomeBg)
 					{
@@ -576,7 +618,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					artifactName = updatePropertySet.Artifact.Name.ToLower();
 					
 					artifactJson = jsf.Format(existingPropertySet);
-					var (outcomePs, messagePs) = VersionArtifact(PropertySetFolder, artifactName,
+					var (outcomePs, messagePs) = VersionArtifact(ModelMap.PropertySetFolder, artifactName,
 						existingVersion, artifactJson, artifactType);
 					if (outcomePs)
 					{
@@ -603,7 +645,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					artifactName = updateTokenTemplate.Artifact.Name.ToLower();
 					
 					artifactJson = jsf.Format(existingTokenTemplate);
-					var (outcomeT, messageT) = VersionArtifact(TokenTemplatesFolder, artifactName,
+					var (outcomeT, messageT) = VersionArtifact(ModelMap.TokenTemplatesFolder, artifactName,
 						existingVersion, artifactJson, artifactType);
 					if (outcomeT)
 					{
@@ -698,19 +740,19 @@ namespace TTI.TTF.Taxonomy.Controllers
 				switch (artifactRequest.ArtifactSymbol.Type)
 				{
 					case ArtifactType.Base:
-						DeleteArtifactFolder(BaseFolder, artifactFolderName);
+						DeleteArtifactFolder(ModelMap.BaseFolder, artifactFolderName);
 						break;
 					case ArtifactType.Behavior:
-						DeleteArtifactFolder(BehaviorFolder, artifactFolderName);
+						DeleteArtifactFolder(ModelMap.BehaviorFolder, artifactFolderName);
 						break;
 					case ArtifactType.BehaviorGroup:
-						DeleteArtifactFolder(BehaviorGroupFolder, artifactFolderName);
+						DeleteArtifactFolder(ModelMap.BehaviorGroupFolder, artifactFolderName);
 						break;
 					case ArtifactType.PropertySet:
-						DeleteArtifactFolder(PropertySetFolder, artifactFolderName);
+						DeleteArtifactFolder(ModelMap.PropertySetFolder, artifactFolderName);
 						break;
 					case ArtifactType.TokenTemplate:
-						DeleteArtifactFolder(TokenTemplatesFolder, artifactFolderName);
+						DeleteArtifactFolder(ModelMap.TokenTemplatesFolder, artifactFolderName);
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
@@ -743,22 +785,22 @@ namespace TTI.TTF.Taxonomy.Controllers
 			switch (type)
 			{
 				case ArtifactType.Base:
-					typeFolderName = BaseFolder;
+					typeFolderName = ModelMap.BaseFolder;
 					break;
 				case ArtifactType.Behavior:
-					typeFolderName = BehaviorFolder;
+					typeFolderName = ModelMap.BehaviorFolder;
 					break;
 				case ArtifactType.BehaviorGroup:
-					typeFolderName = BehaviorGroupFolder;
+					typeFolderName = ModelMap.BehaviorGroupFolder;
 					break;
 				case ArtifactType.PropertySet:
-					typeFolderName = PropertySetFolder;
+					typeFolderName = ModelMap.PropertySetFolder;
 					break;
 				case ArtifactType.TokenTemplate:
-					typeFolderName = TokenTemplatesFolder;
+					typeFolderName = ModelMap.TokenTemplatesFolder;
 					break;
 				case ArtifactType.TokenDefinition:
-					typeFolderName = TokenDefinitionsFolder;
+					typeFolderName = ModelMap.TokenDefinitionsFolder;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException(nameof(type), type, null);

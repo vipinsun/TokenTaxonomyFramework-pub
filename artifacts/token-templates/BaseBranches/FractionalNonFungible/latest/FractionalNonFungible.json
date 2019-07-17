@@ -1,7 +1,7 @@
 {
   "parentReference": null,
   "classification": {
-    "tokenType": "NON_FUNGIBLE",
+    "tokenType": "NON-FUNGIBLE",
     "branch": "FRACTIONAL"
   },
   "artifact": {
