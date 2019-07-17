@@ -14,7 +14,7 @@ message Taxonomy{
     map<string, taxonomy.model.core.Behavior> behaviors = 3;
     map<string, taxonomy.model.core.BehaviorGroup> behavior_groups = 4;
     map<string, taxonomy.model.core.PropertySet> property_sets = 5;
-    map<string, taxonomy.model.core.TokenTemplate> token_templates = 6;
+    Hierarchy token_template_hierarchy = 6;
     map<string, taxonomy.model.core.TokenDefinition> token_definitions = 7;
     taxonomy.model.artifact.FormulaGrammar formula_grammar = 8;
 }
@@ -22,6 +22,32 @@ message Taxonomy{
 message TaxonomyVersion{
     string id = 1;
     string version = 2;
+    string state_hash = 3;
+}
+
+message Hierarchy {
+    Branch fractional_fungibles = 1;
+    Branch whole_fungibles = 2;
+    Branch fractional_non_fungibles = 3;
+    Branch singletons = 4;
+    HybridBranch hybrids = 5;
+}
+
+message Branch{
+    string id = 1;
+    string parent_id = 2;
+    string name = 3;
+    taxonomy.model.core.TokenTemplate template = 4;
+    repeated taxonomy.model.core.TokenDefinition token_definitions = 5;
+    repeated Branch branches = 6;
+    Branch parent_branch = 7;
+}
+
+message HybridBranch{
+    Branch fractional_fungibles = 1;
+    Branch whole_fungibles = 2;
+    Branch fractional_non_fungibles = 3;
+    Branch singletons = 4;
 }
 
 

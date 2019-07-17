@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,7 +23,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 		private const string PropertySetFolder = "property-sets";
 		private const string TokenTemplatesFolder = "token-templates";
 		private const string TokenDefinitionsFolder = "token-definitions";
-		
 		private static readonly string _artifactPath;
 		private static readonly string _folderSeparator = TxService.FolderSeparator;
 		private static readonly string _latest = TxService.Latest;
@@ -34,8 +34,58 @@ namespace TTI.TTF.Taxonomy.Controllers
 			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 			_artifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + _folderSeparator +
 			               TxService.ArtifactPath;
-		}	
-		
+		}
+
+		private static Hierarchy BuildHierarchy(IEnumerable<TokenTemplate> templates)
+		{
+			var hybrids = new HybridBranch
+			{
+				Singletons = new Branch(),
+				FractionalFungibles = new Branch(),
+				WholeFungibles = new Branch(),
+				FractionalNonFungibles = new Branch()
+			};
+			
+			var retVal =  new Hierarchy
+			{
+				Hybrids = hybrids,
+				Singletons = new Branch(),
+				FractionalFungibles = new Branch(),
+				WholeFungibles = new Branch(),
+				FractionalNonFungibles = new Branch()
+			};
+
+			var rootBranches = GetRootBranches(templates);
+			
+			foreach (var t in templates)
+			{
+				if (t.Classification.TokenType == TokenType.Fungible ||
+				    t.Classification.TokenType == TokenType.NonFungible)
+				{
+					switch (t.Classification.Branch)
+					{
+						case ClassificationBranch.Fractional:
+							if(t.Classification.TokenType == TokenType.Fungible)
+								retVal.FractionalFungibles.
+							break;
+						case ClassificationBranch.Whole:
+							break;
+						case ClassificationBranch.Singleton:
+							break;
+						default:
+							throw new ArgumentOutOfRangeException();
+					}
+				}
+			}
+
+			return retVal;
+		}
+
+		private static IEnumerable<Branch> GetRootBranches(IEnumerable<TokenTemplate> templates)
+		{
+			throw new NotImplementedException();
+		}
+
 		#region load
 		internal static Model.Taxonomy Load()
 		{
@@ -49,6 +99,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 			_log.Info("Artifact Folder Found, loading to Taxonomy.");
 			var root = new DirectoryInfo(_artifactPath);
 			Model.Taxonomy taxonomy;
+			var templatesForHierarchy = new List<TokenTemplate>();
+			
 			var rJson = root.GetFiles("Taxonomy.json");
 			var fJson = root.GetFiles("FormulaGrammar.json");
 			try
@@ -67,7 +119,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			var aPath = _artifactPath + _folderSeparator;
 			if (Directory.Exists(aPath + BaseFolder))
 			{
-
 				_log.Info("Base Artifact Folder Found, loading to Base Token Types");
 				var bases = new DirectoryInfo(aPath + BaseFolder);
 				foreach (var ad in bases.EnumerateDirectories())
@@ -237,9 +288,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 						continue;
 					}
 					tokenTemplate.Artifact = GetArtifactFiles(t, tokenTemplate.Artifact);
-					taxonomy.TokenTemplates.Add(tokenTemplate.Artifact.ArtifactSymbol.Tooling,
-						tokenTemplate);
+					templatesForHierarchy.Add(tokenTemplate);
 				}
+
+				taxonomy.TokenTemplateHierarchy = BuildHierarchy(templatesForHierarchy);
 			}
 
 			if (!Directory.Exists(aPath + TokenDefinitionsFolder)) return taxonomy;
@@ -279,7 +331,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			
 			return taxonomy;
 		}
-
+		
 		#endregion
 		
 		#region Create, Update, Delete
@@ -1247,7 +1299,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			
 			var ns = templateProto.Replace("BASE", nameSpaceAdd);
 			ns = ns.Replace("NAME", artifactName);
-			ns = ns.Replace("bASE", nameSpaceAdd.ToLower());
+			ns = ns.Replace("BASE", nameSpaceAdd.ToLower());
 			proto.Write(ns.Replace("ARTIFACT", artifactName));
 			proto.Close();
 		}

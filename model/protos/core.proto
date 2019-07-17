@@ -81,30 +81,6 @@ message PropertySetReference{
     repeated Property properties = 2; //values
 }
 
-message TokenTemplateHierarchy{
-    TemplateBranch fractional_fungibles = 1;
-    TemplateBranch whole_fungibles = 2;
-    TemplateBranch fractional_non_fungibles = 3;
-    TemplateBranch whole_non_fungibles = 4;
-    TemplateBranch singletons = 5;
-    message HybridBranch{
-        TemplateBranch fractional_fungibles = 1;
-        TemplateBranch whole_fungibles = 2;
-        TemplateBranch fractional_non_fungibles = 3;
-        TemplateBranch singletons = 4;
-    }
-    HybridBranch hybrids = 6;
-}
-
-message TemplateBranch{
-    taxonomy.model.artifact.Classification classification = 1;
-    TokenTemplates token_templates = 2;
-}
-
-message TemplateIndex {
-    map<string, TokenTemplate> templates = 1;
-}
-
 //used to wrap the base token type for a template with implementation details specific for the base's use in this token template definition. Include the base type if template values are set when serialized, else the reference will be used.
 message TokenTemplate{
     taxonomy.model.artifact.ArtifactReference parent_reference = 1; //when present, visual and tooling formulas are calculated using the template hierarchy and added artifacts.
