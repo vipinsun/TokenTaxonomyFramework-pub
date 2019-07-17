@@ -17,12 +17,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 {
 	public static class TaxonomyController
 	{
-		private const string BaseFolder = "base";
-		private const string BehaviorFolder = "behaviors";
-		private const string BehaviorGroupFolder = "behavior-groups";
-		private const string PropertySetFolder = "property-sets";
-		private const string TokenTemplatesFolder = "token-templates";
-		private const string TokenDefinitionsFolder = "token-definitions";
+
 		private static readonly string _artifactPath;
 		private static readonly string _folderSeparator = TxService.FolderSeparator;
 		private static readonly string _latest = TxService.Latest;
@@ -55,7 +50,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 				FractionalNonFungibles = new Branch()
 			};
 
-			var rootBranches = GetRootBranches(templates);
+			var rootBranches = GetBaseBranches(templates);
 			
 			foreach (var t in templates)
 			{
@@ -66,7 +61,14 @@ namespace TTI.TTF.Taxonomy.Controllers
 					{
 						case ClassificationBranch.Fractional:
 							if(t.Classification.TokenType == TokenType.Fungible)
-								retVal.FractionalFungibles.
+								retVal.FractionalFungibles.Branches.Add(new Branch
+								{
+									Id = t.Artifact.ArtifactSymbol.Id,
+									Name = t.Artifact.Name,
+									Template = t,
+									ParentId = rootBranches.
+									
+								});
 							break;
 						case ClassificationBranch.Whole:
 							break;
@@ -81,7 +83,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return retVal;
 		}
 
-		private static IEnumerable<Branch> GetRootBranches(IEnumerable<TokenTemplate> templates)
+		private static IEnumerable<Branch> GetBaseBranches(IEnumerable<TokenTemplate> templates)
 		{
 			throw new NotImplementedException();
 		}

@@ -1,0 +1,1 @@
+# FractionalNonFungible a TTF TokenTemplate

@@ -26,18 +26,7 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "Log PropertySet",
-        "symbol": {
-          "type": "PROPERTY_SET",
-          "visualSymbol": "&phi;<i>Log</i>",
-          "toolingSymbol": "phLog",
-          "artifactVersion": "1.0",
-          "templateValidated": false
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
     "artifactFiles": [

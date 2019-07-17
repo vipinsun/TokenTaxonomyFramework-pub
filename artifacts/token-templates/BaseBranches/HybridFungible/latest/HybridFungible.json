@@ -1,0 +1,115 @@
+{
+  "parentReference": null,
+  "classification": {
+    "tokenType": "FUNGIBLE",
+    "branch": "FRACTIONAL"
+  },
+  "artifact": {
+    "artifactSymbol": {
+      "id": "41cf2071-68c3-4808-b217-ccdf99cb0543",
+      "type": "TOKEN_TEMPLATE",
+      "visual": "&tau;<sub>F</sub>{<i>d,t,b</i>}",
+      "tooling": "tF{d,t,b}",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "FractionalFungible",
+    "aliases": [
+      "ICO",
+      "Fixed Supply Fractional Fungible"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "This is a Fixed Supply Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is fractional by setting the Decimals property on the subdividable behavior. A token instance can be burned.",
+      "businessExample": "Typically used to represent an Initial Coin offering with a fixed supply.",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "FractionalFungible analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [
+      {
+        "description": "A fungible token",
+        "symbol": {
+          "id":"89ca6daf-5585-469e-abd1-19bc44e7a012",
+          "type": "BASE",
+          "visual": "&tau;<sub>F</sub>",
+          "tooling": "tF",
+          "version": "1.0",
+          "templateValidated": true
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "FractionalFungible.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "FractionalFungible.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [],
+      "implementationReferences": [],
+      "resources": [],
+      "artifact": null
+    }
+  },
+  "tokenBase": {
+    "base": {
+      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "type": "BASE",
+      "visual": "&tau;<sub>F</sub>",
+      "tooling": "tF",
+      "version": "1.0",
+      "templateValidated": true
+    }
+  },
+  "behaviors": [
+    {
+      "behavior": {
+        "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
+        "type": "BEHAVIOR",
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    },
+    {
+      "behavior": {
+        "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
+        "type": "BEHAVIOR",
+        "visual": "<i>t</i>",
+        "tooling": "t",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    },
+    {
+      "behavior": {
+        "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
+        "type": "BEHAVIOR",
+        "visual": "<i>b</i>",
+        "tooling": "b",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    }
+  ],
+  "behaviorGroups": [],
+  "propertySets": [],
+  "childTokens": []
+}
