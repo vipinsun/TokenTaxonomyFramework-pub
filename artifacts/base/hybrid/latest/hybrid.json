@@ -1,25 +1,25 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id":"a52abf3f-3308-42b2-8ad1-7c32bf6ae5c9",
+      "id":"d97f22d6-4ad5-4b06-a819-eb48d4f94f29",
       "type": "BASE",
-      "visual": "&tau;<sub>F</sub>([&tau;(&tau;))",
-      "tooling": "tF([t(t)]",
+      "visual": "&tau;<sub></sub>(&tau;)",
+      "tooling": "t(t)",
       "version": "1.0",
       "templateValidated": true
     },
-    "name": "Hybrid-fungibleBase-hybridChildren",
+    "name": "Hybrid",
     "aliases": [
       "alias1",
       "alias2"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a hybrid-fungibleBase-hybridChildren of type: Base",
+      "businessDescription": "This is a hybrid of type: Base",
       "businessExample": "",
       "analogies": [
         {
           "name": "Analogy 1",
-          "description": "hybrid-fungibleBase-hybridChildren analogy 1 description",
+          "description": "hybrid analogy 1 description",
           "artifactDefinition": null
         }
       ],
@@ -28,12 +28,14 @@
     },
     "dependencies": [
       {
-        "description": "",
+        "description": "Hybrid Token Definition",
         "symbol": {
+          "id":"5f5c4e7f-8ff1-4767-b59c-799d49753226",
           "type": "BASE",
-          "visual": "&tau;<sub>F</sub>",
-          "tooling": "tF",
-          "version": ""
+          "visual": "&tau",
+          "tooling": "t",
+          "version": "1.0",
+          "templateValidated": true
         }
       }
     ],
@@ -67,13 +69,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "hybrid-fungibleBase-hybridChildren.proto",
+        "fileName": "hybrid.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "hybrid-fungibleBase-hybridChildren.md",
+        "fileName": "hybrid.md",
         "fileData": "",
         "artifact": null
       }
@@ -109,5 +111,5 @@
       "artifact": null
     }
   },
-  "tokenType": "HYBRID_FUNGIBLE_BASE_HYBRID_CHILDREN"
+  "tokenType": "HYBRID"
 }

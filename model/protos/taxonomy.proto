@@ -26,28 +26,42 @@ message TaxonomyVersion{
 }
 
 message Hierarchy {
-    Branch fractional_fungibles = 1;
-    Branch whole_fungibles = 2;
-    Branch fractional_non_fungibles = 3;
-    Branch singletons = 4;
-    HybridBranch hybrids = 5;
+    BranchRoot fractional_fungibles = 1;
+    BranchRoot whole_fungibles = 2;
+    BranchRoot fractional_non_fungibles = 3;
+    BranchRoot singletons = 4;
+    HybridBranchRoot hybrids = 5;
 }
 
-message Branch{
-    string id = 1;
+message BranchIdentifier{
+    taxonomy.model.artifact.TokenType token_type = 1;
+    taxonomy.model.artifact.ClassificationBranch branch = 2;
+    string base_template_id = 3;
+}
+
+message BranchRoot{
+    BranchIdentifier branch_identifier = 1;
     string parent_id = 2;
     string name = 3;
     taxonomy.model.core.TokenTemplate template = 4;
     repeated taxonomy.model.core.TokenDefinition token_definitions = 5;
-    repeated Branch branches = 6;
-    Branch parent_branch = 7;
+    repeated TemplateBranch branches = 6;
 }
 
-message HybridBranch{
-    Branch fractional_fungibles = 1;
-    Branch whole_fungibles = 2;
-    Branch fractional_non_fungibles = 3;
-    Branch singletons = 4;
+message HybridBranchRoot{
+    BranchRoot fractional_fungibles = 1;
+    BranchRoot whole_fungibles = 2;
+    BranchRoot fractional_non_fungibles = 3;
+    BranchRoot singletons = 4;
 }
 
+//used to dynamically build a heirarchy off a BranchRoot.
+message TemplateBranch{
+    string template_parent_id = 1;
+    string name = 3;
+    taxonomy.model.core.TokenTemplate template = 4;
+    repeated taxonomy.model.core.TokenDefinition token_definitions = 5;
+    repeated BranchRoot branches = 6;
+    BranchRoot parent_branch = 7;
+}
 

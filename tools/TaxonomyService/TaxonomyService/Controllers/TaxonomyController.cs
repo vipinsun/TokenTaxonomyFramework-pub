@@ -31,7 +31,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			               TxService.ArtifactPath;
 		}
 
-		private static IEnumerable<Branch> GetBaseBranches(IEnumerable<TokenTemplate> templates)
+		private static IEnumerable<BranchRoot> GetBaseBranches(IEnumerable<TokenTemplate> templates)
 		{
 			throw new NotImplementedException();
 		}
@@ -1005,17 +1005,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case TokenType.NonFungible:
 					baseName = "non-fungible";
 					break;
-				case TokenType.HybridFungibleBase:
+				case TokenType.Hybrid:
 					baseName = "hybrid-fungibleBase";
-					break;
-				case TokenType.HybridNonFungibleBase:
-					baseName = "hybrid-non-fungibleBase";
-					break;
-				case TokenType.HybridFungibleBaseHybridChildren:
-					baseName = "hybrid-non-fungibleBase-hybridChildren";
-					break;
-				case TokenType.HybridNonFungibleBaseHybridChildren:
-					baseName = "hybrid-non-fungibleBase-hybridChildren";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();

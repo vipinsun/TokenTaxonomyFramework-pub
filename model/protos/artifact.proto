@@ -10,10 +10,7 @@ option java_multiple_files = true;
 enum TokenType {
     FUNGIBLE = 0;
     NON_FUNGIBLE = 1;
-    HYBRID_FUNGIBLE_BASE = 2;
-    HYBRID_NON_FUNGIBLE_BASE = 3;
-    HYBRID_FUNGIBLE_BASE_HYBRID_CHILDREN = 4;
-    HYBRID_NON_FUNGIBLE_BASE_HYBRID_CHILDREN = 5;
+    HYBRID = 2;
 }
 
 //classification for Templates, parent and any child tokens. 
@@ -21,11 +18,6 @@ enum ClassificationBranch{
     FRACTIONAL = 0; //tF{d} or tN{d}
     WHOLE = 1; //tF{~d} or tN{~d}
     SINGLETON = 2; //tN{~s}
-}
-
-message Classification{
-    TokenType token_type = 1;
-    ClassificationBranch branch = 2;
 }
 
 enum ArtifactType{
@@ -59,6 +51,7 @@ enum TargetPlatform{
     DAML = 5;
 }
 
+//types 
 
 message ArtifactSymbol{
     string id = 1;
@@ -262,4 +255,9 @@ message QueryResult{
     int32 last_item_index = 3;
     int32 total_items_in_collection = 4; //total count in the collection if iterating through all the items on the service of the specified type.
     google.protobuf.Any artifact_collection = 5; //deserialize to the collection object for the ArtifactType, i.e. Base will be a Bases, Behavior will be Behaviors, etc.
+}
+
+message Classification{
+    TokenType token_type = 1;
+    ClassificationBranch branch = 2;
 }

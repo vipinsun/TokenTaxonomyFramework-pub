@@ -25,140 +25,136 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg5hcnRpZmFjdC5wcm90bxIXdGF4b25vbXkubW9kZWwuYXJ0aWZhY3QaGWdv",
-            "b2dsZS9wcm90b2J1Zi9hbnkucHJvdG8ihwEKDkNsYXNzaWZpY2F0aW9uEjYK",
-            "CnRva2VuX3R5cGUYASABKA4yIi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5U",
-            "b2tlblR5cGUSPQoGYnJhbmNoGAIgASgOMi0udGF4b25vbXkubW9kZWwuYXJ0",
-            "aWZhY3QuQ2xhc3NpZmljYXRpb25CcmFuY2ginwEKDkFydGlmYWN0U3ltYm9s",
-            "EgoKAmlkGAEgASgJEjMKBHR5cGUYAiABKA4yJS50YXhvbm9teS5tb2RlbC5h",
-            "cnRpZmFjdC5BcnRpZmFjdFR5cGUSDgoGdmlzdWFsGAMgASgJEg8KB3Rvb2xp",
-            "bmcYBCABKAkSDwoHdmVyc2lvbhgFIAEoCRIaChJ0ZW1wbGF0ZV92YWxpZGF0",
-            "ZWQYBiABKAgi9wMKCEFydGlmYWN0EkAKD2FydGlmYWN0X3N5bWJvbBgBIAEo",
-            "CzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sEgwK",
-            "BG5hbWUYAiABKAkSDwoHYWxpYXNlcxgDIAMoCRJIChNhcnRpZmFjdF9kZWZp",
-            "bml0aW9uGAQgASgLMisudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
-            "Y3REZWZpbml0aW9uEj8KDGRlcGVuZGVuY2llcxgFIAMoCzIpLnRheG9ub215",
-            "Lm1vZGVsLmFydGlmYWN0LlN5bWJvbERlcGVuZGVuY3kSSgoZaW5jb21wYXRp",
-            "YmxlX3dpdGhfc3ltYm9scxgGIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LkFydGlmYWN0U3ltYm9sEkcKFWluZmx1ZW5jZWRfYnlfc3ltYm9scxgH",
-            "IAMoCzIoLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlN5bWJvbEluZmx1ZW5j",
-            "ZRI9Cg5hcnRpZmFjdF9maWxlcxgIIAMoCzIlLnRheG9ub215Lm1vZGVsLmFy",
-            "dGlmYWN0LkFydGlmYWN0RmlsZRIrCgRtYXBzGAkgASgLMh0udGF4b25vbXku",
-            "bW9kZWwuYXJ0aWZhY3QuTWFwcyKaAQoXQXJ0aWZhY3RSZWZlcmVuY2VWYWx1",
-            "ZXMSEwoLY29udHJvbF91cmkYASABKAkSPQoOYXJ0aWZhY3RfZmlsZXMYAiAD",
-            "KAsyJS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdEZpbGUSKwoE",
-            "bWFwcxgDIAEoCzIdLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMirwEK",
-            "EUFydGlmYWN0UmVmZXJlbmNlEgoKAmlkGAEgASgJEjMKBHR5cGUYAiABKA4y",
-            "JS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSFwoPcmVm",
-            "ZXJlbmNlX25vdGVzGAMgASgJEkAKBnZhbHVlcxgEIAEoCzIwLnRheG9ub215",
-            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0UmVmZXJlbmNlVmFsdWVzIpwBCg9T",
-            "eW1ib2xJbmZsdWVuY2USEwoLZGVzY3JpcHRpb24YASABKAkSNwoGc3ltYm9s",
-            "GAIgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1i",
-            "b2wSOwoKYXBwbGllc190bxgDIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LkFydGlmYWN0U3ltYm9sImAKEFN5bWJvbERlcGVuZGVuY3kSEwoLZGVz",
-            "Y3JpcHRpb24YASABKAkSNwoGc3ltYm9sGAIgASgLMicudGF4b25vbXkubW9k",
-            "ZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wi0AEKEkFydGlmYWN0RGVmaW5p",
-            "dGlvbhIcChRidXNpbmVzc19kZXNjcmlwdGlvbhgBIAEoCRIYChBidXNpbmVz",
-            "c19leGFtcGxlGAIgASgJEjsKCWFuYWxvZ2llcxgDIAMoCzIoLnRheG9ub215",
-            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0QW5hbG9neRIQCghjb21tZW50cxgE",
-            "IAEoCRIzCghhcnRpZmFjdBgFIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlm",
-            "YWN0LkFydGlmYWN0In4KD0FydGlmYWN0QW5hbG9neRIMCgRuYW1lGAEgASgJ",
-            "EhMKC2Rlc2NyaXB0aW9uGAIgASgJEkgKE2FydGlmYWN0X2RlZmluaXRpb24Y",
-            "AyABKAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdERlZmlu",
-            "aXRpb24ipAEKDEFydGlmYWN0RmlsZRI5Cgdjb250ZW50GAEgASgOMigudGF4",
-            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RDb250ZW50EhEKCWZpbGVf",
-            "bmFtZRgCIAEoCRIRCglmaWxlX2RhdGEYAyABKAwSMwoIYXJ0aWZhY3QYBCAB",
-            "KAsyIS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdCKHAgoETWFw",
-            "cxI+Cg9jb2RlX3JlZmVyZW5jZXMYASADKAsyJS50YXhvbm9teS5tb2RlbC5h",
-            "cnRpZmFjdC5NYXBSZWZlcmVuY2USSAoZaW1wbGVtZW50YXRpb25fcmVmZXJl",
-            "bmNlcxgCIAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcFJlZmVy",
-            "ZW5jZRJACglyZXNvdXJjZXMYAyADKAsyLS50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5NYXBSZXNvdXJjZVJlZmVyZW5jZRIzCghhcnRpZmFjdBgEIAEoCzIh",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0ItgBCgxNYXBSZWZl",
-            "cmVuY2USOgoMbWFwcGluZ190eXBlGAEgASgOMiQudGF4b25vbXkubW9kZWwu",
-            "YXJ0aWZhY3QuTWFwcGluZ1R5cGUSDAoEbmFtZRgCIAEoCRI5CghwbGF0Zm9y",
-            "bRgDIAEoDjInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlRhcmdldFBsYXRm",
-            "b3JtEhYKDnJlZmVyZW5jZV9wYXRoGAQgASgJEisKBG1hcHMYBSABKAsyHS50",
-            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5NYXBzIrkBChRNYXBSZXNvdXJjZVJl",
-            "ZmVyZW5jZRI6CgxtYXBwaW5nX3R5cGUYASABKA4yJC50YXhvbm9teS5tb2Rl",
-            "bC5hcnRpZmFjdC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIgASgJEhMKC2Rlc2Ny",
-            "aXB0aW9uGAMgASgJEhUKDXJlc291cmNlX3BhdGgYBCABKAkSKwoEbWFwcxgF",
-            "IAEoCzIdLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMicQoSTmV3QXJ0",
-            "aWZhY3RSZXF1ZXN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5h",
-            "cnRpZmFjdC5BcnRpZmFjdFR5cGUSJgoIYXJ0aWZhY3QYAiABKAsyFC5nb29n",
-            "bGUucHJvdG9idWYuQW55In4KE05ld0FydGlmYWN0UmVzcG9uc2USMwoEdHlw",
-            "ZRgBIAEoDjIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlw",
-            "ZRIyChRhcnRpZmFjdF90eXBlX29iamVjdBgCIAEoCzIULmdvb2dsZS5wcm90",
-            "b2J1Zi5BbnkigAEKFVVwZGF0ZUFydGlmYWN0UmVxdWVzdBIzCgR0eXBlGAEg",
-            "ASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEjIK",
-            "FGFydGlmYWN0X3R5cGVfb2JqZWN0GAIgASgLMhQuZ29vZ2xlLnByb3RvYnVm",
-            "LkFueSKSAQoWVXBkYXRlQXJ0aWZhY3RSZXNwb25zZRIzCgR0eXBlGAEgASgO",
-            "MiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEg8KB3Vw",
-            "ZGF0ZWQYAiABKAgSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QYAyABKAsyFC5n",
-            "b29nbGUucHJvdG9idWYuQW55IlkKFURlbGV0ZUFydGlmYWN0UmVxdWVzdBJA",
-            "Cg9hcnRpZmFjdF9zeW1ib2wYASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5BcnRpZmFjdFN5bWJvbCIpChZEZWxldGVBcnRpZmFjdFJlc3BvbnNl",
-            "Eg8KB2RlbGV0ZWQYASABKAgihAIKDkZvcm11bGFHcmFtbWFyEkkKFHNpbmds",
-            "ZV90b2tlbl9ncmFtbWFyGAEgASgLMisudGF4b25vbXkubW9kZWwuYXJ0aWZh",
-            "Y3QuU2luZ2xlVG9rZW5HcmFtbWFyEkMKDmh5YnJpZF9ncmFtbWFyGAIgASgL",
-            "MisudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuSHlicmlkVG9rZW5HcmFtbWFy",
-            "EmIKG2h5YnJpZF93aXRoX2h5YnJpZHNfZ3JhbW1hchgDIAEoCzI9LnRheG9u",
-            "b215Lm1vZGVsLmFydGlmYWN0Lkh5YnJpZFRva2VuV2l0aEh5YnJpZENoaWxk",
-            "cmVuR3JhbW1hciLCAQoSSHlicmlkVG9rZW5HcmFtbWFyEjsKBnBhcmVudBgB",
-            "IAEoCzIrLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlNpbmdsZVRva2VuR3Jh",
-            "bW1hchIWCg5jaGlsZHJlbl9zdGFydBgCIAEoCRJBCgxjaGlsZF90b2tlbnMY",
-            "AyADKAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5TaW5nbGVUb2tlbkdy",
-            "YW1tYXISFAoMY2hpbGRyZW5fZW5kGAQgASgJIukBCiRIeWJyaWRUb2tlbldp",
-            "dGhIeWJyaWRDaGlsZHJlbkdyYW1tYXISOwoGcGFyZW50GAEgASgLMisudGF4",
-            "b25vbXkubW9kZWwuYXJ0aWZhY3QuU2luZ2xlVG9rZW5HcmFtbWFyEh0KFWh5",
-            "YnJpZF9jaGlsZHJlbl9zdGFydBgCIAEoCRJIChNoeWJyaWRfY2hpbGRfdG9r",
-            "ZW5zGAMgAygLMisudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuSHlicmlkVG9r",
-            "ZW5HcmFtbWFyEhsKE2h5YnJpZF9jaGlsZHJlbl9lbmQYBCABKAki2gEKElNp",
-            "bmdsZVRva2VuR3JhbW1hchITCgtncm91cF9zdGFydBgCIAEoCRIhChliYXNl",
-            "X3Rva2VuX3Rvb2xpbmdfc3ltYm9sGAMgASgJEjgKCWJlaGF2aW9ycxgEIAEo",
-            "CzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkJlaGF2aW9yTGlzdBI/Cg1w",
-            "cm9wZXJ0eV9zZXRzGAUgASgLMigudGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
-            "UHJvcGVydHlTZXRMaXN0EhEKCWdyb3VwX2VuZBgGIAEoCSJWCgxCZWhhdmlv",
-            "ckxpc3QSEgoKbGlzdF9zdGFydBgBIAEoCRIgChhiZWhhdmlvcl90b29saW5n",
-            "X3N5bWJvbHMYAiADKAkSEAoIbGlzdF9lbmQYAyABKAkiagoPUHJvcGVydHlT",
-            "ZXRMaXN0EhIKCmxpc3Rfc3RhcnQYASABKAkSQwoNcHJvcGVydHlfc2V0cxgC",
-            "IAMoCzIsLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlByb3BlcnR5U2V0TGlz",
-            "dEl0ZW0iMgoTUHJvcGVydHlTZXRMaXN0SXRlbRIbChNwcm9wZXJ0eV9zZXRf",
-            "c3ltYm9sGAIgASgJIi4KFENvbW1pdFVwZGF0ZXNSZXF1ZXN0EhYKDmNvbW1p",
-            "dF9tZXNzYWdlGAEgASgJIicKFUNvbW1pdFVwZGF0ZXNSZXNwb25zZRIOCgZy",
-            "ZXN1bHQYASABKAkiEgoQSXNzdWVQdWxsUmVxdWVzdCIlChFJc3N1ZVB1bGxS",
-            "ZXNwb25zZRIQCghyZXNwb25zZRgBIAEoCSJNChRTZXJ2aWNlQ29uZmlndXJh",
-            "dGlvbhIRCglyZWFkX29ubHkYASABKAgSDgoGZ2l0X2lkGAIgASgJEhIKCmdp",
-            "dF9icmFuY2gYAyABKAkiggIKDFF1ZXJ5T3B0aW9ucxI8Cg1hcnRpZmFjdF90",
-            "eXBlGAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RU",
-            "eXBlEhcKD21heF9pdGVtX3JldHVybhgCIAEoBRIXCg9sYXN0X2l0ZW1faW5k",
-            "ZXgYAyABKAUSGQoRYnlfY2xhc3NpZmljYXRpb24YBCABKAgSTgoXdGVtcGxh",
-            "dGVfY2xhc3NpZmljYXRpb24YBSABKA4yLS50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5jaBIXCg9pbmNsdWRlX2h5YnJpZHMY",
-            "BiABKAgi1AEKC1F1ZXJ5UmVzdWx0EjwKDWFydGlmYWN0X3R5cGUYASABKA4y",
-            "JS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSGAoQZmly",
-            "c3RfaXRlbV9pbmRleBgCIAEoBRIXCg9sYXN0X2l0ZW1faW5kZXgYAyABKAUS",
-            "IQoZdG90YWxfaXRlbXNfaW5fY29sbGVjdGlvbhgEIAEoBRIxChNhcnRpZmFj",
-            "dF9jb2xsZWN0aW9uGAUgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSq7AQoJ",
-            "VG9rZW5UeXBlEgwKCEZVTkdJQkxFEAASEAoMTk9OX0ZVTkdJQkxFEAESGAoU",
-            "SFlCUklEX0ZVTkdJQkxFX0JBU0UQAhIcChhIWUJSSURfTk9OX0ZVTkdJQkxF",
-            "X0JBU0UQAxIoCiRIWUJSSURfRlVOR0lCTEVfQkFTRV9IWUJSSURfQ0hJTERS",
-            "RU4QBBIsCihIWUJSSURfTk9OX0ZVTkdJQkxFX0JBU0VfSFlCUklEX0NISUxE",
-            "UkVOEAUqQAoUQ2xhc3NpZmljYXRpb25CcmFuY2gSDgoKRlJBQ1RJT05BTBAA",
-            "EgkKBVdIT0xFEAESDQoJU0lOR0xFVE9OEAIqdgoMQXJ0aWZhY3RUeXBlEggK",
-            "BEJBU0UQABIMCghCRUhBVklPUhABEhIKDkJFSEFWSU9SX0dST1VQEAISEAoM",
-            "UFJPUEVSVFlfU0VUEAMSEgoOVE9LRU5fVEVNUExBVEUQBBIUChBUT0tFTl9E",
-            "RUZJTklUSU9OEAUqQgoPQXJ0aWZhY3RDb250ZW50Eg4KCkRFRklOSVRJT04Q",
-            "ABILCgdDT05UUk9MEAESBwoDVU1MEAISCQoFT1RIRVIQAypACgtNYXBwaW5n",
-            "VHlwZRIPCgtTT1VSQ0VfQ09ERRAAEhIKDklNUExFTUVOVEFUSU9OEAESDAoI",
-            "UkVTT1VSQ0UQAip2Cg5UYXJnZXRQbGF0Zm9ybRIVChFFVEhFUkVVTV9TT0xJ",
-            "RElUWRAAEhAKDENIQUlOQ09ERV9HTxABEhIKDkNIQUlOQ09ERV9KQVZBEAIS",
-            "EgoOQ0hBSU5DT0RFX05PREUQAxIJCgVDT1JEQRAEEggKBERBTUwQBUJJCiNv",
-            "cmcudHRpLnR0Zi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdFABqgIfVFRJLlRU",
-            "Ri5UYXhvbm9teS5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
+            "b2dsZS9wcm90b2J1Zi9hbnkucHJvdG8inwEKDkFydGlmYWN0U3ltYm9sEgoK",
+            "AmlkGAEgASgJEjMKBHR5cGUYAiABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5BcnRpZmFjdFR5cGUSDgoGdmlzdWFsGAMgASgJEg8KB3Rvb2xpbmcY",
+            "BCABKAkSDwoHdmVyc2lvbhgFIAEoCRIaChJ0ZW1wbGF0ZV92YWxpZGF0ZWQY",
+            "BiABKAgi9wMKCEFydGlmYWN0EkAKD2FydGlmYWN0X3N5bWJvbBgBIAEoCzIn",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sEgwKBG5h",
+            "bWUYAiABKAkSDwoHYWxpYXNlcxgDIAMoCRJIChNhcnRpZmFjdF9kZWZpbml0",
+            "aW9uGAQgASgLMisudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RE",
+            "ZWZpbml0aW9uEj8KDGRlcGVuZGVuY2llcxgFIAMoCzIpLnRheG9ub215Lm1v",
+            "ZGVsLmFydGlmYWN0LlN5bWJvbERlcGVuZGVuY3kSSgoZaW5jb21wYXRpYmxl",
+            "X3dpdGhfc3ltYm9scxgGIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
+            "LkFydGlmYWN0U3ltYm9sEkcKFWluZmx1ZW5jZWRfYnlfc3ltYm9scxgHIAMo",
+            "CzIoLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlN5bWJvbEluZmx1ZW5jZRI9",
+            "Cg5hcnRpZmFjdF9maWxlcxgIIAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0LkFydGlmYWN0RmlsZRIrCgRtYXBzGAkgASgLMh0udGF4b25vbXkubW9k",
+            "ZWwuYXJ0aWZhY3QuTWFwcyKaAQoXQXJ0aWZhY3RSZWZlcmVuY2VWYWx1ZXMS",
+            "EwoLY29udHJvbF91cmkYASABKAkSPQoOYXJ0aWZhY3RfZmlsZXMYAiADKAsy",
+            "JS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdEZpbGUSKwoEbWFw",
+            "cxgDIAEoCzIdLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMirwEKEUFy",
+            "dGlmYWN0UmVmZXJlbmNlEgoKAmlkGAEgASgJEjMKBHR5cGUYAiABKA4yJS50",
+            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSFwoPcmVmZXJl",
+            "bmNlX25vdGVzGAMgASgJEkAKBnZhbHVlcxgEIAEoCzIwLnRheG9ub215Lm1v",
+            "ZGVsLmFydGlmYWN0LkFydGlmYWN0UmVmZXJlbmNlVmFsdWVzIpwBCg9TeW1i",
+            "b2xJbmZsdWVuY2USEwoLZGVzY3JpcHRpb24YASABKAkSNwoGc3ltYm9sGAIg",
+            "ASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wS",
+            "OwoKYXBwbGllc190bxgDIAMoCzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
+            "LkFydGlmYWN0U3ltYm9sImAKEFN5bWJvbERlcGVuZGVuY3kSEwoLZGVzY3Jp",
+            "cHRpb24YASABKAkSNwoGc3ltYm9sGAIgASgLMicudGF4b25vbXkubW9kZWwu",
+            "YXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wi0AEKEkFydGlmYWN0RGVmaW5pdGlv",
+            "bhIcChRidXNpbmVzc19kZXNjcmlwdGlvbhgBIAEoCRIYChBidXNpbmVzc19l",
+            "eGFtcGxlGAIgASgJEjsKCWFuYWxvZ2llcxgDIAMoCzIoLnRheG9ub215Lm1v",
+            "ZGVsLmFydGlmYWN0LkFydGlmYWN0QW5hbG9neRIQCghjb21tZW50cxgEIAEo",
+            "CRIzCghhcnRpZmFjdBgFIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0",
+            "LkFydGlmYWN0In4KD0FydGlmYWN0QW5hbG9neRIMCgRuYW1lGAEgASgJEhMK",
+            "C2Rlc2NyaXB0aW9uGAIgASgJEkgKE2FydGlmYWN0X2RlZmluaXRpb24YAyAB",
+            "KAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdERlZmluaXRp",
+            "b24ipAEKDEFydGlmYWN0RmlsZRI5Cgdjb250ZW50GAEgASgOMigudGF4b25v",
+            "bXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RDb250ZW50EhEKCWZpbGVfbmFt",
+            "ZRgCIAEoCRIRCglmaWxlX2RhdGEYAyABKAwSMwoIYXJ0aWZhY3QYBCABKAsy",
+            "IS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdCKHAgoETWFwcxI+",
+            "Cg9jb2RlX3JlZmVyZW5jZXMYASADKAsyJS50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5NYXBSZWZlcmVuY2USSAoZaW1wbGVtZW50YXRpb25fcmVmZXJlbmNl",
+            "cxgCIAMoCzIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcFJlZmVyZW5j",
+            "ZRJACglyZXNvdXJjZXMYAyADKAsyLS50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
+            "dC5NYXBSZXNvdXJjZVJlZmVyZW5jZRIzCghhcnRpZmFjdBgEIAEoCzIhLnRh",
+            "eG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0ItgBCgxNYXBSZWZlcmVu",
+            "Y2USOgoMbWFwcGluZ190eXBlGAEgASgOMiQudGF4b25vbXkubW9kZWwuYXJ0",
+            "aWZhY3QuTWFwcGluZ1R5cGUSDAoEbmFtZRgCIAEoCRI5CghwbGF0Zm9ybRgD",
+            "IAEoDjInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlRhcmdldFBsYXRmb3Jt",
+            "EhYKDnJlZmVyZW5jZV9wYXRoGAQgASgJEisKBG1hcHMYBSABKAsyHS50YXhv",
+            "bm9teS5tb2RlbC5hcnRpZmFjdC5NYXBzIrkBChRNYXBSZXNvdXJjZVJlZmVy",
+            "ZW5jZRI6CgxtYXBwaW5nX3R5cGUYASABKA4yJC50YXhvbm9teS5tb2RlbC5h",
+            "cnRpZmFjdC5NYXBwaW5nVHlwZRIMCgRuYW1lGAIgASgJEhMKC2Rlc2NyaXB0",
+            "aW9uGAMgASgJEhUKDXJlc291cmNlX3BhdGgYBCABKAkSKwoEbWFwcxgFIAEo",
+            "CzIdLnRheG9ub215Lm1vZGVsLmFydGlmYWN0Lk1hcHMicQoSTmV3QXJ0aWZh",
+            "Y3RSZXF1ZXN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5tb2RlbC5hcnRp",
+            "ZmFjdC5BcnRpZmFjdFR5cGUSJgoIYXJ0aWZhY3QYAiABKAsyFC5nb29nbGUu",
+            "cHJvdG9idWYuQW55In4KE05ld0FydGlmYWN0UmVzcG9uc2USMwoEdHlwZRgB",
+            "IAEoDjIlLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIy",
+            "ChRhcnRpZmFjdF90eXBlX29iamVjdBgCIAEoCzIULmdvb2dsZS5wcm90b2J1",
+            "Zi5BbnkigAEKFVVwZGF0ZUFydGlmYWN0UmVxdWVzdBIzCgR0eXBlGAEgASgO",
+            "MiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEjIKFGFy",
+            "dGlmYWN0X3R5cGVfb2JqZWN0GAIgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFu",
+            "eSKSAQoWVXBkYXRlQXJ0aWZhY3RSZXNwb25zZRIzCgR0eXBlGAEgASgOMiUu",
+            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBlEg8KB3VwZGF0",
+            "ZWQYAiABKAgSMgoUYXJ0aWZhY3RfdHlwZV9vYmplY3QYAyABKAsyFC5nb29n",
+            "bGUucHJvdG9idWYuQW55IlkKFURlbGV0ZUFydGlmYWN0UmVxdWVzdBJACg9h",
+            "cnRpZmFjdF9zeW1ib2wYASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
+            "dC5BcnRpZmFjdFN5bWJvbCIpChZEZWxldGVBcnRpZmFjdFJlc3BvbnNlEg8K",
+            "B2RlbGV0ZWQYASABKAgihAIKDkZvcm11bGFHcmFtbWFyEkkKFHNpbmdsZV90",
+            "b2tlbl9ncmFtbWFyGAEgASgLMisudGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
+            "U2luZ2xlVG9rZW5HcmFtbWFyEkMKDmh5YnJpZF9ncmFtbWFyGAIgASgLMisu",
+            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuSHlicmlkVG9rZW5HcmFtbWFyEmIK",
+            "G2h5YnJpZF93aXRoX2h5YnJpZHNfZ3JhbW1hchgDIAEoCzI9LnRheG9ub215",
+            "Lm1vZGVsLmFydGlmYWN0Lkh5YnJpZFRva2VuV2l0aEh5YnJpZENoaWxkcmVu",
+            "R3JhbW1hciLCAQoSSHlicmlkVG9rZW5HcmFtbWFyEjsKBnBhcmVudBgBIAEo",
+            "CzIrLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlNpbmdsZVRva2VuR3JhbW1h",
+            "chIWCg5jaGlsZHJlbl9zdGFydBgCIAEoCRJBCgxjaGlsZF90b2tlbnMYAyAD",
+            "KAsyKy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5TaW5nbGVUb2tlbkdyYW1t",
+            "YXISFAoMY2hpbGRyZW5fZW5kGAQgASgJIukBCiRIeWJyaWRUb2tlbldpdGhI",
+            "eWJyaWRDaGlsZHJlbkdyYW1tYXISOwoGcGFyZW50GAEgASgLMisudGF4b25v",
+            "bXkubW9kZWwuYXJ0aWZhY3QuU2luZ2xlVG9rZW5HcmFtbWFyEh0KFWh5YnJp",
+            "ZF9jaGlsZHJlbl9zdGFydBgCIAEoCRJIChNoeWJyaWRfY2hpbGRfdG9rZW5z",
+            "GAMgAygLMisudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuSHlicmlkVG9rZW5H",
+            "cmFtbWFyEhsKE2h5YnJpZF9jaGlsZHJlbl9lbmQYBCABKAki2gEKElNpbmds",
+            "ZVRva2VuR3JhbW1hchITCgtncm91cF9zdGFydBgCIAEoCRIhChliYXNlX3Rv",
+            "a2VuX3Rvb2xpbmdfc3ltYm9sGAMgASgJEjgKCWJlaGF2aW9ycxgEIAEoCzIl",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkJlaGF2aW9yTGlzdBI/Cg1wcm9w",
+            "ZXJ0eV9zZXRzGAUgASgLMigudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuUHJv",
+            "cGVydHlTZXRMaXN0EhEKCWdyb3VwX2VuZBgGIAEoCSJWCgxCZWhhdmlvckxp",
+            "c3QSEgoKbGlzdF9zdGFydBgBIAEoCRIgChhiZWhhdmlvcl90b29saW5nX3N5",
+            "bWJvbHMYAiADKAkSEAoIbGlzdF9lbmQYAyABKAkiagoPUHJvcGVydHlTZXRM",
+            "aXN0EhIKCmxpc3Rfc3RhcnQYASABKAkSQwoNcHJvcGVydHlfc2V0cxgCIAMo",
+            "CzIsLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlByb3BlcnR5U2V0TGlzdEl0",
+            "ZW0iMgoTUHJvcGVydHlTZXRMaXN0SXRlbRIbChNwcm9wZXJ0eV9zZXRfc3lt",
+            "Ym9sGAIgASgJIi4KFENvbW1pdFVwZGF0ZXNSZXF1ZXN0EhYKDmNvbW1pdF9t",
+            "ZXNzYWdlGAEgASgJIicKFUNvbW1pdFVwZGF0ZXNSZXNwb25zZRIOCgZyZXN1",
+            "bHQYASABKAkiEgoQSXNzdWVQdWxsUmVxdWVzdCIlChFJc3N1ZVB1bGxSZXNw",
+            "b25zZRIQCghyZXNwb25zZRgBIAEoCSJNChRTZXJ2aWNlQ29uZmlndXJhdGlv",
+            "bhIRCglyZWFkX29ubHkYASABKAgSDgoGZ2l0X2lkGAIgASgJEhIKCmdpdF9i",
+            "cmFuY2gYAyABKAkiggIKDFF1ZXJ5T3B0aW9ucxI8Cg1hcnRpZmFjdF90eXBl",
+            "GAEgASgOMiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RUeXBl",
+            "EhcKD21heF9pdGVtX3JldHVybhgCIAEoBRIXCg9sYXN0X2l0ZW1faW5kZXgY",
+            "AyABKAUSGQoRYnlfY2xhc3NpZmljYXRpb24YBCABKAgSTgoXdGVtcGxhdGVf",
+            "Y2xhc3NpZmljYXRpb24YBSABKA4yLS50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
+            "dC5DbGFzc2lmaWNhdGlvbkJyYW5jaBIXCg9pbmNsdWRlX2h5YnJpZHMYBiAB",
+            "KAgi1AEKC1F1ZXJ5UmVzdWx0EjwKDWFydGlmYWN0X3R5cGUYASABKA4yJS50",
+            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSGAoQZmlyc3Rf",
+            "aXRlbV9pbmRleBgCIAEoBRIXCg9sYXN0X2l0ZW1faW5kZXgYAyABKAUSIQoZ",
+            "dG90YWxfaXRlbXNfaW5fY29sbGVjdGlvbhgEIAEoBRIxChNhcnRpZmFjdF9j",
+            "b2xsZWN0aW9uGAUgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKHAQoOQ2xh",
+            "c3NpZmljYXRpb24SNgoKdG9rZW5fdHlwZRgBIAEoDjIiLnRheG9ub215Lm1v",
+            "ZGVsLmFydGlmYWN0LlRva2VuVHlwZRI9CgZicmFuY2gYAiABKA4yLS50YXhv",
+            "bm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5jaCo3CglU",
+            "b2tlblR5cGUSDAoIRlVOR0lCTEUQABIQCgxOT05fRlVOR0lCTEUQARIKCgZI",
+            "WUJSSUQQAipAChRDbGFzc2lmaWNhdGlvbkJyYW5jaBIOCgpGUkFDVElPTkFM",
+            "EAASCQoFV0hPTEUQARINCglTSU5HTEVUT04QAip2CgxBcnRpZmFjdFR5cGUS",
+            "CAoEQkFTRRAAEgwKCEJFSEFWSU9SEAESEgoOQkVIQVZJT1JfR1JPVVAQAhIQ",
+            "CgxQUk9QRVJUWV9TRVQQAxISCg5UT0tFTl9URU1QTEFURRAEEhQKEFRPS0VO",
+            "X0RFRklOSVRJT04QBSpCCg9BcnRpZmFjdENvbnRlbnQSDgoKREVGSU5JVElP",
+            "ThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhADKkAKC01hcHBp",
+            "bmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJT04QARIM",
+            "CghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVUSEVSRVVNX1NP",
+            "TElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RFX0pBVkEQ",
+            "AhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoEREFNTBAFQkkK",
+            "I29yZy50dGkudHRmLnRheG9ub215Lm1vZGVsLmFydGlmYWN0UAGqAh9UVEku",
+            "VFRGLlRheG9ub215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Classification), global::TTI.TTF.Taxonomy.Model.Artifact.Classification.Parser, new[]{ "TokenType", "Branch" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser, new[]{ "Id", "Type", "Visual", "Tooling", "Version", "TemplateValidated" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Artifact), global::TTI.TTF.Taxonomy.Model.Artifact.Artifact.Parser, new[]{ "ArtifactSymbol", "Name", "Aliases", "ArtifactDefinition", "Dependencies", "IncompatibleWithSymbols", "InfluencedBySymbols", "ArtifactFiles", "Maps" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReferenceValues), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReferenceValues.Parser, new[]{ "ControlUri", "ArtifactFiles", "Maps" }, null, null, null),
@@ -190,7 +186,8 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser, new[]{ "Response" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex", "ByClassification", "TemplateClassification", "IncludeHybrids" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Classification), global::TTI.TTF.Taxonomy.Model.Artifact.Classification.Parser, new[]{ "TokenType", "Branch" }, null, null, null)
           }));
     }
     #endregion
@@ -200,10 +197,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
   public enum TokenType {
     [pbr::OriginalName("FUNGIBLE")] Fungible = 0,
     [pbr::OriginalName("NON_FUNGIBLE")] NonFungible = 1,
-    [pbr::OriginalName("HYBRID_FUNGIBLE_BASE")] HybridFungibleBase = 2,
-    [pbr::OriginalName("HYBRID_NON_FUNGIBLE_BASE")] HybridNonFungibleBase = 3,
-    [pbr::OriginalName("HYBRID_FUNGIBLE_BASE_HYBRID_CHILDREN")] HybridFungibleBaseHybridChildren = 4,
-    [pbr::OriginalName("HYBRID_NON_FUNGIBLE_BASE_HYBRID_CHILDREN")] HybridNonFungibleBaseHybridChildren = 5,
+    [pbr::OriginalName("HYBRID")] Hybrid = 2,
   }
 
   /// <summary>
@@ -276,163 +270,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
   #endregion
 
   #region Messages
-  public sealed partial class Classification : pb::IMessage<Classification> {
-    private static readonly pb::MessageParser<Classification> _parser = new pb::MessageParser<Classification>(() => new Classification());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Classification> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[0]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Classification() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Classification(Classification other) : this() {
-      tokenType_ = other.tokenType_;
-      branch_ = other.branch_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Classification Clone() {
-      return new Classification(this);
-    }
-
-    /// <summary>Field number for the "token_type" field.</summary>
-    public const int TokenTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Artifact.TokenType TokenType {
-      get { return tokenType_; }
-      set {
-        tokenType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "branch" field.</summary>
-    public const int BranchFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch branch_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch Branch {
-      get { return branch_; }
-      set {
-        branch_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Classification);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Classification other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (TokenType != other.TokenType) return false;
-      if (Branch != other.Branch) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (TokenType != 0) hash ^= TokenType.GetHashCode();
-      if (Branch != 0) hash ^= Branch.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (TokenType != 0) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) TokenType);
-      }
-      if (Branch != 0) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) Branch);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (TokenType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
-      }
-      if (Branch != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Branch);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Classification other) {
-      if (other == null) {
-        return;
-      }
-      if (other.TokenType != 0) {
-        TokenType = other.TokenType;
-      }
-      if (other.Branch != 0) {
-        Branch = other.Branch;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            TokenType = (global::TTI.TTF.Taxonomy.Model.Artifact.TokenType) input.ReadEnum();
-            break;
-          }
-          case 16: {
-            Branch = (global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class ArtifactSymbol : pb::IMessage<ArtifactSymbol> {
     private static readonly pb::MessageParser<ArtifactSymbol> _parser = new pb::MessageParser<ArtifactSymbol>(() => new ArtifactSymbol());
     private pb::UnknownFieldSet _unknownFields;
@@ -441,7 +278,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -722,7 +559,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1068,7 +905,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1257,7 +1094,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1476,7 +1313,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1665,7 +1502,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1831,7 +1668,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2073,7 +1910,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2267,7 +2104,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[9]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2489,7 +2326,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[10]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2687,7 +2524,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[11]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2937,7 +2774,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[12]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3190,7 +3027,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[13]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3353,7 +3190,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[14]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3519,7 +3356,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[15]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3685,7 +3522,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[16]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3879,7 +3716,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[17]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4017,7 +3854,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[18]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4146,7 +3983,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[19]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4349,7 +4186,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[20]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4566,7 +4403,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[21]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4786,7 +4623,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[22]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5045,7 +4882,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[23]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5231,7 +5068,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[24]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5386,7 +5223,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[25]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5518,7 +5355,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[26]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5647,7 +5484,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[27]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5776,7 +5613,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[28]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5877,7 +5714,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[29]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6006,7 +5843,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[30]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6191,7 +6028,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[31]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6472,7 +6309,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[32]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6709,6 +6546,163 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
               ArtifactCollection = new global::Google.Protobuf.WellKnownTypes.Any();
             }
             input.ReadMessage(ArtifactCollection);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Classification : pb::IMessage<Classification> {
+    private static readonly pb::MessageParser<Classification> _parser = new pb::MessageParser<Classification>(() => new Classification());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Classification> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[32]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Classification() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Classification(Classification other) : this() {
+      tokenType_ = other.tokenType_;
+      branch_ = other.branch_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Classification Clone() {
+      return new Classification(this);
+    }
+
+    /// <summary>Field number for the "token_type" field.</summary>
+    public const int TokenTypeFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.TokenType TokenType {
+      get { return tokenType_; }
+      set {
+        tokenType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "branch" field.</summary>
+    public const int BranchFieldNumber = 2;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch branch_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch Branch {
+      get { return branch_; }
+      set {
+        branch_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Classification);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Classification other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TokenType != other.TokenType) return false;
+      if (Branch != other.Branch) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TokenType != 0) hash ^= TokenType.GetHashCode();
+      if (Branch != 0) hash ^= Branch.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (TokenType != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) TokenType);
+      }
+      if (Branch != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Branch);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (TokenType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
+      }
+      if (Branch != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Branch);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Classification other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TokenType != 0) {
+        TokenType = other.TokenType;
+      }
+      if (other.Branch != 0) {
+        Branch = other.Branch;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            TokenType = (global::TTI.TTF.Taxonomy.Model.Artifact.TokenType) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            Branch = (global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch) input.ReadEnum();
             break;
           }
         }
