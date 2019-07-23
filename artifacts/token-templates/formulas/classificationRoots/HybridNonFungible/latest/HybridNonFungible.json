@@ -1,0 +1,71 @@
+{
+  "parentReference": null,
+  "classification": {
+    "tokenType": "NON-FUNGIBLE",
+    "branch": "HYBRID"
+  },
+  "artifact": {
+    "artifactSymbol": {
+      "id":"8314a797-df3c-409b-835c-0e80af92714f",
+      "type": "BASE",
+      "visual": "&tau<sub>N</sub>",
+      "tooling": "tN",
+      "version": "1.0",
+      "templateValidated": true
+    },
+    "name": "Hybrid with Non-Fungible Parent",
+    "aliases": [
+      "",
+      ""
+    ],
+    "artifactDefinition": {
+      "businessDescription": "This is a Hybrid with a Non-Fungible parent base.",
+      "businessExample": "Starting branch for creating where a unique token, often a singleton can own child classes of fungible and non-fungible classes.",
+      "analogies": [
+        {
+          "name": "Concert Tickets",
+          "description": "A Ticket is for a specific date and venue, and can have general admision (fungible) as well as reserved seating (non-fungible) ticket classes.",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [
+      {
+        "description": "A Hybrid with a Non-Fungible token",
+        "symbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
+          "type": "BASE",
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "templateValidated": true
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
+    "artifactFiles": [],
+    "maps": {
+      "codeReferences": [],
+      "implementationReferences": [],
+      "resources": [],
+      "artifact": null
+    }
+  },
+  "tokenBase": {
+    "base": {
+      "id":"8314a797-df3c-409b-835c-0e80af92714f",
+      "type": "BASE",
+      "visual": "&tau<sub>N</sub>",
+      "tooling": "tN",
+      "version": "1.0",
+      "templateValidated": true
+    }
+  },
+  "behaviors": [],
+  "behaviorGroups": [],
+  "propertySets": [],
+  "childTokens": []
+}

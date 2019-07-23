@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package HybridFungibleParent;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+
+option csharp_namespace = "TTI.TTF.TokenTemplates.HybridFungibleParent";
+option java_package = "org.tti.ttf.TokenTemplates.HybridFungibleParent";
+option java_multiple_files = true;

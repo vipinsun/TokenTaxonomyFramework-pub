@@ -1,0 +1,95 @@
+{
+  "parentReference": null,
+  "classification": {
+    "tokenType": "NON-FUNGIBLE",
+    "branch": "SINGLETON"
+  },
+  "artifact": {
+    "artifactSymbol": {
+      "id":"8314a797-df3c-409b-835c-0e80af92714f",
+      "type": "BASE",
+      "visual": "&tau<sub>N</sub><i>{s}</i>",
+      "tooling": "tN{s}",
+      "version": "1.0",
+      "templateValidated": true
+    },
+    "name": "Singleton",
+    "aliases": [
+      "Title",
+      "Deed"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "This is Single, non-fractional or sub-dividable token. There is a quantity of 1 and only 1.",
+      "businessExample": "A property title or deed.",
+      "analogies": [
+        {
+          "name": "Analogy 1",
+          "description": "Singleton analogy 1 description",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [
+      {
+        "description": "A non-fungible, non-sub-dividable token",
+        "symbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
+          "type": "BASE",
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "templateValidated": true
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "Singleton.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "Singleton.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [],
+      "implementationReferences": [],
+      "resources": [],
+      "artifact": null
+    }
+  },
+  "tokenBase": {
+    "base": {
+      "id":"8314a797-df3c-409b-835c-0e80af92714f",
+      "type": "BASE",
+      "visual": "&tau<sub>N</sub>",
+      "tooling": "tN",
+      "version": "1.0",
+      "templateValidated": true
+    }
+  },
+  "behaviors": [
+    {
+      "behavior": {
+        "id":"c1189d7a-e142-4504-bf26-44c35b76c9d6",
+        "type": "BEHAVIOR",
+        "visual": "<i>s</i>",
+        "tooling": "s",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    }
+  ],
+  "behaviorGroups": [],
+  "propertySets": [],
+  "childTokens": []
+}

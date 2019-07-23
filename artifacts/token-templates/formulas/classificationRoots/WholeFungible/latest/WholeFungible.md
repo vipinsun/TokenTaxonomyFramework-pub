@@ -1,0 +1,1 @@
+# WholeFungible a TTF TokenTemplate
