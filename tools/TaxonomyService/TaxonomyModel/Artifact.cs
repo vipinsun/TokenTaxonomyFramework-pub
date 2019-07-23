@@ -138,20 +138,22 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "b2xsZWN0aW9uGAUgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKHAQoOQ2xh",
             "c3NpZmljYXRpb24SNgoKdG9rZW5fdHlwZRgBIAEoDjIiLnRheG9ub215Lm1v",
             "ZGVsLmFydGlmYWN0LlRva2VuVHlwZRI9CgZicmFuY2gYAiABKA4yLS50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5jaCo3CglU",
-            "b2tlblR5cGUSDAoIRlVOR0lCTEUQABIQCgxOT05fRlVOR0lCTEUQARIKCgZI",
-            "WUJSSUQQAipAChRDbGFzc2lmaWNhdGlvbkJyYW5jaBIOCgpGUkFDVElPTkFM",
-            "EAASCQoFV0hPTEUQARINCglTSU5HTEVUT04QAip2CgxBcnRpZmFjdFR5cGUS",
-            "CAoEQkFTRRAAEgwKCEJFSEFWSU9SEAESEgoOQkVIQVZJT1JfR1JPVVAQAhIQ",
-            "CgxQUk9QRVJUWV9TRVQQAxISCg5UT0tFTl9URU1QTEFURRAEEhQKEFRPS0VO",
-            "X0RFRklOSVRJT04QBSpCCg9BcnRpZmFjdENvbnRlbnQSDgoKREVGSU5JVElP",
-            "ThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhADKkAKC01hcHBp",
-            "bmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJT04QARIM",
-            "CghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVUSEVSRVVNX1NP",
-            "TElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RFX0pBVkEQ",
-            "AhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoEREFNTBAFQkkK",
-            "I29yZy50dGkudHRmLnRheG9ub215Lm1vZGVsLmFydGlmYWN0UAGqAh9UVEku",
-            "VFRGLlRheG9ub215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
+            "bm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5jaCI8Cg9U",
+            "b2tlblRlbXBsYXRlSWQSEgoKZm9ybXVsYV9pZBgBIAEoCRIVCg1kZWZpbml0",
+            "aW9uX2lkGAIgASgJKjcKCVRva2VuVHlwZRIMCghGVU5HSUJMRRAAEhAKDE5P",
+            "Tl9GVU5HSUJMRRABEgoKBkhZQlJJRBACKkAKFENsYXNzaWZpY2F0aW9uQnJh",
+            "bmNoEg4KCkZSQUNUSU9OQUwQABIJCgVXSE9MRRABEg0KCVNJTkdMRVRPThAC",
+            "Ko8BCgxBcnRpZmFjdFR5cGUSCAoEQkFTRRAAEgwKCEJFSEFWSU9SEAESEgoO",
+            "QkVIQVZJT1JfR1JPVVAQAhIQCgxQUk9QRVJUWV9TRVQQAxIUChBURU1QTEFU",
+            "RV9GT1JNVUxBEAQSFwoTVEVNUExBVEVfREVGSU5JVElPThAFEhIKDlRPS0VO",
+            "X1RFTVBMQVRFEAYqQgoPQXJ0aWZhY3RDb250ZW50Eg4KCkRFRklOSVRJT04Q",
+            "ABILCgdDT05UUk9MEAESBwoDVU1MEAISCQoFT1RIRVIQAypACgtNYXBwaW5n",
+            "VHlwZRIPCgtTT1VSQ0VfQ09ERRAAEhIKDklNUExFTUVOVEFUSU9OEAESDAoI",
+            "UkVTT1VSQ0UQAip2Cg5UYXJnZXRQbGF0Zm9ybRIVChFFVEhFUkVVTV9TT0xJ",
+            "RElUWRAAEhAKDENIQUlOQ09ERV9HTxABEhIKDkNIQUlOQ09ERV9KQVZBEAIS",
+            "EgoOQ0hBSU5DT0RFX05PREUQAxIJCgVDT1JEQRAEEggKBERBTUwQBUJJCiNv",
+            "cmcudHRpLnR0Zi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdFABqgIfVFRJLlRU",
+            "Ri5UYXhvbm9teS5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
@@ -187,7 +189,8 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex", "ByClassification", "TemplateClassification", "IncludeHybrids" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Classification), global::TTI.TTF.Taxonomy.Model.Artifact.Classification.Parser, new[]{ "TokenType", "Branch" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Classification), global::TTI.TTF.Taxonomy.Model.Artifact.Classification.Parser, new[]{ "TokenType", "Branch" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId), global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId.Parser, new[]{ "FormulaId", "DefinitionId" }, null, null, null)
           }));
     }
     #endregion
@@ -226,8 +229,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [pbr::OriginalName("BEHAVIOR")] Behavior = 1,
     [pbr::OriginalName("BEHAVIOR_GROUP")] BehaviorGroup = 2,
     [pbr::OriginalName("PROPERTY_SET")] PropertySet = 3,
-    [pbr::OriginalName("TOKEN_TEMPLATE")] TokenTemplate = 4,
-    [pbr::OriginalName("TOKEN_DEFINITION")] TokenDefinition = 5,
+    [pbr::OriginalName("TEMPLATE_FORMULA")] TemplateFormula = 4,
+    [pbr::OriginalName("TEMPLATE_DEFINITION")] TemplateDefinition = 5,
+    [pbr::OriginalName("TOKEN_TEMPLATE")] TokenTemplate = 6,
   }
 
   public enum ArtifactContent {
@@ -6703,6 +6707,166 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
           }
           case 16: {
             Branch = (global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  ///used to query for a TokenTemplate and to Build the TemplateSpecification
+  /// </summary>
+  public sealed partial class TokenTemplateId : pb::IMessage<TokenTemplateId> {
+    private static readonly pb::MessageParser<TokenTemplateId> _parser = new pb::MessageParser<TokenTemplateId>(() => new TokenTemplateId());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<TokenTemplateId> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TokenTemplateId() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TokenTemplateId(TokenTemplateId other) : this() {
+      formulaId_ = other.formulaId_;
+      definitionId_ = other.definitionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public TokenTemplateId Clone() {
+      return new TokenTemplateId(this);
+    }
+
+    /// <summary>Field number for the "formula_id" field.</summary>
+    public const int FormulaIdFieldNumber = 1;
+    private string formulaId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FormulaId {
+      get { return formulaId_; }
+      set {
+        formulaId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "definition_id" field.</summary>
+    public const int DefinitionIdFieldNumber = 2;
+    private string definitionId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string DefinitionId {
+      get { return definitionId_; }
+      set {
+        definitionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as TokenTemplateId);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(TokenTemplateId other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FormulaId != other.FormulaId) return false;
+      if (DefinitionId != other.DefinitionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (FormulaId.Length != 0) hash ^= FormulaId.GetHashCode();
+      if (DefinitionId.Length != 0) hash ^= DefinitionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (FormulaId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FormulaId);
+      }
+      if (DefinitionId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(DefinitionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (FormulaId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FormulaId);
+      }
+      if (DefinitionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DefinitionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(TokenTemplateId other) {
+      if (other == null) {
+        return;
+      }
+      if (other.FormulaId.Length != 0) {
+        FormulaId = other.FormulaId;
+      }
+      if (other.DefinitionId.Length != 0) {
+        DefinitionId = other.DefinitionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            FormulaId = input.ReadString();
+            break;
+          }
+          case 18: {
+            DefinitionId = input.ReadString();
             break;
           }
         }

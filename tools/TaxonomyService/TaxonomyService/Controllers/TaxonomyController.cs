@@ -208,27 +208,27 @@ namespace TTI.TTF.Taxonomy.Controllers
 				}
 			}
 
-			if (!Directory.Exists(aPath + ModelMap.TokenTemplatesFolder)) return taxonomy;
+			if (Directory.Exists(aPath + ModelMap.TemplateFormulasFolder))
 			{
-				_log.Info("TokenTemplates Folder Found, loading to TokenTemplates");
-				var templateFolders = new DirectoryInfo(aPath + ModelMap.TokenTemplatesFolder);
-				var templates = templateFolders.EnumerateDirectories();
-				foreach (var t in templates)
+				_log.Info("TemplateFormulas Folder Found, loading to TemplateFormulas");
+				var formulaDirectory = new DirectoryInfo(aPath + ModelMap.TokenTemplatesFolder);
+				var formulaFolders = formulaDirectory.EnumerateDirectories();
+				foreach (var f in formulaFolders)
 				{
-					TokenTemplate tokenTemplate;
-					_log.Info("Loading " + t.Name);
-					var versions = t.GetDirectories("latest");
+					TemplateFormula formula;
+					_log.Info("Loading " + f.Name);
+					var versions = f.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
 					if (bJson != null)
 					{
 						try
 						{
-							tokenTemplate = GetArtifact<TokenTemplate>(bJson[0]);
+							formula = GetArtifact<TemplateFormula>(bJson[0]);
 
 						}
 						catch (Exception e)
 						{
-							_log.Error("Failed to load TokenTemplate: " + t.Name);
+							_log.Error("Failed to load TokenTemplate: " + f.Name);
 							_log.Error(e);
 							continue;
 						}
@@ -237,21 +237,20 @@ namespace TTI.TTF.Taxonomy.Controllers
 					{
 						continue;
 					}
-					tokenTemplate.Artifact = GetArtifactFiles(t, tokenTemplate.Artifact);
-					templatesForHierarchy.Add(tokenTemplate);
+					formula.Artifact = GetArtifactFiles(f, formula.Artifact);
+					taxonomy.TemplateFormulas.Add(formula.Artifact.ArtifactSymbol.Id,formula);
 				}
-
-				taxonomy.TokenTemplateHierarchy = BuildHierarchy(templatesForHierarchy);
+				
 			}
 
-			if (!Directory.Exists(aPath + ModelMap.TokenDefinitionsFolder)) return taxonomy;
+			if (Directory.Exists(aPath + ModelMap.TemplateDefinitionsFolder))
 			{
-				_log.Info("TokenDefinitions Folder Found, loading to TokenDefinitions");
-				var definitionsFolder = new DirectoryInfo(aPath + ModelMap.TokenDefinitionsFolder);
+				_log.Info("TemplateDefinitions Folder Found, loading to TemplateDefinitions");
+				var definitionsFolder = new DirectoryInfo(aPath + ModelMap.TemplateDefinitionsFolder);
 				var definitions = definitionsFolder.EnumerateDirectories();
 				foreach (var t in definitions)
 				{
-					TokenDefinition definition;
+					TemplateDefinition definition;
 					_log.Info("Loading " + t.Name);
 					var versions = t.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
@@ -259,12 +258,12 @@ namespace TTI.TTF.Taxonomy.Controllers
 					{
 						try
 						{
-							definition = GetArtifact<TokenDefinition>(bJson[0]);
+							definition = GetArtifact<TemplateDefinition>(bJson[0]);
 
 						}
 						catch (Exception e)
 						{
-							_log.Error("Failed to load TokenDefinition: " + t.Name);
+							_log.Error("Failed to load TemplateDefinition: " + t.Name);
 							_log.Error(e);
 							continue;
 						}
@@ -274,11 +273,12 @@ namespace TTI.TTF.Taxonomy.Controllers
 						continue;
 					}
 					definition.Artifact = GetArtifactFiles(t, definition.Artifact);
-					taxonomy.TokenDefinitions.Add(definition.Artifact.ArtifactSymbol.Tooling,
+					taxonomy.TemplateDefinitions.Add(definition.Artifact.ArtifactSymbol.Tooling,
 						definition);
 				}
 			}
-			
+
+			BuildHierarchy();
 			return taxonomy;
 		}
 
@@ -355,24 +355,34 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 		}
 		
-		private static Hierarchy BuildHierarchy()
+		private static Hierarchy BuildHierarchy(ref Model.Taxonomy taxonomy)
 		{
-			var hybrids = new HybridBranch
+			var hybrids = new HybridBranchRoot
 			{
-				Singletons = new Branch(),
-				FractionalFungibles = new Branch(),
-				WholeFungibles = new Branch(),
-				FractionalNonFungibles = new Branch()
+				FungibleParent = new BranchRoot(),
+				NonFungibleParent = new BranchRoot()
 			};
 
 			var retVal = new Hierarchy
 			{
 				Hybrids = hybrids,
-				Singletons = new Branch(),
-				FractionalFungibles = new Branch(),
-				WholeFungibles = new Branch(),
-				FractionalNonFungibles = new Branch()
+				Fungibles = new BranchRoot(),
+				NonFungibles = new BranchRoot()
 			};
+
+			var templates = BuildTemplates(ref taxonomy);
+			return retVal;
+		}
+
+		private static TokenTemplates BuildTemplates(ref Model.Taxonomy taxonomy)
+		{
+			var retVal = new TokenTemplates();
+
+			foreach (var d in taxonomy.TemplateDefinitions)
+			{
+				
+			}
+			
 			return retVal;
 		}
 

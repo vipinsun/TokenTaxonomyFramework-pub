@@ -31,24 +31,25 @@ The TTF is a composition framework that breaks tokens down into basic parts.  Ba
 
 The taxonomy uses these terms for all tokens:
 
-- Token Template - is a template describes a token based on its type and what capabilities or restrictions a token created from the template would have. (i.e. Fractional Fungible Template)
-- Token Definition - is derived from a template, filling in the details to define a token that can be used to deploy as a class. (i.e. Crypto-currency Token Definition)
-- Token Class - is an deployed token from a definition. (i.e. Bitcoin created from the crypto-currency template)
+- Token Template - describes a token based on its type and what capabilities or restrictions a token created from the template would have. (i.e. Fractional Fungible Template). A template has two parts:
+  - Template Formula - a set of reusable taxonomy components combined together used to classify and describe how a token would be worked with.
+  - Template Definition - is derived from a formula, filling in the details to define a token that can be used to deploy as a class. (i.e. Crypto-currency Token Definition)
+- Token Class - is an deployed token from a Template. (i.e. Bitcoin created from the crypto-currency template)
 - Token Instance - a single token in a particular token class. (i.e. satoshi balance in your crypto-currency wallet)
 
 ![DefinitionStructure](images/definition-structure.png)
 
-### Token Template and Definition
+### Template Formula and Definition
 
-A template is a complete token formula that is ready to be matched with an implementation. A template it is a recipe for creating numerous copies of itself and is represented by a formula made of symbols that are references to taxonomy artifacts.
+A formula is a complete list of taxonomy components used by a token that is paired with a definition that fills in the details. A template is like a cake recipe. A recipe has a list of ingredients and then details about the measurements of each ingredient, how to mix them together and long to bake.  
+
+A template formula is like the list of ingredients and the definition is the instructions and details for defining a token template.
 
 ![Token Template](images/formula.png)
 
-A token definition is a reference to a template formula, that provides specific values to represent the complete definition of the token.
-
 ### Token Class vs. Instance
 
-A token class is a deployed definition using a specific implementation or platform, i.e. blockchain.  Depending on the target blockchain platform the implementation may be a complete set of source code or a software package from a 3rd party.
+A token class is a deployed template using a specific implementation or platform, i.e. blockchain.  Depending on the target blockchain platform the implementation may be a complete set of source code or a software package from a 3rd party.
 
 ![Token Terms](images/templateContext.png)
 
@@ -62,8 +63,7 @@ The taxonomy is comprised of artifacts that are categorized into 5 basic types:
 - Behaviors: capabilities or restrictions that can apply to a token.
 - Behavior-Groups: a bundle of behaviors that are frequently used together.
 - Property-Sets: a defined property(s) that if applied a token can be queried against and support a value for.
-- Token-Templates: a composition of other artifacts brought together to create a token template and classification.
-- Token-Definitions: a definition based off a template that provides specific details completing the token definition.
+- Token-Templates: a composition of other artifacts brought together to create a token template, classification and a detailed specification.
 
 Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md).
 
@@ -71,19 +71,19 @@ Artifacts themselves are just a set of files that share a common set of metadata
 
 Suppose we were baking a cake, using a recipe. An artifact is like an ingredient that can be used in a recipe, i.e. milk, sugar, flour. The recipe pulls together the ingredients by specifying how much of each ingredient to add, when and how long to bake.
 
-In this analogy, ingredients are Artifacts and a recipe is a Token Template. However, in the TTF, you do not specify the quantities of the ingredients, or Artifact Instance Values, in a Token Template, but in a Template Instance. This maximizes reuse of artifacts and templates and will make more sense when classification is covered.
+In this analogy, ingredients are Artifacts and a recipe is a Token Template.
 
-### Artifact References and Token Definitions
+### Artifact References and Templates
 
-Artifacts are templates, to use an artifact you simply reference the artifact and apply the instance values the template has as placeholders.  Like the quantity of an ingredient in the cake recipe.  Setting the quantity of an ingredient outside of an recipe is meaningless to create a composite, i.e. cake. When compositing a Token Template, you are creating references to all of the Artifacts, ingredients, that go into the Token or cake, but not the measurements of the ingredients.
+The TTF is comprised of artifacts, which is just a common way of defining items and compositions in the framework. To use an artifact you simply reference the artifact and apply overlay values for the artifacts in the template definition. Like the quantity of an ingredient in the cake recipe.  Just like a recipe has a list of ingredients followed by the details about the measurements, mixture and baking details, a template has a formula and a definition. When composing a Token Template, you are creating references to all of the Artifacts, ingredients, in a formula and then providing details about each of the ingredients in the definition.
 
-In the TTF, a Template is also an Artifact representing a formula of ingredients (artifacts) and is used in classification. A Token Definition, references a Token Template and supplies the quantity of each ingredient needed for the instance to come out of the oven as a tasty cake.
+In the TTF, a Template is also an Artifact.
 
 ![References](images/reference.png)
 
 An Artifact Reference contains a link to the artifact as well as the reference values needed to complete a definition.
 
-So, Artifacts are referenced by Token Templates, which are referenced by a Token Definitions which supplies that values for the specific Token, i.e. cake. The Token Definition contains the Artifact References and their values.
+Artifacts are referenced by Template Formulas, which is paired with a Template Definition that supplies that values for the specific Token, i.e. cake. The Template Definition contains the Artifact References and their values.
 
 ### Classification
 
@@ -246,7 +246,7 @@ The token definition
 
 ### Branch Classification
 
-A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` that is also classified as either a `Fractional Fungible`, `Whole Fungible`, `Fractional Non-Fungible` or a `Singleton`. Classification applies to the root or parent token for a hybrid as well as each child token.
+A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` that is also classified as either a `Fungible` or `Non-Fungible`. Classification is primarily used for creating dynamic visualization to compare templates and understand relationships between them.
 
 ![Branches](images/branch-leaf.png)
 
@@ -350,16 +350,21 @@ The root of the tree is a common base token or **&tau;** which has an owner Id, 
 
 There is also a base behavior artifact that includes simple GetTokenRequest/Response and GetTaxonomyRequest/Response.  
 
-There six branches used to classify templates:
+There three branches used to classify templates:
+
+- Fungible
+- Non-Fungible
+- Hybrid *&tau;<sub>F</sub>(&tau;)*, *&tau;<sub>N</sub>(&tau;)*, etc.
+  - Has Fungible and Non-Fungible branches for hybrids by parent.
+
+Dynamic branches can be created using the TOM like:
 
 - Fractional Fungible (sub-dividable) *&tau;<sub>F</sub>{d}*
 - Fractional Non-Fungible (sub-dividable) *&tau;<sub>N</sub>{d}*
 - Whole Fungible (non-sub-dividable) *&tau;<sub>F</sub>{~d}*
 - Whole Non-Fungible (non-sub-dividable) *&tau;<sub>N</sub>{~d}*
 - Singleton *&tau;<sub>N</sub>{s}* (s implies ~d)
-- Hybrid *&tau;<sub>F</sub>(&tau;)*, *&tau;<sub>N</sub>(&tau;)*, etc.
-  - The 1st five of these branches repeat under the hybrid branch based on the hybrid parent type.
-
+  
 ![Hierarchy](images/hierarchy.png)
 
 [Hybrid tokens](#hybrids) can reference another branch within the tree to prevent duplication.

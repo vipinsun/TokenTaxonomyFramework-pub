@@ -14,9 +14,10 @@ message Taxonomy{
     map<string, taxonomy.model.core.Behavior> behaviors = 3;
     map<string, taxonomy.model.core.BehaviorGroup> behavior_groups = 4;
     map<string, taxonomy.model.core.PropertySet> property_sets = 5;
-    Hierarchy token_template_hierarchy = 6;
-    map<string, taxonomy.model.core.TokenDefinition> token_definitions = 7;
-    taxonomy.model.artifact.FormulaGrammar formula_grammar = 8;
+    map<string, taxonomy.model.core.TemplateFormula> template_formulas = 6;
+    map<string, taxonomy.model.core.TemplateDefinition> template_definitions = 7;
+    Hierarchy token_template_hierarchy = 8;
+    taxonomy.model.artifact.FormulaGrammar formula_grammar = 9;
 }
 
 message TaxonomyVersion{
@@ -26,42 +27,28 @@ message TaxonomyVersion{
 }
 
 message Hierarchy {
-    BranchRoot fractional_fungibles = 1;
-    BranchRoot whole_fungibles = 2;
-    BranchRoot fractional_non_fungibles = 3;
-    BranchRoot singletons = 4;
-    HybridBranchRoot hybrids = 5;
+    BranchRoot fungibles = 1;
+    BranchRoot non_fungibles = 2;
+    HybridBranchRoot hybrids = 3;
 }
 
 message BranchIdentifier{
     taxonomy.model.artifact.TokenType token_type = 1;
     taxonomy.model.artifact.ClassificationBranch branch = 2;
-    string base_template_id = 3;
+    string formula_id = 3;
 }
 
 message BranchRoot{
     BranchIdentifier branch_identifier = 1;
-    string parent_id = 2;
+    string parent_formula_id = 2;
     string name = 3;
-    taxonomy.model.core.TokenTemplate template = 4;
-    repeated taxonomy.model.core.TokenDefinition token_definitions = 5;
-    repeated TemplateBranch branches = 6;
+    taxonomy.model.core.TemplateFormula branch_formula = 4;
+    taxonomy.model.core.TokenTemplates templates = 5;
+    repeated BranchRoot branches = 6;
 }
 
 message HybridBranchRoot{
-    BranchRoot fractional_fungibles = 1;
-    BranchRoot whole_fungibles = 2;
-    BranchRoot fractional_non_fungibles = 3;
-    BranchRoot singletons = 4;
-}
-
-//used to dynamically build a heirarchy off a BranchRoot.
-message TemplateBranch{
-    string template_parent_id = 1;
-    string name = 3;
-    taxonomy.model.core.TokenTemplate template = 4;
-    repeated taxonomy.model.core.TokenDefinition token_definitions = 5;
-    repeated BranchRoot branches = 6;
-    BranchRoot parent_branch = 7;
+    BranchRoot fungible_parent = 1;
+    BranchRoot non_fungible_parent = 2;
 }
 

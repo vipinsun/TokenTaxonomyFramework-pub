@@ -74,9 +74,9 @@ namespace ArtifactGenerator
 				if (args.Length == 0)
 				{
 					_log.Info(
-						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate] --n [ARTIFACT_NAME],");
+						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TemplateFormula] --n [ARTIFACT_NAME],");
 					_log.Info(
-						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid-fungibleBase, 3 = hybrid-non-fungibleBase, 4 = hybrid-fungibleBase-hybridChildren, 5 = hybrid-non-fungibleBase-hybridChildren]");
+						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid]");
 					_log.Info(
 						"--c [classification: 0 = fractionalFungible, 1 = wholeFungible, 2 = fractionalNonFungible, 3 = singleton] Is required for a Template Type");
 					_log.Info(
@@ -530,14 +530,13 @@ namespace ArtifactGenerator
 					});
 					artifactJson = jsf.Format(artifactPropertySet);
 					break;
-				case ArtifactType.TokenTemplate:
-					artifactTypeFolder = "token-templates";
+				case ArtifactType.TemplateFormula:
+					artifactTypeFolder = "token-templates/formulas";
 					outputFolder =
 						Directory.CreateDirectory(
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
 					
-					var templateToken = new TokenTemplate
-					{
+					var templateFormula = new TemplateFormula{
 						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "TokenTemplates"),
 						TokenBase = GetTemplateBase(fullPath, folderSeparator),
@@ -574,20 +573,14 @@ namespace ArtifactGenerator
 						}
 					};
 					
-					if (BaseType == TokenType.HybridFungibleBase | BaseType == TokenType.HybridNonFungibleBase |
-					    BaseType == TokenType.HybridFungibleBaseHybridChildren |
-					    BaseType == TokenType.HybridNonFungibleBaseHybridChildren)
+					if (BaseType == TokenType.Hybrid)
 					{
-						templateToken.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
+						templateFormula.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
 					}
 					
-					templateToken.ParentReference = new ArtifactReference
-					{
-						Id = "41cf2071-68c3-4808-b217-ccdf99cb0543",
-						Type = ArtifactType.TokenTemplate
-					};
+					templateFormula.ParentReference = new ArtifactReference();
 
-					artifactJson = jsf.Format(templateToken);
+					artifactJson = jsf.Format(templateFormula);
 					break;
 				/*
 				case ArtifactType.TokenDefinition:
@@ -704,9 +697,9 @@ namespace ArtifactGenerator
 						_log.Info("Artifact type: " + ArtifactType + " successfully deserialized: " +
 						          testPropertySet.Artifact.Name);
 						break;
-					case ArtifactType.TokenTemplate:
+					case ArtifactType.TemplateFormula:
 						break;
-					case ArtifactType.TokenDefinition:
+					case ArtifactType.TemplateDefinition:
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
@@ -805,17 +798,8 @@ namespace ArtifactGenerator
 				case TokenType.NonFungible:
 					baseName = "non-fungible";
 					break;
-				case TokenType.HybridFungibleBase:
-					baseName = "hybrid-fungibleBase";
-					break;
-				case TokenType.HybridNonFungibleBase:
-					baseName = "hybrid-non-fungibleBase";
-					break;
-				case TokenType.HybridFungibleBaseHybridChildren:
-					baseName = "hybrid-non-fungibleBase-hybridChildren";
-					break;
-				case TokenType.HybridNonFungibleBaseHybridChildren:
-					baseName = "hybrid-non-fungibleBase-hybridChildren";
+				case TokenType.Hybrid:
+					baseName = "hybrid";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -832,33 +816,17 @@ namespace ArtifactGenerator
 
 		private static Classification GetClassification()
 		{
-			var classification = new Classification();
+			var classification = new Classification {Branch = Classification};
 			switch (BaseType)
 			{
-
 				case TokenType.Fungible:
-					classification.Branch = ClassificationBranch.Fractional;
 					classification.TokenType = TokenType.Fungible;
 					break;
 				case TokenType.NonFungible:
-					classification.Branch = ClassificationBranch.Singleton;
 					classification.TokenType = TokenType.NonFungible;
 					break;
-				case TokenType.HybridFungibleBase:
-					classification.Branch = ClassificationBranch.Fractional;
-					classification.TokenType = TokenType.Fungible;
-					break;
-				case TokenType.HybridNonFungibleBase:
-					classification.Branch = ClassificationBranch.Whole;
-					classification.TokenType = TokenType.NonFungible;
-					break;
-				case TokenType.HybridFungibleBaseHybridChildren:
-					classification.Branch = ClassificationBranch.Whole;
-					classification.TokenType = TokenType.Fungible;
-					break;
-				case TokenType.HybridNonFungibleBaseHybridChildren:
-					classification.Branch = ClassificationBranch.Whole;
-					classification.TokenType = TokenType.NonFungible;
+				case TokenType.Hybrid:
+					classification.TokenType = TokenType.Hybrid;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();

@@ -25,8 +25,9 @@ enum ArtifactType{
     BEHAVIOR = 1; 
     BEHAVIOR_GROUP = 2;
     PROPERTY_SET = 3;
-    TOKEN_TEMPLATE = 4; 
-    TOKEN_DEFINITION = 5;
+    TEMPLATE_FORMULA = 4;
+    TEMPLATE_DEFINITION = 5;
+    TOKEN_TEMPLATE = 6;
 }
 
 enum ArtifactContent {
@@ -260,4 +261,10 @@ message QueryResult{
 message Classification{
     TokenType token_type = 1;
     ClassificationBranch branch = 2;
+}
+
+//used to query for a TokenTemplate and to Build the TemplateSpecification
+message TokenTemplateId{
+    string formula_id = 1;
+    string definition_id = 2;
 }

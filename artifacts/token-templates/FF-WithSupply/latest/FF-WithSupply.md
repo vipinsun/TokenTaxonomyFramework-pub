@@ -1,1 +1,0 @@
-# FF-WithSupply a TTF TokenTemplate
