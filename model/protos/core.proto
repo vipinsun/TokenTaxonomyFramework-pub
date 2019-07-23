@@ -87,7 +87,7 @@ message TokenTemplate{
     TemplateDefinition definition = 2;
 }
 
-//maped to ArtifactSymbol.Id
+//maped to ArtifactSymbol.Id of the TemplateDefinition.  
 message TokenTemplates{
     map<string, TokenTemplate> template = 1;
 }
@@ -124,11 +124,10 @@ message TemplatePropertySet{
     taxonomy.model.artifact.ArtifactSymbol property_set = 1;
 }
 
-//TemplateDefinition
-
+//TemplateDefinition, the Artifact.ArtifactSymbol.Id is the primary identifier for a TokenTemplate.
 message TemplateDefinition{
     taxonomy.model.artifact.Artifact artifact = 1;
-    taxonomy.model.artifact.ArtifactReference template_reference = 2;
+    taxonomy.model.artifact.ArtifactReference formula_reference = 2;
     BaseReference token_base = 3;
     repeated BehaviorReference behaviors = 4;
     repeated BehaviorGroupReference behavior_groups = 5;
@@ -136,10 +135,13 @@ message TemplateDefinition{
     repeated BaseReference child_tokens = 7;
 }
 
+message TemplateDefinitions{
+    repeated TemplateDefinition definitions = 1;
+}
 //used to dynamically build the entire Token Specification with all objects merged. Handy for documentation.
 message TokenSpecification{
     taxonomy.model.artifact.Artifact artifact = 1;
-    taxonomy.model.artifact.ArtifactReference template_reference = 2;
+    taxonomy.model.artifact.ArtifactReference definition_reference = 2;
     Base token_base = 3;
     repeated Behavior behaviors = 4;
     repeated BehaviorGroup behavior_groups = 5;

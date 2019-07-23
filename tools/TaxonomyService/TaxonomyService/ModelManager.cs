@@ -43,7 +43,6 @@ namespace TTI.TTF.Taxonomy
 			_log.Info("RefreshTaxonomy version " + version.Version);
 			Taxonomy = TaxonomyController.Load();
 			TaxonomyCache.SaveToCache(Taxonomy.Version.Version, Taxonomy, DateTime.Now.AddDays(1));
-			BuildTemplateIndexes();
 			return Taxonomy;
 		}
 
@@ -71,11 +70,11 @@ namespace TTI.TTF.Taxonomy
 			return Taxonomy.PropertySets.Single(e => e.Key == symbol.Tooling).Value;		
 		}
 
-		public static TokenTemplate GetTokenTemplateArtifact(ArtifactSymbol formula)
+		public static TemplateFormula GetTemplateFormulaArtifact(ArtifactSymbol formula)
 		{
-			_log.Info("GetTokenTemplateArtifact Formula: " + formula.Tooling);
-			var formulaIndex = TemplateIndexes.GetFromCache(FormulaIndex);
-			return formulaIndex.Templates.SingleOrDefault(e => e.Key == formula.Tooling).Value;	
+			_log.Info("GetTemplateFormulaArtifact: " + formula.Tooling);
+			var formulaIndex = Taxonomy.TemplateFormulas.SingleOrDefault(e=> e.Key.Equals(formula.Id));
+			return formulaIndex.Value;	
 		}
 
 		public static QueryResult GetArtifactsOfType(QueryOptions options)
@@ -159,26 +158,47 @@ namespace TTI.TTF.Taxonomy
 						result.TotalItemsInCollection = propertySets.PropertySet.Count;
 						result.ArtifactCollection = Any.Pack(propertySets);
 						break;
-					case ArtifactType.TokenTemplate:
-						var tokenTemplates = new TokenTemplates();
-						var idIndex = TemplateIndexes.GetFromCache(IdIndex);
-						if (idIndex.Templates.Count <= options.MaxItemReturn) //if max return is greater than the total count, just send back all of them.
+					case ArtifactType.TemplateFormula:
+						var formulas = new TemplateFormulas();
+						var templateFormulas = Taxonomy.TemplateFormulas;
+						if (templateFormulas.Count <= options.MaxItemReturn) //if max return is greater than the total count, just send back all of them.
 						{
-							tokenTemplates.Templates.AddRange(idIndex.Templates.Values);
+							formulas.Templates.AddRange(templateFormulas.Values);
 							result.FirstItemIndex = 0;
-							result.LastItemIndex = tokenTemplates.Templates.Count - 1;
+							result.LastItemIndex = formulas.Templates.Count - 1;
 						}
 						else
 						{
-							tokenTemplates.Templates.AddRange(idIndex.Templates.Values.ToList()
+							formulas.Templates.AddRange(templateFormulas.Values.ToList()
 								.GetRange(options.LastItemIndex, options.MaxItemReturn));
-							result.ArtifactCollection = Any.Pack(tokenTemplates);
+							result.ArtifactCollection = Any.Pack(formulas);
 							result.LastItemIndex =
-								options.LastItemIndex + tokenTemplates.Templates.Count - 1;
+								options.LastItemIndex + formulas.Templates.Count - 1;
 						}
 
-						result.TotalItemsInCollection = tokenTemplates.Templates.Count;
-						result.ArtifactCollection = Any.Pack(tokenTemplates);
+						result.TotalItemsInCollection = formulas.Templates.Count;
+						result.ArtifactCollection = Any.Pack(formulas);
+						break;
+					case ArtifactType.TemplateDefinition:
+						var definitions = new TemplateDefinitions();
+						var templateDefinitions = Taxonomy.TemplateDefinitions;
+						if (templateDefinitions.Count <= options.MaxItemReturn) //if max return is greater than the total count, just send back all of them.
+						{
+							definitions.Definitions.AddRange(templateDefinitions.Values);
+							result.FirstItemIndex = 0;
+							result.LastItemIndex = definitions.Definitions.Count - 1;
+						}
+						else
+						{
+							definitions.Definitions.AddRange(templateDefinitions.Values.ToList()
+								.GetRange(options.LastItemIndex, options.MaxItemReturn));
+							result.ArtifactCollection = Any.Pack(definitions);
+							result.LastItemIndex =
+								options.LastItemIndex + definitions.Definitions.Count - 1;
+						}
+
+						result.TotalItemsInCollection = definitions.Definitions.Count;
+						result.ArtifactCollection = Any.Pack(definitions);
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
@@ -272,102 +292,91 @@ namespace TTI.TTF.Taxonomy
 						Taxonomy.PropertySets.Add(propertySet.Artifact.ArtifactSymbol.Tooling, propertySet);
 					}
 					return true;
-				case ArtifactType.TokenTemplate:
-					var tokenTemplate = artifact.Unpack<TokenTemplate>();
-
+				case ArtifactType.TemplateFormula:
+					var templateFormula = artifact.Unpack<TemplateFormula>();
 					try
 					{
-						foreach(var t in )
-						if (t.Parent.Formula.Id != tokenTemplate.Parent.Formula.Id)
-							continue;
-						Taxonomy.TokenTemplates.Singletons.TokenTemplates.Remove(t);
-						Taxonomy.TokenTemplates.Singletons.TokenTemplates.Add(
-							tokenTemplate);
-						return true;
+						Taxonomy.TemplateFormulas.Remove(templateFormula.Artifact.ArtifactSymbol.Tooling);
+						Taxonomy.TemplateFormulas.Add(templateFormula.Artifact.ArtifactSymbol.Tooling, templateFormula);
 					}
-
-					
 					catch (Exception)
 					{
-						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + tokenTemplate.Parent.Formula);
+						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + templateFormula.Artifact.ArtifactSymbol.Tooling);
 						_log.Info("Adding artifact to Taxonomy.");
-						
-						AddTemplate(tokenTemplate);
+						Taxonomy.TemplateFormulas.Add(templateFormula.Artifact.ArtifactSymbol.Tooling, templateFormula);
 					}
 					return true;
+				case ArtifactType.TemplateDefinition:
+					var templateDefinition = artifact.Unpack<TemplateDefinition>();
+					try
+					{
+						Taxonomy.TemplateDefinitions.Remove(templateDefinition.Artifact.ArtifactSymbol.Tooling);
+						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Tooling, templateDefinition);
+					}
+					catch (Exception)
+					{
+						_log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + templateDefinition.Artifact.ArtifactSymbol.Tooling);
+						_log.Info("Adding artifact to Taxonomy.");
+						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Tooling, templateDefinition);
+					}
+					return true;
+
 				default:
 					return false;
 			}
 		}
 
-		private static bool AddTemplate(TokenTemplate template)
+		//todo:finish this
+		private static bool AddTemplateToHierarchy(TemplateDefinition definition)
 		{
-			ClassificationBranch targetBranch;
-			bool hybrid = false;
+			BranchRoot targetBranch;
+			var templateFormula = Taxonomy.TemplateFormulas
+				.SingleOrDefault(e => e.Key == definition.FormulaReference.Id).Value;
 			try
 			{
-
-				switch (template.Parent.Base.TokenFormulaCase)
+				switch (templateFormula.Classification.TokenType)
 				{
-					case Base.TokenFormulaOneofCase.None:
-						throw new Exception("Token classification could not be determined.");
-					case Base.TokenFormulaOneofCase.SingleToken:
-						targetBranch = template.Parent.Base.SingleToken.ClassificationBranch;
+					case TokenType.Fungible:
+						switch (templateFormula.Classification.Branch)
+						{
+							case ClassificationBranch.Fractional:
+								break;
+							case ClassificationBranch.Whole:
+								break;
+							case ClassificationBranch.Singleton:
+								break;
+							default:
+								throw new ArgumentOutOfRangeException();
+						}
 						break;
-					case Base.TokenFormulaOneofCase.Hybrid:
-						targetBranch = template.Parent.Base.Hybrid.Parent.ClassificationBranch;
-						hybrid = true;
+					case TokenType.NonFungible:
+						switch (templateFormula.Classification.Branch)
+						{
+							case ClassificationBranch.Fractional:
+								break;
+							case ClassificationBranch.Whole:
+								break;
+							case ClassificationBranch.Singleton:
+								break;
+							default:
+								throw new ArgumentOutOfRangeException();
+						}
 						break;
-					case Base.TokenFormulaOneofCase.HybridWithHybrids:
-						targetBranch = template.Parent.Base.HybridWithHybrids.Parent.ClassificationBranch;
-						hybrid = true;
+					case TokenType.Hybrid:
+						switch (templateFormula.Classification.Branch)
+						{
+							case ClassificationBranch.Fractional:
+								break;
+							case ClassificationBranch.Whole:
+								break;
+							case ClassificationBranch.Singleton:
+								break;
+							default:
+								throw new ArgumentOutOfRangeException();
+						}
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
-				}
-					
-
-					switch (targetBranch)
-					{
-						case ClassificationBranch.FractionalFungible:
-							if(hybrid)
-								Taxonomy.TokenTemplates.Hybrids.FractionalFungibles.TokenTemplates.Add(template);
-								//todo:add save to git
-							else
-							{
-								Taxonomy.TokenTemplates.FractionalFungibles.TokenTemplates.Add(template);
-							}
-							break;
-						case ClassificationBranch.WholeFungible:
-							if(hybrid)
-								Taxonomy.TokenTemplates.Hybrids.WholeFungibles.TokenTemplates.Add(template);
-							//todo:add save to git
-							else
-							{
-								Taxonomy.TokenTemplates.WholeFungibles.TokenTemplates.Add(template);
-							}
-							break;
-						case ClassificationBranch.FractionalNonFungible:
-							if(hybrid)
-								Taxonomy.TokenTemplates.Hybrids.FractionalNonFungibles.TokenTemplates.Add(template);
-							//todo:add save to git
-							else
-							{
-								Taxonomy.TokenTemplates.FractionalNonFungibles.TokenTemplates.Add(template);
-							}
-							break;
-						case ClassificationBranch.Singleton:
-							if(hybrid)
-								Taxonomy.TokenTemplates.Hybrids.Singletons.TokenTemplates.Add(template);
-							//todo:add save to git
-							else
-							{
-								Taxonomy.TokenTemplates.Singletons.TokenTemplates.Add(template);
-							}
-							break;
-						default:
-							throw new ArgumentOutOfRangeException();
-					
 				}
 				return true;
 			}
@@ -402,11 +411,14 @@ namespace TTI.TTF.Taxonomy
 						var propertySetFolder = Taxonomy.PropertySets.Single(e =>
 							e.Value.Artifact.ArtifactSymbol.Tooling == tooling);
 						return propertySetFolder.Value.Artifact.Name;
-					case ArtifactType.TokenTemplate:
-						var nameIndex = TemplateIndexes.GetFromCache(NameIndex);
-						var tokenTemplateFolder = nameIndex.Templates.Single(e =>
-							e.Value.Parent.Formula.Tooling == tooling);
-						return tokenTemplateFolder.Value.Parent.Name;
+					case ArtifactType.TemplateFormula:
+						var tokenTemplateFolder = Taxonomy.TemplateFormulas.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Tooling == tooling);
+						return tokenTemplateFolder.Value.Artifact.Name;
+					case ArtifactType.TemplateDefinition:
+						var templateDefinitionFolder = Taxonomy.TemplateDefinitions.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Tooling == tooling);
+						return templateDefinitionFolder.Value.Artifact.Name;
 					default:
 						throw new ArgumentOutOfRangeException(nameof(artifactType), artifactType, null);
 				}
@@ -494,98 +506,8 @@ namespace TTI.TTF.Taxonomy
 			return (newName, newArtifact);
 		}
 		
-		
-		private static void BuildTemplateIndexes()
-		{
-			var nameIndex = new TemplateIndex();
-			var formulaIndex = new TemplateIndex();
-			var idIndex = new TemplateIndex();
-			var branches = Enum.GetValues(typeof(ClassificationBranch));
-			foreach (var b in branches)
-			{
-				var currentBranch = (ClassificationBranch) b;
 
-				switch (currentBranch)
-				{
-					case ClassificationBranch.FractionalFungible:
-						foreach (var t in Taxonomy.TokenTemplates.FractionalFungibles.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-						
-						foreach (var t in Taxonomy.TokenTemplates.Hybrids.FractionalFungibles.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-
-						break;
-					case ClassificationBranch.WholeFungible:
-						foreach (var t in Taxonomy.TokenTemplates.WholeFungibles.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-						
-						foreach (var t in Taxonomy.TokenTemplates.Hybrids.WholeFungibles.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-
-						break;
-					case ClassificationBranch.FractionalNonFungible:
-						foreach (var t in Taxonomy.TokenTemplates.FractionalNonFungibles.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-						
-						foreach (var t in Taxonomy.TokenTemplates.Hybrids.FractionalNonFungibles.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-
-						break;
-					case ClassificationBranch.Singleton:
-						foreach (var t in Taxonomy.TokenTemplates.Singletons.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-						
-						foreach (var t in Taxonomy.TokenTemplates.Hybrids.Singletons.TokenTemplates)
-						{
-							nameIndex.Templates.Add(t.Parent.Name, t);
-							formulaIndex.Templates.Add(t.Parent.Formula.Tooling, t);
-							idIndex.Templates.Add(t.Parent.Formula.Id, t);
-						}
-						break;
-					default:
-						throw new ArgumentOutOfRangeException();
-				}
-			
-				TemplateIndexes.SaveToCache(NameIndex, nameIndex, DateTime.Now.AddDays(1));
-				TemplateIndexes.SaveToCache(FormulaIndex, formulaIndex, DateTime.Now.AddDays(1));
-				TemplateIndexes.SaveToCache(IdIndex, idIndex, DateTime.Now.AddDays(1));
-			}
-		}
-
-		public static TokenDefinition GetTokenDefinitionArtifact(object formula)
-		{
-			throw new NotImplementedException();
-		}
-
-		public static Token GetToken(ArtifactSymbol symbol)
+		public static TokenSpecification GetToken(ArtifactSymbol symbol)
 		{
 			throw new NotImplementedException();
 		}

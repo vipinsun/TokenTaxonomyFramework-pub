@@ -46,6 +46,13 @@ namespace TTI.TTF.Taxonomy {
         __Marshaller_taxonomy_model_TaxonomyVersion,
         __Marshaller_taxonomy_model_Taxonomy);
 
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy> __Method_GetLiteTaxonomy = new grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetLiteTaxonomy",
+        __Marshaller_taxonomy_model_TaxonomyVersion,
+        __Marshaller_taxonomy_model_Taxonomy);
+
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.Base> __Method_GetBaseArtifact = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.Base>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -223,6 +230,22 @@ namespace TTI.TTF.Taxonomy {
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetFullTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetFullTaxonomy, null, options, request);
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Taxonomy GetLiteTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetLiteTaxonomy(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Taxonomy GetLiteTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetLiteTaxonomy, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetLiteTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetLiteTaxonomyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetLiteTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetLiteTaxonomy, null, options, request);
       }
       public virtual global::TTI.TTF.Taxonomy.Model.Core.Base GetBaseArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {

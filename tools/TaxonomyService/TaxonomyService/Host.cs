@@ -52,7 +52,7 @@ namespace TTI.TTF.Taxonomy
         public override Task<TokenTemplate> GetTokenTemplateArtifact(ArtifactSymbol formula, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetTokenTemplateArtifact");
-            return Task.FromResult(ModelManager.GetTokenTemplateArtifact(formula));
+            return Task.FromResult(ModelManager.GetTemplateFormulaArtifact(formula));
         }
         
         public override Task<TokenDefinition> GetTokenDefinitionArtifact(ArtifactSymbol symbol, ServerCallContext ctx)

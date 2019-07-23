@@ -46,6 +46,13 @@ namespace TTI.TTF.Taxonomy {
         __Marshaller_taxonomy_model_TaxonomyVersion,
         __Marshaller_taxonomy_model_Taxonomy);
 
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy> __Method_GetLiteTaxonomy = new grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetLiteTaxonomy",
+        __Marshaller_taxonomy_model_TaxonomyVersion,
+        __Marshaller_taxonomy_model_Taxonomy);
+
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.Base> __Method_GetBaseArtifact = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.Base>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -168,6 +175,11 @@ namespace TTI.TTF.Taxonomy {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetFullTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetLiteTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -321,6 +333,22 @@ namespace TTI.TTF.Taxonomy {
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetFullTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetFullTaxonomy, null, options, request);
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Taxonomy GetLiteTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetLiteTaxonomy(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Taxonomy GetLiteTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetLiteTaxonomy, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetLiteTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetLiteTaxonomyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetLiteTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetLiteTaxonomy, null, options, request);
       }
       public virtual global::TTI.TTF.Taxonomy.Model.Core.Base GetBaseArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
@@ -603,6 +631,7 @@ namespace TTI.TTF.Taxonomy {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_GetFullTaxonomy, serviceImpl.GetFullTaxonomy)
+          .AddMethod(__Method_GetLiteTaxonomy, serviceImpl.GetLiteTaxonomy)
           .AddMethod(__Method_GetBaseArtifact, serviceImpl.GetBaseArtifact)
           .AddMethod(__Method_GetBehaviorArtifact, serviceImpl.GetBehaviorArtifact)
           .AddMethod(__Method_GetBehaviorGroupArtifact, serviceImpl.GetBehaviorGroupArtifact)
@@ -627,6 +656,7 @@ namespace TTI.TTF.Taxonomy {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetFullTaxonomy, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy>(serviceImpl.GetFullTaxonomy));
+      serviceBinder.AddMethod(__Method_GetLiteTaxonomy, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy>(serviceImpl.GetLiteTaxonomy));
       serviceBinder.AddMethod(__Method_GetBaseArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.Base>(serviceImpl.GetBaseArtifact));
       serviceBinder.AddMethod(__Method_GetBehaviorArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.Behavior>(serviceImpl.GetBehaviorArtifact));
       serviceBinder.AddMethod(__Method_GetBehaviorGroupArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>(serviceImpl.GetBehaviorGroupArtifact));
