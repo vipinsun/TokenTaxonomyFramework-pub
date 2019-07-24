@@ -137,6 +137,13 @@ namespace TTI.TTF.Taxonomy {
         __Marshaller_taxonomy_model_artifact_DeleteArtifactRequest,
         __Marshaller_taxonomy_model_artifact_DeleteArtifactResponse);
 
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> __Method_CreateTemplateDefinition = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateTemplateDefinition",
+        __Marshaller_taxonomy_model_artifact_TokenTemplateId,
+        __Marshaller_taxonomy_model_core_TemplateDefinition);
+
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> __Method_CommitLocalUpdates = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -466,6 +473,22 @@ namespace TTI.TTF.Taxonomy {
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse> DeleteArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteArtifact, null, options, request);
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateTemplateDefinition(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateTemplateDefinition, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateTemplateDefinitionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateTemplateDefinition, null, options, request);
       }
       public virtual global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse CommitLocalUpdates(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {

@@ -538,11 +538,11 @@ namespace TTI.TTF.Taxonomy
 				Id = definition.TokenBase.Reference.Id
 			});
 			if (baseToken == null) return null;
-			baseToken.Artifact =
+			//baseToken.Artifact =
 
 
 
-			return retVal;
+			//return retVal;
 		}
 
 		public static Model.Taxonomy GetLiteTaxonomy(object version)
@@ -562,6 +562,11 @@ namespace TTI.TTF.Taxonomy
 		public static TokenTemplate GetTokenTemplate(TokenTemplateId request)
 		{
 			throw new NotImplementedException();
+		}
+
+		public static TemplateDefinition CreateTemplateDefinition(TokenTemplateId templateFormulaId)
+		{
+			//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
 		}
 	}
 }

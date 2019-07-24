@@ -137,6 +137,13 @@ namespace TTI.TTF.Taxonomy {
         __Marshaller_taxonomy_model_artifact_DeleteArtifactRequest,
         __Marshaller_taxonomy_model_artifact_DeleteArtifactResponse);
 
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> __Method_CreateTemplateDefinition = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateTemplateDefinition",
+        __Marshaller_taxonomy_model_artifact_TokenTemplateId,
+        __Marshaller_taxonomy_model_core_TemplateDefinition);
+
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> __Method_CommitLocalUpdates = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -246,6 +253,11 @@ namespace TTI.TTF.Taxonomy {
       }
 
       public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse> DeleteArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -570,6 +582,22 @@ namespace TTI.TTF.Taxonomy {
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteArtifact, null, options, request);
       }
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateTemplateDefinition(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateTemplateDefinition, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateTemplateDefinitionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateTemplateDefinition, null, options, request);
+      }
       public virtual global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse CommitLocalUpdates(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CommitLocalUpdates(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -644,6 +672,7 @@ namespace TTI.TTF.Taxonomy {
           .AddMethod(__Method_CreateArtifact, serviceImpl.CreateArtifact)
           .AddMethod(__Method_UpdateArtifact, serviceImpl.UpdateArtifact)
           .AddMethod(__Method_DeleteArtifact, serviceImpl.DeleteArtifact)
+          .AddMethod(__Method_CreateTemplateDefinition, serviceImpl.CreateTemplateDefinition)
           .AddMethod(__Method_CommitLocalUpdates, serviceImpl.CommitLocalUpdates)
           .AddMethod(__Method_PullRequest, serviceImpl.PullRequest)
           .AddMethod(__Method_GetConfig, serviceImpl.GetConfig).Build();
@@ -669,6 +698,7 @@ namespace TTI.TTF.Taxonomy {
       serviceBinder.AddMethod(__Method_CreateArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest, global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse>(serviceImpl.CreateArtifact));
       serviceBinder.AddMethod(__Method_UpdateArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactRequest, global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse>(serviceImpl.UpdateArtifact));
       serviceBinder.AddMethod(__Method_DeleteArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest, global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse>(serviceImpl.DeleteArtifact));
+      serviceBinder.AddMethod(__Method_CreateTemplateDefinition, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>(serviceImpl.CreateTemplateDefinition));
       serviceBinder.AddMethod(__Method_CommitLocalUpdates, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse>(serviceImpl.CommitLocalUpdates));
       serviceBinder.AddMethod(__Method_PullRequest, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest, global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse>(serviceImpl.PullRequest));
       serviceBinder.AddMethod(__Method_GetConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration>(serviceImpl.GetConfig));

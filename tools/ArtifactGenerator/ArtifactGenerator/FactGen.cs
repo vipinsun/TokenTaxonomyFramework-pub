@@ -578,8 +578,6 @@ namespace ArtifactGenerator
 						templateFormula.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
 					}
 					
-					templateFormula.ParentReference = new ArtifactReference();
-
 					artifactJson = jsf.Format(templateFormula);
 					break;
 				case ArtifactType.TemplateDefinition:

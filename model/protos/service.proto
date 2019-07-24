@@ -31,6 +31,7 @@ service Service {
     rpc CreateArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactResponse) {}
     rpc UpdateArtifact (taxonomy.model.artifact.UpdateArtifactRequest) returns (taxonomy.model.artifact.UpdateArtifactResponse) {}
     rpc DeleteArtifact (taxonomy.model.artifact.DeleteArtifactRequest) returns (taxonomy.model.artifact.DeleteArtifactResponse) {}
+    rpc CreateTemplateDefinition (taxonomy.model.artifact.TokenTemplateId) returns (taxonomy.model.core.TemplateDefinition) {}
 
     rpc CommitLocalUpdates(taxonomy.model.artifact.CommitUpdatesRequest) returns (taxonomy.model.artifact.CommitUpdatesResponse) {}
     rpc PullRequest(taxonomy.model.artifact.IssuePullRequest) returns (taxonomy.model.artifact.IssuePullResponse){}

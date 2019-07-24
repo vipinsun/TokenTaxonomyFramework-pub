@@ -289,33 +289,33 @@ namespace TTI.TTF.Taxonomy.Controllers
 				Fungibles = new BranchRoot(),
 				NonFungibles = new BranchRoot()
 			};
-			var classificationRoots = GetClassificationRoots();
+			
 			var templates = BuildTemplates(ref taxonomy);
-			foreach (var cr in classificationRoots)
+			foreach (var (id, template) in templates.Template)
 			{
-				switch (cr.BranchIdentifier.TokenType)
+				switch (template.Formula.Classification.TokenType)
 				{
 					case TokenType.Fungible:
-						hierarchy.Fungibles.Branches.Add(cr);
+						hierarchy.Fungibles.Templates.Template.Add(id, template);
 						break;
 					case TokenType.NonFungible:
-						hierarchy.NonFungibles.Branches.Add(cr);
+						hierarchy.NonFungibles.Templates.Template.Add(id, template);
 						break;
 					case TokenType.Hybrid:
 						var baseType = taxonomy.BaseTokenTypes.Values.SingleOrDefault(e =>
-							e.Artifact.ArtifactSymbol.Id == cr.BranchFormula.TokenBase.Base.Id);
+							e.Artifact.ArtifactSymbol.Id == template.Formula.TokenBase.Base.Id);
 						if (baseType != null)
 						{
 							switch (baseType.TokenType)
 							{
 								case TokenType.Fungible:
-									hierarchy.Hybrids.FungibleParent.Branches.Add(cr);
+									hierarchy.Hybrids.FungibleParent.Templates.Template.Add(id, template);
 									break;
 								case TokenType.NonFungible:
-									hierarchy.Hybrids.NonFungibleParent.Branches.Add(cr);
+									hierarchy.Hybrids.NonFungibleParent.Templates.Template.Add(id, template);
 									break;
 								case TokenType.Hybrid:
-									_log.Error("Error for dynamic branch:  " + cr.Name);
+									_log.Error("Error for dynamic branch:  " + template.Formula.Artifact.Name);
 									_log.Error(
 										"Attempt to add a hybrid parent token type to a hybrid classification is invalid.");
 									break;
@@ -325,7 +325,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 						}
 						else
 						{
-							_log.Error("Error for dynamic branch:  " + cr.Name);
+							_log.Error("Error for dynamic branch:  " + template.Formula.Artifact.Name);
 							_log.Error(
 								"Attempt to locate the parent base token type failed, the branch will not be added to the hierachy.");
 						}
@@ -333,136 +333,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 					default:
 						throw new ArgumentOutOfRangeException();
 				}
-
-				var ffBranch = hierarchy.Fungibles.Branches.SingleOrDefault(e =>
-					e.BranchFormula.Classification.Branch == ClassificationBranch.Fractional)
-					?.Templates;
-				var wfBranch = hierarchy.Fungibles.Branches.SingleOrDefault(e =>
-						e.BranchFormula.Classification.Branch == ClassificationBranch.Whole)
-					?.Templates;
-				var fnfBranch = hierarchy.NonFungibles.Branches.SingleOrDefault(e =>
-						e.BranchFormula.Classification.Branch == ClassificationBranch.Fractional)
-					?.Templates;
-				var wnfBranch = hierarchy.NonFungibles.Branches.SingleOrDefault(e =>
-						e.BranchFormula.Classification.Branch == ClassificationBranch.Whole)
-					?.Templates;
-				var singletonBranch = hierarchy.NonFungibles.Branches.SingleOrDefault(e =>
-						e.BranchFormula.Classification.Branch == ClassificationBranch.Singleton)
-					?.Templates;
-				var hfBranch = hierarchy.Hybrids.FungibleParent.Branches.SingleOrDefault(e =>
-						e.BranchFormula.Classification.TokenType == TokenType.Fungible)
-					?.Templates;
-				var hnfBranch = hierarchy.Hybrids.FungibleParent.Branches.SingleOrDefault(e =>
-						e.BranchFormula.Classification.TokenType == TokenType.NonFungible)
-					?.Templates;
 				
-				foreach (var (id, tokenTemplate) in templates.Template)
-				{
-					switch (tokenTemplate.Formula.Classification.TokenType)
-					{
-						case TokenType.Fungible:
-							switch (tokenTemplate.Formula.Classification.Branch)
-							{
-								case ClassificationBranch.Fractional:
-									ffBranch.Template.Add(id, tokenTemplate);
-									break;
-								case ClassificationBranch.Whole:
-									wfBranch.Template.Add(id, tokenTemplate);
-									break;
-								case ClassificationBranch.Singleton:
-									_log.Error("Singleton not supported for Fungible tokens.");
-									break;
-								default:
-									throw new ArgumentOutOfRangeException();
-							}
-							break;
-						case TokenType.NonFungible:
-							switch (tokenTemplate.Formula.Classification.Branch)
-							{
-								case ClassificationBranch.Fractional:
-									fnfBranch.Template.Add(id, tokenTemplate);
-									break;
-								case ClassificationBranch.Whole:
-									wnfBranch.Template.Add(id, tokenTemplate);
-									break;
-								case ClassificationBranch.Singleton:
-									singletonBranch.Template.Add(id, tokenTemplate);
-									break;
-								default:
-									throw new ArgumentOutOfRangeException();
-							}
-							break;
-						case TokenType.Hybrid:
-							switch (tokenTemplate.Formula.Classification.TokenType)
-							{
-								case TokenType.Fungible:
-									hfBranch.Template.Add(id, tokenTemplate);
-									break;
-								case TokenType.NonFungible:
-									hnfBranch.Template.Add(id, tokenTemplate);
-									break;
-								case TokenType.Hybrid:
-									_log.Error("Hybrid paent not supported for hybrid tokens.");
-									break;
-								default:
-									throw new ArgumentOutOfRangeException();
-							}
-							break;
-						default:
-							throw new ArgumentOutOfRangeException();
-					}
-				}
-
 				taxonomy.TokenTemplateHierarchy = hierarchy;
 			}
 		}
-
-		private static IEnumerable<BranchRoot> GetClassificationRoots()
-		{
-			var aPath = _artifactPath + _folderSeparator;
-			var bbPath = aPath + ModelMap.TokenTemplatesFolder + TxService.FolderSeparator + ModelMap.ClassificationRoots;
-			var retVal = new List<BranchRoot>();
-			if (!Directory.Exists(bbPath)) return retVal;
-			{
-				_log.Info("ClassificationRoots Folder Found, creating to BranchRoots");
-				var rootFormula = new DirectoryInfo(bbPath);
-				var formulas = rootFormula.EnumerateDirectories();
-				foreach (var t in formulas)
-				{
-					_log.Info("Loading " + t.Name);
-
-					var versions = t.GetDirectories("latest");
-					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
-					TemplateFormula templateFormula;
-					if (bJson == null) continue;
-					try
-					{
-						templateFormula = GetArtifact<TemplateFormula>(bJson[0]);
-						templateFormula.Artifact = GetArtifactFiles(t, templateFormula.Artifact);
-
-						var branchRoot = new BranchRoot
-						{
-							BranchIdentifier = new BranchIdentifier
-							{
-								FormulaId = templateFormula.Artifact.ArtifactSymbol.Id,
-								Branch = templateFormula.Classification.Branch,
-								TokenType = templateFormula.Classification.TokenType
-							},
-							Name = templateFormula.Artifact.Name,
-							BranchFormula = templateFormula
-						};
-							
-						retVal.Add(branchRoot);
-					}
-					catch (Exception e)
-					{
-						_log.Error("Failed to load BaseBranch: " + t.Name);
-						_log.Error(e);
-					}
-				}
-				return retVal;
-			}
-		}
+		
 		private static TokenTemplates BuildTemplates(ref Model.Taxonomy taxonomy)
 		{
 			var retVal = new TokenTemplates();

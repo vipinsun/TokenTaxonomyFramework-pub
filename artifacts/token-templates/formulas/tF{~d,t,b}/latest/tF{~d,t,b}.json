@@ -7,7 +7,7 @@
   "artifact": {
     "artifactSymbol": {
       "id": "41cf2071-68c3-4808-b217-ccdf99cb0543",
-      "type": "TOKEN_TEMPLATE",
+      "type": "TEMPLATE_FORMULA",
       "visual": "&tau;<sub>F</sub>{<i>~d,t,b</i>}",
       "tooling": "tF{~d,t,b}",
       "version": "1.0",

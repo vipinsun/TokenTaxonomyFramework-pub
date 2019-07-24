@@ -1,1 +1,0 @@
-# HybridNonFungibleParent a TTF TokenTemplate

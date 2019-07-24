@@ -94,14 +94,13 @@ message TokenTemplates{
 
 //Represents the Template Formula that is used in combination to validate a TemplateDefinition.
 message TemplateFormula{
-    taxonomy.model.artifact.ArtifactReference parent_reference = 1; //when present, visual and tooling formulas are calculated using the template hierarchy and added artifacts.
+    taxonomy.model.artifact.Artifact artifact = 1;
     taxonomy.model.artifact.Classification classification = 2;
-    taxonomy.model.artifact.Artifact artifact = 3;
-    TemplateBase token_base = 4;
-    repeated TemplateBehavior behaviors = 5;
-    repeated TemplateBehaviorGroup behavior_groups = 6;
-    repeated TemplatePropertySet property_sets = 7;
-    repeated TemplateBase child_tokens = 8; //if hybrid, this can contain the list of child token classes.
+    TemplateBase token_base = 3;
+    repeated TemplateBehavior behaviors = 4;
+    repeated TemplateBehaviorGroup behavior_groups = 5;
+    repeated TemplatePropertySet property_sets = 6;
+    repeated TemplateBase child_tokens = 7; //if hybrid, this can contain the list of child token classes.
 }
 
 message TemplateFormulas{

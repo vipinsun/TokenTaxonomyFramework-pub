@@ -118,5 +118,11 @@ namespace TTI.TTF.Taxonomy
             _log.Info("gRpc request for: GetFullTaxonomy");
             return Task.FromResult(ModelManager.GetArtifactsOfType(options));
         }
+        
+        public override Task<TemplateDefinition> CreateTemplateDefinition(TokenTemplateId templateFormulaId, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: CreateTemplateDefinition");
+            return Task.FromResult(ModelManager.CreateTemplateDefinition(templateFormulaId));
+        }
     }
 }

@@ -2,7 +2,7 @@
   "artifact": {
     "artifactSymbol": {
       "id": "6fa235c7-d9d7-4fa2-b2b3-0e8e6838b770",
-      "type": "TOKEN_TEMPLATE",
+      "type": "TEMPLATE_FORMULA",
       "visual": "&tau;<sub>N</sub>{<i>s</i>}",
       "tooling": "tN{s}",
       "version": "1.0",

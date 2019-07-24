@@ -1,7 +1,7 @@
 {
   "parentReference": {
     "id": "6fa235c7-d9d7-4fa2-b2b3-0e8e6838b770",
-    "type": "TOKEN_TEMPLATE",
+    "type": "TEMPLATE_FORMULA",
     "referenceNotes": "",
     "values": null
   },
@@ -12,7 +12,7 @@
   "artifact": {
     "artifactSymbol": {
       "id": "c2a6ef2c-e02e-4070-b809-b56c4cd25471",
-      "type": "TOKEN_TEMPLATE",
+      "type": "TEMPLATE_FORMULA",
       "visual": "&tau;<sub>N</sub>{<i>~t,~d,b,s,r,l</i>}",
       "tooling": "tN{~t,~d,b,s,r,l}",
       "version": "1.0",
