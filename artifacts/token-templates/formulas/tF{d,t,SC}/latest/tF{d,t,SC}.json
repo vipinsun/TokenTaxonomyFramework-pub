@@ -1,0 +1,83 @@
+{
+  "parentReference": {
+    "id": "41cf2071-68c3-4808-b217-ccdf99cb0543",
+    "type": "TOKEN_TEMPLATE",
+    "referenceNotes": "",
+    "values": null
+  },
+  "classification": {
+    "tokenType": "FUNGIBLE",
+    "branch": "FRACTIONAL"
+  },
+  "artifact": {
+    "artifactSymbol": {
+      "id": "31e0d832-6ae4-423a-bae3-5e8b6956b1a1",
+      "type": "TOKEN_TEMPLATE",
+      "visual": "&tau;<sub>F</sub>{<i>d,t,SC</i>}",
+      "tooling": "tF{d,t,SC}",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "tF{d,t,SC}",
+    "aliases": [
+      "Fractional Fungible with Supply Control",
+      "Stable Coin"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "This is a Fractional Fungible with Supply Control.  This token features variable supply, with the ability to create new tokens and remove them from the total supply.  This token is also sub-dividable so it can function like a currency.",
+      "businessExample": "A stable coin represents a deposited fiat currency that is matched by is digital twin in a stable coin. Each fraction of this token must be matched with a deposited fiat currency and be directly converted.",
+      "analogies": [
+        {
+          "name": "Fiat Twin",
+          "description": "",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "FF-WithSupply.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "FF-WithSupply.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {}
+  },
+  "tokenBase": {
+    "base": {
+      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "type": "BASE",
+      "visual": "&tau;<sub>F</sub>",
+      "tooling": "tF",
+      "version": "1.0",
+      "templateValidated": true
+    }
+  },
+  "behaviors": [],
+  "behaviorGroups": [
+    {
+      "behaviorGroup": {
+        "id":"91cb89b6-a2ce-44ff-b3a0-f0cb3f117e56",
+        "type": "BEHAVIOR_GROUP",
+        "visual": "<i>SC</i>",
+        "tooling": "SC",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    }
+  ],
+  "propertySets": [],
+  "childTokens": []
+}
