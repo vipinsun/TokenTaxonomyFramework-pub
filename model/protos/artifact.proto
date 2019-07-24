@@ -265,6 +265,5 @@ message Classification{
 
 //used to query for a TokenTemplate and to Build the TemplateSpecification
 message TokenTemplateId{
-    string formula_id = 1;
-    string definition_id = 2;
+    string definition_id = 1;
 }
