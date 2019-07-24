@@ -138,22 +138,22 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "b2xsZWN0aW9uGAUgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueSKHAQoOQ2xh",
             "c3NpZmljYXRpb24SNgoKdG9rZW5fdHlwZRgBIAEoDjIiLnRheG9ub215Lm1v",
             "ZGVsLmFydGlmYWN0LlRva2VuVHlwZRI9CgZicmFuY2gYAiABKA4yLS50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5jaCI8Cg9U",
-            "b2tlblRlbXBsYXRlSWQSEgoKZm9ybXVsYV9pZBgBIAEoCRIVCg1kZWZpbml0",
-            "aW9uX2lkGAIgASgJKjcKCVRva2VuVHlwZRIMCghGVU5HSUJMRRAAEhAKDE5P",
-            "Tl9GVU5HSUJMRRABEgoKBkhZQlJJRBACKkAKFENsYXNzaWZpY2F0aW9uQnJh",
-            "bmNoEg4KCkZSQUNUSU9OQUwQABIJCgVXSE9MRRABEg0KCVNJTkdMRVRPThAC",
-            "Ko8BCgxBcnRpZmFjdFR5cGUSCAoEQkFTRRAAEgwKCEJFSEFWSU9SEAESEgoO",
-            "QkVIQVZJT1JfR1JPVVAQAhIQCgxQUk9QRVJUWV9TRVQQAxIUChBURU1QTEFU",
-            "RV9GT1JNVUxBEAQSFwoTVEVNUExBVEVfREVGSU5JVElPThAFEhIKDlRPS0VO",
-            "X1RFTVBMQVRFEAYqQgoPQXJ0aWZhY3RDb250ZW50Eg4KCkRFRklOSVRJT04Q",
-            "ABILCgdDT05UUk9MEAESBwoDVU1MEAISCQoFT1RIRVIQAypACgtNYXBwaW5n",
-            "VHlwZRIPCgtTT1VSQ0VfQ09ERRAAEhIKDklNUExFTUVOVEFUSU9OEAESDAoI",
-            "UkVTT1VSQ0UQAip2Cg5UYXJnZXRQbGF0Zm9ybRIVChFFVEhFUkVVTV9TT0xJ",
-            "RElUWRAAEhAKDENIQUlOQ09ERV9HTxABEhIKDkNIQUlOQ09ERV9KQVZBEAIS",
-            "EgoOQ0hBSU5DT0RFX05PREUQAxIJCgVDT1JEQRAEEggKBERBTUwQBUJJCiNv",
-            "cmcudHRpLnR0Zi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdFABqgIfVFRJLlRU",
-            "Ri5UYXhvbm9teS5Nb2RlbC5BcnRpZmFjdGIGcHJvdG8z"));
+            "bm9teS5tb2RlbC5hcnRpZmFjdC5DbGFzc2lmaWNhdGlvbkJyYW5jaCIoCg9U",
+            "b2tlblRlbXBsYXRlSWQSFQoNZGVmaW5pdGlvbl9pZBgBIAEoCSo3CglUb2tl",
+            "blR5cGUSDAoIRlVOR0lCTEUQABIQCgxOT05fRlVOR0lCTEUQARIKCgZIWUJS",
+            "SUQQAipAChRDbGFzc2lmaWNhdGlvbkJyYW5jaBIOCgpGUkFDVElPTkFMEAAS",
+            "CQoFV0hPTEUQARINCglTSU5HTEVUT04QAiqPAQoMQXJ0aWZhY3RUeXBlEggK",
+            "BEJBU0UQABIMCghCRUhBVklPUhABEhIKDkJFSEFWSU9SX0dST1VQEAISEAoM",
+            "UFJPUEVSVFlfU0VUEAMSFAoQVEVNUExBVEVfRk9STVVMQRAEEhcKE1RFTVBM",
+            "QVRFX0RFRklOSVRJT04QBRISCg5UT0tFTl9URU1QTEFURRAGKkIKD0FydGlm",
+            "YWN0Q29udGVudBIOCgpERUZJTklUSU9OEAASCwoHQ09OVFJPTBABEgcKA1VN",
+            "TBACEgkKBU9USEVSEAMqQAoLTWFwcGluZ1R5cGUSDwoLU09VUkNFX0NPREUQ",
+            "ABISCg5JTVBMRU1FTlRBVElPThABEgwKCFJFU09VUkNFEAIqdgoOVGFyZ2V0",
+            "UGxhdGZvcm0SFQoRRVRIRVJFVU1fU09MSURJVFkQABIQCgxDSEFJTkNPREVf",
+            "R08QARISCg5DSEFJTkNPREVfSkFWQRACEhIKDkNIQUlOQ09ERV9OT0RFEAMS",
+            "CQoFQ09SREEQBBIICgREQU1MEAVCSQojb3JnLnR0aS50dGYudGF4b25vbXku",
+            "bW9kZWwuYXJ0aWZhY3RQAaoCH1RUSS5UVEYuVGF4b25vbXkuTW9kZWwuQXJ0",
+            "aWZhY3RiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
@@ -190,7 +190,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex", "ByClassification", "TemplateClassification", "IncludeHybrids" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Classification), global::TTI.TTF.Taxonomy.Model.Artifact.Classification.Parser, new[]{ "TokenType", "Branch" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId), global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId.Parser, new[]{ "FormulaId", "DefinitionId" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId), global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId.Parser, new[]{ "DefinitionId" }, null, null, null)
           }));
     }
     #endregion
@@ -6743,7 +6743,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TokenTemplateId(TokenTemplateId other) : this() {
-      formulaId_ = other.formulaId_;
       definitionId_ = other.definitionId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -6753,19 +6752,8 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       return new TokenTemplateId(this);
     }
 
-    /// <summary>Field number for the "formula_id" field.</summary>
-    public const int FormulaIdFieldNumber = 1;
-    private string formulaId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FormulaId {
-      get { return formulaId_; }
-      set {
-        formulaId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "definition_id" field.</summary>
-    public const int DefinitionIdFieldNumber = 2;
+    public const int DefinitionIdFieldNumber = 1;
     private string definitionId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DefinitionId {
@@ -6788,7 +6776,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (FormulaId != other.FormulaId) return false;
       if (DefinitionId != other.DefinitionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -6796,7 +6783,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (FormulaId.Length != 0) hash ^= FormulaId.GetHashCode();
       if (DefinitionId.Length != 0) hash ^= DefinitionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -6811,12 +6797,8 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (FormulaId.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(FormulaId);
-      }
       if (DefinitionId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(DefinitionId);
       }
       if (_unknownFields != null) {
@@ -6827,9 +6809,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (FormulaId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FormulaId);
-      }
       if (DefinitionId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DefinitionId);
       }
@@ -6843,9 +6822,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     public void MergeFrom(TokenTemplateId other) {
       if (other == null) {
         return;
-      }
-      if (other.FormulaId.Length != 0) {
-        FormulaId = other.FormulaId;
       }
       if (other.DefinitionId.Length != 0) {
         DefinitionId = other.DefinitionId;
@@ -6862,10 +6838,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            FormulaId = input.ReadString();
-            break;
-          }
-          case 18: {
             DefinitionId = input.ReadString();
             break;
           }

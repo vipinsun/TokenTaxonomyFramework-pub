@@ -26,6 +26,12 @@ namespace TTI.TTF.Taxonomy
             return Task.FromResult(ModelManager.GetFullTaxonomy(version));
         }
 
+        public override Task<Model.Taxonomy> GetLiteTaxonomy(TaxonomyVersion request, ServerCallContext context)
+        {
+            _log.Info("gRpc request for: GetFullTaxonomy");
+            return Task.FromResult(ModelManager.GetLiteTaxonomy(request));
+        }
+
         public override Task<Base> GetBaseArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetBaseArtifact");
@@ -49,22 +55,28 @@ namespace TTI.TTF.Taxonomy
             return Task.FromResult(ModelManager.GetPropertySetArtifact(symbol));
         }
 
-        public override Task<TokenTemplate> GetTokenTemplateArtifact(ArtifactSymbol formula, ServerCallContext ctx)
+        public override Task<TemplateFormula> GetTemplateFormulaArtifact(ArtifactSymbol formula, ServerCallContext ctx)
         {
-            _log.Info("gRpc request for: GetTokenTemplateArtifact");
+            _log.Info("gRpc request for: GetTemplateFormulaArtifact");
             return Task.FromResult(ModelManager.GetTemplateFormulaArtifact(formula));
         }
         
-        public override Task<TokenDefinition> GetTokenDefinitionArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
+        public override Task<TemplateDefinition> GetTemplateDefinitionArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetTokenTemplateArtifact");
-            return Task.FromResult(ModelManager.GetTokenDefinitionArtifact(symbol));
+            return Task.FromResult(ModelManager.GetTemplateDefinitionArtifact(symbol));
         }
-        
-        public override Task<Token> GetToken(ArtifactSymbol symbol, ServerCallContext ctx)
+
+        public override Task<TokenTemplate> GetTokenTemplate(TokenTemplateId request, ServerCallContext context)
+        {
+            _log.Info("gRpc request for: GetTokenTemplate");
+            return Task.FromResult(ModelManager.GetTokenTemplate(request));
+        }
+
+        public override Task<TokenSpecification> GetTokenSpecification(TokenTemplateId symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetTokenTemplateArtifact");
-            return Task.FromResult(ModelManager.GetToken(symbol));
+            return Task.FromResult(ModelManager.GetTokenSpecification(symbol));
         }
         
         public override Task<NewArtifactResponse> CreateArtifact(NewArtifactRequest artifactRequest, ServerCallContext ctx)

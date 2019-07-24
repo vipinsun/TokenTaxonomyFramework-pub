@@ -73,8 +73,15 @@ namespace TTI.TTF.Taxonomy
 		public static TemplateFormula GetTemplateFormulaArtifact(ArtifactSymbol formula)
 		{
 			_log.Info("GetTemplateFormulaArtifact: " + formula.Tooling);
-			var formulaIndex = Taxonomy.TemplateFormulas.SingleOrDefault(e=> e.Key.Equals(formula.Id));
-			return formulaIndex.Value;	
+			var formulaIndex = Taxonomy.TemplateFormulas.SingleOrDefault(e=> e.Key.Equals(formula.Id)).Value;
+			return formulaIndex;
+		}
+		
+		public static TemplateDefinition GetTemplateDefinitionArtifact(ArtifactSymbol formula)
+		{
+			_log.Info("GetTemplateDefinitionArtifact: " + formula.Tooling);
+			var definition = Taxonomy.TemplateDefinitions.SingleOrDefault(e=> e.Key.Equals(formula.Id)).Value;
+			return definition;
 		}
 
 		public static QueryResult GetArtifactsOfType(QueryOptions options)
@@ -507,7 +514,52 @@ namespace TTI.TTF.Taxonomy
 		}
 		
 
-		public static TokenSpecification GetToken(ArtifactSymbol symbol)
+		public static TokenSpecification GetTokenSpecification(TokenTemplateId symbol)
+		{
+			var definition = GetTemplateDefinitionArtifact(new ArtifactSymbol
+			{
+				Id = symbol.DefinitionId
+			});
+	
+			if (definition == null) return null;
+			
+			var formula = GetTemplateFormulaArtifact(new ArtifactSymbol
+			{
+				Id = definition.FormulaReference.Id
+			});
+		
+			var retVal = new TokenSpecification
+			{
+				Artifact = definition.Artifact
+			};
+
+			var baseToken = GetBaseArtifact(new ArtifactSymbol
+			{
+				Id = definition.TokenBase.Reference.Id
+			});
+			if (baseToken == null) return null;
+			baseToken.Artifact =
+
+
+
+			return retVal;
+		}
+
+		public static Model.Taxonomy GetLiteTaxonomy(object version)
+		{
+			var taxonomyLite = new Model.Taxonomy
+			{
+				FormulaGrammar = Taxonomy.FormulaGrammar,
+				Version = Taxonomy.Version
+			};
+			taxonomyLite.BaseTokenTypes.Add(Taxonomy.BaseTokenTypes);
+			taxonomyLite.Behaviors.Add(Taxonomy.Behaviors);
+			taxonomyLite.BehaviorGroups.Add(Taxonomy.BehaviorGroups);
+			taxonomyLite.PropertySets.Add(Taxonomy.PropertySets);
+			return taxonomyLite;
+		}
+
+		public static TokenTemplate GetTokenTemplate(TokenTemplateId request)
 		{
 			throw new NotImplementedException();
 		}

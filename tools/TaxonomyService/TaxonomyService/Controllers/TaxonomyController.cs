@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +10,6 @@ using Newtonsoft.Json.Linq;
 using TTI.TTF.Taxonomy.Model;
 using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
-using Enum = System.Enum;
 
 namespace TTI.TTF.Taxonomy.Controllers
 {
@@ -31,11 +29,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			               TxService.ArtifactPath;
 		}
 
-		private static IEnumerable<BranchRoot> GetBaseBranches(IEnumerable<TokenTemplate> templates)
-		{
-			throw new NotImplementedException();
-		}
-
 		#region load
 		internal static Model.Taxonomy Load()
 		{
@@ -49,7 +42,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			_log.Info("Artifact Folder Found, loading to Taxonomy.");
 			var root = new DirectoryInfo(_artifactPath);
 			Model.Taxonomy taxonomy;
-			var templatesForHierarchy = new List<TokenTemplate>();
 			
 			var rJson = root.GetFiles("Taxonomy.json");
 			var fJson = root.GetFiles("FormulaGrammar.json");
@@ -282,9 +274,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			
 			return taxonomy;
 		}
-
-
-
+		
 		private static void BuildHierarchy(ref Model.Taxonomy taxonomy)
 		{
 			var hybrids = new HybridBranchRoot
@@ -366,7 +356,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 						e.BranchFormula.Classification.TokenType == TokenType.NonFungible)
 					?.Templates;
 				
-				foreach (var (Id, tokenTemplate) in templates.Template)
+				foreach (var (id, tokenTemplate) in templates.Template)
 				{
 					switch (tokenTemplate.Formula.Classification.TokenType)
 					{
@@ -374,10 +364,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 							switch (tokenTemplate.Formula.Classification.Branch)
 							{
 								case ClassificationBranch.Fractional:
-									ffBranch.Template.Add(Id, tokenTemplate);
+									ffBranch.Template.Add(id, tokenTemplate);
 									break;
 								case ClassificationBranch.Whole:
-									wfBranch.Template.Add(Id, tokenTemplate);
+									wfBranch.Template.Add(id, tokenTemplate);
 									break;
 								case ClassificationBranch.Singleton:
 									_log.Error("Singleton not supported for Fungible tokens.");
@@ -390,13 +380,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 							switch (tokenTemplate.Formula.Classification.Branch)
 							{
 								case ClassificationBranch.Fractional:
-									fnfBranch.Template.Add(Id, tokenTemplate);
+									fnfBranch.Template.Add(id, tokenTemplate);
 									break;
 								case ClassificationBranch.Whole:
-									wnfBranch.Template.Add(Id, tokenTemplate);
+									wnfBranch.Template.Add(id, tokenTemplate);
 									break;
 								case ClassificationBranch.Singleton:
-									singletonBranch.Template.Add(Id, tokenTemplate);
+									singletonBranch.Template.Add(id, tokenTemplate);
 									break;
 								default:
 									throw new ArgumentOutOfRangeException();
@@ -406,10 +396,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 							switch (tokenTemplate.Formula.Classification.TokenType)
 							{
 								case TokenType.Fungible:
-									hfBranch.Template.Add(Id, tokenTemplate);
+									hfBranch.Template.Add(id, tokenTemplate);
 									break;
 								case TokenType.NonFungible:
-									hnfBranch.Template.Add(Id, tokenTemplate);
+									hnfBranch.Template.Add(id, tokenTemplate);
 									break;
 								case TokenType.Hybrid:
 									_log.Error("Hybrid paent not supported for hybrid tokens.");
@@ -785,27 +775,54 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case ArtifactType.TemplateFormula:
 					var updateTokenTemplate = artifactRequest.ArtifactTypeObject.Unpack<TemplateFormula>();
 
-					var existingTokenTemplate =
+					var templateFormulaArtifact =
 						ModelManager.GetTemplateFormulaArtifact(updateTokenTemplate.Artifact.ArtifactSymbol);
-					existingVersion = existingTokenTemplate.Artifact.ArtifactSymbol.Version;
-					existingTokenTemplate.MergeFrom(updateTokenTemplate);
-					existingTokenTemplate.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
+					existingVersion = templateFormulaArtifact.Artifact.ArtifactSymbol.Version;
+					templateFormulaArtifact.MergeFrom(updateTokenTemplate);
+					templateFormulaArtifact.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
 					artifactName = updateTokenTemplate.Artifact.Name.ToLower();
 					
-					artifactJson = jsf.Format(existingTokenTemplate);
+					artifactJson = jsf.Format(templateFormulaArtifact);
 					var (outcomeT, messageT) = VersionArtifact(ModelMap.TokenTemplatesFolder, artifactName,
 						existingVersion, artifactJson, artifactType);
 					if (outcomeT)
 					{
 						ModelManager.AddOrUpdateInMemoryArtifact(artifactRequest.Type,
-							Any.Pack(existingTokenTemplate));
-						retVal.ArtifactTypeObject = Any.Pack(existingTokenTemplate);
+							Any.Pack(templateFormulaArtifact));
+						retVal.ArtifactTypeObject = Any.Pack(templateFormulaArtifact);
 						retVal.Updated = true;
 					}
 					else
 					{
 						retVal.Updated = false;
 						_log.Error(messageT);
+					}
+					_log.Info("TOM and Artifact updated.");
+					return retVal;
+				case ArtifactType.TemplateDefinition:
+					var updateTemplateDefinition = artifactRequest.ArtifactTypeObject.Unpack<TemplateDefinition>();
+
+					var templateDefinitionArtifact =
+						ModelManager.GetTemplateDefinitionArtifact(updateTemplateDefinition.Artifact.ArtifactSymbol);
+					existingVersion = templateDefinitionArtifact.Artifact.ArtifactSymbol.Version;
+					templateDefinitionArtifact.MergeFrom(updateTemplateDefinition);
+					templateDefinitionArtifact.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
+					artifactName = updateTemplateDefinition.Artifact.Name.ToLower();
+					
+					artifactJson = jsf.Format(templateDefinitionArtifact);
+					var (outcomeD, messageD) = VersionArtifact(ModelMap.TokenTemplatesFolder, artifactName,
+						existingVersion, artifactJson, artifactType);
+					if (outcomeD)
+					{
+						ModelManager.AddOrUpdateInMemoryArtifact(artifactRequest.Type,
+							Any.Pack(templateDefinitionArtifact));
+						retVal.ArtifactTypeObject = Any.Pack(templateDefinitionArtifact);
+						retVal.Updated = true;
+					}
+					else
+					{
+						retVal.Updated = false;
+						_log.Error(messageD);
 					}
 					_log.Info("TOM and Artifact updated.");
 					return retVal;
@@ -848,10 +865,15 @@ namespace TTI.TTF.Taxonomy.Controllers
 						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testPropertySet.Artifact.Name);
 						break;
-					case ArtifactType.TokenTemplate:
-						var testTemplate = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
+					case ArtifactType.TemplateFormula:
+						var templateFormula = JsonParser.Default.Parse<TemplateFormula>(formattedJson);
 						_log.Info("Artifact type: " + type + " successfully deserialized: " +
-						          testTemplate.Artifact.Name);
+						          templateFormula.Artifact.Name);
+						break;
+					case ArtifactType.TemplateDefinition:
+						var templateDefinition = JsonParser.Default.Parse<TemplateDefinition>(formattedJson);
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
+						          templateDefinition.Artifact.Name);
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
@@ -899,8 +921,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 					case ArtifactType.PropertySet:
 						DeleteArtifactFolder(ModelMap.PropertySetFolder, artifactFolderName);
 						break;
-					case ArtifactType.TokenTemplate:
-						DeleteArtifactFolder(ModelMap.TokenTemplatesFolder, artifactFolderName);
+					case ArtifactType.TemplateFormula:
+						DeleteArtifactFolder(ModelMap.TemplateFormulasFolder, artifactFolderName);
+						break;
+					case ArtifactType.TemplateDefinition:
+						DeleteArtifactFolder(ModelMap.TemplateDefinitionsFolder, artifactFolderName);
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
@@ -944,11 +969,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case ArtifactType.PropertySet:
 					typeFolderName = ModelMap.PropertySetFolder;
 					break;
-				case ArtifactType.TokenTemplate:
-					typeFolderName = ModelMap.TokenTemplatesFolder;
+				case ArtifactType.TemplateFormula:
+					typeFolderName = ModelMap.TemplateFormulasFolder;
 					break;
-				case ArtifactType.TokenDefinition:
-					typeFolderName = ModelMap.TokenDefinitionsFolder;
+				case ArtifactType.TemplateDefinition:
+					typeFolderName = ModelMap.TemplateDefinitionsFolder;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -1076,13 +1101,12 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return artifact;
 		}
 
-		private static TokenTemplate GetParentTemplate(string fullPath, string folderSeparator, string artifactId)
+		private static TemplateFormula GetParentFormula(string fullPath, string folderSeparator, string artifactId)
 		{
-			const string typeFolder = "token-templates";
-			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + artifactId + folderSeparator + TxService.Latest + folderSeparator + artifactId +".json");
+			var baseFile = File.OpenText(fullPath + ModelMap.TemplateFormulasFolder + folderSeparator + artifactId + folderSeparator + TxService.Latest + folderSeparator + artifactId +".json");
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
-			var retVal = JsonParser.Default.Parse<TokenTemplate>(formattedJson);
+			var retVal = JsonParser.Default.Parse<TemplateFormula>(formattedJson);
 			return retVal;
 		}
 
@@ -1154,7 +1178,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					baseName = "non-fungible";
 					break;
 				case TokenType.Hybrid:
-					baseName = "hybrid-fungibleBase";
+					baseName = "hybrid";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -1166,44 +1190,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return baseType;
 		}
 		
-		private static Classification GetClassification(TokenType baseType)
-		{
-			var classification = new Classification();
-			switch (baseType)
-			{
-
-				case TokenType.Fungible:
-					classification.Branch = ClassificationBranch.Fractional;
-					classification.TokenType = TokenType.Fungible;
-					break;
-				case TokenType.NonFungible:
-					classification.Branch = ClassificationBranch.Singleton;
-					classification.TokenType = TokenType.NonFungible;
-					break;
-				case TokenType.HybridFungibleBase:
-					classification.Branch = ClassificationBranch.Fractional;
-					classification.TokenType = TokenType.Fungible;
-					break;
-				case TokenType.HybridNonFungibleBase:
-					classification.Branch = ClassificationBranch.Whole;
-					classification.TokenType = TokenType.NonFungible;
-					break;
-				case TokenType.HybridFungibleBaseHybridChildren:
-					classification.Branch = ClassificationBranch.Whole;
-					classification.TokenType = TokenType.Fungible;
-					break;
-				case TokenType.HybridNonFungibleBaseHybridChildren:
-					classification.Branch = ClassificationBranch.Whole;
-					classification.TokenType = TokenType.NonFungible;
-					break;
-				default:
-					throw new ArgumentOutOfRangeException();
-			}
-
-			return classification;
-		}
-		
-
 		private static Artifact GetArtifactFiles(DirectoryInfo ad, Artifact artifact)
 		{
 			foreach (var af in ad.EnumerateFiles())
@@ -1253,58 +1239,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return artifact;
 		}
 
-		private static (string,IEnumerable<ArtifactFile>) GetTemplateFiles(DirectoryInfo ad)
-		{
-			var retVal = new List<ArtifactFile>();
-			var uri = "";
-			foreach (var af in ad.EnumerateFiles())
-			{
-				if (af.Name.EndsWith("proto"))
-				{
-					var protoFile = GetArtifactText(af);
-					uri = af.Name;
-					retVal.Add(new ArtifactFile
-					{
-						FileName = af.Name,
-						FileData = ByteString.CopyFromUtf8(protoFile),
-						Content = ArtifactContent.Control
-					});
-					continue;
-				}
-
-				if (af.Name.EndsWith("md"))
-				{
-					var mdFile = GetArtifactText(af);
-
-					retVal.Add(new ArtifactFile
-					{
-						FileName = af.Name,
-						FileData = ByteString.CopyFromUtf8(mdFile),
-						Content = ArtifactContent.Uml
-					});
-					continue;
-				}
-
-				if (af.Name.EndsWith("json"))
-				{
-					continue;
-				}
-
-				var otherFile = GetArtifactBytes(af);
-
-				var other = new ArtifactFile
-				{
-					FileName = af.Name,
-					Content = ArtifactContent.Other
-				};
-				if (!af.Name.EndsWith(".DS_Store"))
-					other.FileData = ByteString.CopyFrom(otherFile);
-				retVal.Add(other);
-			}
-
-			return (uri, retVal);
-		}
-		
 		private static T GetArtifact<T>(FileInfo artifact) where T : IMessage, new()
 		{
 			var typeFile = artifact.OpenText();
