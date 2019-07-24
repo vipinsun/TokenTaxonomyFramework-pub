@@ -74,7 +74,7 @@ namespace ArtifactGenerator
 				if (args.Length == 0)
 				{
 					_log.Info(
-						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TemplateFormula] --n [ARTIFACT_NAME],");
+						"Usage: dotnet factgen --p [PATH_TO_ARTIFACTS FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet, 4 - TemplateFormula or 5 - TemplateDefinition] --n [ARTIFACT_NAME],");
 					_log.Info(
 						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid]");
 					_log.Info(
@@ -538,7 +538,7 @@ namespace ArtifactGenerator
 					
 					var templateFormula = new TemplateFormula{
 						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
-							artifact, "TokenTemplates"),
+							artifact, "TemplateFormulas"),
 						TokenBase = GetTemplateBase(fullPath, folderSeparator),
 						Classification = GetClassification(),
 						Behaviors =
@@ -582,87 +582,73 @@ namespace ArtifactGenerator
 
 					artifactJson = jsf.Format(templateFormula);
 					break;
-				/*
-				case ArtifactType.TokenDefinition:
-
-					artifactTypeFolder = "token-definitions";
+				case ArtifactType.TemplateDefinition:
+					artifactTypeFolder = "token-templates/definitions";
 					outputFolder =
 						Directory.CreateDirectory(
 							fullPath + artifactTypeFolder + folderSeparator + ArtifactName + Latest);
-
-					var templateBase = GetParentTemplate(fullPath, folderSeparator, "Document");
-					var tokenDefinition = new TokenDefinition
-					{
-						Artifact = AddArtifactFiles(outputFolder, artifactTypeFolder, folderSeparator,
-							artifact, "TokenDefinitions"),
-						Base = new BaseReference
+					
+					var templateDefinition = new TemplateDefinition{
+						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
+							artifact, "TemplateDefinition"),
+						TokenBase = GetBaseReference(fullPath, folderSeparator),
+						Behaviors =
 						{
-							ConstructorName = "Constructor",
-							Decimals = 2,
-							Name = ArtifactName,
-							Reference = new ArtifactReference
+							new BehaviorReference
 							{
-								Id = templateBase.Base.Id,
-								ReferenceNotes = "Notes about this token definition.",
-								Type = ArtifactType.TokenDefinition,
-								Values = new ArtifactReferenceValues
+								Reference = new ArtifactReference
 								{
-									ControlUri = "a uri path",
-									Maps = new Maps
+									Type = ArtifactType.Behavior,
+									Id = "a guid",
+									ReferenceNotes = ""
+								},
+								IsExternal = true,
+								Properties =
+								{
+									new Property
 									{
-										ImplementationReferences = { new MapReference
-										{
-											MappingType = MappingType.Implementation,
-											Name = "Token Implementation",
-											Platform = TargetPlatform.EthereumSolidity,
-											ReferencePath = "path"
-										}}
+										TemplateValue = "definition value"
+									}
+								}
+							}
+						},
+						BehaviorGroups =
+						{
+							new BehaviorGroupReference
+							{
+								Reference =  new ArtifactReference
+								{
+									Type = ArtifactType.BehaviorGroup,
+									Id = "a guid",
+									ReferenceNotes = ""
+								}
+							}
+						},
+						PropertySets =
+						{
+							new PropertySetReference
+							{
+								Reference = new ArtifactReference
+								{
+									Type = ArtifactType.PropertySet,
+									Id = "a guid",
+									ReferenceNotes = ""
+								},
+								Properties =
+								{
+									new Property
+									{
+										TemplateValue = "template value"
 									}
 								}
 							}
 						}
 					};
 
-					foreach (var b in templateBase.Behaviors)
-					{
-						
-					}
-						
-					switch (BaseType)
-					{
-						case TokenType.Fungible:
-							templateToken.SingleToken = formula.SingleToken;
-							break;
-						case TokenType.NonFungible:
-							templateToken.SingleToken = formula.SingleToken;
-							break;
-						case TokenType.HybridFungibleBase:
-							templateToken.Hybrid = formula.Hybrid;
-							break;
-						case TokenType.HybridNonFungibleBase:
-							templateToken.Hybrid = formula.Hybrid;
-							break;
-						case TokenType.HybridFungibleBaseHybridChildren:
-							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
-							break;
-						case TokenType.HybridNonFungibleBaseHybridChildren:
-							templateToken.HybridWithHybrids = formula.HybridWithHybrids;
-							break;
-						default:
-							throw new ArgumentOutOfRangeException();
-					}
-					
-					if (BaseType == TokenType.HybridFungibleBase | BaseType == TokenType.HybridNonFungibleBase |
-					    BaseType == TokenType.HybridFungibleBaseHybridChildren |
-					    BaseType == TokenType.HybridNonFungibleBaseHybridChildren)
-					{
-						templateToken.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
-					}
+					templateDefinition.FormulaReference = new ArtifactReference();
 
-					artifactJson = jsf.Format(templateToken);
-					artifactJson = "";
+					artifactJson = jsf.Format(templateDefinition);
 					break;
-					*/
 				default:
 					_log.Error("No matching type found for: " + ArtifactType);
 					throw new ArgumentOutOfRangeException();
@@ -813,7 +799,67 @@ namespace ArtifactGenerator
 				Base = baseType.Artifact.ArtifactSymbol
 			};
 		}
-
+		
+		private static BaseReference GetBaseReference(string fullPath, string folderSeparator)
+		{
+			string baseName;
+			const string typeFolder = "base";
+			
+			switch (BaseType)
+			{
+				case TokenType.Fungible:
+					baseName = "fungible";
+					break;
+				case TokenType.NonFungible:
+					baseName = "non-fungible";
+					break;
+				case TokenType.Hybrid:
+					baseName = "hybrid";
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + Latest + folderSeparator + baseName+".json");
+			var json = baseFile.ReadToEnd();
+			var formattedJson = JToken.Parse(json).ToString();
+			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
+			return new BaseReference()
+			{
+				Reference = new ArtifactReference
+				{
+					Id = baseType.Artifact.ArtifactSymbol.Id,
+					Type = ArtifactType.Base,
+					Values = new ArtifactReferenceValues
+					{
+						ControlUri = "",
+						Maps = new Maps
+						{
+							ImplementationReferences =
+							{
+								new MapReference
+								{
+									MappingType = MappingType.Implementation,
+									Name = "Solution",
+									Platform = TargetPlatform.EthereumSolidity,
+									ReferencePath = "uri"
+								},
+								new MapReference
+								{
+									MappingType = MappingType.SourceCode,
+									Name = "Source",
+									Platform = TargetPlatform.ChaincodeJava,
+									ReferencePath = "uri"
+								}
+							}
+						}
+					}
+				},
+				ConstructorName = "Constructor",
+				Decimals = 0,
+				Name = "",
+				Quantity = ByteString.CopyFromUtf8("1")
+			};
+		}
 		private static Classification GetClassification()
 		{
 			var classification = new Classification {Branch = Classification};
