@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
 using TTI.TTF.Taxonomy.Controllers;
@@ -513,7 +515,6 @@ namespace TTI.TTF.Taxonomy
 			return (newName, newArtifact);
 		}
 		
-
 		public static TokenSpecification GetTokenSpecification(TokenTemplateId symbol)
 		{
 			var definition = GetTemplateDefinitionArtifact(new ArtifactSymbol
@@ -523,26 +524,147 @@ namespace TTI.TTF.Taxonomy
 	
 			if (definition == null) return null;
 			
+			var spec = BuildSpecification(definition);
+			if (spec.TokenBase.TokenType != TokenType.Hybrid) return spec;
+			foreach (var c in definition.ChildTokens)
+			{
+				spec.ChildTokens.Add(BuildSpecification(c));
+			}
+			return spec;
+		}
+
+		private static TokenSpecification BuildSpecification(TemplateDefinition definition)
+		{
 			var formula = GetTemplateFormulaArtifact(new ArtifactSymbol
 			{
 				Id = definition.FormulaReference.Id
 			});
-		
+			
+			var validated = ValidateDefinition(formula, definition);
+			if (!string.IsNullOrEmpty(validated))
+			{
+				_log.Error(validated);
+				return null;
+			}
+			
 			var retVal = new TokenSpecification
 			{
 				Artifact = definition.Artifact
 			};
-
-			var baseToken = GetBaseArtifact(new ArtifactSymbol
+			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TokenTemplate;
+			
+			retVal.TokenBase = MergeBase(definition);
+			
+			var behaviors = definition.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
+			foreach (var b in definition.Behaviors)
 			{
-				Id = definition.TokenBase.Reference.Id
-			});
-			if (baseToken == null) return null;
-			//baseToken.Artifact =
+				var behavior = behaviors.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == b.Reference.Id);
+				if (behavior == null) continue;
+				behavior.Constructor = b.Constructor;
+				behavior.IsExternal = b.IsExternal;
+				behavior.ConstructorType = b.ConstructorType;
+				behavior.Properties.Clear();
+				behavior.Properties.AddRange(b.Properties);
+				behavior.Invocations.Clear();
+				behavior.Invocations.AddRange(b.Invocations);	
+				retVal.Behaviors.Add(behavior);
+			}
+			
+			var behaviorGroups = definition.BehaviorGroups.Select(tb => GetArtifactById<BehaviorGroup>(tb.Reference.Id)).ToList();
+			foreach (var bg in definition.BehaviorGroups)
+			{
+				var behaviorGroup = behaviorGroups.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == bg.Reference.Id);
+				if (behaviorGroup == null) continue;
+				{
+					foreach (var b in behaviorGroup.BehaviorSymbols)
+					{
+						var behavior = GetArtifactById<Behavior>(b.Id);
+						if (behavior == null) continue;
+						
+						behaviorGroup.BehaviorArtifacts.Add(b.Id, behavior);
+					}
+					retVal.BehaviorGroups.Add(behaviorGroup);
+				}
+			}
+			
+			var propertySets = definition.PropertySets.Select(tb => GetArtifactById<PropertySet>(tb.Reference.Id)).ToList();
+			foreach (var ps in definition.PropertySets)
+			{
+				var propertySet = propertySets.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == ps.Reference.Id);
+				if (propertySet == null) continue;
+				
+				propertySet.Properties.Clear();
+				propertySet.Properties.AddRange(ps.Properties);
+			
+				retVal.PropertySets.Add(propertySet);
+			}
+			
+			return retVal;
+		}
 
+		private static Base MergeBase(TemplateDefinition validated)
+		{
+			var baseToken = GetArtifactById<Base>(validated.TokenBase.Reference.Id);
+			baseToken.Artifact.Maps.MergeFrom(validated.Artifact.Maps);
+			baseToken.Decimals = validated.TokenBase.Decimals;
+			baseToken.Name = validated.TokenBase.Name;
+			baseToken.Owner = validated.TokenBase.Owner;
+			baseToken.Quantity = validated.TokenBase.Quantity;
+			baseToken.Symbol = validated.TokenBase.Symbol;
+			baseToken.ConstructorName = validated.TokenBase.ConstructorName;
+			return baseToken;
+		}
 
+		private static string ValidateDefinition(TemplateFormula formula, TemplateDefinition definition)
+		{
+			if (definition.TokenBase.Reference.Id != formula.TokenBase.Base.Id)
+			{
+				return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+				                                          + " against its template id: " +
+				                                          formula.Artifact.ArtifactSymbol.Id
+				                                          + " the base token does not match";
+			}
 
-			//return retVal;
+			foreach (var b in definition.Behaviors)
+			{
+				var tb = formula.Behaviors.SingleOrDefault(e => e.Behavior.Id == b.Reference.Id);
+				if (tb == null)
+				{
+					return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+					                                          + " against its template id: " +
+					                                          formula.Artifact.ArtifactSymbol.Id
+					                                          + " the behavior " + b.Reference.Id
+					                                          + " is not found.";
+				}
+			}
+			
+			foreach (var bg in definition.BehaviorGroups)
+			{
+				var tbg = formula.BehaviorGroups.SingleOrDefault(e => e.BehaviorGroup.Id == bg.Reference.Id);
+				if (tbg == null)
+				{
+					return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+					                                          + " against its template id: " +
+					                                          formula.Artifact.ArtifactSymbol.Id
+					                                          + " the behaviorGroup " + bg.Reference.Id
+					                                          + " is not found.";
+				}
+			}
+			
+			foreach (var ps in definition.PropertySets)
+			{
+				var tps = formula.PropertySets.SingleOrDefault(e => e.PropertySet.Id == ps.Reference.Id);
+				if (tps == null)
+				{
+					return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+					                                          + " against its template id: " +
+					                                          formula.Artifact.ArtifactSymbol.Id
+					                                          + " the propertySet " + ps.Reference.Id
+					                                          + " is not found.";
+				}
+			}
+
+			return "";
 		}
 
 		public static Model.Taxonomy GetLiteTaxonomy(object version)
@@ -561,12 +683,204 @@ namespace TTI.TTF.Taxonomy
 
 		public static TokenTemplate GetTokenTemplate(TokenTemplateId request)
 		{
-			throw new NotImplementedException();
+			if (TokenTemplateCache.IsInCache(request.DefinitionId))
+			{
+				return TokenTemplateCache.GetFromCache(request.DefinitionId);
+			}
+
+			var definition = Taxonomy.TemplateDefinitions.SingleOrDefault(e => e.Key == request.DefinitionId)
+				.Value;
+			if (definition == null) return null;
+			var formula = Taxonomy.TemplateFormulas
+				.SingleOrDefault(e => e.Key == definition.FormulaReference.Id).Value;
+			var t = new TokenTemplate
+			{
+				Definition = definition,
+				Formula = formula
+			};
+			TokenTemplateCache.SaveToCache(t.Definition.Artifact.ArtifactSymbol.Id, t, DateTime.Now.AddDays(1));
+			return t;
 		}
 
-		public static TemplateDefinition CreateTemplateDefinition(TokenTemplateId templateFormulaId)
+
+		public static TemplateDefinition CreateTemplateDefinition(NewTemplateDefinition newTemplateDefinition)
 		{
 			//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
+			var templateFormula = GetArtifactById<TemplateFormula>(newTemplateDefinition.TemplateFormulaId);
+			var retVal = new TemplateDefinition
+			{
+				Artifact = new Artifact
+				{
+					Name = newTemplateDefinition.TokenName,
+					ArtifactSymbol = new ArtifactSymbol
+					{
+						Id = Guid.NewGuid().ToString(),
+						Tooling = templateFormula.Artifact.ArtifactSymbol.Tooling,
+						Visual = templateFormula.Artifact.ArtifactSymbol.Visual,
+						Version = templateFormula.Artifact.ArtifactSymbol.Version,
+						Type = ArtifactType.TemplateDefinition
+					}
+				},
+				FormulaReference = new ArtifactReference
+				{
+					Id = templateFormula.Artifact.ArtifactSymbol.Id,
+					Type = ArtifactType.TemplateFormula
+				}
+			};
+					
+			var definition = BuildTemplateDefinition(retVal, templateFormula);
+			if (templateFormula.Classification.TokenType != TokenType.Hybrid) return definition;
+			foreach (var c in definition.ChildTokens)
+			{
+				var childTemplateFormula = GetArtifactById<TemplateFormula>(newTemplateDefinition.TemplateFormulaId);
+				definition.ChildTokens.Add(BuildTemplateDefinition(c, childTemplateFormula));
+			}
+
+			TaxonomyController.CreateArtifact(new NewArtifactRequest
+			{
+				Artifact = Any.Pack(definition),
+				Type = ArtifactType.TemplateDefinition
+			});
+			return definition;
+		}
+		
+		private static TemplateDefinition BuildTemplateDefinition(TemplateDefinition newDefinition, TemplateFormula formula)
+		{
+				//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
+			var retVal = newDefinition.Clone();
+			var baseToken = GetArtifactById<Base>(newDefinition.TokenBase.Reference.Id);
+		
+			retVal.TokenBase = new BaseReference
+			{
+				Reference = new ArtifactReference
+				{
+					Id = baseToken.Artifact.ArtifactSymbol.Id,
+					Type = ArtifactType.Base,
+					Values = new ArtifactReferenceValues
+					{
+						ControlUri = "",
+						Maps = baseToken.Artifact.Maps
+					}
+				},
+				ConstructorName = "Constructor"
+			};
+
+			var behaviors = formula.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Behavior.Id)).ToList();
+			foreach (var b in behaviors)
+			{
+				retVal.Behaviors.Add(new BehaviorReference
+				{
+					Reference =  new ArtifactReference
+					{
+						Id = b.Artifact.ArtifactSymbol.Id,
+						Values = new ArtifactReferenceValues
+						{
+							ControlUri = "",
+							Maps = b.Artifact.Maps
+						}
+					},
+					ConstructorType = "",
+					Properties = { b.Properties },
+					Invocations = { b.Invocations},
+					IsExternal = true
+				});
+			}
+			
+			var behaviorGroups = formula.BehaviorGroups.Select(tb => GetArtifactById<BehaviorGroup>(tb.BehaviorGroup.Id)).ToList();
+			foreach (var b in behaviorGroups)
+			{
+				var behaviorGroup = new BehaviorGroupReference
+				{
+					Reference = new ArtifactReference
+					{
+						Id = b.Artifact.ArtifactSymbol.Id,
+						Values = new ArtifactReferenceValues
+						{
+							ControlUri = "",
+							Maps = b.Artifact.Maps
+						}
+					}
+				};
+		
+				var bgb = b.BehaviorSymbols.Select(tb => GetArtifactById<Behavior>(tb.Id)).ToList();
+				foreach (var bRef in bgb.Select(br => new BehaviorReference
+				{
+					Reference = new ArtifactReference
+					{
+						Id = b.Artifact.ArtifactSymbol.Id,
+						Values = new ArtifactReferenceValues
+						{
+							ControlUri = "",
+							Maps = b.Artifact.Maps
+						}
+					},
+					ConstructorType = "",
+					Properties = {br.Properties},
+					Invocations = {br.Invocations},
+					IsExternal = true
+				}))
+				{
+					behaviorGroup.BehaviorArtifacts.Add(bRef);
+				}
+
+			}
+			
+			var propertySets = formula.PropertySets.Select(tb => GetArtifactById<PropertySet>(tb.PropertySet.Id)).ToList();
+			foreach (var ps in propertySets)
+			{
+				retVal.PropertySets.Add(new PropertySetReference
+				{
+					Reference =  new ArtifactReference
+					{
+						Id = ps.Artifact.ArtifactSymbol.Id,
+						Values = new ArtifactReferenceValues
+						{
+							ControlUri = "",
+							Maps = ps.Artifact.Maps
+						}
+					},
+					Properties = { ps.Properties }
+				});
+			}
+
+			return retVal;
+		}
+
+		internal static T GetArtifactById<T>(string id)
+		{
+			if (typeof(T) == typeof(Base))
+			{
+				Taxonomy.BaseTokenTypes.TryGetValue(id, out var tokenBase);
+				return (T) Convert.ChangeType(tokenBase, typeof(T));
+			}
+
+			if (typeof(T) == typeof(Behavior))
+			{
+				Taxonomy.Behaviors.TryGetValue(id, out var behavior);
+				return (T) Convert.ChangeType(behavior, typeof(T));
+			}
+
+			if (typeof(T) == typeof(BehaviorGroup))
+			{
+				Taxonomy.BehaviorGroups.TryGetValue(id, out var behaviorGroup);
+				return (T) Convert.ChangeType(behaviorGroup, typeof(T));
+			}
+
+			if (typeof(T) == typeof(PropertySet))
+			{
+				Taxonomy.PropertySets.TryGetValue(id, out var propSet);
+				return (T) Convert.ChangeType(propSet, typeof(T));
+			}
+
+			if (typeof(T) == typeof(TemplateFormula))
+			{
+				Taxonomy.TemplateFormulas.TryGetValue(id, out var formula);
+				return (T) Convert.ChangeType(formula, typeof(T));
+			}
+
+			if (typeof(T) != typeof(TemplateDefinition)) return (T) Convert.ChangeType(new object(), typeof(T));
+			Taxonomy.TemplateDefinitions.TryGetValue(id, out var definition);
+			return (T) Convert.ChangeType(definition, typeof(T));
 		}
 	}
 }

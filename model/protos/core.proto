@@ -13,6 +13,14 @@ option java_multiple_files = true;
 message Base{
     taxonomy.model.artifact.Artifact artifact = 1;
     taxonomy.model.artifact.TokenType token_type = 2;
+    string name = 3;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    string symbol = 4; //an optionally unique symbol or identifier
+    string owner = 5; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    bytes quantity = 6; //Can represent the initial quantity created or the total minted or issued for the class.
+    int32 decimals = 7; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    map<string, string> token_properties = 8; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    string constructor_name = 9; //a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+    google.protobuf.Any constructor = 10; //the constructor type defined in the token template artifact.
 }
 
 message Bases{
@@ -35,8 +43,11 @@ message BaseReference {
 
 message Behavior{
     taxonomy.model.artifact.Artifact artifact = 1;
-    repeated Invocation invocations = 2;//definitions only will not have values, null for string or composite types and 0 for numbers, false for bools.
-    repeated Property properties = 3; //for any properties that should be added to the token if the behavior is implemented, values not set, should consider a dependent property-set.
+    bool is_external = 2;
+    string constructor_type = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
+    google.protobuf.Any constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
+    repeated Invocation invocations = 5;//definitions only will not have values, null for string or composite types and 0 for numbers, false for bools.
+    repeated Property properties = 6; //for any properties that should be added to the token if the behavior is implemented, values not set, should consider a dependent property-set.
 }
 
 message Behaviors{
@@ -55,7 +66,7 @@ message BehaviorReference{
 message BehaviorGroup{
     taxonomy.model.artifact.Artifact artifact = 1;
     repeated taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;
-    map<string, taxonomy.model.artifact.Artifact> behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
+    map<string, Behavior> behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
 }
 
 message BehaviorGroups{
@@ -64,7 +75,7 @@ message BehaviorGroups{
 
 message BehaviorGroupReference{
     taxonomy.model.artifact.ArtifactReference reference = 1;
-    map<string, BehaviorReference> behavior_artifacts = 2; //if retrieved this can be populated with the behaviors nested in the group.
+    repeated BehaviorReference behavior_artifacts = 2; //if retrieved this can be populated with the behaviors nested in the group.
 }
 
 message PropertySet{
@@ -100,7 +111,7 @@ message TemplateFormula{
     repeated TemplateBehavior behaviors = 4;
     repeated TemplateBehaviorGroup behavior_groups = 5;
     repeated TemplatePropertySet property_sets = 6;
-    repeated TemplateBase child_tokens = 7; //if hybrid, this can contain the list of child token classes.
+    repeated TemplateFormula child_tokens = 7; //if hybrid, this can contain the list of child token classes.
 }
 
 message TemplateFormulas{
@@ -131,7 +142,7 @@ message TemplateDefinition{
     repeated BehaviorReference behaviors = 4;
     repeated BehaviorGroupReference behavior_groups = 5;
     repeated PropertySetReference property_sets = 6;
-    repeated BaseReference child_tokens = 7;
+    repeated TemplateDefinition child_tokens = 7;
 }
 
 message TemplateDefinitions{
@@ -145,7 +156,7 @@ message TokenSpecification{
     repeated Behavior behaviors = 4;
     repeated BehaviorGroup behavior_groups = 5;
     repeated PropertySet property_sets = 6;
-    repeated Base child_tokens = 7;
+    repeated TokenSpecification child_tokens = 7;
 }
 
 message TokenBase {

@@ -360,8 +360,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 				}
 			}
 
+			TokenTemplateCache.ResetCache();
+			TokenTemplateCache.LoadTemplates(retVal);
 			return retVal;
 		}
+		
 
 		#endregion
 		

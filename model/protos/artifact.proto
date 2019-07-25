@@ -267,3 +267,13 @@ message Classification{
 message TokenTemplateId{
     string definition_id = 1;
 }
+
+//generic argument for fetching an artifact by its ArtifactSymbol.Id
+message Identifier{
+    string id = 1;
+}
+
+message NewTemplateDefinition{
+    string template_formula_id = 1;
+    string token_name = 2;
+}

@@ -32,6 +32,7 @@ namespace TTI.TTF.Taxonomy {
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse> __Marshaller_taxonomy_model_artifact_UpdateArtifactResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest> __Marshaller_taxonomy_model_artifact_DeleteArtifactRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse> __Marshaller_taxonomy_model_artifact_DeleteArtifactResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition> __Marshaller_taxonomy_model_artifact_NewTemplateDefinition = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest> __Marshaller_taxonomy_model_artifact_CommitUpdatesRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> __Marshaller_taxonomy_model_artifact_CommitUpdatesResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest> __Marshaller_taxonomy_model_artifact_IssuePullRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser.ParseFrom);
@@ -137,11 +138,11 @@ namespace TTI.TTF.Taxonomy {
         __Marshaller_taxonomy_model_artifact_DeleteArtifactRequest,
         __Marshaller_taxonomy_model_artifact_DeleteArtifactResponse);
 
-    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> __Method_CreateTemplateDefinition = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>(
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> __Method_CreateTemplateDefinition = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>(
         grpc::MethodType.Unary,
         __ServiceName,
         "CreateTemplateDefinition",
-        __Marshaller_taxonomy_model_artifact_TokenTemplateId,
+        __Marshaller_taxonomy_model_artifact_NewTemplateDefinition,
         __Marshaller_taxonomy_model_core_TemplateDefinition);
 
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> __Method_CommitLocalUpdates = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse>(
@@ -474,19 +475,19 @@ namespace TTI.TTF.Taxonomy {
       {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteArtifact, null, options, request);
       }
-      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateTemplateDefinition(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::CallOptions options)
+      public virtual global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition CreateTemplateDefinition(global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_CreateTemplateDefinition, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateTemplateDefinitionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> CreateTemplateDefinitionAsync(global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_CreateTemplateDefinition, null, options, request);
       }

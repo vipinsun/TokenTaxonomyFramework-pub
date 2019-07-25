@@ -119,10 +119,10 @@ namespace TTI.TTF.Taxonomy
             return Task.FromResult(ModelManager.GetArtifactsOfType(options));
         }
         
-        public override Task<TemplateDefinition> CreateTemplateDefinition(TokenTemplateId templateFormulaId, ServerCallContext ctx)
+        public override Task<TemplateDefinition> CreateTemplateDefinition(NewTemplateDefinition newTemplateDefinition, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: CreateTemplateDefinition");
-            return Task.FromResult(ModelManager.CreateTemplateDefinition(templateFormulaId));
+            return Task.FromResult(ModelManager.CreateTemplateDefinition(newTemplateDefinition));
         }
     }
 }
