@@ -35,6 +35,7 @@ if using the dotnet client using the [dotnet core runtime](https://dotnet.micros
 - `--c`: option to create a new artifact. Value is a proposed symbol for the artifact.
 - `--n`: option for the name of a new artifact, used with --c.  Value is the name of the artifact.
 - `--d`: create a template definition from a template formula, requires `--n`
+- `--s id`: retrieves a TokenSpecification from a Template Definition Id from the Service.
 
 Examples:
 

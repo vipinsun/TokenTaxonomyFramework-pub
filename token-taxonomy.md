@@ -67,7 +67,7 @@ The taxonomy is comprised of artifacts that are categorized into 5 basic types:
 
 Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md).
 
-### Ingredients and Recipes: Artifact, Artifact Instance, Template and Template Instance
+### Ingredients and Recipes
 
 Suppose we were baking a cake, using a recipe. An artifact is like an ingredient that can be used in a recipe, i.e. milk, sugar, flour. The recipe pulls together the ingredients by specifying how much of each ingredient to add, when and how long to bake.
 
@@ -77,13 +77,15 @@ In this analogy, ingredients are Artifacts and a recipe is a Token Template.
 
 The TTF is comprised of artifacts, which is just a common way of defining items and compositions in the framework. To use an artifact you simply reference the artifact and apply overlay values for the artifacts in the template definition. Like the quantity of an ingredient in the cake recipe.  Just like a recipe has a list of ingredients followed by the details about the measurements, mixture and baking details, a template has a formula and a definition. When composing a Token Template, you are creating references to all of the Artifacts, ingredients, in a formula and then providing details about each of the ingredients in the definition.
 
-In the TTF, a Template is also an Artifact.
+An artifact is a verbose description of the TTF component it represents, which the TTF maintains a master copy. To use an artifact it is referenced, like a link or shortcut, that points to the full artifact.
+
+When creating a Template Formula, it uses a template reference, which is only a pointer to the artifact with no other values or settings.
+
+A Template Definition, created from a formula, uses an artifact it uses an artifact reference, which can contain values and settings specific for the artifact in the definition.
 
 ![References](images/reference.png)
 
-An Artifact Reference contains a link to the artifact as well as the reference values needed to complete a definition.
-
-Artifacts are referenced by Template Formulas, which is paired with a Template Definition that supplies that values for the specific Token, i.e. cake. The Template Definition contains the Artifact References and their values.
+Using references in this way, prevents data duplication in the TTF and specification changes flow through existing Template artifacts without needing to be updated in each one.
 
 ### Classification
 
@@ -230,23 +232,30 @@ For example, an oil token may allow oil producers to mint new tokens as they int
 Behavior groups are represented in the taxonomy by a capital letter or acronym, *SC*, from their full name and equal to the symbols for the behaviors they include.
 *SC = {m, b, r}*
 
-## Token Templates
+## Template Formula
 
-Templates are where a token's components all comes together. Selecting artifacts from the previous categories, a template lists the artifacts that define what a token created from the template will be.
+Template Formulas are where a token's components all comes together. Selecting artifacts from the previous categories, a template lists the artifacts that define what a token created from the template will be.
 
 Starting with a base type, then collections of behaviors, groups and properties all of the ingredients are identified. Because artifacts themselves are described generically in isolation, when you include them in a template a formula is calculated and validated by the TTF to enforce grammar and rules.
 
 ![TokenTemplateImplementationDetail](images/templateImpl.png)
 
-In the above example, we reference artifact for the `phSKU` property.
+In the above example, we reference the artifact for the `phSKU` property.
 
-## Template to Definition
+## From Formula to Definition
 
-The token definition
+Once you have created or identified an existing formula, you can use the TTF to create a Template Definition from it. The definition incorporates the artifacts identified in the formula as references, where the artifact being used is identified and the values and settings for the artifact are recorded. The definition has a link to its formula and the id for the definition becomes the unique identifier for the Token Template and Specification.
 
-### Branch Classification
+## Token Specification
+
+The TTF creates a Token Specification dynamically from the Template Definition Id. The generation of the specification pulls the complete artifact for base, behaviors, property-sets and children into a specification and then merges the definition reference values for each artifact listed. This generates a full and quite verbose token specification that can be used as requirements for developers, documentation and training.
+![TokenSpecification](images/tokenSpec.png)
+
+## Branch Classification
 
 A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` that is also classified as either a `Fungible` or `Non-Fungible`. Classification is primarily used for creating dynamic visualization to compare templates and understand relationships between them.
+
+By default Token Templates are organized in a simple hierarchy by Fungible, Non-Fungible and Hybrid. Further classification hierarchies can be dynamically generated like below.
 
 ![Branches](images/branch-leaf.png)
 
@@ -258,20 +267,18 @@ Artifacts are primarily defined using a platform neutral model that provides typ
 
 ![TaxonomyModel](images/taxonomy-model.png)
 
-Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior-groups, property-sets and templates.
+Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior-groups, property-sets, formulas, definitions,templates placed in a hierarchy.
 
-Below is an example of a token template in the model showing the collection of artifacts in its definition:
+Below is an example of a template formula in the model showing the collection of its artifacts:
 
 - Base
 - Behavior
 - Behavior Groups
 - Property Set
-- Token Templates
-- Token Definitions
 
-![TokenTemplate](images/TokenTemplates.png)
+![TokenTemplate](images/templateFormula.png)
 
-Written in protocol buffers, the schema supports a data structure to hold artifact definitions that anyone can understand what it does.  Storing the artifact definition in an object model allows for artifacts to be added or updated using any client interface or imported from files like Word or Google Docs.  The model serializes/saves to the artifact folder in JSON format so changes are tracked by GitHub.
+Written in protocol buffers, the schema supports a data structure to hold artifact definitions that anyone can understand.  Storing the artifact definition in an object model allows for artifacts to be added or updated using any client interface or imported from files like Word or Google Docs.  The model serializes/saves to the artifact folder in JSON format so changes are tracked by GitHub.
 
 ![Artifact](images/artifact-hl.png)
 
@@ -322,6 +329,8 @@ Token definitions start with the token base type:
 - For example, a Token Branch can be a Formula with just the base and behaviors and can then have a Node that had the Branch formula surround by brackets `[]` and adds using `+` the unique property sets, added within the brackets. i.e. **[&tau;<sub>N</sub>(&tau;<sub>F</sub>, &tau;<sub>N</sub>)+&phi;SKU]**
 - Hybrid tokens, represented as children of a base parent are added after the base's [] and contained with in parenthesis (,).  These child tokens are also contained within brackets resulting in a formula grouping like: `[]([],[])`
 - For hybrid tokens, you can apply behaviors to the entire hybrid definition by ending the formula with a list of behaviors in {,}.
+- Hybrid children with formulas are grouped within the formula's[]: i.e. **[&tau;<sub>N</sub>{s,~t}(&tau;<sub>F</sub>{~d,SC}]**
+
 
 Whole Token Formulas start with the base token type, followed by a collection of behaviors and groups within {,}, ending in any property-sets.
 
@@ -450,9 +459,11 @@ The taxonomy can be used in a workshop with stakeholders that want to define an 
 
 In the workshop, the group will select a base token type and select from the existing behaviors in the taxonomy like choosing from A la Carte menu at a restaurant. If no suitable behavior or group can be found, the participants should create a new one.  Which means they will create a new taxonomy artifact using the TTF.
 
-The end result of the workshop is to have a complete definition of the token that can be expressed using grammar as a formula.  This formula becomes the token's taxonomy definition like:
+The end result of the workshop is to have a complete specification for the token that can be expressed using grammar as a formula and its definition.  This formula becomes a TTF Branch:
 
  >**&tau;<sub>F</sub>{~d,SC}**
+
+Using the formula, a template definition is created filling in the details about the token.  These two artifacts define a Token Template. Also, from the definition a Token Specification can be generated upon request, which is handy for documentation or business validation.
 
 When a workshops is completed, the artifacts should be recorded, any new behaviors, groups, properties and token templates and a pull request be issued for these to be merged after approval to be part of the framework and available for reuse by other workshops.
 
