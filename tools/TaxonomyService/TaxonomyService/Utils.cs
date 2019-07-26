@@ -54,14 +54,27 @@ namespace TTI.TTF.Taxonomy
 				}
 			}
 
-			return ch.ToString();
+			return new string(ch);
 		}
 
-		public static (string Name, string VisualSymbol, string ToolingSymbol) GetRandomArtifactFromArtifact(string name,
-			string visualSymbol ,string toolingSymbol)
+		public static (string Name, string visual, string tooling) GetRandomArtifactFromArtifact(string name,
+			string visual ,string tooling)
 		{
 			var randStr = Randomize("");
-			return (name + randStr, visualSymbol + randStr, toolingSymbol + randStr);
+			return (name + randStr, visual + randStr, tooling + randStr);
+		}
+		
+		public static string GetRandomNameFromName(string name)
+		{
+			var randStr = Randomize("");
+			return name + randStr;
+		}
+		
+		public static (string Name, string visual, string tooling) GetRandomTemplate(string name,
+			string visual ,string tooling)
+		{
+			var randStr = Randomize("");
+			return (name + randStr, visual + randStr, tooling + randStr);
 		}
 
 		public static string Randomize(string input)

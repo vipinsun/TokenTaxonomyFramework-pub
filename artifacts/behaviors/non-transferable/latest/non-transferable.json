@@ -1,14 +1,15 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>~t</i>",
-      "toolingSymbol": "~t",
-      "artifactVersion": "1.0"
+      "visual": "<i>~t</i>",
+      "tooling": "~t",
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Non-transferable",
     "aliases": [],
-    "controlUri": "../../../../../../artifacts/behaviors/transferable/non-transferable.proto",
     "artifactDefinition": {
       "businessDescription": "Every token instance has an owner. The Non-transferable behavior prevents the owner of a token from changing.",
       "businessExample": "A vote token, for a citizen in a public election would be non-transferable.",
@@ -25,10 +26,12 @@
     "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>t</i>",
-        "toolingSymbol": "t",
-        "artifactVersion": ""
+        "visual": "<i>t</i>",
+        "tooling": "t",
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [],
@@ -78,7 +81,7 @@
     }
   },
   "isExternal": false,
-  "constructorName": "",
+  "constructorType": "",
   "constructor": null,
   "invocations": [],
   "properties": []

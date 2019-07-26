@@ -23,7 +23,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 				
 				var gitCmd = "git commit -m " + commitNotes;
 				
-				var results = gitCmd.Bash(Service.ArtifactPath);
+				var results = gitCmd.Bash(TxService.ArtifactPath);
 				_log.Info(results);
 				return new CommitUpdatesResponse
 				{
@@ -49,7 +49,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 				
 				var gitCmd = "git pull-request";
 				
-				var results = gitCmd.Bash(Service.ArtifactPath);
+				var results = gitCmd.Bash(TxService.ArtifactPath);
 				_log.Info(results);
 				return new IssuePullResponse
 				{
@@ -74,9 +74,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 			{
 				var retVal = new ServiceConfiguration
 				{
-					ReadOnly = Service.ReadOnlyMode,
-					GitId = Service.GitId,
-					GitBranch = gitBranch.Bash(Service.ArtifactPath)
+					ReadOnly = TxService.ReadOnlyMode,
+					GitId = TxService.GitId,
+					GitBranch = gitBranch.Bash(TxService.ArtifactPath)
 				};
 
 				return retVal;

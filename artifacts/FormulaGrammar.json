@@ -1,184 +1,114 @@
 {
-  "singleToken": {
+  "singleTokenGrammar": {
     "groupStart": "[",
-    "baseToken": {
-      "artifactSymbol": {
-        "type": "BASE",
-        "visualSymbol": "",
-        "toolingSymbol": "",
-        "artifactVersion": ""
-      }
-    },
+    "baseTokenToolingSymbol": "",
     "behaviors": {
       "listStart": "{",
-      "behaviorSymbols": [
-        {
-          "type": "BEHAVIOR",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
-        }
+      "behaviorToolingSymbols": [
+        "",
+        ""
       ],
       "listEnd": "}"
     },
-    "propertySets": [
-      {
-        "listStart": "+",
-        "propertySetSymbols": {
-          "type": "PROPERTY_SET",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
+    "propertySets": {
+      "listStart": "+",
+      "propertySets": [
+        {
+          "propertySetSymbol": ""
         }
-      }
-    ],
+      ]
+    },
     "groupEnd": "]"
   },
-  "hybrid": {
+  "hybridGrammar": {
     "parent": {
       "groupStart": "[",
-      "baseToken": {
-        "artifactSymbol": {
-          "type": "BASE",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
-        }
-      },
+      "baseTokenToolingSymbol": "",
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbols": [
-          {
-            "type": "BEHAVIOR",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
+        "behaviorToolingSymbols": [
+          "",
+          ""
         ],
         "listEnd": "}"
       },
-      "propertySets": [
-        {
-          "listStart": "+",
-          "propertySetSymbols": {
-            "type": "PROPERTY_SET",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+      "propertySets": {
+        "listStart": "+",
+        "propertySets": [
+          {
+            "propertySetSymbol": ""
           }
-        }
-      ],
+        ]
+      },
       "groupEnd": "]"
     },
     "childrenStart": "(",
     "childTokens": [
       {
         "groupStart": "[",
-        "baseToken": {
-          "artifactSymbol": {
-            "type": "BASE",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
-        },
+        "baseTokenToolingSymbol": "",
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbols": [
-            {
-              "type": "BEHAVIOR",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
+          "behaviorToolingSymbols": [
+            "",
+            ""
           ],
           "listEnd": "}"
         },
-        "propertySets": [
-          {
-            "listStart": "+",
-            "propertySetSymbols": {
-              "type": "PROPERTY_SET",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+        "propertySets": {
+          "listStart": "+",
+          "propertySets": [
+            {
+              "propertySetSymbol": ""
             }
-          }
-        ],
+          ]
+        },
         "groupEnd": "]"
       },
       {
         "groupStart": "[",
-        "baseToken": {
-          "artifactSymbol": {
-            "type": "BASE",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
-        },
+        "baseTokenToolingSymbol": "",
         "behaviors": {
           "listStart": "{",
-          "behaviorSymbols": [
-            {
-              "type": "BEHAVIOR",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
+          "behaviorToolingSymbols": [
+            "",
+            ""
           ],
           "listEnd": "}"
         },
-        "propertySets": [
-          {
-            "listStart": "+",
-            "propertySetSymbols": {
-              "type": "PROPERTY_SET",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
+        "propertySets": {
+          "listStart": "+",
+          "propertySets": [
+            {
+              "propertySetSymbol": ""
             }
-          }
-        ],
+          ]
+        },
         "groupEnd": "]"
       }
     ],
     "childrenEnd": ")"
   },
-  "hybridWithHybrids": {
+  "hybridWithHybridsGrammar": {
     "parent": {
       "groupStart": "[",
-      "baseToken": {
-        "artifactSymbol": {
-          "type": "BASE",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
-        }
-      },
+      "baseTokenToolingSymbol": "",
       "behaviors": {
         "listStart": "{",
-        "behaviorSymbols": [
-          {
-            "type": "BEHAVIOR",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
-          }
+        "behaviorToolingSymbols": [
+          "",
+          ""
         ],
         "listEnd": "}"
       },
-      "propertySets": [
-        {
-          "listStart": "+",
-          "propertySetSymbols": {
-            "type": "PROPERTY_SET",
-            "visualSymbol": "",
-            "toolingSymbol": "",
-            "artifactVersion": ""
+      "propertySets": {
+        "listStart": "+",
+        "propertySets": [
+          {
+            "propertySetSymbol": ""
           }
-        }
-      ],
+        ]
+      },
       "groupEnd": "]"
     },
     "hybridChildrenStart": "(",
@@ -186,109 +116,67 @@
       {
         "parent": {
           "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          },
+          "baseTokenToolingSymbol": "",
           "behaviors": {
             "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
+            "behaviorToolingSymbols": [
+              "",
+              ""
             ],
             "listEnd": "}"
           },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+          "propertySets": {
+            "listStart": "+",
+            "propertySets": [
+              {
+                "propertySetSymbol": ""
               }
-            }
-          ],
+            ]
+          },
           "groupEnd": "]"
         },
         "childrenStart": "(",
         "childTokens": [
           {
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           },
           {
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           }
         ],
@@ -297,109 +185,67 @@
       {
         "parent": {
           "groupStart": "[",
-          "baseToken": {
-            "artifactSymbol": {
-              "type": "BASE",
-              "visualSymbol": "",
-              "toolingSymbol": "",
-              "artifactVersion": ""
-            }
-          },
+          "baseTokenToolingSymbol": "",
           "behaviors": {
             "listStart": "{",
-            "behaviorSymbols": [
-              {
-                "type": "BEHAVIOR",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
+            "behaviorToolingSymbols": [
+              "",
+              ""
             ],
             "listEnd": "}"
           },
-          "propertySets": [
-            {
-              "listStart": "+",
-              "propertySetSymbols": {
-                "type": "PROPERTY_SET",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
+          "propertySets": {
+            "listStart": "+",
+            "propertySets": [
+              {
+                "propertySetSymbol": ""
               }
-            }
-          ],
+            ]
+          },
           "groupEnd": "]"
         },
         "childrenStart": "(",
         "childTokens": [
           {
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           },
           {
             "groupStart": "[",
-            "baseToken": {
-              "artifactSymbol": {
-                "type": "BASE",
-                "visualSymbol": "",
-                "toolingSymbol": "",
-                "artifactVersion": ""
-              }
-            },
+            "baseTokenToolingSymbol": "",
             "behaviors": {
               "listStart": "{",
-              "behaviorSymbols": [
-                {
-                  "type": "BEHAVIOR",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
-                }
+              "behaviorToolingSymbols": [
+                "",
+                ""
               ],
               "listEnd": "}"
             },
-            "propertySets": [
-              {
-                "listStart": "+",
-                "propertySetSymbols": {
-                  "type": "PROPERTY_SET",
-                  "visualSymbol": "",
-                  "toolingSymbol": "",
-                  "artifactVersion": ""
+            "propertySets": {
+              "listStart": "+",
+              "propertySets": [
+                {
+                  "propertySetSymbol": ""
                 }
-              }
-            ],
+              ]
+            },
             "groupEnd": "]"
           }
         ],

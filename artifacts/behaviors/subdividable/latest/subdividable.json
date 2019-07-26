@@ -1,10 +1,12 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>d</i>",
-      "toolingSymbol": "d",
-      "artifactVersion": "1.0"
+      "visual": "<i>d</i>",
+      "tooling": "d",
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Subdividable",
     "aliases": [
@@ -25,23 +27,15 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "Decimals property for indicating how many decimal places the a whole token can be subdivided into.",
-        "symbol": {
-          "type": "PROPERTY_SET",
-          "visualSymbol": "&phi;D",
-          "toolingSymbol": "phD",
-          "artifactVersion": ""
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>~d</i>",
-        "toolingSymbol": "~d",
-        "artifactVersion": ""
+        "visual": "<i>~d</i>",
+        "tooling": "~d",
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [],
@@ -90,9 +84,33 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [],
-  "properties": []
+  "properties": [
+    {
+      "name": "Decimals",
+      "valueDescription": "Set to a number greater than Zero, allowing subdivision",
+      "templateValue": "0",
+      "propertyInvocations": [
+        {
+          "name": "GetDecimals",
+          "description": "Return the value",
+          "request": {
+            "controlMessageName": "GetDecimalsRequest",
+            "description": "",
+            "inputParameters": []
+          },
+          "response": {
+            "controlMessageName": "GetDecimalsResponse",
+            "description": "Return number of decimal places",
+            "outputParameters": [
+              {
+                "name": "Decimals",
+                "valueDescription": "integer"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

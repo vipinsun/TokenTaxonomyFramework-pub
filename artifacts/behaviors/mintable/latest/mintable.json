@@ -1,17 +1,18 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>m</i>",
-      "toolingSymbol": "m",
-      "artifactVersion": "1.0"
+      "visual": "<i>m</i>",
+      "tooling": "m",
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Mintable",
     "aliases": [
       "Issuable",
       "Create"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/mintable/mintable.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the minting or issuing of new token instances of the class.  This new tokens can be minted and belong to the owner or minted to another account. This behavior may be overriden by a restrictive behavior like Singleton, where only a single instance of the token can exist.",
       "businessExample": "",
@@ -29,9 +30,9 @@
     "incompatibleWithSymbols": [
       {
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>s</s>",
-        "toolingSymbol": "s",
-        "artifactVersion": ""
+        "visual": "<i>s</s>",
+        "tooling": "s",
+        "version": ""
       }
     ],
     "influencedBySymbols": [
@@ -39,9 +40,9 @@
         "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
         "symbol": {
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>r</i>",
-          "toolingSymbol": "r",
-          "artifactVersion": ""
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": ""
         }
       }
     ],
@@ -90,9 +91,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [
     {
       "name": "Mint",

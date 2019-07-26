@@ -1,24 +1,24 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>~d</i>",
-      "toolingSymbol": "~d",
-      "artifactVersion": "1.0"
+      "visual": "<i>~d</i>",
+      "tooling": "~d",
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Non-Subdividable",
     "aliases": [
-      "alias1",
-      "alias2"
+      "Whole"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/subdividable/non-subdividable.proto",
     "artifactDefinition": {
       "businessDescription": "An ability or restriction on the token where it cannot be subdivided from a single whole token into fractions. Sets the base token Decimals property to 0 which will make the token non-sub-dividable and a whole token is the smallest ownable unit of the token.",
       "businessExample": "Non-subdividable is common for items where subdivision does not make sense, like a property title, inventory item or invoice.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "non-subdividable analogy 1 description",
+          "name": "Non-Fractional",
+          "description": "It is not possible to own a fraction of this token.",
           "artifactDefinition": null
         }
       ],
@@ -28,10 +28,12 @@
     "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>d</i>",
-        "toolingSymbol": "d",
-        "artifactVersion": ""
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [],
@@ -80,9 +82,33 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [],
-  "properties": []
+  "properties": [
+    {
+      "name": "Decimals",
+      "valueDescription": "Set to Zero, not allowing any subdivision",
+      "templateValue": "0",
+      "propertyInvocations": [
+        {
+          "name": "GetDecimals",
+          "description": "Should return 0",
+          "request": {
+            "controlMessageName": "GetDecimalsRequest",
+            "description": "",
+            "inputParameters": []
+          },
+          "response": {
+            "controlMessageName": "GetDecimalsResponse",
+            "description": "Return 0",
+            "outputParameters": [
+              {
+                "name": "Decimals",
+                "valueDescription": "0"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -25,33 +25,61 @@ namespace TTI.TTF.Taxonomy.Model {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg50YXhvbm9teS5wcm90bxIOdGF4b25vbXkubW9kZWwaCmNvcmUucHJvdG8a",
-            "DmFydGlmYWN0LnByb3RvIuIGCghUYXhvbm9teRIPCgd2ZXJzaW9uGAEgASgJ",
-            "EkYKEGJhc2VfdG9rZW5fdHlwZXMYAiADKAsyLC50YXhvbm9teS5tb2RlbC5U",
-            "YXhvbm9teS5CYXNlVG9rZW5UeXBlc0VudHJ5EjoKCWJlaGF2aW9ycxgDIAMo",
-            "CzInLnRheG9ub215Lm1vZGVsLlRheG9ub215LkJlaGF2aW9yc0VudHJ5EkUK",
-            "D2JlaGF2aW9yX2dyb3VwcxgEIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9u",
-            "b215LkJlaGF2aW9yR3JvdXBzRW50cnkSQQoNcHJvcGVydHlfc2V0cxgFIAMo",
-            "CzIqLnRheG9ub215Lm1vZGVsLlRheG9ub215LlByb3BlcnR5U2V0c0VudHJ5",
-            "EkUKD3Rva2VuX3RlbXBsYXRlcxgGIAMoCzIsLnRheG9ub215Lm1vZGVsLlRh",
-            "eG9ub215LlRva2VuVGVtcGxhdGVzRW50cnkSQAoPZm9ybXVsYV9ncmFtbWFy",
-            "GAcgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuRm9ybXVsYUdyYW1t",
-            "YXIaUAoTQmFzZVRva2VuVHlwZXNFbnRyeRILCgNrZXkYASABKAkSKAoFdmFs",
-            "dWUYAiABKAsyGS50YXhvbm9teS5tb2RlbC5jb3JlLkJhc2U6AjgBGk8KDkJl",
-            "aGF2aW9yc0VudHJ5EgsKA2tleRgBIAEoCRIsCgV2YWx1ZRgCIAEoCzIdLnRh",
-            "eG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3I6AjgBGlkKE0JlaGF2aW9yR3Jv",
-            "dXBzRW50cnkSCwoDa2V5GAEgASgJEjEKBXZhbHVlGAIgASgLMiIudGF4b25v",
-            "bXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwOgI4ARpVChFQcm9wZXJ0eVNl",
-            "dHNFbnRyeRILCgNrZXkYASABKAkSLwoFdmFsdWUYAiABKAsyIC50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlLlByb3BlcnR5U2V0OgI4ARpZChNUb2tlblRlbXBsYXRl",
-            "c0VudHJ5EgsKA2tleRgBIAEoCRIxCgV2YWx1ZRgCIAEoCzIiLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZToCOAEiIgoPVGF4b25vbXlWZXJz",
-            "aW9uEg8KB3ZlcnNpb24YASABKAlCNwoab3JnLnR0aS50dGkudGF4b25vbXku",
-            "bW9kZWxQAaoCFlRUSS5UVEYuVGF4b25vbXkuTW9kZWxiBnByb3RvMw=="));
+            "DmFydGlmYWN0LnByb3RvIv4ICghUYXhvbm9teRIwCgd2ZXJzaW9uGAEgASgL",
+            "Mh8udGF4b25vbXkubW9kZWwuVGF4b25vbXlWZXJzaW9uEkYKEGJhc2VfdG9r",
+            "ZW5fdHlwZXMYAiADKAsyLC50YXhvbm9teS5tb2RlbC5UYXhvbm9teS5CYXNl",
+            "VG9rZW5UeXBlc0VudHJ5EjoKCWJlaGF2aW9ycxgDIAMoCzInLnRheG9ub215",
+            "Lm1vZGVsLlRheG9ub215LkJlaGF2aW9yc0VudHJ5EkUKD2JlaGF2aW9yX2dy",
+            "b3VwcxgEIAMoCzIsLnRheG9ub215Lm1vZGVsLlRheG9ub215LkJlaGF2aW9y",
+            "R3JvdXBzRW50cnkSQQoNcHJvcGVydHlfc2V0cxgFIAMoCzIqLnRheG9ub215",
+            "Lm1vZGVsLlRheG9ub215LlByb3BlcnR5U2V0c0VudHJ5EkkKEXRlbXBsYXRl",
+            "X2Zvcm11bGFzGAYgAygLMi4udGF4b25vbXkubW9kZWwuVGF4b25vbXkuVGVt",
+            "cGxhdGVGb3JtdWxhc0VudHJ5Ek8KFHRlbXBsYXRlX2RlZmluaXRpb25zGAcg",
+            "AygLMjEudGF4b25vbXkubW9kZWwuVGF4b25vbXkuVGVtcGxhdGVEZWZpbml0",
+            "aW9uc0VudHJ5EjsKGHRva2VuX3RlbXBsYXRlX2hpZXJhcmNoeRgIIAEoCzIZ",
+            "LnRheG9ub215Lm1vZGVsLkhpZXJhcmNoeRJACg9mb3JtdWxhX2dyYW1tYXIY",
+            "CSABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5Gb3JtdWxhR3JhbW1h",
+            "chpQChNCYXNlVG9rZW5UeXBlc0VudHJ5EgsKA2tleRgBIAEoCRIoCgV2YWx1",
+            "ZRgCIAEoCzIZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZToCOAEaTwoOQmVo",
+            "YXZpb3JzRW50cnkSCwoDa2V5GAEgASgJEiwKBXZhbHVlGAIgASgLMh0udGF4",
+            "b25vbXkubW9kZWwuY29yZS5CZWhhdmlvcjoCOAEaWQoTQmVoYXZpb3JHcm91",
+            "cHNFbnRyeRILCgNrZXkYASABKAkSMQoFdmFsdWUYAiABKAsyIi50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXA6AjgBGlUKEVByb3BlcnR5U2V0",
+            "c0VudHJ5EgsKA2tleRgBIAEoCRIvCgV2YWx1ZRgCIAEoCzIgLnRheG9ub215",
+            "Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQ6AjgBGl0KFVRlbXBsYXRlRm9ybXVs",
+            "YXNFbnRyeRILCgNrZXkYASABKAkSMwoFdmFsdWUYAiABKAsyJC50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLlRlbXBsYXRlRm9ybXVsYToCOAEaYwoYVGVtcGxhdGVE",
+            "ZWZpbml0aW9uc0VudHJ5EgsKA2tleRgBIAEoCRI2CgV2YWx1ZRgCIAEoCzIn",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVEZWZpbml0aW9uOgI4ASJC",
+            "Cg9UYXhvbm9teVZlcnNpb24SCgoCaWQYASABKAkSDwoHdmVyc2lvbhgCIAEo",
+            "CRISCgpzdGF0ZV9oYXNoGAMgASgJIqABCglIaWVyYXJjaHkSLQoJZnVuZ2li",
+            "bGVzGAEgASgLMhoudGF4b25vbXkubW9kZWwuQnJhbmNoUm9vdBIxCg1ub25f",
+            "ZnVuZ2libGVzGAIgASgLMhoudGF4b25vbXkubW9kZWwuQnJhbmNoUm9vdBIx",
+            "CgdoeWJyaWRzGAMgASgLMiAudGF4b25vbXkubW9kZWwuSHlicmlkQnJhbmNo",
+            "Um9vdCKdAQoQQnJhbmNoSWRlbnRpZmllchI2Cgp0b2tlbl90eXBlGAEgASgO",
+            "MiIudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVG9rZW5UeXBlEj0KBmJyYW5j",
+            "aBgCIAEoDjItLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkNsYXNzaWZpY2F0",
+            "aW9uQnJhbmNoEhIKCmZvcm11bGFfaWQYAyABKAkilgIKCkJyYW5jaFJvb3QS",
+            "OwoRYnJhbmNoX2lkZW50aWZpZXIYASABKAsyIC50YXhvbm9teS5tb2RlbC5C",
+            "cmFuY2hJZGVudGlmaWVyEhkKEXBhcmVudF9mb3JtdWxhX2lkGAIgASgJEgwK",
+            "BG5hbWUYAyABKAkSPAoOYnJhbmNoX2Zvcm11bGEYBCABKAsyJC50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLlRlbXBsYXRlRm9ybXVsYRI2Cgl0ZW1wbGF0ZXMYBSAB",
+            "KAsyIy50YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuVGVtcGxhdGVzEiwKCGJy",
+            "YW5jaGVzGAYgAygLMhoudGF4b25vbXkubW9kZWwuQnJhbmNoUm9vdCKAAQoQ",
+            "SHlicmlkQnJhbmNoUm9vdBIzCg9mdW5naWJsZV9wYXJlbnQYASABKAsyGi50",
+            "YXhvbm9teS5tb2RlbC5CcmFuY2hSb290EjcKE25vbl9mdW5naWJsZV9wYXJl",
+            "bnQYAiABKAsyGi50YXhvbm9teS5tb2RlbC5CcmFuY2hSb290QjcKGm9yZy50",
+            "dGkudHRmLnRheG9ub215Lm1vZGVsUAGqAhZUVEkuVFRGLlRheG9ub215Lk1v",
+            "ZGVsYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TokenTemplates", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Version" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TemplateFormulas", "TemplateDefinitions", "TokenTemplateHierarchy", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Id", "Version", "StateHash" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Hierarchy), global::TTI.TTF.Taxonomy.Model.Hierarchy.Parser, new[]{ "Fungibles", "NonFungibles", "Hybrids" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.BranchIdentifier), global::TTI.TTF.Taxonomy.Model.BranchIdentifier.Parser, new[]{ "TokenType", "Branch", "FormulaId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.BranchRoot), global::TTI.TTF.Taxonomy.Model.BranchRoot.Parser, new[]{ "BranchIdentifier", "ParentFormulaId", "Name", "BranchFormula", "Templates", "Branches" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.HybridBranchRoot), global::TTI.TTF.Taxonomy.Model.HybridBranchRoot.Parser, new[]{ "FungibleParent", "NonFungibleParent" }, null, null, null)
           }));
     }
     #endregion
@@ -86,12 +114,14 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Taxonomy(Taxonomy other) : this() {
-      version_ = other.version_;
+      version_ = other.version_ != null ? other.version_.Clone() : null;
       baseTokenTypes_ = other.baseTokenTypes_.Clone();
       behaviors_ = other.behaviors_.Clone();
       behaviorGroups_ = other.behaviorGroups_.Clone();
       propertySets_ = other.propertySets_.Clone();
-      tokenTemplates_ = other.tokenTemplates_.Clone();
+      templateFormulas_ = other.templateFormulas_.Clone();
+      templateDefinitions_ = other.templateDefinitions_.Clone();
+      tokenTemplateHierarchy_ = other.tokenTemplateHierarchy_ != null ? other.tokenTemplateHierarchy_.Clone() : null;
       formulaGrammar_ = other.formulaGrammar_ != null ? other.formulaGrammar_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -103,12 +133,12 @@ namespace TTI.TTF.Taxonomy.Model {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 1;
-    private string version_ = "";
+    private global::TTI.TTF.Taxonomy.Model.TaxonomyVersion version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Version {
+    public global::TTI.TTF.Taxonomy.Model.TaxonomyVersion Version {
       get { return version_; }
       set {
-        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        version_ = value;
       }
     }
 
@@ -152,18 +182,39 @@ namespace TTI.TTF.Taxonomy.Model {
       get { return propertySets_; }
     }
 
-    /// <summary>Field number for the "token_templates" field.</summary>
-    public const int TokenTemplatesFieldNumber = 6;
-    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec _map_tokenTemplates_codec
-        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser), 50);
-    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> tokenTemplates_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>();
+    /// <summary>Field number for the "template_formulas" field.</summary>
+    public const int TemplateFormulasFieldNumber = 6;
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula>.Codec _map_templateFormulas_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula.Parser), 50);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula> templateFormulas_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> TokenTemplates {
-      get { return tokenTemplates_; }
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula> TemplateFormulas {
+      get { return templateFormulas_; }
+    }
+
+    /// <summary>Field number for the "template_definitions" field.</summary>
+    public const int TemplateDefinitionsFieldNumber = 7;
+    private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>.Codec _map_templateDefinitions_codec
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition.Parser), 58);
+    private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> templateDefinitions_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> TemplateDefinitions {
+      get { return templateDefinitions_; }
+    }
+
+    /// <summary>Field number for the "token_template_hierarchy" field.</summary>
+    public const int TokenTemplateHierarchyFieldNumber = 8;
+    private global::TTI.TTF.Taxonomy.Model.Hierarchy tokenTemplateHierarchy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Hierarchy TokenTemplateHierarchy {
+      get { return tokenTemplateHierarchy_; }
+      set {
+        tokenTemplateHierarchy_ = value;
+      }
     }
 
     /// <summary>Field number for the "formula_grammar" field.</summary>
-    public const int FormulaGrammarFieldNumber = 7;
+    public const int FormulaGrammarFieldNumber = 9;
     private global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar formulaGrammar_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar FormulaGrammar {
@@ -186,12 +237,14 @@ namespace TTI.TTF.Taxonomy.Model {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Version != other.Version) return false;
+      if (!object.Equals(Version, other.Version)) return false;
       if (!BaseTokenTypes.Equals(other.BaseTokenTypes)) return false;
       if (!Behaviors.Equals(other.Behaviors)) return false;
       if (!BehaviorGroups.Equals(other.BehaviorGroups)) return false;
       if (!PropertySets.Equals(other.PropertySets)) return false;
-      if (!TokenTemplates.Equals(other.TokenTemplates)) return false;
+      if (!TemplateFormulas.Equals(other.TemplateFormulas)) return false;
+      if (!TemplateDefinitions.Equals(other.TemplateDefinitions)) return false;
+      if (!object.Equals(TokenTemplateHierarchy, other.TokenTemplateHierarchy)) return false;
       if (!object.Equals(FormulaGrammar, other.FormulaGrammar)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -199,12 +252,14 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (version_ != null) hash ^= Version.GetHashCode();
       hash ^= BaseTokenTypes.GetHashCode();
       hash ^= Behaviors.GetHashCode();
       hash ^= BehaviorGroups.GetHashCode();
       hash ^= PropertySets.GetHashCode();
-      hash ^= TokenTemplates.GetHashCode();
+      hash ^= TemplateFormulas.GetHashCode();
+      hash ^= TemplateDefinitions.GetHashCode();
+      if (tokenTemplateHierarchy_ != null) hash ^= TokenTemplateHierarchy.GetHashCode();
       if (formulaGrammar_ != null) hash ^= FormulaGrammar.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -219,17 +274,22 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Version.Length != 0) {
+      if (version_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Version);
+        output.WriteMessage(Version);
       }
       baseTokenTypes_.WriteTo(output, _map_baseTokenTypes_codec);
       behaviors_.WriteTo(output, _map_behaviors_codec);
       behaviorGroups_.WriteTo(output, _map_behaviorGroups_codec);
       propertySets_.WriteTo(output, _map_propertySets_codec);
-      tokenTemplates_.WriteTo(output, _map_tokenTemplates_codec);
+      templateFormulas_.WriteTo(output, _map_templateFormulas_codec);
+      templateDefinitions_.WriteTo(output, _map_templateDefinitions_codec);
+      if (tokenTemplateHierarchy_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(TokenTemplateHierarchy);
+      }
       if (formulaGrammar_ != null) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(74);
         output.WriteMessage(FormulaGrammar);
       }
       if (_unknownFields != null) {
@@ -240,14 +300,18 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Version.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      if (version_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Version);
       }
       size += baseTokenTypes_.CalculateSize(_map_baseTokenTypes_codec);
       size += behaviors_.CalculateSize(_map_behaviors_codec);
       size += behaviorGroups_.CalculateSize(_map_behaviorGroups_codec);
       size += propertySets_.CalculateSize(_map_propertySets_codec);
-      size += tokenTemplates_.CalculateSize(_map_tokenTemplates_codec);
+      size += templateFormulas_.CalculateSize(_map_templateFormulas_codec);
+      size += templateDefinitions_.CalculateSize(_map_templateDefinitions_codec);
+      if (tokenTemplateHierarchy_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TokenTemplateHierarchy);
+      }
       if (formulaGrammar_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(FormulaGrammar);
       }
@@ -262,14 +326,24 @@ namespace TTI.TTF.Taxonomy.Model {
       if (other == null) {
         return;
       }
-      if (other.Version.Length != 0) {
-        Version = other.Version;
+      if (other.version_ != null) {
+        if (version_ == null) {
+          Version = new global::TTI.TTF.Taxonomy.Model.TaxonomyVersion();
+        }
+        Version.MergeFrom(other.Version);
       }
       baseTokenTypes_.Add(other.baseTokenTypes_);
       behaviors_.Add(other.behaviors_);
       behaviorGroups_.Add(other.behaviorGroups_);
       propertySets_.Add(other.propertySets_);
-      tokenTemplates_.Add(other.tokenTemplates_);
+      templateFormulas_.Add(other.templateFormulas_);
+      templateDefinitions_.Add(other.templateDefinitions_);
+      if (other.tokenTemplateHierarchy_ != null) {
+        if (tokenTemplateHierarchy_ == null) {
+          TokenTemplateHierarchy = new global::TTI.TTF.Taxonomy.Model.Hierarchy();
+        }
+        TokenTemplateHierarchy.MergeFrom(other.TokenTemplateHierarchy);
+      }
       if (other.formulaGrammar_ != null) {
         if (formulaGrammar_ == null) {
           FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar();
@@ -288,7 +362,10 @@ namespace TTI.TTF.Taxonomy.Model {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Version = input.ReadString();
+            if (version_ == null) {
+              Version = new global::TTI.TTF.Taxonomy.Model.TaxonomyVersion();
+            }
+            input.ReadMessage(Version);
             break;
           }
           case 18: {
@@ -308,10 +385,21 @@ namespace TTI.TTF.Taxonomy.Model {
             break;
           }
           case 50: {
-            tokenTemplates_.AddEntriesFrom(input, _map_tokenTemplates_codec);
+            templateFormulas_.AddEntriesFrom(input, _map_templateFormulas_codec);
             break;
           }
           case 58: {
+            templateDefinitions_.AddEntriesFrom(input, _map_templateDefinitions_codec);
+            break;
+          }
+          case 66: {
+            if (tokenTemplateHierarchy_ == null) {
+              TokenTemplateHierarchy = new global::TTI.TTF.Taxonomy.Model.Hierarchy();
+            }
+            input.ReadMessage(TokenTemplateHierarchy);
+            break;
+          }
+          case 74: {
             if (formulaGrammar_ == null) {
               FormulaGrammar = new global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar();
             }
@@ -349,7 +437,9 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TaxonomyVersion(TaxonomyVersion other) : this() {
+      id_ = other.id_;
       version_ = other.version_;
+      stateHash_ = other.stateHash_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -358,14 +448,36 @@ namespace TTI.TTF.Taxonomy.Model {
       return new TaxonomyVersion(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "version" field.</summary>
-    public const int VersionFieldNumber = 1;
+    public const int VersionFieldNumber = 2;
     private string version_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Version {
       get { return version_; }
       set {
         version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "state_hash" field.</summary>
+    public const int StateHashFieldNumber = 3;
+    private string stateHash_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StateHash {
+      get { return stateHash_; }
+      set {
+        stateHash_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -382,14 +494,18 @@ namespace TTI.TTF.Taxonomy.Model {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (Version != other.Version) return false;
+      if (StateHash != other.StateHash) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (StateHash.Length != 0) hash ^= StateHash.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -403,9 +519,17 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Version.Length != 0) {
+      if (Id.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Version.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Version);
+      }
+      if (StateHash.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(StateHash);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -415,8 +539,14 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
       if (Version.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      }
+      if (StateHash.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StateHash);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -429,8 +559,14 @@ namespace TTI.TTF.Taxonomy.Model {
       if (other == null) {
         return;
       }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
       if (other.Version.Length != 0) {
         Version = other.Version;
+      }
+      if (other.StateHash.Length != 0) {
+        StateHash = other.StateHash;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -444,7 +580,851 @@ namespace TTI.TTF.Taxonomy.Model {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
             Version = input.ReadString();
+            break;
+          }
+          case 26: {
+            StateHash = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Hierarchy : pb::IMessage<Hierarchy> {
+    private static readonly pb::MessageParser<Hierarchy> _parser = new pb::MessageParser<Hierarchy>(() => new Hierarchy());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Hierarchy> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Hierarchy() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Hierarchy(Hierarchy other) : this() {
+      fungibles_ = other.fungibles_ != null ? other.fungibles_.Clone() : null;
+      nonFungibles_ = other.nonFungibles_ != null ? other.nonFungibles_.Clone() : null;
+      hybrids_ = other.hybrids_ != null ? other.hybrids_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Hierarchy Clone() {
+      return new Hierarchy(this);
+    }
+
+    /// <summary>Field number for the "fungibles" field.</summary>
+    public const int FungiblesFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.BranchRoot fungibles_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.BranchRoot Fungibles {
+      get { return fungibles_; }
+      set {
+        fungibles_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "non_fungibles" field.</summary>
+    public const int NonFungiblesFieldNumber = 2;
+    private global::TTI.TTF.Taxonomy.Model.BranchRoot nonFungibles_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.BranchRoot NonFungibles {
+      get { return nonFungibles_; }
+      set {
+        nonFungibles_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hybrids" field.</summary>
+    public const int HybridsFieldNumber = 3;
+    private global::TTI.TTF.Taxonomy.Model.HybridBranchRoot hybrids_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.HybridBranchRoot Hybrids {
+      get { return hybrids_; }
+      set {
+        hybrids_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Hierarchy);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Hierarchy other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Fungibles, other.Fungibles)) return false;
+      if (!object.Equals(NonFungibles, other.NonFungibles)) return false;
+      if (!object.Equals(Hybrids, other.Hybrids)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (fungibles_ != null) hash ^= Fungibles.GetHashCode();
+      if (nonFungibles_ != null) hash ^= NonFungibles.GetHashCode();
+      if (hybrids_ != null) hash ^= Hybrids.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (fungibles_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Fungibles);
+      }
+      if (nonFungibles_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(NonFungibles);
+      }
+      if (hybrids_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Hybrids);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (fungibles_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Fungibles);
+      }
+      if (nonFungibles_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NonFungibles);
+      }
+      if (hybrids_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Hybrids);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Hierarchy other) {
+      if (other == null) {
+        return;
+      }
+      if (other.fungibles_ != null) {
+        if (fungibles_ == null) {
+          Fungibles = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+        }
+        Fungibles.MergeFrom(other.Fungibles);
+      }
+      if (other.nonFungibles_ != null) {
+        if (nonFungibles_ == null) {
+          NonFungibles = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+        }
+        NonFungibles.MergeFrom(other.NonFungibles);
+      }
+      if (other.hybrids_ != null) {
+        if (hybrids_ == null) {
+          Hybrids = new global::TTI.TTF.Taxonomy.Model.HybridBranchRoot();
+        }
+        Hybrids.MergeFrom(other.Hybrids);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (fungibles_ == null) {
+              Fungibles = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+            }
+            input.ReadMessage(Fungibles);
+            break;
+          }
+          case 18: {
+            if (nonFungibles_ == null) {
+              NonFungibles = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+            }
+            input.ReadMessage(NonFungibles);
+            break;
+          }
+          case 26: {
+            if (hybrids_ == null) {
+              Hybrids = new global::TTI.TTF.Taxonomy.Model.HybridBranchRoot();
+            }
+            input.ReadMessage(Hybrids);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class BranchIdentifier : pb::IMessage<BranchIdentifier> {
+    private static readonly pb::MessageParser<BranchIdentifier> _parser = new pb::MessageParser<BranchIdentifier>(() => new BranchIdentifier());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BranchIdentifier> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BranchIdentifier() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BranchIdentifier(BranchIdentifier other) : this() {
+      tokenType_ = other.tokenType_;
+      branch_ = other.branch_;
+      formulaId_ = other.formulaId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BranchIdentifier Clone() {
+      return new BranchIdentifier(this);
+    }
+
+    /// <summary>Field number for the "token_type" field.</summary>
+    public const int TokenTypeFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.TokenType TokenType {
+      get { return tokenType_; }
+      set {
+        tokenType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "branch" field.</summary>
+    public const int BranchFieldNumber = 2;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch branch_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch Branch {
+      get { return branch_; }
+      set {
+        branch_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "formula_id" field.</summary>
+    public const int FormulaIdFieldNumber = 3;
+    private string formulaId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FormulaId {
+      get { return formulaId_; }
+      set {
+        formulaId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BranchIdentifier);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BranchIdentifier other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TokenType != other.TokenType) return false;
+      if (Branch != other.Branch) return false;
+      if (FormulaId != other.FormulaId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TokenType != 0) hash ^= TokenType.GetHashCode();
+      if (Branch != 0) hash ^= Branch.GetHashCode();
+      if (FormulaId.Length != 0) hash ^= FormulaId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (TokenType != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) TokenType);
+      }
+      if (Branch != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Branch);
+      }
+      if (FormulaId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(FormulaId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (TokenType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
+      }
+      if (Branch != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Branch);
+      }
+      if (FormulaId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FormulaId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BranchIdentifier other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TokenType != 0) {
+        TokenType = other.TokenType;
+      }
+      if (other.Branch != 0) {
+        Branch = other.Branch;
+      }
+      if (other.FormulaId.Length != 0) {
+        FormulaId = other.FormulaId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            TokenType = (global::TTI.TTF.Taxonomy.Model.Artifact.TokenType) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            Branch = (global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            FormulaId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class BranchRoot : pb::IMessage<BranchRoot> {
+    private static readonly pb::MessageParser<BranchRoot> _parser = new pb::MessageParser<BranchRoot>(() => new BranchRoot());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BranchRoot> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BranchRoot() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BranchRoot(BranchRoot other) : this() {
+      branchIdentifier_ = other.branchIdentifier_ != null ? other.branchIdentifier_.Clone() : null;
+      parentFormulaId_ = other.parentFormulaId_;
+      name_ = other.name_;
+      branchFormula_ = other.branchFormula_ != null ? other.branchFormula_.Clone() : null;
+      templates_ = other.templates_ != null ? other.templates_.Clone() : null;
+      branches_ = other.branches_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BranchRoot Clone() {
+      return new BranchRoot(this);
+    }
+
+    /// <summary>Field number for the "branch_identifier" field.</summary>
+    public const int BranchIdentifierFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.BranchIdentifier branchIdentifier_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.BranchIdentifier BranchIdentifier {
+      get { return branchIdentifier_; }
+      set {
+        branchIdentifier_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "parent_formula_id" field.</summary>
+    public const int ParentFormulaIdFieldNumber = 2;
+    private string parentFormulaId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ParentFormulaId {
+      get { return parentFormulaId_; }
+      set {
+        parentFormulaId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "branch_formula" field.</summary>
+    public const int BranchFormulaFieldNumber = 4;
+    private global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula branchFormula_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula BranchFormula {
+      get { return branchFormula_; }
+      set {
+        branchFormula_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "templates" field.</summary>
+    public const int TemplatesFieldNumber = 5;
+    private global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates templates_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates Templates {
+      get { return templates_; }
+      set {
+        templates_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "branches" field.</summary>
+    public const int BranchesFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.BranchRoot> _repeated_branches_codec
+        = pb::FieldCodec.ForMessage(50, global::TTI.TTF.Taxonomy.Model.BranchRoot.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.BranchRoot> branches_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.BranchRoot>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.BranchRoot> Branches {
+      get { return branches_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BranchRoot);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BranchRoot other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(BranchIdentifier, other.BranchIdentifier)) return false;
+      if (ParentFormulaId != other.ParentFormulaId) return false;
+      if (Name != other.Name) return false;
+      if (!object.Equals(BranchFormula, other.BranchFormula)) return false;
+      if (!object.Equals(Templates, other.Templates)) return false;
+      if(!branches_.Equals(other.branches_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (branchIdentifier_ != null) hash ^= BranchIdentifier.GetHashCode();
+      if (ParentFormulaId.Length != 0) hash ^= ParentFormulaId.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (branchFormula_ != null) hash ^= BranchFormula.GetHashCode();
+      if (templates_ != null) hash ^= Templates.GetHashCode();
+      hash ^= branches_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (branchIdentifier_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(BranchIdentifier);
+      }
+      if (ParentFormulaId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ParentFormulaId);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (branchFormula_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(BranchFormula);
+      }
+      if (templates_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Templates);
+      }
+      branches_.WriteTo(output, _repeated_branches_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (branchIdentifier_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BranchIdentifier);
+      }
+      if (ParentFormulaId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentFormulaId);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (branchFormula_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BranchFormula);
+      }
+      if (templates_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Templates);
+      }
+      size += branches_.CalculateSize(_repeated_branches_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BranchRoot other) {
+      if (other == null) {
+        return;
+      }
+      if (other.branchIdentifier_ != null) {
+        if (branchIdentifier_ == null) {
+          BranchIdentifier = new global::TTI.TTF.Taxonomy.Model.BranchIdentifier();
+        }
+        BranchIdentifier.MergeFrom(other.BranchIdentifier);
+      }
+      if (other.ParentFormulaId.Length != 0) {
+        ParentFormulaId = other.ParentFormulaId;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.branchFormula_ != null) {
+        if (branchFormula_ == null) {
+          BranchFormula = new global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula();
+        }
+        BranchFormula.MergeFrom(other.BranchFormula);
+      }
+      if (other.templates_ != null) {
+        if (templates_ == null) {
+          Templates = new global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates();
+        }
+        Templates.MergeFrom(other.Templates);
+      }
+      branches_.Add(other.branches_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (branchIdentifier_ == null) {
+              BranchIdentifier = new global::TTI.TTF.Taxonomy.Model.BranchIdentifier();
+            }
+            input.ReadMessage(BranchIdentifier);
+            break;
+          }
+          case 18: {
+            ParentFormulaId = input.ReadString();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (branchFormula_ == null) {
+              BranchFormula = new global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula();
+            }
+            input.ReadMessage(BranchFormula);
+            break;
+          }
+          case 42: {
+            if (templates_ == null) {
+              Templates = new global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates();
+            }
+            input.ReadMessage(Templates);
+            break;
+          }
+          case 50: {
+            branches_.AddEntriesFrom(input, _repeated_branches_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class HybridBranchRoot : pb::IMessage<HybridBranchRoot> {
+    private static readonly pb::MessageParser<HybridBranchRoot> _parser = new pb::MessageParser<HybridBranchRoot>(() => new HybridBranchRoot());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<HybridBranchRoot> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HybridBranchRoot() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HybridBranchRoot(HybridBranchRoot other) : this() {
+      fungibleParent_ = other.fungibleParent_ != null ? other.fungibleParent_.Clone() : null;
+      nonFungibleParent_ = other.nonFungibleParent_ != null ? other.nonFungibleParent_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public HybridBranchRoot Clone() {
+      return new HybridBranchRoot(this);
+    }
+
+    /// <summary>Field number for the "fungible_parent" field.</summary>
+    public const int FungibleParentFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.BranchRoot fungibleParent_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.BranchRoot FungibleParent {
+      get { return fungibleParent_; }
+      set {
+        fungibleParent_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "non_fungible_parent" field.</summary>
+    public const int NonFungibleParentFieldNumber = 2;
+    private global::TTI.TTF.Taxonomy.Model.BranchRoot nonFungibleParent_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.BranchRoot NonFungibleParent {
+      get { return nonFungibleParent_; }
+      set {
+        nonFungibleParent_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as HybridBranchRoot);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(HybridBranchRoot other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(FungibleParent, other.FungibleParent)) return false;
+      if (!object.Equals(NonFungibleParent, other.NonFungibleParent)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (fungibleParent_ != null) hash ^= FungibleParent.GetHashCode();
+      if (nonFungibleParent_ != null) hash ^= NonFungibleParent.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (fungibleParent_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(FungibleParent);
+      }
+      if (nonFungibleParent_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(NonFungibleParent);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (fungibleParent_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FungibleParent);
+      }
+      if (nonFungibleParent_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NonFungibleParent);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(HybridBranchRoot other) {
+      if (other == null) {
+        return;
+      }
+      if (other.fungibleParent_ != null) {
+        if (fungibleParent_ == null) {
+          FungibleParent = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+        }
+        FungibleParent.MergeFrom(other.FungibleParent);
+      }
+      if (other.nonFungibleParent_ != null) {
+        if (nonFungibleParent_ == null) {
+          NonFungibleParent = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+        }
+        NonFungibleParent.MergeFrom(other.NonFungibleParent);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (fungibleParent_ == null) {
+              FungibleParent = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+            }
+            input.ReadMessage(FungibleParent);
+            break;
+          }
+          case 18: {
+            if (nonFungibleParent_ == null) {
+              NonFungibleParent = new global::TTI.TTF.Taxonomy.Model.BranchRoot();
+            }
+            input.ReadMessage(NonFungibleParent);
             break;
           }
         }

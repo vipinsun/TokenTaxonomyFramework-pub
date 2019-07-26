@@ -1,19 +1,20 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"c1189d7a-e142-4504-bf26-44c35b76c9d6",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>s</i>",
-      "toolingSymbol": "s",
-      "artifactVersion": "1.0"
+      "visual": "<i>s</i>",
+      "tooling": "s",
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Singleton",
     "aliases": [
       "Unique",
       "One and Only"
     ],
-    "controlUri": "../../../../../../artifacts/behaviors/singleton/singleton.proto",
     "artifactDefinition": {
-      "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class.  This single whole token may or may not be sub-dividable, but in most cases it will not be sub-dividable. This restriction is set at the base token by only creating a quantity of one.  By definition, a Singleton cannot be mintable.",
+      "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
       "businessExample": "",
       "analogies": [
         {
@@ -25,19 +26,46 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [],
-    "incompatibleWithSymbols": [
+    "dependencies": [
       {
-        "type": "BEHAVIOR",
-        "visualSymbol": "<i>d</i>",
-        "toolingSymbol": "d",
-        "artifactVersion": ""
+        "description": "Singleton must be have a non-fungible base.",
+        "symbol": {
+          "id":"8314a797-df3c-409b-835c-0e80af92714f",
+          "type": "BASE",
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "templateValidated": true
+        }
       },
       {
+        "description": "Singleton requires non-sub-dividable.",
+        "symbol": {
+          "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
+          "type": "BEHAVIOR",
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [
+      {
+        "id":"6e3501dc-5800-4c71-b59e-ad11418a998c",
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>m</i>",
-        "toolingSymbol": "m",
-        "artifactVersion": ""
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "1.0",
+        "templateValidated": false
+      },
+      {
+        "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "visual": "<i>m</i>",
+        "tooling": "m",
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [],
@@ -86,9 +114,6 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "",
-  "constructor": null,
   "invocations": [],
   "properties": []
 }

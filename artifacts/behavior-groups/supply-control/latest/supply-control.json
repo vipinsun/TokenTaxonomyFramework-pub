@@ -1,56 +1,51 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"91cb89b6-a2ce-44ff-b3a0-f0cb3f117e56",
       "type": "BEHAVIOR_GROUP",
-      "visualSymbol": "<i>SC</i>",
-      "toolingSymbol": "SC",
-      "artifactVersion": "1.0"
+      "visual": "<i>SC</i>",
+      "tooling": "SC",
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Supply Control",
     "aliases": [
       "Central Bank"
     ],
-    "controlUri": "../../../../../../artifacts/behavior-groups/supply-control/supply-control.proto",
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will provide controls to increase and decrease supply of tokens within the class.  Additionally, it will include the ability to support a role, like Minters, that will be allowed to invoke the Mintable behavior. The owner can add accounts to the role and any account that is a member of the role will be able to mint tokens in the class.",
       "businessExample": "",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "supply-control analogy 1 description",
+          "name": "Central Bank",
+          "description": "Implementing monetary policy for this token.",
           "artifactDefinition": null
         }
       ],
-      "comments": "",
+      "comments": "Define a Minters role and apply the role to the Mintable behavior.",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "",
-        "symbol": {
-          "type": "BASE",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
+        "id":"c1189d7a-e142-4504-bf26-44c35b76c9d6",
         "type": "BEHAVIOR",
-        "visualSymbol": "<i>s</i>",
-        "toolingSymbol": "s",
-        "artifactVersion": ""
+        "visual": "<i>s</i>",
+        "tooling": "s",
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
     "influencedBySymbols": [
       {
-        "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
+        "description": "Create a Minters Role and apply it to the Mintable behavior to provide authorization checks for invoking the behavior.",
         "symbol": {
+          "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>r</i>",
-          "toolingSymbol": "r",
-          "artifactVersion": ""
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": "1.0",
+          "templateValidated": false
         }
       }
     ],
@@ -68,55 +63,32 @@
         "artifact": null
       }
     ],
-    "maps": {
-      "codeReferences": [
-        {
-          "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
-      "artifact": null
-    }
+    "maps": {}
   },
   "behaviorSymbols": [
     {
+      "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
       "type": "BEHAVIOR",
-      "visualSymbol": "m",
-      "toolingSymbol": "<i>m</i>",
-      "artifactVersion": ""
+      "visual": "<i>m</i>",
+      "tooling": "m",
+      "version": "1.0",
+      "templateValidated": false
     },
     {
+      "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
       "type": "BEHAVIOR",
-      "visualSymbol": "b",
-      "toolingSymbol": "<i>b</i>",
-      "artifactVersion": ""
+      "visual": "<i>b</i>",
+      "tooling": "b",
+      "version": "1.0",
+      "templateValidated": false
     },
     {
+      "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
       "type": "BEHAVIOR",
-      "visualSymbol": "r",
-      "toolingSymbol": "<i>r</i>",
-      "artifactVersion": ""
+      "visual": "<i>r</i>",
+      "tooling": "r",
+      "version": "1.0",
+      "templateValidated": false
     }
   ],
   "behaviorArtifacts": {}

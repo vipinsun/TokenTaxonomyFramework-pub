@@ -1,17 +1,18 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"8314a797-df3c-409b-835c-0e80af92714f",
       "type": "BASE",
-      "visualSymbol": "&tau<sub>N</sub>",
-      "toolingSymbol": "tN",
-      "artifactVersion": "1.0"
+      "visual": "&tau<sub>N</sub>",
+      "tooling": "tN",
+      "version": "1.0",
+      "templateValidated": true
     },
     "name": "Non-Fungible Token",
     "aliases": [
       "Title",
       "Deed"
     ],
-    "controlUri": "../../../../../../artifacts/base/non-fungible/non-fungible.proto",
     "artifactDefinition": {
       "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
       "businessExample": "CryptoKitties, Art, Reserved Seat,",
@@ -29,45 +30,40 @@
       {        
         "description": "Base Token Definition",
         "symbol": {
+          "id":"5f5c4e7f-8ff1-4767-b59c-799d49753226",
           "type": "BASE",
-          "visualSymbol": "&tau;",
-          "toolingSymbol": "t",
-          "artifactVersion": ""
+          "visual": "&tau",
+          "tooling": "t",
+          "version": "1.0",
+          "templateValidated": true
         }
       }
     ],
-    "incompatibleWithSymbols": [
-      {
-        "type": "BASE",
-        "visualSymbol": "",
-        "toolingSymbol": "",
-        "artifactVersion": ""
-      }
-    ],
+    "incompatibleWithSymbols": [],
     "influencedBySymbols": [
-
       {
         "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
         "symbol": {
+          "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
           "type": "BEHAVIOR",
-          "visualSymbol": "<i>~d</i>",
-          "toolingSymbol": "~d",
-          "artifactVersion": ""
-        }
-      }
-    ],
-    "artifactFiles": [
-      {
-        "content": "CONTROL",
-        "fileName": "non-fungible.proto",
-        "fileData": "",
-        "artifact": null
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "",
+          "templateValidated": false
+        },
+        "appliesTo": []
       },
       {
-        "content": "UML",
-        "fileName": "non-fungible.md",
-        "fileData": "",
-        "artifact": null
+        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is sub-dividable, the decimals value should be greater than 0.",
+        "symbol": {
+          "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+          "type": "BEHAVIOR",
+          "visual": "<i>d</i>",
+          "tooling": "d",
+          "version": "",
+          "templateValidated": false
+        },
+        "appliesTo": []
       }
     ],
     "maps": {
@@ -101,49 +97,5 @@
       "artifact": null
     }
   },
-  "tokenType": "NON_FUNGIBLE",
-  "singleToken": {
-    "groupStart": "[",
-    "baseToken": {
-      "artifactSymbol": {
-        "type": "BASE",
-        "visualSymbol": "&tau;<sub>N</sub>",
-        "toolingSymbol": "tN",
-        "artifactVersion": ""
-      }
-    },
-    "behaviors": {
-      "listStart": "{",
-      "behaviorSymbols": [
-        {
-          "type": "BEHAVIOR",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
-        }
-      ],
-      "listEnd": "}"
-    },
-    "propertySets": [
-      {
-        "listStart": "+",
-        "propertySetSymbols": {
-          "type": "PROPERTY_SET",
-          "visualSymbol": "",
-          "toolingSymbol": "",
-          "artifactVersion": ""
-        }
-      }
-    ],
-    "groupEnd": "]"
-  },
-  "name": "",
-  "symbol": "",
-  "owner": "",
-  "quantity": "",
-  "decimals": 0,
-  "tokenProperties": {},
-  "constructorName": "",
-  "constructor": null,
-  "childTokens": []
+  "tokenType": "NON_FUNGIBLE"
 }

@@ -1,10 +1,12 @@
 {
   "artifact": {
     "artifactSymbol": {
+      "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
       "type": "BEHAVIOR",
-      "visualSymbol": "<i>r</i>",
-      "toolingSymbol": "r",
-      "artifactVersion": "1.0"
+      "visual": "<i>r</i>",
+      "tooling": "r",
+      "version": "1.0",
+      "templateValidated": false
     },
     "name": "Roles",
     "aliases": [
@@ -12,7 +14,7 @@
     ],
     "controlUri": "../../../../../../artifacts/behaviors/roles/roles.proto",
     "artifactDefinition": {
-      "businessDescription": "A token can have behaviors that the class will restrict invocations to a select set of parties or accounts that are members of a role or group.  This is a generic behavior that can apply to a token many times to represent many role definitions within the template.",
+      "businessDescription": "A token can have behaviors that the class will restrict invocations to a select set of parties or accounts that are members of a role or group.  This is a generic behavior that can apply to a token many times to represent many role definitions within the template. This behavior will allow you to define what role(s) to create and what behavior(s) to apply the role to in the TemplateDefinition.",
       "businessExample": "",
       "analogies": [
         {
@@ -24,17 +26,7 @@
       "comments": "Roles has a constructor control that creates roles and applies them to certain behaviors of the token at creation of the class from the template.",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "",
-        "symbol": {
-          "type": "PROPERTY_SET",
-          "visualSymbol": "&phi;ROLE",
-          "toolingSymbol": "phRole",
-          "artifactVersion": "1.0"
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
     "artifactFiles": [
@@ -82,8 +74,8 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "Constructor",
+  "isExternal": true,
+  "constructorType": "RoleName",
   "constructor": null,
   "invocations": [
     {
@@ -111,5 +103,116 @@
       }
     }
   ],
-  "properties": []
+  "properties": [
+    {
+      "name": "Role",
+      "valueDescription": "A group or list an account can be a member or be in.",
+      "templateValue": "",
+      "propertyInvocations": [
+        {
+          "name": "GetRoleMembers",
+          "description": "Request the the list of member accounts in the role.",
+          "request": {
+            "controlMessageName": "GetRoleMembersRequest",
+            "inputParameters": [],
+            "description": "The request"
+          },
+          "response": {
+            "controlMessageName": "GetRoleMembersResponse",
+            "outputParameters": [
+              {
+                "name": "Members",
+                "valueDescription": "Returning the list of accounts in the role."
+              }
+            ],
+            "description": "The response"
+          }
+        },
+        {
+          "name": "AddRoleMember",
+          "description": "Add a member to the group or role property.",
+          "request": {
+            "controlMessageName": "AddRoleMemberRequest",
+            "inputParameters": [
+              {
+                "name": "RoleName",
+                "valueDescription": "Name of the role you are adding a member to. Optional parameter if there is only one role."
+              },
+              {
+                "name": "AccountAddress",
+                "valueDescription": "Address, name or identifier of the account to be added to the role."
+              }
+            ],
+            "description": "The request"
+          },
+          "response": {
+            "controlMessageName": "AddRoleMemberResponse",
+            "outputParameters": [
+              {
+                "name": "Added",
+                "valueDescription": "True or False."
+              }
+            ],
+            "description": "The response"
+          }
+        },
+        {
+          "name": "RemoveRoleMember",
+          "description": "Remove a member to the group or role property.",
+          "request": {
+            "controlMessageName": "RemoveRoleMemberRequest",
+            "inputParameters": [
+              {
+                "name": "RoleName",
+                "valueDescription": "Name of the role you are adding a member to. Optional parameter if there is only one role."
+              },
+              {
+                "name": "AccountAddress",
+                "valueDescription": "Address, name or identifier of the account to be removed from the role."
+              }
+            ],
+            "description": "The request"
+          },
+          "response": {
+            "controlMessageName": "RemoveRoleMemberResponse",
+            "outputParameters": [
+              {
+                "name": "Added",
+                "valueDescription": "True or False."
+              }
+            ],
+            "description": "The response"
+          }
+        },
+        {
+          "name": "IsInRole",
+          "description": "Check to see if an account is in the role.",
+          "request": {
+            "controlMessageName": "IsInRoleRequest",
+            "inputParameters": [
+              {
+                "name": "RoleName",
+                "valueDescription": "Name of the role you are checking membership of. Optional parameter if there is only one role."
+              },
+              {
+                "name": "AccountAddress",
+                "valueDescription": "Address, name or identifier of the account to be checked."
+              }
+            ],
+            "description": "The request may be internal only and not exposed externally."
+          },
+          "response": {
+            "controlMessageName": "IsInRoleRequestResponse",
+            "outputParameters": [
+              {
+                "name": "InRole",
+                "valueDescription": "True or False."
+              }
+            ],
+            "description": "The response"
+          }
+        }
+      ]
+    }
+  ]
 }

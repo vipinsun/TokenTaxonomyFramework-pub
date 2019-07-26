@@ -10,7 +10,7 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy
 {
-    internal class Host: TaxonomyService.TaxonomyServiceBase
+    internal class Host: Service.ServiceBase
     {
         private static ILog _log;
 
@@ -24,6 +24,12 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("gRpc request for: GetFullTaxonomy");
             return Task.FromResult(ModelManager.GetFullTaxonomy(version));
+        }
+
+        public override Task<Model.Taxonomy> GetLiteTaxonomy(TaxonomyVersion request, ServerCallContext context)
+        {
+            _log.Info("gRpc request for: GetFullTaxonomy");
+            return Task.FromResult(ModelManager.GetLiteTaxonomy(request));
         }
 
         public override Task<Base> GetBaseArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
@@ -48,11 +54,31 @@ namespace TTI.TTF.Taxonomy
             _log.Info("gRpc request for: GetPropertySetArtifact");
             return Task.FromResult(ModelManager.GetPropertySetArtifact(symbol));
         }
-        public override Task<TokenTemplate> GetTokenTemplateArtifact(TaxonomyFormula formula, ServerCallContext ctx)
+
+        public override Task<TemplateFormula> GetTemplateFormulaArtifact(ArtifactSymbol formula, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: GetTemplateFormulaArtifact");
+            return Task.FromResult(ModelManager.GetTemplateFormulaArtifact(formula));
+        }
+        
+        public override Task<TemplateDefinition> GetTemplateDefinitionArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetTokenTemplateArtifact");
-            return Task.FromResult(ModelManager.GetTokenTemplateArtifact(formula));
+            return Task.FromResult(ModelManager.GetTemplateDefinitionArtifact(symbol));
         }
+
+        public override Task<TokenTemplate> GetTokenTemplate(TokenTemplateId request, ServerCallContext context)
+        {
+            _log.Info("gRpc request for: GetTokenTemplate");
+            return Task.FromResult(ModelManager.GetTokenTemplate(request));
+        }
+
+        public override Task<TokenSpecification> GetTokenSpecification(TokenTemplateId symbol, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: GetTokenTemplateArtifact");
+            return Task.FromResult(ModelManager.GetTokenSpecification(symbol));
+        }
+        
         public override Task<NewArtifactResponse> CreateArtifact(NewArtifactRequest artifactRequest, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: CreateArtifact");
@@ -91,6 +117,12 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("gRpc request for: GetFullTaxonomy");
             return Task.FromResult(ModelManager.GetArtifactsOfType(options));
+        }
+        
+        public override Task<TemplateDefinition> CreateTemplateDefinition(NewTemplateDefinition newTemplateDefinition, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: CreateTemplateDefinition");
+            return Task.FromResult(ModelManager.CreateTemplateDefinition(newTemplateDefinition));
         }
     }
 }
