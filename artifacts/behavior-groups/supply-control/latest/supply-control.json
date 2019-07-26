@@ -22,7 +22,7 @@
           "artifactDefinition": null
         }
       ],
-      "comments": "",
+      "comments": "Define a Minters role and apply the role to the Mintable behavior.",
       "artifact": null
     },
     "dependencies": [],
@@ -38,7 +38,7 @@
     ],
     "influencedBySymbols": [
       {
-        "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
+        "description": "Create a Minters Role and apply it to the Mintable behavior to provide authorization checks for invoking the behavior.",
         "symbol": {
           "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
           "type": "BEHAVIOR",
