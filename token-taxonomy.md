@@ -95,7 +95,7 @@ A Token Definition is a node on a branch/template, is a reference to the Templat
 
 References are followed through the hierarchy and back to the Artifacts to validate and determine what instance values can be set in the instance.
 
-![Templates](images/templateInstance.png)
+![Templates](images/formingATemplate.png)
 
 ### Control Messages
 
