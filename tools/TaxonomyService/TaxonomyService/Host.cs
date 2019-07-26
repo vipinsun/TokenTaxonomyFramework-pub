@@ -73,10 +73,10 @@ namespace TTI.TTF.Taxonomy
             return Task.FromResult(ModelManager.GetTokenTemplate(request));
         }
 
-        public override Task<TokenSpecification> GetTokenSpecification(TokenTemplateId symbol, ServerCallContext ctx)
+        public override Task<TokenSpecification> GetTokenSpecification(TokenTemplateId definitionId, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetTokenTemplateArtifact");
-            return Task.FromResult(ModelManager.GetTokenSpecification(symbol));
+            return Task.FromResult(ModelManager.GetTokenSpecification(definitionId));
         }
         
         public override Task<NewArtifactResponse> CreateArtifact(NewArtifactRequest artifactRequest, ServerCallContext ctx)

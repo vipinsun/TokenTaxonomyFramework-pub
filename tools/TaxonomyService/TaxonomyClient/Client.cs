@@ -65,7 +65,18 @@ namespace TTI.TTF.Taxonomy
 						OutputUsage();
 						return;
 					case 2:
-						OutputUsage();
+						foreach (var t in args)
+						{
+							switch (t)
+							{
+								case "--s":
+									GetTokenSpec(args[1]);
+									return;
+								default:	
+									OutputUsage();
+									return;
+							}
+						}
 						return;
 					case 3:
 						OutputUsage();
@@ -336,6 +347,15 @@ namespace TTI.TTF.Taxonomy
 				}
 			}
 			OutputUsage();
+		}
+
+		private static void GetTokenSpec(string s)
+		{
+			var tokenSpec = TaxonomyClient.GetTokenSpecification(new TokenTemplateId
+			{
+				DefinitionId = s
+			});
+			OutputLib.OutputSpecification(tokenSpec);
 		}
 
 		private static TemplateDefinition CreateDefinition()

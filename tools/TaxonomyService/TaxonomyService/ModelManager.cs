@@ -795,27 +795,15 @@ namespace TTI.TTF.Taxonomy
 				return new TemplateDefinition();
 			}
 
-			var retVal = new TemplateDefinition
-			{
-				Artifact = templateFormula.Artifact
-			};
-			retVal.Artifact.Name = newTemplateDefinition.TokenName;
-			retVal.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
-			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TemplateDefinition;
-			retVal.FormulaReference = new ArtifactReference
-			{
-				Id = templateFormula.Artifact.ArtifactSymbol.Id,
-				Type = ArtifactType.TemplateFormula
-			};
-			
-			var definition = BuildTemplateDefinition(retVal, templateFormula);
+	
+			var definition = BuildTemplateDefinition(newTemplateDefinition.TokenName, templateFormula);
 			if (templateFormula.Classification.TokenType == TokenType.Hybrid)
 			{
 				foreach (var c in definition.ChildTokens)
 				{
 					var childTemplateFormula =
 						GetArtifactById<TemplateFormula>(newTemplateDefinition.TemplateFormulaId);
-					definition.ChildTokens.Add(BuildTemplateDefinition(c, childTemplateFormula));
+					definition.ChildTokens.Add(BuildTemplateDefinition(newTemplateDefinition.TokenName + ".child", childTemplateFormula));
 				}
 			}
 
@@ -827,10 +815,22 @@ namespace TTI.TTF.Taxonomy
 			return definition;
 		}
 		
-		private static TemplateDefinition BuildTemplateDefinition(TemplateDefinition newDefinition, TemplateFormula formula)
+		private static TemplateDefinition BuildTemplateDefinition(string name, TemplateFormula formula)
 		{
 				//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
-			var retVal = newDefinition.Clone();
+			var retVal = new TemplateDefinition
+			{
+				Artifact = formula.Artifact
+			};
+			retVal.Artifact.Name = name;
+			retVal.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
+			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TemplateDefinition;
+			retVal.FormulaReference = new ArtifactReference
+			{
+				Id = formula.Artifact.ArtifactSymbol.Id,
+				Type = ArtifactType.TemplateFormula
+			};
+
 			var baseToken = GetArtifactById<Base>(formula.TokenBase.Base.Id);
 		
 			retVal.TokenBase = new BaseReference

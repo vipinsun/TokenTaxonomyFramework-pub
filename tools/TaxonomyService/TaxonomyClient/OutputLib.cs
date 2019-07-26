@@ -727,5 +727,13 @@ namespace TTI.TTF.Taxonomy
 				Log.Error("				---------------------------------------------------");
 			}
 		}
+
+		public static void OutputSpecification(TokenSpecification tokenSpec)
+		{
+			Log.Error("---------------------------------------------------");
+			Log.Error("Token Specification:");
+			Log.Error("---------------------------------------------------");
+			Log.Info(tokenSpec);
+		}
 	}
 }

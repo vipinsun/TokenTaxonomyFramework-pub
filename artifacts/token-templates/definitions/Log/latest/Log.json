@@ -91,7 +91,7 @@
     }
   },
   "formulaReference": {
-    "id": "a96403a4-a8b8-42b7-bda5-0ee1e2693b56",
+    "id": "d4bdee60-55ae-4f00-9e06-2bc9e79ecf9e",
     "type": "TEMPLATE_FORMULA",
     "referenceNotes": "",
     "values": null
@@ -479,7 +479,7 @@
         {
           "name": "Role",
           "valueDescription": "A group or list an account can be a member or be in.",
-          "templateValue": "",
+          "templateValue": "LogViewer",
           "propertyInvocations": [
             {
               "name": "GetRoleMembers",
