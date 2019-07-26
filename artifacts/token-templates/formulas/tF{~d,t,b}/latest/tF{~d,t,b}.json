@@ -1,12 +1,7 @@
 {
-  "parentReference": null,
-  "classification": {
-    "tokenType": "FUNGIBLE",
-    "branch": "WHOLE"
-  },
   "artifact": {
     "artifactSymbol": {
-      "id": "41cf2071-68c3-4808-b217-ccdf99cb0543",
+      "id": "5ee615b1-56da-4783-b129-d2dea21dadef",
       "type": "TEMPLATE_FORMULA",
       "visual": "&tau;<sub>F</sub>{<i>~d,t,b</i>}",
       "tooling": "tF{~d,t,b}",
@@ -50,13 +45,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "WholeFungible.proto",
+        "fileName": "tF{~d,t,b}.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "WholeFungible.md",
+        "fileName": "tF{~d,t,b}.md",
         "fileData": "",
         "artifact": null
       }
@@ -67,6 +62,10 @@
       "resources": [],
       "artifact": null
     }
+  },
+  "classification": {
+    "tokenType": "FUNGIBLE",
+    "branch": "WHOLE"
   },
   "tokenBase": {
     "base": {

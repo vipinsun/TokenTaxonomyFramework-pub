@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
@@ -17,10 +18,7 @@ namespace TTI.TTF.Taxonomy
 	{
 		private static readonly ILog _log;
 		private static Model.Taxonomy Taxonomy { get; set; }
-		private const string NameIndex = "Name";
-		private const string FormulaIndex = "Formula";
-		private const string IdIndex = "Id";
-		
+
 		static ModelManager()
 		{
 			Utils.InitLog();
@@ -50,40 +48,104 @@ namespace TTI.TTF.Taxonomy
 
 		public static Base GetBaseArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBaseArtifact Symbol " + symbol.Tooling);
-			return Taxonomy.BaseTokenTypes.Single(e => e.Key == symbol.Tooling).Value;
+			_log.Info("GetBaseArtifact Symbol: " + symbol);
+			if (!string.IsNullOrEmpty(symbol.Id))
+			{
+				return GetArtifactById<Base>(symbol.Id);
+			}
+
+			if (!string.IsNullOrEmpty(symbol.Tooling))
+			{
+				return Taxonomy.BaseTokenTypes
+					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == symbol.Tooling).Value;
+			}
+
+			return new Base();
 		}
 
 		public static Behavior GetBehaviorArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBehaviorArtifact Symbol " + symbol.Tooling);
-			return Taxonomy.Behaviors.Single(e => e.Key == symbol.Tooling).Value;
+			_log.Info("GetBehaviorArtifact Symbol: " + symbol);
+			if (!string.IsNullOrEmpty(symbol.Id))
+			{
+				return GetArtifactById<Behavior>(symbol.Id);
+			}
+
+			if (!string.IsNullOrEmpty(symbol.Tooling))
+			{
+				return Taxonomy.Behaviors
+					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == symbol.Tooling).Value;
+			}
+
+			return new Behavior();
 		}
 
 		public static BehaviorGroup GetBehaviorGroupArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetBehaviorGroupArtifact Symbol " + symbol.Tooling);
-			return Taxonomy.BehaviorGroups.Single(e => e.Key == symbol.Tooling).Value;
+			_log.Info("GetBehaviorGroupArtifact Symbol: " + symbol);
+			if (!string.IsNullOrEmpty(symbol.Id))
+			{
+				return GetArtifactById<BehaviorGroup>(symbol.Id);
+			}
+
+			if (!string.IsNullOrEmpty(symbol.Tooling))
+			{
+				return Taxonomy.BehaviorGroups
+					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == symbol.Tooling).Value;
+			}
+
+			return new BehaviorGroup();
 		}
 
 		public static PropertySet GetPropertySetArtifact(ArtifactSymbol symbol)
 		{
-			_log.Info("GetPropertySetArtifact Symbol " + symbol.Tooling);
-			return Taxonomy.PropertySets.Single(e => e.Key == symbol.Tooling).Value;		
+			_log.Info("GetPropertySetArtifact Symbol: " + symbol);
+			if (!string.IsNullOrEmpty(symbol.Id))
+			{
+				return GetArtifactById<PropertySet>(symbol.Id);
+			}
+
+			if (!string.IsNullOrEmpty(symbol.Tooling))
+			{
+				return Taxonomy.PropertySets
+					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == symbol.Tooling).Value;
+			}
+
+			return new PropertySet();
 		}
 
 		public static TemplateFormula GetTemplateFormulaArtifact(ArtifactSymbol formula)
 		{
-			_log.Info("GetTemplateFormulaArtifact: " + formula.Tooling);
-			var formulaIndex = Taxonomy.TemplateFormulas.SingleOrDefault(e=> e.Key.Equals(formula.Id)).Value;
-			return formulaIndex;
+			_log.Info("GetTemplateFormulaArtifact: " + formula);
+			if (!string.IsNullOrEmpty(formula.Id))
+			{
+				return GetArtifactById<TemplateFormula>(formula.Id);
+			}
+
+			if (!string.IsNullOrEmpty(formula.Tooling))
+			{
+				return Taxonomy.TemplateFormulas
+					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == formula.Tooling).Value;
+			}
+
+			return new TemplateFormula();
 		}
 		
 		public static TemplateDefinition GetTemplateDefinitionArtifact(ArtifactSymbol formula)
 		{
-			_log.Info("GetTemplateDefinitionArtifact: " + formula.Tooling);
-			var definition = Taxonomy.TemplateDefinitions.SingleOrDefault(e=> e.Key.Equals(formula.Id)).Value;
-			return definition;
+			_log.Info("GetTemplateDefinitionArtifact: " + formula);
+			if (!string.IsNullOrEmpty(formula.Id))
+			{
+				return GetArtifactById<TemplateDefinition>(formula.Id);
+			}
+
+			if (!string.IsNullOrEmpty(formula.Tooling))
+			{
+				return Taxonomy.TemplateDefinitions
+					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == formula.Tooling).Value;
+			}
+
+			return new TemplateDefinition();
 		}
 
 		public static QueryResult GetArtifactsOfType(QueryOptions options)
@@ -428,6 +490,8 @@ namespace TTI.TTF.Taxonomy
 						var templateDefinitionFolder = Taxonomy.TemplateDefinitions.Single(e =>
 							e.Value.Artifact.ArtifactSymbol.Tooling == tooling);
 						return templateDefinitionFolder.Value.Artifact.Name;
+					case ArtifactType.TokenTemplate:
+                              return "";
 					default:
 						throw new ArgumentOutOfRangeException(nameof(artifactType), artifactType, null);
 				}
@@ -467,6 +531,14 @@ namespace TTI.TTF.Taxonomy
 						break;
 					case ArtifactType.TokenTemplate:
 						break;
+					case ArtifactType.TemplateFormula:
+						var formulaFolder = Taxonomy.TemplateFormulas.Single(e =>
+							e.Value.Artifact.Name == name);
+						break;
+					case ArtifactType.TemplateDefinition:
+						var definitionFormula = Taxonomy.TemplateDefinitions.Single(e =>
+							e.Value.Artifact.Name == name);
+						break;
 					default:
 						throw new ArgumentOutOfRangeException(nameof(artifactType), artifactType, null);
 				}
@@ -478,19 +550,24 @@ namespace TTI.TTF.Taxonomy
 			return false;
 		}
 		
-		internal static bool CheckForUniqueTemplate(string formula, string name)
+		internal static bool CheckForUniqueTemplateFormula(string formula, string name)
 		{
-			_log.Info("CheckForUniqueTemplate: " + name);
+			_log.Info("CheckForUniqueTemplateFormula: " + name);
 			try
 			{
-				if(!string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(ArtifactType.TokenTemplate, formula)))
+				if(string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(ArtifactType.TemplateFormula, formula)))
 					throw new Exception("Tooling Symbol Found.");
 			}
 			catch (Exception)
 			{
-				return true;
+				return false;
 			}
-			return false;
+			return true;
+		}
+		
+		internal static string MakeUniqueDefinitionName(string name)
+		{
+			return Utils.GetRandomNameFromName(name);
 		}
 		internal static Artifact MakeUniqueArtifact(Artifact artifact)
 		{
@@ -705,35 +782,41 @@ namespace TTI.TTF.Taxonomy
 
 		public static TemplateDefinition CreateTemplateDefinition(NewTemplateDefinition newTemplateDefinition)
 		{
-			//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
-			var templateFormula = GetArtifactById<TemplateFormula>(newTemplateDefinition.TemplateFormulaId);
+			TemplateFormula templateFormula;
+			try
+			{
+				//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
+				templateFormula = GetArtifactById<TemplateFormula>(newTemplateDefinition.TemplateFormulaId);
+			}
+			catch (Exception e)
+			{
+				_log.Error("Error attempting to create a new TemplateDefinition from TemplateFormula with Id: " + newTemplateDefinition.TemplateFormulaId);
+				_log.Error(e);
+				return new TemplateDefinition();
+			}
+
 			var retVal = new TemplateDefinition
 			{
-				Artifact = new Artifact
-				{
-					Name = newTemplateDefinition.TokenName,
-					ArtifactSymbol = new ArtifactSymbol
-					{
-						Id = Guid.NewGuid().ToString(),
-						Tooling = templateFormula.Artifact.ArtifactSymbol.Tooling,
-						Visual = templateFormula.Artifact.ArtifactSymbol.Visual,
-						Version = templateFormula.Artifact.ArtifactSymbol.Version,
-						Type = ArtifactType.TemplateDefinition
-					}
-				},
-				FormulaReference = new ArtifactReference
-				{
-					Id = templateFormula.Artifact.ArtifactSymbol.Id,
-					Type = ArtifactType.TemplateFormula
-				}
+				Artifact = templateFormula.Artifact
 			};
-					
-			var definition = BuildTemplateDefinition(retVal, templateFormula);
-			if (templateFormula.Classification.TokenType != TokenType.Hybrid) return definition;
-			foreach (var c in definition.ChildTokens)
+			retVal.Artifact.Name = newTemplateDefinition.TokenName;
+			retVal.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
+			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TemplateDefinition;
+			retVal.FormulaReference = new ArtifactReference
 			{
-				var childTemplateFormula = GetArtifactById<TemplateFormula>(newTemplateDefinition.TemplateFormulaId);
-				definition.ChildTokens.Add(BuildTemplateDefinition(c, childTemplateFormula));
+				Id = templateFormula.Artifact.ArtifactSymbol.Id,
+				Type = ArtifactType.TemplateFormula
+			};
+			
+			var definition = BuildTemplateDefinition(retVal, templateFormula);
+			if (templateFormula.Classification.TokenType == TokenType.Hybrid)
+			{
+				foreach (var c in definition.ChildTokens)
+				{
+					var childTemplateFormula =
+						GetArtifactById<TemplateFormula>(newTemplateDefinition.TemplateFormulaId);
+					definition.ChildTokens.Add(BuildTemplateDefinition(c, childTemplateFormula));
+				}
 			}
 
 			TaxonomyController.CreateArtifact(new NewArtifactRequest
@@ -748,7 +831,7 @@ namespace TTI.TTF.Taxonomy
 		{
 				//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
 			var retVal = newDefinition.Clone();
-			var baseToken = GetArtifactById<Base>(newDefinition.TokenBase.Reference.Id);
+			var baseToken = GetArtifactById<Base>(formula.TokenBase.Base.Id);
 		
 			retVal.TokenBase = new BaseReference
 			{
@@ -846,7 +929,7 @@ namespace TTI.TTF.Taxonomy
 			return retVal;
 		}
 
-		internal static T GetArtifactById<T>(string id)
+		private static T GetArtifactById<T>(string id)
 		{
 			if (typeof(T) == typeof(Base))
 			{

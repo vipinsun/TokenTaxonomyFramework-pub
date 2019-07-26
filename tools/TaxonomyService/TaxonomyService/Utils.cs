@@ -54,7 +54,7 @@ namespace TTI.TTF.Taxonomy
 				}
 			}
 
-			return ch.ToString();
+			return new string(ch);
 		}
 
 		public static (string Name, string visual, string tooling) GetRandomArtifactFromArtifact(string name,
@@ -62,6 +62,12 @@ namespace TTI.TTF.Taxonomy
 		{
 			var randStr = Randomize("");
 			return (name + randStr, visual + randStr, tooling + randStr);
+		}
+		
+		public static string GetRandomNameFromName(string name)
+		{
+			var randStr = Randomize("");
+			return name + randStr;
 		}
 		
 		public static (string Name, string visual, string tooling) GetRandomTemplate(string name,

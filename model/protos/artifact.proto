@@ -72,8 +72,9 @@ message Artifact {
     repeated SymbolDependency dependencies = 5; //Typically used for a behavior that has a dependency on a property-set.
     repeated ArtifactSymbol incompatible_with_symbols = 6; //for behaviors that have opposites, or if another behavior or property-set
     repeated SymbolInfluence influenced_by_symbols = 7;
-    repeated ArtifactFile artifact_files = 8; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
-    Maps maps = 9; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    string control_uri = 8;
+    repeated ArtifactFile artifact_files = 9; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    Maps maps = 10; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
 }
 
 message ArtifactReferenceValues{

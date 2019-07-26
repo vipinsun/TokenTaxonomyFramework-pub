@@ -1,9 +1,4 @@
 {
-  "parentReference": null,
-  "classification": {
-    "tokenType": "FUNGIBLE",
-    "branch": "FRACTIONAL"
-  },
   "artifact": {
     "artifactSymbol": {
       "id": "41cf2071-68c3-4808-b217-ccdf99cb0543",
@@ -15,7 +10,7 @@
     },
     "name": "tF{d,t,b}",
     "aliases": [
-      "Fractional Fungible"
+      "Fractional Fungible",
       "ICO",
       "Fixed Supply Fractional Fungible"
     ],
@@ -50,13 +45,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "FractionalFungible.proto",
+        "fileName": "tF{d,t,b}.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "FractionalFungible.md",
+        "fileName": "tF{d,t,b}.md",
         "fileData": "",
         "artifact": null
       }
@@ -67,6 +62,10 @@
       "resources": [],
       "artifact": null
     }
+  },
+  "classification": {
+    "tokenType": "FUNGIBLE",
+    "branch": "FRACTIONAL"
   },
   "tokenBase": {
     "base": {

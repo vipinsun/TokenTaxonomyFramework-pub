@@ -1,14 +1,9 @@
 {
-  "parentReference": null,
-  "classification": {
-    "tokenType": "NON-FUNGIBLE",
-    "branch": "WHOLE"
-  },
   "artifact": {
     "artifactSymbol": {
-      "id":"8314a797-df3c-409b-835c-0e80af92714f",
-      "type": "BASE",
-      "visual": "&tau<sub>N</sub>",
+      "id":"82b5d1c9-d457-447b-9069-59ca3d2abf04",
+      "type": "TEMPLATE_FORMULA",
+      "visual": "&tau<sub>N</sub><i>{~d,t,b}</i>",
       "tooling": "tN{~d,t,b}",
       "version": "1.0",
       "templateValidated": true
@@ -50,13 +45,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "WholeNonFungible.proto",
+        "fileName": "tN{~d,t,b}.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "WholeNonFungible.md",
+        "fileName": "tN{~d,t,b}.md",
         "fileData": "",
         "artifact": null
       }
@@ -67,6 +62,10 @@
       "resources": [],
       "artifact": null
     }
+  },
+  "classification": {
+    "tokenType": "NON_FUNGIBLE",
+    "branch": "WHOLE"
   },
   "tokenBase": {
     "base": {

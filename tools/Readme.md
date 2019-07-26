@@ -34,6 +34,7 @@ if using the dotnet client using the [dotnet core runtime](https://dotnet.micros
 - `--u`: option to update a saved local artifact to the taxonomy. Value is the name of the folder to be used for the update. This is the folder created by the --s option and should be a relative path from where you are executing the command.
 - `--c`: option to create a new artifact. Value is a proposed symbol for the artifact.
 - `--n`: option for the name of a new artifact, used with --c.  Value is the name of the artifact.
+- `--d`: create a template definition from a template formula, requires `--n`
 
 Examples:
 
@@ -42,6 +43,7 @@ Examples:
 - `--ts r --t 1 --s` is a query for a behavior with the symbol `r` and save it locally.  This will fetch the roles behavior and save it in a folder `roles`.
 - `--u roles --t 1` will update the artifact from the roles folder saved in the previous example.
 - `--c phSKU --n sku --t 3` will create a new artifact, a behavior-set, called `sku` with a symbol phSKU.
+- `--d 89ff775c-27f1-494e-b31c-f3fb3a9527ac --n InvoiceToken` will create a template definition called InvoiceToken from the template formula with the UUID/Guid after the `--d`.
 
 ## Artifact Generator
 

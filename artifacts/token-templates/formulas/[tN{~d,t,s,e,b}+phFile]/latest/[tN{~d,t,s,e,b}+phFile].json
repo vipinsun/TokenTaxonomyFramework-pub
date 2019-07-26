@@ -1,14 +1,4 @@
 {
-  "parentReference": {
-    "id": "6fa235c7-d9d7-4fa2-b2b3-0e8e6838b770",
-    "type": "TEMPLATE_FORMULA",
-    "referenceNotes": "",
-    "values": null
-  },
-  "classification": {
-    "tokenType": "NON-FUNGIBLE",
-    "branch": "SINGLETON"
-  },
   "artifact": {
     "artifactSymbol": {
       "id": "4c2730f5-dc5f-4949-87e3-71f3a6e6cae9",
@@ -25,7 +15,7 @@
       "Invoice",
       "PDF"
     ],
-    "definition": {
+    "artifactDefinition": {
       "businessDescription": "Used to represent a document that may be a scanned or PDF printed document. It records the document hash to check for tampering, a file path to fetch the file from storage as well as the ability to be encumbered. Implements the File property-set.",
       "businessExample": "For example: you may choose to create an invoice token from an invoice document.  You can then allow another token or contract representing a loan or proof of financing to encumber the document establishing a link between the two.",
       "analogies": [
@@ -44,18 +34,22 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "Document.proto",
+        "fileName": "[tN{~d,t,s,e,b}+phFile].proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "Document.md",
+        "fileName": "[tN{~d,t,s,e,b}+phFile].md",
         "fileData": "",
         "artifact": null
       }
     ],
     "maps": {}
+  },
+  "classification": {
+    "tokenType": "NON_FUNGIBLE",
+    "branch": "SINGLETON"
   },
   "tokenBase": {
     "base": {

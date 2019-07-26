@@ -74,8 +74,8 @@
       "artifact": null
     }
   },
-  "isExternal": false,
-  "constructorName": "Constructor",
+  "isExternal": true,
+  "constructorType": "RoleName",
   "constructor": null,
   "invocations": [
     {

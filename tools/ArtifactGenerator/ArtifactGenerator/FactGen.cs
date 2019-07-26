@@ -573,11 +573,6 @@ namespace ArtifactGenerator
 						}
 					};
 					
-					if (BaseType == TokenType.Hybrid)
-					{
-						templateFormula.ChildTokens.Add(GetTemplateBase(fullPath, folderSeparator));
-					}
-					
 					artifactJson = jsf.Format(templateFormula);
 					break;
 				case ArtifactType.TemplateDefinition:
@@ -767,6 +762,18 @@ namespace ArtifactGenerator
 			formula.HybridWithHybridsGrammar = hybridHybrids;
 			
 			return formula;
+		}
+		
+		private static TemplateDefinition GetTemplateDefinition(string fullPath, string folderSeparator, string definitionName)
+		{
+			const string typeFolder = "token-templates"; 
+			const string defFolder = "definitions";
+			
+			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + defFolder+ folderSeparator
+			                             + definitionName + folderSeparator + Latest + folderSeparator + definitionName + ".json");
+			var json = baseFile.ReadToEnd();
+			var formattedJson = JToken.Parse(json).ToString();
+			return JsonParser.Default.Parse<TemplateDefinition>(formattedJson);
 		}
 		
 		private static TemplateBase GetTemplateBase(string fullPath, string folderSeparator)
