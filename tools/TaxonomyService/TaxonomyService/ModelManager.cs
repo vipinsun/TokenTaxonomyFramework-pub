@@ -856,6 +856,7 @@ namespace TTI.TTF.Taxonomy
 					Reference =  new ArtifactReference
 					{
 						Id = b.Artifact.ArtifactSymbol.Id,
+						Type = ArtifactType.Behavior,
 						Values = new ArtifactReferenceValues
 						{
 							ControlUri = "",
@@ -877,6 +878,7 @@ namespace TTI.TTF.Taxonomy
 					Reference = new ArtifactReference
 					{
 						Id = b.Artifact.ArtifactSymbol.Id,
+						Type = ArtifactType.BehaviorGroup,
 						Values = new ArtifactReferenceValues
 						{
 							ControlUri = "",
@@ -891,6 +893,7 @@ namespace TTI.TTF.Taxonomy
 					Reference = new ArtifactReference
 					{
 						Id = b.Artifact.ArtifactSymbol.Id,
+						Type = ArtifactType.Behavior,
 						Values = new ArtifactReferenceValues
 						{
 							ControlUri = "",
@@ -916,6 +919,7 @@ namespace TTI.TTF.Taxonomy
 					Reference =  new ArtifactReference
 					{
 						Id = ps.Artifact.ArtifactSymbol.Id,
+						Type = ArtifactType.PropertySet,
 						Values = new ArtifactReferenceValues
 						{
 							ControlUri = "",

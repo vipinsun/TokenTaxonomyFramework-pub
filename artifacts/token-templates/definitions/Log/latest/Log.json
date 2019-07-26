@@ -81,12 +81,6 @@
         "fileName": "tN{~t,~d,b,s,r,l}.md",
         "fileData": "",
         "artifact": null
-      },
-      {
-        "content": "OTHER",
-        "fileName": ".DS_Store",
-        "fileData": "",
-        "artifact": null
       }
     ],
     "maps": {
@@ -155,7 +149,7 @@
     {
       "reference": {
         "id": "c1189d7a-e142-4504-bf26-44c35b76c9d6",
-        "type": "BASE",
+        "type": "BEHAVIOR",
         "referenceNotes": "",
         "values": {
           "controlUri": "",
@@ -201,7 +195,7 @@
     {
       "reference": {
         "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
-        "type": "BASE",
+        "type": "BEHAVIOR",
         "referenceNotes": "",
         "values": {
           "controlUri": "",
@@ -274,7 +268,7 @@
     {
       "reference": {
         "id": "a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
-        "type": "BASE",
+        "type": "BEHAVIOR",
         "referenceNotes": "",
         "values": {
           "controlUri": "",
@@ -320,7 +314,7 @@
     {
       "reference": {
         "id": "803297a1-c0f9-4898-9d44-29c9d41cca97",
-        "type": "BASE",
+        "type": "BEHAVIOR",
         "referenceNotes": "",
         "values": {
           "controlUri": "",
@@ -415,7 +409,7 @@
     {
       "reference": {
         "id": "c32726da-9787-4dd8-8de3-d07d1733d0f6",
-        "type": "BASE",
+        "type": "BEHAVIOR",
         "referenceNotes": "",
         "values": {
           "controlUri": "",
@@ -597,7 +591,7 @@
     {
       "reference": {
         "id": "9c8c2373-cf3c-4743-932a-03fee6a192fe",
-        "type": "BASE",
+        "type": "BEHAVIOR",
         "referenceNotes": "",
         "values": {
           "controlUri": "",

@@ -14,7 +14,7 @@
     ],
     "controlUri": "../../../../../../artifacts/behaviors/roles/roles.proto",
     "artifactDefinition": {
-      "businessDescription": "A token can have behaviors that the class will restrict invocations to a select set of parties or accounts that are members of a role or group.  This is a generic behavior that can apply to a token many times to represent many role definitions within the template.",
+      "businessDescription": "A token can have behaviors that the class will restrict invocations to a select set of parties or accounts that are members of a role or group.  This is a generic behavior that can apply to a token many times to represent many role definitions within the template. This behavior will allow you to define what role(s) to create and what behavior(s) to apply the role to in the TemplateDefinition.",
       "businessExample": "",
       "analogies": [
         {
