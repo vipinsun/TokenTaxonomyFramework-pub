@@ -733,7 +733,12 @@ namespace TTI.TTF.Taxonomy
 			Log.Error("---------------------------------------------------");
 			Log.Error("Token Specification:");
 			Log.Error("---------------------------------------------------");
-			Log.Info(tokenSpec);
+
+			var tDef = tokenSpec.ToString();
+
+			var fDef = JToken.Parse(tDef).ToString();
+			
+			Log.Info(fDef);
 		}
 	}
 }
