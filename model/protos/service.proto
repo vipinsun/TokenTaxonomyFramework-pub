@@ -5,8 +5,6 @@ import "taxonomy.proto";
 import "core.proto";
 import "artifact.proto";
 
-import "google/protobuf/Empty.proto";
-
 option csharp_namespace = "TTI.TTF.Taxonomy";
 option java_package = "org.tti.ttf.taxonomy";
 option java_multiple_files = true;
@@ -35,6 +33,6 @@ service Service {
 
     rpc CommitLocalUpdates(taxonomy.model.artifact.CommitUpdatesRequest) returns (taxonomy.model.artifact.CommitUpdatesResponse) {}
     rpc PullRequest(taxonomy.model.artifact.IssuePullRequest) returns (taxonomy.model.artifact.IssuePullResponse){}
-    rpc GetConfig(google.protobuf.Empty) returns (taxonomy.model.artifact.ServiceConfiguration) {}
+    rpc GetConfig(taxonomy.model.artifact.ConfigurationRequest) returns (taxonomy.model.artifact.ServiceConfiguration) {}
 }
 

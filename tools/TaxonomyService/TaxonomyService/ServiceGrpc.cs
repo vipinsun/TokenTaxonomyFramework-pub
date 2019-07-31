@@ -37,7 +37,7 @@ namespace TTI.TTF.Taxonomy {
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse> __Marshaller_taxonomy_model_artifact_CommitUpdatesResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest> __Marshaller_taxonomy_model_artifact_IssuePullRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse> __Marshaller_taxonomy_model_artifact_IssuePullResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Empty.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest> __Marshaller_taxonomy_model_artifact_ConfigurationRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> __Marshaller_taxonomy_model_artifact_ServiceConfiguration = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser.ParseFrom);
 
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy> __Method_GetFullTaxonomy = new grpc::Method<global::TTI.TTF.Taxonomy.Model.TaxonomyVersion, global::TTI.TTF.Taxonomy.Model.Taxonomy>(
@@ -159,11 +159,11 @@ namespace TTI.TTF.Taxonomy {
         __Marshaller_taxonomy_model_artifact_IssuePullRequest,
         __Marshaller_taxonomy_model_artifact_IssuePullResponse);
 
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> __Method_GetConfig = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration>(
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> __Method_GetConfig = new grpc::Method<global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetConfig",
-        __Marshaller_google_protobuf_Empty,
+        __Marshaller_taxonomy_model_artifact_ConfigurationRequest,
         __Marshaller_taxonomy_model_artifact_ServiceConfiguration);
 
     /// <summary>Service descriptor</summary>
@@ -273,7 +273,7 @@ namespace TTI.TTF.Taxonomy {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfig(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfig(global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -631,19 +631,19 @@ namespace TTI.TTF.Taxonomy {
       {
         return CallInvoker.AsyncUnaryCall(__Method_PullRequest, null, options, request);
       }
-      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration GetConfig(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration GetConfig(global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetConfig(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration GetConfig(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration GetConfig(global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetConfig, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfigAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfigAsync(global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetConfigAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfigAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration> GetConfigAsync(global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetConfig, null, options, request);
       }
@@ -702,7 +702,7 @@ namespace TTI.TTF.Taxonomy {
       serviceBinder.AddMethod(__Method_CreateTemplateDefinition, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>(serviceImpl.CreateTemplateDefinition));
       serviceBinder.AddMethod(__Method_CommitLocalUpdates, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest, global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse>(serviceImpl.CommitLocalUpdates));
       serviceBinder.AddMethod(__Method_PullRequest, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest, global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse>(serviceImpl.PullRequest));
-      serviceBinder.AddMethod(__Method_GetConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration>(serviceImpl.GetConfig));
+      serviceBinder.AddMethod(__Method_GetConfig, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest, global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration>(serviceImpl.GetConfig));
     }
 
   }

@@ -25,46 +25,153 @@ namespace TTI.TTF.Taxonomy {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChV0YXhvbm9teXNlcnZpY2UucHJvdG8SEHRheG9ub215LnNlcnZpY2UaDnRh",
-            "eG9ub215LnByb3RvGgpjb3JlLnByb3RvGg5hcnRpZmFjdC5wcm90bxobZ29v",
-            "Z2xlL3Byb3RvYnVmL0VtcHR5LnByb3RvMswKCg9UYXhvbm9teVNlcnZpY2US",
-            "TgoPR2V0RnVsbFRheG9ub215Eh8udGF4b25vbXkubW9kZWwuVGF4b25vbXlW",
-            "ZXJzaW9uGhgudGF4b25vbXkubW9kZWwuVGF4b25vbXkiABJXCg9HZXRCYXNl",
-            "QXJ0aWZhY3QSJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5",
-            "bWJvbBoZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZSIAEl8KE0dldEJlaGF2",
-            "aW9yQXJ0aWZhY3QSJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFj",
-            "dFN5bWJvbBodLnRheG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3IiABJpChhH",
-            "ZXRCZWhhdmlvckdyb3VwQXJ0aWZhY3QSJy50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5BcnRpZmFjdFN5bWJvbBoiLnRheG9ub215Lm1vZGVsLmNvcmUuQmVo",
-            "YXZpb3JHcm91cCIAEmUKFkdldFByb3BlcnR5U2V0QXJ0aWZhY3QSJy50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbBogLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQiABJqChhHZXRUb2tlblRlbXBsYXRl",
-            "QXJ0aWZhY3QSKC50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5UYXhvbm9teUZv",
-            "cm11bGEaIi50YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuVGVtcGxhdGUiABJj",
-            "ChJHZXRBcnRpZmFjdHNPZlR5cGUSJS50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
-            "dC5RdWVyeU9wdGlvbnMaJC50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5RdWVy",
-            "eVJlc3VsdCIAEm0KDkNyZWF0ZUFydGlmYWN0EisudGF4b25vbXkubW9kZWwu",
-            "YXJ0aWZhY3QuTmV3QXJ0aWZhY3RSZXF1ZXN0GiwudGF4b25vbXkubW9kZWwu",
-            "YXJ0aWZhY3QuTmV3QXJ0aWZhY3RSZXNwb25zZSIAEnMKDlVwZGF0ZUFydGlm",
-            "YWN0Ei4udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVXBkYXRlQXJ0aWZhY3RS",
-            "ZXF1ZXN0Gi8udGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVXBkYXRlQXJ0aWZh",
-            "Y3RSZXNwb25zZSIAEnMKDkRlbGV0ZUFydGlmYWN0Ei4udGF4b25vbXkubW9k",
-            "ZWwuYXJ0aWZhY3QuRGVsZXRlQXJ0aWZhY3RSZXF1ZXN0Gi8udGF4b25vbXku",
-            "bW9kZWwuYXJ0aWZhY3QuRGVsZXRlQXJ0aWZhY3RSZXNwb25zZSIAEnUKEkNv",
-            "bW1pdExvY2FsVXBkYXRlcxItLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkNv",
-            "bW1pdFVwZGF0ZXNSZXF1ZXN0Gi4udGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
-            "Q29tbWl0VXBkYXRlc1Jlc3BvbnNlIgASZgoLUHVsbFJlcXVlc3QSKS50YXhv",
-            "bm9teS5tb2RlbC5hcnRpZmFjdC5Jc3N1ZVB1bGxSZXF1ZXN0GioudGF4b25v",
-            "bXkubW9kZWwuYXJ0aWZhY3QuSXNzdWVQdWxsUmVzcG9uc2UiABJUCglHZXRD",
-            "b25maWcSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaLS50YXhvbm9teS5tb2Rl",
-            "bC5hcnRpZmFjdC5TZXJ2aWNlQ29uZmlndXJhdGlvbiIAQisKFG9yZy50dGku",
-            "dHRmLnRheG9ub215UAGqAhBUVEkuVFRGLlRheG9ub215YgZwcm90bzM="));
+            "eG9ub215LnByb3RvGgpjb3JlLnByb3RvGg5hcnRpZmFjdC5wcm90byIWChRD",
+            "b25maWd1cmF0aW9uUmVxdWVzdDLcCgoPVGF4b25vbXlTZXJ2aWNlEk4KD0dl",
+            "dEZ1bGxUYXhvbm9teRIfLnRheG9ub215Lm1vZGVsLlRheG9ub215VmVyc2lv",
+            "bhoYLnRheG9ub215Lm1vZGVsLlRheG9ub215IgASVwoPR2V0QmFzZUFydGlm",
+            "YWN0EicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wa",
+            "GS50YXhvbm9teS5tb2RlbC5jb3JlLkJhc2UiABJfChNHZXRCZWhhdmlvckFy",
+            "dGlmYWN0EicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1i",
+            "b2waHS50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yIgASaQoYR2V0QmVo",
+            "YXZpb3JHcm91cEFydGlmYWN0EicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3Qu",
+            "QXJ0aWZhY3RTeW1ib2waIi50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9y",
+            "R3JvdXAiABJlChZHZXRQcm9wZXJ0eVNldEFydGlmYWN0EicudGF4b25vbXku",
+            "bW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2waIC50YXhvbm9teS5tb2Rl",
+            "bC5jb3JlLlByb3BlcnR5U2V0IgASagoYR2V0VG9rZW5UZW1wbGF0ZUFydGlm",
+            "YWN0EigudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVGF4b25vbXlGb3JtdWxh",
+            "GiIudGF4b25vbXkubW9kZWwuY29yZS5Ub2tlblRlbXBsYXRlIgASYwoSR2V0",
+            "QXJ0aWZhY3RzT2ZUeXBlEiUudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuUXVl",
+            "cnlPcHRpb25zGiQudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuUXVlcnlSZXN1",
+            "bHQiABJtCg5DcmVhdGVBcnRpZmFjdBIrLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0Lk5ld0FydGlmYWN0UmVxdWVzdBosLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0Lk5ld0FydGlmYWN0UmVzcG9uc2UiABJzCg5VcGRhdGVBcnRpZmFjdBIu",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlVwZGF0ZUFydGlmYWN0UmVxdWVz",
+            "dBovLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LlVwZGF0ZUFydGlmYWN0UmVz",
+            "cG9uc2UiABJzCg5EZWxldGVBcnRpZmFjdBIuLnRheG9ub215Lm1vZGVsLmFy",
+            "dGlmYWN0LkRlbGV0ZUFydGlmYWN0UmVxdWVzdBovLnRheG9ub215Lm1vZGVs",
+            "LmFydGlmYWN0LkRlbGV0ZUFydGlmYWN0UmVzcG9uc2UiABJ1ChJDb21taXRM",
+            "b2NhbFVwZGF0ZXMSLS50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5Db21taXRV",
+            "cGRhdGVzUmVxdWVzdBouLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkNvbW1p",
+            "dFVwZGF0ZXNSZXNwb25zZSIAEmYKC1B1bGxSZXF1ZXN0EikudGF4b25vbXku",
+            "bW9kZWwuYXJ0aWZhY3QuSXNzdWVQdWxsUmVxdWVzdBoqLnRheG9ub215Lm1v",
+            "ZGVsLmFydGlmYWN0Lklzc3VlUHVsbFJlc3BvbnNlIgASZAoJR2V0Q29uZmln",
+            "EiYudGF4b25vbXkuc2VydmljZS5Db25maWd1cmF0aW9uUmVxdWVzdBotLnRh",
+            "eG9ub215Lm1vZGVsLmFydGlmYWN0LlNlcnZpY2VDb25maWd1cmF0aW9uIgBC",
+            "KwoUb3JnLnR0aS50dGYudGF4b25vbXlQAaoCEFRUSS5UVEYuVGF4b25vbXli",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null));
+          new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ConfigurationRequest), global::TTI.TTF.Taxonomy.ConfigurationRequest.Parser, null, null, null, null)
+          }));
     }
     #endregion
 
   }
+  #region Messages
+  public sealed partial class ConfigurationRequest : pb::IMessage<ConfigurationRequest> {
+    private static readonly pb::MessageParser<ConfigurationRequest> _parser = new pb::MessageParser<ConfigurationRequest>(() => new ConfigurationRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ConfigurationRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.TaxonomyserviceReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ConfigurationRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ConfigurationRequest(ConfigurationRequest other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ConfigurationRequest Clone() {
+      return new ConfigurationRequest(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ConfigurationRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ConfigurationRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ConfigurationRequest other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  #endregion
+
 }
 
 #endregion Designer generated code

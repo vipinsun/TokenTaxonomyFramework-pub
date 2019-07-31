@@ -236,6 +236,10 @@ message IssuePullResponse{
     string response = 1;
 }
 
+message ConfigurationRequest{
+
+}
+
 message ServiceConfiguration{
     bool read_only = 1;
     string git_id = 2;
