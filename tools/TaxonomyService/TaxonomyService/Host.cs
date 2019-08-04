@@ -75,7 +75,7 @@ namespace TTI.TTF.Taxonomy
 
         public override Task<TokenSpecification> GetTokenSpecification(TokenTemplateId definitionId, ServerCallContext ctx)
         {
-            _log.Info("gRpc request for: GetTokenTemplateArtifact");
+            _log.Info("gRpc request for: GetTokenSpecification");
             return Task.FromResult(ModelManager.GetTokenSpecification(definitionId));
         }
         

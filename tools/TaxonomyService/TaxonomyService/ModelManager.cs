@@ -594,6 +594,7 @@ namespace TTI.TTF.Taxonomy
 		
 		public static TokenSpecification GetTokenSpecification(TokenTemplateId symbol)
 		{
+			_log.Info("Generating Token Specification from Token Token Template Id: " + symbol);
 			var definition = GetTemplateDefinitionArtifact(new ArtifactSymbol
 			{
 				Id = symbol.DefinitionId
