@@ -1177,61 +1177,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 		}
 
-		/*
-		internal static Token GetTokenDefinitionBody(TokenDefinition definition)
-		{
-			var retVal = definition.Clone();
-			var (baseToken, behaviors, behaviorGroups, propertySets) = GetTokenComponents(definition);
-
-			retVal.TokenBase = baseToken;
-			foreach (var b in behaviors)
-			{
-				var behavior = retVal.Parent.Behaviors.SingleOrDefault(e =>
-					e.Symbol.Tooling == b.Artifact.ArtifactSymbol.Tooling);
-				if (behavior != null) behavior.Behavior = b;
-			}
-			foreach (var b in behaviorGroups)
-			{
-				var behaviorGroup = retVal.Parent.BehaviorGroups.SingleOrDefault(e =>
-					e.Symbol.Tooling == b.Artifact.ArtifactSymbol.Tooling);
-				if (behaviorGroup != null) behaviorGroup.BehaviorGroup = b;
-			}
-			foreach (var p in propertySets)
-			{
-				var propertySet = retVal.Parent.PropertySets.SingleOrDefault(e =>
-					e.Symbol.Tooling == p.Artifact.ArtifactSymbol.Tooling);
-				if (propertySet != null) propertySet.PropertySet = p;
-			}
-			
-			//iterate through any children
-			foreach (var child in retVal.ChildTokens){
-				var (childToken, childBehaviors, childBehaviorGroups, childPropertySets) = GetTokenComponents(definition);
-
-				child.Base = childToken;
-				foreach (var b in childBehaviors)
-				{
-					var behavior = child.Behaviors.SingleOrDefault(e =>
-						e.Symbol.Tooling == b.Artifact.ArtifactSymbol.Tooling);
-					if (behavior != null) behavior.Behavior = b;
-				}
-				foreach (var b in childBehaviorGroups)
-				{
-					var behaviorGroup = child.BehaviorGroups.SingleOrDefault(e =>
-						e.Symbol.Tooling == b.Artifact.ArtifactSymbol.Tooling);
-					if (behaviorGroup != null) behaviorGroup.BehaviorGroup = b;
-				}
-				foreach (var p in childPropertySets)
-				{
-					var propertySet = child.PropertySets.SingleOrDefault(e =>
-						e.Symbol.Tooling == p.Artifact.ArtifactSymbol.Tooling);
-					if (propertySet != null) propertySet.PropertySet = p;
-				}
-			}
-			
-			return retVal;
-		}
-		*/
-
 		private static (bool, string) VersionArtifact(string artifactTypeFolder, string artifactName, string version,
 				string artifactJson, ArtifactType artifactType)
 		{
@@ -1244,7 +1189,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					version = "1.0";
 				var oldLatestPath = _artifactPath + _folderSeparator + artifactTypeFolder + _folderSeparator +
 				                    artifactName + _folderSeparator + version;
-				var (outcome, message) = Createversion(latestPath, oldLatestPath);
+				var (outcome, message) = CreateVersion(latestPath, oldLatestPath);
 				if (!outcome) return (false, message);
 				var outputFolder =
 					new DirectoryInfo(latestPath);
@@ -1258,7 +1203,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 		}
 		
-		private static (bool, string) Createversion(string sourceDirName, string destDirName)
+		private static (bool, string) CreateVersion(string sourceDirName, string destDirName)
 		{
 			// Get the subdirectories for the specified directory.
 			var dir = new DirectoryInfo(sourceDirName);
