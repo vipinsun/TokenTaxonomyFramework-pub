@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Threading;
 using Grpc.Core;
 using log4net;
 using Microsoft.Extensions.Configuration;
@@ -58,10 +59,16 @@ namespace TTI.TTF.Taxonomy
 			_apiServer.Start();
 			_log.Info("Api open on host: " + _gRpcHost + " port: " + _gRpcPort);
 			Console.WriteLine("Taxonomy Ready");
-			Console.WriteLine("Press \'q\' to close the Taxonomy.Service");
-			while (Console.Read() != 'q')
-			{
-			}
+			var exitEvent = new ManualResetEvent(false);
+
+            Console.CancelKeyPress += (sender, eventArgs) => {
+                                         eventArgs.Cancel = true;
+                                         exitEvent.Set();
+                                       };
+
+			Console.WriteLine("Press \'^C\' to close the Taxonomy.Service");
+
+			exitEvent.WaitOne();
 			_apiServer.ShutdownAsync();
 		}
 	}
