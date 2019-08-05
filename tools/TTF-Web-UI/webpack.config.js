@@ -7,7 +7,6 @@ module.exports = {
         modules: [
             path.resolve(__dirname, 'node_modules'),
             path.resolve(__dirname, 'src'),
-            path.resolve(__dirname, '../TaxonomyObjectModel/out/ts')
         ],
     },
     entry: "./src/index.ts",

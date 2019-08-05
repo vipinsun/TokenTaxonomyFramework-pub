@@ -25,3 +25,12 @@ cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/Artifact
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TaxonomyService/TaxonomyModel
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Web-Explorer/Model
+
+cp ../tools/TaxonomyObjectModel/out/ts/* ../tools/TTF-Web-UI/src/model
+for f in `ls ../tools/TTF-Web-UI/src/model`
+do
+  sed -i '' '1i\
+  /* eslint-disable */\
+  ' ../tools/TTF-Web-UI/src/model/$f
+done
+

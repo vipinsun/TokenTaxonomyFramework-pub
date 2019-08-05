@@ -2,6 +2,7 @@
 .idea
 .nyc_output
 *.swp
+build
 coverage/**
 dist
 lib
