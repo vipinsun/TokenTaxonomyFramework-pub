@@ -92,6 +92,7 @@
   },
   "invocations": [
     {
+      "id": "f063dcaa-49f9-4c49-bf0f-2766301e1033",
       "name": "Burn",
       "description": "A request to burn a token instance(s) in the class by the owner of the token instance(s).  Optional Quantity field in the request.",
       "request": {
@@ -116,6 +117,7 @@
       }
     },
     {
+      "id": "49b53152-3360-426f-9e0a-24a0b4e7c881",
       "name": "BurnFrom",
       "description": "Requires Delegable. A request to burn token instance(s) in the class by a party or account that has allowance to do so.  Requires a From and Quantity fields in the request.",
       "request": {

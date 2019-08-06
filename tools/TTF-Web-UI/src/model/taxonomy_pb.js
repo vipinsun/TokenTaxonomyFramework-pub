@@ -177,7 +177,7 @@ proto.taxonomy.model.Taxonomy.prototype.toObject = function(opt_includeInstance)
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.Taxonomy.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     version: (f = msg.getVersion()) && proto.taxonomy.model.TaxonomyVersion.toObject(includeInstance, f),
     baseTokenTypesMap: (f = msg.getBaseTokenTypesMap()) ? f.toObject(includeInstance, proto.taxonomy.model.core.Base.toObject) : [],
     behaviorsMap: (f = msg.getBehaviorsMap()) ? f.toObject(includeInstance, proto.taxonomy.model.core.Behavior.toObject) : [],
@@ -608,7 +608,7 @@ proto.taxonomy.model.TaxonomyVersion.prototype.toObject = function(opt_includeIn
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.TaxonomyVersion.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2, ""),
     stateHash: jspb.Message.getFieldWithDefault(msg, 3, "")
@@ -787,7 +787,7 @@ proto.taxonomy.model.Hierarchy.prototype.toObject = function(opt_includeInstance
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.Hierarchy.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     fungibles: (f = msg.getFungibles()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f),
     nonFungibles: (f = msg.getNonFungibles()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f),
     hybrids: (f = msg.getHybrids()) && proto.taxonomy.model.HybridBranchRoot.toObject(includeInstance, f)
@@ -1026,7 +1026,7 @@ proto.taxonomy.model.BranchIdentifier.prototype.toObject = function(opt_includeI
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.BranchIdentifier.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     tokenType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     branch: jspb.Message.getFieldWithDefault(msg, 2, 0),
     formulaId: jspb.Message.getFieldWithDefault(msg, 3, "")
@@ -1212,7 +1212,7 @@ proto.taxonomy.model.BranchRoot.prototype.toObject = function(opt_includeInstanc
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.BranchRoot.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     branchIdentifier: (f = msg.getBranchIdentifier()) && proto.taxonomy.model.BranchIdentifier.toObject(includeInstance, f),
     parentFormulaId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -1554,7 +1554,7 @@ proto.taxonomy.model.HybridBranchRoot.prototype.toObject = function(opt_includeI
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.HybridBranchRoot.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     fungibleParent: (f = msg.getFungibleParent()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f),
     nonFungibleParent: (f = msg.getNonFungibleParent()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f)
   };

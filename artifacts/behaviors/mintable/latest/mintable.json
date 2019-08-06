@@ -93,6 +93,7 @@
   },
   "invocations": [
     {
+      "id": "3ddf15db-c919-4f72-a57b-d089931bc901",
       "name": "Mint",
       "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission. Minted tokens using this invocation will be owned by the owner or token pool account. Requires a Quantity field in the request.",
       "request": {
@@ -117,6 +118,7 @@
       }
     },
     {
+      "id": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
       "name": "MintTo",
       "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
       "request": {

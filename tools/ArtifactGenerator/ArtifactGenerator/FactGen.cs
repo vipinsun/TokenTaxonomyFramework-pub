@@ -601,25 +601,17 @@ namespace ArtifactGenerator
 									Id = "a guid",
 									ReferenceNotes = ""
 								},
-								BindsToInfluenced = { new BoundInfluence
-								{
-									Artifact = new ArtifactReference
-									{
-										Id = ""
-									},
-									InfluenceInvocation = new Invocation
-									{
-										Description = "override descriotion",
-										Name = "",
-										Request = new InvocationRequest(),
-										Response = new InvocationResponse()
-									}
-								}},
+								ConstructorType = "",
+								IsExternal = true,
+								Invocations = { new Invocation()},
 								InfluenceBindings = { new InfluenceBinding
 								{
-									BoundInfluenceId = ""
+									InfluencedId = "",
+									InfluencedInvocationId = "",
+									InfluenceType = InfluenceType.Intercept,
+									InfluencingInvocation = new Invocation(),
+									InfluencedInvocation = new Invocation()
 								}},
-								IsExternal = true,
 								Properties =
 								{
 									new Property
@@ -651,7 +643,6 @@ namespace ArtifactGenerator
 									Id = "a guid",
 									ReferenceNotes = ""
 								},
-								InfluenceBindings = { new InfluenceBinding()},
 								Properties =
 								{
 									new Property

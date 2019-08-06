@@ -863,7 +863,7 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.toObject = function(opt_i
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ArtifactSymbol.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0),
     visual: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -1132,7 +1132,7 @@ proto.taxonomy.model.artifact.Artifact.prototype.toObject = function(opt_include
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.Artifact.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     artifactSymbol: (f = msg.getArtifactSymbol()) && proto.taxonomy.model.artifact.ArtifactSymbol.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     aliasesList: jspb.Message.getRepeatedField(msg, 3),
@@ -1672,7 +1672,7 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.toObject = funct
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ArtifactReferenceValues.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     controlUri: jspb.Message.getFieldWithDefault(msg, 1, ""),
     artifactFilesList: jspb.Message.toObjectList(msg.getArtifactFilesList(),
     proto.taxonomy.model.artifact.ArtifactFile.toObject, includeInstance),
@@ -1893,7 +1893,7 @@ proto.taxonomy.model.artifact.ArtifactReference.prototype.toObject = function(op
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ArtifactReference.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0),
     referenceNotes: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -2126,7 +2126,7 @@ proto.taxonomy.model.artifact.SymbolInfluence.prototype.toObject = function(opt_
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.SymbolInfluence.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     description: jspb.Message.getFieldWithDefault(msg, 1, ""),
     symbol: (f = msg.getSymbol()) && proto.taxonomy.model.artifact.ArtifactSymbol.toObject(includeInstance, f),
     appliesToList: jspb.Message.toObjectList(msg.getAppliesToList(),
@@ -2347,7 +2347,7 @@ proto.taxonomy.model.artifact.SymbolDependency.prototype.toObject = function(opt
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.SymbolDependency.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     description: jspb.Message.getFieldWithDefault(msg, 1, ""),
     symbol: (f = msg.getSymbol()) && proto.taxonomy.model.artifact.ArtifactSymbol.toObject(includeInstance, f)
   };
@@ -2526,7 +2526,7 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.toObject = function(o
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ArtifactDefinition.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     businessDescription: jspb.Message.getFieldWithDefault(msg, 1, ""),
     businessExample: jspb.Message.getFieldWithDefault(msg, 2, ""),
     analogiesList: jspb.Message.toObjectList(msg.getAnalogiesList(),
@@ -2801,7 +2801,7 @@ proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.toObject = function(opt_
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ArtifactAnalogy.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     description: jspb.Message.getFieldWithDefault(msg, 2, ""),
     artifactDefinition: (f = msg.getArtifactDefinition()) && proto.taxonomy.model.artifact.ArtifactDefinition.toObject(includeInstance, f)
@@ -3000,7 +3000,7 @@ proto.taxonomy.model.artifact.ArtifactFile.prototype.toObject = function(opt_inc
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ArtifactFile.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     content: jspb.Message.getFieldWithDefault(msg, 1, 0),
     fileName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     fileData: msg.getFileData_asB64(),
@@ -3257,7 +3257,7 @@ proto.taxonomy.model.artifact.Maps.prototype.toObject = function(opt_includeInst
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.Maps.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     codeReferencesList: jspb.Message.toObjectList(msg.getCodeReferencesList(),
     proto.taxonomy.model.artifact.MapReference.toObject, includeInstance),
     implementationReferencesList: jspb.Message.toObjectList(msg.getImplementationReferencesList(),
@@ -3549,7 +3549,7 @@ proto.taxonomy.model.artifact.MapReference.prototype.toObject = function(opt_inc
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.MapReference.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     mappingType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     platform: jspb.Message.getFieldWithDefault(msg, 3, 0),
@@ -3802,7 +3802,7 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.toObject = function
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.MapResourceReference.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     mappingType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     description: jspb.Message.getFieldWithDefault(msg, 3, ""),
@@ -4055,7 +4055,7 @@ proto.taxonomy.model.artifact.NewArtifactRequest.prototype.toObject = function(o
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.NewArtifactRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     artifact: (f = msg.getArtifact()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
@@ -4227,7 +4227,7 @@ proto.taxonomy.model.artifact.NewArtifactResponse.prototype.toObject = function(
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.NewArtifactResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     artifactTypeObject: (f = msg.getArtifactTypeObject()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
@@ -4399,7 +4399,7 @@ proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.toObject = functio
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.UpdateArtifactRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     artifactTypeObject: (f = msg.getArtifactTypeObject()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
@@ -4571,7 +4571,7 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.toObject = functi
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.UpdateArtifactResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
     updated: jspb.Message.getFieldWithDefault(msg, 2, false),
     artifactTypeObject: (f = msg.getArtifactTypeObject()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
@@ -4772,7 +4772,7 @@ proto.taxonomy.model.artifact.DeleteArtifactRequest.prototype.toObject = functio
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.DeleteArtifactRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     artifactSymbol: (f = msg.getArtifactSymbol()) && proto.taxonomy.model.artifact.ArtifactSymbol.toObject(includeInstance, f)
   };
 
@@ -4917,7 +4917,7 @@ proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.toObject = functi
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.DeleteArtifactResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     deleted: jspb.Message.getFieldWithDefault(msg, 1, false)
   };
 
@@ -5044,7 +5044,7 @@ proto.taxonomy.model.artifact.FormulaGrammar.prototype.toObject = function(opt_i
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.FormulaGrammar.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     singleTokenGrammar: (f = msg.getSingleTokenGrammar()) && proto.taxonomy.model.artifact.SingleTokenGrammar.toObject(includeInstance, f),
     hybridGrammar: (f = msg.getHybridGrammar()) && proto.taxonomy.model.artifact.HybridTokenGrammar.toObject(includeInstance, f),
     hybridWithHybridsGrammar: (f = msg.getHybridWithHybridsGrammar()) && proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.toObject(includeInstance, f)
@@ -5290,7 +5290,7 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.toObject = function(o
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.HybridTokenGrammar.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     parent: (f = msg.getParent()) && proto.taxonomy.model.artifact.SingleTokenGrammar.toObject(includeInstance, f),
     childrenStart: jspb.Message.getFieldWithDefault(msg, 2, ""),
     childTokensList: jspb.Message.toObjectList(msg.getChildTokensList(),
@@ -5545,7 +5545,7 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.toO
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     parent: (f = msg.getParent()) && proto.taxonomy.model.artifact.SingleTokenGrammar.toObject(includeInstance, f),
     hybridChildrenStart: jspb.Message.getFieldWithDefault(msg, 2, ""),
     hybridChildTokensList: jspb.Message.toObjectList(msg.getHybridChildTokensList(),
@@ -5793,7 +5793,7 @@ proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.toObject = function(o
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.SingleTokenGrammar.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     groupStart: jspb.Message.getFieldWithDefault(msg, 2, ""),
     baseTokenToolingSymbol: jspb.Message.getFieldWithDefault(msg, 3, ""),
     behaviors: (f = msg.getBehaviors()) && proto.taxonomy.model.artifact.BehaviorList.toObject(includeInstance, f),
@@ -6073,7 +6073,7 @@ proto.taxonomy.model.artifact.BehaviorList.prototype.toObject = function(opt_inc
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.BehaviorList.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     listStart: jspb.Message.getFieldWithDefault(msg, 1, ""),
     behaviorToolingSymbolsList: jspb.Message.getRepeatedField(msg, 2),
     listEnd: jspb.Message.getFieldWithDefault(msg, 3, "")
@@ -6276,7 +6276,7 @@ proto.taxonomy.model.artifact.PropertySetList.prototype.toObject = function(opt_
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.PropertySetList.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     listStart: jspb.Message.getFieldWithDefault(msg, 1, ""),
     propertySetsList: jspb.Message.toObjectList(msg.getPropertySetsList(),
     proto.taxonomy.model.artifact.PropertySetListItem.toObject, includeInstance)
@@ -6450,7 +6450,7 @@ proto.taxonomy.model.artifact.PropertySetListItem.prototype.toObject = function(
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.PropertySetListItem.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     propertySetSymbol: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -6575,7 +6575,7 @@ proto.taxonomy.model.artifact.CommitUpdatesRequest.prototype.toObject = function
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.CommitUpdatesRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     commitMessage: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
@@ -6700,7 +6700,7 @@ proto.taxonomy.model.artifact.CommitUpdatesResponse.prototype.toObject = functio
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.CommitUpdatesResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     result: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
@@ -6825,7 +6825,7 @@ proto.taxonomy.model.artifact.IssuePullRequest.prototype.toObject = function(opt
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.IssuePullRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
 
   };
 
@@ -6924,7 +6924,7 @@ proto.taxonomy.model.artifact.IssuePullResponse.prototype.toObject = function(op
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.IssuePullResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     response: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
@@ -7049,7 +7049,7 @@ proto.taxonomy.model.artifact.ConfigurationRequest.prototype.toObject = function
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ConfigurationRequest.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
 
   };
 
@@ -7148,7 +7148,7 @@ proto.taxonomy.model.artifact.ServiceConfiguration.prototype.toObject = function
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.ServiceConfiguration.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     readOnly: jspb.Message.getFieldWithDefault(msg, 1, false),
     gitId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     gitBranch: jspb.Message.getFieldWithDefault(msg, 3, "")
@@ -7329,7 +7329,7 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.toObject = function(opt_inc
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.QueryOptions.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     artifactType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     maxItemReturn: jspb.Message.getFieldWithDefault(msg, 2, 0),
     lastItemIndex: jspb.Message.getFieldWithDefault(msg, 3, 0),
@@ -7593,7 +7593,7 @@ proto.taxonomy.model.artifact.QueryResult.prototype.toObject = function(opt_incl
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.QueryResult.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     artifactType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     firstItemIndex: jspb.Message.getFieldWithDefault(msg, 2, 0),
     lastItemIndex: jspb.Message.getFieldWithDefault(msg, 3, 0),
@@ -7846,7 +7846,7 @@ proto.taxonomy.model.artifact.Classification.prototype.toObject = function(opt_i
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.Classification.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     tokenType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     branch: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
@@ -7998,7 +7998,7 @@ proto.taxonomy.model.artifact.TokenTemplateId.prototype.toObject = function(opt_
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.TokenTemplateId.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     definitionId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
@@ -8123,7 +8123,7 @@ proto.taxonomy.model.artifact.Identifier.prototype.toObject = function(opt_inclu
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.Identifier.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
@@ -8248,7 +8248,7 @@ proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.toObject = functio
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.artifact.NewTemplateDefinition.toObject = function(includeInstance, msg) {
-  var f, obj = {
+  var obj = {
     templateFormulaId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     tokenName: jspb.Message.getFieldWithDefault(msg, 2, "")
   };

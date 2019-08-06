@@ -81,6 +81,7 @@
   },
   "invocations": [
     {
+      "id": "dc7e0ec1-32f7-4930-9a8d-a9a29dc6c5c6",
       "name": "CreateEntrySeries",
       "description": "A request create a series of log entries.",
       "request": {

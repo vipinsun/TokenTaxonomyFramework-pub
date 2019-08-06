@@ -51,133 +51,157 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             "bXkubW9kZWwuY29yZS5JbnZvY2F0aW9uEjEKCnByb3BlcnRpZXMYBiADKAsy",
             "HS50YXhvbm9teS5tb2RlbC5jb3JlLlByb3BlcnR5IjwKCUJlaGF2aW9ycxIv",
             "CghiZWhhdmlvchgBIAMoCzIdLnRheG9ub215Lm1vZGVsLmNvcmUuQmVoYXZp",
-            "b3IimgMKEUJlaGF2aW9yUmVmZXJlbmNlEj0KCXJlZmVyZW5jZRgBIAEoCzIq",
-            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0UmVmZXJlbmNlEkAK",
-            "E2JpbmRzX3RvX2luZmx1ZW5jZWQYAiADKAsyIy50YXhvbm9teS5tb2RlbC5j",
-            "b3JlLkJvdW5kSW5mbHVlbmNlEkEKEmluZmx1ZW5jZV9iaW5kaW5ncxgDIAMo",
-            "CzIlLnRheG9ub215Lm1vZGVsLmNvcmUuSW5mbHVlbmNlQmluZGluZxITCgtp",
-            "c19leHRlcm5hbBgEIAEoCBIYChBjb25zdHJ1Y3Rvcl90eXBlGAUgASgJEikK",
-            "C2NvbnN0cnVjdG9yGAYgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueRI0Cgtp",
-            "bnZvY2F0aW9ucxgHIAMoCzIfLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2Nh",
-            "dGlvbhIxCgpwcm9wZXJ0aWVzGAggAygLMh0udGF4b25vbXkubW9kZWwuY29y",
-            "ZS5Qcm9wZXJ0eSKNAQoOQm91bmRJbmZsdWVuY2USPAoIYXJ0aWZhY3QYASAB",
+            "b3Ii2AIKEUJlaGF2aW9yUmVmZXJlbmNlEj0KCXJlZmVyZW5jZRgBIAEoCzIq",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0UmVmZXJlbmNlEhMK",
+            "C2lzX2V4dGVybmFsGAIgASgIEhgKEGNvbnN0cnVjdG9yX3R5cGUYAyABKAkS",
+            "KQoLY29uc3RydWN0b3IYBCABKAsyFC5nb29nbGUucHJvdG9idWYuQW55EjQK",
+            "C2ludm9jYXRpb25zGAUgAygLMh8udGF4b25vbXkubW9kZWwuY29yZS5JbnZv",
+            "Y2F0aW9uEkEKEmluZmx1ZW5jZV9iaW5kaW5ncxgGIAMoCzIlLnRheG9ub215",
+            "Lm1vZGVsLmNvcmUuSW5mbHVlbmNlQmluZGluZxIxCgpwcm9wZXJ0aWVzGAcg",
+            "AygLMh0udGF4b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0eSKIAgoQSW5mbHVl",
+            "bmNlQmluZGluZxIVCg1pbmZsdWVuY2VkX2lkGAEgASgJEiAKGGluZmx1ZW5j",
+            "ZWRfaW52b2NhdGlvbl9pZBgCIAEoCRI6Cg5pbmZsdWVuY2VfdHlwZRgDIAEo",
+            "DjIiLnRheG9ub215Lm1vZGVsLmNvcmUuSW5mbHVlbmNlVHlwZRI/ChZpbmZs",
+            "dWVuY2luZ19pbnZvY2F0aW9uGAQgASgLMh8udGF4b25vbXkubW9kZWwuY29y",
+            "ZS5JbnZvY2F0aW9uEj4KFWluZmx1ZW5jZWRfaW52b2NhdGlvbhgFIAEoCzIf",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvbiKvAgoNQmVoYXZpb3JH",
+            "cm91cBIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlm",
+            "YWN0LkFydGlmYWN0EjkKCWJlaGF2aW9ycxgCIAMoCzImLnRheG9ub215Lm1v",
+            "ZGVsLmNvcmUuQmVoYXZpb3JSZWZlcmVuY2USVQoSYmVoYXZpb3JfYXJ0aWZh",
+            "Y3RzGAMgAygLMjkudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3Vw",
+            "LkJlaGF2aW9yQXJ0aWZhY3RzRW50cnkaVwoWQmVoYXZpb3JBcnRpZmFjdHNF",
+            "bnRyeRILCgNrZXkYASABKAkSLAoFdmFsdWUYAiABKAsyHS50YXhvbm9teS5t",
+            "b2RlbC5jb3JlLkJlaGF2aW9yOgI4ASJMCg5CZWhhdmlvckdyb3VwcxI6Cg5i",
+            "ZWhhdmlvcl9ncm91cBgBIAMoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUuQmVo",
+            "YXZpb3JHcm91cCKbAQoWQmVoYXZpb3JHcm91cFJlZmVyZW5jZRI9CglyZWZl",
+            "cmVuY2UYASABKAsyKi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFj",
+            "dFJlZmVyZW5jZRJCChJiZWhhdmlvcl9hcnRpZmFjdHMYAiADKAsyJi50YXhv",
+            "bm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yUmVmZXJlbmNlInUKC1Byb3BlcnR5",
+            "U2V0EjMKCGFydGlmYWN0GAEgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZh",
+            "Y3QuQXJ0aWZhY3QSMQoKcHJvcGVydGllcxgCIAMoCzIdLnRheG9ub215Lm1v",
+            "ZGVsLmNvcmUuUHJvcGVydHkiRgoMUHJvcGVydHlTZXRzEjYKDHByb3BlcnR5",
+            "X3NldBgBIAMoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQi",
+            "iAEKFFByb3BlcnR5U2V0UmVmZXJlbmNlEj0KCXJlZmVyZW5jZRgBIAEoCzIq",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0UmVmZXJlbmNlEjEK",
+            "CnByb3BlcnRpZXMYAiADKAsyHS50YXhvbm9teS5tb2RlbC5jb3JlLlByb3Bl",
+            "cnR5IooBCghQcm9wZXJ0eRIMCgRuYW1lGAEgASgJEhkKEXZhbHVlX2Rlc2Ny",
+            "aXB0aW9uGAIgASgJEhYKDnRlbXBsYXRlX3ZhbHVlGAMgASgJEj0KFHByb3Bl",
+            "cnR5X2ludm9jYXRpb25zGAQgAygLMh8udGF4b25vbXkubW9kZWwuY29yZS5J",
+            "bnZvY2F0aW9uIq8BCgpJbnZvY2F0aW9uEgoKAmlkGAEgASgJEgwKBG5hbWUY",
+            "AiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSNwoHcmVxdWVzdBgEIAEoCzIm",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblJlcXVlc3QSOQoIcmVz",
+            "cG9uc2UYBSABKAsyJy50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25S",
+            "ZXNwb25zZSKKAQoRSW52b2NhdGlvblJlcXVlc3QSHAoUY29udHJvbF9tZXNz",
+            "YWdlX25hbWUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSQgoQaW5wdXRf",
+            "cGFyYW1ldGVycxgDIAMoCzIoLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2Nh",
+            "dGlvblBhcmFtZXRlciKMAQoSSW52b2NhdGlvblJlc3BvbnNlEhwKFGNvbnRy",
+            "b2xfbWVzc2FnZV9uYW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEkMK",
+            "EW91dHB1dF9wYXJhbWV0ZXJzGAMgAygLMigudGF4b25vbXkubW9kZWwuY29y",
+            "ZS5JbnZvY2F0aW9uUGFyYW1ldGVyIj4KE0ludm9jYXRpb25QYXJhbWV0ZXIS",
+            "DAoEbmFtZRgBIAEoCRIZChF2YWx1ZV9kZXNjcmlwdGlvbhgCIAEoCSKDAQoN",
+            "VG9rZW5UZW1wbGF0ZRI1Cgdmb3JtdWxhGAEgASgLMiQudGF4b25vbXkubW9k",
+            "ZWwuY29yZS5UZW1wbGF0ZUZvcm11bGESOwoKZGVmaW5pdGlvbhgCIAEoCzIn",
+            "LnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVEZWZpbml0aW9uIqoBCg5U",
+            "b2tlblRlbXBsYXRlcxJDCgh0ZW1wbGF0ZRgBIAMoCzIxLnRheG9ub215Lm1v",
+            "ZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZXMuVGVtcGxhdGVFbnRyeRpTCg1UZW1w",
+            "bGF0ZUVudHJ5EgsKA2tleRgBIAEoCRIxCgV2YWx1ZRgCIAEoCzIiLnRheG9u",
+            "b215Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZToCOAEiugMKD1RlbXBsYXRl",
+            "Rm9ybXVsYRIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFy",
+            "dGlmYWN0LkFydGlmYWN0Ej8KDmNsYXNzaWZpY2F0aW9uGAIgASgLMicudGF4",
+            "b25vbXkubW9kZWwuYXJ0aWZhY3QuQ2xhc3NpZmljYXRpb24SNQoKdG9rZW5f",
+            "YmFzZRgDIAEoCzIhLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVCYXNl",
+            "EjgKCWJlaGF2aW9ycxgEIAMoCzIlLnRheG9ub215Lm1vZGVsLmNvcmUuVGVt",
+            "cGxhdGVCZWhhdmlvchJDCg9iZWhhdmlvcl9ncm91cHMYBSADKAsyKi50YXhv",
+            "bm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlQmVoYXZpb3JHcm91cBI/Cg1wcm9w",
+            "ZXJ0eV9zZXRzGAYgAygLMigudGF4b25vbXkubW9kZWwuY29yZS5UZW1wbGF0",
+            "ZVByb3BlcnR5U2V0EjoKDGNoaWxkX3Rva2VucxgHIAMoCzIkLnRheG9ub215",
+            "Lm1vZGVsLmNvcmUuVGVtcGxhdGVGb3JtdWxhIksKEFRlbXBsYXRlRm9ybXVs",
+            "YXMSNwoJdGVtcGxhdGVzGAEgAygLMiQudGF4b25vbXkubW9kZWwuY29yZS5U",
+            "ZW1wbGF0ZUZvcm11bGEiRQoMVGVtcGxhdGVCYXNlEjUKBGJhc2UYASABKAsy",
+            "Jy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbCJNChBU",
+            "ZW1wbGF0ZUJlaGF2aW9yEjkKCGJlaGF2aW9yGAEgASgLMicudGF4b25vbXku",
+            "bW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wiWAoVVGVtcGxhdGVCZWhh",
+            "dmlvckdyb3VwEj8KDmJlaGF2aW9yX2dyb3VwGAEgASgLMicudGF4b25vbXku",
+            "bW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RTeW1ib2wiVAoTVGVtcGxhdGVQcm9w",
+            "ZXJ0eVNldBI9Cgxwcm9wZXJ0eV9zZXQYASABKAsyJy50YXhvbm9teS5tb2Rl",
+            "bC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJvbCLKAwoSVGVtcGxhdGVEZWZpbml0",
+            "aW9uEjMKCGFydGlmYWN0GAEgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZh",
+            "Y3QuQXJ0aWZhY3QSRQoRZm9ybXVsYV9yZWZlcmVuY2UYAiABKAsyKi50YXhv",
+            "bm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFJlZmVyZW5jZRI2Cgp0b2tl",
+            "bl9iYXNlGAMgASgLMiIudGF4b25vbXkubW9kZWwuY29yZS5CYXNlUmVmZXJl",
+            "bmNlEjkKCWJlaGF2aW9ycxgEIAMoCzImLnRheG9ub215Lm1vZGVsLmNvcmUu",
+            "QmVoYXZpb3JSZWZlcmVuY2USRAoPYmVoYXZpb3JfZ3JvdXBzGAUgAygLMisu",
+            "dGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwUmVmZXJlbmNlEkAK",
+            "DXByb3BlcnR5X3NldHMYBiADKAsyKS50YXhvbm9teS5tb2RlbC5jb3JlLlBy",
+            "b3BlcnR5U2V0UmVmZXJlbmNlEj0KDGNoaWxkX3Rva2VucxgHIAMoCzInLnRh",
+            "eG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVEZWZpbml0aW9uIlMKE1RlbXBs",
+            "YXRlRGVmaW5pdGlvbnMSPAoLZGVmaW5pdGlvbnMYASADKAsyJy50YXhvbm9t",
+            "eS5tb2RlbC5jb3JlLlRlbXBsYXRlRGVmaW5pdGlvbiLDAwoSVG9rZW5TcGVj",
+            "aWZpY2F0aW9uEjMKCGFydGlmYWN0GAEgASgLMiEudGF4b25vbXkubW9kZWwu",
+            "YXJ0aWZhY3QuQXJ0aWZhY3QSSAoUZGVmaW5pdGlvbl9yZWZlcmVuY2UYAiAB",
             "KAsyKi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFJlZmVyZW5j",
-            "ZRI9ChRpbmZsdWVuY2VfaW52b2NhdGlvbhgCIAEoCzIfLnRheG9ub215Lm1v",
-            "ZGVsLmNvcmUuSW52b2NhdGlvbiIuChBJbmZsdWVuY2VCaW5kaW5nEhoKEmJv",
-            "dW5kX2luZmx1ZW5jZV9pZBgBIAEoCSKvAgoNQmVoYXZpb3JHcm91cBIzCghh",
-            "cnRpZmFjdBgBIAEoCzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlm",
-            "YWN0EjkKCWJlaGF2aW9ycxgCIAMoCzImLnRheG9ub215Lm1vZGVsLmNvcmUu",
-            "QmVoYXZpb3JSZWZlcmVuY2USVQoSYmVoYXZpb3JfYXJ0aWZhY3RzGAMgAygL",
-            "MjkudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwLkJlaGF2aW9y",
-            "QXJ0aWZhY3RzRW50cnkaVwoWQmVoYXZpb3JBcnRpZmFjdHNFbnRyeRILCgNr",
-            "ZXkYASABKAkSLAoFdmFsdWUYAiABKAsyHS50YXhvbm9teS5tb2RlbC5jb3Jl",
-            "LkJlaGF2aW9yOgI4ASJMCg5CZWhhdmlvckdyb3VwcxI6Cg5iZWhhdmlvcl9n",
-            "cm91cBgBIAMoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3JHcm91",
-            "cCKbAQoWQmVoYXZpb3JHcm91cFJlZmVyZW5jZRI9CglyZWZlcmVuY2UYASAB",
-            "KAsyKi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFJlZmVyZW5j",
-            "ZRJCChJiZWhhdmlvcl9hcnRpZmFjdHMYAiADKAsyJi50YXhvbm9teS5tb2Rl",
-            "bC5jb3JlLkJlaGF2aW9yUmVmZXJlbmNlInUKC1Byb3BlcnR5U2V0EjMKCGFy",
-            "dGlmYWN0GAEgASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZh",
-            "Y3QSMQoKcHJvcGVydGllcxgCIAMoCzIdLnRheG9ub215Lm1vZGVsLmNvcmUu",
-            "UHJvcGVydHkiRgoMUHJvcGVydHlTZXRzEjYKDHByb3BlcnR5X3NldBgBIAMo",
-            "CzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQiywEKFFByb3Bl",
-            "cnR5U2V0UmVmZXJlbmNlEj0KCXJlZmVyZW5jZRgBIAEoCzIqLnRheG9ub215",
-            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0UmVmZXJlbmNlEkEKEmluZmx1ZW5j",
-            "ZV9iaW5kaW5ncxgCIAMoCzIlLnRheG9ub215Lm1vZGVsLmNvcmUuSW5mbHVl",
-            "bmNlQmluZGluZxIxCgpwcm9wZXJ0aWVzGAMgAygLMh0udGF4b25vbXkubW9k",
-            "ZWwuY29yZS5Qcm9wZXJ0eSKDAQoNVG9rZW5UZW1wbGF0ZRI1Cgdmb3JtdWxh",
-            "GAEgASgLMiQudGF4b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZUZvcm11bGES",
-            "OwoKZGVmaW5pdGlvbhgCIAEoCzInLnRheG9ub215Lm1vZGVsLmNvcmUuVGVt",
-            "cGxhdGVEZWZpbml0aW9uIqoBCg5Ub2tlblRlbXBsYXRlcxJDCgh0ZW1wbGF0",
-            "ZRgBIAMoCzIxLnRheG9ub215Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZXMu",
-            "VGVtcGxhdGVFbnRyeRpTCg1UZW1wbGF0ZUVudHJ5EgsKA2tleRgBIAEoCRIx",
-            "CgV2YWx1ZRgCIAEoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUuVG9rZW5UZW1w",
-            "bGF0ZToCOAEiugMKD1RlbXBsYXRlRm9ybXVsYRIzCghhcnRpZmFjdBgBIAEo",
-            "CzIhLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0Ej8KDmNsYXNz",
-            "aWZpY2F0aW9uGAIgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQ2xh",
-            "c3NpZmljYXRpb24SNQoKdG9rZW5fYmFzZRgDIAEoCzIhLnRheG9ub215Lm1v",
-            "ZGVsLmNvcmUuVGVtcGxhdGVCYXNlEjgKCWJlaGF2aW9ycxgEIAMoCzIlLnRh",
-            "eG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVCZWhhdmlvchJDCg9iZWhhdmlv",
-            "cl9ncm91cHMYBSADKAsyKi50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBsYXRl",
-            "QmVoYXZpb3JHcm91cBI/Cg1wcm9wZXJ0eV9zZXRzGAYgAygLMigudGF4b25v",
-            "bXkubW9kZWwuY29yZS5UZW1wbGF0ZVByb3BlcnR5U2V0EjoKDGNoaWxkX3Rv",
-            "a2VucxgHIAMoCzIkLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxhdGVGb3Jt",
-            "dWxhIksKEFRlbXBsYXRlRm9ybXVsYXMSNwoJdGVtcGxhdGVzGAEgAygLMiQu",
-            "dGF4b25vbXkubW9kZWwuY29yZS5UZW1wbGF0ZUZvcm11bGEiRQoMVGVtcGxh",
-            "dGVCYXNlEjUKBGJhc2UYASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFj",
-            "dC5BcnRpZmFjdFN5bWJvbCJNChBUZW1wbGF0ZUJlaGF2aW9yEjkKCGJlaGF2",
-            "aW9yGAEgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RT",
-            "eW1ib2wiWAoVVGVtcGxhdGVCZWhhdmlvckdyb3VwEj8KDmJlaGF2aW9yX2dy",
-            "b3VwGAEgASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3RT",
-            "eW1ib2wiVAoTVGVtcGxhdGVQcm9wZXJ0eVNldBI9Cgxwcm9wZXJ0eV9zZXQY",
-            "ASABKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJv",
-            "bCLKAwoSVGVtcGxhdGVEZWZpbml0aW9uEjMKCGFydGlmYWN0GAEgASgLMiEu",
-            "dGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSRQoRZm9ybXVsYV9y",
-            "ZWZlcmVuY2UYAiABKAsyKi50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRp",
-            "ZmFjdFJlZmVyZW5jZRI2Cgp0b2tlbl9iYXNlGAMgASgLMiIudGF4b25vbXku",
-            "bW9kZWwuY29yZS5CYXNlUmVmZXJlbmNlEjkKCWJlaGF2aW9ycxgEIAMoCzIm",
-            "LnRheG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3JSZWZlcmVuY2USRAoPYmVo",
-            "YXZpb3JfZ3JvdXBzGAUgAygLMisudGF4b25vbXkubW9kZWwuY29yZS5CZWhh",
-            "dmlvckdyb3VwUmVmZXJlbmNlEkAKDXByb3BlcnR5X3NldHMYBiADKAsyKS50",
-            "YXhvbm9teS5tb2RlbC5jb3JlLlByb3BlcnR5U2V0UmVmZXJlbmNlEj0KDGNo",
-            "aWxkX3Rva2VucxgHIAMoCzInLnRheG9ub215Lm1vZGVsLmNvcmUuVGVtcGxh",
-            "dGVEZWZpbml0aW9uIlMKE1RlbXBsYXRlRGVmaW5pdGlvbnMSPAoLZGVmaW5p",
-            "dGlvbnMYASADKAsyJy50YXhvbm9teS5tb2RlbC5jb3JlLlRlbXBsYXRlRGVm",
-            "aW5pdGlvbiKpAwoSVG9rZW5TcGVjaWZpY2F0aW9uEjMKCGFydGlmYWN0GAEg",
-            "ASgLMiEudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQXJ0aWZhY3QSSAoUZGVm",
-            "aW5pdGlvbl9yZWZlcmVuY2UYAiABKAsyKi50YXhvbm9teS5tb2RlbC5hcnRp",
-            "ZmFjdC5BcnRpZmFjdFJlZmVyZW5jZRItCgp0b2tlbl9iYXNlGAMgASgLMhku",
-            "dGF4b25vbXkubW9kZWwuY29yZS5CYXNlEjAKCWJlaGF2aW9ycxgEIAMoCzId",
-            "LnRheG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3ISOwoPYmVoYXZpb3JfZ3Jv",
-            "dXBzGAUgAygLMiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3Vw",
-            "EjcKDXByb3BlcnR5X3NldHMYBiADKAsyIC50YXhvbm9teS5tb2RlbC5jb3Jl",
-            "LlByb3BlcnR5U2V0Ej0KDGNoaWxkX3Rva2VucxgHIAMoCzInLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuVG9rZW5TcGVjaWZpY2F0aW9uImgKCVRva2VuQmFzZRIn",
-            "CgRiYXNlGAEgASgLMhkudGF4b25vbXkubW9kZWwuY29yZS5CYXNlEjIKBnZh",
-            "bHVlcxgCIAEoCzIiLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZVJlZmVyZW5j",
-            "ZSJ4Cg1Ub2tlbkJlaGF2aW9yEi8KCGJlaGF2aW9yGAEgASgLMh0udGF4b25v",
-            "bXkubW9kZWwuY29yZS5CZWhhdmlvchI2CgZ2YWx1ZXMYAiABKAsyJi50YXhv",
-            "bm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yUmVmZXJlbmNlIocBChJUb2tlbkJl",
-            "aGF2aW9yR3JvdXASNAoIYmVoYXZpb3IYASABKAsyIi50YXhvbm9teS5tb2Rl",
-            "bC5jb3JlLkJlaGF2aW9yR3JvdXASOwoGdmFsdWVzGAIgASgLMisudGF4b25v",
-            "bXkubW9kZWwuY29yZS5CZWhhdmlvckdyb3VwUmVmZXJlbmNlIoUBChBUb2tl",
-            "blByb3BlcnR5U2V0EjYKDHByb3BlcnR5X3NldBgBIAEoCzIgLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQSOQoGdmFsdWVzGAIgASgLMikudGF4",
-            "b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0eVNldFJlZmVyZW5jZSKKAQoIUHJv",
-            "cGVydHkSDAoEbmFtZRgBIAEoCRIZChF2YWx1ZV9kZXNjcmlwdGlvbhgCIAEo",
-            "CRIWCg50ZW1wbGF0ZV92YWx1ZRgDIAEoCRI9ChRwcm9wZXJ0eV9pbnZvY2F0",
-            "aW9ucxgEIAMoCzIfLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvbiKj",
-            "AQoKSW52b2NhdGlvbhIMCgRuYW1lGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIg",
-            "ASgJEjcKB3JlcXVlc3QYAyABKAsyJi50YXhvbm9teS5tb2RlbC5jb3JlLklu",
-            "dm9jYXRpb25SZXF1ZXN0EjkKCHJlc3BvbnNlGAQgASgLMicudGF4b25vbXku",
-            "bW9kZWwuY29yZS5JbnZvY2F0aW9uUmVzcG9uc2UiigEKEUludm9jYXRpb25S",
-            "ZXF1ZXN0EhwKFGNvbnRyb2xfbWVzc2FnZV9uYW1lGAEgASgJEhMKC2Rlc2Ny",
-            "aXB0aW9uGAIgASgJEkIKEGlucHV0X3BhcmFtZXRlcnMYAyADKAsyKC50YXhv",
-            "bm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25QYXJhbWV0ZXIijAEKEkludm9j",
-            "YXRpb25SZXNwb25zZRIcChRjb250cm9sX21lc3NhZ2VfbmFtZRgBIAEoCRIT",
-            "CgtkZXNjcmlwdGlvbhgCIAEoCRJDChFvdXRwdXRfcGFyYW1ldGVycxgDIAMo",
-            "CzIoLnRheG9ub215Lm1vZGVsLmNvcmUuSW52b2NhdGlvblBhcmFtZXRlciI+",
-            "ChNJbnZvY2F0aW9uUGFyYW1ldGVyEgwKBG5hbWUYASABKAkSGQoRdmFsdWVf",
-            "ZGVzY3JpcHRpb24YAiABKAlCQQofb3JnLnR0aS50dGYudGF4b25vbXkubW9k",
-            "ZWwuY29yZVABqgIbVFRJLlRURi5UYXhvbm9teS5Nb2RlbC5Db3JlYgZwcm90",
-            "bzM="));
+            "ZRItCgp0b2tlbl9iYXNlGAMgASgLMhkudGF4b25vbXkubW9kZWwuY29yZS5C",
+            "YXNlEj0KCWJlaGF2aW9ycxgEIAMoCzIqLnRheG9ub215Lm1vZGVsLmNvcmUu",
+            "QmVoYXZpb3JTcGVjaWZpY2F0aW9uEkgKD2JlaGF2aW9yX2dyb3VwcxgFIAMo",
+            "CzIvLnRheG9ub215Lm1vZGVsLmNvcmUuQmVoYXZpb3JHcm91cFNwZWNpZmlj",
+            "YXRpb24SNwoNcHJvcGVydHlfc2V0cxgGIAMoCzIgLnRheG9ub215Lm1vZGVs",
+            "LmNvcmUuUHJvcGVydHlTZXQSPQoMY2hpbGRfdG9rZW5zGAcgAygLMicudGF4",
+            "b25vbXkubW9kZWwuY29yZS5Ub2tlblNwZWNpZmljYXRpb24ilgIKFUJlaGF2",
+            "aW9yU3BlY2lmaWNhdGlvbhIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9ub215",
+            "Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0EhMKC2lzX2V4dGVybmFsGAIgASgI",
+            "EhgKEGNvbnN0cnVjdG9yX3R5cGUYAyABKAkSKQoLY29uc3RydWN0b3IYBCAB",
+            "KAsyFC5nb29nbGUucHJvdG9idWYuQW55EjsKC2ludm9jYXRpb25zGAUgAygL",
+            "MiYudGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uQmluZGluZxIxCgpw",
+            "cm9wZXJ0aWVzGAYgAygLMh0udGF4b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0",
+            "eSJYChpCZWhhdmlvckdyb3VwU3BlY2lmaWNhdGlvbhI6CgliZWhhdmlvcnMY",
+            "ASADKAsyJy50YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFN5bWJv",
+            "bCL+AwoRSW52b2NhdGlvbkJpbmRpbmcSQwoJaW5mbHVlbmNlGAEgASgLMjAu",
+            "dGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uQmluZGluZy5JbmZsdWVu",
+            "Y2USTgoPaW52b2NhdGlvbl9zdGVwGAIgASgLMjUudGF4b25vbXkubW9kZWwu",
+            "Y29yZS5JbnZvY2F0aW9uQmluZGluZy5JbnZvY2F0aW9uU3RlcBq7AQoJSW5m",
+            "bHVlbmNlEjoKDmluZmx1ZW5jZV90eXBlGAEgASgOMiIudGF4b25vbXkubW9k",
+            "ZWwuY29yZS5JbmZsdWVuY2VUeXBlEhYKDmluZmx1ZW5jaW5nX2lkGAIgASgJ",
+            "EiEKGWluZmx1ZW5jaW5nX2ludm9jYXRpb25faWQYAyABKAkSFQoNaW5mbHVl",
+            "bmNlZF9pZBgEIAEoCRIgChhpbmZsdWVuY2VkX2ludm9jYXRpb25faWQYBSAB",
+            "KAkalQEKDkludm9jYXRpb25TdGVwEjMKCmludm9jYXRpb24YASABKAsyHy50",
+            "YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb24STgoPbmV4dF9pbnZvY2F0",
+            "aW9uGAIgASgLMjUudGF4b25vbXkubW9kZWwuY29yZS5JbnZvY2F0aW9uQmlu",
+            "ZGluZy5JbnZvY2F0aW9uU3RlcCJoCglUb2tlbkJhc2USJwoEYmFzZRgBIAEo",
+            "CzIZLnRheG9ub215Lm1vZGVsLmNvcmUuQmFzZRIyCgZ2YWx1ZXMYAiABKAsy",
+            "Ii50YXhvbm9teS5tb2RlbC5jb3JlLkJhc2VSZWZlcmVuY2UieAoNVG9rZW5C",
+            "ZWhhdmlvchIvCghiZWhhdmlvchgBIAEoCzIdLnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuQmVoYXZpb3ISNgoGdmFsdWVzGAIgASgLMiYudGF4b25vbXkubW9kZWwu",
+            "Y29yZS5CZWhhdmlvclJlZmVyZW5jZSKHAQoSVG9rZW5CZWhhdmlvckdyb3Vw",
+            "EjQKCGJlaGF2aW9yGAEgASgLMiIudGF4b25vbXkubW9kZWwuY29yZS5CZWhh",
+            "dmlvckdyb3VwEjsKBnZhbHVlcxgCIAEoCzIrLnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuQmVoYXZpb3JHcm91cFJlZmVyZW5jZSKFAQoQVG9rZW5Qcm9wZXJ0eVNl",
+            "dBI2Cgxwcm9wZXJ0eV9zZXQYASABKAsyIC50YXhvbm9teS5tb2RlbC5jb3Jl",
+            "LlByb3BlcnR5U2V0EjkKBnZhbHVlcxgCIAEoCzIpLnRheG9ub215Lm1vZGVs",
+            "LmNvcmUuUHJvcGVydHlTZXRSZWZlcmVuY2UqLAoNSW5mbHVlbmNlVHlwZRIN",
+            "CglJTlRFUkNFUFQQABIMCghPVkVSUklERRABQkEKH29yZy50dGkudHRmLnRh",
+            "eG9ub215Lm1vZGVsLmNvcmVQAaoCG1RUSS5UVEYuVGF4b25vbXkuTW9kZWwu",
+            "Q29yZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Base), global::TTI.TTF.Taxonomy.Model.Core.Base.Parser, new[]{ "Artifact", "TokenType", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Bases), global::TTI.TTF.Taxonomy.Model.Core.Bases.Parser, new[]{ "Base" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BaseReference), global::TTI.TTF.Taxonomy.Model.Core.BaseReference.Parser, new[]{ "Reference", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Behavior), global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser, new[]{ "Artifact", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Behaviors), global::TTI.TTF.Taxonomy.Model.Core.Behaviors.Parser, new[]{ "Behavior" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference), global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference.Parser, new[]{ "Reference", "BindsToInfluenced", "InfluenceBindings", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BoundInfluence), global::TTI.TTF.Taxonomy.Model.Core.BoundInfluence.Parser, new[]{ "Artifact", "InfluenceInvocation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding), global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding.Parser, new[]{ "BoundInfluenceId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference), global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference.Parser, new[]{ "Reference", "IsExternal", "ConstructorType", "Constructor", "Invocations", "InfluenceBindings", "Properties" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding), global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding.Parser, new[]{ "InfluencedId", "InfluencedInvocationId", "InfluenceType", "InfluencingInvocation", "InfluencedInvocation" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup.Parser, new[]{ "Artifact", "Behaviors", "BehaviorArtifacts" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroups), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroups.Parser, new[]{ "BehaviorGroup" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupReference), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupReference.Parser, new[]{ "Reference", "BehaviorArtifacts" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySet), global::TTI.TTF.Taxonomy.Model.Core.PropertySet.Parser, new[]{ "Artifact", "Properties" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySets), global::TTI.TTF.Taxonomy.Model.Core.PropertySets.Parser, new[]{ "PropertySet" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference), global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference.Parser, new[]{ "Reference", "InfluenceBindings", "Properties" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference), global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference.Parser, new[]{ "Reference", "Properties" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Property), global::TTI.TTF.Taxonomy.Model.Core.Property.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Invocation), global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser, new[]{ "Id", "Name", "Description", "Request", "Response" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest), global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest.Parser, new[]{ "ControlMessageName", "Description", "InputParameters" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse), global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse.Parser, new[]{ "ControlMessageName", "Description", "OutputParameters" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter), global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser, new[]{ "Name", "ValueDescription" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser, new[]{ "Formula", "Definition" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Parser, new[]{ "Template" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula), global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula.Parser, new[]{ "Artifact", "Classification", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null),
@@ -189,20 +213,27 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition), global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition.Parser, new[]{ "Artifact", "FormulaReference", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinitions), global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinitions.Parser, new[]{ "Definitions" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenSpecification), global::TTI.TTF.Taxonomy.Model.Core.TokenSpecification.Parser, new[]{ "Artifact", "DefinitionReference", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification.Parser, new[]{ "Artifact", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification.Parser, new[]{ "Behaviors" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Parser, new[]{ "Influence", "InvocationStep" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence.Parser, new[]{ "InfluenceType", "InfluencingId", "InfluencingInvocationId", "InfluencedId", "InfluencedInvocationId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep.Parser, new[]{ "Invocation", "NextInvocation" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBase), global::TTI.TTF.Taxonomy.Model.Core.TokenBase.Parser, new[]{ "Base", "Values" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBehavior), global::TTI.TTF.Taxonomy.Model.Core.TokenBehavior.Parser, new[]{ "Behavior", "Values" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.TokenBehaviorGroup.Parser, new[]{ "Behavior", "Values" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet), global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet.Parser, new[]{ "PropertySet", "Values" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Property), global::TTI.TTF.Taxonomy.Model.Core.Property.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Invocation), global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser, new[]{ "Name", "Description", "Request", "Response" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest), global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest.Parser, new[]{ "ControlMessageName", "Description", "InputParameters" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse), global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse.Parser, new[]{ "ControlMessageName", "Description", "OutputParameters" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter), global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser, new[]{ "Name", "ValueDescription" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet), global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet.Parser, new[]{ "PropertySet", "Values" }, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum InfluenceType {
+    [pbr::OriginalName("INTERCEPT")] Intercept = 0,
+    [pbr::OriginalName("OVERRIDE")] Override = 1,
+  }
+
+  #endregion
+
   #region Messages
   /// <summary>
   ///all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
@@ -1542,12 +1573,11 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BehaviorReference(BehaviorReference other) : this() {
       reference_ = other.reference_ != null ? other.reference_.Clone() : null;
-      bindsToInfluenced_ = other.bindsToInfluenced_.Clone();
-      influenceBindings_ = other.influenceBindings_.Clone();
       isExternal_ = other.isExternal_;
       constructorType_ = other.constructorType_;
       constructor_ = other.constructor_ != null ? other.constructor_.Clone() : null;
       invocations_ = other.invocations_.Clone();
+      influenceBindings_ = other.influenceBindings_.Clone();
       properties_ = other.properties_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1568,34 +1598,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       }
     }
 
-    /// <summary>Field number for the "binds_to_influenced" field.</summary>
-    public const int BindsToInfluencedFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.BoundInfluence> _repeated_bindsToInfluenced_codec
-        = pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.BoundInfluence.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BoundInfluence> bindsToInfluenced_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BoundInfluence>();
-    /// <summary>
-    ///Replaces the bound artifact's invocation with this binding. Applies to a behavior or property to be influenced, delegable and roles are examples of uses.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BoundInfluence> BindsToInfluenced {
-      get { return bindsToInfluenced_; }
-    }
-
-    /// <summary>Field number for the "influence_bindings" field.</summary>
-    public const int InfluenceBindingsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> _repeated_influenceBindings_codec
-        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> influenceBindings_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding>();
-    /// <summary>
-    ///if invocation is bound the invocations from the artifact are replaced by the binding. I.e. like a permissions check in roles.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> InfluenceBindings {
-      get { return influenceBindings_; }
-    }
-
     /// <summary>Field number for the "is_external" field.</summary>
-    public const int IsExternalFieldNumber = 4;
+    public const int IsExternalFieldNumber = 2;
     private bool isExternal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool IsExternal {
@@ -1606,7 +1610,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     }
 
     /// <summary>Field number for the "constructor_type" field.</summary>
-    public const int ConstructorTypeFieldNumber = 5;
+    public const int ConstructorTypeFieldNumber = 3;
     private string constructorType_ = "";
     /// <summary>
     ///proto message name empty if there is no constructor, used when unpacking the Any.
@@ -1620,7 +1624,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     }
 
     /// <summary>Field number for the "constructor" field.</summary>
-    public const int ConstructorFieldNumber = 6;
+    public const int ConstructorFieldNumber = 4;
     private global::Google.Protobuf.WellKnownTypes.Any constructor_;
     /// <summary>
     ///optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
@@ -1634,22 +1638,35 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     }
 
     /// <summary>Field number for the "invocations" field.</summary>
-    public const int InvocationsFieldNumber = 7;
+    public const int InvocationsFieldNumber = 5;
     private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.Invocation> _repeated_invocations_codec
-        = pb::FieldCodec.ForMessage(58, global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser);
+        = pb::FieldCodec.ForMessage(42, global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation> invocations_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation>();
     /// <summary>
-    ///values
+    ///updated invocations from the base artifact
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation> Invocations {
       get { return invocations_; }
     }
 
+    /// <summary>Field number for the "influence_bindings" field.</summary>
+    public const int InfluenceBindingsFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> _repeated_influenceBindings_codec
+        = pb::FieldCodec.ForMessage(50, global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> influenceBindings_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding>();
+    /// <summary>
+    ///influence invocation definitions, only defined in the influencing behavior, but applied during specification generation.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> InfluenceBindings {
+      get { return influenceBindings_; }
+    }
+
     /// <summary>Field number for the "properties" field.</summary>
-    public const int PropertiesFieldNumber = 8;
+    public const int PropertiesFieldNumber = 7;
     private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(66, global::TTI.TTF.Taxonomy.Model.Core.Property.Parser);
+        = pb::FieldCodec.ForMessage(58, global::TTI.TTF.Taxonomy.Model.Core.Property.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property> properties_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property>();
     /// <summary>
     ///values
@@ -1673,12 +1690,11 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         return true;
       }
       if (!object.Equals(Reference, other.Reference)) return false;
-      if(!bindsToInfluenced_.Equals(other.bindsToInfluenced_)) return false;
-      if(!influenceBindings_.Equals(other.influenceBindings_)) return false;
       if (IsExternal != other.IsExternal) return false;
       if (ConstructorType != other.ConstructorType) return false;
       if (!object.Equals(Constructor, other.Constructor)) return false;
       if(!invocations_.Equals(other.invocations_)) return false;
+      if(!influenceBindings_.Equals(other.influenceBindings_)) return false;
       if(!properties_.Equals(other.properties_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1687,12 +1703,11 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public override int GetHashCode() {
       int hash = 1;
       if (reference_ != null) hash ^= Reference.GetHashCode();
-      hash ^= bindsToInfluenced_.GetHashCode();
-      hash ^= influenceBindings_.GetHashCode();
       if (IsExternal != false) hash ^= IsExternal.GetHashCode();
       if (ConstructorType.Length != 0) hash ^= ConstructorType.GetHashCode();
       if (constructor_ != null) hash ^= Constructor.GetHashCode();
       hash ^= invocations_.GetHashCode();
+      hash ^= influenceBindings_.GetHashCode();
       hash ^= properties_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1711,21 +1726,20 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteRawTag(10);
         output.WriteMessage(Reference);
       }
-      bindsToInfluenced_.WriteTo(output, _repeated_bindsToInfluenced_codec);
-      influenceBindings_.WriteTo(output, _repeated_influenceBindings_codec);
       if (IsExternal != false) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(16);
         output.WriteBool(IsExternal);
       }
       if (ConstructorType.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(26);
         output.WriteString(ConstructorType);
       }
       if (constructor_ != null) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(34);
         output.WriteMessage(Constructor);
       }
       invocations_.WriteTo(output, _repeated_invocations_codec);
+      influenceBindings_.WriteTo(output, _repeated_influenceBindings_codec);
       properties_.WriteTo(output, _repeated_properties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1738,8 +1752,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (reference_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Reference);
       }
-      size += bindsToInfluenced_.CalculateSize(_repeated_bindsToInfluenced_codec);
-      size += influenceBindings_.CalculateSize(_repeated_influenceBindings_codec);
       if (IsExternal != false) {
         size += 1 + 1;
       }
@@ -1750,6 +1762,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Constructor);
       }
       size += invocations_.CalculateSize(_repeated_invocations_codec);
+      size += influenceBindings_.CalculateSize(_repeated_influenceBindings_codec);
       size += properties_.CalculateSize(_repeated_properties_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1768,8 +1781,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         }
         Reference.MergeFrom(other.Reference);
       }
-      bindsToInfluenced_.Add(other.bindsToInfluenced_);
-      influenceBindings_.Add(other.influenceBindings_);
       if (other.IsExternal != false) {
         IsExternal = other.IsExternal;
       }
@@ -1783,6 +1794,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         Constructor.MergeFrom(other.Constructor);
       }
       invocations_.Add(other.invocations_);
+      influenceBindings_.Add(other.influenceBindings_);
       properties_.Add(other.properties_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1802,34 +1814,30 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             input.ReadMessage(Reference);
             break;
           }
-          case 18: {
-            bindsToInfluenced_.AddEntriesFrom(input, _repeated_bindsToInfluenced_codec);
-            break;
-          }
-          case 26: {
-            influenceBindings_.AddEntriesFrom(input, _repeated_influenceBindings_codec);
-            break;
-          }
-          case 32: {
+          case 16: {
             IsExternal = input.ReadBool();
             break;
           }
-          case 42: {
+          case 26: {
             ConstructorType = input.ReadString();
             break;
           }
-          case 50: {
+          case 34: {
             if (constructor_ == null) {
               Constructor = new global::Google.Protobuf.WellKnownTypes.Any();
             }
             input.ReadMessage(Constructor);
             break;
           }
-          case 58: {
+          case 42: {
             invocations_.AddEntriesFrom(input, _repeated_invocations_codec);
             break;
           }
-          case 66: {
+          case 50: {
+            influenceBindings_.AddEntriesFrom(input, _repeated_influenceBindings_codec);
+            break;
+          }
+          case 58: {
             properties_.AddEntriesFrom(input, _repeated_properties_codec);
             break;
           }
@@ -1839,175 +1847,9 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
   }
 
-  public sealed partial class BoundInfluence : pb::IMessage<BoundInfluence> {
-    private static readonly pb::MessageParser<BoundInfluence> _parser = new pb::MessageParser<BoundInfluence>(() => new BoundInfluence());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<BoundInfluence> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[6]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BoundInfluence() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BoundInfluence(BoundInfluence other) : this() {
-      artifact_ = other.artifact_ != null ? other.artifact_.Clone() : null;
-      influenceInvocation_ = other.influenceInvocation_ != null ? other.influenceInvocation_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public BoundInfluence Clone() {
-      return new BoundInfluence(this);
-    }
-
-    /// <summary>Field number for the "artifact" field.</summary>
-    public const int ArtifactFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference artifact_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference Artifact {
-      get { return artifact_; }
-      set {
-        artifact_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "influence_invocation" field.</summary>
-    public const int InfluenceInvocationFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Core.Invocation influenceInvocation_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Core.Invocation InfluenceInvocation {
-      get { return influenceInvocation_; }
-      set {
-        influenceInvocation_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as BoundInfluence);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(BoundInfluence other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(Artifact, other.Artifact)) return false;
-      if (!object.Equals(InfluenceInvocation, other.InfluenceInvocation)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (artifact_ != null) hash ^= Artifact.GetHashCode();
-      if (influenceInvocation_ != null) hash ^= InfluenceInvocation.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (artifact_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Artifact);
-      }
-      if (influenceInvocation_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(InfluenceInvocation);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (artifact_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
-      }
-      if (influenceInvocation_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InfluenceInvocation);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(BoundInfluence other) {
-      if (other == null) {
-        return;
-      }
-      if (other.artifact_ != null) {
-        if (artifact_ == null) {
-          Artifact = new global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference();
-        }
-        Artifact.MergeFrom(other.Artifact);
-      }
-      if (other.influenceInvocation_ != null) {
-        if (influenceInvocation_ == null) {
-          InfluenceInvocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
-        }
-        InfluenceInvocation.MergeFrom(other.InfluenceInvocation);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (artifact_ == null) {
-              Artifact = new global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference();
-            }
-            input.ReadMessage(Artifact);
-            break;
-          }
-          case 18: {
-            if (influenceInvocation_ == null) {
-              InfluenceInvocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
-            }
-            input.ReadMessage(InfluenceInvocation);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
+  /// <summary>
+  ///use these to define the influencing behavior's invocation and it's target to influence within the definition, the TTF will use this to construct the Invocation Pipeline.
+  /// </summary>
   public sealed partial class InfluenceBinding : pb::IMessage<InfluenceBinding> {
     private static readonly pb::MessageParser<InfluenceBinding> _parser = new pb::MessageParser<InfluenceBinding>(() => new InfluenceBinding());
     private pb::UnknownFieldSet _unknownFields;
@@ -2016,7 +1858,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2033,7 +1875,11 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public InfluenceBinding(InfluenceBinding other) : this() {
-      boundInfluenceId_ = other.boundInfluenceId_;
+      influencedId_ = other.influencedId_;
+      influencedInvocationId_ = other.influencedInvocationId_;
+      influenceType_ = other.influenceType_;
+      influencingInvocation_ = other.influencingInvocation_ != null ? other.influencingInvocation_.Clone() : null;
+      influencedInvocation_ = other.influencedInvocation_ != null ? other.influencedInvocation_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2042,17 +1888,73 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       return new InfluenceBinding(this);
     }
 
-    /// <summary>Field number for the "bound_influence_id" field.</summary>
-    public const int BoundInfluenceIdFieldNumber = 1;
-    private string boundInfluenceId_ = "";
+    /// <summary>Field number for the "influenced_id" field.</summary>
+    public const int InfluencedIdFieldNumber = 1;
+    private string influencedId_ = "";
     /// <summary>
-    ///locates the BoundInfluence by artifact_id in the definition or behaviorGroup and replaces the bound invocation from the influencer.
+    ///the artifactId being invluenced
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string BoundInfluenceId {
-      get { return boundInfluenceId_; }
+    public string InfluencedId {
+      get { return influencedId_; }
       set {
-        boundInfluenceId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        influencedId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "influenced_invocation_id" field.</summary>
+    public const int InfluencedInvocationIdFieldNumber = 2;
+    private string influencedInvocationId_ = "";
+    /// <summary>
+    ///the invocationId in the influenced artifact to be influenced.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string InfluencedInvocationId {
+      get { return influencedInvocationId_; }
+      set {
+        influencedInvocationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "influence_type" field.</summary>
+    public const int InfluenceTypeFieldNumber = 3;
+    private global::TTI.TTF.Taxonomy.Model.Core.InfluenceType influenceType_ = 0;
+    /// <summary>
+    ///override or intercept
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.InfluenceType InfluenceType {
+      get { return influenceType_; }
+      set {
+        influenceType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "influencing_invocation" field.</summary>
+    public const int InfluencingInvocationFieldNumber = 4;
+    private global::TTI.TTF.Taxonomy.Model.Core.Invocation influencingInvocation_;
+    /// <summary>
+    ///if it is an intercept, this is the intercepting invocation, if it is override it is the modified invocation
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.Invocation InfluencingInvocation {
+      get { return influencingInvocation_; }
+      set {
+        influencingInvocation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "influenced_invocation" field.</summary>
+    public const int InfluencedInvocationFieldNumber = 5;
+    private global::TTI.TTF.Taxonomy.Model.Core.Invocation influencedInvocation_;
+    /// <summary>
+    /// if it is an intercept this is the invocation that occurs after being intercepted. If it is an override
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.Invocation InfluencedInvocation {
+      get { return influencedInvocation_; }
+      set {
+        influencedInvocation_ = value;
       }
     }
 
@@ -2069,14 +1971,22 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (BoundInfluenceId != other.BoundInfluenceId) return false;
+      if (InfluencedId != other.InfluencedId) return false;
+      if (InfluencedInvocationId != other.InfluencedInvocationId) return false;
+      if (InfluenceType != other.InfluenceType) return false;
+      if (!object.Equals(InfluencingInvocation, other.InfluencingInvocation)) return false;
+      if (!object.Equals(InfluencedInvocation, other.InfluencedInvocation)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (BoundInfluenceId.Length != 0) hash ^= BoundInfluenceId.GetHashCode();
+      if (InfluencedId.Length != 0) hash ^= InfluencedId.GetHashCode();
+      if (InfluencedInvocationId.Length != 0) hash ^= InfluencedInvocationId.GetHashCode();
+      if (InfluenceType != 0) hash ^= InfluenceType.GetHashCode();
+      if (influencingInvocation_ != null) hash ^= InfluencingInvocation.GetHashCode();
+      if (influencedInvocation_ != null) hash ^= InfluencedInvocation.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2090,9 +2000,25 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (BoundInfluenceId.Length != 0) {
+      if (InfluencedId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(BoundInfluenceId);
+        output.WriteString(InfluencedId);
+      }
+      if (InfluencedInvocationId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(InfluencedInvocationId);
+      }
+      if (InfluenceType != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) InfluenceType);
+      }
+      if (influencingInvocation_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(InfluencingInvocation);
+      }
+      if (influencedInvocation_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(InfluencedInvocation);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2102,8 +2028,20 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (BoundInfluenceId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(BoundInfluenceId);
+      if (InfluencedId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InfluencedId);
+      }
+      if (InfluencedInvocationId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(InfluencedInvocationId);
+      }
+      if (InfluenceType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InfluenceType);
+      }
+      if (influencingInvocation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InfluencingInvocation);
+      }
+      if (influencedInvocation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InfluencedInvocation);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2116,8 +2054,26 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (other == null) {
         return;
       }
-      if (other.BoundInfluenceId.Length != 0) {
-        BoundInfluenceId = other.BoundInfluenceId;
+      if (other.InfluencedId.Length != 0) {
+        InfluencedId = other.InfluencedId;
+      }
+      if (other.InfluencedInvocationId.Length != 0) {
+        InfluencedInvocationId = other.InfluencedInvocationId;
+      }
+      if (other.InfluenceType != 0) {
+        InfluenceType = other.InfluenceType;
+      }
+      if (other.influencingInvocation_ != null) {
+        if (influencingInvocation_ == null) {
+          InfluencingInvocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
+        }
+        InfluencingInvocation.MergeFrom(other.InfluencingInvocation);
+      }
+      if (other.influencedInvocation_ != null) {
+        if (influencedInvocation_ == null) {
+          InfluencedInvocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
+        }
+        InfluencedInvocation.MergeFrom(other.InfluencedInvocation);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2131,7 +2087,29 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            BoundInfluenceId = input.ReadString();
+            InfluencedId = input.ReadString();
+            break;
+          }
+          case 18: {
+            InfluencedInvocationId = input.ReadString();
+            break;
+          }
+          case 24: {
+            InfluenceType = (global::TTI.TTF.Taxonomy.Model.Core.InfluenceType) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            if (influencingInvocation_ == null) {
+              InfluencingInvocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
+            }
+            input.ReadMessage(InfluencingInvocation);
+            break;
+          }
+          case 42: {
+            if (influencedInvocation_ == null) {
+              InfluencedInvocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
+            }
+            input.ReadMessage(InfluencedInvocation);
             break;
           }
         }
@@ -2148,7 +2126,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2326,7 +2304,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[9]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2447,7 +2425,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[10]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2605,7 +2583,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[11]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2763,7 +2741,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[12]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2884,7 +2862,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[13]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2902,7 +2880,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PropertySetReference(PropertySetReference other) : this() {
       reference_ = other.reference_ != null ? other.reference_.Clone() : null;
-      influenceBindings_ = other.influenceBindings_.Clone();
       properties_ = other.properties_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -2923,23 +2900,10 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       }
     }
 
-    /// <summary>Field number for the "influence_bindings" field.</summary>
-    public const int InfluenceBindingsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> _repeated_influenceBindings_codec
-        = pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> influenceBindings_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding>();
-    /// <summary>
-    ///if invocation is bound the invocations from the artifact are replaced by the binding. I.e. like a permissions check in roles.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding> InfluenceBindings {
-      get { return influenceBindings_; }
-    }
-
     /// <summary>Field number for the "properties" field.</summary>
-    public const int PropertiesFieldNumber = 3;
+    public const int PropertiesFieldNumber = 2;
     private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.Property> _repeated_properties_codec
-        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Taxonomy.Model.Core.Property.Parser);
+        = pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.Property.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property> properties_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property>();
     /// <summary>
     ///values
@@ -2963,7 +2927,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         return true;
       }
       if (!object.Equals(Reference, other.Reference)) return false;
-      if(!influenceBindings_.Equals(other.influenceBindings_)) return false;
       if(!properties_.Equals(other.properties_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -2972,7 +2935,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public override int GetHashCode() {
       int hash = 1;
       if (reference_ != null) hash ^= Reference.GetHashCode();
-      hash ^= influenceBindings_.GetHashCode();
       hash ^= properties_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2991,7 +2953,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteRawTag(10);
         output.WriteMessage(Reference);
       }
-      influenceBindings_.WriteTo(output, _repeated_influenceBindings_codec);
       properties_.WriteTo(output, _repeated_properties_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -3004,7 +2965,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (reference_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Reference);
       }
-      size += influenceBindings_.CalculateSize(_repeated_influenceBindings_codec);
       size += properties_.CalculateSize(_repeated_properties_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3023,7 +2983,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         }
         Reference.MergeFrom(other.Reference);
       }
-      influenceBindings_.Add(other.influenceBindings_);
       properties_.Add(other.properties_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -3044,10 +3003,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             break;
           }
           case 18: {
-            influenceBindings_.AddEntriesFrom(input, _repeated_influenceBindings_codec);
-            break;
-          }
-          case 26: {
             properties_.AddEntriesFrom(input, _repeated_properties_codec);
             break;
           }
@@ -3057,7 +3012,995 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
   }
 
+  public sealed partial class Property : pb::IMessage<Property> {
+    private static readonly pb::MessageParser<Property> _parser = new pb::MessageParser<Property>(() => new Property());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Property> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Property() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Property(Property other) : this() {
+      name_ = other.name_;
+      valueDescription_ = other.valueDescription_;
+      templateValue_ = other.templateValue_;
+      propertyInvocations_ = other.propertyInvocations_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Property Clone() {
+      return new Property(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "value_description" field.</summary>
+    public const int ValueDescriptionFieldNumber = 2;
+    private string valueDescription_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ValueDescription {
+      get { return valueDescription_; }
+      set {
+        valueDescription_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "template_value" field.</summary>
+    public const int TemplateValueFieldNumber = 3;
+    private string templateValue_ = "";
+    /// <summary>
+    ///value, if needed, when applied to template
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TemplateValue {
+      get { return templateValue_; }
+      set {
+        templateValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "property_invocations" field.</summary>
+    public const int PropertyInvocationsFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.Invocation> _repeated_propertyInvocations_codec
+        = pb::FieldCodec.ForMessage(34, global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation> propertyInvocations_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation>();
+    /// <summary>
+    ///needed for non-behavioral properties
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation> PropertyInvocations {
+      get { return propertyInvocations_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Property);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Property other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (ValueDescription != other.ValueDescription) return false;
+      if (TemplateValue != other.TemplateValue) return false;
+      if(!propertyInvocations_.Equals(other.propertyInvocations_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (ValueDescription.Length != 0) hash ^= ValueDescription.GetHashCode();
+      if (TemplateValue.Length != 0) hash ^= TemplateValue.GetHashCode();
+      hash ^= propertyInvocations_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (ValueDescription.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ValueDescription);
+      }
+      if (TemplateValue.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TemplateValue);
+      }
+      propertyInvocations_.WriteTo(output, _repeated_propertyInvocations_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (ValueDescription.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ValueDescription);
+      }
+      if (TemplateValue.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TemplateValue);
+      }
+      size += propertyInvocations_.CalculateSize(_repeated_propertyInvocations_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Property other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.ValueDescription.Length != 0) {
+        ValueDescription = other.ValueDescription;
+      }
+      if (other.TemplateValue.Length != 0) {
+        TemplateValue = other.TemplateValue;
+      }
+      propertyInvocations_.Add(other.propertyInvocations_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            ValueDescription = input.ReadString();
+            break;
+          }
+          case 26: {
+            TemplateValue = input.ReadString();
+            break;
+          }
+          case 34: {
+            propertyInvocations_.AddEntriesFrom(input, _repeated_propertyInvocations_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Invocation : pb::IMessage<Invocation> {
+    private static readonly pb::MessageParser<Invocation> _parser = new pb::MessageParser<Invocation>(() => new Invocation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Invocation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Invocation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Invocation(Invocation other) : this() {
+      id_ = other.id_;
+      name_ = other.name_;
+      description_ = other.description_;
+      request_ = other.request_ != null ? other.request_.Clone() : null;
+      response_ = other.response_ != null ? other.response_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Invocation Clone() {
+      return new Invocation(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    /// <summary>
+    ///invocations are given a UUID/GUID to correctly identify influences within a definition, particularly if there is an overloaded invocation, meaning a involcation with the same name but different parameters
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    /// <summary>
+    ///property name if a property-set
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 3;
+    private string description_ = "";
+    /// <summary>
+    ///include the data type for the value.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "request" field.</summary>
+    public const int RequestFieldNumber = 4;
+    private global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest request_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest Request {
+      get { return request_; }
+      set {
+        request_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "response" field.</summary>
+    public const int ResponseFieldNumber = 5;
+    private global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse response_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse Response {
+      get { return response_; }
+      set {
+        response_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Invocation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Invocation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (Name != other.Name) return false;
+      if (Description != other.Description) return false;
+      if (!object.Equals(Request, other.Request)) return false;
+      if (!object.Equals(Response, other.Response)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (request_ != null) hash ^= Request.GetHashCode();
+      if (response_ != null) hash ^= Response.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Description);
+      }
+      if (request_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Request);
+      }
+      if (response_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Response);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (request_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Request);
+      }
+      if (response_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Response);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Invocation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      if (other.request_ != null) {
+        if (request_ == null) {
+          Request = new global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest();
+        }
+        Request.MergeFrom(other.Request);
+      }
+      if (other.response_ != null) {
+        if (response_ == null) {
+          Response = new global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse();
+        }
+        Response.MergeFrom(other.Response);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            Description = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (request_ == null) {
+              Request = new global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest();
+            }
+            input.ReadMessage(Request);
+            break;
+          }
+          case 42: {
+            if (response_ == null) {
+              Response = new global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse();
+            }
+            input.ReadMessage(Response);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class InvocationRequest : pb::IMessage<InvocationRequest> {
+    private static readonly pb::MessageParser<InvocationRequest> _parser = new pb::MessageParser<InvocationRequest>(() => new InvocationRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<InvocationRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationRequest(InvocationRequest other) : this() {
+      controlMessageName_ = other.controlMessageName_;
+      description_ = other.description_;
+      inputParameters_ = other.inputParameters_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationRequest Clone() {
+      return new InvocationRequest(this);
+    }
+
+    /// <summary>Field number for the "control_message_name" field.</summary>
+    public const int ControlMessageNameFieldNumber = 1;
+    private string controlMessageName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ControlMessageName {
+      get { return controlMessageName_; }
+      set {
+        controlMessageName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 2;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "input_parameters" field.</summary>
+    public const int InputParametersFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> _repeated_inputParameters_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> inputParameters_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> InputParameters {
+      get { return inputParameters_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as InvocationRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(InvocationRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ControlMessageName != other.ControlMessageName) return false;
+      if (Description != other.Description) return false;
+      if(!inputParameters_.Equals(other.inputParameters_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ControlMessageName.Length != 0) hash ^= ControlMessageName.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      hash ^= inputParameters_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ControlMessageName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ControlMessageName);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Description);
+      }
+      inputParameters_.WriteTo(output, _repeated_inputParameters_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ControlMessageName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ControlMessageName);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      size += inputParameters_.CalculateSize(_repeated_inputParameters_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(InvocationRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ControlMessageName.Length != 0) {
+        ControlMessageName = other.ControlMessageName;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      inputParameters_.Add(other.inputParameters_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ControlMessageName = input.ReadString();
+            break;
+          }
+          case 18: {
+            Description = input.ReadString();
+            break;
+          }
+          case 26: {
+            inputParameters_.AddEntriesFrom(input, _repeated_inputParameters_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class InvocationResponse : pb::IMessage<InvocationResponse> {
+    private static readonly pb::MessageParser<InvocationResponse> _parser = new pb::MessageParser<InvocationResponse>(() => new InvocationResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<InvocationResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationResponse(InvocationResponse other) : this() {
+      controlMessageName_ = other.controlMessageName_;
+      description_ = other.description_;
+      outputParameters_ = other.outputParameters_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationResponse Clone() {
+      return new InvocationResponse(this);
+    }
+
+    /// <summary>Field number for the "control_message_name" field.</summary>
+    public const int ControlMessageNameFieldNumber = 1;
+    private string controlMessageName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ControlMessageName {
+      get { return controlMessageName_; }
+      set {
+        controlMessageName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 2;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "output_parameters" field.</summary>
+    public const int OutputParametersFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> _repeated_outputParameters_codec
+        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> outputParameters_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> OutputParameters {
+      get { return outputParameters_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as InvocationResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(InvocationResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ControlMessageName != other.ControlMessageName) return false;
+      if (Description != other.Description) return false;
+      if(!outputParameters_.Equals(other.outputParameters_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ControlMessageName.Length != 0) hash ^= ControlMessageName.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      hash ^= outputParameters_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ControlMessageName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ControlMessageName);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Description);
+      }
+      outputParameters_.WriteTo(output, _repeated_outputParameters_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ControlMessageName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ControlMessageName);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      size += outputParameters_.CalculateSize(_repeated_outputParameters_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(InvocationResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ControlMessageName.Length != 0) {
+        ControlMessageName = other.ControlMessageName;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      outputParameters_.Add(other.outputParameters_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ControlMessageName = input.ReadString();
+            break;
+          }
+          case 18: {
+            Description = input.ReadString();
+            break;
+          }
+          case 26: {
+            outputParameters_.AddEntriesFrom(input, _repeated_outputParameters_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class InvocationParameter : pb::IMessage<InvocationParameter> {
+    private static readonly pb::MessageParser<InvocationParameter> _parser = new pb::MessageParser<InvocationParameter>(() => new InvocationParameter());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<InvocationParameter> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[17]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationParameter() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationParameter(InvocationParameter other) : this() {
+      name_ = other.name_;
+      valueDescription_ = other.valueDescription_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationParameter Clone() {
+      return new InvocationParameter(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "value_description" field.</summary>
+    public const int ValueDescriptionFieldNumber = 2;
+    private string valueDescription_ = "";
+    /// <summary>
+    ///describe the data type and restrictions like length.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ValueDescription {
+      get { return valueDescription_; }
+      set {
+        valueDescription_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as InvocationParameter);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(InvocationParameter other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (ValueDescription != other.ValueDescription) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (ValueDescription.Length != 0) hash ^= ValueDescription.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (ValueDescription.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ValueDescription);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (ValueDescription.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ValueDescription);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(InvocationParameter other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.ValueDescription.Length != 0) {
+        ValueDescription = other.ValueDescription;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            ValueDescription = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
+  ///-----------------------------Template Formula and Definitions----------------
   ///TokenTemplate is composed when the model is built using the hierarchy of the TemplateFormula followed by the TemplateDefinition.
   /// </summary>
   public sealed partial class TokenTemplate : pb::IMessage<TokenTemplate> {
@@ -3068,7 +4011,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[14]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3240,7 +4183,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[15]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3364,7 +4307,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[16]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3650,7 +4593,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[17]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3771,7 +4714,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[18]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3912,7 +4855,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[19]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4050,7 +4993,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[20]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4188,7 +5131,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[21]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4326,7 +5269,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[22]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4609,7 +5552,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[23]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4723,6 +5666,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
   }
 
   /// <summary>
+  ///----------------------Specification----------------
   ///used to dynamically build the entire Token Specification with all objects merged. Handy for documentation.
   /// </summary>
   public sealed partial class TokenSpecification : pb::IMessage<TokenSpecification> {
@@ -4733,7 +5677,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[24]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4800,21 +5744,21 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "behaviors" field.</summary>
     public const int BehaviorsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.Behavior> _repeated_behaviors_codec
-        = pb::FieldCodec.ForMessage(34, global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Behavior> behaviors_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Behavior>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification> _repeated_behaviors_codec
+        = pb::FieldCodec.ForMessage(34, global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification> behaviors_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Behavior> Behaviors {
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification> Behaviors {
       get { return behaviors_; }
     }
 
     /// <summary>Field number for the "behavior_groups" field.</summary>
     public const int BehaviorGroupsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> _repeated_behaviorGroups_codec
-        = pb::FieldCodec.ForMessage(42, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> behaviorGroups_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>();
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification> _repeated_behaviorGroups_codec
+        = pb::FieldCodec.ForMessage(42, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification> behaviorGroups_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> BehaviorGroups {
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification> BehaviorGroups {
       get { return behaviorGroups_; }
     }
 
@@ -5008,6 +5952,996 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
   }
 
+  public sealed partial class BehaviorSpecification : pb::IMessage<BehaviorSpecification> {
+    private static readonly pb::MessageParser<BehaviorSpecification> _parser = new pb::MessageParser<BehaviorSpecification>(() => new BehaviorSpecification());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BehaviorSpecification> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[29]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BehaviorSpecification() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BehaviorSpecification(BehaviorSpecification other) : this() {
+      artifact_ = other.artifact_ != null ? other.artifact_.Clone() : null;
+      isExternal_ = other.isExternal_;
+      constructorType_ = other.constructorType_;
+      constructor_ = other.constructor_ != null ? other.constructor_.Clone() : null;
+      invocations_ = other.invocations_.Clone();
+      properties_ = other.properties_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BehaviorSpecification Clone() {
+      return new BehaviorSpecification(this);
+    }
+
+    /// <summary>Field number for the "artifact" field.</summary>
+    public const int ArtifactFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.Artifact artifact_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.Artifact Artifact {
+      get { return artifact_; }
+      set {
+        artifact_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_external" field.</summary>
+    public const int IsExternalFieldNumber = 2;
+    private bool isExternal_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsExternal {
+      get { return isExternal_; }
+      set {
+        isExternal_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "constructor_type" field.</summary>
+    public const int ConstructorTypeFieldNumber = 3;
+    private string constructorType_ = "";
+    /// <summary>
+    ///proto message name empty if there is no constructor, used when unpacking the Any.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ConstructorType {
+      get { return constructorType_; }
+      set {
+        constructorType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "constructor" field.</summary>
+    public const int ConstructorFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Any constructor_;
+    /// <summary>
+    ///optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Any Constructor {
+      get { return constructor_; }
+      set {
+        constructor_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "invocations" field.</summary>
+    public const int InvocationsFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding> _repeated_invocations_codec
+        = pb::FieldCodec.ForMessage(42, global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding> invocations_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding>();
+    /// <summary>
+    ///definitions only will not have values, null for string or composite types and 0 for numbers, false for bools.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding> Invocations {
+      get { return invocations_; }
+    }
+
+    /// <summary>Field number for the "properties" field.</summary>
+    public const int PropertiesFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.Property> _repeated_properties_codec
+        = pb::FieldCodec.ForMessage(50, global::TTI.TTF.Taxonomy.Model.Core.Property.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property> properties_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property>();
+    /// <summary>
+    ///for any properties that should be added to the token if the behavior is implemented, values not set, should consider a dependent property-set.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Property> Properties {
+      get { return properties_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BehaviorSpecification);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BehaviorSpecification other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Artifact, other.Artifact)) return false;
+      if (IsExternal != other.IsExternal) return false;
+      if (ConstructorType != other.ConstructorType) return false;
+      if (!object.Equals(Constructor, other.Constructor)) return false;
+      if(!invocations_.Equals(other.invocations_)) return false;
+      if(!properties_.Equals(other.properties_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (artifact_ != null) hash ^= Artifact.GetHashCode();
+      if (IsExternal != false) hash ^= IsExternal.GetHashCode();
+      if (ConstructorType.Length != 0) hash ^= ConstructorType.GetHashCode();
+      if (constructor_ != null) hash ^= Constructor.GetHashCode();
+      hash ^= invocations_.GetHashCode();
+      hash ^= properties_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (artifact_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Artifact);
+      }
+      if (IsExternal != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsExternal);
+      }
+      if (ConstructorType.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ConstructorType);
+      }
+      if (constructor_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Constructor);
+      }
+      invocations_.WriteTo(output, _repeated_invocations_codec);
+      properties_.WriteTo(output, _repeated_properties_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (artifact_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
+      }
+      if (IsExternal != false) {
+        size += 1 + 1;
+      }
+      if (ConstructorType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ConstructorType);
+      }
+      if (constructor_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Constructor);
+      }
+      size += invocations_.CalculateSize(_repeated_invocations_codec);
+      size += properties_.CalculateSize(_repeated_properties_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BehaviorSpecification other) {
+      if (other == null) {
+        return;
+      }
+      if (other.artifact_ != null) {
+        if (artifact_ == null) {
+          Artifact = new global::TTI.TTF.Taxonomy.Model.Artifact.Artifact();
+        }
+        Artifact.MergeFrom(other.Artifact);
+      }
+      if (other.IsExternal != false) {
+        IsExternal = other.IsExternal;
+      }
+      if (other.ConstructorType.Length != 0) {
+        ConstructorType = other.ConstructorType;
+      }
+      if (other.constructor_ != null) {
+        if (constructor_ == null) {
+          Constructor = new global::Google.Protobuf.WellKnownTypes.Any();
+        }
+        Constructor.MergeFrom(other.Constructor);
+      }
+      invocations_.Add(other.invocations_);
+      properties_.Add(other.properties_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (artifact_ == null) {
+              Artifact = new global::TTI.TTF.Taxonomy.Model.Artifact.Artifact();
+            }
+            input.ReadMessage(Artifact);
+            break;
+          }
+          case 16: {
+            IsExternal = input.ReadBool();
+            break;
+          }
+          case 26: {
+            ConstructorType = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (constructor_ == null) {
+              Constructor = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(Constructor);
+            break;
+          }
+          case 42: {
+            invocations_.AddEntriesFrom(input, _repeated_invocations_codec);
+            break;
+          }
+          case 50: {
+            properties_.AddEntriesFrom(input, _repeated_properties_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class BehaviorGroupSpecification : pb::IMessage<BehaviorGroupSpecification> {
+    private static readonly pb::MessageParser<BehaviorGroupSpecification> _parser = new pb::MessageParser<BehaviorGroupSpecification>(() => new BehaviorGroupSpecification());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BehaviorGroupSpecification> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[30]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BehaviorGroupSpecification() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BehaviorGroupSpecification(BehaviorGroupSpecification other) : this() {
+      behaviors_ = other.behaviors_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BehaviorGroupSpecification Clone() {
+      return new BehaviorGroupSpecification(this);
+    }
+
+    /// <summary>Field number for the "behaviors" field.</summary>
+    public const int BehaviorsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol> _repeated_behaviors_codec
+        = pb::FieldCodec.ForMessage(10, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser);
+    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol> behaviors_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol>();
+    /// <summary>
+    ///the behaviors in the group
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol> Behaviors {
+      get { return behaviors_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BehaviorGroupSpecification);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BehaviorGroupSpecification other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!behaviors_.Equals(other.behaviors_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= behaviors_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      behaviors_.WriteTo(output, _repeated_behaviors_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += behaviors_.CalculateSize(_repeated_behaviors_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BehaviorGroupSpecification other) {
+      if (other == null) {
+        return;
+      }
+      behaviors_.Add(other.behaviors_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            behaviors_.AddEntriesFrom(input, _repeated_behaviors_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class InvocationBinding : pb::IMessage<InvocationBinding> {
+    private static readonly pb::MessageParser<InvocationBinding> _parser = new pb::MessageParser<InvocationBinding>(() => new InvocationBinding());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<InvocationBinding> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[31]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationBinding() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationBinding(InvocationBinding other) : this() {
+      influence_ = other.influence_ != null ? other.influence_.Clone() : null;
+      invocationStep_ = other.invocationStep_ != null ? other.invocationStep_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public InvocationBinding Clone() {
+      return new InvocationBinding(this);
+    }
+
+    /// <summary>Field number for the "influence" field.</summary>
+    public const int InfluenceFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence influence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence Influence {
+      get { return influence_; }
+      set {
+        influence_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "invocation_step" field.</summary>
+    public const int InvocationStepFieldNumber = 2;
+    private global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep invocationStep_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep InvocationStep {
+      get { return invocationStep_; }
+      set {
+        invocationStep_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as InvocationBinding);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(InvocationBinding other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Influence, other.Influence)) return false;
+      if (!object.Equals(InvocationStep, other.InvocationStep)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (influence_ != null) hash ^= Influence.GetHashCode();
+      if (invocationStep_ != null) hash ^= InvocationStep.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (influence_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Influence);
+      }
+      if (invocationStep_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(InvocationStep);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (influence_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Influence);
+      }
+      if (invocationStep_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InvocationStep);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(InvocationBinding other) {
+      if (other == null) {
+        return;
+      }
+      if (other.influence_ != null) {
+        if (influence_ == null) {
+          Influence = new global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence();
+        }
+        Influence.MergeFrom(other.Influence);
+      }
+      if (other.invocationStep_ != null) {
+        if (invocationStep_ == null) {
+          InvocationStep = new global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep();
+        }
+        InvocationStep.MergeFrom(other.InvocationStep);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (influence_ == null) {
+              Influence = new global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence();
+            }
+            input.ReadMessage(Influence);
+            break;
+          }
+          case 18: {
+            if (invocationStep_ == null) {
+              InvocationStep = new global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep();
+            }
+            input.ReadMessage(InvocationStep);
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the InvocationBinding message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public sealed partial class Influence : pb::IMessage<Influence> {
+        private static readonly pb::MessageParser<Influence> _parser = new pb::MessageParser<Influence>(() => new Influence());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<Influence> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public Influence() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public Influence(Influence other) : this() {
+          influenceType_ = other.influenceType_;
+          influencingId_ = other.influencingId_;
+          influencingInvocationId_ = other.influencingInvocationId_;
+          influencedId_ = other.influencedId_;
+          influencedInvocationId_ = other.influencedInvocationId_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public Influence Clone() {
+          return new Influence(this);
+        }
+
+        /// <summary>Field number for the "influence_type" field.</summary>
+        public const int InfluenceTypeFieldNumber = 1;
+        private global::TTI.TTF.Taxonomy.Model.Core.InfluenceType influenceType_ = 0;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::TTI.TTF.Taxonomy.Model.Core.InfluenceType InfluenceType {
+          get { return influenceType_; }
+          set {
+            influenceType_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "influencing_id" field.</summary>
+        public const int InfluencingIdFieldNumber = 2;
+        private string influencingId_ = "";
+        /// <summary>
+        ///the influencing artifactId
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string InfluencingId {
+          get { return influencingId_; }
+          set {
+            influencingId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "influencing_invocation_id" field.</summary>
+        public const int InfluencingInvocationIdFieldNumber = 3;
+        private string influencingInvocationId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string InfluencingInvocationId {
+          get { return influencingInvocationId_; }
+          set {
+            influencingInvocationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "influenced_id" field.</summary>
+        public const int InfluencedIdFieldNumber = 4;
+        private string influencedId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string InfluencedId {
+          get { return influencedId_; }
+          set {
+            influencedId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "influenced_invocation_id" field.</summary>
+        public const int InfluencedInvocationIdFieldNumber = 5;
+        private string influencedInvocationId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string InfluencedInvocationId {
+          get { return influencedInvocationId_; }
+          set {
+            influencedInvocationId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as Influence);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(Influence other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (InfluenceType != other.InfluenceType) return false;
+          if (InfluencingId != other.InfluencingId) return false;
+          if (InfluencingInvocationId != other.InfluencingInvocationId) return false;
+          if (InfluencedId != other.InfluencedId) return false;
+          if (InfluencedInvocationId != other.InfluencedInvocationId) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (InfluenceType != 0) hash ^= InfluenceType.GetHashCode();
+          if (InfluencingId.Length != 0) hash ^= InfluencingId.GetHashCode();
+          if (InfluencingInvocationId.Length != 0) hash ^= InfluencingInvocationId.GetHashCode();
+          if (InfluencedId.Length != 0) hash ^= InfluencedId.GetHashCode();
+          if (InfluencedInvocationId.Length != 0) hash ^= InfluencedInvocationId.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+          if (InfluenceType != 0) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) InfluenceType);
+          }
+          if (InfluencingId.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(InfluencingId);
+          }
+          if (InfluencingInvocationId.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(InfluencingInvocationId);
+          }
+          if (InfluencedId.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(InfluencedId);
+          }
+          if (InfluencedInvocationId.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(InfluencedInvocationId);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (InfluenceType != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InfluenceType);
+          }
+          if (InfluencingId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(InfluencingId);
+          }
+          if (InfluencingInvocationId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(InfluencingInvocationId);
+          }
+          if (InfluencedId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(InfluencedId);
+          }
+          if (InfluencedInvocationId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(InfluencedInvocationId);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(Influence other) {
+          if (other == null) {
+            return;
+          }
+          if (other.InfluenceType != 0) {
+            InfluenceType = other.InfluenceType;
+          }
+          if (other.InfluencingId.Length != 0) {
+            InfluencingId = other.InfluencingId;
+          }
+          if (other.InfluencingInvocationId.Length != 0) {
+            InfluencingInvocationId = other.InfluencingInvocationId;
+          }
+          if (other.InfluencedId.Length != 0) {
+            InfluencedId = other.InfluencedId;
+          }
+          if (other.InfluencedInvocationId.Length != 0) {
+            InfluencedInvocationId = other.InfluencedInvocationId;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                InfluenceType = (global::TTI.TTF.Taxonomy.Model.Core.InfluenceType) input.ReadEnum();
+                break;
+              }
+              case 18: {
+                InfluencingId = input.ReadString();
+                break;
+              }
+              case 26: {
+                InfluencingInvocationId = input.ReadString();
+                break;
+              }
+              case 34: {
+                InfluencedId = input.ReadString();
+                break;
+              }
+              case 42: {
+                InfluencedInvocationId = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+
+      }
+
+      public sealed partial class InvocationStep : pb::IMessage<InvocationStep> {
+        private static readonly pb::MessageParser<InvocationStep> _parser = new pb::MessageParser<InvocationStep>(() => new InvocationStep());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<InvocationStep> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Descriptor.NestedTypes[1]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public InvocationStep() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public InvocationStep(InvocationStep other) : this() {
+          invocation_ = other.invocation_ != null ? other.invocation_.Clone() : null;
+          nextInvocation_ = other.nextInvocation_ != null ? other.nextInvocation_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public InvocationStep Clone() {
+          return new InvocationStep(this);
+        }
+
+        /// <summary>Field number for the "invocation" field.</summary>
+        public const int InvocationFieldNumber = 1;
+        private global::TTI.TTF.Taxonomy.Model.Core.Invocation invocation_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::TTI.TTF.Taxonomy.Model.Core.Invocation Invocation {
+          get { return invocation_; }
+          set {
+            invocation_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "next_invocation" field.</summary>
+        public const int NextInvocationFieldNumber = 2;
+        private global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep nextInvocation_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep NextInvocation {
+          get { return nextInvocation_; }
+          set {
+            nextInvocation_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as InvocationStep);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(InvocationStep other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(Invocation, other.Invocation)) return false;
+          if (!object.Equals(NextInvocation, other.NextInvocation)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (invocation_ != null) hash ^= Invocation.GetHashCode();
+          if (nextInvocation_ != null) hash ^= NextInvocation.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+          if (invocation_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Invocation);
+          }
+          if (nextInvocation_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(NextInvocation);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (invocation_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Invocation);
+          }
+          if (nextInvocation_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(NextInvocation);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(InvocationStep other) {
+          if (other == null) {
+            return;
+          }
+          if (other.invocation_ != null) {
+            if (invocation_ == null) {
+              Invocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
+            }
+            Invocation.MergeFrom(other.Invocation);
+          }
+          if (other.nextInvocation_ != null) {
+            if (nextInvocation_ == null) {
+              NextInvocation = new global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep();
+            }
+            NextInvocation.MergeFrom(other.NextInvocation);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (invocation_ == null) {
+                  Invocation = new global::TTI.TTF.Taxonomy.Model.Core.Invocation();
+                }
+                input.ReadMessage(Invocation);
+                break;
+              }
+              case 18: {
+                if (nextInvocation_ == null) {
+                  NextInvocation = new global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep();
+                }
+                input.ReadMessage(NextInvocation);
+                break;
+              }
+            }
+          }
+        }
+
+      }
+
+    }
+    #endregion
+
+  }
+
   public sealed partial class TokenBase : pb::IMessage<TokenBase> {
     private static readonly pb::MessageParser<TokenBase> _parser = new pb::MessageParser<TokenBase>(() => new TokenBase());
     private pb::UnknownFieldSet _unknownFields;
@@ -5016,7 +6950,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[25]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5185,7 +7119,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[26]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5354,7 +7288,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[27]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5523,7 +7457,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[28]; }
+      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5676,965 +7610,6 @@ namespace TTI.TTF.Taxonomy.Model.Core {
               Values = new global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference();
             }
             input.ReadMessage(Values);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  ///Artifact Reference Values
-  /// </summary>
-  public sealed partial class Property : pb::IMessage<Property> {
-    private static readonly pb::MessageParser<Property> _parser = new pb::MessageParser<Property>(() => new Property());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Property> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[29]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Property() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Property(Property other) : this() {
-      name_ = other.name_;
-      valueDescription_ = other.valueDescription_;
-      templateValue_ = other.templateValue_;
-      propertyInvocations_ = other.propertyInvocations_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Property Clone() {
-      return new Property(this);
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "value_description" field.</summary>
-    public const int ValueDescriptionFieldNumber = 2;
-    private string valueDescription_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ValueDescription {
-      get { return valueDescription_; }
-      set {
-        valueDescription_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "template_value" field.</summary>
-    public const int TemplateValueFieldNumber = 3;
-    private string templateValue_ = "";
-    /// <summary>
-    ///value, if needed, when applied to template
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string TemplateValue {
-      get { return templateValue_; }
-      set {
-        templateValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "property_invocations" field.</summary>
-    public const int PropertyInvocationsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.Invocation> _repeated_propertyInvocations_codec
-        = pb::FieldCodec.ForMessage(34, global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation> propertyInvocations_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation>();
-    /// <summary>
-    ///needed for non-behavioral properties
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.Invocation> PropertyInvocations {
-      get { return propertyInvocations_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Property);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Property other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Name != other.Name) return false;
-      if (ValueDescription != other.ValueDescription) return false;
-      if (TemplateValue != other.TemplateValue) return false;
-      if(!propertyInvocations_.Equals(other.propertyInvocations_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (ValueDescription.Length != 0) hash ^= ValueDescription.GetHashCode();
-      if (TemplateValue.Length != 0) hash ^= TemplateValue.GetHashCode();
-      hash ^= propertyInvocations_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
-      }
-      if (ValueDescription.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ValueDescription);
-      }
-      if (TemplateValue.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(TemplateValue);
-      }
-      propertyInvocations_.WriteTo(output, _repeated_propertyInvocations_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (ValueDescription.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ValueDescription);
-      }
-      if (TemplateValue.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(TemplateValue);
-      }
-      size += propertyInvocations_.CalculateSize(_repeated_propertyInvocations_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Property other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.ValueDescription.Length != 0) {
-        ValueDescription = other.ValueDescription;
-      }
-      if (other.TemplateValue.Length != 0) {
-        TemplateValue = other.TemplateValue;
-      }
-      propertyInvocations_.Add(other.propertyInvocations_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Name = input.ReadString();
-            break;
-          }
-          case 18: {
-            ValueDescription = input.ReadString();
-            break;
-          }
-          case 26: {
-            TemplateValue = input.ReadString();
-            break;
-          }
-          case 34: {
-            propertyInvocations_.AddEntriesFrom(input, _repeated_propertyInvocations_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Invocation : pb::IMessage<Invocation> {
-    private static readonly pb::MessageParser<Invocation> _parser = new pb::MessageParser<Invocation>(() => new Invocation());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Invocation> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[30]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Invocation() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Invocation(Invocation other) : this() {
-      name_ = other.name_;
-      description_ = other.description_;
-      request_ = other.request_ != null ? other.request_.Clone() : null;
-      response_ = other.response_ != null ? other.response_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Invocation Clone() {
-      return new Invocation(this);
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
-    /// <summary>
-    ///property name if a property-set
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 2;
-    private string description_ = "";
-    /// <summary>
-    ///include the data type for the value.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "request" field.</summary>
-    public const int RequestFieldNumber = 3;
-    private global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest request_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest Request {
-      get { return request_; }
-      set {
-        request_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "response" field.</summary>
-    public const int ResponseFieldNumber = 4;
-    private global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse response_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse Response {
-      get { return response_; }
-      set {
-        response_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Invocation);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Invocation other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Name != other.Name) return false;
-      if (Description != other.Description) return false;
-      if (!object.Equals(Request, other.Request)) return false;
-      if (!object.Equals(Response, other.Response)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (request_ != null) hash ^= Request.GetHashCode();
-      if (response_ != null) hash ^= Response.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
-      }
-      if (Description.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Description);
-      }
-      if (request_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Request);
-      }
-      if (response_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(Response);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
-      if (request_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Request);
-      }
-      if (response_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Response);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Invocation other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
-      if (other.request_ != null) {
-        if (request_ == null) {
-          Request = new global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest();
-        }
-        Request.MergeFrom(other.Request);
-      }
-      if (other.response_ != null) {
-        if (response_ == null) {
-          Response = new global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse();
-        }
-        Response.MergeFrom(other.Response);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Name = input.ReadString();
-            break;
-          }
-          case 18: {
-            Description = input.ReadString();
-            break;
-          }
-          case 26: {
-            if (request_ == null) {
-              Request = new global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest();
-            }
-            input.ReadMessage(Request);
-            break;
-          }
-          case 34: {
-            if (response_ == null) {
-              Response = new global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse();
-            }
-            input.ReadMessage(Response);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class InvocationRequest : pb::IMessage<InvocationRequest> {
-    private static readonly pb::MessageParser<InvocationRequest> _parser = new pb::MessageParser<InvocationRequest>(() => new InvocationRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<InvocationRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[31]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationRequest(InvocationRequest other) : this() {
-      controlMessageName_ = other.controlMessageName_;
-      description_ = other.description_;
-      inputParameters_ = other.inputParameters_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationRequest Clone() {
-      return new InvocationRequest(this);
-    }
-
-    /// <summary>Field number for the "control_message_name" field.</summary>
-    public const int ControlMessageNameFieldNumber = 1;
-    private string controlMessageName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ControlMessageName {
-      get { return controlMessageName_; }
-      set {
-        controlMessageName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 2;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "input_parameters" field.</summary>
-    public const int InputParametersFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> _repeated_inputParameters_codec
-        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> inputParameters_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> InputParameters {
-      get { return inputParameters_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as InvocationRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(InvocationRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ControlMessageName != other.ControlMessageName) return false;
-      if (Description != other.Description) return false;
-      if(!inputParameters_.Equals(other.inputParameters_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ControlMessageName.Length != 0) hash ^= ControlMessageName.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
-      hash ^= inputParameters_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ControlMessageName.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ControlMessageName);
-      }
-      if (Description.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Description);
-      }
-      inputParameters_.WriteTo(output, _repeated_inputParameters_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ControlMessageName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ControlMessageName);
-      }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
-      size += inputParameters_.CalculateSize(_repeated_inputParameters_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(InvocationRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ControlMessageName.Length != 0) {
-        ControlMessageName = other.ControlMessageName;
-      }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
-      inputParameters_.Add(other.inputParameters_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ControlMessageName = input.ReadString();
-            break;
-          }
-          case 18: {
-            Description = input.ReadString();
-            break;
-          }
-          case 26: {
-            inputParameters_.AddEntriesFrom(input, _repeated_inputParameters_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class InvocationResponse : pb::IMessage<InvocationResponse> {
-    private static readonly pb::MessageParser<InvocationResponse> _parser = new pb::MessageParser<InvocationResponse>(() => new InvocationResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<InvocationResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[32]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationResponse(InvocationResponse other) : this() {
-      controlMessageName_ = other.controlMessageName_;
-      description_ = other.description_;
-      outputParameters_ = other.outputParameters_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationResponse Clone() {
-      return new InvocationResponse(this);
-    }
-
-    /// <summary>Field number for the "control_message_name" field.</summary>
-    public const int ControlMessageNameFieldNumber = 1;
-    private string controlMessageName_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ControlMessageName {
-      get { return controlMessageName_; }
-      set {
-        controlMessageName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "description" field.</summary>
-    public const int DescriptionFieldNumber = 2;
-    private string description_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Description {
-      get { return description_; }
-      set {
-        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "output_parameters" field.</summary>
-    public const int OutputParametersFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> _repeated_outputParameters_codec
-        = pb::FieldCodec.ForMessage(26, global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser);
-    private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> outputParameters_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter> OutputParameters {
-      get { return outputParameters_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as InvocationResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(InvocationResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ControlMessageName != other.ControlMessageName) return false;
-      if (Description != other.Description) return false;
-      if(!outputParameters_.Equals(other.outputParameters_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ControlMessageName.Length != 0) hash ^= ControlMessageName.GetHashCode();
-      if (Description.Length != 0) hash ^= Description.GetHashCode();
-      hash ^= outputParameters_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ControlMessageName.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ControlMessageName);
-      }
-      if (Description.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Description);
-      }
-      outputParameters_.WriteTo(output, _repeated_outputParameters_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ControlMessageName.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ControlMessageName);
-      }
-      if (Description.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
-      }
-      size += outputParameters_.CalculateSize(_repeated_outputParameters_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(InvocationResponse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ControlMessageName.Length != 0) {
-        ControlMessageName = other.ControlMessageName;
-      }
-      if (other.Description.Length != 0) {
-        Description = other.Description;
-      }
-      outputParameters_.Add(other.outputParameters_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ControlMessageName = input.ReadString();
-            break;
-          }
-          case 18: {
-            Description = input.ReadString();
-            break;
-          }
-          case 26: {
-            outputParameters_.AddEntriesFrom(input, _repeated_outputParameters_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class InvocationParameter : pb::IMessage<InvocationParameter> {
-    private static readonly pb::MessageParser<InvocationParameter> _parser = new pb::MessageParser<InvocationParameter>(() => new InvocationParameter());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<InvocationParameter> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor.MessageTypes[33]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationParameter() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationParameter(InvocationParameter other) : this() {
-      name_ = other.name_;
-      valueDescription_ = other.valueDescription_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public InvocationParameter Clone() {
-      return new InvocationParameter(this);
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "value_description" field.</summary>
-    public const int ValueDescriptionFieldNumber = 2;
-    private string valueDescription_ = "";
-    /// <summary>
-    ///describe the data type and restrictions like length.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ValueDescription {
-      get { return valueDescription_; }
-      set {
-        valueDescription_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as InvocationParameter);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(InvocationParameter other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Name != other.Name) return false;
-      if (ValueDescription != other.ValueDescription) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (ValueDescription.Length != 0) hash ^= ValueDescription.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
-      }
-      if (ValueDescription.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ValueDescription);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (ValueDescription.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ValueDescription);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(InvocationParameter other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.ValueDescription.Length != 0) {
-        ValueDescription = other.ValueDescription;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Name = input.ReadString();
-            break;
-          }
-          case 18: {
-            ValueDescription = input.ReadString();
             break;
           }
         }

@@ -92,6 +92,7 @@
       "templateValue": "0",
       "propertyInvocations": [
         {
+          "id": "01f7ef04-1215-45f1-b118-12b4a76db9ad",
           "name": "GetDecimals",
           "description": "Return the value",
           "request": {

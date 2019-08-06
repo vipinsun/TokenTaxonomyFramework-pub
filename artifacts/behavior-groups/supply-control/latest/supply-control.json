@@ -86,9 +86,7 @@
       "isExternal": false,
       "constructorType": "",
       "constructor": null,
-      "invocations": [
-        
-      ],
+      "invocations": [],
       "properties": []
     },
     {
@@ -115,31 +113,6 @@
         "referenceNotes": "Roles support requires that a role or group called 'Minters' be created that allows for account to be added. These accounts will be allowed to invoke MintTo.",
         "values": null
       },
-      "bindsToInfluenced": [
-        {
-          "artifact": {
-            "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
-            "type": "BEHAVIOR",
-            "referenceNotes": "Overriding MintTo",
-            "values": null
-          },
-          "influenceInvocation": {
-            "name": "",
-            "description": "override descriotion",
-            "request": {
-              "controlMessageName": "",
-              "description": "",
-              "inputParameters": []
-            },
-            "response": {
-              "controlMessageName": "",
-              "description": "",
-              "outputParameters": []
-            }
-          }
-        }
-      ],
-      "influenceBindings": [],
       "isExternal": false,
       "constructorType": "",
       "constructor": null,
