@@ -10,16 +10,26 @@
     },
     "name": "Hybrid",
     "aliases": [
-      "alias1",
-      "alias2"
+      "Composite",
+      "Hierarchical"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a hybrid of type: Base",
-      "businessExample": "",
+      "businessDescription": "Hybrid tokens allow you to create a hierarchy of tokens starting with a parent token being fungible or non-fungible. This parent can then have child tokens of fungible, non-fungible or even hybrid classes. This allows complex tokens like an event ticket with general admission as well as reserved seating or pooling unique assets as tokens and allowing for fractional ownership of the pool, like a mortgaged backed security. Note, this artifact is used to define a hybrid token, but not define a hybrid token. Defining a hybrid is done when composing a token template.",
+      "businessExample": "There are many business examples for hybrids with either a fungible or non-fungible parent.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "hybrid analogy 1 description",
+          "name": "Airline Ticket",
+          "description": "This is a hybrid with a non-fungible parent, the date, time and flight number, with non-fungible child tokens for each seat.",
+          "artifactDefinition": null
+        },
+        {
+          "name": "Concert Ticket",
+          "description": "This is a hybrid with a non-fungible parent, the date, time and venue of the concert, with non-fungible child tokens for each reserved seat and a class of fungible tokens for general admission.",
+          "artifactDefinition": null
+        },
+        {
+          "name": "Mortgage Backed Security",
+          "description": "Mortgage's would be represented by a non-fungible token. A collection of mortgages can be placed into a group or bundled together as children to a fungible parent token. This would make the fungible parent class the owner of all of the mortgages in the pool and allow for fractional ownership of the pooled mortgages to be represented as instances of the fungible parent.",
           "artifactDefinition": null
         }
       ],
@@ -80,36 +90,15 @@
         "artifact": null
       }
     ],
-    "maps": {
-      "codeReferences": [
-        {
-          "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
-      "artifact": null
-    }
+    "maps": {}
   },
-  "tokenType": "HYBRID"
+  "tokenType": "HYBRID",
+  "name": "",
+  "symbol": "",
+  "owner": "",
+  "quantity": "",
+  "decimals": 0,
+  "tokenProperties": {},
+  "constructorName": "",
+  "constructor": null
 }

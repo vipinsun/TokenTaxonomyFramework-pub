@@ -65,30 +65,205 @@
     ],
     "maps": {}
   },
-  "behaviorSymbols": [
+  "behaviors": [
     {
-      "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
-      "type": "BEHAVIOR",
-      "visual": "<i>m</i>",
-      "tooling": "m",
-      "version": "1.0",
-      "templateValidated": false
+      "reference": {
+        "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "referenceNotes": "Mintable in SupplyControl will be bound to the Roles behavior to determine if the requesting minter is allowed to invoke the behavior.",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": null
+        }
+      },
+      "bindsToInfluenced": [],
+      "influenceBindings": [
+        {
+          "boundInfluenceId": "c32726da-9787-4dd8-8de3-d07d1733d0f6"
+        }
+      ],
+      "isExternal": false,
+      "constructorType": "",
+      "constructor": null,
+      "invocations": [
+        
+      ],
+      "properties": []
     },
     {
-      "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
-      "type": "BEHAVIOR",
-      "visual": "<i>b</i>",
-      "tooling": "b",
-      "version": "1.0",
-      "templateValidated": false
+      "reference": {
+        "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "referenceNotes": "Burnable is not modified from the referenced behavior.",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": null
+        }
+      },
+      "isExternal": false,
+      "constructorType": "",
+      "constructor": null,
+      "invocations": [],
+      "properties": []
     },
     {
-      "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
-      "type": "BEHAVIOR",
-      "visual": "<i>r</i>",
-      "tooling": "r",
-      "version": "1.0",
-      "templateValidated": false
+      "reference": {
+        "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
+        "type": "BEHAVIOR",
+        "referenceNotes": "Roles support requires that a role or group called 'Minters' be created that allows for account to be added. These accounts will be allowed to invoke MintTo.",
+        "values": null
+      },
+      "bindsToInfluenced": [
+        {
+          "artifact": {
+            "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+            "type": "BEHAVIOR",
+            "referenceNotes": "Overriding MintTo",
+            "values": null
+          },
+          "influenceInvocation": {
+            "name": "",
+            "description": "override descriotion",
+            "request": {
+              "controlMessageName": "",
+              "description": "",
+              "inputParameters": []
+            },
+            "response": {
+              "controlMessageName": "",
+              "description": "",
+              "outputParameters": []
+            }
+          }
+        }
+      ],
+      "influenceBindings": [],
+      "isExternal": false,
+      "constructorType": "",
+      "constructor": null,
+      "invocations": [],
+      "properties": [
+        {
+          "name": "Role",
+          "valueDescription": "A group or list an account can be a member or be in.",
+          "templateValue": "Minters",
+          "propertyInvocations": [
+            {
+              "name": "GetMinters",
+              "description": "Request the the list of member accounts in the 'Minters' role.",
+              "appliesToTemplateBehaviors": [],
+              "appliesToTemplatePropertySets": [],
+              "request": {
+                "controlMessageName": "GetMintersRequest",
+                "inputParameters": [],
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "GetMintersResponse",
+                "outputParameters": [
+                  {
+                    "name": "Members",
+                    "valueDescription": "Returning the list of accounts in the 'Minters' role."
+                  }
+                ],
+                "description": "The response"
+              }
+            },
+            {
+              "name": "AddRoleMember",
+              "description": "Add a member to the group or role property.",
+              "appliesToTemplateBehaviors": [],
+              "appliesToTemplatePropertySets": [],
+              "request": {
+                "controlMessageName": "AddRoleMemberRequest",
+                "inputParameters": [
+                  {
+                    "name": "RoleName",
+                    "valueDescription": "Value is always set to 'Minters'"
+                  },
+                  {
+                    "name": "AccountAddress",
+                    "valueDescription": "Address, name or identifier of the account to be added to the 'Minters' role."
+                  }
+                ],
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "AddRoleMemberResponse",
+                "outputParameters": [
+                  {
+                    "name": "Added",
+                    "valueDescription": "True or False."
+                  }
+                ],
+                "description": "The response"
+              }
+            },
+            {
+              "name": "RemoveRoleMember",
+              "description": "Remove a member to the group or role property.",
+              "appliesToTemplateBehaviors": [],
+              "appliesToTemplatePropertySets": [],
+              "request": {
+                "controlMessageName": "RemoveRoleMemberRequest",
+                "inputParameters": [
+                  {
+                    "name": "RoleName",
+                    "valueDescription": "Always set to 'Minters'"
+                  },
+                  {
+                    "name": "AccountAddress",
+                    "valueDescription": "Address, name or identifier of the account to be removed from the role."
+                  }
+                ],
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "RemoveRoleMemberResponse",
+                "outputParameters": [
+                  {
+                    "name": "Added",
+                    "valueDescription": "True or False."
+                  }
+                ],
+                "description": "The response"
+              }
+            },
+            {
+              "name": "IsInRole",
+              "description": "Check to see if an account is in the role.",
+              "appliesToTemplateBehaviors": [],
+              "appliesToTemplatePropertySets": [],
+              "request": {
+                "controlMessageName": "IsInRoleRequest",
+                "inputParameters": [
+                  {
+                    "name": "RoleName",
+                    "valueDescription": "Always be bound to 'Minters'"
+                  },
+                  {
+                    "name": "AccountAddress",
+                    "valueDescription": "Address, name or identifier of the account to be checked."
+                  }
+                ],
+                "description": "The request may be internal only and not exposed externally."
+              },
+              "response": {
+                "controlMessageName": "IsInRoleRequestResponse",
+                "outputParameters": [
+                  {
+                    "name": "InRole",
+                    "valueDescription": "True or False."
+                  }
+                ],
+                "description": "The response"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "behaviorArtifacts": {}

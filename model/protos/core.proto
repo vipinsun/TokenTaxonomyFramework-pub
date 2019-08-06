@@ -56,16 +56,38 @@ message Behaviors{
 
 message BehaviorReference{
     taxonomy.model.artifact.ArtifactReference reference = 1;
-    bool is_external = 2;
-    string constructor_type = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
-    google.protobuf.Any constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
-    repeated Invocation invocations = 5; //values
-    repeated Property properties = 6; //values
+    repeated BoundInfluence bound_to_influenced = 2; //Replaces the bound artifact's invocation with this binding. Applies to a behavior or property to be influenced, delegable and roles are examples of uses.
+    repeated InfluenceBinding influence_bindings = 3; //if invocation is bound the invocations from the artifact are replaced by the binding. I.e. like a permissions check in roles.
+    bool is_external = 4;
+    string constructor_type = 5; //proto message name empty if there is no constructor, used when unpacking the Any.
+    google.protobuf.Any constructor = 6; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
+    repeated Invocation invocations = 7; //values
+    repeated Property properties = 8; //values
+}
+
+//figure out how to set up behavior influence bindings in Definitions.
+message BoundInvocation{
+    string bound_to_
+    Invocation invocation = 1;
+}
+
+message InvocationBinding{
+
+}
+
+message BoundInfluence{
+    taxonomy.model.artifact.ArtifactReference bound_artifact = 1;
+    Invocation influence_trigger_invocation = 2; //copied bound
+    Invocation override_influence_invocation = 3;
+}
+
+message InfluenceBinding{
+    string bound_influence_id = 1; //locates the BoundInfluence by artifact_id in the definition or behaviorGroup and replaces the bound invocation from the influencer.
 }
 
 message BehaviorGroup{
     taxonomy.model.artifact.Artifact artifact = 1;
-    repeated taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;
+    repeated BehaviorReference behaviors = 2;
     map<string, Behavior> behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
 }
 
@@ -89,7 +111,8 @@ message PropertySets{
 
 message PropertySetReference{
     taxonomy.model.artifact.ArtifactReference reference = 1;
-    repeated Property properties = 2; //values
+    repeated InfluenceBinding influence_bindings = 2; //if invocation is bound the invocations from the artifact are replaced by the binding. I.e. like a permissions check in roles.
+    repeated Property properties = 3; //values
 }
 
 //TokenTemplate is composed when the model is built using the hierarchy of the TemplateFormula followed by the TemplateDefinition.

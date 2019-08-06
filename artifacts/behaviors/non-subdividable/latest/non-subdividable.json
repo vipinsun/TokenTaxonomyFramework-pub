@@ -20,6 +20,11 @@
           "name": "Non-Fractional",
           "description": "It is not possible to own a fraction of this token.",
           "artifactDefinition": null
+        },
+        {
+          "name": "Barrel of Oil",
+          "description": "Barrels of Oil don't make sense to subdivide.",
+          "artifactDefinition": null
         }
       ],
       "comments": "",
@@ -86,7 +91,7 @@
   "properties": [
     {
       "name": "Decimals",
-      "valueDescription": "Set to Zero, not allowing any subdivision",
+      "valueDescription": "Set to Zero, not allowing any subdivision, usually this is applied to the base token.",
       "templateValue": "0",
       "propertyInvocations": [
         {

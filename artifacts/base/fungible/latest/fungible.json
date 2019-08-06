@@ -16,11 +16,16 @@
     ],
     "artifactDefinition": {
       "businessDescription": "Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token.",
-      "businessExample": "",
+      "businessExample": "Fiat currency is the most widely understood example of a fungible item. Others include inventory items in the same SKU or general admission tickets to an event.",
       "analogies": [
         {
           "name": "Physical Money or Cash",
           "description": "Cash, or fiat money, is freely accepted between parties and can have varying denominations. Money has a face value, on a coin or bill, and can be summed together to represent higher value.  It can be subdivided, making change, and consolidated from many smaller denominations to larger ones and still have the same value. ",
+          "artifactDefinition": null
+        },
+        {
+          "name": "General Admission Movie Ticket",
+          "description": "Purchasing a general admission ticket to a movie only allows for you to have a seat, but the seat that you actually get depends on factors like when you arrive.",
           "artifactDefinition": null
         }
       ],
@@ -81,36 +86,15 @@
         "artifact": null
       }
     ],
-    "maps": {
-      "codeReferences": [
-        {
-          "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
-      "artifact": null
-    }
+    "maps": {}
   },
-  "tokenType": "FUNGIBLE"
+  "tokenType": "FUNGIBLE",
+  "name": "",
+  "symbol": "",
+  "owner": "",
+  "quantity": "",
+  "decimals": 0,
+  "tokenProperties": {},
+  "constructorName": "",
+  "constructor": null
 }

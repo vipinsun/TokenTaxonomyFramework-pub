@@ -14,11 +14,16 @@
     ],
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the burning or decommissioning of token instances of the class. This does not delete a token, but rather places it in a permanent non-use state.  Burning is a one way operation and cannot be reversed. This behavior is Delegable. If the token definition is Delegable, BurnFrom will be available.",
-      "businessExample": "",
+      "businessExample": "When a token is used in a certain way, you may want to remove it from circulation or from being used again. Since the ledger doesn't allow for deletions, burning a token essentially 'deletes' the token from being used, but not from history.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "burnable analogy 1 description",
+          "name": "Oil Barrels",
+          "description": "If you mint a new token for each barrel of oil created, you may transfer ownership several times until the barrel is refined. The refining process should burn the barrel of oil to remove it from circulation.",
+          "artifactDefinition": null
+        },
+        {
+          "name": "Redeem",
+          "description": "A token that is a coupon or single use ticket, should be burned when it is redeemed.",
           "artifactDefinition": null
         }
       ],

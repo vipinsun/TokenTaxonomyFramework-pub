@@ -14,16 +14,21 @@
       "Deed"
     ],
     "artifactDefinition": {
-      "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea.",
-      "businessExample": "CryptoKitties, Art, Reserved Seat,",
+      "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea. Some Non-fungible tokens will need to be represented with their own class, meaning it will share no common properties with other tokens from the same template. These are usually referred to as singletons. Other non-fungible tokens can exist within the same class and have some shared property values while also having unique property values between instances.",
+      "businessExample": "CryptoKitties, Art, Reserved Seat for an event.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "non-fungible analogy 1 description",
+          "name": "Property Title",
+          "description": "The physical property title, land for example, have the identical look and feel from the paper, colors and seal. The difference between them are the values like property address, plot numbers, etc. These values make the title unique. There are some properties on a class of titles that are the same, like the county or jurisdiction the property is in. For titles that have some shared values and unique values, it may make more sense to define them in the same class.",
+          "artifactDefinition": null
+        },
+        {
+          "name": "Art",
+          "description": "The valuable painting or other unique piece of art may not share any property values with other paintings, unless the artist is extremely prolific in generating tens of thousands of pieces of art, it would make sense to define each piece of art as its own class. Meaning there would be only a single piece of art represented by the token class. If the art cannot be sub-divided, meaning there can be no fractional owners, this token class can be a singleton if the quantity in the class is set to 1. A singleton has only one instance in the class, essentially meaning the class is the instance, and not be sub-dividable and no new tokens can be minted in the class.",
           "artifactDefinition": null
         }
       ],
-      "comments": "",
+      "comments": "Non-fungible tokens require additional thought about how these tokens may or may not be grouped together in the same class.",
       "artifact": null
     },
     "dependencies": [
@@ -42,7 +47,7 @@
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [
       {
-        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0. This, along with a quantity set to 1, would make this non-fungible token a singleton.",
         "symbol": {
           "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
           "type": "BEHAVIOR",
@@ -66,36 +71,15 @@
         "appliesTo": []
       }
     ],
-    "maps": {
-      "codeReferences": [
-        {
-          "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
-      "artifact": null
-    }
+    "maps": {}
   },
-  "tokenType": "NON_FUNGIBLE"
+  "tokenType": "NON_FUNGIBLE",
+  "name": "",
+  "symbol": "",
+  "owner": "",
+  "quantity": "",
+  "decimals": 0,
+  "tokenProperties": {},
+  "constructorName": "",
+  "constructor": null
 }

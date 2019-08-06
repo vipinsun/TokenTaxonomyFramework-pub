@@ -421,21 +421,27 @@ namespace ArtifactGenerator
 						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "BehaviorGroups")
 					};
-					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
+					artifactBehaviorGroup.Behaviors.Add(new BehaviorReference
 					{
-						Tooling = "<i>Symbol1</i>",
-						Visual = "Symbol1"
+						Reference = new ArtifactReference
+						{
+							Id = "",
+							ReferenceNotes = "",
+							Type = ArtifactType.Behavior,
+							Values = new ArtifactReferenceValues
+							{
+								ControlUri = ""
+							}
+						},
+						Properties = { new Property
+						{
+							Name = "",
+							TemplateValue = "",
+							ValueDescription = ""
+						}}
+						
 					});
-					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
-					{
-						Tooling = "<i>Symbol2</i>",
-						Visual = "Symbol2"
-					});
-					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
-					{
-						Tooling = "<i>Symbol3<i>",
-						Visual = "Symbol3"
-					});
+			
 					artifactJson = jsf.Format(artifactBehaviorGroup);
 					break;
 				case ArtifactType.PropertySet:
@@ -595,6 +601,24 @@ namespace ArtifactGenerator
 									Id = "a guid",
 									ReferenceNotes = ""
 								},
+								BindsToInfluenced = { new BoundInfluence
+								{
+									Artifact = new ArtifactReference
+									{
+										Id = ""
+									},
+									InfluenceInvocation = new Invocation
+									{
+										Description = "override descriotion",
+										Name = "",
+										Request = new InvocationRequest(),
+										Response = new InvocationResponse()
+									}
+								}},
+								InfluenceBindings = { new InfluenceBinding
+								{
+									BoundInfluenceId = ""
+								}},
 								IsExternal = true,
 								Properties =
 								{
@@ -627,6 +651,7 @@ namespace ArtifactGenerator
 									Id = "a guid",
 									ReferenceNotes = ""
 								},
+								InfluenceBindings = { new InfluenceBinding()},
 								Properties =
 								{
 									new Property

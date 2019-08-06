@@ -18,8 +18,8 @@
       "businessExample": "",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "roles analogy 1 description",
+          "name": "Minters",
+          "description": "A role called 'Minters' for a token can have accounts in the role. The MintTo behavior invocation will be bound to the role check to ensure only account in the 'Minters' role are allowed to mint new instances in the class.",
           "artifactDefinition": null
         }
       ],

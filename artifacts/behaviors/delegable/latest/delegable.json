@@ -10,15 +10,15 @@
     },
     "name": "Delegable",
     "aliases": [
-      "To Delegate"
+      "Allow"
     ],
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the delegation of certain behaviors to another party or account to invoke them on the behalf of the owner. When applied to a token, behaviors that are Delegable will enable delegated request invocations. This is useful to provide another party to automatically be able to perform the behaviors that can be delegated without seeking permission up to a certain allowance.",
       "businessExample": "",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "delegable analogy 1 description",
+          "name": "Broker",
+          "description": "You may allow a broker to transfer your tokens as a part of an investment strategy. Setting an allowance can cap the total number of tokens the broker is allowed to perform delegated behaviors, when exceeded a new allowance request will need to be granted.",
           "artifactDefinition": null
         }
       ],
