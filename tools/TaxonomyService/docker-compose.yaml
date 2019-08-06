@@ -11,3 +11,10 @@ services:
             - artifactPath=artifacts
         ports:
             - 8086:8086
+    envoy:
+        image: tti/ttf/envoy
+        container_name: envoy
+        ports:
+            - "9080:9080"
+        links:
+            - "ttf-taxnomomy-service"

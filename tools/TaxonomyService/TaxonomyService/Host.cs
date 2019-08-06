@@ -28,7 +28,7 @@ namespace TTI.TTF.Taxonomy
 
         public override Task<Model.Taxonomy> GetLiteTaxonomy(TaxonomyVersion request, ServerCallContext context)
         {
-            _log.Info("gRpc request for: GetFullTaxonomy");
+            _log.Info("gRpc request for: GetLiteTaxonomy");
             return Task.FromResult(ModelManager.GetLiteTaxonomy(request));
         }
 
@@ -63,7 +63,7 @@ namespace TTI.TTF.Taxonomy
         
         public override Task<TemplateDefinition> GetTemplateDefinitionArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
-            _log.Info("gRpc request for: GetTokenTemplateArtifact");
+            _log.Info("gRpc request for: GetTemplateDefinitionArtifact");
             return Task.FromResult(ModelManager.GetTemplateDefinitionArtifact(symbol));
         }
 
@@ -103,19 +103,19 @@ namespace TTI.TTF.Taxonomy
         
         public override Task<IssuePullResponse> PullRequest(IssuePullRequest request, ServerCallContext ctx)
         {
-            _log.Info("gRpc request for: GetFullTaxonomy");
+            _log.Info("gRpc request for: PullRequest");
             return Task.FromResult(GitController.Pull());
         }
         
-        public override Task<ServiceConfiguration> GetConfig(Empty request, ServerCallContext ctx)
+        public override Task<ServiceConfiguration> GetConfig(ConfigurationRequest request, ServerCallContext ctx)
         {
-            _log.Info("gRpc request for: GetFullTaxonomy");
+            _log.Info("gRpc request for: GetConfig");
             return Task.FromResult(GitController.GetConfig());
         }
         
         public override Task<QueryResult> GetArtifactsOfType(QueryOptions options, ServerCallContext ctx)
         {
-            _log.Info("gRpc request for: GetFullTaxonomy");
+            _log.Info("gRpc request for: GetArtifactsOfType");
             return Task.FromResult(ModelManager.GetArtifactsOfType(options));
         }
         
