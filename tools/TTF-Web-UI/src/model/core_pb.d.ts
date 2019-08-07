@@ -373,6 +373,11 @@ export class Property extends jspb.Message {
   clearPropertyInvocationsList(): void;
   addPropertyInvocations(value?: Invocation, index?: number): Invocation;
 
+  getPropertiesList(): Array<Property>;
+  setPropertiesList(value: Array<Property>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: Property, index?: number): Property;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Property.AsObject;
   static toObject(includeInstance: boolean, msg: Property): Property.AsObject;
@@ -387,6 +392,7 @@ export namespace Property {
     valueDescription: string,
     templateValue: string,
     propertyInvocationsList: Array<Invocation.AsObject>,
+    propertiesList: Array<Property.AsObject>,
   }
 }
 

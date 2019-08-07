@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Google.Protobuf;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
@@ -277,96 +278,236 @@ namespace TTI.TTF.Taxonomy.Controllers
 		private static void BuildHierarchy(ref Model.Taxonomy taxonomy)
 		{
 			_log.Info("Building Template Hierarchy");
-			var hybrids = new HybridBranchRoot
+			var hybrids = new HybridBranch
 			{
-				FungibleParent = new BranchRoot
+				Fungible = new FungibleBranch()
 				{
-					Templates = new TokenTemplates(),
-					BranchIdentifier = new BranchIdentifier
+					Fractional = new BranchRoot
 					{
-						TokenType = TokenType.Fungible,
-						FormulaId = Guid.Empty.ToString()
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.Hybrid,
+								TokenType = TokenType.Fungible,
+								TokenUnit = TokenUnit.Fractional
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "Hybrid-FractionalFungibleParent"
+					},
+					Whole = new BranchRoot
+					{
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.Hybrid,
+								TokenType = TokenType.Fungible,
+								TokenUnit = TokenUnit.Whole
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "Hybrid-WholeFungibleParent"
 					}
 				},
-				NonFungibleParent = new BranchRoot{
-					Templates = new TokenTemplates(),
-					BranchIdentifier = new BranchIdentifier
+				NonFungible = new NonFungibleBranch
+				{
+					Fractional = new BranchRoot
 					{
-						TokenType = TokenType.NonFungible,
-						FormulaId = Guid.Empty.ToString()
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.Hybrid,
+								TokenType = TokenType.NonFungible,
+								TokenUnit = TokenUnit.Fractional
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "Hybrid-FractionalFungibleParent"
+					},
+					Whole = new BranchRoot
+					{
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.Hybrid,
+								TokenType = TokenType.NonFungible,
+								TokenUnit = TokenUnit.Whole
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "Hybrid-WholeFungibleParent"
+					},
+					Singleton = new BranchRoot
+					{
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.Hybrid,
+								TokenType = TokenType.NonFungible,
+								TokenUnit = TokenUnit.Singleton
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "Hybrid-Singleton"
 					}
 				}
 			};
-
+			
 			var hierarchy = new Hierarchy
 			{
 				Hybrids = hybrids,
-				Fungibles = new BranchRoot{
-					Templates = new TokenTemplates(),
-					BranchIdentifier = new BranchIdentifier
+				Fungibles = new FungibleBranch()
+				{
+					Fractional = new BranchRoot
 					{
-						TokenType = TokenType.Fungible,
-						FormulaId = Guid.Empty.ToString()
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.SingleToken,
+								TokenType = TokenType.Fungible,
+								TokenUnit = TokenUnit.Fractional
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "FractionalFungibleParent"
+					},
+					Whole = new BranchRoot
+					{
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.SingleToken,
+								TokenType = TokenType.Fungible,
+								TokenUnit = TokenUnit.Whole
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "WholeFungibleParent"
 					}
 				},
-				NonFungibles = new BranchRoot{
-					Templates = new TokenTemplates(),
-					BranchIdentifier = new BranchIdentifier
+				NonFungibles = new NonFungibleBranch
+				{
+					Fractional = new BranchRoot
 					{
-						TokenType = TokenType.NonFungible,
-						FormulaId = Guid.Empty.ToString()
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.SingleToken,
+								TokenType = TokenType.NonFungible,
+								TokenUnit = TokenUnit.Fractional
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "FractionalFungibleParent"
+					},
+					Whole = new BranchRoot
+					{
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.SingleToken,
+								TokenType = TokenType.NonFungible,
+								TokenUnit = TokenUnit.Whole
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "WholeFungibleParent"
+					},
+					Singleton = new BranchRoot
+					{
+						BranchIdentifier = new BranchIdentifier
+						{
+							Classification = new Classification
+							{
+								TemplateType = TemplateType.SingleToken,
+								TokenType = TokenType.NonFungible,
+								TokenUnit = TokenUnit.Singleton
+							},
+							FormulaId = Guid.Empty.ToString()
+						},
+						Name = "Singleton"
 					}
 				}
+				
 			};
 			
 			var templates = BuildTemplates(ref taxonomy);
 			foreach (var (id, template) in templates.Template)
 			{
-				switch (template.Formula.Classification.TokenType)
+				var baseType =
+					taxonomy.BaseTokenTypes.SingleOrDefault(e => e.Key == template.Formula.TokenBase.Base.Id).Value;
+				if (baseType != null)
 				{
-					case TokenType.Fungible:
-						hierarchy.Fungibles.Templates.Template.Add(id, template);
-						_log.Info("Template: " + id + " added to Fungibles");
-						break;
-					case TokenType.NonFungible:
-						hierarchy.NonFungibles.Templates.Template.Add(id, template);
-						_log.Info("Template: " + id + " added to NonFungibles");
-						break;
-					case TokenType.Hybrid:
-						var baseType = taxonomy.BaseTokenTypes.Values.SingleOrDefault(e =>
-							e.Artifact.ArtifactSymbol.Id == template.Formula.TokenBase.Base.Id);
-						if (baseType != null)
-						{
-							switch (baseType.TokenType)
+					switch (template.Formula.TemplateType)
+					{
+						case TemplateType.SingleToken:
+							switch (baseType.TokenUnit)
 							{
-								case TokenType.Fungible:
-									hierarchy.Hybrids.FungibleParent.Templates.Template.Add(id, template);
-									_log.Info("Template: " + id + " added to Hybrid/Fungibles");
+								case TokenUnit.Fractional:
+									if (baseType.TokenType == TokenType.Fungible)
+										hierarchy.Fungibles.Fractional.Templates.Template.Add(id, template);
+									else if (baseType.TokenType == TokenType.NonFungible)
+										hierarchy.NonFungibles.Fractional.Templates.Template
+											.Add(id, template);
+									_log.Info("Template: " + id + " added to Single/Fungibles");
 									break;
-								case TokenType.NonFungible:
-									hierarchy.Hybrids.NonFungibleParent.Templates.Template.Add(id, template);
-									_log.Info("Template: " + id + " added to Nybrid/Non-Fungibles");
+								case TokenUnit.Whole:
+									if (baseType.TokenType == TokenType.Fungible)
+										hierarchy.Fungibles.Whole.Templates.Template.Add(id, template);
+									else if (baseType.TokenType == TokenType.NonFungible)
+										hierarchy.NonFungibles.Whole.Templates.Template
+											.Add(id, template);
+									_log.Info("Template: " + id + " added to Single/NonFungibles");
 									break;
-								case TokenType.Hybrid:
-									_log.Error("Error for dynamic branch:  " + template.Formula.Artifact.Name);
-									_log.Error(
-										"Attempt to add a hybrid parent token type to a hybrid classification is invalid.");
+								case TokenUnit.Singleton:
+									hierarchy.NonFungibles.Singleton.Templates.Template
+										.Add(id, template);
+									_log.Info("Template: " + id + " added to Single/Singletons");
 									break;
 								default:
 									throw new ArgumentOutOfRangeException();
 							}
-						}
-						else
-						{
-							_log.Error("Error for dynamic branch:  " + template.Formula.Artifact.Name);
-							_log.Error(
-								"Attempt to locate the parent base token type failed, the branch will not be added to the hierachy.");
-						}
-						break;
-					default:
-						throw new ArgumentOutOfRangeException();
+							break;
+						case TemplateType.Hybrid:
+							switch (baseType.TokenUnit)
+							{
+								case TokenUnit.Fractional:
+									if (baseType.TokenType == TokenType.Fungible)
+										hierarchy.Hybrids.Fungible.Fractional.Templates.Template.Add(id, template);
+									else if (baseType.TokenType == TokenType.NonFungible)
+										hierarchy.Hybrids.NonFungible.Fractional.Templates.Template
+											.Add(id, template);
+									_log.Info("Template: " + id + " added to Hybrid/Fungibles");
+									break;
+								case TokenUnit.Whole:
+									if (baseType.TokenType == TokenType.Fungible)
+										hierarchy.Hybrids.Fungible.Whole.Templates.Template.Add(id, template);
+									else if (baseType.TokenType == TokenType.NonFungible)
+										hierarchy.Hybrids.NonFungible.Whole.Templates.Template
+											.Add(id, template);
+									_log.Info("Template: " + id + " added to Hybrid/NonFungibles");
+									break;
+								case TokenUnit.Singleton:
+									hierarchy.Hybrids.NonFungible.Singleton.Templates.Template
+										.Add(id, template);
+									_log.Info("Template: " + id + " added to Hybrid/Singletons");
+									break;
+								default:
+									throw new ArgumentOutOfRangeException();
+							}
+							break;
+					}
 				}
-				
+
 				taxonomy.TokenTemplateHierarchy = hierarchy;
 			}
 		}
@@ -428,7 +569,23 @@ namespace TTI.TTF.Taxonomy.Controllers
 						newBehavior.Artifact = ModelManager.MakeUniqueArtifact(newBehavior.Artifact);
 					}
 
+					if (string.IsNullOrEmpty(newBehavior.Artifact.ArtifactSymbol.Id))
+						newBehavior.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					artifactName = newBehavior.Artifact.Name.ToLower();
+					
+					//unique invocations
+					foreach (var i in newBehavior.Invocations)
+					{
+						i.Id = Guid.NewGuid().ToString().ToLower();
+					}
+
+					//unique invocations
+					foreach (var p in newBehavior.Properties)
+					{
+						foreach (var pi in p.PropertyInvocations)
+							pi.Id = Guid.NewGuid().ToString().ToLower();
+					}
+					
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newBehavior.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newBehavior.Artifact.ArtifactFiles, outputFolder, artifactName);
@@ -463,6 +620,14 @@ namespace TTI.TTF.Taxonomy.Controllers
 						newPropertySet.Artifact = ModelManager.MakeUniqueArtifact(newPropertySet.Artifact);
 					}
 					artifactName = newPropertySet.Artifact.Name.ToLower();
+					
+					//unique invocations
+					foreach (var p in newPropertySet.Properties)
+					{
+						foreach (var pi in p.PropertyInvocations)
+							pi.Id = Guid.NewGuid().ToString().ToLower();
+					}
+					
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(newPropertySet.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(newPropertySet.Artifact.ArtifactFiles, outputFolder, artifactName);
@@ -483,7 +648,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 					}
 					artifactName = Utils.FirstToUpper(templateFormula.Artifact.Name);
 					templateFormula.Artifact.Name = artifactName;
-					
+					if (string.IsNullOrEmpty(templateFormula.Artifact.ArtifactSymbol.Id))
+						templateFormula.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(templateFormula.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(templateFormula.Artifact.ArtifactFiles, outputFolder, artifactName);
@@ -503,6 +669,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 					}
 					artifactName = Utils.FirstToUpper(templateDefinition.Artifact.Name);
 					templateDefinition.Artifact.Name = artifactName;
+					
+					if (string.IsNullOrEmpty(templateDefinition.Artifact.ArtifactSymbol.Id))
+						templateDefinition.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 					if(templateDefinition.Artifact.ArtifactFiles.Count > 0)
@@ -1078,26 +1247,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return formula;
 		}
 
-		private static Base GetTokenTypeBase(string fullPath, string folderSeparator, TokenType tokenType)
+		private static Base GetTokenTypeBase(TokenType tokenType, TokenUnit tokenUnit)
 		{
 			string baseName;
 			const string typeFolder = "base";
-			
-			switch (tokenType)
-			{
-				case TokenType.Fungible:
-					baseName = "fungible";
-					break;
-				case TokenType.NonFungible:
-					baseName = "non-fungible";
-					break;
-				case TokenType.Hybrid:
-					baseName = "hybrid";
-					break;
-				default:
-					throw new ArgumentOutOfRangeException();
-			}
-			var baseFile = File.OpenText(fullPath + typeFolder + folderSeparator + baseName + folderSeparator + TxService.Latest + folderSeparator + baseName+".json");
+			var classFolder = ModelMap.GetBaseFolderName(tokenType, tokenUnit);
+			var baseFile = File.OpenText(_artifactPath + typeFolder + _folderSeparator + classFolder 
+			                             + _folderSeparator + TxService.Latest + _folderSeparator + classFolder+".json");
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
 			var baseType = JsonParser.Default.Parse<Base>(formattedJson);

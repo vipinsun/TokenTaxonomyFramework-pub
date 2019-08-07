@@ -3538,7 +3538,7 @@ proto.taxonomy.model.core.PropertySetReference.prototype.clearPropertiesList = f
  * @private {!Array<number>}
  * @const
  */
-proto.taxonomy.model.core.Property.repeatedFields_ = [4];
+proto.taxonomy.model.core.Property.repeatedFields_ = [4,5];
 
 
 
@@ -3573,7 +3573,9 @@ proto.taxonomy.model.core.Property.toObject = function(includeInstance, msg) {
     valueDescription: jspb.Message.getFieldWithDefault(msg, 2, ""),
     templateValue: jspb.Message.getFieldWithDefault(msg, 3, ""),
     propertyInvocationsList: jspb.Message.toObjectList(msg.getPropertyInvocationsList(),
-    proto.taxonomy.model.core.Invocation.toObject, includeInstance)
+    proto.taxonomy.model.core.Invocation.toObject, includeInstance),
+    propertiesList: jspb.Message.toObjectList(msg.getPropertiesList(),
+    proto.taxonomy.model.core.Property.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3626,6 +3628,11 @@ proto.taxonomy.model.core.Property.deserializeBinaryFromReader = function(msg, r
       var value = new proto.taxonomy.model.core.Invocation;
       reader.readMessage(value,proto.taxonomy.model.core.Invocation.deserializeBinaryFromReader);
       msg.addPropertyInvocations(value);
+      break;
+    case 5:
+      var value = new proto.taxonomy.model.core.Property;
+      reader.readMessage(value,proto.taxonomy.model.core.Property.deserializeBinaryFromReader);
+      msg.addProperties(value);
       break;
     default:
       reader.skipField();
@@ -3683,6 +3690,14 @@ proto.taxonomy.model.core.Property.serializeBinaryToWriter = function(message, w
       4,
       f,
       proto.taxonomy.model.core.Invocation.serializeBinaryToWriter
+    );
+  }
+  f = message.getPropertiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.taxonomy.model.core.Property.serializeBinaryToWriter
     );
   }
 };
@@ -3764,6 +3779,40 @@ proto.taxonomy.model.core.Property.prototype.addPropertyInvocations = function(o
  */
 proto.taxonomy.model.core.Property.prototype.clearPropertyInvocationsList = function() {
   this.setPropertyInvocationsList([]);
+};
+
+
+/**
+ * repeated Property properties = 5;
+ * @return {!Array<!proto.taxonomy.model.core.Property>}
+ */
+proto.taxonomy.model.core.Property.prototype.getPropertiesList = function() {
+  return /** @type{!Array<!proto.taxonomy.model.core.Property>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.Property, 5));
+};
+
+
+/** @param {!Array<!proto.taxonomy.model.core.Property>} value */
+proto.taxonomy.model.core.Property.prototype.setPropertiesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.taxonomy.model.core.Property=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.taxonomy.model.core.Property}
+ */
+proto.taxonomy.model.core.Property.prototype.addProperties = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.taxonomy.model.core.Property, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.taxonomy.model.core.Property.prototype.clearPropertiesList = function() {
+  this.setPropertiesList([]);
 };
 
 

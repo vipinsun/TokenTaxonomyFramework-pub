@@ -27,9 +27,25 @@ message TaxonomyVersion{
 }
 
 message Hierarchy {
-    BranchRoot fungibles = 1;
-    BranchRoot non_fungibles = 2;
-    HybridBranchRoot hybrids = 3;
+    FungibleBranch fungibles = 1;
+    NonFungibleBranch non_fungibles = 2;
+    HybridBranch hybrids = 3;
+}
+
+message HybridBranch{
+    FungibleBranch fungible = 1;
+    NonFungibleBranch non_fungible = 2;
+}
+
+message FungibleBranch{
+    BranchRoot fractional = 1;
+    BranchRoot whole = 2;
+}
+
+message NonFungibleBranch{
+    BranchRoot fractional = 1;
+    BranchRoot whole = 2;
+    BranchRoot singleton = 3;
 }
 
 message BranchIdentifier{
@@ -44,10 +60,5 @@ message BranchRoot{
     taxonomy.model.core.TemplateFormula branch_formula = 4;
     taxonomy.model.core.TokenTemplates templates = 5;
     repeated BranchRoot branches = 6;
-}
-
-message HybridBranchRoot{
-    BranchRoot fungible_parent = 1;
-    BranchRoot non_fungible_parent = 2;
 }
 

@@ -97,6 +97,7 @@ message Property{
     string value_description = 2; 
     string template_value = 3; //value, if needed, when applied to template
     repeated Invocation property_invocations = 4; //needed for non-behavioral properties
+    repeated Property properties = 5;
 }
 
 message Invocation{

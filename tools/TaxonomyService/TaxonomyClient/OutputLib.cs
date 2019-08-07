@@ -98,7 +98,7 @@ namespace TTI.TTF.Taxonomy
 			if (bg.Artifact != null)
 			{
 				OutputArtifact(bg.Artifact);
-				OutputBehaviorSymbols(bg.BehaviorSymbols);
+				OutputBehaviorSymbols(bg.Behaviors);
 			}
 
 			Log.Warn("	***BehaviorGroup End***");
@@ -126,13 +126,13 @@ namespace TTI.TTF.Taxonomy
 			Log.Warn("	***BehaviorGroup End***");
 		}
 
-		private static void OutputBehaviorSymbols(IEnumerable<ArtifactSymbol> bgBehaviorSymbols)
+		private static void OutputBehaviorSymbols(IEnumerable<BehaviorReference> bgBehaviorSymbols)
 		{
-			Log.Warn("		***Behavior Symbols***");
+			Log.Warn("		***Behavior Symbol ReferenceId***");
 			foreach (var s in bgBehaviorSymbols)
 			{
 				Log.Error("		----------------------------------------------");
-				Log.Info("			tooling: " + s.Tooling);
+				Log.Info("			tooling: " + s.Reference.Id);
 				Log.Error("		----------------------------------------------");
 			}
 
@@ -688,7 +688,17 @@ namespace TTI.TTF.Taxonomy
 		{
 			Log.Error("[Hierarchy]:");
 			Log.Warn("	-Fungibles:");
-			foreach (var f in taxonomyTokenTemplateHierarchy.Fungibles.Templates.Template)
+			Log.Warn("		-Fractional:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.Fungibles.Fractional.Templates.Template)
+			{
+				Log.Error("				---------------------------------------------------");
+				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
+				Log.Info("				-Aliases: " + f.Value.Definition.Artifact.Aliases);
+				Log.Info("				-Formula: " + f.Value.Definition.Artifact.ArtifactSymbol.Tooling);
+				Log.Error("				---------------------------------------------------");
+			}
+			Log.Warn("		-Whole:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.Fungibles.Whole.Templates.Template)
 			{
 				Log.Error("				---------------------------------------------------");
 				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
@@ -698,7 +708,8 @@ namespace TTI.TTF.Taxonomy
 			}
 
 			Log.Warn("	-Non-Fungibles:");
-			foreach (var f in taxonomyTokenTemplateHierarchy.NonFungibles.Templates.Template)
+			Log.Warn("		-Fractional:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.NonFungibles.Fractional.Templates.Template)
 			{
 				Log.Error("				---------------------------------------------------");
 				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
@@ -706,9 +717,36 @@ namespace TTI.TTF.Taxonomy
 				Log.Info("				-Formula: " + f.Value.Definition.Artifact.ArtifactSymbol.Tooling);
 				Log.Error("				---------------------------------------------------");
 			}
-
+			Log.Warn("		-Whole:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.NonFungibles.Whole.Templates.Template)
+			{
+				Log.Error("				---------------------------------------------------");
+				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
+				Log.Info("				-Aliases: " + f.Value.Definition.Artifact.Aliases);
+				Log.Info("				-Formula: " + f.Value.Definition.Artifact.ArtifactSymbol.Tooling);
+				Log.Error("				---------------------------------------------------");
+			}
+			Log.Warn("		-Singleton:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.NonFungibles.Singleton.Templates.Template)
+			{
+				Log.Error("				---------------------------------------------------");
+				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
+				Log.Info("				-Aliases: " + f.Value.Definition.Artifact.Aliases);
+				Log.Info("				-Formula: " + f.Value.Definition.Artifact.ArtifactSymbol.Tooling);
+				Log.Error("				---------------------------------------------------");
+			}
 			Log.Warn("	-Hybrid Fungible Parent:");
-			foreach (var f in taxonomyTokenTemplateHierarchy.Hybrids.FungibleParent.Templates.Template)
+			Log.Warn("		-Singleton:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.Hybrids.Fungible.Fractional.Templates.Template)
+			{
+				Log.Error("				---------------------------------------------------");
+				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
+				Log.Info("				-Aliases: " + f.Value.Definition.Artifact.Aliases);
+				Log.Info("				-Formula: " + f.Value.Definition.Artifact.ArtifactSymbol.Tooling);
+				Log.Error("				---------------------------------------------------");
+			}
+			Log.Warn("		-Whole:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.Hybrids.Fungible.Whole.Templates.Template)
 			{
 				Log.Error("				---------------------------------------------------");
 				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
@@ -718,7 +756,26 @@ namespace TTI.TTF.Taxonomy
 			}
 			
 			Log.Warn("	-Hybrid Non-Fungible Parent:");
-			foreach (var f in taxonomyTokenTemplateHierarchy.Hybrids.NonFungibleParent.Templates.Template)
+			Log.Warn("		-Fractional:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.Hybrids.NonFungible.Fractional.Templates.Template)
+			{
+				Log.Error("				---------------------------------------------------");
+				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
+				Log.Info("				-Aliases: " + f.Value.Definition.Artifact.Aliases);
+				Log.Info("				-Formula: " + f.Value.Definition.Artifact.ArtifactSymbol.Tooling);
+				Log.Error("				---------------------------------------------------");
+			}
+			Log.Warn("		-Whole:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.Hybrids.NonFungible.Whole.Templates.Template)
+			{
+				Log.Error("				---------------------------------------------------");
+				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
+				Log.Info("				-Aliases: " + f.Value.Definition.Artifact.Aliases);
+				Log.Info("				-Formula: " + f.Value.Definition.Artifact.ArtifactSymbol.Tooling);
+				Log.Error("				---------------------------------------------------");
+			}
+			Log.Warn("		-Singleton:");
+			foreach (var f in taxonomyTokenTemplateHierarchy.Hybrids.NonFungible.Singleton.Templates.Template)
 			{
 				Log.Error("				---------------------------------------------------");
 				Log.Info("				-Name: " + f.Value.Definition.Artifact.Name);
