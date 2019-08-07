@@ -13,6 +13,9 @@ export class Base extends jspb.Message {
   getTokenType(): artifact_pb.TokenType;
   setTokenType(value: artifact_pb.TokenType): void;
 
+  getTokenUnit(): artifact_pb.TokenUnit;
+  setTokenUnit(value: artifact_pb.TokenUnit): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -53,6 +56,7 @@ export namespace Base {
   export type AsObject = {
     artifact?: artifact_pb.Artifact.AsObject,
     tokenType: artifact_pb.TokenType,
+    tokenUnit: artifact_pb.TokenUnit,
     name: string,
     symbol: string,
     owner: string,
@@ -203,96 +207,6 @@ export class Behaviors extends jspb.Message {
 export namespace Behaviors {
   export type AsObject = {
     behaviorList: Array<Behavior.AsObject>,
-  }
-}
-
-export class BehaviorReference extends jspb.Message {
-  getReference(): artifact_pb.ArtifactReference | undefined;
-  setReference(value?: artifact_pb.ArtifactReference): void;
-  hasReference(): boolean;
-  clearReference(): void;
-
-  getIsExternal(): boolean;
-  setIsExternal(value: boolean): void;
-
-  getConstructorType(): string;
-  setConstructorType(value: string): void;
-
-  getConstructor(): google_protobuf_any_pb.Any | undefined;
-  setConstructor(value?: google_protobuf_any_pb.Any): void;
-  hasConstructor(): boolean;
-  clearConstructor(): void;
-
-  getInvocationsList(): Array<Invocation>;
-  setInvocationsList(value: Array<Invocation>): void;
-  clearInvocationsList(): void;
-  addInvocations(value?: Invocation, index?: number): Invocation;
-
-  getInfluenceBindingsList(): Array<InfluenceBinding>;
-  setInfluenceBindingsList(value: Array<InfluenceBinding>): void;
-  clearInfluenceBindingsList(): void;
-  addInfluenceBindings(value?: InfluenceBinding, index?: number): InfluenceBinding;
-
-  getPropertiesList(): Array<Property>;
-  setPropertiesList(value: Array<Property>): void;
-  clearPropertiesList(): void;
-  addProperties(value?: Property, index?: number): Property;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BehaviorReference.AsObject;
-  static toObject(includeInstance: boolean, msg: BehaviorReference): BehaviorReference.AsObject;
-  static serializeBinaryToWriter(message: BehaviorReference, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BehaviorReference;
-  static deserializeBinaryFromReader(message: BehaviorReference, reader: jspb.BinaryReader): BehaviorReference;
-}
-
-export namespace BehaviorReference {
-  export type AsObject = {
-    reference?: artifact_pb.ArtifactReference.AsObject,
-    isExternal: boolean,
-    constructorType: string,
-    constructor?: google_protobuf_any_pb.Any.AsObject,
-    invocationsList: Array<Invocation.AsObject>,
-    influenceBindingsList: Array<InfluenceBinding.AsObject>,
-    propertiesList: Array<Property.AsObject>,
-  }
-}
-
-export class InfluenceBinding extends jspb.Message {
-  getInfluencedId(): string;
-  setInfluencedId(value: string): void;
-
-  getInfluencedInvocationId(): string;
-  setInfluencedInvocationId(value: string): void;
-
-  getInfluenceType(): InfluenceType;
-  setInfluenceType(value: InfluenceType): void;
-
-  getInfluencingInvocation(): Invocation | undefined;
-  setInfluencingInvocation(value?: Invocation): void;
-  hasInfluencingInvocation(): boolean;
-  clearInfluencingInvocation(): void;
-
-  getInfluencedInvocation(): Invocation | undefined;
-  setInfluencedInvocation(value?: Invocation): void;
-  hasInfluencedInvocation(): boolean;
-  clearInfluencedInvocation(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InfluenceBinding.AsObject;
-  static toObject(includeInstance: boolean, msg: InfluenceBinding): InfluenceBinding.AsObject;
-  static serializeBinaryToWriter(message: InfluenceBinding, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InfluenceBinding;
-  static deserializeBinaryFromReader(message: InfluenceBinding, reader: jspb.BinaryReader): InfluenceBinding;
-}
-
-export namespace InfluenceBinding {
-  export type AsObject = {
-    influencedId: string,
-    influencedInvocationId: string,
-    influenceType: InfluenceType,
-    influencingInvocation?: Invocation.AsObject,
-    influencedInvocation?: Invocation.AsObject,
   }
 }
 
@@ -642,10 +556,8 @@ export class TemplateFormula extends jspb.Message {
   hasArtifact(): boolean;
   clearArtifact(): void;
 
-  getClassification(): artifact_pb.Classification | undefined;
-  setClassification(value?: artifact_pb.Classification): void;
-  hasClassification(): boolean;
-  clearClassification(): void;
+  getTemplateType(): artifact_pb.TemplateType;
+  setTemplateType(value: artifact_pb.TemplateType): void;
 
   getTokenBase(): TemplateBase | undefined;
   setTokenBase(value?: TemplateBase): void;
@@ -683,7 +595,7 @@ export class TemplateFormula extends jspb.Message {
 export namespace TemplateFormula {
   export type AsObject = {
     artifact?: artifact_pb.Artifact.AsObject,
-    classification?: artifact_pb.Classification.AsObject,
+    templateType: artifact_pb.TemplateType,
     tokenBase?: TemplateBase.AsObject,
     behaviorsList: Array<TemplateBehavior.AsObject>,
     behaviorGroupsList: Array<TemplateBehaviorGroup.AsObject>,
@@ -865,6 +777,96 @@ export class TemplateDefinitions extends jspb.Message {
 export namespace TemplateDefinitions {
   export type AsObject = {
     definitionsList: Array<TemplateDefinition.AsObject>,
+  }
+}
+
+export class BehaviorReference extends jspb.Message {
+  getReference(): artifact_pb.ArtifactReference | undefined;
+  setReference(value?: artifact_pb.ArtifactReference): void;
+  hasReference(): boolean;
+  clearReference(): void;
+
+  getIsExternal(): boolean;
+  setIsExternal(value: boolean): void;
+
+  getConstructorType(): string;
+  setConstructorType(value: string): void;
+
+  getConstructor(): google_protobuf_any_pb.Any | undefined;
+  setConstructor(value?: google_protobuf_any_pb.Any): void;
+  hasConstructor(): boolean;
+  clearConstructor(): void;
+
+  getInvocationsList(): Array<Invocation>;
+  setInvocationsList(value: Array<Invocation>): void;
+  clearInvocationsList(): void;
+  addInvocations(value?: Invocation, index?: number): Invocation;
+
+  getInfluenceBindingsList(): Array<InfluenceBinding>;
+  setInfluenceBindingsList(value: Array<InfluenceBinding>): void;
+  clearInfluenceBindingsList(): void;
+  addInfluenceBindings(value?: InfluenceBinding, index?: number): InfluenceBinding;
+
+  getPropertiesList(): Array<Property>;
+  setPropertiesList(value: Array<Property>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: Property, index?: number): Property;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BehaviorReference.AsObject;
+  static toObject(includeInstance: boolean, msg: BehaviorReference): BehaviorReference.AsObject;
+  static serializeBinaryToWriter(message: BehaviorReference, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BehaviorReference;
+  static deserializeBinaryFromReader(message: BehaviorReference, reader: jspb.BinaryReader): BehaviorReference;
+}
+
+export namespace BehaviorReference {
+  export type AsObject = {
+    reference?: artifact_pb.ArtifactReference.AsObject,
+    isExternal: boolean,
+    constructorType: string,
+    constructor?: google_protobuf_any_pb.Any.AsObject,
+    invocationsList: Array<Invocation.AsObject>,
+    influenceBindingsList: Array<InfluenceBinding.AsObject>,
+    propertiesList: Array<Property.AsObject>,
+  }
+}
+
+export class InfluenceBinding extends jspb.Message {
+  getInfluencedId(): string;
+  setInfluencedId(value: string): void;
+
+  getInfluencedInvocationId(): string;
+  setInfluencedInvocationId(value: string): void;
+
+  getInfluenceType(): InfluenceType;
+  setInfluenceType(value: InfluenceType): void;
+
+  getInfluencingInvocation(): Invocation | undefined;
+  setInfluencingInvocation(value?: Invocation): void;
+  hasInfluencingInvocation(): boolean;
+  clearInfluencingInvocation(): void;
+
+  getInfluencedInvocation(): Invocation | undefined;
+  setInfluencedInvocation(value?: Invocation): void;
+  hasInfluencedInvocation(): boolean;
+  clearInfluencedInvocation(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InfluenceBinding.AsObject;
+  static toObject(includeInstance: boolean, msg: InfluenceBinding): InfluenceBinding.AsObject;
+  static serializeBinaryToWriter(message: InfluenceBinding, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InfluenceBinding;
+  static deserializeBinaryFromReader(message: InfluenceBinding, reader: jspb.BinaryReader): InfluenceBinding;
+}
+
+export namespace InfluenceBinding {
+  export type AsObject = {
+    influencedId: string,
+    influencedInvocationId: string,
+    influenceType: InfluenceType,
+    influencingInvocation?: Invocation.AsObject,
+    influencedInvocation?: Invocation.AsObject,
   }
 }
 

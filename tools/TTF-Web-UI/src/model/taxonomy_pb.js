@@ -1027,9 +1027,8 @@ proto.taxonomy.model.BranchIdentifier.prototype.toObject = function(opt_includeI
  */
 proto.taxonomy.model.BranchIdentifier.toObject = function(includeInstance, msg) {
   var obj = {
-    tokenType: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    branch: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    formulaId: jspb.Message.getFieldWithDefault(msg, 3, "")
+    classification: (f = msg.getClassification()) && artifact_pb.Classification.toObject(includeInstance, f),
+    formulaId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1067,14 +1066,11 @@ proto.taxonomy.model.BranchIdentifier.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!proto.taxonomy.model.artifact.TokenType} */ (reader.readEnum());
-      msg.setTokenType(value);
+      var value = new artifact_pb.Classification;
+      reader.readMessage(value,artifact_pb.Classification.deserializeBinaryFromReader);
+      msg.setClassification(value);
       break;
     case 2:
-      var value = /** @type {!proto.taxonomy.model.artifact.ClassificationBranch} */ (reader.readEnum());
-      msg.setBranch(value);
-      break;
-    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setFormulaId(value);
       break;
@@ -1107,24 +1103,18 @@ proto.taxonomy.model.BranchIdentifier.prototype.serializeBinary = function() {
  */
 proto.taxonomy.model.BranchIdentifier.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getTokenType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = message.getClassification();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getBranch();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      2,
-      f
+      f,
+      artifact_pb.Classification.serializeBinaryToWriter
     );
   }
   f = message.getFormulaId();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -1132,47 +1122,50 @@ proto.taxonomy.model.BranchIdentifier.serializeBinaryToWriter = function(message
 
 
 /**
- * optional artifact.TokenType token_type = 1;
- * @return {!proto.taxonomy.model.artifact.TokenType}
+ * optional artifact.Classification classification = 1;
+ * @return {?proto.taxonomy.model.artifact.Classification}
  */
-proto.taxonomy.model.BranchIdentifier.prototype.getTokenType = function() {
-  return /** @type {!proto.taxonomy.model.artifact.TokenType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.taxonomy.model.BranchIdentifier.prototype.getClassification = function() {
+  return /** @type{?proto.taxonomy.model.artifact.Classification} */ (
+    jspb.Message.getWrapperField(this, artifact_pb.Classification, 1));
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TokenType} value */
-proto.taxonomy.model.BranchIdentifier.prototype.setTokenType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+/** @param {?proto.taxonomy.model.artifact.Classification|undefined} value */
+proto.taxonomy.model.BranchIdentifier.prototype.setClassification = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * optional artifact.ClassificationBranch branch = 2;
- * @return {!proto.taxonomy.model.artifact.ClassificationBranch}
+ * Clears the message field making it undefined.
  */
-proto.taxonomy.model.BranchIdentifier.prototype.getBranch = function() {
-  return /** @type {!proto.taxonomy.model.artifact.ClassificationBranch} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/** @param {!proto.taxonomy.model.artifact.ClassificationBranch} value */
-proto.taxonomy.model.BranchIdentifier.prototype.setBranch = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+proto.taxonomy.model.BranchIdentifier.prototype.clearClassification = function() {
+  this.setClassification(undefined);
 };
 
 
 /**
- * optional string formula_id = 3;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.taxonomy.model.BranchIdentifier.prototype.hasClassification = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string formula_id = 2;
  * @return {string}
  */
 proto.taxonomy.model.BranchIdentifier.prototype.getFormulaId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
 proto.taxonomy.model.BranchIdentifier.prototype.setFormulaId = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

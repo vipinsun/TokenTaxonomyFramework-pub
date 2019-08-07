@@ -7,17 +7,21 @@ option csharp_namespace = "TTI.TTF.Taxonomy.Model.Artifact";
 option java_package = "org.tti.ttf.taxonomy.model.artifact";
 option java_multiple_files = true;
 
+enum TemplateType{
+    SINGLE_TOKEN = 0;
+    HYBRID = 1;
+}
+
 enum TokenType {
     FUNGIBLE = 0;
     NON_FUNGIBLE = 1;
-    HYBRID = 2;
 }
 
 //classification for Templates, parent and any child tokens. 
-enum ClassificationBranch{
+enum TokenUnit{
     FRACTIONAL = 0; //tF{d} or tN{d}
     WHOLE = 1; //tF{~d} or tN{~d}
-    SINGLETON = 2; //tN{~s}
+    SINGLETON = 2; //tN{~s} - quantity = 1
 }
 
 enum ArtifactType{
@@ -53,6 +57,12 @@ enum TargetPlatform{
 }
 
 //types 
+
+message Classification{
+    TemplateType template_type = 1;
+    TokenType token_type = 2;
+    TokenUnit token_unit = 3;
+}
 
 message ArtifactSymbol{
     string id = 1;
@@ -251,7 +261,7 @@ message QueryOptions{
     int32 max_item_return = 2;
     int32 last_item_index = 3; //set to the QuertResult.LastItemIndex from the previous QueryResult. Manually override from QueryResult FirstItemIndex + count in results array
     bool by_classification = 4; //if true, the TemplateClassification value will apply, if false, it will search all templates.
-    ClassificationBranch template_classification = 5; //only if quering templates
+    Classification classification = 5; //only if quering templates
     bool include_hybrids = 6; //only if quering templates
 }
 
@@ -261,11 +271,6 @@ message QueryResult{
     int32 last_item_index = 3;
     int32 total_items_in_collection = 4; //total count in the collection if iterating through all the items on the service of the specified type.
     google.protobuf.Any artifact_collection = 5; //deserialize to the collection object for the ArtifactType, i.e. Base will be a Bases, Behavior will be Behaviors, etc.
-}
-
-message Classification{
-    TokenType token_type = 1;
-    ClassificationBranch branch = 2;
 }
 
 //used to query for a TokenTemplate and to Build the TemplateSpecification

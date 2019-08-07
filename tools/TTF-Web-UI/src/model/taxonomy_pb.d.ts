@@ -119,11 +119,10 @@ export namespace Hierarchy {
 }
 
 export class BranchIdentifier extends jspb.Message {
-  getTokenType(): artifact_pb.TokenType;
-  setTokenType(value: artifact_pb.TokenType): void;
-
-  getBranch(): artifact_pb.ClassificationBranch;
-  setBranch(value: artifact_pb.ClassificationBranch): void;
+  getClassification(): artifact_pb.Classification | undefined;
+  setClassification(value?: artifact_pb.Classification): void;
+  hasClassification(): boolean;
+  clearClassification(): void;
 
   getFormulaId(): string;
   setFormulaId(value: string): void;
@@ -138,8 +137,7 @@ export class BranchIdentifier extends jspb.Message {
 
 export namespace BranchIdentifier {
   export type AsObject = {
-    tokenType: artifact_pb.TokenType,
-    branch: artifact_pb.ClassificationBranch,
+    classification?: artifact_pb.Classification.AsObject,
     formulaId: string,
   }
 }

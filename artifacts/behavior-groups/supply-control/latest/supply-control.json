@@ -77,21 +77,16 @@
           "maps": null
         }
       },
-      "bindsToInfluenced": [],
-      "influenceBindings": [
-        {
-          "boundInfluenceId": "c32726da-9787-4dd8-8de3-d07d1733d0f6"
-        }
-      ],
       "isExternal": false,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [],
       "properties": []
     },
     {
       "reference": {
-        "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
         "type": "BEHAVIOR",
         "referenceNotes": "Burnable is not modified from the referenced behavior.",
         "values": {
@@ -104,6 +99,7 @@
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [],
       "properties": []
     },
     {
@@ -117,6 +113,67 @@
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [
+        {
+          "influencedId": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+          "influencedInvocationId": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
+          "influenceType": "INTERCEPT",
+          "influencingInvocation": {
+            "id": "00a665e3-1dda-441e-8262-5750435c153c",
+            "name": "RoleCheck",
+            "description": "Check to see if the account is in the Role called 'Minters'",
+            "request": {
+              "controlMessageName": "IsInRole",
+              "description": "Checking the 'Minters' role.",
+              "inputParameters": [
+                {
+                  "name": "AccountId",
+                  "valueDescription": "AccountId of the requestor."
+                }
+              ]
+            },
+            "response": {
+              "controlMessageName": "True/False",
+              "description": "Respond true if the account is in the 'Minters' role.",
+              "outputParameters": [
+                {
+                  "name": "IsInRole",
+                  "valueDescription": "True/False"
+                }
+              ]
+            }
+          },
+          "influencedInvocation": {
+            "id": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
+            "name": "MintTo",
+            "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
+            "request": {
+              "controlMessageName": "MintToRequest",
+              "description": "The request",
+              "inputParameters": [
+                {
+                  "name": "ToAccount",
+                  "valueDescription": "Account Id to mint the tokens to."
+                },
+                {
+                  "name": "Quantity",
+                  "valueDescription": "Number of new tokens to create."
+                }
+              ]
+            },
+            "response": {
+              "controlMessageName": "MintToResponse",
+              "description": "The response",
+              "outputParameters": [
+                {
+                  "name": "Confirmation",
+                  "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the MintTo request."
+                }
+              ]
+            }
+          }
+        }
+      ],
       "properties": [
         {
           "name": "Role",
@@ -145,6 +202,7 @@
               }
             },
             {
+              "id": "600357f8-0499-47f8-87a5-eedf4ad034af",
               "name": "AddRoleMember",
               "description": "Add a member to the group or role property.",
               "appliesToTemplateBehaviors": [],
@@ -175,6 +233,7 @@
               }
             },
             {
+              "id": "97e160bb-6c60-4f1d-923b-813b07b89638",
               "name": "RemoveRoleMember",
               "description": "Remove a member to the group or role property.",
               "appliesToTemplateBehaviors": [],
@@ -205,6 +264,7 @@
               }
             },
             {
+              "id": "e42b1b16-074a-4d7d-b9f9-f69a2397a21b",
               "name": "IsInRole",
               "description": "Check to see if an account is in the role.",
               "appliesToTemplateBehaviors": [],

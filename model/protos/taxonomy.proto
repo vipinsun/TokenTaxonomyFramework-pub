@@ -33,9 +33,8 @@ message Hierarchy {
 }
 
 message BranchIdentifier{
-    taxonomy.model.artifact.TokenType token_type = 1;
-    taxonomy.model.artifact.ClassificationBranch branch = 2;
-    string formula_id = 3;
+    taxonomy.model.artifact.Classification classification = 1;
+    string formula_id = 2;
 }
 
 message BranchRoot{

@@ -1,20 +1,20 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id":"8314a797-df3c-409b-835c-0e80af92714f",
+      "id":"3c05a856-c901-4c30-917e-df9feed1c8de",
       "type": "BASE",
-      "visual": "&tau<sub>N</sub>",
-      "tooling": "tN",
+      "visual": "&tau<sub>N</sub>{<i>~d</i>}",
+      "tooling": "tN{~d}",
       "version": "1.0",
       "templateValidated": true
     },
-    "name": "Non-Fungible Token",
+    "name": "Whole Non-Fungible Token",
     "aliases": [
       "Title",
       "Deed"
     ],
     "artifactDefinition": {
-      "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea. Some Non-fungible tokens will need to be represented with their own class, meaning it will share no common properties with other tokens from the same template. These are usually referred to as singletons. Other non-fungible tokens can exist within the same class and have some shared property values while also having unique property values between instances.",
+      "businessDescription": "Every non-fungible token is unique. A non-fungible token is not interchangeable with other tokens of the same class but have some shared properties while also having unique property values between instances. These tokens are whole tokens and can have quantities greater than 1 and also could support variable supply.",
       "businessExample": "CryptoKitties, Art, Reserved Seat for an event.",
       "analogies": [
         {
@@ -44,36 +44,21 @@
         }
       }
     ],
-    "incompatibleWithSymbols": [],
-    "influencedBySymbols": [
+    "incompatibleWithSymbols": [
       {
-        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0. This, along with a quantity set to 1, would make this non-fungible token a singleton.",
-        "symbol": {
-          "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
-          "type": "BEHAVIOR",
-          "visual": "<i>~d</i>",
-          "tooling": "~d",
-          "version": "",
-          "templateValidated": false
-        },
-        "appliesTo": []
-      },
-      {
-        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is sub-dividable, the decimals value should be greater than 0.",
-        "symbol": {
-          "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
-          "type": "BEHAVIOR",
-          "visual": "<i>d</i>",
-          "tooling": "d",
-          "version": "",
-          "templateValidated": false
-        },
-        "appliesTo": []
+        "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+        "type": "BEHAVIOR",
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "",
+        "templateValidated": false
       }
     ],
+    "influencedBySymbols": [],
     "maps": {}
   },
   "tokenType": "NON_FUNGIBLE",
+  "tokenUnit": "WHOLE",
   "name": "",
   "symbol": "",
   "owner": "",

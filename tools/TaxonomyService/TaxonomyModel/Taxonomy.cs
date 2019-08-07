@@ -56,28 +56,27 @@ namespace TTI.TTF.Taxonomy.Model {
             "bGVzGAEgASgLMhoudGF4b25vbXkubW9kZWwuQnJhbmNoUm9vdBIxCg1ub25f",
             "ZnVuZ2libGVzGAIgASgLMhoudGF4b25vbXkubW9kZWwuQnJhbmNoUm9vdBIx",
             "CgdoeWJyaWRzGAMgASgLMiAudGF4b25vbXkubW9kZWwuSHlicmlkQnJhbmNo",
-            "Um9vdCKdAQoQQnJhbmNoSWRlbnRpZmllchI2Cgp0b2tlbl90eXBlGAEgASgO",
-            "MiIudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuVG9rZW5UeXBlEj0KBmJyYW5j",
-            "aBgCIAEoDjItLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkNsYXNzaWZpY2F0",
-            "aW9uQnJhbmNoEhIKCmZvcm11bGFfaWQYAyABKAkilgIKCkJyYW5jaFJvb3QS",
-            "OwoRYnJhbmNoX2lkZW50aWZpZXIYASABKAsyIC50YXhvbm9teS5tb2RlbC5C",
-            "cmFuY2hJZGVudGlmaWVyEhkKEXBhcmVudF9mb3JtdWxhX2lkGAIgASgJEgwK",
-            "BG5hbWUYAyABKAkSPAoOYnJhbmNoX2Zvcm11bGEYBCABKAsyJC50YXhvbm9t",
-            "eS5tb2RlbC5jb3JlLlRlbXBsYXRlRm9ybXVsYRI2Cgl0ZW1wbGF0ZXMYBSAB",
-            "KAsyIy50YXhvbm9teS5tb2RlbC5jb3JlLlRva2VuVGVtcGxhdGVzEiwKCGJy",
-            "YW5jaGVzGAYgAygLMhoudGF4b25vbXkubW9kZWwuQnJhbmNoUm9vdCKAAQoQ",
-            "SHlicmlkQnJhbmNoUm9vdBIzCg9mdW5naWJsZV9wYXJlbnQYASABKAsyGi50",
-            "YXhvbm9teS5tb2RlbC5CcmFuY2hSb290EjcKE25vbl9mdW5naWJsZV9wYXJl",
-            "bnQYAiABKAsyGi50YXhvbm9teS5tb2RlbC5CcmFuY2hSb290QjcKGm9yZy50",
-            "dGkudHRmLnRheG9ub215Lm1vZGVsUAGqAhZUVEkuVFRGLlRheG9ub215Lk1v",
-            "ZGVsYgZwcm90bzM="));
+            "Um9vdCJnChBCcmFuY2hJZGVudGlmaWVyEj8KDmNsYXNzaWZpY2F0aW9uGAEg",
+            "ASgLMicudGF4b25vbXkubW9kZWwuYXJ0aWZhY3QuQ2xhc3NpZmljYXRpb24S",
+            "EgoKZm9ybXVsYV9pZBgCIAEoCSKWAgoKQnJhbmNoUm9vdBI7ChFicmFuY2hf",
+            "aWRlbnRpZmllchgBIAEoCzIgLnRheG9ub215Lm1vZGVsLkJyYW5jaElkZW50",
+            "aWZpZXISGQoRcGFyZW50X2Zvcm11bGFfaWQYAiABKAkSDAoEbmFtZRgDIAEo",
+            "CRI8Cg5icmFuY2hfZm9ybXVsYRgEIAEoCzIkLnRheG9ub215Lm1vZGVsLmNv",
+            "cmUuVGVtcGxhdGVGb3JtdWxhEjYKCXRlbXBsYXRlcxgFIAEoCzIjLnRheG9u",
+            "b215Lm1vZGVsLmNvcmUuVG9rZW5UZW1wbGF0ZXMSLAoIYnJhbmNoZXMYBiAD",
+            "KAsyGi50YXhvbm9teS5tb2RlbC5CcmFuY2hSb290IoABChBIeWJyaWRCcmFu",
+            "Y2hSb290EjMKD2Z1bmdpYmxlX3BhcmVudBgBIAEoCzIaLnRheG9ub215Lm1v",
+            "ZGVsLkJyYW5jaFJvb3QSNwoTbm9uX2Z1bmdpYmxlX3BhcmVudBgCIAEoCzIa",
+            "LnRheG9ub215Lm1vZGVsLkJyYW5jaFJvb3RCNwoab3JnLnR0aS50dGYudGF4",
+            "b25vbXkubW9kZWxQAaoCFlRUSS5UVEYuVGF4b25vbXkuTW9kZWxiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Taxonomy), global::TTI.TTF.Taxonomy.Model.Taxonomy.Parser, new[]{ "Version", "BaseTokenTypes", "Behaviors", "BehaviorGroups", "PropertySets", "TemplateFormulas", "TemplateDefinitions", "TokenTemplateHierarchy", "FormulaGrammar" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion), global::TTI.TTF.Taxonomy.Model.TaxonomyVersion.Parser, new[]{ "Id", "Version", "StateHash" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Hierarchy), global::TTI.TTF.Taxonomy.Model.Hierarchy.Parser, new[]{ "Fungibles", "NonFungibles", "Hybrids" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.BranchIdentifier), global::TTI.TTF.Taxonomy.Model.BranchIdentifier.Parser, new[]{ "TokenType", "Branch", "FormulaId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.BranchIdentifier), global::TTI.TTF.Taxonomy.Model.BranchIdentifier.Parser, new[]{ "Classification", "FormulaId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.BranchRoot), global::TTI.TTF.Taxonomy.Model.BranchRoot.Parser, new[]{ "BranchIdentifier", "ParentFormulaId", "Name", "BranchFormula", "Templates", "Branches" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.HybridBranchRoot), global::TTI.TTF.Taxonomy.Model.HybridBranchRoot.Parser, new[]{ "FungibleParent", "NonFungibleParent" }, null, null, null)
           }));
@@ -825,8 +824,7 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BranchIdentifier(BranchIdentifier other) : this() {
-      tokenType_ = other.tokenType_;
-      branch_ = other.branch_;
+      classification_ = other.classification_ != null ? other.classification_.Clone() : null;
       formulaId_ = other.formulaId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -836,30 +834,19 @@ namespace TTI.TTF.Taxonomy.Model {
       return new BranchIdentifier(this);
     }
 
-    /// <summary>Field number for the "token_type" field.</summary>
-    public const int TokenTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = 0;
+    /// <summary>Field number for the "classification" field.</summary>
+    public const int ClassificationFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.Classification classification_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Artifact.TokenType TokenType {
-      get { return tokenType_; }
+    public global::TTI.TTF.Taxonomy.Model.Artifact.Classification Classification {
+      get { return classification_; }
       set {
-        tokenType_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "branch" field.</summary>
-    public const int BranchFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch branch_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch Branch {
-      get { return branch_; }
-      set {
-        branch_ = value;
+        classification_ = value;
       }
     }
 
     /// <summary>Field number for the "formula_id" field.</summary>
-    public const int FormulaIdFieldNumber = 3;
+    public const int FormulaIdFieldNumber = 2;
     private string formulaId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FormulaId {
@@ -882,8 +869,7 @@ namespace TTI.TTF.Taxonomy.Model {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (TokenType != other.TokenType) return false;
-      if (Branch != other.Branch) return false;
+      if (!object.Equals(Classification, other.Classification)) return false;
       if (FormulaId != other.FormulaId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -891,8 +877,7 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (TokenType != 0) hash ^= TokenType.GetHashCode();
-      if (Branch != 0) hash ^= Branch.GetHashCode();
+      if (classification_ != null) hash ^= Classification.GetHashCode();
       if (FormulaId.Length != 0) hash ^= FormulaId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -907,16 +892,12 @@ namespace TTI.TTF.Taxonomy.Model {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (TokenType != 0) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) TokenType);
-      }
-      if (Branch != 0) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) Branch);
+      if (classification_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Classification);
       }
       if (FormulaId.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(FormulaId);
       }
       if (_unknownFields != null) {
@@ -927,11 +908,8 @@ namespace TTI.TTF.Taxonomy.Model {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (TokenType != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
-      }
-      if (Branch != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Branch);
+      if (classification_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Classification);
       }
       if (FormulaId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FormulaId);
@@ -947,11 +925,11 @@ namespace TTI.TTF.Taxonomy.Model {
       if (other == null) {
         return;
       }
-      if (other.TokenType != 0) {
-        TokenType = other.TokenType;
-      }
-      if (other.Branch != 0) {
-        Branch = other.Branch;
+      if (other.classification_ != null) {
+        if (classification_ == null) {
+          Classification = new global::TTI.TTF.Taxonomy.Model.Artifact.Classification();
+        }
+        Classification.MergeFrom(other.Classification);
       }
       if (other.FormulaId.Length != 0) {
         FormulaId = other.FormulaId;
@@ -967,15 +945,14 @@ namespace TTI.TTF.Taxonomy.Model {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            TokenType = (global::TTI.TTF.Taxonomy.Model.Artifact.TokenType) input.ReadEnum();
+          case 10: {
+            if (classification_ == null) {
+              Classification = new global::TTI.TTF.Taxonomy.Model.Artifact.Classification();
+            }
+            input.ReadMessage(Classification);
             break;
           }
-          case 16: {
-            Branch = (global::TTI.TTF.Taxonomy.Model.Artifact.ClassificationBranch) input.ReadEnum();
-            break;
-          }
-          case 26: {
+          case 18: {
             FormulaId = input.ReadString();
             break;
           }

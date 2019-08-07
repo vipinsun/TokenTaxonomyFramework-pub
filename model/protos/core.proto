@@ -18,14 +18,15 @@ enum InfluenceType {
 message Base{
     taxonomy.model.artifact.Artifact artifact = 1;
     taxonomy.model.artifact.TokenType token_type = 2;
-    string name = 3;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
-    string symbol = 4; //an optionally unique symbol or identifier
-    string owner = 5; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
-    bytes quantity = 6; //Can represent the initial quantity created or the total minted or issued for the class.
-    int32 decimals = 7; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
-    map<string, string> token_properties = 8; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
-    string constructor_name = 9; //a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
-    google.protobuf.Any constructor = 10; //the constructor type defined in the token template artifact.
+    taxonomy.model.artifact.TokenUnit token_unit = 3;
+    string name = 4;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    string symbol = 5; //an optionally unique symbol or identifier
+    string owner = 6; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    bytes quantity = 7; //Can represent the initial quantity created or the total minted or issued for the class.
+    int32 decimals = 8; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    map<string, string> token_properties = 9; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    string constructor_name = 10; //a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+    google.protobuf.Any constructor = 11; //the constructor type defined in the token template artifact.
 }
 
 message Bases{
@@ -138,7 +139,7 @@ message TokenTemplates{
 //Represents the Template Formula that is used in combination to validate a TemplateDefinition.
 message TemplateFormula{
     taxonomy.model.artifact.Artifact artifact = 1;
-    taxonomy.model.artifact.Classification classification = 2;
+    taxonomy.model.artifact.TemplateType template_type = 2;
     TemplateBase token_base = 3;
     repeated TemplateBehavior behaviors = 4;
     repeated TemplateBehaviorGroup behavior_groups = 5;

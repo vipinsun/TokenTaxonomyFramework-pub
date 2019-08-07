@@ -3,20 +3,20 @@
     "artifactSymbol": {
       "id":"89ca6daf-5585-469e-abd1-19bc44e7a012",
       "type": "BASE",
-      "visual": "&tau;<sub>F</sub>",
-      "tooling": "tF",
+      "visual": "&tau;<sub>F</sub>{<i>d</i>}",
+      "tooling": "tF{d}",
       "version": "1.0",
       "templateValidated": true
     },
-    "name": "Fungible",
+    "name": "Fractional Fungible",
     "aliases": [
       "Liquid",
       "Physical Money",
       "Cash"
     ],
     "artifactDefinition": {
-      "businessDescription": "Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token.",
-      "businessExample": "Fiat currency is the most widely understood example of a fungible item. Others include inventory items in the same SKU or general admission tickets to an event.",
+      "businessDescription": "Fractional Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token that is sub-dividable.",
+      "businessExample": "Fiat currency is the most widely understood example of a fractional fungible item. A fractional fungible is sub-dividable, so you can 'make change'.",
       "analogies": [
         {
           "name": "Physical Money or Cash",
@@ -45,43 +45,27 @@
         }
       }
     ],
-    "incompatibleWithSymbols": [],
-    "influencedBySymbols": [
+    "incompatibleWithSymbols": [
       {
-        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
-        "symbol": {
-          "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
-          "type": "BEHAVIOR",
-          "visual": "<i>~d</i>",
-          "tooling": "~d",
-          "version": "",
-          "templateValidated": false
-        },
-        "appliesTo": []
-      },
-      {
-        "description": "Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is sub-dividable, the decimals value should be greater than 0.",
-        "symbol": {
-          "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
-          "type": "BEHAVIOR",
-          "visual": "<i>d</i>",
-          "tooling": "d",
-          "version": "",
-          "templateValidated": false
-        },
-        "appliesTo": []
+        "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
+        "type": "BEHAVIOR",
+        "visual": "<i>~d</i>",
+        "tooling": "~d",
+        "version": "1.0",
+        "templateValidated": false
       }
     ],
+    "influencedBySymbols": [],
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "fungible.proto",
+        "fileName": "fractional-fungible.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "fungible.md",
+        "fileName": "fractional-fungible.md",
         "fileData": "",
         "artifact": null
       }
@@ -89,6 +73,7 @@
     "maps": {}
   },
   "tokenType": "FUNGIBLE",
+  "tokenUnit": "FRACTIONAL",
   "name": "",
   "symbol": "",
   "owner": "",

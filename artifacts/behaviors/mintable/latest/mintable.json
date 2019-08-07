@@ -27,14 +27,7 @@
       "artifact": null
     },
     "dependencies": [],
-    "incompatibleWithSymbols": [
-      {
-        "type": "BEHAVIOR",
-        "visual": "<i>s</s>",
-        "tooling": "s",
-        "version": ""
-      }
-    ],
+    "incompatibleWithSymbols": [],
     "influencedBySymbols": [
       {
         "description": "Roles is common to implement to provide authorization checks for invoking the behavior. Highly Recommended that Role restrictions be applied to MintTo invocations.",
