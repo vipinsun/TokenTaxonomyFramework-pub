@@ -723,13 +723,17 @@ namespace TTI.TTF.Taxonomy
 				new List<(BehaviorReference, Behavior, BehaviorReference)>(); //influencingReference, influencedArtifact, influencedReference
 			var influencedPropertySets = new List<(BehaviorReference, PropertySet)>(); //influencingReference, influencedArtifact
 
-			//getting all the influenced behaviors matched with their influencers
+			//getting all the influenced behaviors matched with their influences
 			foreach (var b in behaviorReferences)
 			{
 				if(b.InfluenceBindings.Count == 0)
 					continue;
 				foreach (var ib in b.InfluenceBindings)
 				{
+					var repeat = influencedBehaviors
+						.SingleOrDefault(e => e.Item2.Artifact.ArtifactSymbol.Id == ib.InfluencedId).Item2;
+					if(repeat != null)
+							continue;
 					var inb = behaviorsList.SingleOrDefault(e =>
 						e.Artifact.ArtifactSymbol.Id == ib.InfluencedId);
 					if (inb != null)
@@ -737,6 +741,7 @@ namespace TTI.TTF.Taxonomy
 						var influenced =
 							behaviorReferences.SingleOrDefault(e => e.Reference.Id == ib.InfluencedId);
 						influencedBehaviors.Add((b, inb, influenced));
+						continue;
 					}
 
 					var inp = propSets.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == ib.InfluencedId);
@@ -784,7 +789,7 @@ namespace TTI.TTF.Taxonomy
 					behaviorSpec.Invocations.Add(invokeBinding);
 				}
 			
-				foreach (var i in influencedReference.InfluenceBindings)
+				foreach (var i in influencingReference.InfluenceBindings)
 				{
 					var invokeBinding = new InvocationBinding
 					{

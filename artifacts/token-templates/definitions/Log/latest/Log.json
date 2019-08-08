@@ -99,7 +99,14 @@
       "values": {
         "controlUri": "",
         "artifactFiles": [],
-        "maps": {},
+        "maps": {
+          "codeReferences": [],
+          "implementationReferences": [],
+          "resources": [],
+          "artifact": null
+        }
+      }
+    },
     "name": "",
     "symbol": "",
     "owner": "",
