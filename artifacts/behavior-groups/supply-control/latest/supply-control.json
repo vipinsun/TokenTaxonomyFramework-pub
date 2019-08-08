@@ -183,8 +183,6 @@
             {
               "name": "GetMinters",
               "description": "Request the the list of member accounts in the 'Minters' role.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "GetMintersRequest",
                 "inputParameters": [],
@@ -205,8 +203,6 @@
               "id": "600357f8-0499-47f8-87a5-eedf4ad034af",
               "name": "AddRoleMember",
               "description": "Add a member to the group or role property.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "AddRoleMemberRequest",
                 "inputParameters": [
@@ -236,8 +232,6 @@
               "id": "97e160bb-6c60-4f1d-923b-813b07b89638",
               "name": "RemoveRoleMember",
               "description": "Remove a member to the group or role property.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "RemoveRoleMemberRequest",
                 "inputParameters": [
@@ -267,8 +261,6 @@
               "id": "e42b1b16-074a-4d7d-b9f9-f69a2397a21b",
               "name": "IsInRole",
               "description": "Check to see if an account is in the role.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "IsInRoleRequest",
                 "inputParameters": [

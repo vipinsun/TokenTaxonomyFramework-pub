@@ -902,10 +902,10 @@ export class TokenSpecification extends jspb.Message {
   clearBehaviorGroupsList(): void;
   addBehaviorGroups(value?: BehaviorGroupSpecification, index?: number): BehaviorGroupSpecification;
 
-  getPropertySetsList(): Array<PropertySet>;
-  setPropertySetsList(value: Array<PropertySet>): void;
+  getPropertySetsList(): Array<PropertySetSpecification>;
+  setPropertySetsList(value: Array<PropertySetSpecification>): void;
   clearPropertySetsList(): void;
-  addPropertySets(value?: PropertySet, index?: number): PropertySet;
+  addPropertySets(value?: PropertySetSpecification, index?: number): PropertySetSpecification;
 
   getChildTokensList(): Array<TokenSpecification>;
   setChildTokensList(value: Array<TokenSpecification>): void;
@@ -927,7 +927,7 @@ export namespace TokenSpecification {
     tokenBase?: Base.AsObject,
     behaviorsList: Array<BehaviorSpecification.AsObject>,
     behaviorGroupsList: Array<BehaviorGroupSpecification.AsObject>,
-    propertySetsList: Array<PropertySet.AsObject>,
+    propertySetsList: Array<PropertySetSpecification.AsObject>,
     childTokensList: Array<TokenSpecification.AsObject>,
   }
 }
@@ -975,6 +975,70 @@ export namespace BehaviorSpecification {
     constructor?: google_protobuf_any_pb.Any.AsObject,
     invocationsList: Array<InvocationBinding.AsObject>,
     propertiesList: Array<Property.AsObject>,
+  }
+}
+
+export class PropertySetSpecification extends jspb.Message {
+  getArtifact(): artifact_pb.Artifact | undefined;
+  setArtifact(value?: artifact_pb.Artifact): void;
+  hasArtifact(): boolean;
+  clearArtifact(): void;
+
+  getPropertiesList(): Array<PropertySpecification>;
+  setPropertiesList(value: Array<PropertySpecification>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: PropertySpecification, index?: number): PropertySpecification;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PropertySetSpecification.AsObject;
+  static toObject(includeInstance: boolean, msg: PropertySetSpecification): PropertySetSpecification.AsObject;
+  static serializeBinaryToWriter(message: PropertySetSpecification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PropertySetSpecification;
+  static deserializeBinaryFromReader(message: PropertySetSpecification, reader: jspb.BinaryReader): PropertySetSpecification;
+}
+
+export namespace PropertySetSpecification {
+  export type AsObject = {
+    artifact?: artifact_pb.Artifact.AsObject,
+    propertiesList: Array<PropertySpecification.AsObject>,
+  }
+}
+
+export class PropertySpecification extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValueDescription(): string;
+  setValueDescription(value: string): void;
+
+  getTemplateValue(): string;
+  setTemplateValue(value: string): void;
+
+  getPropertyInvocationsList(): Array<InvocationBinding>;
+  setPropertyInvocationsList(value: Array<InvocationBinding>): void;
+  clearPropertyInvocationsList(): void;
+  addPropertyInvocations(value?: InvocationBinding, index?: number): InvocationBinding;
+
+  getPropertiesList(): Array<PropertySpecification>;
+  setPropertiesList(value: Array<PropertySpecification>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: PropertySpecification, index?: number): PropertySpecification;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PropertySpecification.AsObject;
+  static toObject(includeInstance: boolean, msg: PropertySpecification): PropertySpecification.AsObject;
+  static serializeBinaryToWriter(message: PropertySpecification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PropertySpecification;
+  static deserializeBinaryFromReader(message: PropertySpecification, reader: jspb.BinaryReader): PropertySpecification;
+}
+
+export namespace PropertySpecification {
+  export type AsObject = {
+    name: string,
+    valueDescription: string,
+    templateValue: string,
+    propertyInvocationsList: Array<InvocationBinding.AsObject>,
+    propertiesList: Array<PropertySpecification.AsObject>,
   }
 }
 

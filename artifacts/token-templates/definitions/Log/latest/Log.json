@@ -83,12 +83,7 @@
         "artifact": null
       }
     ],
-    "maps": {
-      "codeReferences": [],
-      "implementationReferences": [],
-      "resources": [],
-      "artifact": null
-    }
+    "maps": {}
   },
   "formulaReference": {
     "id": "d4bdee60-55ae-4f00-9e06-2bc9e79ecf9e",
@@ -104,42 +99,11 @@
       "values": {
         "controlUri": "",
         "artifactFiles": [],
-        "maps": {
-          "codeReferences": [
-            {
-              "mappingType": "SOURCE_CODE",
-              "name": "Code 1",
-              "platform": "DAML",
-              "referencePath": "",
-              "maps": null
-            }
-          ],
-          "implementationReferences": [
-            {
-              "mappingType": "IMPLEMENTATION",
-              "name": "Implementation 1",
-              "platform": "CHAINCODE_GO",
-              "referencePath": "",
-              "maps": null
-            }
-          ],
-          "resources": [
-            {
-              "mappingType": "RESOURCE",
-              "name": "Regulation Reference 1",
-              "description": "",
-              "resourcePath": "",
-              "maps": null
-            }
-          ],
-          "artifact": null
-        }
-      }
-    },
+        "maps": {},
     "name": "",
     "symbol": "",
     "owner": "",
-    "quantity": "1",
+    "quantity": "MQ==",
     "decimals": 0,
     "tokenProperties": {},
     "constructorName": "Constructor",
@@ -345,8 +309,6 @@
             {
               "name": "GetRoleMembers",
               "description": "Request the the list of member accounts in the role.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "GetRoleMembersRequest",
                 "description": "The request",
@@ -366,8 +328,6 @@
             {
               "name": "AddRoleMember",
               "description": "Add a member to the group or role property.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "AddRoleMemberRequest",
                 "description": "The request",
@@ -396,8 +356,6 @@
             {
               "name": "RemoveRoleMember",
               "description": "Remove a member to the group or role property.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "RemoveRoleMemberRequest",
                 "description": "The request",
@@ -426,8 +384,6 @@
             {
               "name": "IsInRole",
               "description": "Check to see if an account is in the role.",
-              "appliesToTemplateBehaviors": [],
-              "appliesToTemplatePropertySets": [],
               "request": {
                 "controlMessageName": "IsInRoleRequest",
                 "description": "The request may be internal only and not exposed externally.",

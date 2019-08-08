@@ -63,10 +63,7 @@
       "artifact": null
     }
   },
-  "classification": {
-    "tokenType": "FUNGIBLE",
-    "branch": "WHOLE"
-  },
+  "templateType": "SINGLE_TOKEN",
   "tokenBase": {
     "base": {
       "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",

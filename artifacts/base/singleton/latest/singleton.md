@@ -1,1 +1,1 @@
-# non-fungible a TTF Base
+# singleton a TTF Base

@@ -668,15 +668,6 @@ namespace TTI.TTF.Taxonomy
 			
 			retVal.TokenBase = MergeBase(definition);
 			
-			var behaviors = definition.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
-			foreach (var b in definition.Behaviors)
-			{
-				var behavior = behaviors.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == b.Reference.Id);
-				if (behavior == null) continue;
-				var behaviorSpec = GetBehaviorSpecification(behavior, b);
-				retVal.Behaviors.Add(behaviorSpec);
-			}
-			
 			var behaviorGroups = definition.BehaviorGroups.Select(tb => GetArtifactById<BehaviorGroup>(tb.Reference.Id)).ToList();
 			foreach (var bg in definition.BehaviorGroups)
 			{
@@ -688,22 +679,230 @@ namespace TTI.TTF.Taxonomy
 				{
 					var behavior = GetArtifactById<Behavior>(b.Reference.Id);
 					if (behavior == null) continue;
-					retVal.Behaviors.Add(GetBehaviorSpecification(behavior, b));
 					behaviorGroupSpec.Behaviors.Add(behavior.Artifact.ArtifactSymbol);
 				}
 				retVal.BehaviorGroups.Add(behaviorGroupSpec);
 			}
 			
 			var propertySets = definition.PropertySets.Select(tb => GetArtifactById<PropertySet>(tb.Reference.Id)).ToList();
+			var mergedPs = new List<PropertySet>();
 			foreach (var ps in definition.PropertySets)
 			{
 				var propertySet = propertySets.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == ps.Reference.Id);
 				if (propertySet == null) continue;
-				var mergedPs = MergePropertySet(propertySet, ps);
-				retVal.PropertySets.Add(mergedPs);
+				mergedPs.Add(MergePropertySet(propertySet, ps));
 			}
 			
+			var behaviors = definition.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
+			var behaviorReferences = definition.Behaviors;
+			foreach (var bgb in definition.BehaviorGroups)
+			{
+				foreach (var b in bgb.BehaviorArtifacts)
+				{
+					behaviors.Add(GetArtifactById<Behavior>(b.Reference.Id));
+					behaviorReferences.Add(b);
+				}
+			}
+
+			var (behaviorSpecifications, propSets) = BuildBehaviorSpecs(behaviors, behaviorReferences, mergedPs);
+				
+			retVal.Behaviors.AddRange(behaviorSpecifications);
+			retVal.PropertySets.AddRange(propSets);
 			return retVal;
+		}
+
+		private static (IEnumerable<BehaviorSpecification>, IEnumerable<PropertySetSpecification>) BuildBehaviorSpecs
+			(IEnumerable<Behavior> behaviors, IEnumerable<BehaviorReference> references, IEnumerable<PropertySet> propertySets)
+		{
+			//check for invocationBindings
+			var behaviorReferences = references.ToList();
+			var propSets = propertySets.ToList();
+			var behaviorsList = behaviors.ToList();
+
+			var influencedBehaviors = 
+				new List<(BehaviorReference, Behavior, BehaviorReference)>(); //influencingReference, influencedArtifact, influencedReference
+			var influencedPropertySets = new List<(BehaviorReference, PropertySet)>(); //influencingReference, influencedArtifact
+
+			//getting all the influenced behaviors matched with their influencers
+			foreach (var b in behaviorReferences)
+			{
+				if(b.InfluenceBindings.Count == 0)
+					continue;
+				foreach (var ib in b.InfluenceBindings)
+				{
+					var inb = behaviorsList.SingleOrDefault(e =>
+						e.Artifact.ArtifactSymbol.Id == ib.InfluencedId);
+					if (inb != null)
+					{
+						var influenced =
+							behaviorReferences.SingleOrDefault(e => e.Reference.Id == ib.InfluencedId);
+						influencedBehaviors.Add((b, inb, influenced));
+					}
+
+					var inp = propSets.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == ib.InfluencedId);
+					if(inp!= null)
+						influencedPropertySets.Add((b, inp));
+				}
+			}
+
+			//removing influenced behaviors and properties from straight merges into specs.
+			foreach (var ib in influencedBehaviors)
+			{
+				behaviorReferences.Remove(ib.Item3);
+			}
+
+			foreach (var ibp in influencedPropertySets)
+			{
+				propSets.Remove(ibp.Item2);
+			}
+			
+			var behaviorList = behaviorsList.ToList();
+
+			var behaviorSpecs = (from b in behaviorReferences let behavior 
+				= behaviorList.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == b.Reference.Id) 
+				select GetBehaviorSpecification(behavior, b)).ToList();
+			
+			foreach (var (influencingReference, influencedBehavior, influencedReference) in influencedBehaviors)
+			{
+				var behaviorSpec = new BehaviorSpecification
+				{
+					Constructor = influencedReference.Constructor,
+					ConstructorType = influencedReference.ConstructorType,
+					IsExternal = influencedReference.IsExternal,
+					Artifact = influencedBehavior.Artifact,
+					Properties = {influencedBehavior.Properties}
+				};
+				foreach (var ib in influencedBehavior.Invocations)
+				{
+					var invokeBinding = new InvocationBinding
+					{
+						InvocationStep = new InvocationBinding.Types.InvocationStep
+						{
+							Invocation = ib
+						}
+					};
+					behaviorSpec.Invocations.Add(invokeBinding);
+				}
+			
+				foreach (var i in influencedReference.InfluenceBindings)
+				{
+					var invokeBinding = new InvocationBinding
+					{
+						Influence = new InvocationBinding.Types.Influence
+						{
+							InfluencedId = i.InfluencedId,
+							InfluencedInvocationId = i.InfluencedInvocationId,
+							InfluencingId = influencingReference.Reference.Id,
+							InfluencingInvocationId = i.InfluencingInvocation.Id,
+							InfluenceType = i.InfluenceType
+						}
+					};
+					if (i.InfluenceType == InfluenceType.Intercept)
+					{
+						invokeBinding.InvocationStep = new InvocationBinding.Types.InvocationStep
+						{
+							Invocation = i.InfluencingInvocation,
+							NextInvocation = new InvocationBinding.Types.InvocationStep
+							{
+								Invocation = i.InfluencedInvocation
+							}
+						};
+					}
+					else
+					{
+						invokeBinding.InvocationStep = new InvocationBinding.Types.InvocationStep
+						{
+							Invocation = i.InfluencingInvocation
+						};
+					}
+					behaviorSpec.Invocations.Add(invokeBinding);
+				}
+				behaviorSpecs.Add(behaviorSpec);
+			}
+
+			var propSetSpecs = new List<PropertySetSpecification>();
+			foreach (var (behaviorReference, propertySet) in influencedPropertySets)
+			{
+				var propSetSpec = new PropertySetSpecification
+				{
+					Artifact = propertySet.Artifact
+				};
+				foreach (var i in behaviorReference.InfluenceBindings)
+				{
+					foreach (var p in propertySet.Properties)
+					{
+						var propSpec = CreatePropertySpec(p);
+						foreach (var ip in p.PropertyInvocations)
+						{
+							if (ip.Id == i.InfluencedInvocationId)
+							{
+								var invokeBinding = new InvocationBinding
+								{
+									Influence = new InvocationBinding.Types.Influence
+									{
+										InfluencedId = i.InfluencedId,
+										InfluencedInvocationId = i.InfluencedInvocationId,
+										InfluencingId = behaviorReference.Reference.Id,
+										InfluencingInvocationId = i.InfluencingInvocation.Id,
+										InfluenceType = i.InfluenceType
+									}
+								};
+								if (i.InfluenceType == InfluenceType.Intercept)
+								{
+									invokeBinding.InvocationStep = new InvocationBinding.Types.InvocationStep
+									{
+										Invocation = i.InfluencingInvocation,
+										NextInvocation = new InvocationBinding.Types.InvocationStep
+										{
+											Invocation = i.InfluencedInvocation
+										}
+									};
+								}
+								else
+								{
+									invokeBinding.InvocationStep = new InvocationBinding.Types.InvocationStep
+									{
+										Invocation = i.InfluencingInvocation
+									};
+								}
+								propSpec.PropertyInvocations.Add(invokeBinding);
+							}
+							else //property in the set that is not influenced
+							{
+								var invokeBinding = new InvocationBinding
+								{
+									InvocationStep = new InvocationBinding.Types.InvocationStep
+									{
+										Invocation = ip
+									}
+								};
+								propSpec.PropertyInvocations.Add(invokeBinding);
+							}
+							propSetSpec.Properties.Add(propSpec);
+						}
+					}
+					propSetSpecs.Add(propSetSpec);
+				}
+			}
+			return (behaviorSpecs, propSetSpecs);
+		}
+
+		private static PropertySpecification CreatePropertySpec(Property p)
+		{
+			var propSpec = new PropertySpecification
+			{
+				Name = p.Name,
+				TemplateValue = p.TemplateValue,
+				ValueDescription = p.ValueDescription
+			};
+			if (p.Properties.Count == 0)
+				return propSpec;
+			foreach (var pp in p.Properties)
+			{
+				propSpec = CreatePropertySpec(pp);
+			}
+
+			return propSpec;
 		}
 
 		private static PropertySet MergePropertySet(PropertySet ps, PropertySetReference psr)
@@ -718,6 +917,38 @@ namespace TTI.TTF.Taxonomy
 			}
 			
 			return ps;
+		}
+		
+		private static PropertySetSpecification GetPropertySetSpecification(PropertySet propertySet)
+		{
+			var propertySetSpec = new PropertySetSpecification
+			{
+				Artifact = propertySet.Artifact
+			};
+			
+			foreach (var i in propertySet.Properties)
+			{
+				var propertySpec = new PropertySpecification
+				{
+					Name = i.Name,
+					TemplateValue = i.TemplateValue,
+					ValueDescription = i.ValueDescription
+				};
+				foreach (var pi in i.PropertyInvocations)
+				{
+					var bp = new InvocationBinding
+					{
+						InvocationStep = new InvocationBinding.Types.InvocationStep
+						{
+							Invocation = pi
+						}
+					};
+					propertySpec.PropertyInvocations.Add(bp);
+				}
+				propertySetSpec.Properties.Add(propertySpec);
+			}
+
+			return propertySetSpec;
 		}
 
 		private static BehaviorSpecification GetBehaviorSpecification(Behavior behavior, BehaviorReference behaviorReference)
@@ -759,40 +990,7 @@ namespace TTI.TTF.Taxonomy
 				};
 				behaviorSpec.Invocations.Add(invokeBinding);
 			}
-
-			foreach (var influence in behaviorReference.InfluenceBindings)
-			{
-				var invokeBinding = new InvocationBinding
-				{
-					Influence = new InvocationBinding.Types.Influence
-					{
-						InfluencedId = influence.InfluencedId,
-						InfluencedInvocationId = influence.InfluencedInvocationId,
-						InfluencingId = behaviorReference.Reference.Id,
-						InfluencingInvocationId = influence.InfluencingInvocation.Id,
-						InfluenceType = influence.InfluenceType
-					}
-				};
-				if (influence.InfluenceType == InfluenceType.Intercept)
-				{
-					invokeBinding.InvocationStep = new InvocationBinding.Types.InvocationStep
-					{
-						Invocation = influence.InfluencingInvocation,
-						NextInvocation = new InvocationBinding.Types.InvocationStep
-						{
-							Invocation = influence.InfluencedInvocation
-						}
-					};
-				}
-				else
-				{
-					invokeBinding.InvocationStep = new InvocationBinding.Types.InvocationStep
-					{
-						Invocation = influence.InfluencingInvocation
-					};
-				}
-			}
-
+			
 			return behaviorSpec;
 		}
 

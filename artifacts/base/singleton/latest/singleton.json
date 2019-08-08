@@ -11,7 +11,8 @@
     "name": "Singleton",
     "aliases": [
       "Title",
-      "Deed"
+      "Deed",
+      "Document"
     ],
     "artifactDefinition": {
       "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
@@ -95,7 +96,7 @@
   "name": "",
   "symbol": "",
   "owner": "",
-  "quantity": "1",
+  "quantity": "MQ==",
   "decimals": 0,
   "tokenProperties": {},
   "constructorName": "",
