@@ -10,15 +10,15 @@
     },
     "name": "Delegable",
     "aliases": [
-      "To Delegate"
+      "Allow"
     ],
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will support the delegation of certain behaviors to another party or account to invoke them on the behalf of the owner. When applied to a token, behaviors that are Delegable will enable delegated request invocations. This is useful to provide another party to automatically be able to perform the behaviors that can be delegated without seeking permission up to a certain allowance.",
       "businessExample": "",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "delegable analogy 1 description",
+          "name": "Broker",
+          "description": "You may allow a broker to transfer your tokens as a part of an investment strategy. Setting an allowance can cap the total number of tokens the broker is allowed to perform delegated behaviors, when exceeded a new allowance request will need to be granted.",
           "artifactDefinition": null
         }
       ],
@@ -75,6 +75,7 @@
   },
   "invocations": [
     {
+      "id": "2e0fd8e5-2090-4c62-b094-232c32a78022",
       "name": "Allowance",
       "description": "A Request by a party or account to the owner of a token(s) to have the right to perform a delegated behavior on their behalf.",
       "request": {
@@ -99,6 +100,7 @@
       }
     },
     {
+      "id": "6d5df99d-2f5e-4c7a-aea4-d2d54176abfd",
       "name": "Approve Allowance",
       "description": "Same control message as the AllowanceRequest.  This could allow for an AllowanceRequest to be forwarded to multiple parties needed to Approve and shield this from the requestor. When all Approvals are obtained, an AllowanceResponse could be sent.",
       "request": {

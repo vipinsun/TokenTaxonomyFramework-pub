@@ -9,18 +9,24 @@ option csharp_namespace = "TTI.TTF.Taxonomy.Model.Core";
 option java_package = "org.tti.ttf.taxonomy.model.core";
 option java_multiple_files = true;
 
+enum InfluenceType {
+    INTERCEPT = 0;
+    OVERRIDE = 1;
+}
+
 //all tokens inherit from the base and implicitly support construction.  The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
 message Base{
     taxonomy.model.artifact.Artifact artifact = 1;
     taxonomy.model.artifact.TokenType token_type = 2;
-    string name = 3;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
-    string symbol = 4; //an optionally unique symbol or identifier
-    string owner = 5; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
-    bytes quantity = 6; //Can represent the initial quantity created or the total minted or issued for the class.
-    int32 decimals = 7; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
-    map<string, string> token_properties = 8; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
-    string constructor_name = 9; //a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
-    google.protobuf.Any constructor = 10; //the constructor type defined in the token template artifact.
+    taxonomy.model.artifact.TokenUnit token_unit = 3;
+    string name = 4;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    string symbol = 5; //an optionally unique symbol or identifier
+    string owner = 6; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    bytes quantity = 7; //Base64 encoded ByteString - can represent the initial quantity created or the total minted or issued for the class.
+    int32 decimals = 8; //A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    map<string, string> token_properties = 9; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    string constructor_name = 10; //a template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+    google.protobuf.Any constructor = 11; //the constructor type defined in the token template artifact.
 }
 
 message Bases{
@@ -54,18 +60,10 @@ message Behaviors{
     repeated Behavior behavior = 1;
 }
 
-message BehaviorReference{
-    taxonomy.model.artifact.ArtifactReference reference = 1;
-    bool is_external = 2;
-    string constructor_type = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
-    google.protobuf.Any constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
-    repeated Invocation invocations = 5; //values
-    repeated Property properties = 6; //values
-}
 
 message BehaviorGroup{
     taxonomy.model.artifact.Artifact artifact = 1;
-    repeated taxonomy.model.artifact.ArtifactSymbol behavior_symbols = 2;
+    repeated BehaviorReference behaviors = 2;
     map<string, Behavior> behavior_artifacts = 3; //if retrieved this can be populated with the behaviors nested in the group.
 }
 
@@ -92,6 +90,42 @@ message PropertySetReference{
     repeated Property properties = 2; //values
 }
 
+//------------------------Properties and Invocations--------------
+
+message Property{
+    string name = 1;
+    string value_description = 2; 
+    string template_value = 3; //value, if needed, when applied to template
+    repeated Invocation property_invocations = 4; //needed for non-behavioral properties
+    repeated Property properties = 5;
+}
+
+message Invocation{
+    string id = 1; //invocations are given a UUID/GUID to correctly identify influences within a definition, particularly if there is an overloaded invocation, meaning a involcation with the same name but different parameters
+    string name = 2; //property name if a property-set
+    string description = 3; //include the data type for the value.
+    InvocationRequest request = 4;
+    InvocationResponse response = 5;
+}
+
+message InvocationRequest{
+    string control_message_name = 1;
+    string description = 2;
+    repeated InvocationParameter input_parameters = 3;
+}
+
+message InvocationResponse{
+    string control_message_name = 1;
+    string description = 2;
+    repeated InvocationParameter output_parameters = 3;
+}
+
+message InvocationParameter{
+    string name = 1;
+    string value_description = 2; //describe the data type and restrictions like length.
+}
+
+//-----------------------------Template Formula and Definitions----------------
 //TokenTemplate is composed when the model is built using the hierarchy of the TemplateFormula followed by the TemplateDefinition.
 message TokenTemplate{
     TemplateFormula formula = 1;
@@ -106,7 +140,7 @@ message TokenTemplates{
 //Represents the Template Formula that is used in combination to validate a TemplateDefinition.
 message TemplateFormula{
     taxonomy.model.artifact.Artifact artifact = 1;
-    taxonomy.model.artifact.Classification classification = 2;
+    taxonomy.model.artifact.TemplateType template_type = 2;
     TemplateBase token_base = 3;
     repeated TemplateBehavior behaviors = 4;
     repeated TemplateBehaviorGroup behavior_groups = 5;
@@ -148,15 +182,80 @@ message TemplateDefinition{
 message TemplateDefinitions{
     repeated TemplateDefinition definitions = 1;
 }
+
+message BehaviorReference{
+    taxonomy.model.artifact.ArtifactReference reference = 1;
+    bool is_external = 2;
+    string constructor_type = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
+    google.protobuf.Any constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
+    repeated Invocation invocations = 5; //updated invocations from the base artifact
+    repeated InfluenceBinding influence_bindings = 6; //influence invocation definitions, only defined in the influencing behavior, but applied during specification generation.
+    repeated Property properties = 7; //values
+}
+
+//use these to define the influencing behavior's invocation and it's target to influence within the definition, the TTF will use this to construct the Invocation Pipeline.
+message InfluenceBinding{
+    string influenced_id = 1; //the artifactId being invluenced
+    string influenced_invocation_id = 2; //the invocationId in the influenced artifact to be influenced.
+    InfluenceType influence_type = 3; //override or intercept
+    Invocation influencing_invocation = 4; //if it is an intercept, this is the intercepting invocation, if it is override it is the modified invocation
+    Invocation influenced_invocation = 5; // if it is an intercept this is the invocation that occurs after being intercepted. If it is an override
+}
+
+
+//----------------------Specification----------------
 //used to dynamically build the entire Token Specification with all objects merged. Handy for documentation.
 message TokenSpecification{
+    string specification_hash = 1;
+    taxonomy.model.artifact.Artifact artifact = 2;
+    taxonomy.model.artifact.ArtifactReference definition_reference = 3;
+    Base token_base = 4;
+    repeated BehaviorSpecification behaviors = 5;
+    repeated BehaviorGroupSpecification behavior_groups = 6;
+    repeated PropertySetSpecification property_sets = 7;
+    repeated TokenSpecification child_tokens = 8;
+}
+
+message BehaviorSpecification{
     taxonomy.model.artifact.Artifact artifact = 1;
-    taxonomy.model.artifact.ArtifactReference definition_reference = 2;
-    Base token_base = 3;
-    repeated Behavior behaviors = 4;
-    repeated BehaviorGroup behavior_groups = 5;
-    repeated PropertySet property_sets = 6;
-    repeated TokenSpecification child_tokens = 7;
+    bool is_external = 2;
+    string constructor_type = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
+    google.protobuf.Any constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
+    repeated InvocationBinding invocations = 5;//definitions only will not have values, null for string or composite types and 0 for numbers, false for bools.
+    repeated Property properties = 6; //for any properties that should be added to the token if the behavior is implemented, values not set, should consider a dependent property-set.
+}
+
+message PropertySetSpecification{
+    taxonomy.model.artifact.Artifact artifact = 1;
+    repeated PropertySpecification properties = 6; //for any properties that should be added to the token if the behavior is implemented, values not set, should consider a dependent property-set.
+}
+
+message PropertySpecification{
+    string name = 1;
+    string value_description = 2; 
+    string template_value = 3; //value, if needed, when applied to template
+    repeated InvocationBinding property_invocations = 4; //needed for non-behavioral properties
+    repeated PropertySpecification properties = 5;
+}
+
+message BehaviorGroupSpecification{
+    repeated taxonomy.model.artifact.ArtifactSymbol behaviors = 1; //the behaviors in the group
+}
+
+message InvocationBinding{
+    message Influence{
+        InfluenceType influence_type = 1;
+        string influencing_id = 2; //the influencing artifactId
+        string influencing_invocation_id = 3;
+        string influenced_id = 4;
+        string influenced_invocation_id = 5;
+    }
+    Influence influence = 1;
+    message InvocationStep{
+        Invocation invocation = 1;
+        InvocationStep next_invocation = 2; 
+    }
+    InvocationStep invocation_step = 2;
 }
 
 message TokenBase {
@@ -177,36 +276,4 @@ message TokenBehaviorGroup {
 message TokenPropertySet {
     PropertySet property_set = 1;
     PropertySetReference values = 2;
-}
-
-//Artifact Reference Values
-message Property{
-    string name = 1;
-    string value_description = 2; 
-    string template_value = 3; //value, if needed, when applied to template
-    repeated Invocation property_invocations = 4; //needed for non-behavioral properties
-}
-
-message Invocation{
-    string name = 1; //property name if a property-set
-    string description = 2; //include the data type for the value.
-    InvocationRequest request = 3;
-    InvocationResponse response = 4;
-}
-
-message InvocationRequest{
-    string control_message_name = 1;
-    string description = 2;
-    repeated InvocationParameter input_parameters = 3;
-}
-
-message InvocationResponse{
-    string control_message_name = 1;
-    string description = 2;
-    repeated InvocationParameter output_parameters = 3;
-}
-
-message InvocationParameter{
-    string name = 1;
-    string value_description = 2; //describe the data type and restrictions like length.
 }

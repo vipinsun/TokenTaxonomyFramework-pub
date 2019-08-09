@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Threading;
+using Google.Protobuf;
 using Grpc.Core;
 using log4net;
 using Microsoft.Extensions.Configuration;
@@ -46,7 +47,7 @@ namespace TTI.TTF.Taxonomy
 
 			FolderSeparator = Os.IsWindows() ? "\\" : "/";
 			Latest = FolderSeparator + "latest";
-
+			
 			ModelManager.Init();
 			
 			_apiServer = new Server

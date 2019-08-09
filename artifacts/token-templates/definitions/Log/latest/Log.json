@@ -16,12 +16,12 @@
       "Audit"
     ],
     "artifactDefinition": {
-      "businessDescription": "Log, is a non-fungible token that serves as a trusted log that is used to record event data for some shared process, application or other type of context specific log data that is of interest to multiple parties. This token is owned by some shared source and viewable by parties that are members of a LogViewer role.",
+      "businessDescription": "Log, is a non-fungible token that serves as a trusted log that is used to record event data for some shared process, application or other type of context specific log data that is of interest to multiple parties. This token is owned by some shared source that can submit new log entries as the owner and viewable by parties that are members of a LogViewer role.",
       "businessExample": "This token is useful when the owner of the token must record periodic data that multiple parties may want to monitor or audit.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "Singleton analogy 1 description",
+          "name": "Log table",
+          "description": "A Table containing multiple rows, where each row is a log entry.",
           "artifactDefinition": null
         }
       ],
@@ -72,23 +72,18 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "tN{~t,~d,b,s,r,l}.proto",
+        "fileName": "Log.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "tN{~t,~d,b,s,r,l}.md",
+        "fileName": "Log.md",
         "fileData": "",
         "artifact": null
       }
     ],
-    "maps": {
-      "codeReferences": [],
-      "implementationReferences": [],
-      "resources": [],
-      "artifact": null
-    }
+    "maps": {}
   },
   "formulaReference": {
     "id": "d4bdee60-55ae-4f00-9e06-2bc9e79ecf9e",
@@ -100,38 +95,14 @@
     "reference": {
       "id": "8314a797-df3c-409b-835c-0e80af92714f",
       "type": "BASE",
-      "referenceNotes": "",
+      "referenceNotes": "non-fungible, quantity of 1 with 0 decimals",
       "values": {
         "controlUri": "",
         "artifactFiles": [],
         "maps": {
-          "codeReferences": [
-            {
-              "mappingType": "SOURCE_CODE",
-              "name": "Code 1",
-              "platform": "DAML",
-              "referencePath": "",
-              "maps": null
-            }
-          ],
-          "implementationReferences": [
-            {
-              "mappingType": "IMPLEMENTATION",
-              "name": "Implementation 1",
-              "platform": "CHAINCODE_GO",
-              "referencePath": "",
-              "maps": null
-            }
-          ],
-          "resources": [
-            {
-              "mappingType": "RESOURCE",
-              "name": "Regulation Reference 1",
-              "description": "",
-              "resourcePath": "",
-              "maps": null
-            }
-          ],
+          "codeReferences": [],
+          "implementationReferences": [],
+          "resources": [],
           "artifact": null
         }
       }
@@ -139,7 +110,7 @@
     "name": "",
     "symbol": "",
     "owner": "",
-    "quantity": "",
+    "quantity": "MQ==",
     "decimals": 0,
     "tokenProperties": {},
     "constructorName": "Constructor",
@@ -150,92 +121,28 @@
       "reference": {
         "id": "c1189d7a-e142-4504-bf26-44c35b76c9d6",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": {
-          "controlUri": "",
-          "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
-        }
+        "referenceNotes": "singleton",
+        "values": null
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [],
       "properties": []
     },
     {
       "reference": {
         "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": {
-          "controlUri": "",
-          "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
-        }
+        "referenceNotes": "non-subdividable",
+        "values": null
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [],
       "properties": [
         {
           "name": "Decimals",
@@ -243,6 +150,7 @@
           "templateValue": "0",
           "propertyInvocations": [
             {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
               "name": "GetDecimals",
               "description": "Should return 0",
               "request": {
@@ -269,210 +177,134 @@
       "reference": {
         "id": "a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": {
-          "controlUri": "",
-          "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
-        }
+        "referenceNotes": "non-transferable",
+        "values": null
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [],
       "properties": []
     },
     {
       "reference": {
         "id": "803297a1-c0f9-4898-9d44-29c9d41cca97",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": {
-          "controlUri": "",
-          "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
-        }
+        "referenceNotes": "burnable",
+        "values":  null
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
-      "invocations": [
-        {
-          "name": "Burn",
-          "description": "A request to burn a token instance(s) in the class by the owner of the token instance(s).  Optional Quantity field in the request.",
-          "request": {
-            "controlMessageName": "BurnRequest",
-            "description": "The request to Burn or Retire tokens.",
-            "inputParameters": [
-              {
-                "name": "Quantity",
-                "valueDescription": "The number of tokens to burn, might not apply to the implementation."
-              }
-            ]
-          },
-          "response": {
-            "controlMessageName": "BurnResponse",
-            "description": "The response from the request to burn.",
-            "outputParameters": [
-              {
-                "name": "Confirmation",
-                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
-              }
-            ]
-          }
-        },
-        {
-          "name": "BurnFrom",
-          "description": "Requires Delegable. A request to burn token instance(s) in the class by a party or account that has allowance to do so.  Requires a From and Quantity fields in the request.",
-          "request": {
-            "controlMessageName": "BurnRequest",
-            "description": "The request to Burn or Retire tokens.",
-            "inputParameters": [
-              {
-                "name": "Quantity",
-                "valueDescription": "The number of tokens to burn, might not apply to the implementation."
-              }
-            ]
-          },
-          "response": {
-            "controlMessageName": "BurnResponse",
-            "description": "The response from the request to burn.",
-            "outputParameters": [
-              {
-                "name": "Confirmation",
-                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
-              }
-            ]
-          }
-        }
-      ],
+      "invocations": [],
+      "influenceBindings": [],
       "properties": []
     },
     {
       "reference": {
         "id": "c32726da-9787-4dd8-8de3-d07d1733d0f6",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": {
-          "controlUri": "",
-          "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
-        }
+        "referenceNotes": "roles",
+        "values": null
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
-      "invocations": [
+      "invocations": [],
+      "influenceBindings": [
         {
-          "name": "RoleCheck",
-          "description": "Internal invocation when the applied behavior is called to check if the requestor is a member of the role.",
-          "request": {
-            "controlMessageName": "IsInRole",
-            "description": "The request",
-            "inputParameters": [
-              {
-                "name": "AccountId",
-                "valueDescription": "AccountId of the requestor."
-              }
-            ]
+          "influencedId": "9c8c2373-cf3c-4743-932a-03fee6a192fe",
+          "influencedInvocationId": "00e91598-b162-47d7-8636-baac251e98e7",
+          "influenceType": "INTERCEPT",
+          "influencingInvocation": {
+            "id": "00a665e3-1dda-441e-8262-5750435c153c",
+            "name": "RoleCheck",
+            "description": "Internal invocation when the applied behavior is called to check if the requestor is a member of the role.",
+            "request": {
+              "controlMessageName": "IsInRole",
+              "description": "Check that the account is in the 'LogViewer' role.",
+              "inputParameters": [
+                {
+                  "name": "AccountId",
+                  "valueDescription": "AccountId of the requestor."
+                }
+              ]
+            },
+            "response": {
+              "controlMessageName": "True/False",
+              "description": "The response",
+              "outputParameters": [
+                {
+                  "name": "IsInRole",
+                  "valueDescription": "True/False"
+                }
+              ]
+            }
           },
-          "response": {
-            "controlMessageName": "True/False",
-            "description": "The response",
-            "outputParameters": [
-              {
-                "name": "IsInRole",
-                "valueDescription": "True/False"
-              }
-            ]
-          }
+          "influencedInvocation": null
+        },
+        {
+          "influencedId": "9c8c2373-cf3c-4743-932a-03fee6a192fe",
+          "influencedInvocationId": "589c478d-8852-4237-b559-6414e54ecbb2",
+          "influenceType": "INTERCEPT",
+          "influencingInvocation": {
+            "id": "00a665e3-1dda-441e-8262-5750435c153c",
+            "name": "RoleCheck",
+            "description": "Internal invocation when the applied behavior is called to check if the requestor is a member of the role.",
+            "request": {
+              "controlMessageName": "IsInRole",
+              "description": "Check that the account is in the 'LogViewer' role.",
+              "inputParameters": [
+                {
+                  "name": "AccountId",
+                  "valueDescription": "AccountId of the requestor."
+                }
+              ]
+            },
+            "response": {
+              "controlMessageName": "True/False",
+              "description": "The response",
+              "outputParameters": [
+                {
+                  "name": "IsInRole",
+                  "valueDescription": "True/False"
+                }
+              ]
+            }
+          },
+          "influencedInvocation": null
+        },
+        {
+          "influencedId": "9c8c2373-cf3c-4743-932a-03fee6a192fe",
+          "influencedInvocationId": "7af943cc-03ec-49c1-bed6-450ac624d8d3",
+          "influenceType": "INTERCEPT",
+          "influencingInvocation": {
+            "id": "00a665e3-1dda-441e-8262-5750435c153c",
+            "name": "RoleCheck",
+            "description": "Internal invocation when the applied behavior is called to check if the requestor is a member of the role.",
+            "request": {
+              "controlMessageName": "IsInRole",
+              "description": "Check that the account is in the 'LogViewer' role.",
+              "inputParameters": [
+                {
+                  "name": "AccountId",
+                  "valueDescription": "AccountId of the requestor."
+                }
+              ]
+            },
+            "response": {
+              "controlMessageName": "True/False",
+              "description": "The response",
+              "outputParameters": [
+                {
+                  "name": "IsInRole",
+                  "valueDescription": "True/False"
+                }
+              ]
+            }
+          },
+          "influencedInvocation": null
         }
       ],
       "properties": [
@@ -652,6 +484,7 @@
           }
         }
       ],
+      "influenceBindings": [],
       "properties": []
     }
   ],

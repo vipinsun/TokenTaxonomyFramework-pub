@@ -10,8 +10,8 @@
     },
     "name": "Encumberable",
     "aliases": [
-      "Locked",
-      "Frozen"
+      "Restricted",
+      "Supervised"
     ],
     "artifactDefinition": {
       "businessDescription": "A token class that implements this behavior will have restrictions preventing certain behaviors like transferable, burnable, etc. from working while it is encumbered. The encumbering party should make a request to encumber, the owner should be notified about the request, and accept the request, which will finalize the encumbrance and send the EncumberResponse message to the requestor.",
@@ -19,7 +19,7 @@
       "analogies": [
         {
           "name": "Loan",
-          "description": "encumberable analogy 1 description",
+          "description": "A token can represent an asset that the owner took out a loan to obtain. If so, the token will need to be encumbered by the loan contract preventing the owner from selling the asset until the loan is repaid.",
           "artifactDefinition": null
         }
       ],
@@ -76,6 +76,7 @@
   },
   "invocations": [
     {
+      "id": "bdc69e47-8320-4f54-8a03-0f54c376e113",
       "name": "EncumberRequest",
       "description": "A Request by a party or account, perhaps a contract or another token, to encumber the token.",
       "request": {
@@ -108,6 +109,7 @@
       }
     },
     {
+      "id":"efd8bb57-4904-481e-976d-8a20a33df602",
       "name": "AcceptEncumberRequest",
       "description": "A Request by a party or account, perhaps a contract or another token, to encumber the token.  Once accepted, the token should add a new entry into the Encumbrances property.",
       "request": {
@@ -127,6 +129,7 @@
       }
     },
     {
+      "id":"4532c466-bb6d-482a-b2cc-5285ba1f8259",
       "name": "RemoveEncumberRequest",
       "description": "A Request by encumbrancer, perhaps a contract or another token, to remove their encumber or lien from the token.  Which should remove any restrictions from behaviors if there are no more encumbers.  Only the owner of the encumber can remove their encumber.",
       "request": {
@@ -153,6 +156,7 @@
       "templateValue": "",
       "propertyInvocations": [
         {
+          "id": "9e39bf6a-74dc-4ca1-a709-5db247aaa31b",
           "name": "GetEncumbrancesRequest",
           "description": "The property value.",
           "request": {
@@ -179,6 +183,7 @@
       "templateValue": "",
       "propertyInvocations": [
         {
+          "id": "f35cdfee-d2f4-4a01-bf9b-33774b5df241",
           "name": "GetEncumberedRequest",
           "description": "The property value.",
           "request": {

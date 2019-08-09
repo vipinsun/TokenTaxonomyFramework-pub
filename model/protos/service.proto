@@ -24,7 +24,7 @@ service Service {
    
 
     rpc GetArtifactsOfType (taxonomy.model.artifact.QueryOptions) returns (taxonomy.model.artifact.QueryResult) {}
-    
+    rpc InitializeNewArtifact (taxonomy.model.artifact.InitializeNewArtifactRequest) returns (taxonomy.model.artifact.InitializeNewArtifactResponse) {}
     //sets
     rpc CreateArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactResponse) {}
     rpc UpdateArtifact (taxonomy.model.artifact.UpdateArtifactRequest) returns (taxonomy.model.artifact.UpdateArtifactResponse) {}

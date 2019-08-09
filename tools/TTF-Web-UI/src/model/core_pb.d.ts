@@ -13,6 +13,9 @@ export class Base extends jspb.Message {
   getTokenType(): artifact_pb.TokenType;
   setTokenType(value: artifact_pb.TokenType): void;
 
+  getTokenUnit(): artifact_pb.TokenUnit;
+  setTokenUnit(value: artifact_pb.TokenUnit): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -53,6 +56,7 @@ export namespace Base {
   export type AsObject = {
     artifact?: artifact_pb.Artifact.AsObject,
     tokenType: artifact_pb.TokenType,
+    tokenUnit: artifact_pb.TokenUnit,
     name: string,
     symbol: string,
     owner: string,
@@ -206,62 +210,16 @@ export namespace Behaviors {
   }
 }
 
-export class BehaviorReference extends jspb.Message {
-  getReference(): artifact_pb.ArtifactReference | undefined;
-  setReference(value?: artifact_pb.ArtifactReference): void;
-  hasReference(): boolean;
-  clearReference(): void;
-
-  getIsExternal(): boolean;
-  setIsExternal(value: boolean): void;
-
-  getConstructorType(): string;
-  setConstructorType(value: string): void;
-
-  getConstructor(): google_protobuf_any_pb.Any | undefined;
-  setConstructor(value?: google_protobuf_any_pb.Any): void;
-  hasConstructor(): boolean;
-  clearConstructor(): void;
-
-  getInvocationsList(): Array<Invocation>;
-  setInvocationsList(value: Array<Invocation>): void;
-  clearInvocationsList(): void;
-  addInvocations(value?: Invocation, index?: number): Invocation;
-
-  getPropertiesList(): Array<Property>;
-  setPropertiesList(value: Array<Property>): void;
-  clearPropertiesList(): void;
-  addProperties(value?: Property, index?: number): Property;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BehaviorReference.AsObject;
-  static toObject(includeInstance: boolean, msg: BehaviorReference): BehaviorReference.AsObject;
-  static serializeBinaryToWriter(message: BehaviorReference, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BehaviorReference;
-  static deserializeBinaryFromReader(message: BehaviorReference, reader: jspb.BinaryReader): BehaviorReference;
-}
-
-export namespace BehaviorReference {
-  export type AsObject = {
-    reference?: artifact_pb.ArtifactReference.AsObject,
-    isExternal: boolean,
-    constructorType: string,
-    constructor?: google_protobuf_any_pb.Any.AsObject,
-    invocationsList: Array<Invocation.AsObject>,
-    propertiesList: Array<Property.AsObject>,
-  }
-}
-
 export class BehaviorGroup extends jspb.Message {
   getArtifact(): artifact_pb.Artifact | undefined;
   setArtifact(value?: artifact_pb.Artifact): void;
   hasArtifact(): boolean;
   clearArtifact(): void;
 
-  getBehaviorSymbolsList(): Array<artifact_pb.ArtifactSymbol>;
-  setBehaviorSymbolsList(value: Array<artifact_pb.ArtifactSymbol>): void;
-  clearBehaviorSymbolsList(): void;
-  addBehaviorSymbols(value?: artifact_pb.ArtifactSymbol, index?: number): artifact_pb.ArtifactSymbol;
+  getBehaviorsList(): Array<BehaviorReference>;
+  setBehaviorsList(value: Array<BehaviorReference>): void;
+  clearBehaviorsList(): void;
+  addBehaviors(value?: BehaviorReference, index?: number): BehaviorReference;
 
   getBehaviorArtifactsMap(): jspb.Map<string, Behavior>;
   clearBehaviorArtifactsMap(): void;
@@ -277,7 +235,7 @@ export class BehaviorGroup extends jspb.Message {
 export namespace BehaviorGroup {
   export type AsObject = {
     artifact?: artifact_pb.Artifact.AsObject,
-    behaviorSymbolsList: Array<artifact_pb.ArtifactSymbol.AsObject>,
+    behaviorsList: Array<BehaviorReference.AsObject>,
     behaviorArtifactsMap: Array<[string, Behavior.AsObject]>,
   }
 }
@@ -400,6 +358,160 @@ export namespace PropertySetReference {
   }
 }
 
+export class Property extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValueDescription(): string;
+  setValueDescription(value: string): void;
+
+  getTemplateValue(): string;
+  setTemplateValue(value: string): void;
+
+  getPropertyInvocationsList(): Array<Invocation>;
+  setPropertyInvocationsList(value: Array<Invocation>): void;
+  clearPropertyInvocationsList(): void;
+  addPropertyInvocations(value?: Invocation, index?: number): Invocation;
+
+  getPropertiesList(): Array<Property>;
+  setPropertiesList(value: Array<Property>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: Property, index?: number): Property;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Property.AsObject;
+  static toObject(includeInstance: boolean, msg: Property): Property.AsObject;
+  static serializeBinaryToWriter(message: Property, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Property;
+  static deserializeBinaryFromReader(message: Property, reader: jspb.BinaryReader): Property;
+}
+
+export namespace Property {
+  export type AsObject = {
+    name: string,
+    valueDescription: string,
+    templateValue: string,
+    propertyInvocationsList: Array<Invocation.AsObject>,
+    propertiesList: Array<Property.AsObject>,
+  }
+}
+
+export class Invocation extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getRequest(): InvocationRequest | undefined;
+  setRequest(value?: InvocationRequest): void;
+  hasRequest(): boolean;
+  clearRequest(): void;
+
+  getResponse(): InvocationResponse | undefined;
+  setResponse(value?: InvocationResponse): void;
+  hasResponse(): boolean;
+  clearResponse(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Invocation.AsObject;
+  static toObject(includeInstance: boolean, msg: Invocation): Invocation.AsObject;
+  static serializeBinaryToWriter(message: Invocation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Invocation;
+  static deserializeBinaryFromReader(message: Invocation, reader: jspb.BinaryReader): Invocation;
+}
+
+export namespace Invocation {
+  export type AsObject = {
+    id: string,
+    name: string,
+    description: string,
+    request?: InvocationRequest.AsObject,
+    response?: InvocationResponse.AsObject,
+  }
+}
+
+export class InvocationRequest extends jspb.Message {
+  getControlMessageName(): string;
+  setControlMessageName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getInputParametersList(): Array<InvocationParameter>;
+  setInputParametersList(value: Array<InvocationParameter>): void;
+  clearInputParametersList(): void;
+  addInputParameters(value?: InvocationParameter, index?: number): InvocationParameter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvocationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: InvocationRequest): InvocationRequest.AsObject;
+  static serializeBinaryToWriter(message: InvocationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvocationRequest;
+  static deserializeBinaryFromReader(message: InvocationRequest, reader: jspb.BinaryReader): InvocationRequest;
+}
+
+export namespace InvocationRequest {
+  export type AsObject = {
+    controlMessageName: string,
+    description: string,
+    inputParametersList: Array<InvocationParameter.AsObject>,
+  }
+}
+
+export class InvocationResponse extends jspb.Message {
+  getControlMessageName(): string;
+  setControlMessageName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getOutputParametersList(): Array<InvocationParameter>;
+  setOutputParametersList(value: Array<InvocationParameter>): void;
+  clearOutputParametersList(): void;
+  addOutputParameters(value?: InvocationParameter, index?: number): InvocationParameter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvocationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: InvocationResponse): InvocationResponse.AsObject;
+  static serializeBinaryToWriter(message: InvocationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvocationResponse;
+  static deserializeBinaryFromReader(message: InvocationResponse, reader: jspb.BinaryReader): InvocationResponse;
+}
+
+export namespace InvocationResponse {
+  export type AsObject = {
+    controlMessageName: string,
+    description: string,
+    outputParametersList: Array<InvocationParameter.AsObject>,
+  }
+}
+
+export class InvocationParameter extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValueDescription(): string;
+  setValueDescription(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvocationParameter.AsObject;
+  static toObject(includeInstance: boolean, msg: InvocationParameter): InvocationParameter.AsObject;
+  static serializeBinaryToWriter(message: InvocationParameter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvocationParameter;
+  static deserializeBinaryFromReader(message: InvocationParameter, reader: jspb.BinaryReader): InvocationParameter;
+}
+
+export namespace InvocationParameter {
+  export type AsObject = {
+    name: string,
+    valueDescription: string,
+  }
+}
+
 export class TokenTemplate extends jspb.Message {
   getFormula(): TemplateFormula | undefined;
   setFormula(value?: TemplateFormula): void;
@@ -450,10 +562,8 @@ export class TemplateFormula extends jspb.Message {
   hasArtifact(): boolean;
   clearArtifact(): void;
 
-  getClassification(): artifact_pb.Classification | undefined;
-  setClassification(value?: artifact_pb.Classification): void;
-  hasClassification(): boolean;
-  clearClassification(): void;
+  getTemplateType(): artifact_pb.TemplateType;
+  setTemplateType(value: artifact_pb.TemplateType): void;
 
   getTokenBase(): TemplateBase | undefined;
   setTokenBase(value?: TemplateBase): void;
@@ -491,7 +601,7 @@ export class TemplateFormula extends jspb.Message {
 export namespace TemplateFormula {
   export type AsObject = {
     artifact?: artifact_pb.Artifact.AsObject,
-    classification?: artifact_pb.Classification.AsObject,
+    templateType: artifact_pb.TemplateType,
     tokenBase?: TemplateBase.AsObject,
     behaviorsList: Array<TemplateBehavior.AsObject>,
     behaviorGroupsList: Array<TemplateBehaviorGroup.AsObject>,
@@ -676,7 +786,100 @@ export namespace TemplateDefinitions {
   }
 }
 
+export class BehaviorReference extends jspb.Message {
+  getReference(): artifact_pb.ArtifactReference | undefined;
+  setReference(value?: artifact_pb.ArtifactReference): void;
+  hasReference(): boolean;
+  clearReference(): void;
+
+  getIsExternal(): boolean;
+  setIsExternal(value: boolean): void;
+
+  getConstructorType(): string;
+  setConstructorType(value: string): void;
+
+  getConstructor(): google_protobuf_any_pb.Any | undefined;
+  setConstructor(value?: google_protobuf_any_pb.Any): void;
+  hasConstructor(): boolean;
+  clearConstructor(): void;
+
+  getInvocationsList(): Array<Invocation>;
+  setInvocationsList(value: Array<Invocation>): void;
+  clearInvocationsList(): void;
+  addInvocations(value?: Invocation, index?: number): Invocation;
+
+  getInfluenceBindingsList(): Array<InfluenceBinding>;
+  setInfluenceBindingsList(value: Array<InfluenceBinding>): void;
+  clearInfluenceBindingsList(): void;
+  addInfluenceBindings(value?: InfluenceBinding, index?: number): InfluenceBinding;
+
+  getPropertiesList(): Array<Property>;
+  setPropertiesList(value: Array<Property>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: Property, index?: number): Property;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BehaviorReference.AsObject;
+  static toObject(includeInstance: boolean, msg: BehaviorReference): BehaviorReference.AsObject;
+  static serializeBinaryToWriter(message: BehaviorReference, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BehaviorReference;
+  static deserializeBinaryFromReader(message: BehaviorReference, reader: jspb.BinaryReader): BehaviorReference;
+}
+
+export namespace BehaviorReference {
+  export type AsObject = {
+    reference?: artifact_pb.ArtifactReference.AsObject,
+    isExternal: boolean,
+    constructorType: string,
+    constructor?: google_protobuf_any_pb.Any.AsObject,
+    invocationsList: Array<Invocation.AsObject>,
+    influenceBindingsList: Array<InfluenceBinding.AsObject>,
+    propertiesList: Array<Property.AsObject>,
+  }
+}
+
+export class InfluenceBinding extends jspb.Message {
+  getInfluencedId(): string;
+  setInfluencedId(value: string): void;
+
+  getInfluencedInvocationId(): string;
+  setInfluencedInvocationId(value: string): void;
+
+  getInfluenceType(): InfluenceType;
+  setInfluenceType(value: InfluenceType): void;
+
+  getInfluencingInvocation(): Invocation | undefined;
+  setInfluencingInvocation(value?: Invocation): void;
+  hasInfluencingInvocation(): boolean;
+  clearInfluencingInvocation(): void;
+
+  getInfluencedInvocation(): Invocation | undefined;
+  setInfluencedInvocation(value?: Invocation): void;
+  hasInfluencedInvocation(): boolean;
+  clearInfluencedInvocation(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InfluenceBinding.AsObject;
+  static toObject(includeInstance: boolean, msg: InfluenceBinding): InfluenceBinding.AsObject;
+  static serializeBinaryToWriter(message: InfluenceBinding, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InfluenceBinding;
+  static deserializeBinaryFromReader(message: InfluenceBinding, reader: jspb.BinaryReader): InfluenceBinding;
+}
+
+export namespace InfluenceBinding {
+  export type AsObject = {
+    influencedId: string,
+    influencedInvocationId: string,
+    influenceType: InfluenceType,
+    influencingInvocation?: Invocation.AsObject,
+    influencedInvocation?: Invocation.AsObject,
+  }
+}
+
 export class TokenSpecification extends jspb.Message {
+  getSpecificationHash(): string;
+  setSpecificationHash(value: string): void;
+
   getArtifact(): artifact_pb.Artifact | undefined;
   setArtifact(value?: artifact_pb.Artifact): void;
   hasArtifact(): boolean;
@@ -692,20 +895,20 @@ export class TokenSpecification extends jspb.Message {
   hasTokenBase(): boolean;
   clearTokenBase(): void;
 
-  getBehaviorsList(): Array<Behavior>;
-  setBehaviorsList(value: Array<Behavior>): void;
+  getBehaviorsList(): Array<BehaviorSpecification>;
+  setBehaviorsList(value: Array<BehaviorSpecification>): void;
   clearBehaviorsList(): void;
-  addBehaviors(value?: Behavior, index?: number): Behavior;
+  addBehaviors(value?: BehaviorSpecification, index?: number): BehaviorSpecification;
 
-  getBehaviorGroupsList(): Array<BehaviorGroup>;
-  setBehaviorGroupsList(value: Array<BehaviorGroup>): void;
+  getBehaviorGroupsList(): Array<BehaviorGroupSpecification>;
+  setBehaviorGroupsList(value: Array<BehaviorGroupSpecification>): void;
   clearBehaviorGroupsList(): void;
-  addBehaviorGroups(value?: BehaviorGroup, index?: number): BehaviorGroup;
+  addBehaviorGroups(value?: BehaviorGroupSpecification, index?: number): BehaviorGroupSpecification;
 
-  getPropertySetsList(): Array<PropertySet>;
-  setPropertySetsList(value: Array<PropertySet>): void;
+  getPropertySetsList(): Array<PropertySetSpecification>;
+  setPropertySetsList(value: Array<PropertySetSpecification>): void;
   clearPropertySetsList(): void;
-  addPropertySets(value?: PropertySet, index?: number): PropertySet;
+  addPropertySets(value?: PropertySetSpecification, index?: number): PropertySetSpecification;
 
   getChildTokensList(): Array<TokenSpecification>;
   setChildTokensList(value: Array<TokenSpecification>): void;
@@ -722,14 +925,233 @@ export class TokenSpecification extends jspb.Message {
 
 export namespace TokenSpecification {
   export type AsObject = {
+    specificationHash: string,
     artifact?: artifact_pb.Artifact.AsObject,
     definitionReference?: artifact_pb.ArtifactReference.AsObject,
     tokenBase?: Base.AsObject,
-    behaviorsList: Array<Behavior.AsObject>,
-    behaviorGroupsList: Array<BehaviorGroup.AsObject>,
-    propertySetsList: Array<PropertySet.AsObject>,
+    behaviorsList: Array<BehaviorSpecification.AsObject>,
+    behaviorGroupsList: Array<BehaviorGroupSpecification.AsObject>,
+    propertySetsList: Array<PropertySetSpecification.AsObject>,
     childTokensList: Array<TokenSpecification.AsObject>,
   }
+}
+
+export class BehaviorSpecification extends jspb.Message {
+  getArtifact(): artifact_pb.Artifact | undefined;
+  setArtifact(value?: artifact_pb.Artifact): void;
+  hasArtifact(): boolean;
+  clearArtifact(): void;
+
+  getIsExternal(): boolean;
+  setIsExternal(value: boolean): void;
+
+  getConstructorType(): string;
+  setConstructorType(value: string): void;
+
+  getConstructor(): google_protobuf_any_pb.Any | undefined;
+  setConstructor(value?: google_protobuf_any_pb.Any): void;
+  hasConstructor(): boolean;
+  clearConstructor(): void;
+
+  getInvocationsList(): Array<InvocationBinding>;
+  setInvocationsList(value: Array<InvocationBinding>): void;
+  clearInvocationsList(): void;
+  addInvocations(value?: InvocationBinding, index?: number): InvocationBinding;
+
+  getPropertiesList(): Array<Property>;
+  setPropertiesList(value: Array<Property>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: Property, index?: number): Property;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BehaviorSpecification.AsObject;
+  static toObject(includeInstance: boolean, msg: BehaviorSpecification): BehaviorSpecification.AsObject;
+  static serializeBinaryToWriter(message: BehaviorSpecification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BehaviorSpecification;
+  static deserializeBinaryFromReader(message: BehaviorSpecification, reader: jspb.BinaryReader): BehaviorSpecification;
+}
+
+export namespace BehaviorSpecification {
+  export type AsObject = {
+    artifact?: artifact_pb.Artifact.AsObject,
+    isExternal: boolean,
+    constructorType: string,
+    constructor?: google_protobuf_any_pb.Any.AsObject,
+    invocationsList: Array<InvocationBinding.AsObject>,
+    propertiesList: Array<Property.AsObject>,
+  }
+}
+
+export class PropertySetSpecification extends jspb.Message {
+  getArtifact(): artifact_pb.Artifact | undefined;
+  setArtifact(value?: artifact_pb.Artifact): void;
+  hasArtifact(): boolean;
+  clearArtifact(): void;
+
+  getPropertiesList(): Array<PropertySpecification>;
+  setPropertiesList(value: Array<PropertySpecification>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: PropertySpecification, index?: number): PropertySpecification;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PropertySetSpecification.AsObject;
+  static toObject(includeInstance: boolean, msg: PropertySetSpecification): PropertySetSpecification.AsObject;
+  static serializeBinaryToWriter(message: PropertySetSpecification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PropertySetSpecification;
+  static deserializeBinaryFromReader(message: PropertySetSpecification, reader: jspb.BinaryReader): PropertySetSpecification;
+}
+
+export namespace PropertySetSpecification {
+  export type AsObject = {
+    artifact?: artifact_pb.Artifact.AsObject,
+    propertiesList: Array<PropertySpecification.AsObject>,
+  }
+}
+
+export class PropertySpecification extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getValueDescription(): string;
+  setValueDescription(value: string): void;
+
+  getTemplateValue(): string;
+  setTemplateValue(value: string): void;
+
+  getPropertyInvocationsList(): Array<InvocationBinding>;
+  setPropertyInvocationsList(value: Array<InvocationBinding>): void;
+  clearPropertyInvocationsList(): void;
+  addPropertyInvocations(value?: InvocationBinding, index?: number): InvocationBinding;
+
+  getPropertiesList(): Array<PropertySpecification>;
+  setPropertiesList(value: Array<PropertySpecification>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: PropertySpecification, index?: number): PropertySpecification;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PropertySpecification.AsObject;
+  static toObject(includeInstance: boolean, msg: PropertySpecification): PropertySpecification.AsObject;
+  static serializeBinaryToWriter(message: PropertySpecification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PropertySpecification;
+  static deserializeBinaryFromReader(message: PropertySpecification, reader: jspb.BinaryReader): PropertySpecification;
+}
+
+export namespace PropertySpecification {
+  export type AsObject = {
+    name: string,
+    valueDescription: string,
+    templateValue: string,
+    propertyInvocationsList: Array<InvocationBinding.AsObject>,
+    propertiesList: Array<PropertySpecification.AsObject>,
+  }
+}
+
+export class BehaviorGroupSpecification extends jspb.Message {
+  getBehaviorsList(): Array<artifact_pb.ArtifactSymbol>;
+  setBehaviorsList(value: Array<artifact_pb.ArtifactSymbol>): void;
+  clearBehaviorsList(): void;
+  addBehaviors(value?: artifact_pb.ArtifactSymbol, index?: number): artifact_pb.ArtifactSymbol;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BehaviorGroupSpecification.AsObject;
+  static toObject(includeInstance: boolean, msg: BehaviorGroupSpecification): BehaviorGroupSpecification.AsObject;
+  static serializeBinaryToWriter(message: BehaviorGroupSpecification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BehaviorGroupSpecification;
+  static deserializeBinaryFromReader(message: BehaviorGroupSpecification, reader: jspb.BinaryReader): BehaviorGroupSpecification;
+}
+
+export namespace BehaviorGroupSpecification {
+  export type AsObject = {
+    behaviorsList: Array<artifact_pb.ArtifactSymbol.AsObject>,
+  }
+}
+
+export class InvocationBinding extends jspb.Message {
+  getInfluence(): InvocationBinding.Influence | undefined;
+  setInfluence(value?: InvocationBinding.Influence): void;
+  hasInfluence(): boolean;
+  clearInfluence(): void;
+
+  getInvocationStep(): InvocationBinding.InvocationStep | undefined;
+  setInvocationStep(value?: InvocationBinding.InvocationStep): void;
+  hasInvocationStep(): boolean;
+  clearInvocationStep(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InvocationBinding.AsObject;
+  static toObject(includeInstance: boolean, msg: InvocationBinding): InvocationBinding.AsObject;
+  static serializeBinaryToWriter(message: InvocationBinding, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InvocationBinding;
+  static deserializeBinaryFromReader(message: InvocationBinding, reader: jspb.BinaryReader): InvocationBinding;
+}
+
+export namespace InvocationBinding {
+  export type AsObject = {
+    influence?: InvocationBinding.Influence.AsObject,
+    invocationStep?: InvocationBinding.InvocationStep.AsObject,
+  }
+
+  export class Influence extends jspb.Message {
+    getInfluenceType(): InfluenceType;
+    setInfluenceType(value: InfluenceType): void;
+
+    getInfluencingId(): string;
+    setInfluencingId(value: string): void;
+
+    getInfluencingInvocationId(): string;
+    setInfluencingInvocationId(value: string): void;
+
+    getInfluencedId(): string;
+    setInfluencedId(value: string): void;
+
+    getInfluencedInvocationId(): string;
+    setInfluencedInvocationId(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Influence.AsObject;
+    static toObject(includeInstance: boolean, msg: Influence): Influence.AsObject;
+    static serializeBinaryToWriter(message: Influence, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Influence;
+    static deserializeBinaryFromReader(message: Influence, reader: jspb.BinaryReader): Influence;
+  }
+
+  export namespace Influence {
+    export type AsObject = {
+      influenceType: InfluenceType,
+      influencingId: string,
+      influencingInvocationId: string,
+      influencedId: string,
+      influencedInvocationId: string,
+    }
+  }
+
+
+  export class InvocationStep extends jspb.Message {
+    getInvocation(): Invocation | undefined;
+    setInvocation(value?: Invocation): void;
+    hasInvocation(): boolean;
+    clearInvocation(): void;
+
+    getNextInvocation(): InvocationBinding.InvocationStep | undefined;
+    setNextInvocation(value?: InvocationBinding.InvocationStep): void;
+    hasNextInvocation(): boolean;
+    clearNextInvocation(): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): InvocationStep.AsObject;
+    static toObject(includeInstance: boolean, msg: InvocationStep): InvocationStep.AsObject;
+    static serializeBinaryToWriter(message: InvocationStep, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): InvocationStep;
+    static deserializeBinaryFromReader(message: InvocationStep, reader: jspb.BinaryReader): InvocationStep;
+  }
+
+  export namespace InvocationStep {
+    export type AsObject = {
+      invocation?: Invocation.AsObject,
+      nextInvocation?: InvocationBinding.InvocationStep.AsObject,
+    }
+  }
+
 }
 
 export class TokenBase extends jspb.Message {
@@ -836,147 +1258,7 @@ export namespace TokenPropertySet {
   }
 }
 
-export class Property extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
-
-  getValueDescription(): string;
-  setValueDescription(value: string): void;
-
-  getTemplateValue(): string;
-  setTemplateValue(value: string): void;
-
-  getPropertyInvocationsList(): Array<Invocation>;
-  setPropertyInvocationsList(value: Array<Invocation>): void;
-  clearPropertyInvocationsList(): void;
-  addPropertyInvocations(value?: Invocation, index?: number): Invocation;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Property.AsObject;
-  static toObject(includeInstance: boolean, msg: Property): Property.AsObject;
-  static serializeBinaryToWriter(message: Property, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Property;
-  static deserializeBinaryFromReader(message: Property, reader: jspb.BinaryReader): Property;
+export enum InfluenceType { 
+  INTERCEPT = 0,
+  OVERRIDE = 1,
 }
-
-export namespace Property {
-  export type AsObject = {
-    name: string,
-    valueDescription: string,
-    templateValue: string,
-    propertyInvocationsList: Array<Invocation.AsObject>,
-  }
-}
-
-export class Invocation extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  getRequest(): InvocationRequest | undefined;
-  setRequest(value?: InvocationRequest): void;
-  hasRequest(): boolean;
-  clearRequest(): void;
-
-  getResponse(): InvocationResponse | undefined;
-  setResponse(value?: InvocationResponse): void;
-  hasResponse(): boolean;
-  clearResponse(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Invocation.AsObject;
-  static toObject(includeInstance: boolean, msg: Invocation): Invocation.AsObject;
-  static serializeBinaryToWriter(message: Invocation, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Invocation;
-  static deserializeBinaryFromReader(message: Invocation, reader: jspb.BinaryReader): Invocation;
-}
-
-export namespace Invocation {
-  export type AsObject = {
-    name: string,
-    description: string,
-    request?: InvocationRequest.AsObject,
-    response?: InvocationResponse.AsObject,
-  }
-}
-
-export class InvocationRequest extends jspb.Message {
-  getControlMessageName(): string;
-  setControlMessageName(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  getInputParametersList(): Array<InvocationParameter>;
-  setInputParametersList(value: Array<InvocationParameter>): void;
-  clearInputParametersList(): void;
-  addInputParameters(value?: InvocationParameter, index?: number): InvocationParameter;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InvocationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: InvocationRequest): InvocationRequest.AsObject;
-  static serializeBinaryToWriter(message: InvocationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InvocationRequest;
-  static deserializeBinaryFromReader(message: InvocationRequest, reader: jspb.BinaryReader): InvocationRequest;
-}
-
-export namespace InvocationRequest {
-  export type AsObject = {
-    controlMessageName: string,
-    description: string,
-    inputParametersList: Array<InvocationParameter.AsObject>,
-  }
-}
-
-export class InvocationResponse extends jspb.Message {
-  getControlMessageName(): string;
-  setControlMessageName(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  getOutputParametersList(): Array<InvocationParameter>;
-  setOutputParametersList(value: Array<InvocationParameter>): void;
-  clearOutputParametersList(): void;
-  addOutputParameters(value?: InvocationParameter, index?: number): InvocationParameter;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InvocationResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: InvocationResponse): InvocationResponse.AsObject;
-  static serializeBinaryToWriter(message: InvocationResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InvocationResponse;
-  static deserializeBinaryFromReader(message: InvocationResponse, reader: jspb.BinaryReader): InvocationResponse;
-}
-
-export namespace InvocationResponse {
-  export type AsObject = {
-    controlMessageName: string,
-    description: string,
-    outputParametersList: Array<InvocationParameter.AsObject>,
-  }
-}
-
-export class InvocationParameter extends jspb.Message {
-  getName(): string;
-  setName(value: string): void;
-
-  getValueDescription(): string;
-  setValueDescription(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InvocationParameter.AsObject;
-  static toObject(includeInstance: boolean, msg: InvocationParameter): InvocationParameter.AsObject;
-  static serializeBinaryToWriter(message: InvocationParameter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InvocationParameter;
-  static deserializeBinaryFromReader(message: InvocationParameter, reader: jspb.BinaryReader): InvocationParameter;
-}
-
-export namespace InvocationParameter {
-  export type AsObject = {
-    name: string,
-    valueDescription: string,
-  }
-}
-

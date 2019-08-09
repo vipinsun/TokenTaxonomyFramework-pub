@@ -21,10 +21,9 @@ export class ServiceClient {
   options_: null | { [index: string]: string; };
 
   constructor (hostname: string,
-               credentials?: null | { [index: string]: string; },
-               options?: null | { [index: string]: string; }) {
+               credentials: null | { [index: string]: string; },
+               options: null | { [index: string]: string; }) {
     if (!options) options = {};
-    if (!credentials) credentials = {};
     options['format'] = 'text';
 
     this.client_ = new grpcWeb.GrpcWebClientBase(options);
@@ -272,6 +271,28 @@ export class ServiceClient {
       request,
       metadata || {},
       this.methodInfoGetArtifactsOfType,
+      callback);
+  }
+
+  methodInfoInitializeNewArtifact = new grpcWeb.AbstractClientBase.MethodInfo(
+    artifact_pb.InitializeNewArtifactResponse,
+    (request: artifact_pb.InitializeNewArtifactRequest) => {
+      return request.serializeBinary();
+    },
+    artifact_pb.InitializeNewArtifactResponse.deserializeBinary
+  );
+
+  initializeNewArtifact(
+    request: artifact_pb.InitializeNewArtifactRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: artifact_pb.InitializeNewArtifactResponse) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/taxonomy.Service/InitializeNewArtifact',
+      request,
+      metadata || {},
+      this.methodInfoInitializeNewArtifact,
       callback);
   }
 

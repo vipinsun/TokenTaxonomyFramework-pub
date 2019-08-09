@@ -15,8 +15,13 @@
       "businessExample": "A vote token, for a citizen in a public election would be non-transferable.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "transferable analogy 1 description",
+          "name": "Diploma",
+          "description": "A diploma from an educational institution is not transferable to another party that can claim to have earned the diploma.",
+          "artifactDefinition": null
+        },
+        {
+          "name": "Airline Ticket",
+          "description": "Due to security restrictions at airports and airlines, tickets can only be used by the person they were issued to.",
           "artifactDefinition": null
         }
       ],

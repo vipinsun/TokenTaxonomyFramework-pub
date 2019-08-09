@@ -87,18 +87,18 @@ export namespace TaxonomyVersion {
 }
 
 export class Hierarchy extends jspb.Message {
-  getFungibles(): BranchRoot | undefined;
-  setFungibles(value?: BranchRoot): void;
+  getFungibles(): FungibleBranch | undefined;
+  setFungibles(value?: FungibleBranch): void;
   hasFungibles(): boolean;
   clearFungibles(): void;
 
-  getNonFungibles(): BranchRoot | undefined;
-  setNonFungibles(value?: BranchRoot): void;
+  getNonFungibles(): NonFungibleBranch | undefined;
+  setNonFungibles(value?: NonFungibleBranch): void;
   hasNonFungibles(): boolean;
   clearNonFungibles(): void;
 
-  getHybrids(): HybridBranchRoot | undefined;
-  setHybrids(value?: HybridBranchRoot): void;
+  getHybrids(): HybridBranch | undefined;
+  setHybrids(value?: HybridBranch): void;
   hasHybrids(): boolean;
   clearHybrids(): void;
 
@@ -112,18 +112,101 @@ export class Hierarchy extends jspb.Message {
 
 export namespace Hierarchy {
   export type AsObject = {
-    fungibles?: BranchRoot.AsObject,
-    nonFungibles?: BranchRoot.AsObject,
-    hybrids?: HybridBranchRoot.AsObject,
+    fungibles?: FungibleBranch.AsObject,
+    nonFungibles?: NonFungibleBranch.AsObject,
+    hybrids?: HybridBranch.AsObject,
+  }
+}
+
+export class HybridBranch extends jspb.Message {
+  getFungible(): FungibleBranch | undefined;
+  setFungible(value?: FungibleBranch): void;
+  hasFungible(): boolean;
+  clearFungible(): void;
+
+  getNonFungible(): NonFungibleBranch | undefined;
+  setNonFungible(value?: NonFungibleBranch): void;
+  hasNonFungible(): boolean;
+  clearNonFungible(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HybridBranch.AsObject;
+  static toObject(includeInstance: boolean, msg: HybridBranch): HybridBranch.AsObject;
+  static serializeBinaryToWriter(message: HybridBranch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HybridBranch;
+  static deserializeBinaryFromReader(message: HybridBranch, reader: jspb.BinaryReader): HybridBranch;
+}
+
+export namespace HybridBranch {
+  export type AsObject = {
+    fungible?: FungibleBranch.AsObject,
+    nonFungible?: NonFungibleBranch.AsObject,
+  }
+}
+
+export class FungibleBranch extends jspb.Message {
+  getFractional(): BranchRoot | undefined;
+  setFractional(value?: BranchRoot): void;
+  hasFractional(): boolean;
+  clearFractional(): void;
+
+  getWhole(): BranchRoot | undefined;
+  setWhole(value?: BranchRoot): void;
+  hasWhole(): boolean;
+  clearWhole(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FungibleBranch.AsObject;
+  static toObject(includeInstance: boolean, msg: FungibleBranch): FungibleBranch.AsObject;
+  static serializeBinaryToWriter(message: FungibleBranch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FungibleBranch;
+  static deserializeBinaryFromReader(message: FungibleBranch, reader: jspb.BinaryReader): FungibleBranch;
+}
+
+export namespace FungibleBranch {
+  export type AsObject = {
+    fractional?: BranchRoot.AsObject,
+    whole?: BranchRoot.AsObject,
+  }
+}
+
+export class NonFungibleBranch extends jspb.Message {
+  getFractional(): BranchRoot | undefined;
+  setFractional(value?: BranchRoot): void;
+  hasFractional(): boolean;
+  clearFractional(): void;
+
+  getWhole(): BranchRoot | undefined;
+  setWhole(value?: BranchRoot): void;
+  hasWhole(): boolean;
+  clearWhole(): void;
+
+  getSingleton(): BranchRoot | undefined;
+  setSingleton(value?: BranchRoot): void;
+  hasSingleton(): boolean;
+  clearSingleton(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NonFungibleBranch.AsObject;
+  static toObject(includeInstance: boolean, msg: NonFungibleBranch): NonFungibleBranch.AsObject;
+  static serializeBinaryToWriter(message: NonFungibleBranch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NonFungibleBranch;
+  static deserializeBinaryFromReader(message: NonFungibleBranch, reader: jspb.BinaryReader): NonFungibleBranch;
+}
+
+export namespace NonFungibleBranch {
+  export type AsObject = {
+    fractional?: BranchRoot.AsObject,
+    whole?: BranchRoot.AsObject,
+    singleton?: BranchRoot.AsObject,
   }
 }
 
 export class BranchIdentifier extends jspb.Message {
-  getTokenType(): artifact_pb.TokenType;
-  setTokenType(value: artifact_pb.TokenType): void;
-
-  getBranch(): artifact_pb.ClassificationBranch;
-  setBranch(value: artifact_pb.ClassificationBranch): void;
+  getClassification(): artifact_pb.Classification | undefined;
+  setClassification(value?: artifact_pb.Classification): void;
+  hasClassification(): boolean;
+  clearClassification(): void;
 
   getFormulaId(): string;
   setFormulaId(value: string): void;
@@ -138,8 +221,7 @@ export class BranchIdentifier extends jspb.Message {
 
 export namespace BranchIdentifier {
   export type AsObject = {
-    tokenType: artifact_pb.TokenType,
-    branch: artifact_pb.ClassificationBranch,
+    classification?: artifact_pb.Classification.AsObject,
     formulaId: string,
   }
 }
@@ -187,32 +269,6 @@ export namespace BranchRoot {
     branchFormula?: core_pb.TemplateFormula.AsObject,
     templates?: core_pb.TokenTemplates.AsObject,
     branchesList: Array<BranchRoot.AsObject>,
-  }
-}
-
-export class HybridBranchRoot extends jspb.Message {
-  getFungibleParent(): BranchRoot | undefined;
-  setFungibleParent(value?: BranchRoot): void;
-  hasFungibleParent(): boolean;
-  clearFungibleParent(): void;
-
-  getNonFungibleParent(): BranchRoot | undefined;
-  setNonFungibleParent(value?: BranchRoot): void;
-  hasNonFungibleParent(): boolean;
-  clearNonFungibleParent(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HybridBranchRoot.AsObject;
-  static toObject(includeInstance: boolean, msg: HybridBranchRoot): HybridBranchRoot.AsObject;
-  static serializeBinaryToWriter(message: HybridBranchRoot, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HybridBranchRoot;
-  static deserializeBinaryFromReader(message: HybridBranchRoot, reader: jspb.BinaryReader): HybridBranchRoot;
-}
-
-export namespace HybridBranchRoot {
-  export type AsObject = {
-    fungibleParent?: BranchRoot.AsObject,
-    nonFungibleParent?: BranchRoot.AsObject,
   }
 }
 

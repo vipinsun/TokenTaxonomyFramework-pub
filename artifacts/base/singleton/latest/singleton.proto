@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package hybrid-fungibleBase;
+package singleton;
 
 import "tokens.proto";
 import "google/protobuf/any.proto";

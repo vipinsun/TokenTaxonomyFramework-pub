@@ -416,10 +416,16 @@ namespace TTI.TTF.Taxonomy
 			_log.Info("-Taxonomy PropertySet Count: " + taxonomy.PropertySets.Count);
 			_log.Info("-Taxonomy TemplateFormula Count: " + taxonomy.TemplateFormulas.Count);
 			_log.Info("-Taxonomy TemplateDefinition Count: " + taxonomy.TemplateDefinitions.Count);
-			_log.Info("-Taxonomy Hierarchy Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Fungibles.Templates.Template.Count);
-			_log.Info("-Taxonomy Hierarchy Non-Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.NonFungibles.Templates.Template.Count);
-			_log.Info("-Taxonomy Hierarchy Hybrid Fungible Parent TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Hybrids.FungibleParent.Templates.Template.Count);
-			_log.Info("-Taxonomy Hierarchy Hybrid Non-Fungible Parent TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Hybrids.NonFungibleParent.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Fractional Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Fungibles.Fractional.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Whole Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Fungibles.Whole.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Fractional Non-Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.NonFungibles.Fractional.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Whole Non-Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.NonFungibles.Whole.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Singleton Non-Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.NonFungibles.Singleton.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Hybrid-Fractional Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Hybrids.Fungible.Fractional.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Hybrid-Whole Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Hybrids.Fungible.Whole.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Hybrid-Fractional Non-Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Hybrids.NonFungible.Fractional.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Hybrid-Whole Non-Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Hybrids.NonFungible.Whole.Templates.Template.Count);
+			_log.Info("-Taxonomy Hierarchy Hybrid-Singleton Non-Fungible TokenTemplates Count: " + taxonomy.TokenTemplateHierarchy.Hybrids.NonFungible.Singleton.Templates.Template.Count);
 
 			_log.Error("-> Base Token Types <-");
 			foreach (var (symbol, baseType) in taxonomy.BaseTokenTypes)

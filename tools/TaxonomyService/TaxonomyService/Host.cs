@@ -94,7 +94,11 @@ namespace TTI.TTF.Taxonomy
             _log.Info("gRpc request for: DeleteArtifact");
             return Task.FromResult(ModelManager.DeleteArtifact(artifactRequest));
         }
-        
+        public override Task<InitializeNewArtifactResponse> InitializeNewArtifact(InitializeNewArtifactRequest request, ServerCallContext ctx)
+        {
+            _log.Info("gRpc request for: InitializeNewArtifact");
+            return Task.FromResult(ModelManager.InitializeNewArtifact(request));
+        }
         public override Task<CommitUpdatesResponse> CommitLocalUpdates(CommitUpdatesRequest request, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: Commit Local Updates");

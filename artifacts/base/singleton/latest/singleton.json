@@ -1,0 +1,104 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "id":"53101d87-3c93-4d8b-ab39-1e629406d062",
+      "type": "BASE",
+      "visual": "&tau<sub>N</sub>{<i>s</i>}",
+      "tooling": "tN{s}",
+      "version": "1.0",
+      "templateValidated": true
+    },
+    "name": "Singleton",
+    "aliases": [
+      "Title",
+      "Deed",
+      "Document"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
+      "businessExample": "CryptoKitties, Art, Reserved Seat for an event.",
+      "analogies": [
+        {
+          "name": "Property Title",
+          "description": "The physical property title, land for example, have the identical look and feel from the paper, colors and seal. The difference between them are the values like property address, plot numbers, etc. These values make the title unique. There are some properties on a class of titles that are the same, like the county or jurisdiction the property is in. For titles that have some shared values and unique values, it may make more sense to define them in the same class.",
+          "artifactDefinition": null
+        },
+        {
+          "name": "Art",
+          "description": "The valuable painting or other unique piece of art may not share any property values with other paintings, unless the artist is extremely prolific in generating tens of thousands of pieces of art, it would make sense to define each piece of art as its own class. Meaning there would be only a single piece of art represented by the token class. If the art cannot be sub-divided, meaning there can be no fractional owners, this token class can be a singleton if the quantity in the class is set to 1. A singleton has only one instance in the class, essentially meaning the class is the instance, and not be sub-dividable and no new tokens can be minted in the class.",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "Non-fungible tokens require additional thought about how these tokens may or may not be grouped together in the same class.",
+      "artifact": null
+    },
+    "dependencies": [
+      {        
+        "description": "Base Token Definition",
+        "symbol": {
+          "id":"5f5c4e7f-8ff1-4767-b59c-799d49753226",
+          "type": "BASE",
+          "visual": "&tau",
+          "tooling": "t",
+          "version": "1.0",
+          "templateValidated": true
+        }
+      },
+      {        
+        "description": "non-subdividable",
+        "symbol": {
+          "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
+          "type": "BEHAVIOR",
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [
+      {
+        "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+        "type": "BEHAVIOR",
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "",
+        "templateValidated": false
+      },
+      {
+        "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "visual": "<i>m</i>",
+        "tooling": "m",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    ],
+    "influencedBySymbols": [],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "singleton.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "singleton.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {}
+  },
+  "tokenType": "NON_FUNGIBLE",
+  "tokenUnit": "SINGLETON",
+  "name": "",
+  "symbol": "",
+  "owner": "",
+  "quantity": "MQ==",
+  "decimals": 0,
+  "tokenProperties": {},
+  "constructorName": "",
+  "constructor": null
+}

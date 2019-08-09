@@ -3,6 +3,32 @@ import * as jspb from "google-protobuf"
 
 import * as google_protobuf_any_pb from 'google-protobuf/google/protobuf/any_pb';
 
+export class Classification extends jspb.Message {
+  getTemplateType(): TemplateType;
+  setTemplateType(value: TemplateType): void;
+
+  getTokenType(): TokenType;
+  setTokenType(value: TokenType): void;
+
+  getTokenUnit(): TokenUnit;
+  setTokenUnit(value: TokenUnit): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Classification.AsObject;
+  static toObject(includeInstance: boolean, msg: Classification): Classification.AsObject;
+  static serializeBinaryToWriter(message: Classification, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Classification;
+  static deserializeBinaryFromReader(message: Classification, reader: jspb.BinaryReader): Classification;
+}
+
+export namespace Classification {
+  export type AsObject = {
+    templateType: TemplateType,
+    tokenType: TokenType,
+    tokenUnit: TokenUnit,
+  }
+}
+
 export class ArtifactSymbol extends jspb.Message {
   getId(): string;
   setId(value: string): void;
@@ -904,8 +930,10 @@ export class QueryOptions extends jspb.Message {
   getByClassification(): boolean;
   setByClassification(value: boolean): void;
 
-  getTemplateClassification(): ClassificationBranch;
-  setTemplateClassification(value: ClassificationBranch): void;
+  getClassification(): Classification | undefined;
+  setClassification(value?: Classification): void;
+  hasClassification(): boolean;
+  clearClassification(): void;
 
   getIncludeHybrids(): boolean;
   setIncludeHybrids(value: boolean): void;
@@ -924,7 +952,7 @@ export namespace QueryOptions {
     maxItemReturn: number,
     lastItemIndex: number,
     byClassification: boolean,
-    templateClassification: ClassificationBranch,
+    classification?: Classification.AsObject,
     includeHybrids: boolean,
   }
 }
@@ -962,28 +990,6 @@ export namespace QueryResult {
     lastItemIndex: number,
     totalItemsInCollection: number,
     artifactCollection?: google_protobuf_any_pb.Any.AsObject,
-  }
-}
-
-export class Classification extends jspb.Message {
-  getTokenType(): TokenType;
-  setTokenType(value: TokenType): void;
-
-  getBranch(): ClassificationBranch;
-  setBranch(value: ClassificationBranch): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Classification.AsObject;
-  static toObject(includeInstance: boolean, msg: Classification): Classification.AsObject;
-  static serializeBinaryToWriter(message: Classification, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Classification;
-  static deserializeBinaryFromReader(message: Classification, reader: jspb.BinaryReader): Classification;
-}
-
-export namespace Classification {
-  export type AsObject = {
-    tokenType: TokenType,
-    branch: ClassificationBranch,
   }
 }
 
@@ -1045,12 +1051,77 @@ export namespace NewTemplateDefinition {
   }
 }
 
+export class InitializeNewArtifactRequest extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getSymbol(): string;
+  setSymbol(value: string): void;
+
+  getTemplateType(): TemplateType;
+  setTemplateType(value: TemplateType): void;
+
+  getTokenType(): TokenType;
+  setTokenType(value: TokenType): void;
+
+  getTokenUnit(): TokenUnit;
+  setTokenUnit(value: TokenUnit): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InitializeNewArtifactRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: InitializeNewArtifactRequest): InitializeNewArtifactRequest.AsObject;
+  static serializeBinaryToWriter(message: InitializeNewArtifactRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactRequest;
+  static deserializeBinaryFromReader(message: InitializeNewArtifactRequest, reader: jspb.BinaryReader): InitializeNewArtifactRequest;
+}
+
+export namespace InitializeNewArtifactRequest {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    name: string,
+    symbol: string,
+    templateType: TemplateType,
+    tokenType: TokenType,
+    tokenUnit: TokenUnit,
+  }
+}
+
+export class InitializeNewArtifactResponse extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getArtifact(): google_protobuf_any_pb.Any | undefined;
+  setArtifact(value?: google_protobuf_any_pb.Any): void;
+  hasArtifact(): boolean;
+  clearArtifact(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InitializeNewArtifactResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: InitializeNewArtifactResponse): InitializeNewArtifactResponse.AsObject;
+  static serializeBinaryToWriter(message: InitializeNewArtifactResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactResponse;
+  static deserializeBinaryFromReader(message: InitializeNewArtifactResponse, reader: jspb.BinaryReader): InitializeNewArtifactResponse;
+}
+
+export namespace InitializeNewArtifactResponse {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    artifact?: google_protobuf_any_pb.Any.AsObject,
+  }
+}
+
+export enum TemplateType { 
+  SINGLE_TOKEN = 0,
+  HYBRID = 1,
+}
 export enum TokenType { 
   FUNGIBLE = 0,
   NON_FUNGIBLE = 1,
-  HYBRID = 2,
 }
-export enum ClassificationBranch { 
+export enum TokenUnit { 
   FRACTIONAL = 0,
   WHOLE = 1,
   SINGLETON = 2,

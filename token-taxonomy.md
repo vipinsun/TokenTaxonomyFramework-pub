@@ -253,7 +253,7 @@ The TTF creates a Token Specification dynamically from the Template Definition I
 
 ## Branch Classification
 
-A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` that is also classified as either a `Fungible` or `Non-Fungible`. Classification is primarily used for creating dynamic visualization to compare templates and understand relationships between them.
+A Base token type provides the foundation of a template which additional artifacts are added to in order to complete the definition.  The base token for a template is either a `Single` or `Hybrid` with a token type of either `Fungible` or `Non-Fungible` and finally it units are classified as fractional, whole or singleton. Classification is primarily used for creating visualization hierarchies to compare templates and understand relationships between them.
 
 By default Token Templates are organized in a simple hierarchy by Fungible, Non-Fungible and Hybrid. Further classification hierarchies can be dynamically generated like below.
 

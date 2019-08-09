@@ -84,10 +84,7 @@
       ],
       "maps": {}
     },
-    "classification": {
-      "tokenType": "NON_FUNGIBLE",
-      "branch": "SINGLETON"
-    },
+    "templateType": "SINGLE_TOKEN",
     "tokenBase": {
       "base": {
         "id": "8314a797-df3c-409b-835c-0e80af92714f",

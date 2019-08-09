@@ -14,12 +14,12 @@
       "Create"
     ],
     "artifactDefinition": {
-      "businessDescription": "A token class that implements this behavior will support the minting or issuing of new token instances of the class.  This new tokens can be minted and belong to the owner or minted to another account. This behavior may be overriden by a restrictive behavior like Singleton, where only a single instance of the token can exist.",
-      "businessExample": "",
+      "businessDescription": "A token class that implements this behavior will support the minting or issuing of new token instances in the class.  These new tokens can be minted and belong to the owner or minted to another account. This behavior may be invalidated by a restrictive behavior like Singleton, where only a single instance of the token can exist. Mintable is technically delegable, but it's delegation should be controlled by a behavior like Roles.",
+      "businessExample": "A consortium of oil producers needs to create tokens for each barrel of oil they are putting on the market to trade. There are separate classes of tokens for each grade of oil. Producers of barrels will need be have the ability to mint new tokens in order to facilitate the trading of them in the supply chain.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "mintable analogy 1 description",
+          "name": "SKU",
+          "description": "A token class can represent a particular item SKU, where the manufacturer of the item has the ability to mint or issue new inventory of the SKU into the supply chain.",
           "artifactDefinition": null
         }
       ],
@@ -27,17 +27,10 @@
       "artifact": null
     },
     "dependencies": [],
-    "incompatibleWithSymbols": [
-      {
-        "type": "BEHAVIOR",
-        "visual": "<i>s</s>",
-        "tooling": "s",
-        "version": ""
-      }
-    ],
+    "incompatibleWithSymbols": [],
     "influencedBySymbols": [
       {
-        "description": "Roles is common to implement to provide authorization checks for invoking the behavior.",
+        "description": "Roles is common to implement to provide authorization checks for invoking the behavior. Highly Recommended that Role restrictions be applied to MintTo invocations.",
         "symbol": {
           "type": "BEHAVIOR",
           "visual": "<i>r</i>",
@@ -93,8 +86,9 @@
   },
   "invocations": [
     {
+      "id": "3ddf15db-c919-4f72-a57b-d089931bc901",
       "name": "Mint",
-      "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission.  Requires a Quantity field in the request.",
+      "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission. Minted tokens using this invocation will be owned by the owner or token pool account. Requires a Quantity field in the request.",
       "request": {
         "controlMessageName": "MintRequest",
         "description": "The request",
@@ -117,6 +111,7 @@
       }
     },
     {
+      "id": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
       "name": "MintTo",
       "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
       "request": {

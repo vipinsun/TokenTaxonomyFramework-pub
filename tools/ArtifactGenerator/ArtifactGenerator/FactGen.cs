@@ -18,7 +18,7 @@ namespace ArtifactGenerator
 		private static string ArtifactPath { get; set; }
 		private static ArtifactType ArtifactType { get; set; }
 		private static TokenType BaseType { get; set; }
-		private static ClassificationBranch Classification { get; set; }
+		private static TemplateType TemplateType { get; set; }
 		private static TaxonomyVersion TaxonomyVersion { get; set; }
 		private static string Latest { get; set; }
 		public static void Main(string[] args)
@@ -53,7 +53,7 @@ namespace ArtifactGenerator
 						case "--c":
 							i++;
 							var c = Convert.ToInt32(args[i]);
-							Classification = (ClassificationBranch) c;
+							TemplateType = (TemplateType) c;
 							continue;
 						case "--v":
 							i++;
@@ -78,7 +78,7 @@ namespace ArtifactGenerator
 					_log.Info(
 						"--b [baseTokenType: 0 = fungible, 1 = non-fungible, 2 = hybrid]");
 					_log.Info(
-						"--c [classification: 0 = fractionalFungible, 1 = wholeFungible, 2 = fractionalNonFungible, 3 = singleton] Is required for a Template Type");
+						"--c [templateType: 0 = singleToken, 1 = hybrid] Is required for a Template Type");
 					_log.Info(
 						"To update the TaxonomyVersion: dotnet factgen --v [VERSION_STRING] --p [PATH_TO_ARTIFACTS FOLDER]");
 					return;
@@ -421,21 +421,27 @@ namespace ArtifactGenerator
 						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "BehaviorGroups")
 					};
-					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
+					artifactBehaviorGroup.Behaviors.Add(new BehaviorReference
 					{
-						Tooling = "<i>Symbol1</i>",
-						Visual = "Symbol1"
+						Reference = new ArtifactReference
+						{
+							Id = "",
+							ReferenceNotes = "",
+							Type = ArtifactType.Behavior,
+							Values = new ArtifactReferenceValues
+							{
+								ControlUri = ""
+							}
+						},
+						Properties = { new Property
+						{
+							Name = "",
+							TemplateValue = "",
+							ValueDescription = ""
+						}}
+						
 					});
-					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
-					{
-						Tooling = "<i>Symbol2</i>",
-						Visual = "Symbol2"
-					});
-					artifactBehaviorGroup.BehaviorSymbols.Add(new ArtifactSymbol
-					{
-						Tooling = "<i>Symbol3<i>",
-						Visual = "Symbol3"
-					});
+			
 					artifactJson = jsf.Format(artifactBehaviorGroup);
 					break;
 				case ArtifactType.PropertySet:
@@ -540,7 +546,7 @@ namespace ArtifactGenerator
 						Artifact = AddArtifactFiles(outputFolder, folderSeparator,
 							artifact, "TemplateFormulas"),
 						TokenBase = GetTemplateBase(fullPath, folderSeparator),
-						Classification = GetClassification(),
+						TemplateType = TemplateType,
 						Behaviors =
 						{
 							new TemplateBehavior
@@ -595,7 +601,17 @@ namespace ArtifactGenerator
 									Id = "a guid",
 									ReferenceNotes = ""
 								},
+								ConstructorType = "",
 								IsExternal = true,
+								Invocations = { new Invocation()},
+								InfluenceBindings = { new InfluenceBinding
+								{
+									InfluencedId = "",
+									InfluencedInvocationId = "",
+									InfluenceType = InfluenceType.Intercept,
+									InfluencingInvocation = new Invocation(),
+									InfluencedInvocation = new Invocation()
+								}},
 								Properties =
 								{
 									new Property
@@ -789,9 +805,6 @@ namespace ArtifactGenerator
 				case TokenType.NonFungible:
 					baseName = "non-fungible";
 					break;
-				case TokenType.Hybrid:
-					baseName = "hybrid";
-					break;
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
@@ -817,9 +830,6 @@ namespace ArtifactGenerator
 					break;
 				case TokenType.NonFungible:
 					baseName = "non-fungible";
-					break;
-				case TokenType.Hybrid:
-					baseName = "hybrid";
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -864,26 +874,6 @@ namespace ArtifactGenerator
 				Name = "",
 				Quantity = ByteString.CopyFromUtf8("1")
 			};
-		}
-		private static Classification GetClassification()
-		{
-			var classification = new Classification {Branch = Classification};
-			switch (BaseType)
-			{
-				case TokenType.Fungible:
-					classification.TokenType = TokenType.Fungible;
-					break;
-				case TokenType.NonFungible:
-					classification.TokenType = TokenType.NonFungible;
-					break;
-				case TokenType.Hybrid:
-					classification.TokenType = TokenType.Hybrid;
-					break;
-				default:
-					throw new ArgumentOutOfRangeException();
-			}
-
-			return classification;
 		}
 
 
