@@ -1,10 +1,13 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Xml;
 using log4net;
 using log4net.Config;
+using Org.BouncyCastle.Crypto.Digests;
 
 namespace TTI.TTF.Taxonomy
 {
@@ -89,6 +92,28 @@ namespace TTI.TTF.Taxonomy
 			}
 
 			return new string(input+stringChars);
+		}
+		
+		public static string CalculateSha3Hash(string value)
+		{
+			var input = Encoding.UTF8.GetBytes(value);
+			var output = CalculateSha3Hash(input);
+			return output.ToHex();
+		}
+
+		private static byte[] CalculateSha3Hash(byte[] value)
+		{
+			var digest = new KeccakDigest(256);
+			var output = new byte[digest.GetDigestSize()];
+			digest.BlockUpdate(value, 0, value.Length);
+			digest.DoFinal(output, 0);
+			return output;
+		}
+
+		private static string ToHex(this byte[] value, bool prefix = false)
+		{
+			var strPrex = prefix ? "0x" : "";
+			return strPrex + string.Concat(value.Select(b => b.ToString("x2")));
 		}
 	}
 

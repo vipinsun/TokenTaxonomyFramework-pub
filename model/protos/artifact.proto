@@ -287,3 +287,17 @@ message NewTemplateDefinition{
     string template_formula_id = 1;
     string token_name = 2;
 }
+
+message InitializeNewArtifactRequest {
+    ArtifactType artifact_type = 1;
+    string name = 2; 
+    string symbol = 3; //ignored if a TemplateFormula
+    TemplateType template_type = 4; //ignored if not a TemplateFormula
+    TokenType token_type = 5; //ignored if not a TemplateFormula
+    TokenUnit token_unit = 6; //ignored if not a TemplateFormula
+}
+
+message InitializeNewArtifactResponse {
+    ArtifactType artifact_type = 1;
+    google.protobuf.Any artifact = 2;
+}

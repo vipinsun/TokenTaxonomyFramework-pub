@@ -1126,73 +1126,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 		}
 
-		private static Artifact CreateGenericArtifactObject(string name, ArtifactType artifactType)
-		{
-			var artifact =  new Artifact
-			{
-				Name = name,
-				ArtifactSymbol = new ArtifactSymbol
-				{
-					Id = Guid.NewGuid().ToString(),
-					Type = artifactType,
-					Tooling = "",
-					Visual = "",
-					Version = "1.0",
-					TemplateValidated = false
-				},
-				ArtifactDefinition = new ArtifactDefinition
-				{
-					BusinessDescription = "This is a " + name + " of type: " + artifactType,
-					BusinessExample = "",
-					Comments = "",
-					Analogies = { new ArtifactAnalogy
-					{
-						Name = "Analogy 1",
-						Description = name + " analogy 1 description"
-					}}
-				},
-				Maps = new Maps
-				{
-					CodeReferences = { new MapReference
-					{
-						MappingType = MappingType.SourceCode,
-						Name = "Code 1",
-						Platform = TargetPlatform.Daml,
-						ReferencePath = ""
-					}},
-					ImplementationReferences = { new MapReference
-					{
-						MappingType = MappingType.Implementation,
-						Name = "Implementation 1",
-						Platform = TargetPlatform.ChaincodeGo,
-						ReferencePath = ""
-					}},
-					Resources = { new MapResourceReference
-					{
-						MappingType = MappingType.Resource,
-						Name = "Regulation Reference 1",
-						Description = "",
-						ResourcePath = ""
-					}}
-				},
-				IncompatibleWithSymbols = { new ArtifactSymbol
-				{
-					Type = artifactType,
-					Tooling = "",
-					Visual = ""
-				}},
-				Dependencies = { new SymbolDependency
-				{
-					Description = "",
-					Symbol = new ArtifactSymbol()
-				}},
-				Aliases = { "alias1", "alias2"}
-				
-			};
-
-			return artifact;
-		}
-
+		
 		private static TemplateFormula GetParentFormula(string fullPath, string folderSeparator, string artifactId)
 		{
 			var baseFile = File.OpenText(fullPath + ModelMap.TemplateFormulasFolder + folderSeparator + artifactId + folderSeparator + TxService.Latest + folderSeparator + artifactId +".json");

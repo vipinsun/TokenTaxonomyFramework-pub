@@ -206,13 +206,14 @@ message InfluenceBinding{
 //----------------------Specification----------------
 //used to dynamically build the entire Token Specification with all objects merged. Handy for documentation.
 message TokenSpecification{
-    taxonomy.model.artifact.Artifact artifact = 1;
-    taxonomy.model.artifact.ArtifactReference definition_reference = 2;
-    Base token_base = 3;
-    repeated BehaviorSpecification behaviors = 4;
-    repeated BehaviorGroupSpecification behavior_groups = 5;
-    repeated PropertySetSpecification property_sets = 6;
-    repeated TokenSpecification child_tokens = 7;
+    string specification_hash = 1;
+    taxonomy.model.artifact.Artifact artifact = 2;
+    taxonomy.model.artifact.ArtifactReference definition_reference = 3;
+    Base token_base = 4;
+    repeated BehaviorSpecification behaviors = 5;
+    repeated BehaviorGroupSpecification behavior_groups = 6;
+    repeated PropertySetSpecification property_sets = 7;
+    repeated TokenSpecification child_tokens = 8;
 }
 
 message BehaviorSpecification{

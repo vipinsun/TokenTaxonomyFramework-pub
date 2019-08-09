@@ -274,6 +274,28 @@ export class ServiceClient {
       callback);
   }
 
+  methodInfoInitializeNewArtifact = new grpcWeb.AbstractClientBase.MethodInfo(
+    artifact_pb.InitializeNewArtifactResponse,
+    (request: artifact_pb.InitializeNewArtifactRequest) => {
+      return request.serializeBinary();
+    },
+    artifact_pb.InitializeNewArtifactResponse.deserializeBinary
+  );
+
+  initializeNewArtifact(
+    request: artifact_pb.InitializeNewArtifactRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: artifact_pb.InitializeNewArtifactResponse) => void) {
+    return this.client_.rpcCall(
+      this.hostname_ +
+        '/taxonomy.Service/InitializeNewArtifact',
+      request,
+      metadata || {},
+      this.methodInfoInitializeNewArtifact,
+      callback);
+  }
+
   methodInfoCreateArtifact = new grpcWeb.AbstractClientBase.MethodInfo(
     artifact_pb.NewArtifactResponse,
     (request: artifact_pb.NewArtifactRequest) => {

@@ -7456,7 +7456,7 @@ proto.taxonomy.model.core.InfluenceBinding.prototype.hasInfluencedInvocation = f
  * @private {!Array<number>}
  * @const
  */
-proto.taxonomy.model.core.TokenSpecification.repeatedFields_ = [4,5,6,7];
+proto.taxonomy.model.core.TokenSpecification.repeatedFields_ = [5,6,7,8];
 
 
 
@@ -7487,6 +7487,7 @@ proto.taxonomy.model.core.TokenSpecification.prototype.toObject = function(opt_i
  */
 proto.taxonomy.model.core.TokenSpecification.toObject = function(includeInstance, msg) {
   var obj = {
+    specificationHash: jspb.Message.getFieldWithDefault(msg, 1, ""),
     artifact: (f = msg.getArtifact()) && artifact_pb.Artifact.toObject(includeInstance, f),
     definitionReference: (f = msg.getDefinitionReference()) && artifact_pb.ArtifactReference.toObject(includeInstance, f),
     tokenBase: (f = msg.getTokenBase()) && proto.taxonomy.model.core.Base.toObject(includeInstance, f),
@@ -7535,36 +7536,40 @@ proto.taxonomy.model.core.TokenSpecification.deserializeBinaryFromReader = funct
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSpecificationHash(value);
+      break;
+    case 2:
       var value = new artifact_pb.Artifact;
       reader.readMessage(value,artifact_pb.Artifact.deserializeBinaryFromReader);
       msg.setArtifact(value);
       break;
-    case 2:
+    case 3:
       var value = new artifact_pb.ArtifactReference;
       reader.readMessage(value,artifact_pb.ArtifactReference.deserializeBinaryFromReader);
       msg.setDefinitionReference(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.taxonomy.model.core.Base;
       reader.readMessage(value,proto.taxonomy.model.core.Base.deserializeBinaryFromReader);
       msg.setTokenBase(value);
       break;
-    case 4:
+    case 5:
       var value = new proto.taxonomy.model.core.BehaviorSpecification;
       reader.readMessage(value,proto.taxonomy.model.core.BehaviorSpecification.deserializeBinaryFromReader);
       msg.addBehaviors(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.taxonomy.model.core.BehaviorGroupSpecification;
       reader.readMessage(value,proto.taxonomy.model.core.BehaviorGroupSpecification.deserializeBinaryFromReader);
       msg.addBehaviorGroups(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.taxonomy.model.core.PropertySetSpecification;
       reader.readMessage(value,proto.taxonomy.model.core.PropertySetSpecification.deserializeBinaryFromReader);
       msg.addPropertySets(value);
       break;
-    case 7:
+    case 8:
       var value = new proto.taxonomy.model.core.TokenSpecification;
       reader.readMessage(value,proto.taxonomy.model.core.TokenSpecification.deserializeBinaryFromReader);
       msg.addChildTokens(value);
@@ -7598,10 +7603,17 @@ proto.taxonomy.model.core.TokenSpecification.prototype.serializeBinary = functio
  */
 proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getSpecificationHash();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getArtifact();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       artifact_pb.Artifact.serializeBinaryToWriter
     );
@@ -7609,7 +7621,7 @@ proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(
   f = message.getDefinitionReference();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       artifact_pb.ArtifactReference.serializeBinaryToWriter
     );
@@ -7617,7 +7629,7 @@ proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(
   f = message.getTokenBase();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.taxonomy.model.core.Base.serializeBinaryToWriter
     );
@@ -7625,7 +7637,7 @@ proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(
   f = message.getBehaviorsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      5,
       f,
       proto.taxonomy.model.core.BehaviorSpecification.serializeBinaryToWriter
     );
@@ -7633,7 +7645,7 @@ proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(
   f = message.getBehaviorGroupsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      6,
       f,
       proto.taxonomy.model.core.BehaviorGroupSpecification.serializeBinaryToWriter
     );
@@ -7641,7 +7653,7 @@ proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(
   f = message.getPropertySetsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.taxonomy.model.core.PropertySetSpecification.serializeBinaryToWriter
     );
@@ -7649,7 +7661,7 @@ proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(
   f = message.getChildTokensList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter
     );
@@ -7658,18 +7670,33 @@ proto.taxonomy.model.core.TokenSpecification.serializeBinaryToWriter = function(
 
 
 /**
- * optional taxonomy.model.artifact.Artifact artifact = 1;
+ * optional string specification_hash = 1;
+ * @return {string}
+ */
+proto.taxonomy.model.core.TokenSpecification.prototype.getSpecificationHash = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.taxonomy.model.core.TokenSpecification.prototype.setSpecificationHash = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional taxonomy.model.artifact.Artifact artifact = 2;
  * @return {?proto.taxonomy.model.artifact.Artifact}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.getArtifact = function() {
   return /** @type{?proto.taxonomy.model.artifact.Artifact} */ (
-    jspb.Message.getWrapperField(this, artifact_pb.Artifact, 1));
+    jspb.Message.getWrapperField(this, artifact_pb.Artifact, 2));
 };
 
 
 /** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setArtifact = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -7686,23 +7713,23 @@ proto.taxonomy.model.core.TokenSpecification.prototype.clearArtifact = function(
  * @return {boolean}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.hasArtifact = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional taxonomy.model.artifact.ArtifactReference definition_reference = 2;
+ * optional taxonomy.model.artifact.ArtifactReference definition_reference = 3;
  * @return {?proto.taxonomy.model.artifact.ArtifactReference}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.getDefinitionReference = function() {
   return /** @type{?proto.taxonomy.model.artifact.ArtifactReference} */ (
-    jspb.Message.getWrapperField(this, artifact_pb.ArtifactReference, 2));
+    jspb.Message.getWrapperField(this, artifact_pb.ArtifactReference, 3));
 };
 
 
 /** @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setDefinitionReference = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -7719,23 +7746,23 @@ proto.taxonomy.model.core.TokenSpecification.prototype.clearDefinitionReference 
  * @return {boolean}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.hasDefinitionReference = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional Base token_base = 3;
+ * optional Base token_base = 4;
  * @return {?proto.taxonomy.model.core.Base}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.getTokenBase = function() {
   return /** @type{?proto.taxonomy.model.core.Base} */ (
-    jspb.Message.getWrapperField(this, proto.taxonomy.model.core.Base, 3));
+    jspb.Message.getWrapperField(this, proto.taxonomy.model.core.Base, 4));
 };
 
 
 /** @param {?proto.taxonomy.model.core.Base|undefined} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setTokenBase = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -7752,23 +7779,23 @@ proto.taxonomy.model.core.TokenSpecification.prototype.clearTokenBase = function
  * @return {boolean}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.hasTokenBase = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated BehaviorSpecification behaviors = 4;
+ * repeated BehaviorSpecification behaviors = 5;
  * @return {!Array<!proto.taxonomy.model.core.BehaviorSpecification>}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.getBehaviorsList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.BehaviorSpecification>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.BehaviorSpecification, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.BehaviorSpecification, 5));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.BehaviorSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setBehaviorsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 4, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -7778,7 +7805,7 @@ proto.taxonomy.model.core.TokenSpecification.prototype.setBehaviorsList = functi
  * @return {!proto.taxonomy.model.core.BehaviorSpecification}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.addBehaviors = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.taxonomy.model.core.BehaviorSpecification, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.taxonomy.model.core.BehaviorSpecification, opt_index);
 };
 
 
@@ -7791,18 +7818,18 @@ proto.taxonomy.model.core.TokenSpecification.prototype.clearBehaviorsList = func
 
 
 /**
- * repeated BehaviorGroupSpecification behavior_groups = 5;
+ * repeated BehaviorGroupSpecification behavior_groups = 6;
  * @return {!Array<!proto.taxonomy.model.core.BehaviorGroupSpecification>}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.getBehaviorGroupsList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.BehaviorGroupSpecification>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.BehaviorGroupSpecification, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.BehaviorGroupSpecification, 6));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.BehaviorGroupSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setBehaviorGroupsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -7812,7 +7839,7 @@ proto.taxonomy.model.core.TokenSpecification.prototype.setBehaviorGroupsList = f
  * @return {!proto.taxonomy.model.core.BehaviorGroupSpecification}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.addBehaviorGroups = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.taxonomy.model.core.BehaviorGroupSpecification, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.taxonomy.model.core.BehaviorGroupSpecification, opt_index);
 };
 
 
@@ -7825,18 +7852,18 @@ proto.taxonomy.model.core.TokenSpecification.prototype.clearBehaviorGroupsList =
 
 
 /**
- * repeated PropertySetSpecification property_sets = 6;
+ * repeated PropertySetSpecification property_sets = 7;
  * @return {!Array<!proto.taxonomy.model.core.PropertySetSpecification>}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.getPropertySetsList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.PropertySetSpecification>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.PropertySetSpecification, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.PropertySetSpecification, 7));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.PropertySetSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setPropertySetsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -7846,7 +7873,7 @@ proto.taxonomy.model.core.TokenSpecification.prototype.setPropertySetsList = fun
  * @return {!proto.taxonomy.model.core.PropertySetSpecification}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.addPropertySets = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.taxonomy.model.core.PropertySetSpecification, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.taxonomy.model.core.PropertySetSpecification, opt_index);
 };
 
 
@@ -7859,18 +7886,18 @@ proto.taxonomy.model.core.TokenSpecification.prototype.clearPropertySetsList = f
 
 
 /**
- * repeated TokenSpecification child_tokens = 7;
+ * repeated TokenSpecification child_tokens = 8;
  * @return {!Array<!proto.taxonomy.model.core.TokenSpecification>}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.getChildTokensList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.TokenSpecification>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.TokenSpecification, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.TokenSpecification, 8));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.TokenSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setChildTokensList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
+  jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -7880,7 +7907,7 @@ proto.taxonomy.model.core.TokenSpecification.prototype.setChildTokensList = func
  * @return {!proto.taxonomy.model.core.TokenSpecification}
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.addChildTokens = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.taxonomy.model.core.TokenSpecification, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.taxonomy.model.core.TokenSpecification, opt_index);
 };
 
 

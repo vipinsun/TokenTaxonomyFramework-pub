@@ -1051,6 +1051,68 @@ export namespace NewTemplateDefinition {
   }
 }
 
+export class InitializeNewArtifactRequest extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getSymbol(): string;
+  setSymbol(value: string): void;
+
+  getTemplateType(): TemplateType;
+  setTemplateType(value: TemplateType): void;
+
+  getTokenType(): TokenType;
+  setTokenType(value: TokenType): void;
+
+  getTokenUnit(): TokenUnit;
+  setTokenUnit(value: TokenUnit): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InitializeNewArtifactRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: InitializeNewArtifactRequest): InitializeNewArtifactRequest.AsObject;
+  static serializeBinaryToWriter(message: InitializeNewArtifactRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactRequest;
+  static deserializeBinaryFromReader(message: InitializeNewArtifactRequest, reader: jspb.BinaryReader): InitializeNewArtifactRequest;
+}
+
+export namespace InitializeNewArtifactRequest {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    name: string,
+    symbol: string,
+    templateType: TemplateType,
+    tokenType: TokenType,
+    tokenUnit: TokenUnit,
+  }
+}
+
+export class InitializeNewArtifactResponse extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getArtifact(): google_protobuf_any_pb.Any | undefined;
+  setArtifact(value?: google_protobuf_any_pb.Any): void;
+  hasArtifact(): boolean;
+  clearArtifact(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InitializeNewArtifactResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: InitializeNewArtifactResponse): InitializeNewArtifactResponse.AsObject;
+  static serializeBinaryToWriter(message: InitializeNewArtifactResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactResponse;
+  static deserializeBinaryFromReader(message: InitializeNewArtifactResponse, reader: jspb.BinaryReader): InitializeNewArtifactResponse;
+}
+
+export namespace InitializeNewArtifactResponse {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    artifact?: google_protobuf_any_pb.Any.AsObject,
+  }
+}
+
 export enum TemplateType { 
   SINGLE_TOKEN = 0,
   HYBRID = 1,

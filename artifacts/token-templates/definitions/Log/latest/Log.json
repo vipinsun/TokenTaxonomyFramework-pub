@@ -205,7 +205,7 @@
       "reference": {
         "id": "c32726da-9787-4dd8-8de3-d07d1733d0f6",
         "type": "BEHAVIOR",
-        "referenceNotes": "Role check is applied to all get/read functions on logable ensuring that the account is in the 'LogViewer' role.",
+        "referenceNotes": "roles",
         "values": null
       },
       "isExternal": true,

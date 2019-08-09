@@ -877,6 +877,9 @@ export namespace InfluenceBinding {
 }
 
 export class TokenSpecification extends jspb.Message {
+  getSpecificationHash(): string;
+  setSpecificationHash(value: string): void;
+
   getArtifact(): artifact_pb.Artifact | undefined;
   setArtifact(value?: artifact_pb.Artifact): void;
   hasArtifact(): boolean;
@@ -922,6 +925,7 @@ export class TokenSpecification extends jspb.Message {
 
 export namespace TokenSpecification {
   export type AsObject = {
+    specificationHash: string,
     artifact?: artifact_pb.Artifact.AsObject,
     definitionReference?: artifact_pb.ArtifactReference.AsObject,
     tokenBase?: Base.AsObject,
