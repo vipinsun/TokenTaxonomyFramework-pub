@@ -25,10 +25,8 @@ export class Base extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): void;
 
-  getQuantity(): Uint8Array | string;
-  getQuantity_asU8(): Uint8Array;
-  getQuantity_asB64(): string;
-  setQuantity(value: Uint8Array | string): void;
+  getQuantity(): number;
+  setQuantity(value: number): void;
 
   getDecimals(): number;
   setDecimals(value: number): void;
@@ -60,7 +58,7 @@ export namespace Base {
     name: string,
     symbol: string,
     owner: string,
-    quantity: Uint8Array | string,
+    quantity: number,
     decimals: number,
     tokenPropertiesMap: Array<[string, string]>,
     constructorName: string,
@@ -103,10 +101,8 @@ export class BaseReference extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): void;
 
-  getQuantity(): Uint8Array | string;
-  getQuantity_asU8(): Uint8Array;
-  getQuantity_asB64(): string;
-  setQuantity(value: Uint8Array | string): void;
+  getQuantity(): number;
+  setQuantity(value: number): void;
 
   getDecimals(): number;
   setDecimals(value: number): void;
@@ -136,7 +132,7 @@ export namespace BaseReference {
     name: string,
     symbol: string,
     owner: string,
-    quantity: Uint8Array | string,
+    quantity: number,
     decimals: number,
     tokenPropertiesMap: Array<[string, string]>,
     constructorName: string,

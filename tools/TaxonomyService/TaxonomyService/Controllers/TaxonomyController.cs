@@ -1192,8 +1192,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 		private static Base GetTokenTypeBase(TokenType tokenType, TokenUnit tokenUnit)
 		{
-			string baseName;
-			const string typeFolder = "base";
+            const string typeFolder = "base";
 			var classFolder = ModelMap.GetBaseFolderName(tokenType, tokenUnit);
 			var baseFile = File.OpenText(ArtifactPath + typeFolder + FolderSeparator + classFolder 
 			                             + FolderSeparator + TxService.Latest + FolderSeparator + classFolder+".json");
@@ -1207,7 +1206,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 		{
 			foreach (var af in ad.EnumerateFiles())
 			{
-				if (af.Name.EndsWith("proto"))
+				if (af.Name.EndsWith("proto", StringComparison.CurrentCulture))
 				{
 					var protoFile = GetArtifactText(af);
 					artifact.ArtifactFiles.Add(new ArtifactFile
@@ -1219,7 +1218,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					continue;
 				}
 
-				if (af.Name.EndsWith("md"))
+				if (af.Name.EndsWith("md", StringComparison.CurrentCulture))
 				{
 					var mdFile = GetArtifactText(af);
 
@@ -1232,7 +1231,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					continue;
 				}
 
-				if (af.Name.EndsWith("json"))
+				if (af.Name.EndsWith("json", StringComparison.CurrentCulture))
 				{
 					continue;
 				}
@@ -1244,7 +1243,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					FileName = af.Name,
 					Content = ArtifactContent.Other
 				};
-				if (!af.Name.EndsWith(".DS_Store"))
+				if (!af.Name.EndsWith(".DS_Store", StringComparison.CurrentCulture))
 					other.FileData = ByteString.CopyFrom(otherFile);
 				artifact.ArtifactFiles.Add(other);
 			}

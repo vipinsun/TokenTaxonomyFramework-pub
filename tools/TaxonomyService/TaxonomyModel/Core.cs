@@ -30,7 +30,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             "YWN0EjYKCnRva2VuX3R5cGUYAiABKA4yIi50YXhvbm9teS5tb2RlbC5hcnRp",
             "ZmFjdC5Ub2tlblR5cGUSNgoKdG9rZW5fdW5pdBgDIAEoDjIiLnRheG9ub215",
             "Lm1vZGVsLmFydGlmYWN0LlRva2VuVW5pdBIMCgRuYW1lGAQgASgJEg4KBnN5",
-            "bWJvbBgFIAEoCRINCgVvd25lchgGIAEoCRIQCghxdWFudGl0eRgHIAEoDBIQ",
+            "bWJvbBgFIAEoCRINCgVvd25lchgGIAEoCRIQCghxdWFudGl0eRgHIAEoAxIQ",
             "CghkZWNpbWFscxgIIAEoBRJIChB0b2tlbl9wcm9wZXJ0aWVzGAkgAygLMi4u",
             "dGF4b25vbXkubW9kZWwuY29yZS5CYXNlLlRva2VuUHJvcGVydGllc0VudHJ5",
             "EhgKEGNvbnN0cnVjdG9yX25hbWUYCiABKAkSKQoLY29uc3RydWN0b3IYCyAB",
@@ -40,7 +40,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             "QmFzZVJlZmVyZW5jZRI9CglyZWZlcmVuY2UYASABKAsyKi50YXhvbm9teS5t",
             "b2RlbC5hcnRpZmFjdC5BcnRpZmFjdFJlZmVyZW5jZRIMCgRuYW1lGAIgASgJ",
             "Eg4KBnN5bWJvbBgDIAEoCRINCgVvd25lchgEIAEoCRIQCghxdWFudGl0eRgF",
-            "IAEoDBIQCghkZWNpbWFscxgGIAEoBRJRChB0b2tlbl9wcm9wZXJ0aWVzGAcg",
+            "IAEoAxIQCghkZWNpbWFscxgGIAEoBRJRChB0b2tlbl9wcm9wZXJ0aWVzGAcg",
             "AygLMjcudGF4b25vbXkubW9kZWwuY29yZS5CYXNlUmVmZXJlbmNlLlRva2Vu",
             "UHJvcGVydGllc0VudHJ5EhgKEGNvbnN0cnVjdG9yX25hbWUYCCABKAkSKQoL",
             "Y29uc3RydWN0b3IYCSABKAsyFC5nb29nbGUucHJvdG9idWYuQW55GjYKFFRv",
@@ -372,15 +372,15 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 7;
-    private pb::ByteString quantity_ = pb::ByteString.Empty;
+    private long quantity_;
     /// <summary>
     ///Base64 encoded ByteString - can represent the initial quantity created or the total minted or issued for the class.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString Quantity {
+    public long Quantity {
       get { return quantity_; }
       set {
-        quantity_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        quantity_ = value;
       }
     }
 
@@ -475,7 +475,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (Owner.Length != 0) hash ^= Owner.GetHashCode();
-      if (Quantity.Length != 0) hash ^= Quantity.GetHashCode();
+      if (Quantity != 0L) hash ^= Quantity.GetHashCode();
       if (Decimals != 0) hash ^= Decimals.GetHashCode();
       hash ^= TokenProperties.GetHashCode();
       if (ConstructorName.Length != 0) hash ^= ConstructorName.GetHashCode();
@@ -517,9 +517,9 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteRawTag(50);
         output.WriteString(Owner);
       }
-      if (Quantity.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteBytes(Quantity);
+      if (Quantity != 0L) {
+        output.WriteRawTag(56);
+        output.WriteInt64(Quantity);
       }
       if (Decimals != 0) {
         output.WriteRawTag(64);
@@ -560,8 +560,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (Owner.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Owner);
       }
-      if (Quantity.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Quantity);
+      if (Quantity != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Quantity);
       }
       if (Decimals != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Decimals);
@@ -605,7 +605,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (other.Owner.Length != 0) {
         Owner = other.Owner;
       }
-      if (other.Quantity.Length != 0) {
+      if (other.Quantity != 0L) {
         Quantity = other.Quantity;
       }
       if (other.Decimals != 0) {
@@ -659,8 +659,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             Owner = input.ReadString();
             break;
           }
-          case 58: {
-            Quantity = input.ReadBytes();
+          case 56: {
+            Quantity = input.ReadInt64();
             break;
           }
           case 64: {
@@ -906,15 +906,15 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 5;
-    private pb::ByteString quantity_ = pb::ByteString.Empty;
+    private long quantity_;
     /// <summary>
     ///Can represent the initial quantity created or the total minted or issued for the class.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pb::ByteString Quantity {
+    public long Quantity {
       get { return quantity_; }
       set {
-        quantity_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        quantity_ = value;
       }
     }
 
@@ -1005,7 +1005,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (Owner.Length != 0) hash ^= Owner.GetHashCode();
-      if (Quantity.Length != 0) hash ^= Quantity.GetHashCode();
+      if (Quantity != 0L) hash ^= Quantity.GetHashCode();
       if (Decimals != 0) hash ^= Decimals.GetHashCode();
       hash ^= TokenProperties.GetHashCode();
       if (ConstructorName.Length != 0) hash ^= ConstructorName.GetHashCode();
@@ -1039,9 +1039,9 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteRawTag(34);
         output.WriteString(Owner);
       }
-      if (Quantity.Length != 0) {
-        output.WriteRawTag(42);
-        output.WriteBytes(Quantity);
+      if (Quantity != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(Quantity);
       }
       if (Decimals != 0) {
         output.WriteRawTag(48);
@@ -1076,8 +1076,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (Owner.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Owner);
       }
-      if (Quantity.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Quantity);
+      if (Quantity != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Quantity);
       }
       if (Decimals != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Decimals);
@@ -1115,7 +1115,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (other.Owner.Length != 0) {
         Owner = other.Owner;
       }
-      if (other.Quantity.Length != 0) {
+      if (other.Quantity != 0L) {
         Quantity = other.Quantity;
       }
       if (other.Decimals != 0) {
@@ -1161,8 +1161,8 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             Owner = input.ReadString();
             break;
           }
-          case 42: {
-            Quantity = input.ReadBytes();
+          case 40: {
+            Quantity = input.ReadInt64();
             break;
           }
           case 48: {

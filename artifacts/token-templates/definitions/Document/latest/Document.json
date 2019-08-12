@@ -137,7 +137,7 @@
     "name": "",
     "symbol": "",
     "owner": "",
-    "quantity": "MQ==",
+    "quantity": 0,
     "decimals": 0,
     "tokenProperties": {},
     "constructorName": "Constructor",

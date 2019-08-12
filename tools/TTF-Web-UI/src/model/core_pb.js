@@ -933,7 +933,7 @@ proto.taxonomy.model.core.Base.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     symbol: jspb.Message.getFieldWithDefault(msg, 5, ""),
     owner: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    quantity: msg.getQuantity_asB64(),
+    quantity: jspb.Message.getFieldWithDefault(msg, 7, 0),
     decimals: jspb.Message.getFieldWithDefault(msg, 8, 0),
     tokenPropertiesMap: (f = msg.getTokenPropertiesMap()) ? f.toObject(includeInstance, undefined) : [],
     constructorName: jspb.Message.getFieldWithDefault(msg, 10, ""),
@@ -1000,7 +1000,7 @@ proto.taxonomy.model.core.Base.deserializeBinaryFromReader = function(msg, reade
       msg.setOwner(value);
       break;
     case 7:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setQuantity(value);
       break;
     case 8:
@@ -1094,9 +1094,9 @@ proto.taxonomy.model.core.Base.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getQuantity_asU8();
-  if (f.length > 0) {
-    writer.writeBytes(
+  f = message.getQuantity();
+  if (f !== 0) {
+    writer.writeInt64(
       7,
       f
     );
@@ -1239,41 +1239,17 @@ proto.taxonomy.model.core.Base.prototype.setOwner = function(value) {
 
 
 /**
- * optional bytes quantity = 7;
- * @return {string}
+ * optional int64 quantity = 7;
+ * @return {number}
  */
 proto.taxonomy.model.core.Base.prototype.getQuantity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
-/**
- * optional bytes quantity = 7;
- * This is a type-conversion wrapper around `getQuantity()`
- * @return {string}
- */
-proto.taxonomy.model.core.Base.prototype.getQuantity_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getQuantity()));
-};
-
-
-/**
- * optional bytes quantity = 7;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getQuantity()`
- * @return {!Uint8Array}
- */
-proto.taxonomy.model.core.Base.prototype.getQuantity_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getQuantity()));
-};
-
-
-/** @param {!(string|Uint8Array)} value */
+/** @param {number} value */
 proto.taxonomy.model.core.Base.prototype.setQuantity = function(value) {
-  jspb.Message.setProto3BytesField(this, 7, value);
+  jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -1549,7 +1525,7 @@ proto.taxonomy.model.core.BaseReference.toObject = function(includeInstance, msg
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
     symbol: jspb.Message.getFieldWithDefault(msg, 3, ""),
     owner: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    quantity: msg.getQuantity_asB64(),
+    quantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
     decimals: jspb.Message.getFieldWithDefault(msg, 6, 0),
     tokenPropertiesMap: (f = msg.getTokenPropertiesMap()) ? f.toObject(includeInstance, undefined) : [],
     constructorName: jspb.Message.getFieldWithDefault(msg, 8, ""),
@@ -1608,7 +1584,7 @@ proto.taxonomy.model.core.BaseReference.deserializeBinaryFromReader = function(m
       msg.setOwner(value);
       break;
     case 5:
-      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setQuantity(value);
       break;
     case 6:
@@ -1688,9 +1664,9 @@ proto.taxonomy.model.core.BaseReference.serializeBinaryToWriter = function(messa
       f
     );
   }
-  f = message.getQuantity_asU8();
-  if (f.length > 0) {
-    writer.writeBytes(
+  f = message.getQuantity();
+  if (f !== 0) {
+    writer.writeInt64(
       5,
       f
     );
@@ -1803,41 +1779,17 @@ proto.taxonomy.model.core.BaseReference.prototype.setOwner = function(value) {
 
 
 /**
- * optional bytes quantity = 5;
- * @return {string}
+ * optional int64 quantity = 5;
+ * @return {number}
  */
 proto.taxonomy.model.core.BaseReference.prototype.getQuantity = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
-/**
- * optional bytes quantity = 5;
- * This is a type-conversion wrapper around `getQuantity()`
- * @return {string}
- */
-proto.taxonomy.model.core.BaseReference.prototype.getQuantity_asB64 = function() {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getQuantity()));
-};
-
-
-/**
- * optional bytes quantity = 5;
- * Note that Uint8Array is not supported on all browsers.
- * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getQuantity()`
- * @return {!Uint8Array}
- */
-proto.taxonomy.model.core.BaseReference.prototype.getQuantity_asU8 = function() {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getQuantity()));
-};
-
-
-/** @param {!(string|Uint8Array)} value */
+/** @param {number} value */
 proto.taxonomy.model.core.BaseReference.prototype.setQuantity = function(value) {
-  jspb.Message.setProto3BytesField(this, 5, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

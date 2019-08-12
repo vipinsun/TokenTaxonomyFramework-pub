@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using System.Threading;
-using Google.Protobuf;
 using Grpc.Core;
 using log4net;
 using Microsoft.Extensions.Configuration;
