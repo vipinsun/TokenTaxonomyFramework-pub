@@ -57,9 +57,9 @@
       "codeReferences": [
         {
           "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
+          "name": "Open Zeppelin",
+          "platform": "ETHEREUM",
+          "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20Mintable.sol",
           "maps": null
         }
       ],

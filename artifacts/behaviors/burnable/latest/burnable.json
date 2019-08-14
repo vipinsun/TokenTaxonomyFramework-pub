@@ -63,18 +63,9 @@
       "codeReferences": [
         {
           "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
+          "name": "Open Zeppelin",
+          "platform": "ETHEREUM",
+          "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20Burnable.sol",
           "maps": null
         }
       ],

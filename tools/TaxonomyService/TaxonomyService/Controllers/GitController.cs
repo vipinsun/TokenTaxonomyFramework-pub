@@ -69,6 +69,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 		internal static ServiceConfiguration GetConfig()
 		{
+			return new ServiceConfiguration
+			{
+				GitId = "Not implemented yet."
+			};
+			/*
 			const string gitBranch = "git branch | grep \\* | cut -d ' ' -f2";
 			try
 			{
@@ -88,6 +93,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					GitId = e.Message
 				};
 			}
+			*/
 		}
 		
 		internal static void SetCredential()

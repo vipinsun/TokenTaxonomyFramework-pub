@@ -1,4 +1,5 @@
 /* eslint-disable */
+// source: taxonomy.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -197,13 +198,15 @@ if (goog.DEBUG && !COMPILED) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.Taxonomy.prototype.toObject = function(opt_includeInstance) {
@@ -213,15 +216,15 @@ proto.taxonomy.model.Taxonomy.prototype.toObject = function(opt_includeInstance)
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.Taxonomy} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.Taxonomy.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     version: (f = msg.getVersion()) && proto.taxonomy.model.TaxonomyVersion.toObject(includeInstance, f),
     baseTokenTypesMap: (f = msg.getBaseTokenTypesMap()) ? f.toObject(includeInstance, proto.taxonomy.model.core.Base.toObject) : [],
     behaviorsMap: (f = msg.getBehaviorsMap()) ? f.toObject(includeInstance, proto.taxonomy.model.core.Behavior.toObject) : [],
@@ -628,13 +631,15 @@ proto.taxonomy.model.Taxonomy.prototype.hasFormulaGrammar = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.TaxonomyVersion.prototype.toObject = function(opt_includeInstance) {
@@ -644,15 +649,15 @@ proto.taxonomy.model.TaxonomyVersion.prototype.toObject = function(opt_includeIn
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.TaxonomyVersion} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.TaxonomyVersion.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2, ""),
     stateHash: jspb.Message.getFieldWithDefault(msg, 3, "")
@@ -807,13 +812,15 @@ proto.taxonomy.model.TaxonomyVersion.prototype.setStateHash = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.Hierarchy.prototype.toObject = function(opt_includeInstance) {
@@ -823,15 +830,15 @@ proto.taxonomy.model.Hierarchy.prototype.toObject = function(opt_includeInstance
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.Hierarchy} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.Hierarchy.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     fungibles: (f = msg.getFungibles()) && proto.taxonomy.model.FungibleBranch.toObject(includeInstance, f),
     nonFungibles: (f = msg.getNonFungibles()) && proto.taxonomy.model.NonFungibleBranch.toObject(includeInstance, f),
     hybrids: (f = msg.getHybrids()) && proto.taxonomy.model.HybridBranch.toObject(includeInstance, f)
@@ -1046,13 +1053,15 @@ proto.taxonomy.model.Hierarchy.prototype.hasHybrids = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.HybridBranch.prototype.toObject = function(opt_includeInstance) {
@@ -1062,15 +1071,15 @@ proto.taxonomy.model.HybridBranch.prototype.toObject = function(opt_includeInsta
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.HybridBranch} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.HybridBranch.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     fungible: (f = msg.getFungible()) && proto.taxonomy.model.FungibleBranch.toObject(includeInstance, f),
     nonFungible: (f = msg.getNonFungible()) && proto.taxonomy.model.NonFungibleBranch.toObject(includeInstance, f)
   };
@@ -1238,13 +1247,15 @@ proto.taxonomy.model.HybridBranch.prototype.hasNonFungible = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.FungibleBranch.prototype.toObject = function(opt_includeInstance) {
@@ -1254,15 +1265,15 @@ proto.taxonomy.model.FungibleBranch.prototype.toObject = function(opt_includeIns
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.FungibleBranch} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.FungibleBranch.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     fractional: (f = msg.getFractional()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f),
     whole: (f = msg.getWhole()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f)
   };
@@ -1430,13 +1441,15 @@ proto.taxonomy.model.FungibleBranch.prototype.hasWhole = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.NonFungibleBranch.prototype.toObject = function(opt_includeInstance) {
@@ -1446,15 +1459,15 @@ proto.taxonomy.model.NonFungibleBranch.prototype.toObject = function(opt_include
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.NonFungibleBranch} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.NonFungibleBranch.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     fractional: (f = msg.getFractional()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f),
     whole: (f = msg.getWhole()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f),
     singleton: (f = msg.getSingleton()) && proto.taxonomy.model.BranchRoot.toObject(includeInstance, f)
@@ -1669,13 +1682,15 @@ proto.taxonomy.model.NonFungibleBranch.prototype.hasSingleton = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.BranchIdentifier.prototype.toObject = function(opt_includeInstance) {
@@ -1685,15 +1700,15 @@ proto.taxonomy.model.BranchIdentifier.prototype.toObject = function(opt_includeI
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.BranchIdentifier} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.BranchIdentifier.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     classification: (f = msg.getClassification()) && artifact_pb.Classification.toObject(includeInstance, f),
     formulaId: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
@@ -1848,13 +1863,15 @@ proto.taxonomy.model.BranchRoot.repeatedFields_ = [6];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.BranchRoot.prototype.toObject = function(opt_includeInstance) {
@@ -1864,15 +1881,15 @@ proto.taxonomy.model.BranchRoot.prototype.toObject = function(opt_includeInstanc
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.BranchRoot} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.taxonomy.model.BranchRoot.toObject = function(includeInstance, msg) {
-  var obj = {
+  var f, obj = {
     branchIdentifier: (f = msg.getBranchIdentifier()) && proto.taxonomy.model.BranchIdentifier.toObject(includeInstance, f),
     parentFormulaId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),

@@ -1,6 +1,5 @@
 using System.Reflection;
 using System.Threading.Tasks;
-using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using log4net;
 using TTI.TTF.Taxonomy.Controllers;
@@ -70,7 +69,7 @@ namespace TTI.TTF.Taxonomy
         public override Task<TokenTemplate> GetTokenTemplate(TokenTemplateId request, ServerCallContext context)
         {
             _log.Info("gRpc request for: GetTokenTemplate");
-            return Task.FromResult(ModelManager.GetTokenTemplate(request));
+            return Task.FromResult(ModelManager.GetTokenTemplate(request)); 
         }
 
         public override Task<TokenSpecification> GetTokenSpecification(TokenTemplateId definitionId, ServerCallContext ctx)

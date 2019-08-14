@@ -170,46 +170,46 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "b215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Classification), global::TTI.TTF.Taxonomy.Model.Artifact.Classification.Parser, new[]{ "TemplateType", "TokenType", "TokenUnit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser, new[]{ "Id", "Type", "Visual", "Tooling", "Version", "TemplateValidated" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Artifact), global::TTI.TTF.Taxonomy.Model.Artifact.Artifact.Parser, new[]{ "ArtifactSymbol", "Name", "Aliases", "ArtifactDefinition", "Dependencies", "IncompatibleWithSymbols", "InfluencedBySymbols", "ControlUri", "ArtifactFiles", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReferenceValues), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReferenceValues.Parser, new[]{ "ControlUri", "ArtifactFiles", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference.Parser, new[]{ "Id", "Type", "ReferenceNotes", "Values" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence), global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence.Parser, new[]{ "Description", "Symbol", "AppliesTo" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency), global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency.Parser, new[]{ "Description", "Symbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition.Parser, new[]{ "BusinessDescription", "BusinessExample", "Analogies", "Comments", "Artifact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactAnalogy), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactAnalogy.Parser, new[]{ "Name", "Description", "ArtifactDefinition" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile.Parser, new[]{ "Content", "FileName", "FileData", "Artifact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Maps), global::TTI.TTF.Taxonomy.Model.Artifact.Maps.Parser, new[]{ "CodeReferences", "ImplementationReferences", "Resources", "Artifact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MapReference), global::TTI.TTF.Taxonomy.Model.Artifact.MapReference.Parser, new[]{ "MappingType", "Name", "Platform", "ReferencePath", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MapResourceReference), global::TTI.TTF.Taxonomy.Model.Artifact.MapResourceReference.Parser, new[]{ "MappingType", "Name", "Description", "ResourcePath", "Maps" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest.Parser, new[]{ "Type", "Artifact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactRequest.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse.Parser, new[]{ "Type", "Updated", "ArtifactTypeObject" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest.Parser, new[]{ "ArtifactSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse.Parser, new[]{ "Deleted" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar.Parser, new[]{ "SingleTokenGrammar", "HybridGrammar", "HybridWithHybridsGrammar" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenGrammar.Parser, new[]{ "Parent", "ChildrenStart", "ChildTokens", "ChildrenEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenGrammar.Parser, new[]{ "Parent", "HybridChildrenStart", "HybridChildTokens", "HybridChildrenEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SingleTokenGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.SingleTokenGrammar.Parser, new[]{ "GroupStart", "BaseTokenToolingSymbol", "Behaviors", "PropertySets", "GroupEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.BehaviorList), global::TTI.TTF.Taxonomy.Model.Artifact.BehaviorList.Parser, new[]{ "ListStart", "BehaviorToolingSymbols", "ListEnd" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetList), global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetList.Parser, new[]{ "ListStart", "PropertySets" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetListItem), global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetListItem.Parser, new[]{ "PropertySetSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest.Parser, new[]{ "CommitMessage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse.Parser, new[]{ "Result" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser, new[]{ "Response" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest), global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex", "ByClassification", "Classification", "IncludeHybrids" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId), global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId.Parser, new[]{ "DefinitionId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Identifier), global::TTI.TTF.Taxonomy.Model.Artifact.Identifier.Parser, new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition), global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition.Parser, new[]{ "TemplateFormulaId", "TokenName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactRequest.Parser, new[]{ "ArtifactType", "Name", "Symbol", "TemplateType", "TokenType", "TokenUnit" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactResponse.Parser, new[]{ "ArtifactType", "Artifact" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Classification), global::TTI.TTF.Taxonomy.Model.Artifact.Classification.Parser, new[]{ "TemplateType", "TokenType", "TokenUnit" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser, new[]{ "Id", "Type", "Visual", "Tooling", "Version", "TemplateValidated" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Artifact), global::TTI.TTF.Taxonomy.Model.Artifact.Artifact.Parser, new[]{ "ArtifactSymbol", "Name", "Aliases", "ArtifactDefinition", "Dependencies", "IncompatibleWithSymbols", "InfluencedBySymbols", "ControlUri", "ArtifactFiles", "Maps" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReferenceValues), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReferenceValues.Parser, new[]{ "ControlUri", "ArtifactFiles", "Maps" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference.Parser, new[]{ "Id", "Type", "ReferenceNotes", "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence), global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence.Parser, new[]{ "Description", "Symbol", "AppliesTo" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency), global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency.Parser, new[]{ "Description", "Symbol" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition.Parser, new[]{ "BusinessDescription", "BusinessExample", "Analogies", "Comments", "Artifact" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactAnalogy), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactAnalogy.Parser, new[]{ "Name", "Description", "ArtifactDefinition" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile), global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile.Parser, new[]{ "Content", "FileName", "FileData", "Artifact" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Maps), global::TTI.TTF.Taxonomy.Model.Artifact.Maps.Parser, new[]{ "CodeReferences", "ImplementationReferences", "Resources", "Artifact" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MapReference), global::TTI.TTF.Taxonomy.Model.Artifact.MapReference.Parser, new[]{ "MappingType", "Name", "Platform", "ReferencePath", "Maps" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MapResourceReference), global::TTI.TTF.Taxonomy.Model.Artifact.MapResourceReference.Parser, new[]{ "MappingType", "Name", "Description", "ResourcePath", "Maps" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest.Parser, new[]{ "Type", "Artifact" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactRequest.Parser, new[]{ "Type", "ArtifactTypeObject" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse.Parser, new[]{ "Type", "Updated", "ArtifactTypeObject" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest.Parser, new[]{ "ArtifactSymbol" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse.Parser, new[]{ "Deleted" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar.Parser, new[]{ "SingleTokenGrammar", "HybridGrammar", "HybridWithHybridsGrammar" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenGrammar.Parser, new[]{ "Parent", "ChildrenStart", "ChildTokens", "ChildrenEnd" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenGrammar.Parser, new[]{ "Parent", "HybridChildrenStart", "HybridChildTokens", "HybridChildrenEnd" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.SingleTokenGrammar), global::TTI.TTF.Taxonomy.Model.Artifact.SingleTokenGrammar.Parser, new[]{ "GroupStart", "BaseTokenToolingSymbol", "Behaviors", "PropertySets", "GroupEnd" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.BehaviorList), global::TTI.TTF.Taxonomy.Model.Artifact.BehaviorList.Parser, new[]{ "ListStart", "BehaviorToolingSymbols", "ListEnd" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetList), global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetList.Parser, new[]{ "ListStart", "PropertySets" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetListItem), global::TTI.TTF.Taxonomy.Model.Artifact.PropertySetListItem.Parser, new[]{ "PropertySetSymbol" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest.Parser, new[]{ "CommitMessage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse), global::TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse.Parser, new[]{ "Result" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse), global::TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse.Parser, new[]{ "Response" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest), global::TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration), global::TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration.Parser, new[]{ "ReadOnly", "GitId", "GitBranch" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions), global::TTI.TTF.Taxonomy.Model.Artifact.QueryOptions.Parser, new[]{ "ArtifactType", "MaxItemReturn", "LastItemIndex", "ByClassification", "Classification", "IncludeHybrids" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult), global::TTI.TTF.Taxonomy.Model.Artifact.QueryResult.Parser, new[]{ "ArtifactType", "FirstItemIndex", "LastItemIndex", "TotalItemsInCollection", "ArtifactCollection" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId), global::TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId.Parser, new[]{ "DefinitionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.Identifier), global::TTI.TTF.Taxonomy.Model.Artifact.Identifier.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition), global::TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition.Parser, new[]{ "TemplateFormulaId", "TokenName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactRequest), global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactRequest.Parser, new[]{ "ArtifactType", "Name", "Symbol", "TemplateType", "TokenType", "TokenUnit" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactResponse), global::TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactResponse.Parser, new[]{ "ArtifactType", "Artifact" }, null, null, null, null)
           }));
     }
     #endregion
@@ -335,7 +335,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "template_type" field.</summary>
     public const int TemplateTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType templateType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType templateType_ = global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType TemplateType {
       get { return templateType_; }
@@ -346,7 +346,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "token_type" field.</summary>
     public const int TokenTypeFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.TokenType TokenType {
       get { return tokenType_; }
@@ -357,7 +357,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "token_unit" field.</summary>
     public const int TokenUnitFieldNumber = 3;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit tokenUnit_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit tokenUnit_ = global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit TokenUnit {
       get { return tokenUnit_; }
@@ -388,9 +388,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (TemplateType != 0) hash ^= TemplateType.GetHashCode();
-      if (TokenType != 0) hash ^= TokenType.GetHashCode();
-      if (TokenUnit != 0) hash ^= TokenUnit.GetHashCode();
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) hash ^= TemplateType.GetHashCode();
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) hash ^= TokenType.GetHashCode();
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) hash ^= TokenUnit.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -404,15 +404,15 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (TemplateType != 0) {
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         output.WriteRawTag(8);
         output.WriteEnum((int) TemplateType);
       }
-      if (TokenType != 0) {
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         output.WriteRawTag(16);
         output.WriteEnum((int) TokenType);
       }
-      if (TokenUnit != 0) {
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         output.WriteRawTag(24);
         output.WriteEnum((int) TokenUnit);
       }
@@ -424,13 +424,13 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (TemplateType != 0) {
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TemplateType);
       }
-      if (TokenType != 0) {
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
       }
-      if (TokenUnit != 0) {
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenUnit);
       }
       if (_unknownFields != null) {
@@ -444,13 +444,13 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.TemplateType != 0) {
+      if (other.TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         TemplateType = other.TemplateType;
       }
-      if (other.TokenType != 0) {
+      if (other.TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         TokenType = other.TokenType;
       }
-      if (other.TokenUnit != 0) {
+      if (other.TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         TokenUnit = other.TokenUnit;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -534,7 +534,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
       get { return type_; }
@@ -622,7 +622,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= Type.GetHashCode();
       if (Visual.Length != 0) hash ^= Visual.GetHashCode();
       if (Tooling.Length != 0) hash ^= Tooling.GetHashCode();
       if (Version.Length != 0) hash ^= Version.GetHashCode();
@@ -644,7 +644,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Type);
       }
@@ -675,7 +675,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Visual.Length != 0) {
@@ -704,7 +704,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other.Id.Length != 0) {
         Id = other.Id;
       }
-      if (other.Type != 0) {
+      if (other.Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         Type = other.Type;
       }
       if (other.Visual.Length != 0) {
@@ -1376,7 +1376,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
       get { return type_; }
@@ -1431,7 +1431,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     public override int GetHashCode() {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= Type.GetHashCode();
       if (ReferenceNotes.Length != 0) hash ^= ReferenceNotes.GetHashCode();
       if (values_ != null) hash ^= Values.GetHashCode();
       if (_unknownFields != null) {
@@ -1451,7 +1451,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         output.WriteRawTag(10);
         output.WriteString(Id);
       }
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Type);
       }
@@ -1474,7 +1474,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (ReferenceNotes.Length != 0) {
@@ -1497,7 +1497,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other.Id.Length != 0) {
         Id = other.Id;
       }
-      if (other.Type != 0) {
+      if (other.Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         Type = other.Type;
       }
       if (other.ReferenceNotes.Length != 0) {
@@ -2375,7 +2375,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "content" field.</summary>
     public const int ContentFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent content_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent content_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent.Definition;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent Content {
       get { return content_; }
@@ -2443,7 +2443,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Content != 0) hash ^= Content.GetHashCode();
+      if (Content != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent.Definition) hash ^= Content.GetHashCode();
       if (FileName.Length != 0) hash ^= FileName.GetHashCode();
       if (FileData.Length != 0) hash ^= FileData.GetHashCode();
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
@@ -2460,7 +2460,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Content != 0) {
+      if (Content != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent.Definition) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Content);
       }
@@ -2484,7 +2484,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Content != 0) {
+      if (Content != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent.Definition) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Content);
       }
       if (FileName.Length != 0) {
@@ -2507,7 +2507,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.Content != 0) {
+      if (other.Content != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent.Definition) {
         Content = other.Content;
       }
       if (other.FileName.Length != 0) {
@@ -2796,7 +2796,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "mapping_type" field.</summary>
     public const int MappingTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.MappingType mappingType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.MappingType mappingType_ = global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.MappingType MappingType {
       get { return mappingType_; }
@@ -2818,7 +2818,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 3;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform platform_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform platform_ = global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform.EthereumSolidity;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform Platform {
       get { return platform_; }
@@ -2876,9 +2876,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (MappingType != 0) hash ^= MappingType.GetHashCode();
+      if (MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) hash ^= MappingType.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Platform != 0) hash ^= Platform.GetHashCode();
+      if (Platform != global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform.EthereumSolidity) hash ^= Platform.GetHashCode();
       if (ReferencePath.Length != 0) hash ^= ReferencePath.GetHashCode();
       if (maps_ != null) hash ^= Maps.GetHashCode();
       if (_unknownFields != null) {
@@ -2894,7 +2894,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (MappingType != 0) {
+      if (MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) {
         output.WriteRawTag(8);
         output.WriteEnum((int) MappingType);
       }
@@ -2902,7 +2902,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Platform != 0) {
+      if (Platform != global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform.EthereumSolidity) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Platform);
       }
@@ -2922,13 +2922,13 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (MappingType != 0) {
+      if (MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MappingType);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Platform != 0) {
+      if (Platform != global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform.EthereumSolidity) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Platform);
       }
       if (ReferencePath.Length != 0) {
@@ -2948,13 +2948,13 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.MappingType != 0) {
+      if (other.MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) {
         MappingType = other.MappingType;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Platform != 0) {
+      if (other.Platform != global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform.EthereumSolidity) {
         Platform = other.Platform;
       }
       if (other.ReferencePath.Length != 0) {
@@ -3046,7 +3046,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "mapping_type" field.</summary>
     public const int MappingTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.MappingType mappingType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.MappingType mappingType_ = global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.MappingType MappingType {
       get { return mappingType_; }
@@ -3126,7 +3126,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (MappingType != 0) hash ^= MappingType.GetHashCode();
+      if (MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) hash ^= MappingType.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (ResourcePath.Length != 0) hash ^= ResourcePath.GetHashCode();
@@ -3144,7 +3144,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (MappingType != 0) {
+      if (MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) {
         output.WriteRawTag(8);
         output.WriteEnum((int) MappingType);
       }
@@ -3172,7 +3172,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (MappingType != 0) {
+      if (MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MappingType);
       }
       if (Name.Length != 0) {
@@ -3198,7 +3198,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.MappingType != 0) {
+      if (other.MappingType != global::TTI.TTF.Taxonomy.Model.Artifact.MappingType.SourceCode) {
         MappingType = other.MappingType;
       }
       if (other.Name.Length != 0) {
@@ -3296,7 +3296,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
       get { return type_; }
@@ -3337,7 +3337,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= Type.GetHashCode();
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3352,7 +3352,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -3368,7 +3368,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (artifact_ != null) {
@@ -3385,7 +3385,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.Type != 0) {
+      if (other.Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         Type = other.Type;
       }
       if (other.artifact_ != null) {
@@ -3459,7 +3459,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
       get { return type_; }
@@ -3503,7 +3503,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= Type.GetHashCode();
       if (artifactTypeObject_ != null) hash ^= ArtifactTypeObject.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3518,7 +3518,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -3534,7 +3534,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (artifactTypeObject_ != null) {
@@ -3551,7 +3551,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.Type != 0) {
+      if (other.Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         Type = other.Type;
       }
       if (other.artifactTypeObject_ != null) {
@@ -3625,7 +3625,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
       get { return type_; }
@@ -3669,7 +3669,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= Type.GetHashCode();
       if (artifactTypeObject_ != null) hash ^= ArtifactTypeObject.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -3684,7 +3684,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -3700,7 +3700,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (artifactTypeObject_ != null) {
@@ -3717,7 +3717,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.Type != 0) {
+      if (other.Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         Type = other.Type;
       }
       if (other.artifactTypeObject_ != null) {
@@ -3792,7 +3792,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
       get { return type_; }
@@ -3848,7 +3848,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= Type.GetHashCode();
       if (Updated != false) hash ^= Updated.GetHashCode();
       if (artifactTypeObject_ != null) hash ^= ArtifactTypeObject.GetHashCode();
       if (_unknownFields != null) {
@@ -3864,7 +3864,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -3884,7 +3884,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Type != 0) {
+      if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Updated != false) {
@@ -3904,7 +3904,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.Type != 0) {
+      if (other.Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         Type = other.Type;
       }
       if (other.Updated != false) {
@@ -6402,7 +6402,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "artifact_type" field.</summary>
     public const int ArtifactTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType ArtifactType {
       get { return artifactType_; }
@@ -6503,7 +6503,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ArtifactType != 0) hash ^= ArtifactType.GetHashCode();
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= ArtifactType.GetHashCode();
       if (MaxItemReturn != 0) hash ^= MaxItemReturn.GetHashCode();
       if (LastItemIndex != 0) hash ^= LastItemIndex.GetHashCode();
       if (ByClassification != false) hash ^= ByClassification.GetHashCode();
@@ -6522,7 +6522,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ArtifactType);
       }
@@ -6554,7 +6554,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArtifactType);
       }
       if (MaxItemReturn != 0) {
@@ -6583,7 +6583,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.ArtifactType != 0) {
+      if (other.ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         ArtifactType = other.ArtifactType;
       }
       if (other.MaxItemReturn != 0) {
@@ -6688,7 +6688,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "artifact_type" field.</summary>
     public const int ArtifactTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType ArtifactType {
       get { return artifactType_; }
@@ -6771,7 +6771,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ArtifactType != 0) hash ^= ArtifactType.GetHashCode();
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= ArtifactType.GetHashCode();
       if (FirstItemIndex != 0) hash ^= FirstItemIndex.GetHashCode();
       if (LastItemIndex != 0) hash ^= LastItemIndex.GetHashCode();
       if (TotalItemsInCollection != 0) hash ^= TotalItemsInCollection.GetHashCode();
@@ -6789,7 +6789,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ArtifactType);
       }
@@ -6817,7 +6817,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArtifactType);
       }
       if (FirstItemIndex != 0) {
@@ -6843,7 +6843,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.ArtifactType != 0) {
+      if (other.ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         ArtifactType = other.ArtifactType;
       }
       if (other.FirstItemIndex != 0) {
@@ -7363,7 +7363,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "artifact_type" field.</summary>
     public const int ArtifactTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType ArtifactType {
       get { return artifactType_; }
@@ -7399,7 +7399,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "template_type" field.</summary>
     public const int TemplateTypeFieldNumber = 4;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType templateType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType templateType_ = global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken;
     /// <summary>
     ///ignored if not a TemplateFormula
     /// </summary>
@@ -7413,7 +7413,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "token_type" field.</summary>
     public const int TokenTypeFieldNumber = 5;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible;
     /// <summary>
     ///ignored if not a TemplateFormula
     /// </summary>
@@ -7427,7 +7427,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "token_unit" field.</summary>
     public const int TokenUnitFieldNumber = 6;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit tokenUnit_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit tokenUnit_ = global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional;
     /// <summary>
     ///ignored if not a TemplateFormula
     /// </summary>
@@ -7464,12 +7464,12 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ArtifactType != 0) hash ^= ArtifactType.GetHashCode();
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= ArtifactType.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
-      if (TemplateType != 0) hash ^= TemplateType.GetHashCode();
-      if (TokenType != 0) hash ^= TokenType.GetHashCode();
-      if (TokenUnit != 0) hash ^= TokenUnit.GetHashCode();
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) hash ^= TemplateType.GetHashCode();
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) hash ^= TokenType.GetHashCode();
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) hash ^= TokenUnit.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -7483,7 +7483,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ArtifactType);
       }
@@ -7495,15 +7495,15 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         output.WriteRawTag(26);
         output.WriteString(Symbol);
       }
-      if (TemplateType != 0) {
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         output.WriteRawTag(32);
         output.WriteEnum((int) TemplateType);
       }
-      if (TokenType != 0) {
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         output.WriteRawTag(40);
         output.WriteEnum((int) TokenType);
       }
-      if (TokenUnit != 0) {
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         output.WriteRawTag(48);
         output.WriteEnum((int) TokenUnit);
       }
@@ -7515,7 +7515,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArtifactType);
       }
       if (Name.Length != 0) {
@@ -7524,13 +7524,13 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (Symbol.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Symbol);
       }
-      if (TemplateType != 0) {
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TemplateType);
       }
-      if (TokenType != 0) {
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
       }
-      if (TokenUnit != 0) {
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenUnit);
       }
       if (_unknownFields != null) {
@@ -7544,7 +7544,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.ArtifactType != 0) {
+      if (other.ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         ArtifactType = other.ArtifactType;
       }
       if (other.Name.Length != 0) {
@@ -7553,13 +7553,13 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other.Symbol.Length != 0) {
         Symbol = other.Symbol;
       }
-      if (other.TemplateType != 0) {
+      if (other.TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         TemplateType = other.TemplateType;
       }
-      if (other.TokenType != 0) {
+      if (other.TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         TokenType = other.TokenType;
       }
-      if (other.TokenUnit != 0) {
+      if (other.TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         TokenUnit = other.TokenUnit;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -7640,7 +7640,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     /// <summary>Field number for the "artifact_type" field.</summary>
     public const int ArtifactTypeFieldNumber = 1;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType artifactType_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType ArtifactType {
       get { return artifactType_; }
@@ -7681,7 +7681,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (ArtifactType != 0) hash ^= ArtifactType.GetHashCode();
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= ArtifactType.GetHashCode();
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -7696,7 +7696,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         output.WriteRawTag(8);
         output.WriteEnum((int) ArtifactType);
       }
@@ -7712,7 +7712,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (ArtifactType != 0) {
+      if (ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ArtifactType);
       }
       if (artifact_ != null) {
@@ -7729,7 +7729,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
       if (other == null) {
         return;
       }
-      if (other.ArtifactType != 0) {
+      if (other.ArtifactType != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) {
         ArtifactType = other.ArtifactType;
       }
       if (other.artifact_ != null) {
