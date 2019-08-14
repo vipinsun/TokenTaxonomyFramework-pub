@@ -481,6 +481,18 @@ This allows for contracts to interact with tokens across blockchain implementati
 
 ![ContractingInterface](images/contracting.png)
 
+## TTF Extensions
+
+Where does the TTF end and implementation begin? Using an artifact's `Map` you can reference:
+
+- Complete source code for a platform and language (i.e. HLF/Chaincode/Go - > url)
+- A finished solution or implementation (i.e. a link to a website or marketplace offering)
+- Regulatory guidance (i.e. link to a regulatory agency report)
+
+This can be done for an individual behavior to have a mapping to a `code snippit` or to a Template Definition for complete source code or reference a finished solution.
+
+![Extensions](images/ttf-end-ext.png)
+
 ## Conclusion
 
 The Token Taxonomy Framework is just the beginning of a cross platform and cross vertical industry collaborative effort to foster an increased understanding and use of tokens as well as drive standards for interoperability.  
