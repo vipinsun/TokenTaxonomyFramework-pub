@@ -48,6 +48,7 @@ namespace TTI.TTF.Taxonomy
             _log.Info("gRpc request for: GetBehaviorGroupArtifact");
             return Task.FromResult(ModelManager.GetBehaviorGroupArtifact(symbol));
         }
+        
         public override Task<PropertySet> GetPropertySetArtifact(ArtifactSymbol symbol, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: GetPropertySetArtifact");
@@ -83,21 +84,25 @@ namespace TTI.TTF.Taxonomy
             _log.Info("gRpc request for: CreateArtifact");
             return Task.FromResult(ModelManager.CreateArtifact(artifactRequest));
         }
+        
         public override Task<UpdateArtifactResponse> UpdateArtifact(UpdateArtifactRequest artifactRequest, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: UpdateArtifact");
             return Task.FromResult(ModelManager.UpdateArtifact(artifactRequest));
         }
+        
         public override Task<DeleteArtifactResponse> DeleteArtifact(DeleteArtifactRequest artifactRequest, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: DeleteArtifact");
             return Task.FromResult(ModelManager.DeleteArtifact(artifactRequest));
         }
+        
         public override Task<InitializeNewArtifactResponse> InitializeNewArtifact(InitializeNewArtifactRequest request, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: InitializeNewArtifact");
             return Task.FromResult(ModelManager.InitializeNewArtifact(request));
         }
+        
         public override Task<CommitUpdatesResponse> CommitLocalUpdates(CommitUpdatesRequest request, ServerCallContext ctx)
         {
             _log.Info("gRpc request for: Commit Local Updates");

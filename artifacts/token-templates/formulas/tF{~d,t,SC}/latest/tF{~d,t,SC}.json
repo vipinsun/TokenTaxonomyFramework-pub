@@ -3,24 +3,23 @@
     "artifactSymbol": {
       "id": "5ee615b1-56da-4783-b129-d2dea21dadef",
       "type": "TEMPLATE_FORMULA",
-      "visual": "&tau;<sub>F</sub>{<i>~d,t,b</i>}",
-      "tooling": "tF{~d,t,b}",
+      "visual": "&tau;<sub>F</sub>{<i>~d,t,SC</i>}",
+      "tooling": "tF{~d,t,SC}",
       "version": "1.0",
       "templateValidated": false
     },
-    "name": "tF{~d,t,b}",
+    "name": "tF{~d,t,SC}",
     "aliases": [
       "Whole Fungible",
-      "SKU",
-      "Inventory Token"
+      "Loyalty"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Fixed Supply Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is Whole by setting the Decimals property on the subdividable behavior = 0. A token instance can be burned.",
-      "businessExample": "",
+      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0.",
+      "businessExample": "Loyalty points are a common use of this type of token. Representing a loyalty point using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Redemption of these is easy for users to understand using whole numbers. New points can be minted or issued based on customer activity and points can be removed or burned when they are redeemed. This formula supports transferable points as well.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "WholeFungible analogy 1 description",
+          "name": "Airline Points",
+          "description": "A customer can earn a point/token for each mile travelled and then redeem these points/tokens for upgrades or new tickets.",
           "artifactDefinition": null
         }
       ],
@@ -94,19 +93,20 @@
         "version": "1.0",
         "templateValidated": false
       }
-    },
+    }
+  ],
+  "behaviorGroups": [
     {
-      "behavior": {
-        "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
-        "type": "BEHAVIOR",
-        "visual": "<i>b</i>",
-        "tooling": "b",
+      "behaviorGroup":{
+        "id":"91cb89b6-a2ce-44ff-b3a0-f0cb3f117e56",
+        "type": "BEHAVIOR_GROUP",
+        "visual": "<i>SC</i>",
+        "tooling": "SC",
         "version": "1.0",
         "templateValidated": false
       }
     }
   ],
-  "behaviorGroups": [],
   "propertySets": [],
   "childTokens": []
 }

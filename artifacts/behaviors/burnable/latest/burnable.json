@@ -64,7 +64,7 @@
         {
           "mappingType": "SOURCE_CODE",
           "name": "Open Zeppelin",
-          "platform": "ETHEREUM",
+          "platform": "ETHEREUM_SOLIDITY",
           "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20Burnable.sol",
           "maps": null
         }

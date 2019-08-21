@@ -1,13 +1,4 @@
 /* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
-/* eslint-disable */
 /**
  * @fileoverview gRPC-Web generated client stub for taxonomy
  * @enhanceable
@@ -30,9 +21,10 @@ export class ServiceClient {
   options_: null | { [index: string]: string; };
 
   constructor (hostname: string,
-               credentials: null | { [index: string]: string; },
-               options: null | { [index: string]: string; }) {
+               credentials?: null | { [index: string]: string; },
+               options?: null | { [index: string]: string; }) {
     if (!options) options = {};
+    if (!credentials) credentials = {};
     options['format'] = 'text';
 
     this.client_ = new grpcWeb.GrpcWebClientBase(options);

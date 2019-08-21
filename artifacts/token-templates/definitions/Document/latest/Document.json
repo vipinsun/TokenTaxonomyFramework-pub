@@ -30,24 +30,32 @@
     },
     "dependencies": [
       {
-        "description": "",
+        "description": "Non-Fungible",
         "symbol": {
-          "id": "",
+          "id": "8314a797-df3c-409b-835c-0e80af92714f",
           "type": "BASE",
-          "visual": "",
-          "tooling": "",
-          "version": "",
-          "templateValidated": false
+          "visual": "&tau<sub>N</sub>",
+          "tooling": "tN",
+          "version": "1.0",
+          "templateValidated": true
         }
       }
     ],
     "incompatibleWithSymbols": [
       {
-        "id": "",
-        "type": "TEMPLATE_DEFINITION",
-        "visual": "",
-        "tooling": "",
-        "version": "",
+        "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+        "type": "BEHAVIOR",
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "1.0",
+        "templateValidated": false
+      },
+      {
+        "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "visual": "<i>m</i>",
+        "tooling": "m",
+        "version": "1.0",
         "templateValidated": false
       }
     ],
@@ -66,36 +74,7 @@
         "artifact": null
       }
     ],
-    "maps": {
-      "codeReferences": [
-        {
-          "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
-      "artifact": null
-    }
+    "maps": {}
   },
   "formulaReference": {
     "id": "4c2730f5-dc5f-4949-87e3-71f3a6e6cae9",
@@ -105,30 +84,15 @@
   },
   "tokenBase": {
     "reference": {
-      "id":"8314a797-df3c-409b-835c-0e80af92714f",
+      "id": "8314a797-df3c-409b-835c-0e80af92714f",
       "type": "BASE",
-      "referenceNotes": "",
+      "referenceNotes": "non-fungible, quantity of 1 with 0 decimals",
       "values": {
         "controlUri": "",
         "artifactFiles": [],
         "maps": {
           "codeReferences": [],
-          "implementationReferences": [
-            {
-              "mappingType": "IMPLEMENTATION",
-              "name": "Solution",
-              "platform": "ETHEREUM_SOLIDITY",
-              "referencePath": "uri",
-              "maps": null
-            },
-            {
-              "mappingType": "SOURCE_CODE",
-              "name": "Source",
-              "platform": "CHAINCODE_JAVA",
-              "referencePath": "uri",
-              "maps": null
-            }
-          ],
+          "implementationReferences": [],
           "resources": [],
           "artifact": null
         }
@@ -137,7 +101,7 @@
     "name": "",
     "symbol": "",
     "owner": "",
-    "quantity": 0,
+    "quantity": 1,
     "decimals": 0,
     "tokenProperties": {},
     "constructorName": "Constructor",
@@ -148,159 +112,119 @@
       "reference": {
         "id": "c1189d7a-e142-4504-bf26-44c35b76c9d6",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
+        "referenceNotes": "singleton",
         "values": null
       },
-      "isExternal": false,
+      "isExternal": true,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [],
       "properties": []
     },
     {
       "reference": {
         "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
+        "referenceNotes": "non-subdividable",
         "values": null
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
-      "properties": []
+      "influenceBindings": [],
+      "properties": [
+        {
+          "name": "Decimals",
+          "valueDescription": "Set to Zero, not allowing any subdivision",
+          "templateValue": "0",
+          "propertyInvocations": [
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest",
+                "description": "",
+                "inputParameters": []
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "reference": {
         "id": "af119e58-6d84-4ca6-9656-75e8d312f038",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
+        "referenceNotes": "transferable",
         "values": null
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
+      "influenceBindings": [],
+      "properties": []
+    },
+    {
+      "reference": {
+        "id": "803297a1-c0f9-4898-9d44-29c9d41cca97",
+        "type": "BEHAVIOR",
+        "referenceNotes": "burnable",
+        "values":  null
+      },
+      "isExternal": true,
+      "constructorType": "",
+      "constructor": null,
+      "invocations": [],
+      "influenceBindings": [],
       "properties": []
     },
     {
       "reference": {
         "id": "dc8d5961-59e8-4a10-8b38-d9e99394d251",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": null
+        "referenceNotes": "encumberable",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": {}
+        }
       },
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
       "invocations": [],
-      "properties": [
-        {
-          "name": "",
-          "valueDescription": "",
-          "templateValue": "definition value",
-          "propertyInvocations": []
-        }
-      ]
-    },
-    {
-      "reference": {
-        "id": "803297a1-c0f9-4898-9d44-29c9d41cca97",
-        "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": null
-      },
-      "isExternal": true,
-      "constructorType": "",
-      "constructor": null,
-      "invocations": [],
-      "properties": [
-        {
-          "name": "",
-          "valueDescription": "",
-          "templateValue": "definition value",
-          "propertyInvocations": []
-        }
-      ]
-    },
-    {
-      "reference": {
-        "id": "af119e58-6d84-4ca6-9656-75e8d312f038",
-        "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": null
-      },
-      "isExternal": true,
-      "constructorType": "",
-      "constructor": null,
-      "invocations": [],
-      "properties": [
-        {
-          "name": "",
-          "valueDescription": "",
-          "templateValue": "definition value",
-          "propertyInvocations": []
-        }
-      ]
-    },
-    {
-      "reference": {
-        "id": "af119e58-6d84-4ca6-9656-75e8d312f038",
-        "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": null
-      },
-      "isExternal": true,
-      "constructorType": "",
-      "constructor": null,
-      "invocations": [],
-      "properties": [
-        {
-          "name": "",
-          "valueDescription": "",
-          "templateValue": "definition value",
-          "propertyInvocations": []
-        }
-      ]
-    },
-    {
-      "reference": {
-        "id": "af119e58-6d84-4ca6-9656-75e8d312f038",
-        "type": "BEHAVIOR",
-        "referenceNotes": "",
-        "values": null
-      },
-      "isExternal": true,
-      "constructorType": "",
-      "constructor": null,
-      "invocations": [],
-      "properties": [
-        {
-          "name": "",
-          "valueDescription": "",
-          "templateValue": "definition value",
-          "propertyInvocations": []
-        }
-      ]
+      "influenceBindings": [],
+      "properties": []
     }
   ],
   "behaviorGroups": [],
   "propertySets": [
     {
       "reference": {
-        "id":"79d40648-02ba-4055-b700-01dce32196ec",
+        "id": "79d40648-02ba-4055-b700-01dce32196ec",
         "type": "PROPERTY_SET",
-        "referenceNotes": "",
-        "values": null
-      },
-      "properties": [
-        {
-          "name": "",
-          "valueDescription": "",
-          "templateValue": "template value",
-          "propertyInvocations": []
+        "referenceNotes": "file",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": {}
         }
-      ]
+      },
+      "properties": []
     }
   ],
   "childTokens": []

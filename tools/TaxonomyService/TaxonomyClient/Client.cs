@@ -214,7 +214,8 @@ namespace TTI.TTF.Taxonomy
 										Name = _newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											Id = Guid.NewGuid().ToString(),											Tooling = newSymbol.ToUpper(),
+											Id = Guid.NewGuid().ToString(),											
+											Tooling = newSymbol.ToUpper(),
 											Visual = "<i>" + newSymbol.ToUpper()+"</i>",
 											Type = ArtifactType.Behavior,
 											Version = "1.0"					}
@@ -230,7 +231,8 @@ namespace TTI.TTF.Taxonomy
 										Name = _newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											Id = Guid.NewGuid().ToString(),											Tooling = newSymbol.ToUpper(),
+											Id = Guid.NewGuid().ToString(),											
+											Tooling = newSymbol.ToUpper(),
 											Visual = "<i>" + newSymbol.ToUpper()+"</i>",
 											Type = ArtifactType.BehaviorGroup,
 											Version = "1.0",
@@ -248,7 +250,8 @@ namespace TTI.TTF.Taxonomy
 										Name = _newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											Id = Guid.NewGuid().ToString(),											Tooling = newSymbol.ToUpper(),
+											Id = Guid.NewGuid().ToString(),											
+											Tooling = newSymbol.ToUpper(),
 											Visual = "&phi;" + newSymbol,
 											Type = ArtifactType.PropertySet,
 											Version = "1.0"
@@ -265,7 +268,8 @@ namespace TTI.TTF.Taxonomy
 										Name = _newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											Id = Guid.NewGuid().ToString(),											Tooling = newSymbol.ToUpper(),
+											Id = Guid.NewGuid().ToString(),											
+											Tooling = newSymbol.ToUpper(),
 											Visual = newSymbol,
 											Version = "1.0,",
 											Type = ArtifactType.TemplateFormula,
@@ -282,7 +286,8 @@ namespace TTI.TTF.Taxonomy
 										Name = _newArtifactName,
 										ArtifactSymbol = new ArtifactSymbol
 										{
-											Id = Guid.NewGuid().ToString(),											Tooling = newSymbol.ToUpper(),
+											Id = Guid.NewGuid().ToString(),											
+											Tooling = newSymbol.ToUpper(),
 											Visual = newSymbol,
 											Version = "1.0,",
 											Type = ArtifactType.TemplateDefinition,

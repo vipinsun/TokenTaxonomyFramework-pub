@@ -424,39 +424,11 @@
       "reference": {
         "id": "9c8c2373-cf3c-4743-932a-03fee6a192fe",
         "type": "BEHAVIOR",
-        "referenceNotes": "",
+        "referenceNotes": "logable",
         "values": {
           "controlUri": "",
           "artifactFiles": [],
           "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
           }
         }
       },

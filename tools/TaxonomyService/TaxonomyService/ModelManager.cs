@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Google.Protobuf;
+using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
 using TTI.TTF.Taxonomy.Controllers;
@@ -1117,6 +1118,10 @@ namespace TTI.TTF.Taxonomy
 			{
 				Artifact = formula.Artifact
 			};
+			var newFiles = ConvertArtifactFiles(retVal.Artifact.ArtifactFiles, name);
+			retVal.Artifact.ArtifactFiles.Clear();
+			retVal.Artifact.ArtifactFiles.AddRange(newFiles);
+	
 			retVal.Artifact.Name = name;
 			retVal.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
 			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TemplateDefinition;
@@ -1138,7 +1143,8 @@ namespace TTI.TTF.Taxonomy
 					{
 						ControlUri = "",
 						Maps = baseToken.Artifact.Maps
-					}
+					},
+					ReferenceNotes = baseToken.Name
 				},
 				ConstructorName = "Constructor"
 			};
@@ -1156,7 +1162,8 @@ namespace TTI.TTF.Taxonomy
 						{
 							ControlUri = "",
 							Maps = b.Artifact.Maps
-						}
+						},
+						ReferenceNotes = b.Artifact.Name
 					},
 					ConstructorType = "",
 					Properties = { b.Properties },
@@ -1178,7 +1185,8 @@ namespace TTI.TTF.Taxonomy
 						{
 							ControlUri = "",
 							Maps = b.Artifact.Maps
-						}
+						},
+						ReferenceNotes = b.Artifact.Name
 					}
 				};
 		
@@ -1193,7 +1201,8 @@ namespace TTI.TTF.Taxonomy
 						{
 							ControlUri = "",
 							Maps = b.Artifact.Maps
-						}
+						},
+						ReferenceNotes = b.Artifact.Name
 					},
 					ConstructorType = "",
 					Properties = {br.Properties},
@@ -1219,10 +1228,26 @@ namespace TTI.TTF.Taxonomy
 						{
 							ControlUri = "",
 							Maps = ps.Artifact.Maps
-						}
+						},
+						ReferenceNotes = ps.Artifact.Name
 					},
 					Properties = { ps.Properties }
 				});
+			}
+
+			return retVal;
+		}
+
+		private static IEnumerable<ArtifactFile> ConvertArtifactFiles(IEnumerable<ArtifactFile> artifactArtifactFiles, string newName)
+		{
+			var retVal = new List<ArtifactFile>();
+			foreach (var f in artifactArtifactFiles)
+			{
+				var fn = f.FileName.Split('.');
+				if (fn.Length <= 1 || string.IsNullOrWhiteSpace(fn[1])) continue;
+				var newFName = newName + "." + fn[1];
+				f.FileName = newFName;
+				retVal.Add(f);
 			}
 
 			return retVal;

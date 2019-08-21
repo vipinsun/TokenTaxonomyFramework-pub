@@ -1,0 +1,123 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "id": "8ea3e82d-7bdb-482a-90e4-274af08e8bd3",
+      "type": "TEMPLATE_FORMULA",
+      "visual": "[&tau;<sub>F</sub>{<i>~d,t,SC</i>}+&phi;SKU]",
+      "tooling": "[tF{~d,t,SC}+phSKU]",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "[tF{~d,t,SC}+phSKU]",
+    "aliases": [
+      "Whole Fungible",
+      "Inventory"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0. This token has the SKU PropertySet added to add specific SKU information to the Token Class.",
+      "businessExample": "Inventory tokens to represent items in a SKU are a common use of this type of token. Representing inventory using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Tracing ownership or the token and its removal from circulation when it used is.",
+      "analogies": [
+        {
+          "name": "Barrel of Oil",
+          "description": "A producer can create a token for each barrel of oil, where the SKU represents the type of barrel it is. These barrels can change ownership and be burned when the barrel is refined or consumed in some way.",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [
+      {
+        "description": "A whole fungible token",
+        "symbol": {
+          "id":"89ca6daf-5585-469e-abd1-19bc44e7a012",
+          "type": "BASE",
+          "visual": "&tau;<sub>F</sub>",
+          "tooling": "tF",
+          "version": "1.0",
+          "templateValidated": true
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "tF{~d,t,b}.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "tF{~d,t,b}.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [],
+      "implementationReferences": [],
+      "resources": [],
+      "artifact": null
+    }
+  },
+  "templateType": "SINGLE_TOKEN",
+  "tokenBase": {
+    "base": {
+      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "type": "BASE",
+      "visual": "&tau;<sub>F</sub>",
+      "tooling": "tF",
+      "version": "1.0",
+      "templateValidated": true
+    }
+  },
+  "behaviors": [
+    {
+      "behavior": {
+        "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
+        "type": "BEHAVIOR",
+        "visual": "<i>~d</i>",
+        "tooling": "~d",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    },
+    {
+      "behavior": {
+        "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
+        "type": "BEHAVIOR",
+        "visual": "<i>t</i>",
+        "tooling": "t",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    }
+  ],
+  "behaviorGroups": [
+    {
+      "behaviorGroup":{
+        "id":"91cb89b6-a2ce-44ff-b3a0-f0cb3f117e56",
+        "type": "BEHAVIOR_GROUP",
+        "visual": "<i>SC</i>",
+        "tooling": "SC",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    }
+  ],
+  "propertySets": [
+    {
+      "propertySet":{
+        "id":"ee696ca3-393a-44e3-a4a8-01a39042f1dd",
+        "type": "PROPERTY_SET",
+        "visual": "&phi;<i>SKU</i>",
+        "tooling": "phSKU",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    }
+  ],
+  "childTokens": []
+}
