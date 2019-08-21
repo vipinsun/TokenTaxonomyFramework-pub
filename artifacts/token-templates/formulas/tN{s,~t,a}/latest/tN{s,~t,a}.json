@@ -3,24 +3,29 @@
     "artifactSymbol": {
       "id": "6fa235c7-d9d7-4fa2-b2b3-0e8e6838b770",
       "type": "TEMPLATE_FORMULA",
-      "visual": "&tau;<sub>N</sub>{<i>s,~t</i>}",
-      "tooling": "tN{s,~t}",
+      "visual": "&tau;<sub>N</sub>{<i>s,~t,a</i>}",
+      "tooling": "tN{s,~t,a}",
       "version": "1.0",
       "templateValidated": false
     },
-    "name": "tN{s,~t}",
+    "name": "tN{s,~t,a}",
     "aliases": [
-      "Vote",
-      "Attestation",
+      "License",
+      "Diploma",
       "Certification"
     ],
     "artifactDefinition": {
-      "businessDescription": "A singleton is a non-subdividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-subdividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is non-transferable",
-      "businessExample": "",
+      "businessDescription": "A singleton is a non-subdividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-subdividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is non-transferable and attestable.",
+      "businessExample": "A educational diploma issued to a student, is not valid to transfer to someone else.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "Singleton analogy 1 description",
+          "name": "Certification",
+          "description": "A person may obtain some certification to prove that they attended and passed some set of requirements.",
+          "artifactDefinition": null
+        },
+        {
+          "name": "License",
+          "description": "A business may obtain license from the government to prove that they are registered and recognized.",
           "artifactDefinition": null
         }
       ],
@@ -29,12 +34,12 @@
     },
     "dependencies": [
       {
-        "description": "Non-Fungible",
+        "description": "Non-Fungible, Singleton",
         "symbol": {
-          "id":"8314a797-df3c-409b-835c-0e80af92714f",
+          "id":"53101d87-3c93-4d8b-ab39-1e629406d062",
           "type": "BASE",
-          "visual": "&tau<sub>N</sub>",
-          "tooling": "tN",
+          "visual": "&tau<sub>N</sub>{<i>s</i>}",
+          "tooling": "tN{s}",
           "version": "1.0",
           "templateValidated": true
         }
@@ -78,10 +83,10 @@
   "templateType": "SINGLE_TOKEN",
   "tokenBase": {
     "base": {
-      "id": "8314a797-df3c-409b-835c-0e80af92714f",
+      "id":"53101d87-3c93-4d8b-ab39-1e629406d062",
       "type": "BASE",
-      "visual": "&tau<sub>N</sub>",
-      "tooling": "tN",
+      "visual": "&tau<sub>N</sub>{<i>s</i>}",
+      "tooling": "tN{s}",
       "version": "1.0",
       "templateValidated": true
     }
@@ -113,6 +118,16 @@
         "type": "BEHAVIOR",
         "visual": "<i>~t</i>",
         "tooling": "~t",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    },
+    {
+      "behavior":{
+        "id":"189b1589-a93a-4aa6-8d9d-0d9237ab5b42",
+        "type": "BEHAVIOR",
+        "visual": "<i>a</i>",
+        "tooling": "a",
         "version": "1.0",
         "templateValidated": false
       }

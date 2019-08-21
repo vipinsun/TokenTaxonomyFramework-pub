@@ -12,15 +12,16 @@
     "aliases": [
       "Singleton",
       "One of a Kind",
-      "Only One"
+      "Original Art",
+      "CryptoKitty"
     ],
     "artifactDefinition": {
       "businessDescription": "A singleton is a non-subdividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-subdividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is transferable",
-      "businessExample": "",
+      "businessExample": "This token could be used to represent an original work of art like a painting.",
       "analogies": [
         {
-          "name": "Analogy 1",
-          "description": "Singleton analogy 1 description",
+          "name": "Painting",
+          "description": "A token representing ownership of an original, single piece of art like a painting.",
           "artifactDefinition": null
         }
       ],
@@ -29,12 +30,12 @@
     },
     "dependencies": [
       {
-        "description": "Non-Fungible",
+        "description": "Non-Fungible, Singleton",
         "symbol": {
-          "id":"8314a797-df3c-409b-835c-0e80af92714f",
+          "id":"53101d87-3c93-4d8b-ab39-1e629406d062",
           "type": "BASE",
-          "visual": "&tau<sub>N</sub>",
-          "tooling": "tN",
+          "visual": "&tau<sub>N</sub>{<i>s</i>}",
+          "tooling": "tN{s}",
           "version": "1.0",
           "templateValidated": true
         }
@@ -78,10 +79,10 @@
  "templateType": "SINGLE_TOKEN",
   "tokenBase": {
     "base": {
-      "id": "8314a797-df3c-409b-835c-0e80af92714f",
+      "id":"53101d87-3c93-4d8b-ab39-1e629406d062",
       "type": "BASE",
-      "visual": "&tau<sub>N</sub>",
-      "tooling": "tN",
+      "visual": "&tau<sub>N</sub>{<i>s</i>}",
+      "tooling": "tN{s}",
       "version": "1.0",
       "templateValidated": true
     }

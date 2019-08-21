@@ -1,25 +1,27 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id": "6df7cb5e-6cae-4a87-be43-369369795654",
+      "id": "129a78b5-f9a7-4908-8ece-e9e015dd8301",
       "type": "TEMPLATE_DEFINITION",
-      "visual": "&tau;<sub>F</sub>{<i>~d,t,g,SC</i>}",
-      "tooling": "tF{~d,t,g,SC}",
+      "visual": "&tau;<sub>N</sub>{<i>s,t</i>}",
+      "tooling": "tN{s,t}",
       "version": "1.0",
       "templateValidated": false
     },
-    "name": "Loyalty",
+    "name": "OriginalArt",
     "aliases": [
-      "Whole Fungible",
-      "Loyalty"
+      "Singleton",
+      "One of a Kind",
+      "Original Art",
+      "CryptoKitty"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0.",
-      "businessExample": "Loyalty points are a common use of this type of token. Representing a loyalty point using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Redemption of these is easy for users to understand using whole numbers. New points can be minted or issued based on customer activity and points can be removed or burned when they are redeemed. This formula supports transferable points as well.This token is delegable, meaning the owner of a token(s) can allow another party to transfer or burn token instances on their behalf.",
+      "businessDescription": "A singleton is a non-subdividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-subdividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is transferable",
+      "businessExample": "This token could be used to represent an original work of art like a painting.",
       "analogies": [
         {
-          "name": "Airline Points",
-          "description": "A customer can earn a point/token for each mile travelled and then redeem these points/tokens for upgrades or new tickets.",
+          "name": "Painting",
+          "description": "A token representing ownership of an original, single piece of art like a painting.",
           "artifactDefinition": null
         }
       ],
@@ -28,30 +30,47 @@
     },
     "dependencies": [
       {
-        "description": "A whole fungible token",
+        "description": "Non-Fungible, Singleton",
         "symbol": {
-          "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+          "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
           "type": "BASE",
-          "visual": "&tau;<sub>F</sub>",
-          "tooling": "tF",
+          "visual": "&tau<sub>N</sub>{<i>s</i>}",
+          "tooling": "tN{s}",
           "version": "1.0",
           "templateValidated": true
         }
       }
     ],
-    "incompatibleWithSymbols": [],
+    "incompatibleWithSymbols": [
+      {
+        "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+        "type": "BEHAVIOR",
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "1.0",
+        "templateValidated": false
+      },
+      {
+        "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "visual": "<i>m</i>",
+        "tooling": "m",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    ],
     "influencedBySymbols": [],
     "controlUri": "",
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "Loyalty.proto",
+        "fileName": "OriginalArt.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "Loyalty.md",
+        "fileName": "OriginalArt.md",
         "fileData": "",
         "artifact": null
       }
@@ -64,14 +83,14 @@
     }
   },
   "formulaReference": {
-    "id": "5ee615b1-56da-4783-b129-d2dea21dadef",
+    "id": "89ff775c-27f1-494e-b31c-f3fb3a9527ac",
     "type": "TEMPLATE_FORMULA",
-    "referenceNotes": "Loyalty",
+    "referenceNotes": "OriginalArt",
     "values": null
   },
   "tokenBase": {
     "reference": {
-      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
       "type": "BASE",
       "referenceNotes": "",
       "values": {
@@ -95,6 +114,53 @@
     "constructor": null
   },
   "behaviors": [
+    {
+      "reference": {
+        "id": "c1189d7a-e142-4504-bf26-44c35b76c9d6",
+        "type": "BEHAVIOR",
+        "referenceNotes": "Singleton",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": {
+            "codeReferences": [
+              {
+                "mappingType": "SOURCE_CODE",
+                "name": "Code 1",
+                "platform": "DAML",
+                "referencePath": "",
+                "maps": null
+              }
+            ],
+            "implementationReferences": [
+              {
+                "mappingType": "IMPLEMENTATION",
+                "name": "Implementation 1",
+                "platform": "CHAINCODE_GO",
+                "referencePath": "",
+                "maps": null
+              }
+            ],
+            "resources": [
+              {
+                "mappingType": "RESOURCE",
+                "name": "Regulation Reference 1",
+                "description": "",
+                "resourcePath": "",
+                "maps": null
+              }
+            ],
+            "artifact": null
+          }
+        }
+      },
+      "isExternal": true,
+      "constructorType": "",
+      "constructor": null,
+      "invocations": [],
+      "influenceBindings": [],
+      "properties": []
+    },
     {
       "reference": {
         "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
@@ -273,104 +339,6 @@
               {
                 "name": "Confirmation",
                 "valueDescription": "A confirmation receipt or error may be returned to the owner based on the outcome of the transfer from request."
-              }
-            ]
-          }
-        }
-      ],
-      "influenceBindings": [],
-      "properties": []
-    },
-    {
-      "reference": {
-        "id": "a3d02076-6009-4a65-9ed4-2deffe5291e1",
-        "type": "BEHAVIOR",
-        "referenceNotes": "Delegable",
-        "values": {
-          "controlUri": "",
-          "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
-        }
-      },
-      "isExternal": true,
-      "constructorType": "",
-      "constructor": null,
-      "invocations": [
-        {
-          "id": "2e0fd8e5-2090-4c62-b094-232c32a78022",
-          "name": "Allowance",
-          "description": "A Request by a party or account to the owner of a token(s) to have the right to perform a delegated behavior on their behalf.",
-          "request": {
-            "controlMessageName": "AllowanceRequest",
-            "description": "The request",
-            "inputParameters": [
-              {
-                "name": "Quantity",
-                "valueDescription": "Number of Tokens to be allowed."
-              }
-            ]
-          },
-          "response": {
-            "controlMessageName": "AllowanceResponse",
-            "description": "The response",
-            "outputParameters": [
-              {
-                "name": "Confirmation",
-                "valueDescription": "A confirmation receipt or denial be returned to the allowance requestor."
-              }
-            ]
-          }
-        },
-        {
-          "id": "6d5df99d-2f5e-4c7a-aea4-d2d54176abfd",
-          "name": "Approve Allowance",
-          "description": "Same control message as the AllowanceRequest.  This could allow for an AllowanceRequest to be forwarded to multiple parties needed to Approve and shield this from the requestor. When all Approvals are obtained, an AllowanceResponse could be sent.",
-          "request": {
-            "controlMessageName": "AllowanceRequest",
-            "description": "The request",
-            "inputParameters": [
-              {
-                "name": "Quantity",
-                "valueDescription": "Number of Tokens to be allowed."
-              }
-            ]
-          },
-          "response": {
-            "controlMessageName": "ApproveResponse",
-            "description": "The response",
-            "outputParameters": [
-              {
-                "name": "Confirmation",
-                "valueDescription": "A confirmation response from the owner approving the an allowance request, indicating a allowance quantity the requestor has the option to invoke the Delegable behaviors on the token(s)."
               }
             ]
           }

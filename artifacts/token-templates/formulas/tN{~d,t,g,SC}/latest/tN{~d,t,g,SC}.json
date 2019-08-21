@@ -1,25 +1,25 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id": "5ee615b1-56da-4783-b129-d2dea21dadef",
+      "id":"38ead4b1-1f94-4bc3-8b1f-2d0dda0c72bb",
       "type": "TEMPLATE_FORMULA",
-      "visual": "&tau;<sub>F</sub>{<i>~d,t,SC</i>}",
-      "tooling": "tF{~d,t,SC}",
+      "visual": "&tau<sub>N</sub><i>{~d,t,g,SC}</i>",
+      "tooling": "tN{~d,t,g,SC}",
       "version": "1.0",
-      "templateValidated": false
+      "templateValidated": true
     },
-    "name": "tF{~d,t,SC}",
+    "name": "tN{~d,t,g,SC}",
     "aliases": [
-      "Whole Fungible",
-      "Loyalty"
+      "Reserved Seating",
+      "Ailine Ticket"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0.",
-      "businessExample": "Loyalty points are a common use of this type of token. Representing a loyalty point using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Redemption of these is easy for users to understand using whole numbers. New points can be minted or issued based on customer activity and points can be removed or burned when they are redeemed. This formula supports transferable points as well.",
+      "businessDescription": "This is a Variable Supply Whole Non-Fungible where the total supply can vary. The tokens in this class will be of the same series, sharing those properties, but also have unique values like seat number. It is Whole by setting the Decimals property on the subdividable behavior = 0. A token instance can be burned.",
+      "businessExample": "This token can be used to represent a unique item in a shared context, like a reserved seat at a concert.",
       "analogies": [
         {
-          "name": "Airline Points",
-          "description": "A customer can earn a point/token for each mile travelled and then redeem these points/tokens for upgrades or new tickets.",
+          "name": "Reserved Seating",
+          "description": "All tokens in the class share the venue, date and time for the event, but have a unique seat number.",
           "artifactDefinition": null
         }
       ],
@@ -28,12 +28,12 @@
     },
     "dependencies": [
       {
-        "description": "A whole fungible token",
+        "description": "A whole non-fungible token",
         "symbol": {
-          "id":"89ca6daf-5585-469e-abd1-19bc44e7a012",
+          "id":"3c05a856-c901-4c30-917e-df9feed1c8de",
           "type": "BASE",
-          "visual": "&tau;<sub>F</sub>",
-          "tooling": "tF",
+          "visual": "&tau<sub>N</sub>{<i>~d</i>}",
+          "tooling": "tN{~d}",
           "version": "1.0",
           "templateValidated": true
         }
@@ -44,13 +44,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "tF{~d,t,b}.proto",
+        "fileName": "tN{~d,t,g,SC}.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "tF{~d,t,b}.md",
+        "fileName": "tN{~d,t,g,SC}.md",
         "fileData": "",
         "artifact": null
       }
@@ -65,10 +65,10 @@
   "templateType": "SINGLE_TOKEN",
   "tokenBase": {
     "base": {
-      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "id":"3c05a856-c901-4c30-917e-df9feed1c8de",
       "type": "BASE",
-      "visual": "&tau;<sub>F</sub>",
-      "tooling": "tF",
+      "visual": "&tau<sub>N</sub>{<i>~d</i>}",
+      "tooling": "tN{~d}",
       "version": "1.0",
       "templateValidated": true
     }
@@ -90,6 +90,16 @@
         "type": "BEHAVIOR",
         "visual": "<i>t</i>",
         "tooling": "t",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    },
+    {
+      "behavior": {
+        "id":"a3d02076-6009-4a65-9ed4-2deffe5291e1",
+        "type": "BEHAVIOR",
+        "visual": "<i>g</i>",
+        "tooling": "g",
         "version": "1.0",
         "templateValidated": false
       }
