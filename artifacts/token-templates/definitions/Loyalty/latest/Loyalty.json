@@ -1,7 +1,7 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id": "81ac03e2-2cdc-48dd-9ddc-1f286d06cc89",
+      "id": "7caeb726-accc-4983-8017-0b9af99d33a9",
       "type": "TEMPLATE_DEFINITION",
       "visual": "&tau;<sub>F</sub>{<i>~d,t,SC</i>}",
       "tooling": "tF{~d,t,SC}",
@@ -64,9 +64,9 @@
     }
   },
   "formulaReference": {
-    "id": "81ac03e2-2cdc-48dd-9ddc-1f286d06cc89",
+    "id": "5ee615b1-56da-4783-b129-d2dea21dadef",
     "type": "TEMPLATE_FORMULA",
-    "referenceNotes": "",
+    "referenceNotes": "Loyalty",
     "values": null
   },
   "tokenBase": {

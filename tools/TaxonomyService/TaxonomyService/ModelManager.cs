@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
 using Google.Protobuf.WellKnownTypes;
 using log4net;
 using TTI.TTF.Taxonomy.Controllers;
@@ -397,9 +396,8 @@ namespace TTI.TTF.Taxonomy
 		}
 
 		//todo:finish this
-		private static bool AddTemplateToHierarchy(TemplateDefinition definition)
+		private static void AddTemplateToHierarchy(TemplateDefinition definition)
 		{
-			
 			var templateFormula = Taxonomy.TemplateFormulas
 				.SingleOrDefault(e => e.Key == definition.FormulaReference.Id).Value;
 			var tokenBase = Taxonomy.BaseTokenTypes.SingleOrDefault(e => e.Key == definition.TokenBase.Reference.Id)
@@ -410,6 +408,9 @@ namespace TTI.TTF.Taxonomy
 				TokenType = tokenBase.TokenType,
 				TokenUnit = tokenBase.TokenUnit
 			};
+			
+			//todo: eventually support nesting of branches, but for now place in the root branch for the base token type.
+			/*
 			var targetBranch = new BranchRoot
 			{
 				BranchFormula = templateFormula,
@@ -419,74 +420,88 @@ namespace TTI.TTF.Taxonomy
 					FormulaId = templateFormula.Artifact.ArtifactSymbol.Id
 				}
 			};
+			*/
 			try
 			{
+				var template = new TokenTemplate
+				{
+					Definition = definition,
+					Formula = templateFormula
+				};
+				
 				switch (classification.TokenUnit)
 				{
 					case TokenUnit.Fractional:
-						if (classification.TokenType == TokenType.Fungible &&
-						    classification.TemplateType == TemplateType.SingleToken)
+						switch (classification.TokenType)
 						{
-				
-						}
-
-						if (classification.TokenType == TokenType.Fungible &&
-						    classification.TemplateType == TemplateType.Hybrid)
-						{
-						}
-						if (classification.TokenType == TokenType.NonFungible &&
-						    classification.TemplateType == TemplateType.SingleToken)
-						{
-						}
-
-						if (classification.TokenType == TokenType.NonFungible &&
-						    classification.TemplateType == TemplateType.Hybrid)
-						{
+							case TokenType.Fungible when classification.TemplateType == TemplateType.SingleToken:
+								Taxonomy.TokenTemplateHierarchy.Fungibles.Fractional.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							case TokenType.Fungible when classification.TemplateType == TemplateType.Hybrid:
+								Taxonomy.TokenTemplateHierarchy.Hybrids.Fungible.Fractional.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							case TokenType.NonFungible when classification.TemplateType == TemplateType.Hybrid:
+								Taxonomy.TokenTemplateHierarchy.Hybrids.NonFungible.Fractional.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							case TokenType.NonFungible when classification.TemplateType == TemplateType.SingleToken:
+								Taxonomy.TokenTemplateHierarchy.NonFungibles.Fractional.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							default:
+								throw new ArgumentOutOfRangeException();
 						}
 						break;
 					case TokenUnit.Whole:
-						if (classification.TokenType == TokenType.Fungible &&
-						    classification.TemplateType == TemplateType.SingleToken)
+						switch (classification.TokenType)
 						{
-						}
-
-						if (classification.TokenType == TokenType.Fungible &&
-						    classification.TemplateType == TemplateType.Hybrid)
-						{
-						}
-						if (classification.TokenType == TokenType.NonFungible &&
-						    classification.TemplateType == TemplateType.SingleToken)
-						{
-						}
-
-						if (classification.TokenType == TokenType.NonFungible &&
-						    classification.TemplateType == TemplateType.Hybrid)
-						{
+							case TokenType.Fungible when classification.TemplateType == TemplateType.SingleToken:
+								Taxonomy.TokenTemplateHierarchy.Fungibles.Whole.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							case TokenType.Fungible when classification.TemplateType == TemplateType.Hybrid:
+								Taxonomy.TokenTemplateHierarchy.Hybrids.Fungible.Whole.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							case TokenType.NonFungible when classification.TemplateType == TemplateType.Hybrid:
+								Taxonomy.TokenTemplateHierarchy.Hybrids.NonFungible.Whole.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							case TokenType.NonFungible when classification.TemplateType == TemplateType.SingleToken:
+								Taxonomy.TokenTemplateHierarchy.NonFungibles.Whole.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							default:
+								throw new ArgumentOutOfRangeException();
 						}
 						break;
 					case TokenUnit.Singleton:
-						if (classification.TokenType == TokenType.NonFungible &&
-						    classification.TemplateType == TemplateType.SingleToken)
+						switch (classification.TemplateType)
 						{
-						}
-
-						if (classification.TokenType == TokenType.NonFungible &&
-						    classification.TemplateType == TemplateType.Hybrid)
-						{
+							case TemplateType.SingleToken:
+								Taxonomy.TokenTemplateHierarchy.NonFungibles.Singleton.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							case TemplateType.Hybrid:
+								Taxonomy.TokenTemplateHierarchy.Hybrids.NonFungible.Singleton.Templates.Template.Add(
+									definition.Artifact.ArtifactSymbol.Id, template);
+								break;
+							default:
+								throw new ArgumentOutOfRangeException();
 						}
 						break;
 					default:
 						throw new ArgumentOutOfRangeException();
 				}
-
-				return true;
+				_log.Info("Template " + definition.Artifact.Name + " added to branch: " + classification.TemplateType + "/" + classification.TokenType + "/" +classification.TokenUnit);
+				
 			}
 			catch (Exception e)
 			{
 				_log.Error("Failed to add template to taxonomy: " + e);
-				return false;
 			}
-
 		}
 
 		internal static string GetArtifactFolderNameBySymbol(ArtifactType artifactType, string tooling)
@@ -1103,11 +1118,15 @@ namespace TTI.TTF.Taxonomy
 				}
 			}
 
+			var serializedDef = Any.Pack(definition);
 			TaxonomyController.CreateArtifact(new NewArtifactRequest
 			{
-				Artifact = Any.Pack(definition),
+				Artifact = serializedDef,
 				Type = ArtifactType.TemplateDefinition
 			});
+			AddOrUpdateInMemoryArtifact(ArtifactType.TemplateDefinition, serializedDef);
+			AddTemplateToHierarchy(definition);
+			
 			return definition;
 		}
 		
@@ -1116,7 +1135,7 @@ namespace TTI.TTF.Taxonomy
 				//get formula, fetch artifacts, create/copy definition references, send to controller to save, return to caller.
 			var retVal = new TemplateDefinition
 			{
-				Artifact = formula.Artifact
+				Artifact = formula.Artifact.Clone()
 			};
 			var newFiles = ConvertArtifactFiles(retVal.Artifact.ArtifactFiles, name);
 			retVal.Artifact.ArtifactFiles.Clear();
@@ -1128,7 +1147,8 @@ namespace TTI.TTF.Taxonomy
 			retVal.FormulaReference = new ArtifactReference
 			{
 				Id = formula.Artifact.ArtifactSymbol.Id,
-				Type = ArtifactType.TemplateFormula
+				Type = ArtifactType.TemplateFormula,
+				ReferenceNotes = name
 			};
 
 			var baseToken = GetArtifactById<Base>(formula.TokenBase.Base.Id);

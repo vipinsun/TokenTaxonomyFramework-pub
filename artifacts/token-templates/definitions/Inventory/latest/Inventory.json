@@ -1,7 +1,7 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id": "12e2bc8a-5cad-4de9-9587-61f41047ba97",
+      "id": "bcf3f18d-e403-4c70-b81e-db2b0cfa663d",
       "type": "TEMPLATE_DEFINITION",
       "visual": "[&tau;<sub>F</sub>{<i>~d,t,SC</i>}+&phi;SKU]",
       "tooling": "[tF{~d,t,SC}+phSKU]",
@@ -64,9 +64,9 @@
     }
   },
   "formulaReference": {
-    "id": "12e2bc8a-5cad-4de9-9587-61f41047ba97",
+    "id": "8ea3e82d-7bdb-482a-90e4-274af08e8bd3",
     "type": "TEMPLATE_FORMULA",
-    "referenceNotes": "",
+    "referenceNotes": "Inventory",
     "values": null
   },
   "tokenBase": {
