@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package grantable;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "TTI.TTF.Behaviors.Grantable";
+option java_package = "org.tti.ttf.behaviors.grantable";
+option java_multiple_files = true;
+
+message GrantRequest {
+    tokens.MessageHeader header = 1;
+    bytes attestation = 2;
+}
+
+message GrantResponse {
+    tokens.MessageHeader header = 1;
+    bool confirmation = 2;
+}
+
+//if Delegable present
+message AdjustGrantRequest {
+    tokens.MessageHeader header = 1;
+    string account_id = 2;
+}
+
+//if Delegable present
+message AdjustGrantResponse {
+    tokens.MessageHeader header = 1;
+    bool confirmation = 2;
+    bytes attestation = 3;
+}
+
+message VestRequest{
+
+}
+
+message VestResponse{
+    
+}

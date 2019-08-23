@@ -161,6 +161,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [],
       "influenceBindings": [],
       "properties": []
@@ -208,6 +209,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [],
       "influenceBindings": [],
       "properties": [
@@ -284,6 +286,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [],
       "influenceBindings": [],
       "properties": []
@@ -307,6 +310,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [
         {
           "id": "f404f43f-c922-475d-9a0c-b4a0bdca6029",

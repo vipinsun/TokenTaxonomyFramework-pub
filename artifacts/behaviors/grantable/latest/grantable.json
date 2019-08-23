@@ -1,0 +1,147 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "id":"a8992e09-8e92-4ee8-bb17-88f9972a5965",
+      "type": "BEHAVIOR",
+      "visual": "<i>o</i>",
+      "tooling": "o",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "Grantable",
+    "aliases": [
+      "Vestable"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "Grantable represents 'potential' ownership of a token when granted to a user. A grantable token is 'granted' to an account, but the account isn't the owner or free to spend or transfer the granted token. The account will become the owner or be able to spend or redeem the token when the grant vests. A grant that is vested is transformed in some way, usually allowing the owner to redeem or use the token itself. A token class that implements this behavior will support grant settings to define the rules for vesting of the grant. Grant settings include a vesting schedule and vest actions for setting when a vest can occur and what happens when it vests. Vesting can have a date when it is able to vest, but is not automatic, it must be invoked. Simple vests will remove a transferable/burnable restriction so that the token can be redeemed. More complex vesting can spawn new tokens with issuance being sent to multiple parties.",
+      "businessExample": "A grantable token can be granted to an account with a simple date based vest.  The vest can be a single date or on a schedule spanning years. A 5 year grant would vest 20% of the grant every calendar year from the initial grant date. The vest event can also be a simple 'unlocking' of the token so the grantee can use it or more complex like splitting percentages into multiple other tokens.",
+      "analogies": [
+        {
+          "name": "Stock Grant",
+          "description": "Stock grants are a great example of what a Token Grant can be.  But a Token Grant can do so much more. Stock grants have a grant amount and a schedule.  The vest transfers ownership of the stock from the grantor to the grantee.",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [
+      {
+        "description": "Highly recommended that Role restrictions be applied to Pause and Resume invocations.",
+        "symbol": {
+          "type": "BEHAVIOR",
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "grantable.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "grantable.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {}
+  },
+  "invocations": [
+    {
+      "id": "f404f43f-c922-475d-9a0c-b4a0bdca6029",
+      "name": "Grant",
+      "description": "A request to grant a certain number of tokens to an account.",
+      "request": {
+        "controlMessageName": "GrantToRequest",
+        "description": "The request to Attest an attestation.",
+        "inputParameters": [
+          {
+            "name": "AccountId",
+            "valueDescription": "The account to grant to."
+          },
+          {
+            "name": "Amount",
+            "valueDescription": "Quanity of Tokens to grant."
+          }
+        ]
+      },
+      "response": {
+        "controlMessageName": "GrantToResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A true or false result"
+          }
+        ],
+        "description": "The response from the AttestRequest."
+      }
+    },
+    {
+      "id": "c573dc98-d669-4e24-a06d-70a7c1d29078",
+      "name": "AdjustGrant",
+      "description": "A request to validate a rule or attestation.",
+      "request": {
+        "controlMessageName": "AdjustGrantRequest",
+        "description": "The request to Attest by an account id.",
+        "inputParameters": [
+          {
+            "name": "AccountId",
+            "valueDescription": "The Id of the account to validate."
+          }
+        ]
+      },
+      "response": {
+        "controlMessageName": "AdjustGrantResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A true or false result"
+          },
+          {
+            "name": "Attestation",
+            "valueDescription": "A cryptographic signature that can be validated with AttestRequest."
+          }
+        ],
+        "description": "The response from the AttestByAccountRequest, if true can include a Attestation for the caller to use in subsequent attestation checks."
+      }
+    },
+    {
+      "id": "c573dc98-d669-4e24-a06d-70a7c1d29078",
+      "name": "Vest",
+      "description": "A request to validate a rule or attestation.",
+      "request": {
+        "controlMessageName": "VestRequest",
+        "description": "The request to Attest by an account id.",
+        "inputParameters": [
+          {
+            "name": "AccountId",
+            "valueDescription": "The Id of the account to validate."
+          }
+        ]
+      },
+      "response": {
+        "controlMessageName": "VestResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A true or false result"
+          },
+          {
+            "name": "Attestation",
+            "valueDescription": "A cryptographic signature that can be validated with AttestRequest."
+          }
+        ],
+        "description": "The response from the AttestByAccountRequest, if true can include a Attestation for the caller to use in subsequent attestation checks."
+      }
+    }
+  ],
+  "properties": []
+}

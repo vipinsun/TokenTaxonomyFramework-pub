@@ -138,6 +138,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [],
       "influenceBindings": [],
       "properties": [
@@ -214,6 +215,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [
         {
           "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
@@ -324,6 +326,24 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [
+        {
+          "id":"803297a1-c0f9-4898-9d44-29c9d41cca97",
+          "type": "BEHAVIOR",
+          "visual": "<i>b</i>",
+          "tooling": "b",
+          "version": "1.0",
+          "templateValidated": false
+        },
+        {
+          "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
+          "type": "BEHAVIOR",
+          "visual": "<i>t</i>",
+          "tooling": "t",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      ],
       "invocations": [
         {
           "id": "2e0fd8e5-2090-4c62-b094-232c32a78022",
