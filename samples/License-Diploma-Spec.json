@@ -1,0 +1,570 @@
+{
+  "specificationHash": "500ef1e58eb3e999cf919cd1560b439cd6dab743e265c55ef6d77696f38ca171",
+  "artifact": {
+    "artifactSymbol": {
+      "id": "49b6535a-430d-487b-8442-cf3457836ecc",
+      "type": "TOKEN_TEMPLATE",
+      "visual": "&tau;<sub>N</sub>{<i>s,~t,a</i>}",
+      "tooling": "tN{s,~t,a}",
+      "version": "1.0"
+    },
+    "name": "License-Diploma",
+    "aliases": [
+      "License",
+      "Diploma",
+      "Certification"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "A singleton is a non-subdividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-subdividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is non-transferable and attestable.",
+      "businessExample": "A educational diploma issued to a student, is not valid to transfer to someone else.",
+      "analogies": [
+        {
+          "name": "Certification",
+          "description": "A person may obtain some certification to prove that they attended and passed some set of requirements."
+        },
+        {
+          "name": "License",
+          "description": "A business may obtain license from the government to prove that they are registered and recognized."
+        }
+      ]
+    },
+    "dependencies": [
+      {
+        "description": "Non-Fungible, Singleton",
+        "symbol": {
+          "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
+          "visual": "&tau<sub>N</sub>{<i>s</i>}",
+          "tooling": "tN{s}",
+          "version": "1.0",
+          "templateValidated": true
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [
+      {
+        "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+        "type": "BEHAVIOR",
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "1.0"
+      },
+      {
+        "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "visual": "<i>m</i>",
+        "tooling": "m",
+        "version": "1.0"
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "License-Diploma.proto"
+      },
+      {
+        "content": "UML",
+        "fileName": "License-Diploma.md"
+      }
+    ],
+    "maps": {}
+  },
+  "tokenBase": {
+    "artifact": {
+      "artifactSymbol": {
+        "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
+        "visual": "&tau<sub>N</sub>{<i>s</i>}",
+        "tooling": "tN{s}",
+        "version": "1.0",
+        "templateValidated": true
+      },
+      "name": "Singleton",
+      "aliases": [
+        "Title",
+        "Deed",
+        "Document"
+      ],
+      "artifactDefinition": {
+        "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
+        "businessExample": "CryptoKitties, Art, Reserved Seat for an event.",
+        "analogies": [
+          {
+            "name": "Property Title",
+            "description": "The physical property title, land for example, have the identical look and feel from the paper, colors and seal. The difference between them are the values like property address, plot numbers, etc. These values make the title unique. There are some properties on a class of titles that are the same, like the county or jurisdiction the property is in. For titles that have some shared values and unique values, it may make more sense to define them in the same class."
+          },
+          {
+            "name": "Art",
+            "description": "The valuable painting or other unique piece of art may not share any property values with other paintings, unless the artist is extremely prolific in generating tens of thousands of pieces of art, it would make sense to define each piece of art as its own class. Meaning there would be only a single piece of art represented by the token class. If the art cannot be sub-divided, meaning there can be no fractional owners, this token class can be a singleton if the quantity in the class is set to 1. A singleton has only one instance in the class, essentially meaning the class is the instance, and not be sub-dividable and no new tokens can be minted in the class."
+          }
+        ],
+        "comments": "Non-fungible tokens require additional thought about how these tokens may or may not be grouped together in the same class."
+      },
+      "dependencies": [
+        {
+          "description": "Base Token Definition",
+          "symbol": {
+            "id": "5f5c4e7f-8ff1-4767-b59c-799d49753226",
+            "visual": "&tau",
+            "tooling": "t",
+            "version": "1.0",
+            "templateValidated": true
+          }
+        },
+        {
+          "description": "non-subdividable",
+          "symbol": {
+            "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+            "type": "BEHAVIOR",
+            "visual": "<i>~d</i>",
+            "tooling": "~d",
+            "version": "1.0"
+          }
+        }
+      ],
+      "incompatibleWithSymbols": [
+        {
+          "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+          "type": "BEHAVIOR",
+          "visual": "<i>d</i>",
+          "tooling": "d"
+        },
+        {
+          "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+          "type": "BEHAVIOR",
+          "visual": "<i>m</i>",
+          "tooling": "m",
+          "version": "1.0"
+        }
+      ],
+      "artifactFiles": [
+        {
+          "content": "CONTROL",
+          "fileName": "singleton.proto"
+        },
+        {
+          "content": "UML",
+          "fileName": "singleton.md"
+        }
+      ],
+      "maps": {}
+    },
+    "tokenType": "NON_FUNGIBLE",
+    "tokenUnit": "SINGLETON",
+    "constructorName": "Constructor"
+  },
+  "behaviors": [
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "c1189d7a-e142-4504-bf26-44c35b76c9d6",
+          "type": "BEHAVIOR",
+          "visual": "<i>s</i>",
+          "tooling": "s",
+          "version": "1.0"
+        },
+        "name": "Singleton",
+        "aliases": [
+          "Unique",
+          "One and Only"
+        ],
+        "artifactDefinition": {
+          "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
+          "analogies": [
+            {
+              "name": "Analogy 1",
+              "description": "singleton analogy 1 description"
+            }
+          ]
+        },
+        "dependencies": [
+          {
+            "description": "Singleton must be have a non-fungible base.",
+            "symbol": {
+              "id": "8314a797-df3c-409b-835c-0e80af92714f",
+              "visual": "&tau<sub>N</sub>",
+              "tooling": "tN",
+              "version": "1.0",
+              "templateValidated": true
+            }
+          },
+          {
+            "description": "Singleton requires non-sub-dividable.",
+            "symbol": {
+              "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+              "type": "BEHAVIOR",
+              "visual": "<i>~d</i>",
+              "tooling": "~d",
+              "version": "1.0"
+            }
+          }
+        ],
+        "incompatibleWithSymbols": [
+          {
+            "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+            "type": "BEHAVIOR",
+            "visual": "<i>d</i>",
+            "tooling": "d",
+            "version": "1.0"
+          },
+          {
+            "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+            "type": "BEHAVIOR",
+            "visual": "<i>m</i>",
+            "tooling": "m",
+            "version": "1.0"
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "singleton.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "singleton.md"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Code 1",
+              "platform": "DAML"
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true
+    },
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+          "type": "BEHAVIOR",
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "1.0"
+        },
+        "name": "Non-Subdividable",
+        "aliases": [
+          "Whole"
+        ],
+        "artifactDefinition": {
+          "businessDescription": "An ability or restriction on the token where it cannot be subdivided from a single whole token into fractions. Sets the base token Decimals property to 0 which will make the token non-sub-dividable and a whole token is the smallest ownable unit of the token.",
+          "businessExample": "Non-subdividable is common for items where subdivision does not make sense, like a property title, inventory item or invoice.",
+          "analogies": [
+            {
+              "name": "Non-Fractional",
+              "description": "It is not possible to own a fraction of this token."
+            },
+            {
+              "name": "Barrel of Oil",
+              "description": "Barrels of Oil don't make sense to subdivide."
+            }
+          ]
+        },
+        "incompatibleWithSymbols": [
+          {
+            "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+            "type": "BEHAVIOR",
+            "visual": "<i>d</i>",
+            "tooling": "d",
+            "version": "1.0"
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "non-subdividable.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "non-subdividable.md"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Code 1",
+              "platform": "DAML"
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true,
+      "properties": [
+        {
+          "name": "Decimals",
+          "valueDescription": "Set to Zero, not allowing any subdivision, usually this is applied to the base token.",
+          "templateValue": "0",
+          "propertyInvocations": [
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest"
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest"
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest"
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest"
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
+          "type": "BEHAVIOR",
+          "visual": "<i>~t</i>",
+          "tooling": "~t",
+          "version": "1.0"
+        },
+        "name": "Non-transferable",
+        "artifactDefinition": {
+          "businessDescription": "Every token instance has an owner. The Non-transferable behavior prevents the owner of a token from changing.",
+          "businessExample": "A vote token, for a citizen in a public election would be non-transferable.",
+          "analogies": [
+            {
+              "name": "Diploma",
+              "description": "A diploma from an educational institution is not transferable to another party that can claim to have earned the diploma."
+            },
+            {
+              "name": "Airline Ticket",
+              "description": "Due to security restrictions at airports and airlines, tickets can only be used by the person they were issued to."
+            }
+          ]
+        },
+        "incompatibleWithSymbols": [
+          {
+            "id": "af119e58-6d84-4ca6-9656-75e8d312f038",
+            "type": "BEHAVIOR",
+            "visual": "<i>t</i>",
+            "tooling": "t",
+            "version": "1.0"
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "non-transferable.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "non-transferable.md"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Code 1",
+              "platform": "DAML"
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true
+    },
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "189b1589-a93a-4aa6-8d9d-0d9237ab5b42",
+          "type": "BEHAVIOR",
+          "visual": "<i>a</i>",
+          "tooling": "a",
+          "version": "1.0"
+        },
+        "name": "Attestable",
+        "aliases": [
+          "Provable"
+        ],
+        "artifactDefinition": {
+          "businessDescription": "A token class that implements this behavior will support a basic attestation request returning a true or false and if true it will return a cryptographic proof the requester may store for future validations. Attestable will accept a simple ownership query to validate that an account is the owner of the token or a attestation proof and validate it.",
+          "businessExample": "Certain tokens will want to prove something like ownership or validation of an issued proof from the token for applications wanting to check attestations.",
+          "analogies": [
+            {
+              "name": "Diploma",
+              "description": "Check to see if an account is the owner or holder of a diploma token. This can be done by the Account Id or a stored attestation issued by the Diploma Token."
+            }
+          ]
+        },
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "attestable.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "attestable.md"
+          }
+        ],
+        "maps": {}
+      },
+      "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "f404f43f-c922-475d-9a0c-b4a0bdca6029",
+              "name": "Attest",
+              "description": "A request to validate a rule or attestation.",
+              "request": {
+                "controlMessageName": "AttestRequest",
+                "description": "The request to Attest an attestation.",
+                "inputParameters": [
+                  {
+                    "name": "Attestation",
+                    "valueDescription": "Value of the attestation to validate"
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "AttestResponse",
+                "description": "The response from the AttestRequest.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A true or false result"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "c573dc98-d669-4e24-a06d-70a7c1d29078",
+              "name": "AttestByAccount",
+              "description": "A request to validate a rule or attestation.",
+              "request": {
+                "controlMessageName": "AttestByAccountRequest",
+                "description": "The request to Attest by an account id.",
+                "inputParameters": [
+                  {
+                    "name": "AccountId",
+                    "valueDescription": "The Id of the account to validate."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "AttestByAccountResponse",
+                "description": "The response from the AttestByAccountRequest, if true can include a Attestation for the caller to use in subsequent attestation checks.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A true or false result"
+                  },
+                  {
+                    "name": "Attestation",
+                    "valueDescription": "A cryptographic signature that can be validated with AttestRequest."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

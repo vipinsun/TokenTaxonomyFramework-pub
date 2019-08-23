@@ -88,6 +88,26 @@
         "version": "1.0",
         "templateValidated": false
       }
+    },
+    {
+      "behavior": {
+        "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
+        "type": "BEHAVIOR",
+        "visual": "<i>~d</i>",
+        "tooling": "~d",
+        "version": "1.0",
+        "templateValidated": false
+      }
+    },
+    {
+      "behavior": {
+        "id":"c1189d7a-e142-4504-bf26-44c35b76c9d6",
+        "type": "BEHAVIOR",
+        "visual": "<i>s</i>",
+        "tooling": "s",
+        "version": "1.0",
+        "templateValidated": false
+      }
     }
   ],
   "behaviorGroups": [],

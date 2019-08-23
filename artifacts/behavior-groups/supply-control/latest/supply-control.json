@@ -112,6 +112,16 @@
       "isExternal": false,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [
+        {
+          "id":"f9224e90-3cab-45bf-b5dc-0175121e2ead",
+          "type": "BEHAVIOR",
+          "visual": "<i>m</i>",
+          "tooling": "m",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      ],
       "invocations": [],
       "influenceBindings": [
         {

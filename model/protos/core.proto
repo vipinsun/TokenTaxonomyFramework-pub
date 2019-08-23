@@ -188,9 +188,10 @@ message BehaviorReference{
     bool is_external = 2;
     string constructor_type = 3; //proto message name empty if there is no constructor, used when unpacking the Any.
     google.protobuf.Any constructor = 4; //optionally retrieved for behaviors like Role Support that needs input when setting up the roles when the token class is created.  Uses Any as the type as it will not be known by the framework.
-    repeated Invocation invocations = 5; //updated invocations from the base artifact
-    repeated InfluenceBinding influence_bindings = 6; //influence invocation definitions, only defined in the influencing behavior, but applied during specification generation.
-    repeated Property properties = 7; //values
+    repeated taxonomy.model.artifact.ArtifactSymbol applies_to = 5; //if this is an influence behavior, list the influenced symbols here, the details on how it influences is in the influence bindings.
+    repeated Invocation invocations = 6; //updated invocations from the base artifact
+    repeated InfluenceBinding influence_bindings = 7; //influence invocation definitions, only defined in the influencing behavior, but applied during specification generation.
+    repeated Property properties = 8; //values
 }
 
 //use these to define the influencing behavior's invocation and it's target to influence within the definition, the TTF will use this to construct the Invocation Pipeline.

@@ -211,6 +211,16 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [
+        {
+          "id":"9c8c2373-cf3c-4743-932a-03fee6a192fe",
+          "type": "BEHAVIOR",
+          "visual": "<i>l</i>",
+          "tooling": "l",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      ],
       "invocations": [],
       "influenceBindings": [
         {
@@ -435,6 +445,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [
         {
           "name": "CreateEntrySeries",

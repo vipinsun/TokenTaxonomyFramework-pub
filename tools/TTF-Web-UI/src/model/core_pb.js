@@ -6784,7 +6784,7 @@ proto.taxonomy.model.core.TemplateDefinitions.prototype.clearDefinitionsList = f
  * @private {!Array<number>}
  * @const
  */
-proto.taxonomy.model.core.BehaviorReference.repeatedFields_ = [5,6,7];
+proto.taxonomy.model.core.BehaviorReference.repeatedFields_ = [5,6,7,8];
 
 
 
@@ -6821,6 +6821,8 @@ proto.taxonomy.model.core.BehaviorReference.toObject = function(includeInstance,
     isExternal: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     constructorType: jspb.Message.getFieldWithDefault(msg, 3, ""),
     constructor: (f = msg.getConstructor()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
+    appliesToList: jspb.Message.toObjectList(msg.getAppliesToList(),
+    artifact_pb.ArtifactSymbol.toObject, includeInstance),
     invocationsList: jspb.Message.toObjectList(msg.getInvocationsList(),
     proto.taxonomy.model.core.Invocation.toObject, includeInstance),
     influenceBindingsList: jspb.Message.toObjectList(msg.getInfluenceBindingsList(),
@@ -6882,16 +6884,21 @@ proto.taxonomy.model.core.BehaviorReference.deserializeBinaryFromReader = functi
       msg.setConstructor(value);
       break;
     case 5:
+      var value = new artifact_pb.ArtifactSymbol;
+      reader.readMessage(value,artifact_pb.ArtifactSymbol.deserializeBinaryFromReader);
+      msg.addAppliesTo(value);
+      break;
+    case 6:
       var value = new proto.taxonomy.model.core.Invocation;
       reader.readMessage(value,proto.taxonomy.model.core.Invocation.deserializeBinaryFromReader);
       msg.addInvocations(value);
       break;
-    case 6:
+    case 7:
       var value = new proto.taxonomy.model.core.InfluenceBinding;
       reader.readMessage(value,proto.taxonomy.model.core.InfluenceBinding.deserializeBinaryFromReader);
       msg.addInfluenceBindings(value);
       break;
-    case 7:
+    case 8:
       var value = new proto.taxonomy.model.core.Property;
       reader.readMessage(value,proto.taxonomy.model.core.Property.deserializeBinaryFromReader);
       msg.addProperties(value);
@@ -6955,10 +6962,18 @@ proto.taxonomy.model.core.BehaviorReference.serializeBinaryToWriter = function(m
       google_protobuf_any_pb.Any.serializeBinaryToWriter
     );
   }
-  f = message.getInvocationsList();
+  f = message.getAppliesToList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       5,
+      f,
+      artifact_pb.ArtifactSymbol.serializeBinaryToWriter
+    );
+  }
+  f = message.getInvocationsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
       f,
       proto.taxonomy.model.core.Invocation.serializeBinaryToWriter
     );
@@ -6966,7 +6981,7 @@ proto.taxonomy.model.core.BehaviorReference.serializeBinaryToWriter = function(m
   f = message.getInfluenceBindingsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.taxonomy.model.core.InfluenceBinding.serializeBinaryToWriter
     );
@@ -6974,7 +6989,7 @@ proto.taxonomy.model.core.BehaviorReference.serializeBinaryToWriter = function(m
   f = message.getPropertiesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       proto.taxonomy.model.core.Property.serializeBinaryToWriter
     );
@@ -7079,18 +7094,52 @@ proto.taxonomy.model.core.BehaviorReference.prototype.hasConstructor = function(
 
 
 /**
- * repeated Invocation invocations = 5;
+ * repeated taxonomy.model.artifact.ArtifactSymbol applies_to = 5;
+ * @return {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>}
+ */
+proto.taxonomy.model.core.BehaviorReference.prototype.getAppliesToList = function() {
+  return /** @type{!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} */ (
+    jspb.Message.getRepeatedWrapperField(this, artifact_pb.ArtifactSymbol, 5));
+};
+
+
+/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value */
+proto.taxonomy.model.core.BehaviorReference.prototype.setAppliesToList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactSymbol=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.taxonomy.model.artifact.ArtifactSymbol}
+ */
+proto.taxonomy.model.core.BehaviorReference.prototype.addAppliesTo = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.taxonomy.model.artifact.ArtifactSymbol, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ */
+proto.taxonomy.model.core.BehaviorReference.prototype.clearAppliesToList = function() {
+  this.setAppliesToList([]);
+};
+
+
+/**
+ * repeated Invocation invocations = 6;
  * @return {!Array<!proto.taxonomy.model.core.Invocation>}
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.getInvocationsList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.Invocation>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.Invocation, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.Invocation, 6));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.Invocation>} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setInvocationsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -7100,7 +7149,7 @@ proto.taxonomy.model.core.BehaviorReference.prototype.setInvocationsList = funct
  * @return {!proto.taxonomy.model.core.Invocation}
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.addInvocations = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.taxonomy.model.core.Invocation, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.taxonomy.model.core.Invocation, opt_index);
 };
 
 
@@ -7113,18 +7162,18 @@ proto.taxonomy.model.core.BehaviorReference.prototype.clearInvocationsList = fun
 
 
 /**
- * repeated InfluenceBinding influence_bindings = 6;
+ * repeated InfluenceBinding influence_bindings = 7;
  * @return {!Array<!proto.taxonomy.model.core.InfluenceBinding>}
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.getInfluenceBindingsList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.InfluenceBinding>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.InfluenceBinding, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.InfluenceBinding, 7));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.InfluenceBinding>} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setInfluenceBindingsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -7134,7 +7183,7 @@ proto.taxonomy.model.core.BehaviorReference.prototype.setInfluenceBindingsList =
  * @return {!proto.taxonomy.model.core.InfluenceBinding}
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.addInfluenceBindings = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.taxonomy.model.core.InfluenceBinding, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.taxonomy.model.core.InfluenceBinding, opt_index);
 };
 
 
@@ -7147,18 +7196,18 @@ proto.taxonomy.model.core.BehaviorReference.prototype.clearInfluenceBindingsList
 
 
 /**
- * repeated Property properties = 7;
+ * repeated Property properties = 8;
  * @return {!Array<!proto.taxonomy.model.core.Property>}
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.getPropertiesList = function() {
   return /** @type{!Array<!proto.taxonomy.model.core.Property>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.Property, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.taxonomy.model.core.Property, 8));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.core.Property>} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setPropertiesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
+  jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -7168,7 +7217,7 @@ proto.taxonomy.model.core.BehaviorReference.prototype.setPropertiesList = functi
  * @return {!proto.taxonomy.model.core.Property}
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.addProperties = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.taxonomy.model.core.Property, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.taxonomy.model.core.Property, opt_index);
 };
 
 

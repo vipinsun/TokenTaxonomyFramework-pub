@@ -132,6 +132,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [],
       "influenceBindings": [],
       "properties": [
@@ -174,6 +175,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [],
       "influenceBindings": [],
       "properties": []
@@ -206,6 +208,7 @@
       "isExternal": true,
       "constructorType": "",
       "constructor": null,
+      "appliesTo": [],
       "invocations": [],
       "influenceBindings": [],
       "properties": []

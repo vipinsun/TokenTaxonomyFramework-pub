@@ -799,6 +799,11 @@ export class BehaviorReference extends jspb.Message {
   hasConstructor(): boolean;
   clearConstructor(): void;
 
+  getAppliesToList(): Array<artifact_pb.ArtifactSymbol>;
+  setAppliesToList(value: Array<artifact_pb.ArtifactSymbol>): void;
+  clearAppliesToList(): void;
+  addAppliesTo(value?: artifact_pb.ArtifactSymbol, index?: number): artifact_pb.ArtifactSymbol;
+
   getInvocationsList(): Array<Invocation>;
   setInvocationsList(value: Array<Invocation>): void;
   clearInvocationsList(): void;
@@ -828,6 +833,7 @@ export namespace BehaviorReference {
     isExternal: boolean,
     constructorType: string,
     constructor?: google_protobuf_any_pb.Any.AsObject,
+    appliesToList: Array<artifact_pb.ArtifactSymbol.AsObject>,
     invocationsList: Array<Invocation.AsObject>,
     influenceBindingsList: Array<InfluenceBinding.AsObject>,
     propertiesList: Array<Property.AsObject>,

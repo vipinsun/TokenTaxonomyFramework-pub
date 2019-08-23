@@ -14,7 +14,7 @@
       "halt trading"
     ],
     "artifactDefinition": {
-      "businessDescription": "A token class that implements this behavior will halt trades and free all transfers, handy if there is a bug found in the token implementation.",
+      "businessDescription": "Pausible is an influencing behavior that can be applied to other behaviors in the Token. Pausible will have an applies toA token class that implements this behavior will halt trades and free all transfers, handy if there is a bug found in the token implementation.",
       "businessExample": "There may be a run or a crash in the market that may require the halting of trades for this token. This is like the big red button.",
       "analogies": [
         {
@@ -28,7 +28,19 @@
     },
     "dependencies": [],
     "incompatibleWithSymbols": [],
-    "influencedBySymbols": [],
+    "influencedBySymbols": [
+      {
+        "description": "Roles can influence who or what role can pause and resume a token.",
+        "symbol": {
+          "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
+          "type": "BEHAVIOR",
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      }
+    ],
     "artifactFiles": [
       {
         "content": "CONTROL",
@@ -68,20 +80,15 @@
   "invocations": [
     {
       "id": "2e0fd8e5-2090-4c62-b094-232c32a78022",
-      "name": "Allowance",
-      "description": "A Request by a party or account to the owner of a token(s) to have the right to perform a delegated behavior on their behalf.",
+      "name": "Pause",
+      "description": "A Request to pause behavior invocations that Pausable applies to.",
       "request": {
-        "controlMessageName": "AllowanceRequest",
+        "controlMessageName": "PauseRequest",
         "description": "The request",
-        "inputParameters": [
-          {
-            "name": "Quantity",
-            "valueDescription": "Number of Tokens to be allowed."
-          }
-        ]
+        "inputParameters": []
       },
       "response": {
-        "controlMessageName": "AllowanceResponse",
+        "controlMessageName": "PauseResponse",
         "description": "The response",
         "outputParameters": [
           {
@@ -93,20 +100,15 @@
     },
     {
       "id": "6d5df99d-2f5e-4c7a-aea4-d2d54176abfd",
-      "name": "Approve Allowance",
-      "description": "Same control message as the AllowanceRequest.  This could allow for an AllowanceRequest to be forwarded to multiple parties needed to Approve and shield this from the requestor. When all Approvals are obtained, an AllowanceResponse could be sent.",
+      "name": "Resume",
+      "description": "Resume normal operations.",
       "request": {
-        "controlMessageName": "AllowanceRequest",
+        "controlMessageName": "ResumeRequest",
         "description": "The request",
-        "inputParameters": [
-          {
-            "name": "Quantity",
-            "valueDescription": "Number of Tokens to be allowed."
-          }
-        ]
+        "inputParameters": []
       },
       "response": {
-        "controlMessageName": "ApproveResponse",
+        "controlMessageName": "ResumeResponse",
         "description": "The response",
         "outputParameters": [
           {

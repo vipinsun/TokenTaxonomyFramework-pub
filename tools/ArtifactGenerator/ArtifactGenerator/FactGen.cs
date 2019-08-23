@@ -872,7 +872,7 @@ namespace ArtifactGenerator
 				ConstructorName = "Constructor",
 				Decimals = 0,
 				Name = "",
-				Quantity = ByteString.CopyFromUtf8("1")
+				Quantity = 1
 			};
 		}
 
