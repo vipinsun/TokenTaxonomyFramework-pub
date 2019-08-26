@@ -10,6 +10,15 @@ option csharp_namespace = "TTI.TTF.Behaviors.Grantable";
 option java_package = "org.tti.ttf.behaviors.grantable";
 option java_multiple_files = true;
 
+//depending on the platform, you may not be able to initialize the Grant with this much data.  If this is the case, you will want to add functions for adding or updating the vesting schedule and dispersements.
+message Constructor{
+    string name = 1;
+    string account_id = 2;
+    int32 grant_amount = 3;
+    VestingSchedule vesting_schedule = 4;
+    Dispersements dispersements = 5;
+}
+
 message VestSchedule{
     string grant_id = 1;
     google.protobuf.Timestamp vesting_date = 2;

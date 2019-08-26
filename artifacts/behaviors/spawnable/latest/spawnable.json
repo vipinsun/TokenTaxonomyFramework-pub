@@ -22,7 +22,7 @@
           "artifactDefinition": null
         }
       ],
-      "comments": "",
+      "comments": "Spawnable is the result of decomposing Grantable, where the vesting behavior is not a changing of an internal value to transfer ownership or turning on a setting, but needing to create one or more new types of tokens from the vest event. If is most likely an implementation specific set of code that is not externally available and only invoked by another behavior, like Grantable, and the details about what, how many and to what accounts should be spawned would be provided.",
       "artifact": null
     },
     "dependencies": [],
@@ -65,7 +65,7 @@
         "inputParameters": [
           {
             "name": "AccountId",
-            "valueDescription": "The account to spawn to."
+            "valueDescription": "The account to spawn to, spawning targets and amounts should be provided in the token implementation."
           }
         ]
       },
