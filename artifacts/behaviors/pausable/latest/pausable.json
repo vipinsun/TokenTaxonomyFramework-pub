@@ -93,7 +93,7 @@
         "outputParameters": [
           {
             "name": "Confirmation",
-            "valueDescription": "A confirmation receipt or denial be returned to the allowance requestor."
+            "valueDescription": "A confirmation receipt or denial be returned to the pause requestor."
           }
         ]
       }

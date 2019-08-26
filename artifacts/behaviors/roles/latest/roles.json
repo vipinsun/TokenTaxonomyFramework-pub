@@ -108,7 +108,7 @@
     {
       "name": "Role",
       "valueDescription": "A group or list an account can be a member or be in.",
-      "templateValue": "be262c0b-47af-4bc7-9239-10df55cc9c6f",
+      "templateValue": "",
       "propertyInvocations": [
         {
           "id": "",

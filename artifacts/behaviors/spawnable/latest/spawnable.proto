@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package spawnable;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "TTI.TTF.Behaviors.Spawnable";
+option java_package = "org.tti.ttf.behaviors.spawnable";
+option java_multiple_files = true;
+
+message SpawnToRequest {
+    tokens.MessageHeader header = 1;
+    string account_id = 2;
+}
+
+message SpawnToResponse {
+    tokens.MessageHeader header = 1;
+    tokens.TransactionConfirmation confirmation = 2;
+}

@@ -10,6 +10,33 @@ option csharp_namespace = "TTI.TTF.Behaviors.Grantable";
 option java_package = "org.tti.ttf.behaviors.grantable";
 option java_multiple_files = true;
 
+message VestSchedule{
+    string grant_id = 1;
+    google.protobuf.Timestamp vesting_date = 2;
+}
+
+message VestingSchedule{
+    repeated VestSchedule vest_schedule = 1;
+}
+
+message Dispersement{
+    string grant_id = 1;
+    string account_id = 2;
+    int32 percentage = 3;
+}
+
+message Dispersements{
+    repeated Dispersement dispersement = 1;
+}
+
+
+message Grant{
+    string id = 1;
+    int32 grant_total = 2; //total number of tokens in the grant. Divided by vesting schedule to determine amount per vest.
+    Dispersements dispersements = 3;
+    VestingSchedule schedule = 4;
+}
+
 message GrantRequest {
     tokens.MessageHeader header = 1;
     bytes attestation = 2;
@@ -38,5 +65,5 @@ message VestRequest{
 }
 
 message VestResponse{
-    
+
 }

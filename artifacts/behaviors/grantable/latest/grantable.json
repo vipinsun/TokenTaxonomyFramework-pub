@@ -143,5 +143,128 @@
       }
     }
   ],
-  "properties": []
+  "properties": [
+    {
+      "name": "Dispersements",
+      "valueDescription": "A group or list of dispersements, see proto description of a disbersement, representing each account to disperse as well as the percentage of the total vest the dispersement should be.",
+      "templateValue": "",
+      "propertyInvocations": [
+        {
+          "id": "df87d62d-51e9-4aeb-91e1-1e20afc47ebe",
+          "name": "GetDispersements",
+          "description": "Request the the list of dispersements for the grant.",
+          "request": {
+          "name": "GetDispersements",
+          "controlMessageName": "GetDispersementsRequest",
+            "inputParameters": [
+              {
+                "grantId": "Identification of the Grant.",
+                "valueDescription": "Unique identifier for the grant if it is not a stand alone grant but one of many in a group."
+              }
+            ],
+            "description": "If the grant is non-fungible or not a part of a group of grants, this is optional."
+          },
+          "response": {
+          "name": "GetDispersements",
+          "controlMessageName": "GetDispersementsResponse",
+            "outputParameters": [
+              {
+                "name": "Vests",
+                "valueDescription": "Returning the list of dates in the vesting schedule."
+              }
+            ],
+            "description": "The response"
+          }
+        },
+        {
+          "id": "1ef07f60-ab69-4809-acde-17b06ffd965e",
+          "name": "AddDispersement",
+          "description": "Request an update to an existing dispersement for vesting.",
+          "request": {
+          "name": "AddDispersement",
+          "controlMessageName": "AddDispersementRequest",
+            "inputParameters": [
+              {
+                "disbersement": "New Disbersement to add to the grant.",
+                "valueDescription": "New disbersement, make sure the GrantId is set."
+              }
+            ],
+            "description": ""
+          },
+          "response": {
+          "name": "AddDispersement",
+          "controlMessageName": "AddDispersementResponse",
+            "outputParameters": [
+              {
+                "name": "Vests",
+                "valueDescription": "Returning the list of dates in the vesting schedule."
+              }
+            ],
+            "description": "The response"
+          }
+        },
+        {
+          "id": "af389eeb-67f3-41bc-b2a3-55066bf20473",
+          "name": "UpdateDispersement",
+          "description": "Request an update to an existing dispersement for vesting.",
+          "request": {
+          "name": "UpdateDispersement",
+          "controlMessageName": "UpdateDispersementRequest",
+            "inputParameters": [
+              {
+                "dispersement": "Dispersement to Update, modified from GetDispersement.",
+                "valueDescription": "Unique identifier for the grant if it is not a stand alone grant but one of many in a group."
+              }
+            ],
+            "description": ""
+          },
+          "response": {
+          "name": "UpdateDispersement",
+          "controlMessageName": "UpdateDispersementResponse",
+            "outputParameters": [
+              {
+                "name": "Confirmation",
+                "valueDescription": "Returning a confirmation of the update."
+              }
+            ],
+            "description": "The response"
+          }
+        }
+      ]
+    },
+    {
+      "name": "VestSchedule",
+      "valueDescription": "A group or list of dates after which vesting is possible.",
+      "templateValue": "",
+      "propertyInvocations": [
+        {
+          "id": "b8261628-81c6-427c-9db8-596cd34a06bd",
+          "name": "GetVestSchedule",
+          "description": "Request the the list of vesting dates for the grant.",
+          "request": {
+          "name": "GetVestSchedule",
+          "controlMessageName": "GetVestScheduleRequest",
+            "inputParameters": [
+              {
+                "grantId": "Identification of the Grant.",
+                "valueDescription": "Unique identifier for the grant if it is not a stand alone grant but one of many in a group."
+              }
+            ],
+            "description": "If the grant is non-fungible or not a part of a group of grants, this is optional."
+          },
+          "response": {
+          "name": "GetVestSchedule",
+          "controlMessageName": "GetVestScheduleResponse",
+            "outputParameters": [
+              {
+                "name": "Vests",
+                "valueDescription": "Returning the list of dates in the vesting schedule."
+              }
+            ],
+            "description": "The response"
+          }
+        }
+      ]
+    }
+  ]
 }
