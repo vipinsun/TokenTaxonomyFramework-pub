@@ -1,5 +1,5 @@
 {
-  "specificationHash": "41f73b698b0d5ecba2268fed9361e48ba0e3cc2c4abb313b30a4e0b9be7dd242",
+  "specificationHash": "dcb70ed2aaa3845601ac9720f02754e3917bf9e1f02d1443516ee7e4836fbb8e",
   "artifact": {
     "artifactSymbol": {
       "id": "ce4b7adc-4741-4bf0-b03d-0af8c4c92746",
@@ -409,7 +409,79 @@
           ]
         }
       },
-      "isExternal": true
+      "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
+              "name": "Transfer",
+              "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+              "request": {
+                "controlMessageName": "TransferRequest",
+                "description": "The request",
+                "inputParameters": [
+                  {
+                    "name": "To",
+                    "valueDescription": "AccountId to transfer ownership to."
+                  },
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "Number of tokens to transfer."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "TransferResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the owner based on the outcome of the transfer request."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "516b4e2f-4a14-4c4f-a6f2-1419d4af35c6",
+              "name": "TransferFrom",
+              "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+              "request": {
+                "controlMessageName": "TransferFromRequest",
+                "description": "The request",
+                "inputParameters": [
+                  {
+                    "name": "From",
+                    "valueDescription": "AccountId to transfer ownership from."
+                  },
+                  {
+                    "name": "To",
+                    "valueDescription": "AccountId to transfer ownership to."
+                  },
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "Number of tokens to transfer."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "TransferFromResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the owner based on the outcome of the transfer from request."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "artifact": {
@@ -475,7 +547,67 @@
           ]
         }
       },
-      "isExternal": true
+      "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "f063dcaa-49f9-4c49-bf0f-2766301e1033",
+              "name": "Burn",
+              "description": "A request to burn a token instance(s) in the class by the owner of the token instance(s).  Optional Quantity field in the request.",
+              "request": {
+                "controlMessageName": "BurnRequest",
+                "description": "The request to Burn or Retire tokens.",
+                "inputParameters": [
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "BurnResponse",
+                "description": "The response from the request to burn.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "49b53152-3360-426f-9e0a-24a0b4e7c881",
+              "name": "BurnFrom",
+              "description": "Requires Delegable. A request to burn token instance(s) in the class by a party or account that has allowance to do so.  Requires a From and Quantity fields in the request.",
+              "request": {
+                "controlMessageName": "BurnRequest",
+                "description": "The request to Burn or Retire tokens.",
+                "inputParameters": [
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "BurnResponse",
+                "description": "The response from the request to burn.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "artifact": {
@@ -535,6 +667,91 @@
         }
       },
       "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "bdc69e47-8320-4f54-8a03-0f54c376e113",
+              "name": "EncumberRequest",
+              "description": "A Request by a party or account, perhaps a contract or another token, to encumber the token.",
+              "request": {
+                "controlMessageName": "EncumberRequest",
+                "description": "The request",
+                "inputParameters": [
+                  {
+                    "name": "Name of Encumber",
+                    "valueDescription": "Name of the institution requesting the encumber."
+                  },
+                  {
+                    "name": "Identifier",
+                    "valueDescription": "A public key or address for the requestor."
+                  },
+                  {
+                    "name": "Signature",
+                    "valueDescription": "A digital signature or attestation, optional."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "EncumberResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation response from the token for the encumber request."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "efd8bb57-4904-481e-976d-8a20a33df602",
+              "name": "AcceptEncumberRequest",
+              "description": "A Request by a party or account, perhaps a contract or another token, to encumber the token.  Once accepted, the token should add a new entry into the Encumbrances property.",
+              "request": {
+                "controlMessageName": "AcceptEncumberRequest",
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "AcceptEncumberResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation response returned to the owner of their acceptance."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "4532c466-bb6d-482a-b2cc-5285ba1f8259",
+              "name": "RemoveEncumberRequest",
+              "description": "A Request by encumbrancer, perhaps a contract or another token, to remove their encumber or lien from the token.  Which should remove any restrictions from behaviors if there are no more encumbers.  Only the owner of the encumber can remove their encumber.",
+              "request": {
+                "controlMessageName": "RemoveEncumberRequest",
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "RemoveEncumberResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or denial be returned to the RemoveEncumber requestor."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
       "properties": [
         {
           "name": "Encumbrances",

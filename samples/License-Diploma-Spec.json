@@ -1,5 +1,5 @@
 {
-  "specificationHash": "500ef1e58eb3e999cf919cd1560b439cd6dab743e265c55ef6d77696f38ca171",
+  "specificationHash": "481cbab6bc2ae1f35fe1124a82bd752519426862b3d4e22a048652f8e58319c6",
   "artifact": {
     "artifactSymbol": {
       "id": "49b6535a-430d-487b-8442-cf3457836ecc",
@@ -322,42 +322,6 @@
           "valueDescription": "Set to Zero, not allowing any subdivision, usually this is applied to the base token.",
           "templateValue": "0",
           "propertyInvocations": [
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
             {
               "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
               "name": "GetDecimals",

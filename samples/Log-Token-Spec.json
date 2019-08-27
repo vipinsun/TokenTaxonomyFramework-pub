@@ -1,5 +1,5 @@
 {
-  "specificationHash": "eedeeef8b27b68285cb5e368526b16c44b2e9bdcb3dc8894200239d962f98443",
+  "specificationHash": "497c14a8e37cb3979ef0c298f00afd346de8d89c6f0901bd57e6fee8975312f8",
   "artifact": {
     "artifactSymbol": {
       "id": "a96403a4-a8b8-42b7-bda5-0ee1e2693b56",
@@ -340,60 +340,6 @@
                   }
                 ]
               }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
             }
           ]
         }
@@ -530,7 +476,67 @@
           ]
         }
       },
-      "isExternal": true
+      "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "f063dcaa-49f9-4c49-bf0f-2766301e1033",
+              "name": "Burn",
+              "description": "A request to burn a token instance(s) in the class by the owner of the token instance(s).  Optional Quantity field in the request.",
+              "request": {
+                "controlMessageName": "BurnRequest",
+                "description": "The request to Burn or Retire tokens.",
+                "inputParameters": [
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "BurnResponse",
+                "description": "The response from the request to burn.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "49b53152-3360-426f-9e0a-24a0b4e7c881",
+              "name": "BurnFrom",
+              "description": "Requires Delegable. A request to burn token instance(s) in the class by a party or account that has allowance to do so.  Requires a From and Quantity fields in the request.",
+              "request": {
+                "controlMessageName": "BurnRequest",
+                "description": "The request to Burn or Retire tokens.",
+                "inputParameters": [
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "BurnResponse",
+                "description": "The response from the request to burn.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
     },
     {
       "artifact": {
@@ -589,6 +595,37 @@
         }
       },
       "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "00a665e3-1dda-441e-8262-5750435c153c",
+              "name": "RoleCheck",
+              "description": "Internal invocation when the applied behavior is called to check if the requestor is a member of the role.",
+              "request": {
+                "controlMessageName": "IsInRole",
+                "description": "The request",
+                "inputParameters": [
+                  {
+                    "name": "AccountId",
+                    "valueDescription": "AccountId of the requestor."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "True/False",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "IsInRole",
+                    "valueDescription": "True/False"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
       "properties": [
         {
           "name": "Role",

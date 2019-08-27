@@ -1,5 +1,5 @@
 {
-  "specificationHash": "3f6bfd5f05362ce50346a292a6a9d8f53ba769fc05185835e51ff4255f97bccb",
+  "specificationHash": "1caee30e6ff82b87a6fb40d4c03bfed4d1ec8ddca7d39f714afcb0c922ca07c3",
   "artifact": {
     "artifactSymbol": {
       "id": "129a78b5-f9a7-4908-8ece-e9e015dd8301",
@@ -319,96 +319,6 @@
           "valueDescription": "Set to Zero, not allowing any subdivision, usually this is applied to the base token.",
           "templateValue": "0",
           "propertyInvocations": [
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
-            {
-              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
-              "name": "GetDecimals",
-              "description": "Should return 0",
-              "request": {
-                "controlMessageName": "GetDecimalsRequest"
-              },
-              "response": {
-                "controlMessageName": "GetDecimalsResponse",
-                "description": "Return 0",
-                "outputParameters": [
-                  {
-                    "name": "Decimals",
-                    "valueDescription": "0"
-                  }
-                ]
-              }
-            },
             {
               "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
               "name": "GetDecimals",
