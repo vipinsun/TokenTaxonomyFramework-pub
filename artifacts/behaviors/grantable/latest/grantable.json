@@ -154,18 +154,16 @@
           "name": "GetDispersements",
           "description": "Request the the list of dispersements for the grant.",
           "request": {
-          "name": "GetDispersements",
-          "controlMessageName": "GetDispersementsRequest",
-            "inputParameters": [
-              {
-                "grantId": "Identification of the Grant.",
-                "valueDescription": "Unique identifier for the grant if it is not a stand alone grant but one of many in a group."
-              }
-            ],
-            "description": "If the grant is non-fungible or not a part of a group of grants, this is optional."
-          },
+            "controlMessageName": "GetDispersementsRequest",
+              "inputParameters": [
+                {
+                  "name": "GrantId",
+                  "valueDescription": "Unique identifier for the grant if it is not a stand alone grant but one of many in a group."
+                }
+              ],
+              "description": "If the grant is non-fungible or not a part of a group of grants, this is optional."
+            },
           "response": {
-          "name": "GetDispersements",
           "controlMessageName": "GetDispersementsResponse",
             "outputParameters": [
               {
@@ -181,26 +179,24 @@
           "name": "AddDispersement",
           "description": "Request an update to an existing dispersement for vesting.",
           "request": {
-          "name": "AddDispersement",
-          "controlMessageName": "AddDispersementRequest",
-            "inputParameters": [
-              {
-                "disbersement": "New Disbersement to add to the grant.",
-                "valueDescription": "New disbersement, make sure the GrantId is set."
-              }
-            ],
-            "description": ""
+            "controlMessageName": "AddDispersementRequest",
+              "inputParameters": [
+                {
+                  "name": "Disbersement",
+                  "valueDescription": "New disbersement, make sure the GrantId is set."
+                }
+              ],
+              "description": ""
           },
           "response": {
-          "name": "AddDispersement",
-          "controlMessageName": "AddDispersementResponse",
-            "outputParameters": [
-              {
-                "name": "Vests",
-                "valueDescription": "Returning the list of dates in the vesting schedule."
-              }
-            ],
-            "description": "The response"
+            "controlMessageName": "AddDispersementResponse",
+              "outputParameters": [
+                {
+                  "name": "Vests",
+                  "valueDescription": "Returning the list of dates in the vesting schedule."
+                }
+              ],
+              "description": "The response"
           }
         },
         {
@@ -208,18 +204,16 @@
           "name": "UpdateDispersement",
           "description": "Request an update to an existing dispersement for vesting.",
           "request": {
-          "name": "UpdateDispersement",
           "controlMessageName": "UpdateDispersementRequest",
             "inputParameters": [
               {
-                "dispersement": "Dispersement to Update, modified from GetDispersement.",
+                "name": "Dispersement to Update, modified from GetDispersement.",
                 "valueDescription": "Unique identifier for the grant if it is not a stand alone grant but one of many in a group."
               }
             ],
             "description": ""
           },
           "response": {
-          "name": "UpdateDispersement",
           "controlMessageName": "UpdateDispersementResponse",
             "outputParameters": [
               {
@@ -242,18 +236,16 @@
           "name": "GetVestSchedule",
           "description": "Request the the list of vesting dates for the grant.",
           "request": {
-          "name": "GetVestSchedule",
           "controlMessageName": "GetVestScheduleRequest",
             "inputParameters": [
               {
-                "grantId": "Identification of the Grant.",
+                "name": "GrantId",
                 "valueDescription": "Unique identifier for the grant if it is not a stand alone grant but one of many in a group."
               }
             ],
             "description": "If the grant is non-fungible or not a part of a group of grants, this is optional."
           },
           "response": {
-          "name": "GetVestSchedule",
           "controlMessageName": "GetVestScheduleResponse",
             "outputParameters": [
               {

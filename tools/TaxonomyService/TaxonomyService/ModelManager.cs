@@ -699,14 +699,9 @@ namespace TTI.TTF.Taxonomy
 			}
 			
 			var propertySets = definition.PropertySets.Select(tb => GetArtifactById<PropertySet>(tb.Reference.Id)).ToList();
-			var mergedPs = new List<PropertySet>();
-			foreach (var ps in definition.PropertySets)
-			{
-				var propertySet = propertySets.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == ps.Reference.Id);
-				if (propertySet == null) continue;
-				mergedPs.Add(MergePropertySet(propertySet, ps));
-			}
-			
+			var mergedPs = (from ps in definition.PropertySets let propertySet = propertySets.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == ps.Reference.Id) 
+				where propertySet != null select MergePropertySet(propertySet, ps)).ToList();
+
 			var behaviors = definition.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
 			var behaviorReferences = definition.Behaviors;
 			foreach (var bgb in definition.BehaviorGroups)
@@ -949,16 +944,21 @@ namespace TTI.TTF.Taxonomy
 
 		private static BehaviorSpecification GetBehaviorSpecification(Behavior behavior, BehaviorReference behaviorReference)
 		{
-			foreach (var i in behavior.Invocations)
+			var mutableBehaviors = behavior.Clone();
+			foreach (var i in mutableBehaviors.Invocations)
 			{
 				foreach (var m in behaviorReference.Invocations)
 				{
-					if (i.Id == m.Id)
-						i.MergeFrom(m);
+					if (i.Id != m.Id) continue;
+					//i.MergeFrom(m);
+					i.Description = m.Description;
+					i.Request = m.Request;
+					i.Response = m.Response;
+					i.Name = m.Name;
 				}
 			}
 
-			foreach (var p in behavior.Properties)
+			foreach (var p in mutableBehaviors.Properties)
 			{
 				foreach (var m in behaviorReference.Properties)
 				{
@@ -972,10 +972,11 @@ namespace TTI.TTF.Taxonomy
 				Constructor = behaviorReference.Constructor,
 				ConstructorType = behaviorReference.ConstructorType,
 				IsExternal = behaviorReference.IsExternal,
-				Artifact = behavior.Artifact,
-				Properties = {behavior.Properties}
+				Artifact = mutableBehaviors.Artifact,
+				Properties = {mutableBehaviors.Properties},
 			};
-			foreach (var ib in behaviorReference.Invocations)
+			
+			foreach (var ib in mutableBehaviors.Invocations)
 			{
 				var invokeBinding = new InvocationBinding
 				{
