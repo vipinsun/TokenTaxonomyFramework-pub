@@ -16,6 +16,12 @@ export class Base extends jspb.Message {
   getTokenUnit(): artifact_pb.TokenUnit;
   setTokenUnit(value: artifact_pb.TokenUnit): void;
 
+  getRepresentationType(): artifact_pb.RepresentationType;
+  setRepresentationType(value: artifact_pb.RepresentationType): void;
+
+  getValueType(): artifact_pb.ValueType;
+  setValueType(value: artifact_pb.ValueType): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -55,6 +61,8 @@ export namespace Base {
     artifact?: artifact_pb.Artifact.AsObject,
     tokenType: artifact_pb.TokenType,
     tokenUnit: artifact_pb.TokenUnit,
+    representationType: artifact_pb.RepresentationType,
+    valueType: artifact_pb.ValueType,
     name: string,
     symbol: string,
     owner: string,

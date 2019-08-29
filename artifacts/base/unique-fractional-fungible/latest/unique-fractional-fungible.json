@@ -1,21 +1,21 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id":"89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "id":"3e05130c-969a-4dfc-abe6-c83fad98a4ec",
       "type": "BASE",
-      "visual": "&tau;<sub>F</sub>{<i>d</i>}",
-      "tooling": "tF{d}",
+      "visual": "&tau;<sub>F'</sub>{<i>d</i>}",
+      "tooling": "tF'{d}",
       "version": "1.0",
       "templateValidated": true
     },
-    "name": "Fractional Fungible",
+    "name": "Unique Fractional Fungible",
     "aliases": [
       "Liquid",
-      "Virtual Money",
-      "Balance Money"
+      "Physical Money",
+      "Cash"
     ],
     "artifactDefinition": {
-      "businessDescription": "Fractional Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token that is sub-dividable.",
+      "businessDescription": "Unique, fractional fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token that is sub-dividable. Because this token is unique, it will have its own identity and can have unique properties like a serial number.",
       "businessExample": "Fiat currency is the most widely understood example of a fractional fungible item. A fractional fungible is sub-dividable, so you can 'make change'.",
       "analogies": [
         {
@@ -74,7 +74,7 @@
   },
   "tokenType": "FUNGIBLE",
   "tokenUnit": "FRACTIONAL",
-  "representationType": "COMMON",
+  "representationType": "UNIQUE",
   "valueType": "INTRINSIC",
   "name": "",
   "symbol": "",

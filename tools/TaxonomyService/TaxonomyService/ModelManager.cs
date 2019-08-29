@@ -406,7 +406,9 @@ namespace TTI.TTF.Taxonomy
 			{
 				TemplateType = templateFormula.TemplateType,
 				TokenType = tokenBase.TokenType,
-				TokenUnit = tokenBase.TokenUnit
+				TokenUnit = tokenBase.TokenUnit,
+				RepresentationType = tokenBase.RepresentationType,
+				ValueType = tokenBase.ValueType
 			};
 			
 			//todo: eventually support nesting of branches, but for now place in the root branch for the base token type.

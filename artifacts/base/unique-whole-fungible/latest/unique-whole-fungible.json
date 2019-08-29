@@ -1,21 +1,21 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id":"b1eacdf8-35d8-454a-b1af-92eb0b6f45d4",
+      "id":"2d291501-4cca-43cf-8330-e2440e58d7df",
       "type": "BASE",
-      "visual": "&tau;<sub>F</sub>{<i>~d</i>}",
-      "tooling": "tF{~d}",
+      "visual": "&tau;<sub>F'</sub>{<i>~d</i>}",
+      "tooling": "tF'{~d}",
       "version": "1.0",
       "templateValidated": true
     },
-    "name": "Whole Fungible",
+    "name": "Unique Whole Fungible",
     "aliases": [
       "Inventory",
       "SKU",
       "Loyalty Point"
     ],
     "artifactDefinition": {
-      "businessDescription": "Whole Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. A whole token cannot be sub-divided so it doesn't support the notion of 'making change'.",
+      "businessDescription": "Unique, Whole Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. A whole token cannot be sub-divided so it doesn't support the notion of 'making change'. Because this token is unique, it will have its own identity and can have unique properties like a serial number.",
       "businessExample": "An inventory item or SKU, where an item is treated as a whole because it makes no sense to own a fraction of a SKU or loyalty point.",
       "analogies": [
         {
@@ -74,7 +74,7 @@
   },
   "tokenType": "FUNGIBLE",
   "tokenUnit": "WHOLE",
-  "representationType": "COMMON",
+  "representationType": "UNIQUE",
   "valueType": "INTRINSIC",
   "name": "",
   "symbol": "",

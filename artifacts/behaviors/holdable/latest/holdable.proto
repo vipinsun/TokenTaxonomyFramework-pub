@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package holdable;
+
+import "tokens.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "TTI.TTF.Behaviors.Holdable";
+option java_package = "org.tti.ttf.behaviors.holdable";
+option java_multiple_files = true;
+
+message HoldToRequest {
+    tokens.MessageHeader header = 1;
+    string account_id = 2;
+}
+
+message HoldToResponse {
+    tokens.MessageHeader header = 1;
+    tokens.TransactionConfirmation confirmation = 2;
+}

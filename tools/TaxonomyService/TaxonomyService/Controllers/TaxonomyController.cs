@@ -1190,10 +1190,10 @@ namespace TTI.TTF.Taxonomy.Controllers
 			return formula;
 		}
 
-		private static Base GetTokenTypeBase(TokenType tokenType, TokenUnit tokenUnit)
+		private static Base GetTokenTypeBase(TokenType tokenType, TokenUnit tokenUnit, RepresentationType representationType)
 		{
             const string typeFolder = "base";
-			var classFolder = ModelMap.GetBaseFolderName(tokenType, tokenUnit);
+			var classFolder = ModelMap.GetBaseFolderName(tokenType, tokenUnit, representationType);
 			var baseFile = File.OpenText(ArtifactPath + typeFolder + FolderSeparator + classFolder 
 			                             + FolderSeparator + TxService.Latest + FolderSeparator + classFolder+".json");
 			var json = baseFile.ReadToEnd();

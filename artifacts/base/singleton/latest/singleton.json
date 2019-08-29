@@ -93,6 +93,8 @@
   },
   "tokenType": "NON_FUNGIBLE",
   "tokenUnit": "SINGLETON",
+  "representationType": "COMMON",
+  "valueType": "INTRINSIC",
   "name": "",
   "symbol": "",
   "owner": "",

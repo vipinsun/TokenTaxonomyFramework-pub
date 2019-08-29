@@ -1,0 +1,85 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "id":"29adfada-46d5-4327-b523-daaecf6d99cb",
+      "type": "BEHAVIOR",
+      "visual": "<i>h</i>",
+      "tooling": "h",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "Holdable",
+    "aliases": [
+      "Reserve"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "Provide a hold method that uses a sender, a receiver and a notary as parameters. The hold essentially puts the specified amount of tokens on hold, and they stay like that until the notary either executes the hold (which transfers the tokens from the sender to the receiver) or releases the hold (which frees up the tokens and no transfer happens), or else the hold expires after the specified expiration time. While on hold, the tokens are not available for the owner to transfer them or put them on hold again.",
+      "businessExample": "",
+      "analogies": [
+        {
+          "name": "Example 1",
+          "description": "",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "Spawnable is the result of decomposing Grantable, where the vesting behavior is not a changing of an internal value to transfer ownership or turning on a setting, but needing to create one or more new types of tokens from the vest event. If is most likely an implementation specific set of code that is not externally available and only invoked by another behavior, like Grantable, and the details about what, how many and to what accounts should be spawned would be provided.",
+      "artifact": null
+    },
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [
+      {
+        "description": "Highly recommended that Role restrictions be applied to Spawnable invocations, and should probably be internal only able to be invoked by the token itself.",
+        "symbol": {
+          "type": "BEHAVIOR",
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": ""
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "spawnable.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "spawnable.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {}
+  },
+  "invocations": [
+    {
+      "id": "06f6a5b5-283f-4177-b868-83e3b4262714",
+      "name": "Hold",
+      "description": "This invocation can be internal or hidden and would depend on the token itself to contain the hold to details. A request to hold a the creation of a certain number of tageted tokens to an account. ",
+      "request": {
+        "controlMessageName": "SpawnToRequest",
+        "description": "The request to Attest an attestation.",
+        "inputParameters": [
+          {
+            "name": "AccountId",
+            "valueDescription": "The account to hold to, spawning targets and amounts should be provided in the token implementation."
+          }
+        ]
+      },
+      "response": {
+        "controlMessageName": "SpawnToResponse",
+        "outputParameters": [
+          {
+            "name": "Confirmation",
+            "valueDescription": "A confirmation receipt or denial be returned to the hold requestor."
+          }
+        ],
+        "description": "The response from the AttestRequest."
+      }
+    }
+  ],
+  "properties": []
+}

@@ -13,6 +13,12 @@ export class Classification extends jspb.Message {
   getTokenUnit(): TokenUnit;
   setTokenUnit(value: TokenUnit): void;
 
+  getRepresentationType(): RepresentationType;
+  setRepresentationType(value: RepresentationType): void;
+
+  getValueType(): ValueType;
+  setValueType(value: ValueType): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Classification.AsObject;
   static toObject(includeInstance: boolean, msg: Classification): Classification.AsObject;
@@ -26,6 +32,8 @@ export namespace Classification {
     templateType: TemplateType,
     tokenType: TokenType,
     tokenUnit: TokenUnit,
+    representationType: RepresentationType,
+    valueType: ValueType,
   }
 }
 
@@ -1120,6 +1128,14 @@ export enum TemplateType {
 export enum TokenType { 
   FUNGIBLE = 0,
   NON_FUNGIBLE = 1,
+}
+export enum RepresentationType { 
+  COMMON = 0,
+  UNIQUE = 1,
+}
+export enum ValueType { 
+  INTRINSIC = 0,
+  REFERENCE = 1,
 }
 export enum TokenUnit { 
   FRACTIONAL = 0,

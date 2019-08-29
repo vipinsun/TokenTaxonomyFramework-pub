@@ -21,7 +21,11 @@ It is **NOT**:
 - A Regulatory framework - also creates common ground.
 - Complete or comprehensive
 
-This paper does not provide a backgrounder on Tokens and their function, but rather introduces taxonomy and classifications as a composition framework for creating or documenting existing token definitions.
+This paper does not provide a backgrounder on Tokens and their function, but rather introduces taxonomy and classifications as a composition framework for creating or documenting existing token definitions. However, it is worthwhile to establish so foundational definitions for two concepts, what a token is and what is often called a wallet or an account.
+
+A token is a digital representation of some shared value. The value can be intrinsically digital with no external physical form or be a receipt or title for a material item or property. A purely digital token represents value directly, where the other references that actual value. For example, a crypto-currency like Bitcoin is intrinsically digital, it has no referenced physical form, but 1 kg of tokenized gold would.
+
+An account or wallet (which can aggregate several accounts) represents a repository of tokens attributed to an owner. An owner is given an "address" which uniquely identifies the owner to which the owner posesses the key. A token's owner is a references to an address and a wallet is a reference to address for an owner. The wallet can provide a view into token balances in one place for the owner, much like a bank account or bank summary of accounts.
 
 See the [Token Hall](https://medium.com/tokenhall) for a backgrounder for business and technical audiences.
 
@@ -99,6 +103,8 @@ References are followed through the hierarchy and back to the Artifacts to valid
 
 ![Templates](images/formingATemplate.png)
 
+There is more to classification that is covered later.
+
 ### Control Messages
 
 Behavior and Property-Sets contain `Control` message descriptions that are messages used to invoke a behavior or get/set the value of a property. These control messages are described in the artifact for the behavior or property-set. Control messages are named descriptively and come in request and response pairs. Control messages contain optional named parameters of a specific type for requests and responses.
@@ -123,7 +129,15 @@ The taxonomy uses symbols to represent token bases and possible behaviors that a
 
 Physical cash or a crypto currency is a good example of a fungible token. These tokens have interchangeable value with one another, where any quantity of them has the same value as another equal quantity as long as they are in the same class or series.
 
-A fungible token is identified by **&tau;<sub>F</sub>**.
+There are currently two kinds of fungible tokens, common, sometimes called account or balance tokens, and unique, or UTXO (unspent transaction output). This distinction might seem subtle, but is important when considering how fungible tokens can be traced and what properties they can have. 
+
+Common fungible tokens share a single set of properties, are not distinct from one another and balances are recorded in a central place. These tokens are simply represented as a balance or quanitity attributed to an owners address where all the balances are recorded on the same balance sheet. This balance sheet is distributed, so its not 'centralized' but rather simplified. Common tokens have the advantage of easily sharing a common value like a "SKU" where the change in the value is immediately reflected for all tokens. Like money in a bank account is represented as a balance. Common tokens cannot be individually traced, only their balances between accounts can.
+
+A common fungible token is identified by **&tau;<sub>F</sub>**.
+
+Unique fungible tokens have their own identities and can be individually traced. Each unique token can carry unique properties that cannot be changed in one place and cascade to all and their balances must be summed. These are like bank notes, paper bills and metal coins, they are interchangable but have unique properties like a serial number.
+
+A unique fungible token is identified by **&tau;<sub>F'</sub>**.
 
 ### Non-fungible
 
@@ -150,6 +164,18 @@ When a child token is declared a Singleton, by default it can contain one or mor
 #### Fungible Parent Class owns or has many non-fungible and fungible child classes
 
 The rock concert example above could have an added "reserved" section where each seat is a non-fungible token.  Which would represent a **&tau;<sub>N</sub>**(&tau;<sub>F</sub>, &tau;<sub>N</sub>).
+
+### Token Classification
+
+Tokens are classified in their template definitions using these characteristics:
+
+- TemplateType: Single or Hybrid
+- TokenType: Fungible or Non-Fungible
+- TokenUnit: Fractional or Whole (subdivision settings)
+- RepresentationType: Intrinsic (pure digital value) or Reference (value located elsewhere)
+- ValueType: Common (balance or account) or Unique (UTXO) non-fungibles are by default common
+
+The TemplateType of the classification is set in the TemplateFormula and the others are set in the BaseToken. The classification is used to build the hierarchy and can also be used to pivot branches based on various settings. For simplicity, fungibles are not separated based on their ValueType in the default view, but could be filtered by it.
 
 ## Properties
 

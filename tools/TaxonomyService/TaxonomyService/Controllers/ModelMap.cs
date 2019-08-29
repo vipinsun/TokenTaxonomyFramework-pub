@@ -1,6 +1,7 @@
 using System;
 using TTI.TTF.Taxonomy.Model;
 using TTI.TTF.Taxonomy.Model.Artifact;
+using ValueType = TTI.TTF.Taxonomy.Model.Artifact.ValueType;
 
 namespace TTI.TTF.Taxonomy.Controllers
 {
@@ -14,7 +15,7 @@ namespace TTI.TTF.Taxonomy.Controllers
         public static readonly string TemplateFormulasFolder = TokenTemplatesFolder + TxService.FolderSeparator + "formulas";
         public static readonly string TemplateDefinitionsFolder = TokenTemplatesFolder + TxService.FolderSeparator + "definitions";
 
-        public static string GetBaseFolderName(TokenType tokenType, TokenUnit tokenUnit)
+        public static string GetBaseFolderName(TokenType tokenType, TokenUnit tokenUnit, RepresentationType representation)
         {
             switch (tokenUnit)
             {
@@ -22,7 +23,16 @@ namespace TTI.TTF.Taxonomy.Controllers
                     switch (tokenType)
                     {
                         case TokenType.Fungible:
-                            return "fractional-fungible";
+                            switch (representation)
+                            {
+                                case RepresentationType.Common:
+                                    return "fractional-fungible";
+                                case RepresentationType.Unique:
+                                    return "unique-fractional-fungible";
+                                default:
+                                    throw new ArgumentOutOfRangeException(nameof(representation), representation, null);
+                            }
+                            
                         case TokenType.NonFungible:
                             return "fractional-non-fungible";
                     }
@@ -31,9 +41,18 @@ namespace TTI.TTF.Taxonomy.Controllers
                     switch (tokenType)
                     {
                         case TokenType.Fungible:
-                            return "whole-fungible";
+                            switch (representation)
+                            {
+                                case RepresentationType.Common:
+                                    return "whole-fungible";
+                                case RepresentationType.Unique:
+                                    return "unique-whole-fungible";
+                                default:
+                                    throw new ArgumentOutOfRangeException(nameof(representation), representation, null);
+                            }
+      
                         case TokenType.NonFungible:
-                            return "whole=non-fungible";
+                            return "whole-non-fungible";
                     }
                     break;
                 case TokenUnit.Singleton:

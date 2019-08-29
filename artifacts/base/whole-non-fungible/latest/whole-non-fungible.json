@@ -59,6 +59,8 @@
   },
   "tokenType": "NON_FUNGIBLE",
   "tokenUnit": "WHOLE",
+  "representationType": "COMMON",
+  "valueType": "INTRINSIC",
   "name": "",
   "symbol": "",
   "owner": "",

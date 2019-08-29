@@ -68,6 +68,8 @@
   },
   "tokenType": "NON_FUNGIBLE",
   "tokenUnit": "FRACTIONAL",
+  "representationType": "COMMON",
+  "valueType": "INTRINSIC",
   "name": "",
   "symbol": "",
   "owner": "",

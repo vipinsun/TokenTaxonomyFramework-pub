@@ -17,6 +17,15 @@ enum TokenType {
     NON_FUNGIBLE = 1;
 }
 
+enum RepresentationType {
+    COMMON = 0; //account or balance, non-fungible are always common
+    UNIQUE = 1; //UTXO
+}
+
+enum ValueType {
+    INTRINSIC = 0; //pure digital
+    REFERENCE = 1; //digital representation of value elsewhere
+}
 //classification for Templates, parent and any child tokens. 
 enum TokenUnit{
     FRACTIONAL = 0; //tF{d} or tN{d}
@@ -62,6 +71,8 @@ message Classification{
     TemplateType template_type = 1;
     TokenType token_type = 2;
     TokenUnit token_unit = 3;
+    RepresentationType representation_type = 4;
+    ValueType value_type = 5;  
 }
 
 message ArtifactSymbol{
