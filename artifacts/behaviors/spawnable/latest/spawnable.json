@@ -81,5 +81,24 @@
       }
     }
   ],
-  "properties": []
+  "properties": [
+    {
+      "name":"SpawnLog",
+      "valueDescription": "Every spawn logs its events.",
+      "properties":[
+        {
+          "name": "AddressToSpawnTarget",
+          "valueDescription": "Token address where mint requests are sent."
+        },
+        {
+          "name":"Quantity",
+          "valueDescription": "Numeric value of tokens to mint for the account address."
+        },
+        {
+          "name": "SpawnToAddress",
+          "valueDescription": "Address to mint to. Mint requests are sent to the AddressToSpawnTarget, in quantity to this account address."
+        }
+      ]
+    }
+  ]
 }

@@ -19,3 +19,19 @@ message SpawnToResponse {
     tokens.MessageHeader header = 1;
     tokens.TransactionConfirmation confirmation = 2;
 }
+
+message SpawnSettings{
+    string spawn_description = 1;
+    repeated Spawn spawn_to = 2;
+}
+
+message Spawn{
+    string this_token_address = 1;
+    string address_to_spawn_target = 2;
+    int32 quantity = 3;
+    string spawn_to_address = 4;
+}
+
+message SpawnLog{
+    repeated Spawn spawns = 1;
+}

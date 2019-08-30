@@ -14,9 +14,10 @@ option java_multiple_files = true;
 message Constructor{
     string name = 1;
     string account_id = 2;
-    int32 grant_amount = 3;
-    VestingSchedule vesting_schedule = 4;
-    Dispersements dispersements = 5;
+    int32 grant_upper_amount = 3;
+    int32 grant_lower_amount = 4;
+    VestingSchedule vesting_schedule = 5;
+    Dispersements dispersements = 6;
 }
 
 message VestSchedule{
