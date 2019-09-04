@@ -1,25 +1,25 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id": "5ee615b1-56da-4783-b129-d2dea21dadef",
+      "id": "b7346906-3949-44de-9b28-435e32983fd0",
       "type": "TEMPLATE_FORMULA",
-      "visual": "&tau;<sub>F</sub>{<i>~d,t,g,SC</i>}",
-      "tooling": "tF{~d,t,g,SC}",
+      "visual": "&tau;<sub>F</sub>{<i>~d,~t,SC</i>}",
+      "tooling": "tF{~d,~t,SC}",
       "version": "1.0",
       "templateValidated": false
     },
-    "name": "tF{~d,t,g,SC}",
+    "name": "tF{~d,~t,g,SC}",
     "aliases": [
       "Whole Fungible",
-      "Loyalty"
+      "Non-transferable fungible"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0.",
-      "businessExample": "Loyalty points are a common use of this type of token. Representing a loyalty point using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Redemption of these is easy for users to understand using whole numbers. New points can be minted or issued based on customer activity and points can be removed or burned when they are redeemed. This formula supports transferable points as well.This token is delegable, meaning the owner of a token(s) can allow another party to transfer or burn token instances on their behalf.",
+      "businessDescription": "This is a Non-Transferable Whole Fungible Token with Variable Supply, where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0.",
+      "businessExample": "Loyalty points are a common use of this type of token. Representing a loyalty point using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Redemption of these is easy for users to understand using whole numbers. New points can be minted or issued based on customer activity and points can be removed or burned when they are redeemed.",
       "analogies": [
         {
-          "name": "Airline Points",
-          "description": "A customer can earn a point/token for each mile travelled and then redeem these points/tokens for upgrades or new tickets.",
+          "name": "Earned Credits",
+          "description": "A customer can earn a point/token for each mile travelled and then redeem these points/tokens for upgrades or new tickets, but cannot transfer the points to another party.",
           "artifactDefinition": null
         }
       ],
@@ -44,13 +44,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "tF{~d,t,g,SC}.proto",
+        "fileName": "tF{~d,~t,SC}.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "tF{~d,t,g,SC}.md",
+        "fileName": "tF{~d,~t,SC}.md",
         "fileData": "",
         "artifact": null
       }
@@ -86,20 +86,10 @@
     },
     {
       "behavior": {
-        "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
+        "id":"a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
         "type": "BEHAVIOR",
-        "visual": "<i>t</i>",
-        "tooling": "t",
-        "version": "1.0",
-        "templateValidated": false
-      }
-    },
-    {
-      "behavior": {
-        "id":"a3d02076-6009-4a65-9ed4-2deffe5291e1",
-        "type": "BEHAVIOR",
-        "visual": "<i>g</i>",
-        "tooling": "g",
+        "visual": "<i>~t</i>",
+        "tooling": "~t",
         "version": "1.0",
         "templateValidated": false
       }

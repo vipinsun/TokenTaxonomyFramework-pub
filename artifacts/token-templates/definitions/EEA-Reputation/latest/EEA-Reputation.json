@@ -1,0 +1,227 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "id": "2057e98c-b319-4e99-a28a-aac39242541c",
+      "type": "TEMPLATE_DEFINITION",
+      "visual": "&tau;<sub>F</sub>{<i>~d,~t,SC</i>}",
+      "tooling": "tF{~d,~t,SC}",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "EEA-Reputation",
+    "aliases": [
+      "Whole Fungible",
+      "Non-transferable fungible"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "This is a Non-Transferable Whole Fungible Token with Variable Supply, where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0.",
+      "businessExample": "Loyalty points are a common use of this type of token. Representing a loyalty point using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Redemption of these is easy for users to understand using whole numbers. New points can be minted or issued based on customer activity and points can be removed or burned when they are redeemed.",
+      "analogies": [
+        {
+          "name": "Earned Credits",
+          "description": "A customer can earn a point/token for each mile travelled and then redeem these points/tokens for upgrades or new tickets, but cannot transfer the points to another party.",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [
+      {
+        "description": "A whole fungible token",
+        "symbol": {
+          "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+          "type": "BASE",
+          "visual": "&tau;<sub>F</sub>",
+          "tooling": "tF",
+          "version": "1.0",
+          "templateValidated": true
+        }
+      }
+    ],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [],
+    "controlUri": "",
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "EEA-Reputation.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "EEA-Reputation.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [],
+      "implementationReferences": [],
+      "resources": [],
+      "artifact": null
+    }
+  },
+  "formulaReference": {
+    "id": "b7346906-3949-44de-9b28-435e32983fd0",
+    "type": "TEMPLATE_FORMULA",
+    "referenceNotes": "EEA-Reputation",
+    "values": null
+  },
+  "tokenBase": {
+    "reference": {
+      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "type": "BASE",
+      "referenceNotes": "",
+      "values": {
+        "controlUri": "",
+        "artifactFiles": [],
+        "maps": {
+          "codeReferences": [],
+          "implementationReferences": [],
+          "resources": [],
+          "artifact": null
+        }
+      }
+    },
+    "name": "",
+    "symbol": "",
+    "owner": "",
+    "quantity": "0",
+    "decimals": 0,
+    "tokenProperties": {},
+    "constructorName": "Constructor",
+    "constructor": null
+  },
+  "behaviors": [
+    {
+      "reference": {
+        "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+        "type": "BEHAVIOR",
+        "referenceNotes": "Non-Subdividable",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": {
+            "codeReferences": [
+              {
+                "mappingType": "SOURCE_CODE",
+                "name": "Code 1",
+                "platform": "DAML",
+                "referencePath": "",
+                "maps": null
+              }
+            ],
+            "implementationReferences": [
+              {
+                "mappingType": "IMPLEMENTATION",
+                "name": "Implementation 1",
+                "platform": "CHAINCODE_GO",
+                "referencePath": "",
+                "maps": null
+              }
+            ],
+            "resources": [
+              {
+                "mappingType": "RESOURCE",
+                "name": "Regulation Reference 1",
+                "description": "",
+                "resourcePath": "",
+                "maps": null
+              }
+            ],
+            "artifact": null
+          }
+        }
+      },
+      "isExternal": true,
+      "constructorType": "",
+      "constructor": null,
+      "appliesTo": [],
+      "invocations": [],
+      "influenceBindings": [],
+      "properties": [
+        {
+          "name": "Decimals",
+          "valueDescription": "Set to Zero, not allowing any subdivision, usually this is applied to the base token.",
+          "templateValue": "0",
+          "propertyInvocations": [
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest",
+                "description": "",
+                "inputParameters": []
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            }
+          ],
+          "properties": []
+        }
+      ]
+    },
+    {
+      "reference": {
+        "id": "a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
+        "type": "BEHAVIOR",
+        "referenceNotes": "Non-transferable",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": {
+            "codeReferences": [
+              {
+                "mappingType": "SOURCE_CODE",
+                "name": "Code 1",
+                "platform": "DAML",
+                "referencePath": "",
+                "maps": null
+              }
+            ],
+            "implementationReferences": [
+              {
+                "mappingType": "IMPLEMENTATION",
+                "name": "Implementation 1",
+                "platform": "CHAINCODE_GO",
+                "referencePath": "",
+                "maps": null
+              }
+            ],
+            "resources": [
+              {
+                "mappingType": "RESOURCE",
+                "name": "Regulation Reference 1",
+                "description": "",
+                "resourcePath": "",
+                "maps": null
+              }
+            ],
+            "artifact": null
+          }
+        }
+      },
+      "isExternal": true,
+      "constructorType": "",
+      "constructor": null,
+      "appliesTo": [],
+      "invocations": [],
+      "influenceBindings": [],
+      "properties": []
+    }
+  ],
+  "behaviorGroups": [],
+  "propertySets": [],
+  "childTokens": []
+}
