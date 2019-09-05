@@ -69,7 +69,7 @@ namespace TTI.TTF.Taxonomy
 						{
 							switch (t)
 							{
-								case "--s":
+								case "--spec":
 									GetTokenSpec(args[1]);
 									return;
 								default:	
@@ -381,6 +381,9 @@ namespace TTI.TTF.Taxonomy
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --f");
 			Console.WriteLine("	Retrieves the entire Taxonomy and writes it to the console.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --spec");
+			Console.WriteLine("	Retrieves a generated specification with the required argument that is the template definition Id.");
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
 			Console.WriteLine("	 Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");

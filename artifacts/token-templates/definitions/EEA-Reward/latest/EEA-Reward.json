@@ -14,8 +14,8 @@
       "Loyalty"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0.",
-      "businessExample": "Loyalty points are a common use of this type of token. Representing a loyalty point using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Redemption of these is easy for users to understand using whole numbers. New points can be minted or issued based on customer activity and points can be removed or burned when they are redeemed. This formula supports transferable points as well.This token is delegable, meaning the owner of a token(s) can allow another party to transfer or burn token instances on their behalf.",
+      "businessDescription": "The EEA Reward Token is used to incentivize participation of EEA member organizations and their employees in EEA SIGs and TWGs. Tokens are minted from 'Grants' for participation in EEA activities such as working group calls, deliverables or F2F meetings. The EEA Reward Token Grant is a contract between the EEA SIG or TWG's chairman, the participating organization and it's contributing individuals and details the potential reward that can be earned by following through with the commitment that the grant represents. A contracted commitment to perform and contribute towards an activity by an organization will reflect the relative impact and detail the potential reward in the grant. These tokens are minted by the grant contract during a vest event and are transferable to other EEA Member Organizations. These tokens can be redeemed towards the organization's annual membership dues.",
+      "businessExample": "The tokens are used to incentivize participation of EEA member organizations and their employees in EEA SIGs and TWGs. Tokens are issued for participation in EEA activities such as working group calls, deliverables or F2F meetings. The more commitment that is required by a member organization to perform an activity, the higher the reward. If a member organization commits to something and does not deliver on the the commitment,tokens are taken away from the organization's balance.",
       "analogies": [
         {
           "name": "Airline Points",
@@ -57,7 +57,15 @@
       }
     ],
     "maps": {
-      "codeReferences": [],
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Solidity Reward Token",
+          "platform": "ETHEREUM_SOLIDITY",
+          "referencePath": "https://github.com/EntEthAlliance/Trusted-Token/blob/develop/contracts/RewardToken.sol",
+          "maps": null
+        }
+      ],
       "implementationReferences": [],
       "resources": [],
       "artifact": null
@@ -103,36 +111,7 @@
         "values": {
           "controlUri": "",
           "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
+          "maps": {}
         }
       },
       "isExternal": true,
@@ -180,36 +159,7 @@
         "values": {
           "controlUri": "",
           "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
+          "maps": {}
         }
       },
       "isExternal": true,
@@ -291,36 +241,7 @@
         "values": {
           "controlUri": "",
           "artifactFiles": [],
-          "maps": {
-            "codeReferences": [
-              {
-                "mappingType": "SOURCE_CODE",
-                "name": "Code 1",
-                "platform": "DAML",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "implementationReferences": [
-              {
-                "mappingType": "IMPLEMENTATION",
-                "name": "Implementation 1",
-                "platform": "CHAINCODE_GO",
-                "referencePath": "",
-                "maps": null
-              }
-            ],
-            "resources": [
-              {
-                "mappingType": "RESOURCE",
-                "name": "Regulation Reference 1",
-                "description": "",
-                "resourcePath": "",
-                "maps": null
-              }
-            ],
-            "artifact": null
-          }
+          "maps": {}
         }
       },
       "isExternal": true,
@@ -383,7 +304,265 @@
       "properties": []
     }
   ],
-  "behaviorGroups": [],
+  "behaviorGroups": [
+    {
+      "reference": {
+        "id": "91cb89b6-a2ce-44ff-b3a0-f0cb3f117e56",
+        "type": "BEHAVIOR_GROUP",
+        "referenceNotes": "Supply Control",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": {
+            "codeReferences": [],
+            "implementationReferences": [],
+            "resources": [],
+            "artifact": null
+          }
+        }
+      },
+      "behaviorArtifacts": [
+        {
+          "reference": {
+            "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+            "type": "BEHAVIOR",
+            "referenceNotes": "Mintable in SupplyControl will be bound to the Roles behavior to determine if the requesting minter is allowed to invoke the behavior.",
+            "values": {
+              "controlUri": "",
+              "artifactFiles": [],
+              "maps": null
+            }
+          },
+          "isExternal": false,
+          "constructorType": "",
+          "constructor": null,
+          "appliesTo": [],
+          "invocations": [],
+          "influenceBindings": [],
+          "properties": []
+        },
+        {
+          "reference": {
+            "id": "803297a1-c0f9-4898-9d44-29c9d41cca97",
+            "type": "BEHAVIOR",
+            "referenceNotes": "Burnable is not modified from the referenced behavior.",
+            "values": {
+              "controlUri": "",
+              "artifactFiles": [],
+              "maps": null
+            }
+          },
+          "isExternal": false,
+          "constructorType": "",
+          "constructor": null,
+          "appliesTo": [],
+          "invocations": [],
+          "influenceBindings": [],
+          "properties": []
+        },
+        {
+          "reference": {
+            "id": "c32726da-9787-4dd8-8de3-d07d1733d0f6",
+            "type": "BEHAVIOR",
+            "referenceNotes": "Roles support requires that a role or group called 'Minters' be created that allows for account to be added. These accounts will be allowed to invoke MintTo.",
+            "values": null
+          },
+          "isExternal": false,
+          "constructorType": "",
+          "constructor": null,
+          "appliesTo": [
+            {
+              "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+              "type": "BEHAVIOR",
+              "visual": "<i>m</i>",
+              "tooling": "m",
+              "version": "1.0",
+              "templateValidated": false
+            }
+          ],
+          "invocations": [],
+          "influenceBindings": [
+            {
+              "influencedId": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+              "influencedInvocationId": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
+              "influenceType": "INTERCEPT",
+              "influencingInvocation": {
+                "id": "00a665e3-1dda-441e-8262-5750435c153c",
+                "name": "RoleCheck",
+                "description": "Check to see if the account is in the Role called 'Minters'",
+                "request": {
+                  "controlMessageName": "IsInRole",
+                  "description": "Checking the 'Minters' role.",
+                  "inputParameters": [
+                    {
+                      "name": "AccountId",
+                      "valueDescription": "AccountId of the requestor."
+                    }
+                  ]
+                },
+                "response": {
+                  "controlMessageName": "True/False",
+                  "description": "Respond true if the account is in the 'Minters' role.",
+                  "outputParameters": [
+                    {
+                      "name": "IsInRole",
+                      "valueDescription": "True/False"
+                    }
+                  ]
+                }
+              },
+              "influencedInvocation": {
+                "id": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
+                "name": "MintTo",
+                "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
+                "request": {
+                  "controlMessageName": "MintToRequest",
+                  "description": "The request",
+                  "inputParameters": [
+                    {
+                      "name": "ToAccount",
+                      "valueDescription": "Account Id to mint the tokens to."
+                    },
+                    {
+                      "name": "Quantity",
+                      "valueDescription": "Number of new tokens to create."
+                    }
+                  ]
+                },
+                "response": {
+                  "controlMessageName": "MintToResponse",
+                  "description": "The response",
+                  "outputParameters": [
+                    {
+                      "name": "Confirmation",
+                      "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the MintTo request."
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "properties": [
+            {
+              "name": "Role",
+              "valueDescription": "A group or list an account can be a member or be in.",
+              "templateValue": "Minters",
+              "propertyInvocations": [
+                {
+                  "id": "",
+                  "name": "GetMinters",
+                  "description": "Request the the list of member accounts in the 'Minters' role.",
+                  "request": {
+                    "controlMessageName": "GetMintersRequest",
+                    "description": "The request",
+                    "inputParameters": []
+                  },
+                  "response": {
+                    "controlMessageName": "GetMintersResponse",
+                    "description": "The response",
+                    "outputParameters": [
+                      {
+                        "name": "Members",
+                        "valueDescription": "Returning the list of accounts in the 'Minters' role."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "600357f8-0499-47f8-87a5-eedf4ad034af",
+                  "name": "AddRoleMember",
+                  "description": "Add a member to the group or role property.",
+                  "request": {
+                    "controlMessageName": "AddRoleMemberRequest",
+                    "description": "The request",
+                    "inputParameters": [
+                      {
+                        "name": "RoleName",
+                        "valueDescription": "Value is always set to 'Minters'"
+                      },
+                      {
+                        "name": "AccountAddress",
+                        "valueDescription": "Address, name or identifier of the account to be added to the 'Minters' role."
+                      }
+                    ]
+                  },
+                  "response": {
+                    "controlMessageName": "AddRoleMemberResponse",
+                    "description": "The response",
+                    "outputParameters": [
+                      {
+                        "name": "Added",
+                        "valueDescription": "True or False."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "97e160bb-6c60-4f1d-923b-813b07b89638",
+                  "name": "RemoveRoleMember",
+                  "description": "Remove a member to the group or role property.",
+                  "request": {
+                    "controlMessageName": "RemoveRoleMemberRequest",
+                    "description": "The request",
+                    "inputParameters": [
+                      {
+                        "name": "RoleName",
+                        "valueDescription": "Always set to 'Minters'"
+                      },
+                      {
+                        "name": "AccountAddress",
+                        "valueDescription": "Address, name or identifier of the account to be removed from the role."
+                      }
+                    ]
+                  },
+                  "response": {
+                    "controlMessageName": "RemoveRoleMemberResponse",
+                    "description": "The response",
+                    "outputParameters": [
+                      {
+                        "name": "Added",
+                        "valueDescription": "True or False."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "e42b1b16-074a-4d7d-b9f9-f69a2397a21b",
+                  "name": "IsInRole",
+                  "description": "Check to see if an account is in the role.",
+                  "request": {
+                    "controlMessageName": "IsInRoleRequest",
+                    "description": "The request may be internal only and not exposed externally.",
+                    "inputParameters": [
+                      {
+                        "name": "RoleName",
+                        "valueDescription": "Always be bound to 'Minters'"
+                      },
+                      {
+                        "name": "AccountAddress",
+                        "valueDescription": "Address, name or identifier of the account to be checked."
+                      }
+                    ]
+                  },
+                  "response": {
+                    "controlMessageName": "IsInRoleRequestResponse",
+                    "description": "The response",
+                    "outputParameters": [
+                      {
+                        "name": "InRole",
+                        "valueDescription": "True or False."
+                      }
+                    ]
+                  }
+                }
+              ],
+              "properties": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "propertySets": [],
   "childTokens": []
 }

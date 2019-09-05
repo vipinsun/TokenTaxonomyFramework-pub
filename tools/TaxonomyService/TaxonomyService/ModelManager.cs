@@ -1210,10 +1210,11 @@ namespace TTI.TTF.Taxonomy
 							Maps = b.Artifact.Maps
 						},
 						ReferenceNotes = b.Artifact.Name
-					}
+					},
+					BehaviorArtifacts = { b.Behaviors }
 				};
 		
-				var bgb = b.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
+				/*var bgb = b.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
 				foreach (var bRef in bgb.Select(br => new BehaviorReference
 				{
 					Reference = new ArtifactReference
@@ -1234,8 +1235,8 @@ namespace TTI.TTF.Taxonomy
 				}))
 				{
 					behaviorGroup.BehaviorArtifacts.Add(bRef);
-				}
-
+				}*/
+				retVal.BehaviorGroups.Add(behaviorGroup);
 			}
 			
 			var propertySets = formula.PropertySets.Select(tb => GetArtifactById<PropertySet>(tb.PropertySet.Id)).ToList();
