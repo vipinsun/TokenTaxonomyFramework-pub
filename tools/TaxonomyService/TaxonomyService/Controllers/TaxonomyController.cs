@@ -471,11 +471,17 @@ namespace TTI.TTF.Taxonomy.Controllers
 									break;
 								case TokenUnit.Whole:
 									if (baseType.TokenType == TokenType.Fungible)
+									{
 										hierarchy.Fungibles.Whole.Templates.Template.Add(id, template);
+										Log.Info("Template: " + id + " added to Single/Fungibles");
+									}
 									else if (baseType.TokenType == TokenType.NonFungible)
+									{
 										hierarchy.NonFungibles.Whole.Templates.Template
 											.Add(id, template);
-									Log.Info("Template: " + id + " added to Single/NonFungibles");
+										Log.Info("Template: " + id + " added to Single/NonFungibles");
+									}
+
 									break;
 								case TokenUnit.Singleton:
 									hierarchy.NonFungibles.Singleton.Templates.Template

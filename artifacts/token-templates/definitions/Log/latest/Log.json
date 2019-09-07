@@ -28,19 +28,7 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "Non-Fungible",
-        "symbol": {
-          "id": "8314a797-df3c-409b-835c-0e80af92714f",
-          "type": "BASE",
-          "visual": "&tau<sub>N</sub>",
-          "tooling": "tN",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
         "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
@@ -93,9 +81,9 @@
   },
   "tokenBase": {
     "reference": {
-      "id": "8314a797-df3c-409b-835c-0e80af92714f",
+      "id": "3c05a856-c901-4c30-917e-df9feed1c8de",
       "type": "BASE",
-      "referenceNotes": "non-fungible, quantity of 1 with 0 decimals",
+      "referenceNotes": "Singleton, non-fungible, quantity of 1 with 0 decimals",
       "values": {
         "controlUri": "",
         "artifactFiles": [],

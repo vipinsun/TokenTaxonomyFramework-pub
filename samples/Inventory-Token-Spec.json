@@ -1,5 +1,5 @@
 {
-  "specificationHash": "397300cbd254f88c37453955bd1ef9c8f5565b629a60d5a3615a27dcdc531502",
+  "specificationHash": "e22ca5953759195b067ec93976e6a97b32712c2a9198394ae981d046c58493c3",
   "artifact": {
     "artifactSymbol": {
       "id": "4354e308-0cca-4e7c-93d3-b83a47a7c2d2",
@@ -23,18 +23,6 @@
         }
       ]
     },
-    "dependencies": [
-      {
-        "description": "A whole fungible token",
-        "symbol": {
-          "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
-          "visual": "&tau;<sub>F</sub>",
-          "tooling": "tF",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
     "artifactFiles": [
       {
         "content": "CONTROL",
@@ -50,29 +38,29 @@
   "tokenBase": {
     "artifact": {
       "artifactSymbol": {
-        "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
-        "visual": "&tau;<sub>F</sub>{<i>d</i>}",
-        "tooling": "tF{d}",
+        "id": "b1eacdf8-35d8-454a-b1af-92eb0b6f45d4",
+        "visual": "&tau;<sub>F</sub>{<i>~d</i>}",
+        "tooling": "tF{~d}",
         "version": "1.0",
         "templateValidated": true
       },
-      "name": "Fractional Fungible",
+      "name": "Whole Fungible",
       "aliases": [
-        "Liquid",
-        "Virtual Money",
-        "Balance Money"
+        "Inventory",
+        "SKU",
+        "Loyalty Point"
       ],
       "artifactDefinition": {
-        "businessDescription": "Fractional Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token that is sub-dividable.",
-        "businessExample": "Fiat currency is the most widely understood example of a fractional fungible item. A fractional fungible is sub-dividable, so you can 'make change'.",
+        "businessDescription": "Whole Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. A whole token cannot be sub-divided so it doesn't support the notion of 'making change'.",
+        "businessExample": "An inventory item or SKU, where an item is treated as a whole because it makes no sense to own a fraction of a SKU or loyalty point.",
         "analogies": [
           {
-            "name": "Physical Money or Cash",
-            "description": "Cash, or fiat money, is freely accepted between parties and can have varying denominations. Money has a face value, on a coin or bill, and can be summed together to represent higher value.  It can be subdivided, making change, and consolidated from many smaller denominations to larger ones and still have the same value. "
+            "name": "Loyalty Points",
+            "description": "Most credit card or retail loyalty point programs deal with whole numbers so that redeeming points is easy to understand for their customers."
           },
           {
             "name": "General Admission Movie Ticket",
-            "description": "Purchasing a general admission ticket to a movie only allows for you to have a seat, but the seat that you actually get depends on factors like when you arrive."
+            "description": "Purchasing a general admission ticket to a movie only allows for you to have a seat, but the seat that you actually get depends on factors like when you arrive. Your not likely to want to share a seat with another adult."
           }
         ]
       },
@@ -93,26 +81,37 @@
           "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
           "type": "BEHAVIOR",
           "visual": "<i>~d</i>",
-          "tooling": "~d",
-          "version": "1.0"
+          "tooling": "~d"
         }
       ],
       "artifactFiles": [
         {
           "content": "CONTROL",
-          "fileName": "fractional-fungible.proto"
+          "fileName": "whole-fungible.proto"
         },
         {
           "content": "UML",
-          "fileName": "fractional-fungible.md"
+          "fileName": "whole-fungible.md"
         },
         {
           "content": "OTHER",
           "fileName": ".DS_Store"
         }
       ],
-      "maps": {}
+      "maps": {
+        "codeReferences": [
+          {
+            "name": "Solidity Reputation Token",
+            "referencePath": "https://github.com/EntEthAlliance/Trusted-Token/blob/develop/contracts/ReputationToken.sol"
+          },
+          {
+            "name": "Solidity Reward Token",
+            "referencePath": "https://github.com/EntEthAlliance/Trusted-Token/blob/develop/contracts/RewardToken.sol"
+          }
+        ]
+      }
     },
+    "tokenUnit": "WHOLE",
     "constructorName": "Constructor"
   },
   "behaviors": [

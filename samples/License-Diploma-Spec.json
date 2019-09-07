@@ -1,5 +1,5 @@
 {
-  "specificationHash": "481cbab6bc2ae1f35fe1124a82bd752519426862b3d4e22a048652f8e58319c6",
+  "specificationHash": "d5687447df35f5ec3d20bc4e212f76683556d9683e10bee84b71a4f273db43a9",
   "artifact": {
     "artifactSymbol": {
       "id": "49b6535a-430d-487b-8442-cf3457836ecc",
@@ -28,18 +28,6 @@
         }
       ]
     },
-    "dependencies": [
-      {
-        "description": "Non-Fungible, Singleton",
-        "symbol": {
-          "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
-          "visual": "&tau<sub>N</sub>{<i>s</i>}",
-          "tooling": "tN{s}",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
     "incompatibleWithSymbols": [
       {
         "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
@@ -143,6 +131,10 @@
         {
           "content": "UML",
           "fileName": "singleton.md"
+        },
+        {
+          "content": "OTHER",
+          "fileName": ".DS_Store"
         }
       ],
       "maps": {}
@@ -221,6 +213,10 @@
           {
             "content": "UML",
             "fileName": "singleton.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -291,6 +287,10 @@
           {
             "content": "UML",
             "fileName": "non-subdividable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -403,6 +403,10 @@
           {
             "content": "UML",
             "fileName": "non-transferable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {

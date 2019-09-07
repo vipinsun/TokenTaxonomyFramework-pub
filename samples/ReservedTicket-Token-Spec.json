@@ -1,5 +1,5 @@
 {
-  "specificationHash": "59a8612dc4cd773035cacfb4de18fb4199b538e5efe31d7da744896b11a7ea42",
+  "specificationHash": "a3c07cc2f9eabba2a31fd5c97e83eab56f7a13f3f50a2d3c51de2d61101d4a56",
   "artifact": {
     "artifactSymbol": {
       "id": "8dab45c9-cf5d-4752-b4dd-d2192a22886a",
@@ -12,7 +12,7 @@
     "name": "ReservedTicket",
     "aliases": [
       "Reserved Seating",
-      "Ailine Ticket"
+      "Airline Ticket"
     ],
     "artifactDefinition": {
       "businessDescription": "This is a Variable Supply Whole Non-Fungible where the total supply can vary. The tokens in this class will be of the same series, sharing those properties, but also have unique values like seat number. It is Whole by setting the Decimals property on the subdividable behavior = 0. A token instance can be burned.",
@@ -24,18 +24,6 @@
         }
       ]
     },
-    "dependencies": [
-      {
-        "description": "A whole non-fungible token",
-        "symbol": {
-          "id": "3c05a856-c901-4c30-917e-df9feed1c8de",
-          "visual": "&tau<sub>N</sub>{<i>~d</i>}",
-          "tooling": "tN{~d}",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
     "artifactFiles": [
       {
         "content": "CONTROL",
@@ -97,6 +85,12 @@
           "tooling": "d"
         }
       ],
+      "artifactFiles": [
+        {
+          "content": "OTHER",
+          "fileName": ".DS_Store"
+        }
+      ],
       "maps": {}
     },
     "tokenType": "NON_FUNGIBLE",
@@ -148,6 +142,10 @@
           {
             "content": "UML",
             "fileName": "non-subdividable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -265,6 +263,10 @@
           {
             "content": "UML",
             "fileName": "transferable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -394,6 +396,10 @@
           {
             "content": "UML",
             "fileName": "delegable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {

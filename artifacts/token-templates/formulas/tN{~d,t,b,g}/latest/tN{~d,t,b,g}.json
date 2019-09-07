@@ -27,19 +27,7 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "A whole non-fungible token",
-        "symbol": {
-          "id":"3c05a856-c901-4c30-917e-df9feed1c8de",
-          "type": "BASE",
-          "visual": "&tau<sub>N</sub>{<i>~d</i>}",
-          "tooling": "tN{~d}",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
     "artifactFiles": [

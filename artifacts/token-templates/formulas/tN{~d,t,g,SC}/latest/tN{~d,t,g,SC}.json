@@ -11,7 +11,7 @@
     "name": "tN{~d,t,g,SC}",
     "aliases": [
       "Reserved Seating",
-      "Ailine Ticket"
+      "Airline Ticket"
     ],
     "artifactDefinition": {
       "businessDescription": "This is a Variable Supply Whole Non-Fungible where the total supply can vary. The tokens in this class will be of the same series, sharing those properties, but also have unique values like seat number. It is Whole by setting the Decimals property on the subdividable behavior = 0. A token instance can be burned.",
@@ -26,19 +26,7 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "A whole non-fungible token",
-        "symbol": {
-          "id":"3c05a856-c901-4c30-917e-df9feed1c8de",
-          "type": "BASE",
-          "visual": "&tau<sub>N</sub>{<i>~d</i>}",
-          "tooling": "tN{~d}",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
     "artifactFiles": [

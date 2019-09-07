@@ -26,19 +26,7 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "A whole fungible token",
-        "symbol": {
-          "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
-          "type": "BASE",
-          "visual": "&tau;<sub>F</sub>",
-          "tooling": "tF",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
     "controlUri": "",
@@ -71,9 +59,9 @@
   },
   "tokenBase": {
     "reference": {
-      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "id": "b1eacdf8-35d8-454a-b1af-92eb0b6f45d4",
       "type": "BASE",
-      "referenceNotes": "",
+      "referenceNotes": "Whole fungible",
       "values": {
         "controlUri": "",
         "artifactFiles": [],

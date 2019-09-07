@@ -647,7 +647,10 @@ namespace TTI.TTF.Taxonomy
 				Id = symbol.DefinitionId
 			});
 	
-			if (definition == null) return null;
+			if (definition == null) return new TokenSpecification
+			{
+				SpecificationHash = "Token Specification for Template Definition: " + symbol.DefinitionId + " not found."
+			};
 			var formula = GetTemplateFormulaArtifact(new ArtifactSymbol
 			{
 				Id = definition.FormulaReference.Id
@@ -673,7 +676,13 @@ namespace TTI.TTF.Taxonomy
 			if (!string.IsNullOrEmpty(validated))
 			{
 				_log.Error(validated);
-				return null;
+				return new TokenSpecification
+				{
+					Artifact = new Artifact
+					{
+						Name = validated
+					}
+				};
 			}
 			
 			var retVal = new TokenSpecification

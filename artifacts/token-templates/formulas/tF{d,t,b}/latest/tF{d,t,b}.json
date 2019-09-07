@@ -27,19 +27,7 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "A fungible token",
-        "symbol": {
-          "id":"89ca6daf-5585-469e-abd1-19bc44e7a012",
-          "type": "BASE",
-          "visual": "&tau;<sub>F</sub>",
-          "tooling": "tF",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [],
     "artifactFiles": [
@@ -66,10 +54,10 @@
   "templateType": "SINGLE_TOKEN",
   "tokenBase": {
     "base": {
-      "id": "89ca6daf-5585-469e-abd1-19bc44e7a012",
+      "id":"89ca6daf-5585-469e-abd1-19bc44e7a012",
       "type": "BASE",
-      "visual": "&tau;<sub>F</sub>",
-      "tooling": "tF",
+      "visual": "&tau;<sub>F</sub>{<i>d</i>}",
+      "tooling": "tF{d}",
       "version": "1.0",
       "templateValidated": true
     }

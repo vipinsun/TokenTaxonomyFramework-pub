@@ -32,19 +32,7 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [
-      {
-        "description": "Non-Fungible, Singleton",
-        "symbol": {
-          "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
-          "type": "BASE",
-          "visual": "&tau<sub>N</sub>{<i>s</i>}",
-          "tooling": "tN{s}",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
+    "dependencies": [],
     "incompatibleWithSymbols": [
       {
         "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
@@ -96,7 +84,7 @@
     "reference": {
       "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
       "type": "BASE",
-      "referenceNotes": "",
+      "referenceNotes": "Singleton",
       "values": {
         "controlUri": "",
         "artifactFiles": [],

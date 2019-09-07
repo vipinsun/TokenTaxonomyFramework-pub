@@ -1,5 +1,4 @@
-{
-  "specificationHash": "dcb70ed2aaa3845601ac9720f02754e3917bf9e1f02d1443516ee7e4836fbb8e",
+{  "specificationHash": "1f58f60e708b54bfcb9e8cd7909b6ed43ddc803005c36c5b7e474ac85622756f",
   "artifact": {
     "artifactSymbol": {
       "id": "ce4b7adc-4741-4bf0-b03d-0af8c4c92746",
@@ -26,18 +25,6 @@
         }
       ]
     },
-    "dependencies": [
-      {
-        "description": "Non-Fungible",
-        "symbol": {
-          "id": "8314a797-df3c-409b-835c-0e80af92714f",
-          "visual": "&tau<sub>N</sub>",
-          "tooling": "tN",
-          "version": "1.0",
-          "templateValidated": true
-        }
-      }
-    ],
     "incompatibleWithSymbols": [
       {
         "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
@@ -69,27 +56,32 @@
   "tokenBase": {
     "artifact": {
       "artifactSymbol": {
-        "id": "8314a797-df3c-409b-835c-0e80af92714f",
-        "visual": "&tau<sub>N</sub>{<i>d</i>}",
-        "tooling": "tN{d}",
+        "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
+        "visual": "&tau<sub>N</sub>{<i>s</i>}",
+        "tooling": "tN{s}",
         "version": "1.0",
         "templateValidated": true
       },
-      "name": "Fractional Non-Fungible Token",
+      "name": "Singleton",
       "aliases": [
-        "Time Share",
-        "Limited Membership"
+        "Title",
+        "Deed",
+        "Document"
       ],
       "artifactDefinition": {
-        "businessDescription": "Every non-fungible token is unique and some will need to allow for fractional ownership. A non-fungible token is not interchangeable with other tokens of the same class as they typically have different values.  A property title is a good example of a non-fungible token where the value of different real estate titles is not equal and freely exchanging them is a bad idea. Some Non-fungible tokens will need to be represented with their own class, meaning it will share no common properties with other tokens from the same template. Other non-fungible tokens can exist within the same class and have some shared property values while also having unique property values between instances.",
-        "businessExample": "Membership, Time Share vacation property.",
+        "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
+        "businessExample": "CryptoKitties, Art, Reserved Seat for an event.",
         "analogies": [
           {
-            "name": "Time Share",
-            "description": "The physical property title is split between multiple owners who each own a percentage of the title."
+            "name": "Property Title",
+            "description": "The physical property title, land for example, have the identical look and feel from the paper, colors and seal. The difference between them are the values like property address, plot numbers, etc. These values make the title unique. There are some properties on a class of titles that are the same, like the county or jurisdiction the property is in. For titles that have some shared values and unique values, it may make more sense to define them in the same class."
+          },
+          {
+            "name": "Art",
+            "description": "The valuable painting or other unique piece of art may not share any property values with other paintings, unless the artist is extremely prolific in generating tens of thousands of pieces of art, it would make sense to define each piece of art as its own class. Meaning there would be only a single piece of art represented by the token class. If the art cannot be sub-divided, meaning there can be no fractional owners, this token class can be a singleton if the quantity in the class is set to 1. A singleton has only one instance in the class, essentially meaning the class is the instance, and not be sub-dividable and no new tokens can be minted in the class."
           }
         ],
-        "comments": "Fractional Non-fungible tokens require additional thought about how these tokens may or may not be grouped together in the same class."
+        "comments": "Non-fungible tokens require additional thought about how these tokens may or may not be grouped together in the same class."
       },
       "dependencies": [
         {
@@ -101,30 +93,51 @@
             "version": "1.0",
             "templateValidated": true
           }
+        },
+        {
+          "description": "non-subdividable",
+          "symbol": {
+            "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+            "type": "BEHAVIOR",
+            "visual": "<i>~d</i>",
+            "tooling": "~d",
+            "version": "1.0"
+          }
         }
       ],
       "incompatibleWithSymbols": [
         {
-          "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+          "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
           "type": "BEHAVIOR",
-          "visual": "<i>~d</i>",
-          "tooling": "~d",
+          "visual": "<i>d</i>",
+          "tooling": "d"
+        },
+        {
+          "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+          "type": "BEHAVIOR",
+          "visual": "<i>m</i>",
+          "tooling": "m",
           "version": "1.0"
         }
       ],
       "artifactFiles": [
         {
           "content": "CONTROL",
-          "fileName": "fractional-non-fungible.proto"
+          "fileName": "singleton.proto"
         },
         {
           "content": "UML",
-          "fileName": "fractional-non-fungible.md"
+          "fileName": "singleton.md"
+        },
+        {
+          "content": "OTHER",
+          "fileName": ".DS_Store"
         }
       ],
       "maps": {}
     },
     "tokenType": "NON_FUNGIBLE",
+    "tokenUnit": "SINGLETON",
     "quantity": "1",
     "constructorName": "Constructor"
   },
@@ -198,6 +211,10 @@
           {
             "content": "UML",
             "fileName": "singleton.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -268,6 +285,10 @@
           {
             "content": "UML",
             "fileName": "non-subdividable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -385,6 +406,10 @@
           {
             "content": "UML",
             "fileName": "transferable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -530,6 +555,10 @@
           {
             "content": "UML",
             "fileName": "burnable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {
@@ -642,6 +671,10 @@
           {
             "content": "UML",
             "fileName": "encumberable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
           }
         ],
         "maps": {

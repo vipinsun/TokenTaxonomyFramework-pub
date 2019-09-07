@@ -50,10 +50,10 @@
   "templateType": "SINGLE_TOKEN",
   "tokenBase": {
     "base": {
-      "id":"8314a797-df3c-409b-835c-0e80af92714f",
+      "id":"53101d87-3c93-4d8b-ab39-1e629406d062",
       "type": "BASE",
-      "visual": "&tau<sub>N</sub>",
-      "tooling": "tN",
+      "visual": "&tau<sub>N</sub>{<i>s</i>}",
+      "tooling": "tN{s}",
       "version": "1.0",
       "templateValidated": true
     }
