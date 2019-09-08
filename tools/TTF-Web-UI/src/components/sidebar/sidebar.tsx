@@ -2,46 +2,194 @@ import React from 'react';
 import {Layout, Menu} from 'antd';
 import {ClickParam} from "antd/lib/menu";
 import {Link} from "react-router-dom";
+import options, {MenuOption, MenuSubOption} from './options';
+import {SidebarWrapper} from './sidebar.style';
 
-const { Sider } = Layout;
+import {connect} from 'react-redux';
+import {Base, Bases, BasesDict} from "../../model/core_pb";
 
-let  onClick : (param: ClickParam) => void = (param) => {
+import { actionSelectEntity } from '../../actions';
+import {ISidebarUI, IStoreState} from "../../store/IStoreState";
 
-}
+const {Sider} = Layout;
+const SubMenu = Menu.SubMenu;
 
-export const Sidebar = () =>
-  <Sider width={200} style={{ background: '#fff' }}>
-    <Menu
-      mode="vertical"
-      defaultSelectedKeys={['base']}
-      defaultOpenKeys={['base']}
-      style={{ height: '100%', borderRight: 0 }}
-      onClick={onClick}
-    >
-      <Menu.Item key="base">
-        <Link to="/">
-          Base
+
+
+class Sidebar extends React.Component<ISidebarUI> {
+
+  public getMenuItem = (singleOption: MenuOption) => {
+    const {key, label, leftIcon, children} = singleOption;
+
+    if (children) {
+      return (
+        <SubMenu
+          key={key}
+          title={
+            <span className="menuHolder"  >
+              <i className={leftIcon} />
+              <span className="nav-text">
+                {label}
+              </span>
+            </span>
+          }
+        >
+          {
+            children.map((child: MenuSubOption) => {
+              const linkTo = `/${encodeURIComponent(child.key)}`;
+              return (
+                <Menu.Item key={child.key}>
+                  <Link to={linkTo}>
+                    {child.label}
+                  </Link>
+                </Menu.Item>
+              );
+            })}
+        </SubMenu>
+      );
+    };
+
+    return (
+      <Menu.Item key={key}>
+        <Link to={`/${key}`}>
+          <span className="menuHolder" >
+            <i className={leftIcon} />
+            <span className="nav-text">
+              {label}
+            </span>
+          </span>
         </Link>
       </Menu.Item>
-      <Menu.Item key="behaviours">
-        <Link to="/behaviours">
-          Behaviours
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="behaviour-groups">
-        <Link to="/behaviour-groups">
-        Behaviour groups
-      </Link></Menu.Item>
-      <Menu.Item key="property-sets">
-        <Link to="/property-sets">
-          Property sets
-      </Link></Menu.Item>
-      <Menu.Item key="token-templates">
-        <Link to="/token-templates">
-          Token templates
-        </Link>
-      </Menu.Item>
-    </Menu>
-  </Sider>
+    );
+  };
 
-export default Sidebar;
+  public generateMenuOption(menu: MenuOption) {
+    if(this.props.state === 'LOADING') {
+      return (<p>Loading...</p>);
+    } else if (this.props.state === 'ERROR') {
+      return (
+        <Menu.Item key='base'>
+          No Base
+        </Menu.Item>
+      );
+    } else if (this.props.state === "LOADED") {
+      if (menu.children) {
+        return (
+          <SubMenu
+            key={menu.key}
+            title={
+              <span className="menuHolder"  >
+                <i className={menu.leftIcon} />
+                <span className="nav-text">
+                  {menu.label}
+                </span>
+              </span>
+            }
+          >
+            {
+              menu.children.map((child: MenuSubOption) => {
+                const linkTo = `/${child.key}`;
+                return (
+                  <Menu.Item key={child.key}>
+                    <Link to={linkTo}>
+                      {child.label}
+                    </Link>
+                  </Menu.Item>
+                );
+              })}
+          </SubMenu>
+        );
+      }
+
+      return (
+        <Menu.Item key={menu.key}>
+          <Link to={`/${menu.key}`}>
+            <span className="menuHolder" >
+              <i className={menu.leftIcon} />
+              <span className="nav-text">
+                {menu.label}
+              </span>
+            </span>
+          </Link>
+        </Menu.Item>
+      );
+    }
+  };
+  
+  public generateMenuOptions = (key: string, label: string, prefix: string, bases: any[]) => {
+    const baseOption: MenuOption = {
+      key: key,
+      label: label,
+      leftIcon: 'ion-podium',
+      children: []
+    }
+    if (bases === []) {
+      return baseOption;
+    } else {
+      for (const base of bases) {
+        const baseObj = base.toObject();
+        if (baseObj.artifact != undefined) {
+          baseOption.children.push({
+            key: prefix + "/" + baseObj.artifact.artifactSymbol.id,
+            label: baseObj.artifact.name,
+          });
+        } 
+      }
+      return baseOption;
+    }
+  };
+
+  public render() {
+    const baseOptions = this.generateMenuOptions("bases", "Bases", "base", this.props.bases);
+    const behaviorOptions = this.generateMenuOptions("behaviors", "Behaviors", "behavior", this.props.behaviors);
+    const behaviorGroupOptions = this.generateMenuOptions("behaviorGroups", "Behavior Groups", "behaviorGroup", this.props.behaviorGroups);
+    const propertySetOptions = this.generateMenuOptions("propertySets", "Property Sets", "propertySet", this.props.propertySets);
+    const templateDefinitionOptions = this.generateMenuOptions("templateDefinitions", "Template Definitions", "templateDefinition", this.props.templateDefinitions);
+    return (
+      <SidebarWrapper>
+        <Sider 
+          width={240} 
+          className="sidebar" 
+          style={{ 
+            background: '#fff',
+            height: "calc(100vh - 70px)"
+          }}
+        >
+          <Menu
+            mode="inline"
+            theme="light"
+            defaultSelectedKeys={['base']}
+            defaultOpenKeys={['base']}
+            style={{borderRight: 0}}
+            className="sidebarMenu"
+          > 
+            {this.generateMenuOption(baseOptions)}
+            {this.generateMenuOption(behaviorOptions)}
+            {this.generateMenuOption(behaviorGroupOptions)}
+            {this.generateMenuOption(propertySetOptions)}
+            {this.generateMenuOption(templateDefinitionOptions)}
+            {options.map(singleOption =>
+              this.getMenuItem(singleOption)
+            )}            
+          </Menu>
+        </Sider>
+      </SidebarWrapper>
+    );
+  }
+}  
+
+export default connect(
+  (state: IStoreState) => {
+    return {
+      bases: state.ui.sidebarUI.bases,
+      behaviors: state.ui.sidebarUI.behaviors,
+      behaviorGroups: state.ui.sidebarUI.behaviorGroups,
+      propertySets: state.ui.sidebarUI.propertySets,
+      templateDefinitions: state.ui.sidebarUI.templateDefinitions,
+      state: state.ui.sidebarUI.state,
+      errorMsg: state.ui.sidebarUI.errorMsg,
+    };
+  },
+  {
+    selectEntity: actionSelectEntity
+  })(Sidebar);

@@ -18,3 +18,10 @@ services:
             - "9080:9080"
         links:
             - "ttf-taxnomomy-service"
+    ttf-ui:
+        image: tti/ttf/ui
+        container_name: ui
+        ports:
+            - "8000:80"
+        links:
+            - "envoy"
