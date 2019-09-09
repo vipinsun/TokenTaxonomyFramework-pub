@@ -21,13 +21,10 @@ protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/
 protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/TaxonomyObjectModel/out/java --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/js --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/ts --grpc-web_out=import_style=commonjs,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/js --grpc-web_out=import_style=typescript,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/ts --proto_path=./protos --proto_path=$PROTO_PATH ./protos/taxonomy.proto --plugin=protoc-gen-web
 protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/TaxonomyObjectModel/out/java --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/js --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/ts --grpc-web_out=import_style=commonjs,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/js --grpc-web_out=import_style=typescript,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/ts --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out ../tools/TaxonomyService/TaxonomyService ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN --plugin=protoc-gen-web
 protoc --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out=no_server:../tools/TaxonomyService/TaxonomyClient ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN
-protoc --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out=no_server:../tools/TTF-Web-Explorer/Model ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/ArtifactGenerator/Model
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TaxonomyService/TaxonomyModel
-
-cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Web-Explorer/Model
 
 cp ../tools/TaxonomyObjectModel/out/ts/* ../tools/TTF-Web-UI/src/model
 for f in `ls ../tools/TTF-Web-UI/src/model`
