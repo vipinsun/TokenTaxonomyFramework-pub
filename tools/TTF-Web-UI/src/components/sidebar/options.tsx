@@ -1,34 +1,30 @@
-const options = [
+import {IEntity} from "../../store/IStoreState";
+
+export interface MenuSubOption {
+  key: string;
+  label: string;
+}
+export interface MenuOption {
+  key: string;
+  label: string;
+  leftIcon: string;
+  children: MenuSubOption[];
+}
+
+const options: MenuOption[] = [
   {
-    key: '',
-    label: 'sidebar.dashboard',
-    leftIcon: 'ion-android-desktop',
-  },
-  {
-    key: 'categories',
-    label: 'sidebar.categories',
+    key: 'tokenTemplates',
+    label: 'Token Templates',
     leftIcon: 'ion-podium',
     children: [
       {
-        key: 'base',
-        label: 'sidebar.base',
+        key: 'formulas',
+        label: 'Formulas',
       },
       {
-        key: 'behaviors',
-        label: 'sidebar.behaviors',
+        key: 'definitions',
+        label: 'Definitions',
       },
-      {
-        key: 'behavior-groups',
-        label: 'sidebar.behavior-groups',
-      },
-      {
-        key: 'property-sets',
-        label: 'sidebar.property-sets',
-      },
-      {
-        key: 'token-templates',
-        label: 'sidebar.token-templates',
-      }
     ],
   },
 ];

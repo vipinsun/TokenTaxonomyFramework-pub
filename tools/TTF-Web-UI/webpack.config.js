@@ -1,34 +1,37 @@
 var path = require("path");
 
 module.exports = {
-    mode: 'development',
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js'],
-        modules: [
-            path.resolve(__dirname, 'node_modules'),
-            path.resolve(__dirname, 'src'),
-        ],
+  mode: 'development',
+  parser: '@typescript-eslint/parser',
+  plugins: ["@typescript-eslint/eslint-plugin"],
+  extends: ['plugin:@typescript-eslint/recommended'],
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+    modules: [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, 'src'),
+    ],
+  },
+  entry: "./src/index.ts",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/dist/"
+  },
+  module: {
+    rules: [
+      {test: /\.tsx?$/, loader: "ts-loader"}
+    ]
+  },
+  devServer: {
+    stats: {
+      assets: false,
+      hash: false,
+      chunks: false,
+      errors: true,
+      errorDetails: true,
     },
-    entry: "./src/index.ts",
-    output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        publicPath: "/dist/"
-    },
-    module: {
-        rules: [
-            { test: /\.tsx?$/, loader: "ts-loader" }
-        ]
-    },
-    devServer: {
-        stats: {
-            assets: false,
-            hash: false,
-            chunks: false,
-            errors: true,
-            errorDetails: true,
-        },
-        overlay: true
-    },
+    overlay: true
+  },
 
 };

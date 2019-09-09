@@ -4,17 +4,17 @@ import {FormProps} from "antd/lib/form";
 import {WrappedFormUtils} from "antd/lib/form/Form";
 import {clone} from "@babel/types";
 
-let id = 0;
+const id = 0;
 
 type KeyValueProps = {
-  form: WrappedFormUtils,
-  field: string,
-  label: string,
+  form: WrappedFormUtils;
+  field: string;
+  label: string;
 }
 
 type KeyValuePair = {
-  key : string,
-  value : string,
+  key: string;
+  value: string;
 }
 
 export class KeyValue {
@@ -23,13 +23,13 @@ export class KeyValue {
     this.props = props;
   }
 
-  remove(k : number) {
-    const { form, field } = this.props;
+  remove(k: number) {
+    const {form, field} = this.props;
     // can use data-binding to get
     const keyPairs = form.getFieldValue(field);
     const dataChanges = {};
     // @ts-ignore
-    dataChanges[field] = keyPairs.filter((value : KeyValuePair, index : number) => {
+    dataChanges[field] = keyPairs.filter((value: KeyValuePair, index: number) => {
       return index !== k;
     });
 
@@ -38,7 +38,7 @@ export class KeyValue {
   };
 
   public add = () => {
-    const { form, field } = this.props;
+    const {form, field} = this.props;
     // can use data-binding to get
     const keypairs = form.getFieldValue(field);
     const nextKeys = keypairs.concat({key : "", value : ""});
@@ -52,27 +52,27 @@ export class KeyValue {
   };
 
   render() {
-    const { getFieldDecorator, getFieldValue } = this.props.form;
-    const { field, label } = this.props;
+    const {getFieldDecorator, getFieldValue} = this.props.form;
+    const {field, label} = this.props;
     const formItemLayout = {
       labelCol: {
-        xs: { span: 24 },
-        sm: { span: 4 },
+        xs: {span: 24},
+        sm: {span: 4},
       },
       wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 20 },
+        xs: {span: 24},
+        sm: {span: 20},
       },
     };
     const formItemLayoutWithOutLabel = {
       wrapperCol: {
-        xs: { span: 24, offset: 0 },
-        sm: { span: 20, offset: 4 },
+        xs: {span: 24, offset: 0},
+        sm: {span: 20, offset: 4},
       },
     };
-    getFieldDecorator(field, { initialValue: [] });
+    getFieldDecorator(field, {initialValue: []});
     const keyValues = getFieldValue(field);
-    const formItems = keyValues.map((kv : KeyValuePair, index : number) => {
+    const formItems = keyValues.map((kv: KeyValuePair, index: number) => {
       const k = kv.key;
       const v = kv.value;
       return <Form.Item
@@ -101,19 +101,19 @@ export class KeyValue {
             },
           ],
         })(<Input placeholder="value" style={{width: '60%', marginRight: 8}}/>)}
-          <Icon
-            className="dynamic-delete-button"
-            type="minus-circle-o"
-            onClick={() => this.remove(index)}
-          />
-      </Form.Item>
+        <Icon
+          className="dynamic-delete-button"
+          type="minus-circle-o"
+          onClick={() => this.remove(index)}
+        />
+      </Form.Item>;
     });
     return formItems.concat(
-        <Form.Item {...formItemLayout} label={keyValues.length == 0 ? label : null}>
-          <Button type="dashed" onClick={this.add} style={{ width: '60%' }}>
-            <Icon type="plus" /> Add field
-          </Button>
-        </Form.Item>
+      <Form.Item {...formItemLayout} label={keyValues.length == 0 ? label : null} >
+        <Button type="dashed" onClick={this.add} style={{width: '60%'}}>
+          <Icon type="plus" /> Add field
+        </Button>
+      </Form.Item>
     );
   }
 }

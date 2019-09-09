@@ -32,8 +32,6 @@ cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Web-Explorer/Model
 cp ../tools/TaxonomyObjectModel/out/ts/* ../tools/TTF-Web-UI/src/model
 for f in `ls ../tools/TTF-Web-UI/src/model`
 do
-  sed -i '' '1i\
-  /* eslint-disable */\
-  ' ../tools/TTF-Web-UI/src/model/$f
+  echo '/* eslint-disable */' | cat - ../tools/TTF-Web-UI/src/model/$f > ../tools/TTF-Web-UI/src/model/$f.new; mv ../tools/TTF-Web-UI/src/model/$f.new ../tools/TTF-Web-UI/src/model/$f
 done
 
