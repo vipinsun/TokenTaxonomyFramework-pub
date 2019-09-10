@@ -56,10 +56,6 @@ export class Base extends jspb.Message {
   static deserializeBinaryFromReader(message: Base, reader: jspb.BinaryReader): Base;
 }
 
-export type BasesDict = {
-  [Key: number]: Base.AsObject
-}
-
 export namespace Base {
   export type AsObject = {
     artifact?: artifact_pb.Artifact.AsObject,
