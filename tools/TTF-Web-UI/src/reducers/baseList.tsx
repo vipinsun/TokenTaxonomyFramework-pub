@@ -1,7 +1,7 @@
 import {
   AppActions
 } from '../actions';
-import {Base, Bases, BasesDict, Behavior, BehaviorGroup, PropertySet, TemplateDefinition} from "../model/core_pb";
+import {Base, Bases, Behavior, BehaviorGroup, PropertySet, TemplateDefinition} from "../model/core_pb";
 import {Artifact} from "../model/artifact_pb";
 
 export interface BaseListState {

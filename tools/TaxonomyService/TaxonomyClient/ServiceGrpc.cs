@@ -186,7 +186,7 @@ namespace TTI.TTF.Taxonomy {
     {
       /// <summary>Creates a new client for Service</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
-      public ServiceClient(grpc::ChannelBase channel) : base(channel)
+      public ServiceClient(grpc::Channel channel) : base(channel)
       {
       }
       /// <summary>Creates a new client for Service that uses a custom <c>CallInvoker</c>.</summary>
