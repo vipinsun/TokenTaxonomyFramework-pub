@@ -6,7 +6,7 @@ import options, {MenuOption, MenuSubOption} from './options';
 import {SidebarWrapper} from './sidebar.style';
 
 import {connect} from 'react-redux';
-import {Base, Bases, BasesDict} from "../../model/core_pb";
+import {Base, Bases} from "../../model/core_pb";
 
 import { actionSelectEntity } from '../../actions';
 import {ISidebarUI, IStoreState} from "../../store/IStoreState";

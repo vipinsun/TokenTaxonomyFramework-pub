@@ -13,10 +13,24 @@ import {
   PropertySets, TemplateDefinition, TemplateDefinitions
 } from "./model/core_pb";
 import {Any} from "google-protobuf/google/protobuf/any_pb";
+import {TaxonomyVersion} from "./model/taxonomy_pb";
 
-const client = new ServiceClient("http://0.0.0.0:9080");
+const client = new ServiceClient("http://0.0.0.0:9080", null, null);
 
-const deadline = {deadline: (Date.now() + 5000).toString()};
+export const getFullTaxonomy = async (): Promise<Taxonomy> => {
+  return new Promise<Taxonomy>((resolve, reject) => {
+    const query = new TaxonomyVersion();
+    client.getFullTaxonomy(query, null, (err: grpcWeb.Error, response: Taxonomy) => {
+      console.log(response);
+      console.log(response.getBaseTokenTypesMap());
+      if (err !== null) {
+        reject(err);
+      } else {
+        resolve(response);
+      }
+    });
+  });
+};
 
 export const getAllBases = async (): Promise<Base[]> => {
   return new Promise<Base[]>((resolve, reject) => {
