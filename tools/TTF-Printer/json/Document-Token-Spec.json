@@ -1,0 +1,840 @@
+{  "specificationHash": "1f58f60e708b54bfcb9e8cd7909b6ed43ddc803005c36c5b7e474ac85622756f",
+  "artifact": {
+    "artifactSymbol": {
+      "id": "ce4b7adc-4741-4bf0-b03d-0af8c4c92746",
+      "type": "TOKEN_TEMPLATE",
+      "visual": "[&tau;<sub>N</sub>{<i>~d,t,s,e,b</i>}+&phi;File]",
+      "tooling": "[tN{~d,t,s,e,b}+phFile]",
+      "version": "1.0",
+      "templateValidated": true
+    },
+    "name": "Document",
+    "aliases": [
+      "Document",
+      "File",
+      "Invoice",
+      "PDF"
+    ],
+    "artifactDefinition": {
+      "businessDescription": "Used to represent a document that may be a scanned or PDF printed document. It records the document hash to check for tampering, a file path to fetch the file from storage as well as the ability to be encumbered. Implements the File property-set.",
+      "businessExample": "For example: you may choose to create an invoice token from an invoice document.  You can then allow another token or contract representing a loan or proof of financing to encumber the document establishing a link between the two.",
+      "analogies": [
+        {
+          "name": "Scanned Document",
+          "description": "A scanned copy of a certificate, like a diploma or industry certification"
+        }
+      ]
+    },
+    "incompatibleWithSymbols": [
+      {
+        "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+        "type": "BEHAVIOR",
+        "visual": "<i>d</i>",
+        "tooling": "d",
+        "version": "1.0"
+      },
+      {
+        "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+        "type": "BEHAVIOR",
+        "visual": "<i>m</i>",
+        "tooling": "m",
+        "version": "1.0"
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "Document.proto"
+      },
+      {
+        "content": "UML",
+        "fileName": "Document.md"
+      }
+    ],
+    "maps": {}
+  },
+  "tokenBase": {
+    "artifact": {
+      "artifactSymbol": {
+        "id": "53101d87-3c93-4d8b-ab39-1e629406d062",
+        "visual": "&tau<sub>N</sub>{<i>s</i>}",
+        "tooling": "tN{s}",
+        "version": "1.0",
+        "templateValidated": true
+      },
+      "name": "Singleton",
+      "aliases": [
+        "Title",
+        "Deed",
+        "Document"
+      ],
+      "artifactDefinition": {
+        "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
+        "businessExample": "CryptoKitties, Art, Reserved Seat for an event.",
+        "analogies": [
+          {
+            "name": "Property Title",
+            "description": "The physical property title, land for example, have the identical look and feel from the paper, colors and seal. The difference between them are the values like property address, plot numbers, etc. These values make the title unique. There are some properties on a class of titles that are the same, like the county or jurisdiction the property is in. For titles that have some shared values and unique values, it may make more sense to define them in the same class."
+          },
+          {
+            "name": "Art",
+            "description": "The valuable painting or other unique piece of art may not share any property values with other paintings, unless the artist is extremely prolific in generating tens of thousands of pieces of art, it would make sense to define each piece of art as its own class. Meaning there would be only a single piece of art represented by the token class. If the art cannot be sub-divided, meaning there can be no fractional owners, this token class can be a singleton if the quantity in the class is set to 1. A singleton has only one instance in the class, essentially meaning the class is the instance, and not be sub-dividable and no new tokens can be minted in the class."
+          }
+        ],
+        "comments": "Non-fungible tokens require additional thought about how these tokens may or may not be grouped together in the same class."
+      },
+      "dependencies": [
+        {
+          "description": "Base Token Definition",
+          "symbol": {
+            "id": "5f5c4e7f-8ff1-4767-b59c-799d49753226",
+            "visual": "&tau",
+            "tooling": "t",
+            "version": "1.0",
+            "templateValidated": true
+          }
+        },
+        {
+          "description": "non-subdividable",
+          "symbol": {
+            "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+            "type": "BEHAVIOR",
+            "visual": "<i>~d</i>",
+            "tooling": "~d",
+            "version": "1.0"
+          }
+        }
+      ],
+      "incompatibleWithSymbols": [
+        {
+          "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+          "type": "BEHAVIOR",
+          "visual": "<i>d</i>",
+          "tooling": "d"
+        },
+        {
+          "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+          "type": "BEHAVIOR",
+          "visual": "<i>m</i>",
+          "tooling": "m",
+          "version": "1.0"
+        }
+      ],
+      "artifactFiles": [
+        {
+          "content": "CONTROL",
+          "fileName": "singleton.proto"
+        },
+        {
+          "content": "UML",
+          "fileName": "singleton.md"
+        },
+        {
+          "content": "OTHER",
+          "fileName": ".DS_Store"
+        }
+      ],
+      "maps": {}
+    },
+    "tokenType": "NON_FUNGIBLE",
+    "tokenUnit": "SINGLETON",
+    "quantity": "1",
+    "constructorName": "Constructor"
+  },
+  "behaviors": [
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "c1189d7a-e142-4504-bf26-44c35b76c9d6",
+          "type": "BEHAVIOR",
+          "visual": "<i>s</i>",
+          "tooling": "s",
+          "version": "1.0"
+        },
+        "name": "Singleton",
+        "aliases": [
+          "Unique",
+          "One and Only"
+        ],
+        "artifactDefinition": {
+          "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
+          "analogies": [
+            {
+              "name": "Analogy 1",
+              "description": "singleton analogy 1 description"
+            }
+          ]
+        },
+        "dependencies": [
+          {
+            "description": "Singleton must be have a non-fungible base.",
+            "symbol": {
+              "id": "8314a797-df3c-409b-835c-0e80af92714f",
+              "visual": "&tau<sub>N</sub>",
+              "tooling": "tN",
+              "version": "1.0",
+              "templateValidated": true
+            }
+          },
+          {
+            "description": "Singleton requires non-sub-dividable.",
+            "symbol": {
+              "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+              "type": "BEHAVIOR",
+              "visual": "<i>~d</i>",
+              "tooling": "~d",
+              "version": "1.0"
+            }
+          }
+        ],
+        "incompatibleWithSymbols": [
+          {
+            "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+            "type": "BEHAVIOR",
+            "visual": "<i>d</i>",
+            "tooling": "d",
+            "version": "1.0"
+          },
+          {
+            "id": "f9224e90-3cab-45bf-b5dc-0175121e2ead",
+            "type": "BEHAVIOR",
+            "visual": "<i>m</i>",
+            "tooling": "m",
+            "version": "1.0"
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "singleton.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "singleton.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Code 1",
+              "platform": "DAML"
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true
+    },
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
+          "type": "BEHAVIOR",
+          "visual": "<i>~d</i>",
+          "tooling": "~d",
+          "version": "1.0"
+        },
+        "name": "Non-Subdividable",
+        "aliases": [
+          "Whole"
+        ],
+        "artifactDefinition": {
+          "businessDescription": "An ability or restriction on the token where it cannot be subdivided from a single whole token into fractions. Sets the base token Decimals property to 0 which will make the token non-sub-dividable and a whole token is the smallest ownable unit of the token.",
+          "businessExample": "Non-subdividable is common for items where subdivision does not make sense, like a property title, inventory item or invoice.",
+          "analogies": [
+            {
+              "name": "Non-Fractional",
+              "description": "It is not possible to own a fraction of this token."
+            },
+            {
+              "name": "Barrel of Oil",
+              "description": "Barrels of Oil don't make sense to subdivide."
+            }
+          ]
+        },
+        "incompatibleWithSymbols": [
+          {
+            "id": "6e3501dc-5800-4c71-b59e-ad11418a998c",
+            "type": "BEHAVIOR",
+            "visual": "<i>d</i>",
+            "tooling": "d",
+            "version": "1.0"
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "non-subdividable.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "non-subdividable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Code 1",
+              "platform": "DAML"
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true,
+      "properties": [
+        {
+          "name": "Decimals",
+          "valueDescription": "Set to Zero, not allowing any subdivision",
+          "templateValue": "0",
+          "propertyInvocations": [
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest"
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "2ca7fbb2-ce98-4dda-a6ae-e4ac2527bb33",
+              "name": "GetDecimals",
+              "description": "Should return 0",
+              "request": {
+                "controlMessageName": "GetDecimalsRequest"
+              },
+              "response": {
+                "controlMessageName": "GetDecimalsResponse",
+                "description": "Return 0",
+                "outputParameters": [
+                  {
+                    "name": "Decimals",
+                    "valueDescription": "0"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "af119e58-6d84-4ca6-9656-75e8d312f038",
+          "type": "BEHAVIOR",
+          "visual": "<i>t</i>",
+          "tooling": "t",
+          "version": "1.0"
+        },
+        "name": "Transferable",
+        "artifactDefinition": {
+          "businessDescription": "Every token instance has an owner. The Transferable behavior provides the owner the ability to transfer the ownership to another party or account. This behavior is often inferred by other behaviors that might exist like Redeem, Sell, etc. This behavior is Delegable. If the token definition is Delegable, TransferFrom will be available.",
+          "analogies": [
+            {
+              "name": "Analogy 1",
+              "description": "transferable analogy 1 description"
+            }
+          ]
+        },
+        "incompatibleWithSymbols": [
+          {
+            "id": "a4fa4ca8-6afd-452b-91f5-7103b6fee5e5",
+            "type": "BEHAVIOR",
+            "visual": "<i>~t</i>",
+            "tooling": "~t",
+            "version": "1.0"
+          }
+        ],
+        "influencedBySymbols": [
+          {
+            "description": "If the token is Delegable, TransferFrom should be enabled.",
+            "symbol": {
+              "type": "BEHAVIOR",
+              "visual": "<i>g</i>",
+              "tooling": "g"
+            }
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "transferable.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "transferable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Code 1",
+              "platform": "DAML"
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
+              "name": "Transfer",
+              "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+              "request": {
+                "controlMessageName": "TransferRequest",
+                "description": "The request",
+                "inputParameters": [
+                  {
+                    "name": "To",
+                    "valueDescription": "AccountId to transfer ownership to."
+                  },
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "Number of tokens to transfer."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "TransferResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the owner based on the outcome of the transfer request."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "516b4e2f-4a14-4c4f-a6f2-1419d4af35c6",
+              "name": "TransferFrom",
+              "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+              "request": {
+                "controlMessageName": "TransferFromRequest",
+                "description": "The request",
+                "inputParameters": [
+                  {
+                    "name": "From",
+                    "valueDescription": "AccountId to transfer ownership from."
+                  },
+                  {
+                    "name": "To",
+                    "valueDescription": "AccountId to transfer ownership to."
+                  },
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "Number of tokens to transfer."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "TransferFromResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the owner based on the outcome of the transfer from request."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "803297a1-c0f9-4898-9d44-29c9d41cca97",
+          "type": "BEHAVIOR",
+          "visual": "<i>b</i>",
+          "tooling": "b",
+          "version": "1.0"
+        },
+        "name": "Burnable",
+        "aliases": [
+          "Retire"
+        ],
+        "artifactDefinition": {
+          "businessDescription": "A token class that implements this behavior will support the burning or decommissioning of token instances of the class. This does not delete a token, but rather places it in a permanent non-use state.  Burning is a one way operation and cannot be reversed. This behavior is Delegable. If the token definition is Delegable, BurnFrom will be available.",
+          "businessExample": "When a token is used in a certain way, you may want to remove it from circulation or from being used again. Since the ledger doesn't allow for deletions, burning a token essentially 'deletes' the token from being used, but not from history.",
+          "analogies": [
+            {
+              "name": "Oil Barrels",
+              "description": "If you mint a new token for each barrel of oil created, you may transfer ownership several times until the barrel is refined. The refining process should burn the barrel of oil to remove it from circulation."
+            },
+            {
+              "name": "Redeem",
+              "description": "A token that is a coupon or single use ticket, should be burned when it is redeemed."
+            }
+          ]
+        },
+        "influencedBySymbols": [
+          {
+            "description": "Delegable or not, will determine if the BurnFrom Control will be available in the implementation.",
+            "symbol": {
+              "id": "a3d02076-6009-4a65-9ed4-2deffe5291e1",
+              "type": "BEHAVIOR",
+              "visual": "<i>g</i>",
+              "tooling": "g",
+              "version": "1.0"
+            }
+          }
+        ],
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "burnable.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "burnable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Open Zeppelin",
+              "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20Burnable.sol"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "f063dcaa-49f9-4c49-bf0f-2766301e1033",
+              "name": "Burn",
+              "description": "A request to burn a token instance(s) in the class by the owner of the token instance(s).  Optional Quantity field in the request.",
+              "request": {
+                "controlMessageName": "BurnRequest",
+                "description": "The request to Burn or Retire tokens.",
+                "inputParameters": [
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "BurnResponse",
+                "description": "The response from the request to burn.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "49b53152-3360-426f-9e0a-24a0b4e7c881",
+              "name": "BurnFrom",
+              "description": "Requires Delegable. A request to burn token instance(s) in the class by a party or account that has allowance to do so.  Requires a From and Quantity fields in the request.",
+              "request": {
+                "controlMessageName": "BurnRequest",
+                "description": "The request to Burn or Retire tokens.",
+                "inputParameters": [
+                  {
+                    "name": "Quantity",
+                    "valueDescription": "The number of tokens to burn, might not apply to the implementation."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "BurnResponse",
+                "description": "The response from the request to burn.",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "artifact": {
+        "artifactSymbol": {
+          "id": "dc8d5961-59e8-4a10-8b38-d9e99394d251",
+          "type": "BEHAVIOR",
+          "visual": "<i>e</i>",
+          "tooling": "e",
+          "version": "1.0"
+        },
+        "name": "Encumberable",
+        "aliases": [
+          "Restricted",
+          "Supervised"
+        ],
+        "artifactDefinition": {
+          "businessDescription": "A token class that implements this behavior will have restrictions preventing certain behaviors like transferable, burnable, etc. from working while it is encumbered. The encumbering party should make a request to encumber, the owner should be notified about the request, and accept the request, which will finalize the encumbrance and send the EncumberResponse message to the requestor.",
+          "businessExample": "For example, a property title's owner may have obtained a loan from a bank to purchase the property. The loan represents a contract between the owner of the property and the bank, this loan encumbers the property title preventing the owner from being able to sell the property, transferable, to another party until the loan is paid off. Paying off the loan will remove the encumber, which will allow transferable to be invoked.",
+          "analogies": [
+            {
+              "name": "Loan",
+              "description": "A token can represent an asset that the owner took out a loan to obtain. If so, the token will need to be encumbered by the loan contract preventing the owner from selling the asset until the loan is repaid."
+            }
+          ],
+          "comments": "The token definition should have a Encumbered property or structure that may allow only one encumber or allow multiple."
+        },
+        "artifactFiles": [
+          {
+            "content": "CONTROL",
+            "fileName": "encumberable.proto"
+          },
+          {
+            "content": "UML",
+            "fileName": "encumberable.md"
+          },
+          {
+            "content": "OTHER",
+            "fileName": ".DS_Store"
+          }
+        ],
+        "maps": {
+          "codeReferences": [
+            {
+              "name": "Code 1",
+              "platform": "DAML"
+            }
+          ],
+          "implementationReferences": [
+            {
+              "mappingType": "IMPLEMENTATION",
+              "name": "Implementation 1",
+              "platform": "CHAINCODE_GO"
+            }
+          ],
+          "resources": [
+            {
+              "mappingType": "RESOURCE",
+              "name": "Regulation Reference 1"
+            }
+          ]
+        }
+      },
+      "isExternal": true,
+      "invocations": [
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "bdc69e47-8320-4f54-8a03-0f54c376e113",
+              "name": "EncumberRequest",
+              "description": "A Request by a party or account, perhaps a contract or another token, to encumber the token.",
+              "request": {
+                "controlMessageName": "EncumberRequest",
+                "description": "The request",
+                "inputParameters": [
+                  {
+                    "name": "Name of Encumber",
+                    "valueDescription": "Name of the institution requesting the encumber."
+                  },
+                  {
+                    "name": "Identifier",
+                    "valueDescription": "A public key or address for the requestor."
+                  },
+                  {
+                    "name": "Signature",
+                    "valueDescription": "A digital signature or attestation, optional."
+                  }
+                ]
+              },
+              "response": {
+                "controlMessageName": "EncumberResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation response from the token for the encumber request."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "efd8bb57-4904-481e-976d-8a20a33df602",
+              "name": "AcceptEncumberRequest",
+              "description": "A Request by a party or account, perhaps a contract or another token, to encumber the token.  Once accepted, the token should add a new entry into the Encumbrances property.",
+              "request": {
+                "controlMessageName": "AcceptEncumberRequest",
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "AcceptEncumberResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation response returned to the owner of their acceptance."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "invocationStep": {
+            "invocation": {
+              "id": "4532c466-bb6d-482a-b2cc-5285ba1f8259",
+              "name": "RemoveEncumberRequest",
+              "description": "A Request by encumbrancer, perhaps a contract or another token, to remove their encumber or lien from the token.  Which should remove any restrictions from behaviors if there are no more encumbers.  Only the owner of the encumber can remove their encumber.",
+              "request": {
+                "controlMessageName": "RemoveEncumberRequest",
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "RemoveEncumberResponse",
+                "description": "The response",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "A confirmation receipt or denial be returned to the RemoveEncumber requestor."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "Encumbrances",
+          "valueDescription": "List of Encumbered",
+          "propertyInvocations": [
+            {
+              "id": "9e39bf6a-74dc-4ca1-a709-5db247aaa31b",
+              "name": "GetEncumbrancesRequest",
+              "description": "The property value.",
+              "request": {
+                "controlMessageName": "GetEncumbrancesRequest"
+              },
+              "response": {
+                "controlMessageName": "GetEncumbrancesResponse",
+                "description": "Return value",
+                "outputParameters": [
+                  {
+                    "name": "Encumbrances",
+                    "valueDescription": "List of Encumbered"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Encumbered",
+          "valueDescription": "True or False",
+          "propertyInvocations": [
+            {
+              "id": "f35cdfee-d2f4-4a01-bf9b-33774b5df241",
+              "name": "GetEncumberedRequest",
+              "description": "The property value.",
+              "request": {
+                "controlMessageName": "GetEncumberedRequest"
+              },
+              "response": {
+                "controlMessageName": "GetEncumberedResponse",
+                "description": "Return value",
+                "outputParameters": [
+                  {
+                    "name": "Encumbered",
+                    "valueDescription": "True or False"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
