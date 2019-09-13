@@ -242,6 +242,28 @@ namespace TTI.TTF.Taxonomy
         private static Table BuildReferenceTable(IEnumerable<MapResourceReference> resources)
         {
             var referenceMapTable =new Table();
+            var tr1 = new TableRow();
+            var contentType1 = new TableCell();
+            var name1 = new TableCell();
+            var platform1 = new TableCell();
+            var link1 = new TableCell();
+
+            contentType1.Append(new Paragraph(new Run(new Text("Map Type"))));
+            contentType1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            name1.Append(new Paragraph(new Run(new Text("Name"))));
+            name1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            platform1.Append(new Paragraph(new Run(new Text("Location"))));
+            platform1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "20" }));
+            link1.Append(new Paragraph(new Run(new Text("Description"))));
+            link1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "50" }));
+            tr1.Append(contentType1);
+            tr1.Append(name1);
+            tr1.Append(platform1);
+            tr1.Append(link1);
             foreach (var im in resources)
             {
                 var tr = new TableRow();
@@ -260,13 +282,35 @@ namespace TTI.TTF.Taxonomy
                 tr.Append(description);
                 referenceMapTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", referenceMapTable);
             return referenceMapTable;
         }
 
         private static Table BuildImplementationTable(IEnumerable<MapReference> references)
         {
             var implementationMapTable = new Table();
+            var tr1 = new TableRow();
+            var contentType1 = new TableCell();
+            var name1 = new TableCell();
+            var platform1 = new TableCell();
+            var link1 = new TableCell();
+
+            contentType1.Append(new Paragraph(new Run(new Text("Map Type"))));
+            contentType1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            name1.Append(new Paragraph(new Run(new Text("Name"))));
+            name1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            platform1.Append(new Paragraph(new Run(new Text("Platform"))));
+            platform1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            link1.Append(new Paragraph(new Run(new Text("Location"))));
+            link1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "55" }));
+            tr1.Append(contentType1);
+            tr1.Append(name1);
+            tr1.Append(platform1);
+            tr1.Append(link1);
             foreach (var im in references)
             {
                 var tr = new TableRow();
@@ -285,13 +329,37 @@ namespace TTI.TTF.Taxonomy
                 tr.Append(link);
                 implementationMapTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", implementationMapTable);
             return implementationMapTable;
         }
 
         private static Table BuildCodeTable(IEnumerable<MapReference> references)
         {
             var codeMapTable =new Table();
+
+            var trH = new TableRow();
+            var contentTypeH = new TableCell();
+            var nameH = new TableCell();
+            var platformH = new TableCell();
+            var linkH = new TableCell();
+
+            contentTypeH.Append(new Paragraph(new Run(new Text("Map Type"))));
+            contentTypeH.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            nameH.Append(new Paragraph(new Run(new Text("Name"))));
+            nameH.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            platformH.Append(new Paragraph(new Run(new Text("Platform"))));
+            platformH.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            linkH.Append(new Paragraph(new Run(new Text("Location"))));
+            linkH.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "55" }));
+            trH.Append(contentTypeH);
+            trH.Append(nameH);
+            trH.Append(platformH);
+            trH.Append(linkH);
+            codeMapTable.Append(trH);
             foreach (var c in references)
             {
                 var tr = new TableRow();
@@ -310,13 +378,31 @@ namespace TTI.TTF.Taxonomy
                 tr.Append(link);
                 codeMapTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", codeMapTable);
             return codeMapTable;
         }
 
         private static Table BuildFilesTable(IEnumerable<ArtifactFile> files)
         {
             var filesTable =new Table();
+            var tr1 = new TableRow();
+            var contentType1 = new TableCell();
+            var fileName1 = new TableCell();
+            var content1 = new TableCell();
+
+            contentType1.Append(new Paragraph(new Run(new Text("Content Type"))));
+            contentType1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+            fileName1.Append(new Paragraph(new Run(new Text("File Name"))));
+            fileName1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "25" }));
+            content1.Append(new Paragraph(new Run(new Text("File Content"))));
+            content1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "65" }));
+            tr1.Append(contentType1);
+            tr1.Append(fileName1);
+            tr1.Append(content1);
+            filesTable.Append(tr1);
             foreach (var f in files)
             {
                 var tr = new TableRow();
@@ -324,22 +410,41 @@ namespace TTI.TTF.Taxonomy
                 var fileName = new TableCell();
                 var content = new TableCell();
 
+                var data = f.FileData == null ? "pending" : f.FileData.ToStringUtf8();
                 contentType.Append(new Paragraph(new Run(new Text(f.Content.ToString()))));
                 fileName.Append(new Paragraph(new Run(new Text(f.FileName))));
-                content.Append(new Paragraph(new Run(new Text(f.FileData.ToStringUtf8()))));
+                content.Append(new Paragraph(new Run(new Text(data))));
                 tr.Append(contentType);
                 tr.Append(fileName);
                 tr.Append(content);
                 filesTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", filesTable);
             return filesTable;
         }
 
         private static Table BuildInfluencesTable(IEnumerable<SymbolInfluence> influences)
         {
-            //influences table should be the 6th table
             var influenceTable = new Table();
+            var tr1 = new TableRow();
+            var name1 = new TableCell();
+            var symbol1 = new TableCell();
+            var description1 = new TableCell();
+
+           
+            symbol1.Append(new Paragraph(new Run(new Text("Symbol"))));
+            symbol1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+            name1.Append(new Paragraph(new Run(new Text("Description"))));
+            name1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "75" }));
+            description1.Append(new Paragraph(new Run(new Text("Applies To"))));
+            description1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+            tr1.Append(name1);
+            tr1.Append(symbol1);
+            tr1.Append(description1);
+            influenceTable.Append(tr1);
             foreach (var i in influences)
             {
                 var tr = new TableRow();
@@ -347,21 +452,39 @@ namespace TTI.TTF.Taxonomy
                 var symbol = new TableCell();
                 var description = new TableCell();
 
-                name.Append(new Paragraph(new Run(new Text(i.Description))));
                 symbol.Append(new Paragraph(new Run(new Text(i.Symbol.Tooling))));
+                name.Append(new Paragraph(new Run(new Text(i.Description))));
                 description.Append(new Paragraph(new Run(new Text(i.AppliesTo.ToString()))));
                 tr.Append(name);
                 tr.Append(symbol);
                 tr.Append(description);
                 influenceTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", influenceTable);
             return influenceTable;
         }
 
         private static Table BuildIncompatibleTable(IEnumerable<ArtifactSymbol> incompatibles)
         {
             var incompatibleTable = new Table();
+            var tr1 = new TableRow();
+            var name1 = new TableCell();
+            var symbol1 = new TableCell();
+            var description1 = new TableCell();
+
+            name1.Append(new Paragraph(new Run(new Text("Artifact Type"))));
+            name1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "45" }));
+            symbol1.Append(new Paragraph(new Run(new Text("Symbol"))));
+            symbol1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+            description1.Append(new Paragraph(new Run(new Text("Id"))));
+            description1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "45" }));
+            tr1.Append(name1);
+            tr1.Append(symbol1);
+            tr1.Append(description1);
+            incompatibleTable.Append(tr1);
             foreach (var i in incompatibles)
             {
                 var tr = new TableRow();
@@ -377,7 +500,7 @@ namespace TTI.TTF.Taxonomy
                 tr.Append(description);
                 incompatibleTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", incompatibleTable);
             return incompatibleTable;
         }
 
@@ -385,6 +508,24 @@ namespace TTI.TTF.Taxonomy
         {
             //dependencies table should be the 4th table
             var dependencyTable = new Table();
+            var tr1 = new TableRow();
+            var name1 = new TableCell();
+            var symbol1 = new TableCell();
+            var description1 = new TableCell();
+
+            name1.Append(new Paragraph(new Run(new Text("Artifact Type"))));
+            name1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "35" }));
+            symbol1.Append(new Paragraph(new Run(new Text("Symbol"))));
+            symbol1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+            description1.Append(new Paragraph(new Run(new Text("Description"))));
+            description1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "55" }));
+            tr1.Append(name1);
+            tr1.Append(symbol1);
+            tr1.Append(description1);
+            dependencyTable.Append(tr1);
             foreach (var d in dependencies)
             {
                 var tr = new TableRow();
@@ -400,13 +541,26 @@ namespace TTI.TTF.Taxonomy
                 tr.Append(description);
                 dependencyTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", dependencyTable);
             return dependencyTable;
         }
 
         public static Table BuildAnalogies(IEnumerable<ArtifactAnalogy> analogies)
         {
             var analogyTable = new Table();
+            var tr1 = new TableRow();
+            var name1 = new TableCell();
+            var description1 = new TableCell();
+
+            name1.Append(new Paragraph(new Run(new Text("Name"))));
+            name1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "25" }));
+            description1.Append(new Paragraph(new Run(new Text("Description"))));
+            description1.Append(new TableCellProperties(
+                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "75" }));
+            tr1.Append(name1);
+            tr1.Append(description1);
+            analogyTable.Append(tr1);
             foreach (var a in analogies)
             {
                 var tr = new TableRow();
@@ -419,7 +573,7 @@ namespace TTI.TTF.Taxonomy
                 tr.Append(description);
                 analogyTable.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", analogyTable);
             return analogyTable;
         }
         
@@ -517,7 +671,7 @@ namespace TTI.TTF.Taxonomy
 
                 table.Append(tr);
             }
-
+            ApplyStyleTable("GridTable4-Accent1", "GridTable4-Accent1", table);
             _document.MainDocumentPart.Document.Body.Append(table);
         }
 
@@ -642,9 +796,9 @@ namespace TTI.TTF.Taxonomy
             var paragraph1 = new Paragraph();
 
             var paragraphProperties1 = new ParagraphProperties();
-            var paragraphstyleId1 = new ParagraphStyleId { Val = "Footer" };
+            var paragraphStyleId1 = new ParagraphStyleId { Val = "Footer" };
 
-            paragraphProperties1.Append(paragraphstyleId1);
+            paragraphProperties1.Append(paragraphStyleId1);
 
             var run1 = new Run();
             var text1 = new Text { Text = name };
@@ -737,6 +891,46 @@ namespace TTI.TTF.Taxonomy
             }
         }
 
+        public static void ApplyStyleTable(string styleId, string styleName, Table t)
+        {
+            // If the paragraph has no ParagraphProperties object, create one.
+            if (!t.Elements<TableProperties>().Any())
+            {
+                t.PrependChild(new TableProperties());
+            }
+
+            
+            // Get the paragraph properties element of the paragraph.
+            var tTr = t.Elements<TableProperties>().First();
+
+            // Get the Styles part for this document.
+            var part =
+                _document.MainDocumentPart.StyleDefinitionsPart;
+
+            // If the Styles part does not exist, add it and then add the style.
+            if (part != null)
+            {
+                // If the style is not in the document, add it.
+                // If the style is not in the document, add it.
+                if (IsStyleIdInDocument(styleId, StyleValues.Table) != true)
+                {
+                    // No match on styleId, so let's try style name.
+                    var fromStyleName = GetStyleIdFromStyleName(styleName, StyleValues.Table);
+                    if (fromStyleName != null)
+                    {
+                        tTr.TableStyle = new TableStyle {Val = fromStyleName};
+                        return;
+
+                    }
+                }
+
+            }
+
+            // Set the style of the paragraph.
+            tTr.TableStyle = new TableStyle { Val = styleId };
+
+        }
+
         public static void ApplyStyleToParagraph(string styleId, string styleName, Paragraph p, JustificationValues justification = JustificationValues.Left)
         {
             // If the paragraph has no ParagraphProperties object, create one.
@@ -773,7 +967,7 @@ namespace TTI.TTF.Taxonomy
             pPr.ParagraphStyleId = new ParagraphStyleId() { Val = styleId };
         }
 
-        public static bool IsStyleIdInDocument(string styleId)
+        public static bool IsStyleIdInDocument(string styleId, StyleValues styleValues = StyleValues.Paragraph)
         {
             // Get access to the Styles element for this document.
             var s = _document.MainDocumentPart.StyleDefinitionsPart.Styles;
@@ -786,22 +980,23 @@ namespace TTI.TTF.Taxonomy
             // Look for a match on styleId.
             var style = s
                 .Elements<Style>()
-                .FirstOrDefault(st => (st.StyleId == styleId) && (st.Type == StyleValues.Paragraph));
+                .FirstOrDefault(st => (st.StyleId == styleId) && (st.Type == styleValues));
             return style != null;
         }
 
 
         // Return styleId that matches the styleName, or null when there's no match.
-        public static string GetStyleIdFromStyleName(string styleName)
+        public static string GetStyleIdFromStyleName(string styleName, StyleValues styleValues = StyleValues.Paragraph)
         {
             var stylePart = _document.MainDocumentPart.StyleDefinitionsPart;
             string styleId = stylePart.Styles.Descendants<StyleName>()
                 .Where(s => s.Val.Value.Equals(styleName) &&
-                            (((Style)s.Parent).Type == StyleValues.Paragraph))
+                            ((Style)s.Parent).Type == styleValues)
                 .Select(n => ((Style)n.Parent).StyleId).FirstOrDefault();
             return styleId;
         }
 
+        
         //https://docs.microsoft.com/en-us/office/open-xml/how-to-replace-the-styles-parts-in-a-word-processing-document
         public static void ReplaceStylesPart(XDocument newStyles,
             bool setStylesWithEffectsPart = false)
