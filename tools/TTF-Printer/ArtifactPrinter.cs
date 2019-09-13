@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection.Emit;
+using System.Xml;
+using System.Xml.Linq;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Validation;
@@ -11,7 +12,6 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using Google.Protobuf.WellKnownTypes;
 using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
-using StringValue = DocumentFormat.OpenXml.StringValue;
 using Style = DocumentFormat.OpenXml.Wordprocessing.Style;
 using V = DocumentFormat.OpenXml.Vml;
 
@@ -21,7 +21,7 @@ namespace TTI.TTF.Taxonomy
     {
         private static WordprocessingDocument _document;
 
-        public static void PrintArtifact(string fileName, string waterMark, ArtifactType artifactType, Any artifactToPrint)
+        public static void PrintArtifact(string fileName, string waterMark, string styleSource, ArtifactType artifactType, Any artifactToPrint)
         {
             _document = WordprocessingDocument.Create(fileName, WordprocessingDocumentType.Document);
 
@@ -30,8 +30,10 @@ namespace TTI.TTF.Taxonomy
 
             mainPart.Document = new Document();
             // Get the Styles part for this document.
-            AddStyles();
-     
+            AddStylesPartToPackage();
+            var styles = ExtractStylesPart(styleSource);
+            ReplaceStylesPart(styles);
+
             Save();
 
             dynamic artifact;
@@ -96,49 +98,6 @@ namespace TTI.TTF.Taxonomy
             _document.Close();
         }
 
-        private static void AddStyles()
-        {
-            // Heading 1
-            var styleRunPropertiesH1 = new StyleRunProperties();
-            var color1 = new Color() { Val = "2F5496" };
-            // Specify a 16 point size. 16x2 because it’s half-point size
-            var fontSizeH1 = new FontSize {Val = new StringValue("32")};
-
-            styleRunPropertiesH1.Append(color1);
-            styleRunPropertiesH1.Append(fontSizeH1);
-            AddStyleToDoc(_document.MainDocumentPart, "heading1", "heading 1", styleRunPropertiesH1);
-
-            // Heading 2
-            var styleRunPropertiesH2 = new StyleRunProperties();
-            var color2 = new Color() { Val = "2F5496" };
-            // Specify a 13 point size. 16x2 because it’s half-point size
-            var fontSizeH2 = new FontSize {Val = new StringValue("26")};
-
-            styleRunPropertiesH2.Append(color2);
-            styleRunPropertiesH2.Append(fontSizeH2);
-            AddStyleToDoc(_document.MainDocumentPart, "heading2", "heading 2", styleRunPropertiesH2);
-
-
-            // Normal
-            var styleRunPropertiesNormal = new StyleRunProperties();
-            
-            // Specify a 13 point size. 16x2 because it’s half-point size
-            var fontSizeNormal = new FontSize { Val = new StringValue("13") };
-
-            styleRunPropertiesNormal.Append(fontSizeNormal);
-            AddStyleToDoc(_document.MainDocumentPart, "normal", "normal", styleRunPropertiesNormal);
-
-            // Emphasis
-            var styleRunPropertiesEmphasis = new StyleRunProperties();
-            var colorE = new Color() { Val = "2F5496" };
-            // Specify a 13 point size. 16x2 because it’s half-point size
-            var fontSizeEmphasis = new FontSize { Val = new StringValue("16") };
-
-            styleRunPropertiesEmphasis.Append(colorE);
-            styleRunPropertiesEmphasis.Append(fontSizeEmphasis);
-            AddStyleToDoc(_document.MainDocumentPart, "emphasis", "emphasis", styleRunPropertiesEmphasis);
-
-        }
 
         private static void Save()
         {
@@ -148,48 +107,18 @@ namespace TTI.TTF.Taxonomy
         #region artifact
         public static void AddArtifactContent(Artifact artifact)
         {
-
-            var ppH1 = new ParagraphProperties
-            {
-                ParagraphStyleId = new ParagraphStyleId() { Val = "heading1" },
-                SpacingBetweenLines = new SpacingBetweenLines() { After = "0" },
-                Justification = new Justification { Val = JustificationValues.Center }
-            };
-
-            var ppH2 = new ParagraphProperties
-            {
-                ParagraphStyleId = new ParagraphStyleId() { Val = "heading2" },
-                SpacingBetweenLines = new SpacingBetweenLines() { After = "0" },
-                Justification = new Justification { Val = JustificationValues.Left }
-            };
-
-            var ppNormal = new ParagraphProperties
-            {
-                ParagraphStyleId = new ParagraphStyleId() { Val = "normal" },
-                SpacingBetweenLines = new SpacingBetweenLines() { After = "0" },
-                Justification = new Justification { Val = JustificationValues.Left }
-            };
-
-            var ppEmphasis = new ParagraphProperties
-            {
-                ParagraphStyleId = new ParagraphStyleId() { Val = "emphasis" },
-                SpacingBetweenLines = new SpacingBetweenLines() { After = "0" },
-                Justification = new Justification { Val = JustificationValues.Both }
-            };
-
             var body = _document.MainDocumentPart.Document.AppendChild(new Body());
 
             var para = body.AppendChild(new Paragraph());
             var run = para.AppendChild(new Run());
             run.AppendChild(new Text(artifact.Name) { Space = SpaceProcessingModeValues.Preserve });
-
-            para.Append(ppH1);
- 
-
+            ApplyStyleToParagraph("Title", "Title", para, JustificationValues.Center);
+            
+            
             var basicProps = new[,]
             {
-                {"Id:", artifact.ArtifactSymbol.Id},
                 {"Type:", artifact.ArtifactSymbol.Type.ToString()},
+                {"Id:", artifact.ArtifactSymbol.Id},
                 {"Visual:", artifact.ArtifactSymbol.Visual},
                 {"Tooling:", artifact.ArtifactSymbol.Tooling},
                 {"Version:", artifact.ArtifactSymbol.Version}
@@ -199,112 +128,113 @@ namespace TTI.TTF.Taxonomy
             var aDef = body.AppendChild(new Paragraph());
             var adRun = aDef.AppendChild(new Run());
             adRun.AppendChild(new Text("Definition"));
-            aDef.Append(ppH2);
+            ApplyStyleToParagraph("Heading1", "Heading1", aDef);
+            
 
             var bizBody = body.AppendChild(new Paragraph());
             var bRun = bizBody.AppendChild(new Run());
             bRun.AppendChild(new Text(artifact.ArtifactDefinition.BusinessDescription));
-            bizBody.Append(ppEmphasis);
+            ApplyStyleToParagraph("Strong Emphasis", "Strong Emphasis", bizBody);
 
             var eDef = body.AppendChild(new Paragraph());
             var eRun = eDef.AppendChild(new Run());
             eRun.AppendChild(new Text("Example"));
-            eDef.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", eDef);
 
             var exBody = body.AppendChild(new Paragraph());
             var exRun = exBody.AppendChild(new Run());
             exRun.AppendChild(new Text(artifact.ArtifactDefinition.BusinessExample));
-            exBody.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", exBody);
 
             var aPara = body.AppendChild(new Paragraph());
             var aRun = aPara.AppendChild(new Run());
             aRun.AppendChild(new Text("Analogies"));
-            aPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", aPara);
 
             var arPara = body.AppendChild(new Paragraph());
             var arRun = arPara.AppendChild(new Run());
             arRun.AppendChild(BuildAnalogies(artifact.ArtifactDefinition.Analogies));
-            arPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", arPara);
 
             var coPara = body.AppendChild(new Paragraph());
             var coRun = coPara.AppendChild(new Run());
             coRun.AppendChild(new Text("Comments"));
-            coPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", coPara);
 
             var cmBody = body.AppendChild(new Paragraph());
             var cmRun = cmBody.AppendChild(new Run());
             cmRun.AppendChild(new Text(artifact.ArtifactDefinition.Comments));
-            cmBody.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", cmBody);
 
             var dPara = body.AppendChild(new Paragraph());
             var dRun = dPara.AppendChild(new Run());
             dRun.AppendChild(new Text("Dependencies"));
-            dPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", dPara);
 
             var ddPara = body.AppendChild(new Paragraph());
             var ddRun = ddPara.AppendChild(new Run());
             ddRun.AppendChild(BuildDependencyTable(artifact.Dependencies));
-            ddPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", ddPara);
 
             var iPara = body.AppendChild(new Paragraph());
             var iRun = iPara.AppendChild(new Run());
             iRun.AppendChild(new Text("Incompatible With"));
-            iPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", iPara);
 
             var iiPara = body.AppendChild(new Paragraph());
             var iiRun = iiPara.AppendChild(new Run());
             iiRun.AppendChild(BuildIncompatibleTable(artifact.IncompatibleWithSymbols));
-            iiPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", iiPara);
 
             var fPara = body.AppendChild(new Paragraph());
             var fRun = fPara.AppendChild(new Run());
             fRun.AppendChild(new Text("Influenced By"));
-            fPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", fPara);
 
             var ffPara = body.AppendChild(new Paragraph());
             var ffRun = ffPara.AppendChild(new Run());
             ffRun.AppendChild(BuildInfluencesTable(artifact.InfluencedBySymbols));
-            ffPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", ffPara);
 
             var fiPara = body.AppendChild(new Paragraph());
             var fiRun = fiPara.AppendChild(new Run());
             fiRun.AppendChild(new Text("Artifact Files"));
-            fiPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", fiPara);
 
             var ffiPara = body.AppendChild(new Paragraph());
             var ffiRun = ffiPara.AppendChild(new Run());
             ffiRun.AppendChild(BuildFilesTable(artifact.ArtifactFiles));
-            ffiPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", ffiPara);
 
             var cPara = body.AppendChild(new Paragraph());
             var cRun = cPara.AppendChild(new Run());
             cRun.AppendChild(new Text("Code Map"));
-            cPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", cPara);
 
-            var ccPara = body.AppendChild(new Paragraph(new ParagraphProperties(new ParagraphStyleId { Val = "Heading 2" })));
+            var ccPara = body.AppendChild(new Paragraph(new ParagraphProperties(new ParagraphStyleId { Val = "Heading2" })));
             var ccRun = ccPara.AppendChild(new Run());
             ccRun.AppendChild(BuildCodeTable(artifact.Maps.CodeReferences));
-            ccPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", ccPara);
 
             var pPara = body.AppendChild(new Paragraph());
             var pRun = pPara.AppendChild(new Run());
             pRun.AppendChild(new Text("Implementation Map"));
-            pPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", pPara);
 
             var ppPara = body.AppendChild(new Paragraph());
             var ppRun = ppPara.AppendChild(new Run());
             ppRun.AppendChild(BuildImplementationTable(artifact.Maps.ImplementationReferences));
-            ppPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", ppPara);
 
             var rPara = body.AppendChild(new Paragraph());
             var rRun = rPara.AppendChild(new Run());
             rRun.AppendChild(new Text("Resource Map"));
-            rPara.Append(ppH2);
+            ApplyStyleToParagraph("Heading2", "Heading2", rPara);
 
             var rrPara = body.AppendChild(new Paragraph());
             var rrRun = rrPara.AppendChild(new Run());
             rrRun.AppendChild(BuildReferenceTable(artifact.Maps.Resources));
-            rrPara.Append(ppNormal);
+            ApplyStyleToParagraph("Normal", "Normal", rrPara);
 
             Save();
         }
@@ -556,129 +486,8 @@ namespace TTI.TTF.Taxonomy
         #endregion
 
         #region formatting
-        // Apply a style to a paragraph.
-        public static void AddStyleToDoc(MainDocumentPart mainPart, string styleid, string stylename, StyleRunProperties styleRunProperties)
-        {
 
-            // Get the Styles part for this document.
-            var part =
-                mainPart.StyleDefinitionsPart;
-
-            // If the Styles part does not exist, add it and then add the style.
-            if (part == null)
-            {
-                part = AddStylesPartToPackage(mainPart);
-                AddNewStyle(part, styleid, stylename, styleRunProperties);
-            }
-            else
-            {
-                // If the style is not in the document, add it.
-                if (IsStyleIdInDocument(mainPart, styleid) != true)
-                {
-                    // No match on styleid, so let's try style name.
-                    var styleidFromName = GetStyleIdFromStyleName(stylename);
-                    if (styleidFromName == null)
-                    {
-                        AddNewStyle(part, styleid, stylename, styleRunProperties);
-                    }
-                    else
-                        styleid = styleidFromName;
-                }
-            }
-
-        }
-
-        // Add a StylesDefinitionsPart to the document.  Returns a reference to it.
-        public static StyleDefinitionsPart AddStylesPartToPackage(MainDocumentPart mainPart)
-        {
-            StyleDefinitionsPart part;
-            part = mainPart.AddNewPart<StyleDefinitionsPart>();
-            var root = new Styles();
-            root.Save(part);
-            return part;
-        }
-
-        public static bool IsStyleIdInDocument(MainDocumentPart mainPart, string styleid)
-        {
-            // Get access to the Styles element for this document.
-            var s = mainPart.StyleDefinitionsPart.Styles;
-
-            // Check that there are styles and how many.
-            var n = s.Elements<Style>().Count();
-            if (n == 0)
-                return false;
-
-            // Look for a match on styleid.
-            var style = s.Elements<Style>()
-                .Where(st => (st.StyleId == styleid) && (st.Type == StyleValues.Paragraph))
-                .FirstOrDefault();
-            if (style == null)
-                return false;
-
-            return true;
-        }
-
-        // Create a new style with the specified styleid and stylename and add it to the specified style definitions part.
-        private static void AddNewStyle(StyleDefinitionsPart styleDefinitionsPart, string styleId, string styleName, StyleRunProperties styleRunProperties)
-        {
-            // Get access to the root element of the styles part.
-            var styles = styleDefinitionsPart.Styles;
-
-            // Create a new paragraph style and specify some of the properties.
-            var style = new Style()
-            {
-                Type = StyleValues.Paragraph,
-                StyleId = styleId,
-                CustomStyle = true
-            };
-            style.Append(new StyleName() { Val = styleName });
-            style.Append(new BasedOn() { Val = "Normal" });
-            style.Append(new NextParagraphStyle() { Val = "Normal" });
-            style.Append(new UIPriority() { Val = 900 });
-
-            // Create the StyleRunProperties object and specify some of the run properties.
-
-
-            // Add the run properties to the style.
-            // --- Here we use the OuterXml. If you are using the same var twice, you will get an error. So to be sure just insert the xml and you will get through the error.
-            style.Append(styleRunProperties);
-
-            // Add the style to the styles part.
-            styles.Append(style);
-        }
-
-        public static bool IsStyleIdInDocument(string styleId)
-        {
-            // Get access to the Styles element for this document.
-            var s = _document.MainDocumentPart.StyleDefinitionsPart.Styles;
-
-            // Check that there are styles and how many.
-            var n = s.Elements<Style>().Count();
-            if (n == 0)
-                return false;
-
-            // Look for a match on styleid.
-            var style = s.Elements<Style>()
-                .Where(st => (st.StyleId == styleId) && (st.Type == StyleValues.Paragraph))
-                .FirstOrDefault();
-            if (style == null)
-                return false;
-
-            return true;
-        }
-
-        
-        public static string GetStyleIdFromStyleName(string styleName)
-        {
-            var stylePart = _document.MainDocumentPart.StyleDefinitionsPart;
-            string styleId = stylePart.Styles.Descendants<StyleName>()
-                .Where(s => s.Val.Value.Equals(styleName) &&
-                    (((Style)s.Parent).Type == StyleValues.Paragraph))
-                .Select(n => ((Style)n.Parent).StyleId).FirstOrDefault();
-            return styleId;
-        }
-
-
+       
         // Take the data from a two-dimensional array and build a table at the 
         // end of the supplied document.
         public static void AddTable(string[,] data)
@@ -833,9 +642,9 @@ namespace TTI.TTF.Taxonomy
             var paragraph1 = new Paragraph();
 
             var paragraphProperties1 = new ParagraphProperties();
-            var paragraphStyleId1 = new ParagraphStyleId { Val = "Footer" };
+            var paragraphstyleId1 = new ParagraphStyleId { Val = "Footer" };
 
-            paragraphProperties1.Append(paragraphStyleId1);
+            paragraphProperties1.Append(paragraphstyleId1);
 
             var run1 = new Run();
             var text1 = new Text { Text = name };
@@ -928,6 +737,142 @@ namespace TTI.TTF.Taxonomy
             }
         }
 
+        public static void ApplyStyleToParagraph(string styleId, string styleName, Paragraph p, JustificationValues justification = JustificationValues.Left)
+        {
+            // If the paragraph has no ParagraphProperties object, create one.
+            if (!p.Elements<ParagraphProperties>().Any())
+            {
+                p.PrependChild(new ParagraphProperties
+                {
+                    Justification = new Justification { Val = justification}
+                });
+            }
+
+            // Get the paragraph properties element of the paragraph.
+            var pPr = p.Elements<ParagraphProperties>().First();
+
+            // Get the Styles part for this document.
+            var part =
+                _document.MainDocumentPart.StyleDefinitionsPart;
+
+            // If the Styles part does not exist, add it and then add the style.
+            if (part != null)
+            {
+                // If the style is not in the document, add it.
+                if (IsStyleIdInDocument(styleId) != true)
+                {
+                    // No match on styleId, so let's try style name.
+                    var fromStyleName = GetStyleIdFromStyleName(styleName);
+                    if (fromStyleName != null)
+                    
+                        styleId = fromStyleName;
+                }
+            }
+
+            // Set the style of the paragraph.
+            pPr.ParagraphStyleId = new ParagraphStyleId() { Val = styleId };
+        }
+
+        public static bool IsStyleIdInDocument(string styleId)
+        {
+            // Get access to the Styles element for this document.
+            var s = _document.MainDocumentPart.StyleDefinitionsPart.Styles;
+
+            // Check that there are styles and how many.
+            var n = s.Elements<Style>().Count();
+            if (n == 0)
+                return false;
+
+            // Look for a match on styleId.
+            var style = s
+                .Elements<Style>()
+                .FirstOrDefault(st => (st.StyleId == styleId) && (st.Type == StyleValues.Paragraph));
+            return style != null;
+        }
+
+
+        // Return styleId that matches the styleName, or null when there's no match.
+        public static string GetStyleIdFromStyleName(string styleName)
+        {
+            var stylePart = _document.MainDocumentPart.StyleDefinitionsPart;
+            string styleId = stylePart.Styles.Descendants<StyleName>()
+                .Where(s => s.Val.Value.Equals(styleName) &&
+                            (((Style)s.Parent).Type == StyleValues.Paragraph))
+                .Select(n => ((Style)n.Parent).StyleId).FirstOrDefault();
+            return styleId;
+        }
+
+        //https://docs.microsoft.com/en-us/office/open-xml/how-to-replace-the-styles-parts-in-a-word-processing-document
+        public static void ReplaceStylesPart(XDocument newStyles,
+            bool setStylesWithEffectsPart = false)
+        {
+
+            // Get a reference to the main document part.
+            var docPart = _document.MainDocumentPart;
+
+            // Assign a reference to the appropriate part to the
+            // stylesPart variable.
+            StylesPart stylesPart = null;
+            if (setStylesWithEffectsPart)
+                stylesPart = docPart.StylesWithEffectsPart;
+            else
+                stylesPart = docPart.StyleDefinitionsPart;
+
+            // If the part exists, populate it with the new styles.
+            if (stylesPart != null)
+            {
+                newStyles.Save(new StreamWriter(stylesPart.GetStream(
+                    FileMode.Create, FileAccess.Write)));
+            }
+
+        }
+
+        public static StyleDefinitionsPart AddStylesPartToPackage()
+        {
+            var part = _document.MainDocumentPart.AddNewPart<StyleDefinitionsPart>();
+            var root = new Styles();
+            root.Save(part);
+            return part;
+        }
+
+        // Extract the styles or stylesWithEffects part from a 
+        // word processing document as an XDocument instance.
+        public static XDocument ExtractStylesPart(
+          string fileName,
+          bool getStylesWithEffectsPart = false)
+        {
+            // Declare a variable to hold the XDocument.
+            XDocument styles = null;
+
+            // Open the document for read access and get a reference.
+            using (var document =
+                WordprocessingDocument.Open(fileName, false))
+            {
+                // Get a reference to the main document part.
+                var docPart = document.MainDocumentPart;
+
+                // Assign a reference to the appropriate part to the
+                // stylesPart variable.
+                StylesPart stylesPart = null;
+                if (getStylesWithEffectsPart)
+                    stylesPart = docPart.StylesWithEffectsPart;
+                else
+                    stylesPart = docPart.StyleDefinitionsPart;
+
+                // If the part exists, read it into the XDocument.
+                if (stylesPart != null)
+                {
+                    using (var reader = XmlNodeReader.Create(
+                      stylesPart.GetStream(FileMode.Open, FileAccess.Read)))
+                    {
+                        // Create the XDocument.
+                        styles = XDocument.Load(reader);
+                    }
+                }
+            }
+            // Return the XDocument instance.
+            return styles;
+        }
         #endregion
     }
 }

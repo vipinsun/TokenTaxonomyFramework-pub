@@ -113,6 +113,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="templates\savon.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Protobuf Include="**/*.proto" OutputDir="%(RelativePath)" CompileOutputs="false" />
   </ItemGroup>
   <ItemGroup />

@@ -20,11 +20,14 @@ namespace TTI.TTF.Taxonomy
             var waterMark = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
                             @"\images\TTF.jpg";
 
+            var styleSource = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
+                            @"\templates\savon.docx";
+
 
             var filePath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
                            @"\artifact.docx";
 
-            ArtifactPrinter.PrintArtifact(filePath, waterMark, ArtifactType.Base, Any.Pack(artifact));
+            ArtifactPrinter.PrintArtifact(filePath, waterMark, styleSource, ArtifactType.Base, Any.Pack(artifact));
             Console.WriteLine("Press Any Key");
             Console.ReadLine();
         }

@@ -15,7 +15,7 @@
       "Balance Money"
     ],
     "artifactDefinition": {
-      "businessDescription": "Fractional Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token that is sub-dividable.",
+      "businessDescription": "Fractional Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto currency is an example of a fungible token that is sub-dividable.",
       "businessExample": "Fiat currency is the most widely understood example of a fractional fungible item. A fractional fungible is sub-dividable, so you can 'make change'.",
       "analogies": [
         {
