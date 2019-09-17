@@ -9,7 +9,7 @@
 - From your cloned copy of the repo.
 
 ```bash
-cd tools/TaxonomyHost
+cd tools/TaxonomyService
 ./docker-build.sh
  ```
 
