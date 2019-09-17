@@ -6,22 +6,22 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class PropertySetPrinter
+    internal static class PropertySetPrinter
     {
-        private static readonly ILog _log;
+        private static readonly ILog Log;
         static PropertySetPrinter()
         {
             #region logging
 
             Utils.InitLog();
-            _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
             #endregion
         }
 
         public static void AddPropertySetProperties(WordprocessingDocument document, PropertySet ps)
         {
-            _log.Info("Printing Property Set Properties: " + ps.Artifact.Name);
+            Log.Info("Printing Property Set Properties: " + ps.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
             var aDef = body.AppendChild(new Paragraph());

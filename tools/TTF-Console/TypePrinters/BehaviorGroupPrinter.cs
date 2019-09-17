@@ -6,30 +6,34 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class PropertySetPrinter
+    internal static class BehaviorGroupPrinter
     {
-        private static readonly ILog _log;
-        static PropertySetPrinter()
+        private static readonly ILog Log;
+        static BehaviorGroupPrinter()
         {
             #region logging
 
             Utils.InitLog();
-            _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
             #endregion
         }
 
-        public static void AddPropertySetProperties(WordprocessingDocument document, PropertySet ps)
+        public static void AddBehaviorGroupProperties(WordprocessingDocument document, BehaviorGroup bg)
         {
-            _log.Info("Printing Property Set Properties: " + ps.Artifact.Name);
+            Log.Info("Printing Behavior Grop Properties: " + bg.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
             var aDef = body.AppendChild(new Paragraph());
             var adRun = aDef.AppendChild(new Run());
-            adRun.AppendChild(new Text("Property Set"));
+            adRun.AppendChild(new Text("Behavior Group Details"));
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
 
-            CommonPrinter.BuildPropertiesTable(document, ps.Properties);
+            foreach (var br in bg.Behaviors)
+            {
+                BehaviorPrinter.AddBehaviorReferenceProperties(document, br);
+            }
+
         }
     }
 }

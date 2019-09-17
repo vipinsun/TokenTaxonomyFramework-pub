@@ -142,6 +142,16 @@ namespace TTI.TTF.Taxonomy
                                 }
                                 break;
                             case ArtifactType.PropertySet:
+                                var propertySet = TaxonomyClient.GetPropertySetArtifact(new ArtifactSymbol
+                                {
+                                    Id = id
+                                });
+
+                                if (propertySet != null)
+                                {
+                                    PrintController.PrintPropertySet(filePath, waterMark, styleSource, propertySet);
+                                    return;
+                                }
                                 break;
                             case ArtifactType.TemplateFormula:
                                 break;

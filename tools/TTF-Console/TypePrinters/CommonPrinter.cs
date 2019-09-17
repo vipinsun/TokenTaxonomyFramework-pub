@@ -9,22 +9,22 @@ using System;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class CommonPrinter
+    internal static class CommonPrinter
     {
-        private static readonly ILog _log;
+        private static readonly ILog Log;
         static CommonPrinter()
         {
             #region logging
 
             Utils.InitLog();
-            _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+            Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
             #endregion
         }
 
         public static void BuildInvocationsTable(WordprocessingDocument document, IEnumerable<Invocation> invocations)
         {
-            _log.Info("Printing InvocationsTable");
+            Log.Info("Printing InvocationsTable");
             var body = document.MainDocumentPart.Document.Body;
 
             var invokes = body.AppendChild(new Paragraph());
@@ -105,7 +105,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
         public static void BuildInvocationTable(WordprocessingDocument document, Invocation invocation)
         {
-            _log.Info("Printing InvocationTable");
+            Log.Info("Printing InvocationTable");
             var body = document.MainDocumentPart.Document.Body;
 
             var invokes = body.AppendChild(new Paragraph());
@@ -178,7 +178,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
         internal static void BuildInfluenceBindings(WordprocessingDocument document, IEnumerable<InfluenceBinding> influenceBindings)
         {
-            _log.Info("Printing InvocationsTable");
+            Log.Info("Printing InvocationsTable");
             var body = document.MainDocumentPart.Document.Body;
 
             var invokes = body.AppendChild(new Paragraph());
@@ -228,7 +228,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
         internal static void BuildPropertiesTable(WordprocessingDocument document, RepeatedField<Property> properties)
         {
-            _log.Info("Printing InvocationsTable");
+            Log.Info("Printing InvocationsTable");
             var body = document.MainDocumentPart.Document.Body;
             var propertPara = body.AppendChild(new Paragraph());
             var ivRun = propertPara.AppendChild(new Run());

@@ -153,12 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="json\Document-Token-Spec.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="json\fractional-fungible.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="templates\savon.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

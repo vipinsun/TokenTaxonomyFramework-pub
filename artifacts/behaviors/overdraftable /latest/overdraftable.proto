@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package overdraftable ;
+package overdraftable;
 
 import "tokens.proto";
 import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 
-option csharp_namespace = "TTI.TTF.Behaviors.Overdraftable ";
-option java_package = "org.tti.ttf.behaviors.overdraftable ";
+option csharp_namespace = "TTI.TTF.Behaviors.Overdraftable";
+option java_package = "org.tti.ttf.behaviors.overdraftable";
 option java_multiple_files = true;
 
 message OverdraftToRequest {
