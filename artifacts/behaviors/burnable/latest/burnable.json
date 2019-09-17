@@ -112,9 +112,13 @@
       "name": "BurnFrom",
       "description": "Requires Delegable. A request to burn token instance(s) in the class by a party or account that has allowance to do so.  Requires a From and Quantity fields in the request.",
       "request": {
-        "controlMessageName": "BurnRequest",
+        "controlMessageName": "BurnFromRequest",
         "description": "The request to Burn or Retire tokens.",
         "inputParameters": [
+          {
+            "name": "From",
+            "valueDescription": "AccountId from which tokens are burnt"
+          },
           {
             "name": "Quantity",
             "valueDescription": "The number of tokens to burn, might not apply to the implementation."
@@ -122,12 +126,12 @@
         ]
       },
       "response": {
-        "controlMessageName": "BurnResponse",
+        "controlMessageName": "BurnFromResponse",
         "description": "The response from the request to burn.",
         "outputParameters": [
           {
             "name": "Confirmation",
-            "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn request"
+            "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the burn from request"
           }
         ]
       }
