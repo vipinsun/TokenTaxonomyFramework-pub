@@ -2,8 +2,8 @@
 #requires protoc be installed and in your path.
 #For Go, install the go plugin: https://github.com/golang/protobuf
 #For ts, install the ts plugin: https://github.com/improbable-eng/ts-protoc-gen
-PROTO_PATH="${PROTO_PATH:-../../../../.nuget/packages/google.protobuf.tools/3.9.1/tools}"
-CSHARP_PLUGIN="${CSHARP_PLUGIN:-../../../../.nuget/packages/grpc.tools/2.23.0/tools/macosx_x64/grpc_csharp_plugin}"
+PROTO_PATH="${PROTO_PATH:-../../../.nuget/packages/google.protobuf.tools/3.9.1/tools}"
+CSHARP_PLUGIN="${CSHARP_PLUGIN:-../../../.nuget/packages/grpc.tools/2.23.0/tools/macosx_x64/grpc_csharp_plugin}"
 echo "paths:"
 echo $PROTO_PATH
 echo $CSHARP_PLUGIN
@@ -21,6 +21,7 @@ protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/
 protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/TaxonomyObjectModel/out/java --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/js --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/ts --grpc-web_out=import_style=commonjs,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/js --grpc-web_out=import_style=typescript,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/ts --proto_path=./protos --proto_path=$PROTO_PATH ./protos/taxonomy.proto --plugin=protoc-gen-web
 protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/TaxonomyObjectModel/out/java --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/js --js_out=import_style=commonjs:../tools/TaxonomyObjectModel/out/ts --grpc-web_out=import_style=commonjs,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/js --grpc-web_out=import_style=typescript,mode=grpcwebtext:../tools/TaxonomyObjectModel/out/ts --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out ../tools/TaxonomyService/TaxonomyService ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN --plugin=protoc-gen-web
 protoc --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out=no_server:../tools/TaxonomyService/TaxonomyClient ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN
+protoc --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out=no_server:../tools/TTF-Printer/Model ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/ArtifactGenerator/Model
 

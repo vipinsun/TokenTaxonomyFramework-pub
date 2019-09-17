@@ -1,4 +1,5 @@
 /* eslint-disable */
+// source: service.proto
 /**
  * @fileoverview
  * @enhanceable

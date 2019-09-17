@@ -75,7 +75,7 @@ namespace TTI.TTF.Taxonomy {
             "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.TaxonomyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Core.CoreReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null));
+          new pbr::GeneratedClrTypeInfo(null, null, null));
     }
     #endregion
 

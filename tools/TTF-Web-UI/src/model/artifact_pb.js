@@ -1,4 +1,5 @@
 /* eslint-disable */
+// source: artifact.proto
 /**
  * @fileoverview
  * @enhanceable
@@ -886,13 +887,15 @@ if (goog.DEBUG && !COMPILED) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.Classification.prototype.toObject = function(opt_includeInstance) {
@@ -902,8 +905,8 @@ proto.taxonomy.model.artifact.Classification.prototype.toObject = function(opt_i
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.Classification} msg The msg instance to transform.
  * @return {!Object}
@@ -1119,13 +1122,15 @@ proto.taxonomy.model.artifact.Classification.prototype.setValueType = function(v
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.toObject = function(opt_includeInstance) {
@@ -1135,8 +1140,8 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.toObject = function(opt_i
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ArtifactSymbol} msg The msg instance to transform.
  * @return {!Object}
@@ -1149,7 +1154,7 @@ proto.taxonomy.model.artifact.ArtifactSymbol.toObject = function(includeInstance
     visual: jspb.Message.getFieldWithDefault(msg, 3, ""),
     tooling: jspb.Message.getFieldWithDefault(msg, 4, ""),
     version: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    templateValidated: jspb.Message.getFieldWithDefault(msg, 6, false)
+    templateValidated: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -1361,12 +1366,10 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setVersion = function(val
 
 /**
  * optional bool template_validated = 6;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getTemplateValidated = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -1388,13 +1391,15 @@ proto.taxonomy.model.artifact.Artifact.repeatedFields_ = [3,5,6,7,9];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.Artifact.prototype.toObject = function(opt_includeInstance) {
@@ -1404,8 +1409,8 @@ proto.taxonomy.model.artifact.Artifact.prototype.toObject = function(opt_include
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.Artifact} msg The msg instance to transform.
  * @return {!Object}
@@ -1415,7 +1420,7 @@ proto.taxonomy.model.artifact.Artifact.toObject = function(includeInstance, msg)
   var f, obj = {
     artifactSymbol: (f = msg.getArtifactSymbol()) && proto.taxonomy.model.artifact.ArtifactSymbol.toObject(includeInstance, f),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    aliasesList: jspb.Message.getRepeatedField(msg, 3),
+    aliasesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     artifactDefinition: (f = msg.getArtifactDefinition()) && proto.taxonomy.model.artifact.ArtifactDefinition.toObject(includeInstance, f),
     dependenciesList: jspb.Message.toObjectList(msg.getDependenciesList(),
     proto.taxonomy.model.artifact.SymbolDependency.toObject, includeInstance),
@@ -1928,13 +1933,15 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.repeatedFields_ = [2];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.toObject = function(opt_includeInstance) {
@@ -1944,8 +1951,8 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.toObject = funct
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ArtifactReferenceValues} msg The msg instance to transform.
  * @return {!Object}
@@ -2149,13 +2156,15 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.hasMaps = functi
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ArtifactReference.prototype.toObject = function(opt_includeInstance) {
@@ -2165,8 +2174,8 @@ proto.taxonomy.model.artifact.ArtifactReference.prototype.toObject = function(op
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ArtifactReference} msg The msg instance to transform.
  * @return {!Object}
@@ -2382,13 +2391,15 @@ proto.taxonomy.model.artifact.SymbolInfluence.repeatedFields_ = [3];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.SymbolInfluence.prototype.toObject = function(opt_includeInstance) {
@@ -2398,8 +2409,8 @@ proto.taxonomy.model.artifact.SymbolInfluence.prototype.toObject = function(opt_
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.SymbolInfluence} msg The msg instance to transform.
  * @return {!Object}
@@ -2603,13 +2614,15 @@ proto.taxonomy.model.artifact.SymbolInfluence.prototype.clearAppliesToList = fun
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.SymbolDependency.prototype.toObject = function(opt_includeInstance) {
@@ -2619,8 +2632,8 @@ proto.taxonomy.model.artifact.SymbolDependency.prototype.toObject = function(opt
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.SymbolDependency} msg The msg instance to transform.
  * @return {!Object}
@@ -2782,13 +2795,15 @@ proto.taxonomy.model.artifact.ArtifactDefinition.repeatedFields_ = [3];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.toObject = function(opt_includeInstance) {
@@ -2798,8 +2813,8 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.toObject = function(o
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ArtifactDefinition} msg The msg instance to transform.
  * @return {!Object}
@@ -3057,13 +3072,15 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.hasArtifact = functio
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.toObject = function(opt_includeInstance) {
@@ -3073,8 +3090,8 @@ proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.toObject = function(opt_
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ArtifactAnalogy} msg The msg instance to transform.
  * @return {!Object}
@@ -3256,13 +3273,15 @@ proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.hasArtifactDefinition = 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ArtifactFile.prototype.toObject = function(opt_includeInstance) {
@@ -3272,8 +3291,8 @@ proto.taxonomy.model.artifact.ArtifactFile.prototype.toObject = function(opt_inc
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ArtifactFile} msg The msg instance to transform.
  * @return {!Object}
@@ -3513,13 +3532,15 @@ proto.taxonomy.model.artifact.Maps.repeatedFields_ = [1,2,3];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.Maps.prototype.toObject = function(opt_includeInstance) {
@@ -3529,8 +3550,8 @@ proto.taxonomy.model.artifact.Maps.prototype.toObject = function(opt_includeInst
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.Maps} msg The msg instance to transform.
  * @return {!Object}
@@ -3805,13 +3826,15 @@ proto.taxonomy.model.artifact.Maps.prototype.hasArtifact = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.MapReference.prototype.toObject = function(opt_includeInstance) {
@@ -3821,8 +3844,8 @@ proto.taxonomy.model.artifact.MapReference.prototype.toObject = function(opt_inc
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.MapReference} msg The msg instance to transform.
  * @return {!Object}
@@ -4058,13 +4081,15 @@ proto.taxonomy.model.artifact.MapReference.prototype.hasMaps = function() {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.MapResourceReference.prototype.toObject = function(opt_includeInstance) {
@@ -4074,8 +4099,8 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.toObject = function
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.MapResourceReference} msg The msg instance to transform.
  * @return {!Object}
@@ -4311,13 +4336,15 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.hasMaps = function(
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.NewArtifactRequest.prototype.toObject = function(opt_includeInstance) {
@@ -4327,8 +4354,8 @@ proto.taxonomy.model.artifact.NewArtifactRequest.prototype.toObject = function(o
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.NewArtifactRequest} msg The msg instance to transform.
  * @return {!Object}
@@ -4483,13 +4510,15 @@ proto.taxonomy.model.artifact.NewArtifactRequest.prototype.hasArtifact = functio
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.NewArtifactResponse.prototype.toObject = function(opt_includeInstance) {
@@ -4499,8 +4528,8 @@ proto.taxonomy.model.artifact.NewArtifactResponse.prototype.toObject = function(
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.NewArtifactResponse} msg The msg instance to transform.
  * @return {!Object}
@@ -4655,13 +4684,15 @@ proto.taxonomy.model.artifact.NewArtifactResponse.prototype.hasArtifactTypeObjec
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.toObject = function(opt_includeInstance) {
@@ -4671,8 +4702,8 @@ proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.toObject = functio
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.UpdateArtifactRequest} msg The msg instance to transform.
  * @return {!Object}
@@ -4827,13 +4858,15 @@ proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.hasArtifactTypeObj
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.toObject = function(opt_includeInstance) {
@@ -4843,8 +4876,8 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.toObject = functi
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.UpdateArtifactResponse} msg The msg instance to transform.
  * @return {!Object}
@@ -4853,7 +4886,7 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.toObject = functi
 proto.taxonomy.model.artifact.UpdateArtifactResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    updated: jspb.Message.getFieldWithDefault(msg, 2, false),
+    updated: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
     artifactTypeObject: (f = msg.getArtifactTypeObject()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
 
@@ -4975,12 +5008,10 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.setType = functio
 
 /**
  * optional bool updated = 2;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.getUpdated = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
@@ -5028,13 +5059,15 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.hasArtifactTypeOb
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.DeleteArtifactRequest.prototype.toObject = function(opt_includeInstance) {
@@ -5044,8 +5077,8 @@ proto.taxonomy.model.artifact.DeleteArtifactRequest.prototype.toObject = functio
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.DeleteArtifactRequest} msg The msg instance to transform.
  * @return {!Object}
@@ -5173,13 +5206,15 @@ proto.taxonomy.model.artifact.DeleteArtifactRequest.prototype.hasArtifactSymbol 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.toObject = function(opt_includeInstance) {
@@ -5189,8 +5224,8 @@ proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.toObject = functi
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.DeleteArtifactResponse} msg The msg instance to transform.
  * @return {!Object}
@@ -5198,7 +5233,7 @@ proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.toObject = functi
  */
 proto.taxonomy.model.artifact.DeleteArtifactResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deleted: jspb.Message.getFieldWithDefault(msg, 1, false)
+    deleted: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
   };
 
   if (includeInstance) {
@@ -5280,12 +5315,10 @@ proto.taxonomy.model.artifact.DeleteArtifactResponse.serializeBinaryToWriter = f
 
 /**
  * optional bool deleted = 1;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.getDeleted = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
@@ -5300,13 +5333,15 @@ proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.setDeleted = func
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.FormulaGrammar.prototype.toObject = function(opt_includeInstance) {
@@ -5316,8 +5351,8 @@ proto.taxonomy.model.artifact.FormulaGrammar.prototype.toObject = function(opt_i
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.FormulaGrammar} msg The msg instance to transform.
  * @return {!Object}
@@ -5546,13 +5581,15 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.repeatedFields_ = [3];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.toObject = function(opt_includeInstance) {
@@ -5562,8 +5599,8 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.toObject = function(o
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.HybridTokenGrammar} msg The msg instance to transform.
  * @return {!Object}
@@ -5801,13 +5838,15 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.repeatedField
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.toObject = function(opt_includeInstance) {
@@ -5817,8 +5856,8 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.toO
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar} msg The msg instance to transform.
  * @return {!Object}
@@ -6049,13 +6088,15 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.set
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.toObject = function(opt_includeInstance) {
@@ -6065,8 +6106,8 @@ proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.toObject = function(o
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.SingleTokenGrammar} msg The msg instance to transform.
  * @return {!Object}
@@ -6329,13 +6370,15 @@ proto.taxonomy.model.artifact.BehaviorList.repeatedFields_ = [2];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.BehaviorList.prototype.toObject = function(opt_includeInstance) {
@@ -6345,8 +6388,8 @@ proto.taxonomy.model.artifact.BehaviorList.prototype.toObject = function(opt_inc
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.BehaviorList} msg The msg instance to transform.
  * @return {!Object}
@@ -6355,7 +6398,7 @@ proto.taxonomy.model.artifact.BehaviorList.prototype.toObject = function(opt_inc
 proto.taxonomy.model.artifact.BehaviorList.toObject = function(includeInstance, msg) {
   var f, obj = {
     listStart: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    behaviorToolingSymbolsList: jspb.Message.getRepeatedField(msg, 2),
+    behaviorToolingSymbolsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     listEnd: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
@@ -6532,13 +6575,15 @@ proto.taxonomy.model.artifact.PropertySetList.repeatedFields_ = [2];
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.PropertySetList.prototype.toObject = function(opt_includeInstance) {
@@ -6548,8 +6593,8 @@ proto.taxonomy.model.artifact.PropertySetList.prototype.toObject = function(opt_
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.PropertySetList} msg The msg instance to transform.
  * @return {!Object}
@@ -6706,13 +6751,15 @@ proto.taxonomy.model.artifact.PropertySetList.prototype.clearPropertySetsList = 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.PropertySetListItem.prototype.toObject = function(opt_includeInstance) {
@@ -6722,8 +6769,8 @@ proto.taxonomy.model.artifact.PropertySetListItem.prototype.toObject = function(
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.PropertySetListItem} msg The msg instance to transform.
  * @return {!Object}
@@ -6831,13 +6878,15 @@ proto.taxonomy.model.artifact.PropertySetListItem.prototype.setPropertySetSymbol
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.CommitUpdatesRequest.prototype.toObject = function(opt_includeInstance) {
@@ -6847,8 +6896,8 @@ proto.taxonomy.model.artifact.CommitUpdatesRequest.prototype.toObject = function
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.CommitUpdatesRequest} msg The msg instance to transform.
  * @return {!Object}
@@ -6956,13 +7005,15 @@ proto.taxonomy.model.artifact.CommitUpdatesRequest.prototype.setCommitMessage = 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.CommitUpdatesResponse.prototype.toObject = function(opt_includeInstance) {
@@ -6972,8 +7023,8 @@ proto.taxonomy.model.artifact.CommitUpdatesResponse.prototype.toObject = functio
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.CommitUpdatesResponse} msg The msg instance to transform.
  * @return {!Object}
@@ -7081,13 +7132,15 @@ proto.taxonomy.model.artifact.CommitUpdatesResponse.prototype.setResult = functi
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.IssuePullRequest.prototype.toObject = function(opt_includeInstance) {
@@ -7097,8 +7150,8 @@ proto.taxonomy.model.artifact.IssuePullRequest.prototype.toObject = function(opt
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.IssuePullRequest} msg The msg instance to transform.
  * @return {!Object}
@@ -7180,13 +7233,15 @@ proto.taxonomy.model.artifact.IssuePullRequest.serializeBinaryToWriter = functio
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.IssuePullResponse.prototype.toObject = function(opt_includeInstance) {
@@ -7196,8 +7251,8 @@ proto.taxonomy.model.artifact.IssuePullResponse.prototype.toObject = function(op
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.IssuePullResponse} msg The msg instance to transform.
  * @return {!Object}
@@ -7305,13 +7360,15 @@ proto.taxonomy.model.artifact.IssuePullResponse.prototype.setResponse = function
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ConfigurationRequest.prototype.toObject = function(opt_includeInstance) {
@@ -7321,8 +7378,8 @@ proto.taxonomy.model.artifact.ConfigurationRequest.prototype.toObject = function
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ConfigurationRequest} msg The msg instance to transform.
  * @return {!Object}
@@ -7404,13 +7461,15 @@ proto.taxonomy.model.artifact.ConfigurationRequest.serializeBinaryToWriter = fun
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.ServiceConfiguration.prototype.toObject = function(opt_includeInstance) {
@@ -7420,8 +7479,8 @@ proto.taxonomy.model.artifact.ServiceConfiguration.prototype.toObject = function
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.ServiceConfiguration} msg The msg instance to transform.
  * @return {!Object}
@@ -7429,7 +7488,7 @@ proto.taxonomy.model.artifact.ServiceConfiguration.prototype.toObject = function
  */
 proto.taxonomy.model.artifact.ServiceConfiguration.toObject = function(includeInstance, msg) {
   var f, obj = {
-    readOnly: jspb.Message.getFieldWithDefault(msg, 1, false),
+    readOnly: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
     gitId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     gitBranch: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
@@ -7535,12 +7594,10 @@ proto.taxonomy.model.artifact.ServiceConfiguration.serializeBinaryToWriter = fun
 
 /**
  * optional bool read_only = 1;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.taxonomy.model.artifact.ServiceConfiguration.prototype.getReadOnly = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
@@ -7585,13 +7642,15 @@ proto.taxonomy.model.artifact.ServiceConfiguration.prototype.setGitBranch = func
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.QueryOptions.prototype.toObject = function(opt_includeInstance) {
@@ -7601,8 +7660,8 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.toObject = function(opt_inc
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.QueryOptions} msg The msg instance to transform.
  * @return {!Object}
@@ -7613,9 +7672,9 @@ proto.taxonomy.model.artifact.QueryOptions.toObject = function(includeInstance, 
     artifactType: jspb.Message.getFieldWithDefault(msg, 1, 0),
     maxItemReturn: jspb.Message.getFieldWithDefault(msg, 2, 0),
     lastItemIndex: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    byClassification: jspb.Message.getFieldWithDefault(msg, 4, false),
+    byClassification: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     classification: (f = msg.getClassification()) && proto.taxonomy.model.artifact.Classification.toObject(includeInstance, f),
-    includeHybrids: jspb.Message.getFieldWithDefault(msg, 6, false)
+    includeHybrids: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -7799,12 +7858,10 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.setLastItemIndex = function
 
 /**
  * optional bool by_classification = 4;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.taxonomy.model.artifact.QueryOptions.prototype.getByClassification = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
 
@@ -7849,12 +7906,10 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.hasClassification = functio
 
 /**
  * optional bool include_hybrids = 6;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.taxonomy.model.artifact.QueryOptions.prototype.getIncludeHybrids = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -7869,13 +7924,15 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.setIncludeHybrids = functio
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.QueryResult.prototype.toObject = function(opt_includeInstance) {
@@ -7885,8 +7942,8 @@ proto.taxonomy.model.artifact.QueryResult.prototype.toObject = function(opt_incl
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.QueryResult} msg The msg instance to transform.
  * @return {!Object}
@@ -8122,13 +8179,15 @@ proto.taxonomy.model.artifact.QueryResult.prototype.hasArtifactCollection = func
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.TokenTemplateId.prototype.toObject = function(opt_includeInstance) {
@@ -8138,8 +8197,8 @@ proto.taxonomy.model.artifact.TokenTemplateId.prototype.toObject = function(opt_
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.TokenTemplateId} msg The msg instance to transform.
  * @return {!Object}
@@ -8247,13 +8306,15 @@ proto.taxonomy.model.artifact.TokenTemplateId.prototype.setDefinitionId = functi
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.Identifier.prototype.toObject = function(opt_includeInstance) {
@@ -8263,8 +8324,8 @@ proto.taxonomy.model.artifact.Identifier.prototype.toObject = function(opt_inclu
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.Identifier} msg The msg instance to transform.
  * @return {!Object}
@@ -8372,13 +8433,15 @@ proto.taxonomy.model.artifact.Identifier.prototype.setId = function(value) {
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.toObject = function(opt_includeInstance) {
@@ -8388,8 +8451,8 @@ proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.toObject = functio
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.NewTemplateDefinition} msg The msg instance to transform.
  * @return {!Object}
@@ -8524,13 +8587,15 @@ proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.setTokenName = fun
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.toObject = function(opt_includeInstance) {
@@ -8540,8 +8605,8 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.toObject = 
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.InitializeNewArtifactRequest} msg The msg instance to transform.
  * @return {!Object}
@@ -8784,13 +8849,15 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.setTokenUni
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
 /**
- * Creates an object representation of this proto suitable for use in Soy templates.
+ * Creates an object representation of this proto.
  * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
  * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
  * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
  * @return {!Object}
  */
 proto.taxonomy.model.artifact.InitializeNewArtifactResponse.prototype.toObject = function(opt_includeInstance) {
@@ -8800,8 +8867,8 @@ proto.taxonomy.model.artifact.InitializeNewArtifactResponse.prototype.toObject =
 
 /**
  * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
  * @param {!proto.taxonomy.model.artifact.InitializeNewArtifactResponse} msg The msg instance to transform.
  * @return {!Object}

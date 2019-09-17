@@ -198,46 +198,46 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             "Y29yZVABqgIbVFRJLlRURi5UYXhvbm9teS5Nb2RlbC5Db3JlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Base), global::TTI.TTF.Taxonomy.Model.Core.Base.Parser, new[]{ "Artifact", "TokenType", "TokenUnit", "RepresentationType", "ValueType", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Bases), global::TTI.TTF.Taxonomy.Model.Core.Bases.Parser, new[]{ "Base" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BaseReference), global::TTI.TTF.Taxonomy.Model.Core.BaseReference.Parser, new[]{ "Reference", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Behavior), global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser, new[]{ "Artifact", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Behaviors), global::TTI.TTF.Taxonomy.Model.Core.Behaviors.Parser, new[]{ "Behavior" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup.Parser, new[]{ "Artifact", "Behaviors", "BehaviorArtifacts" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroups), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroups.Parser, new[]{ "BehaviorGroup" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupReference), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupReference.Parser, new[]{ "Reference", "BehaviorArtifacts" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySet), global::TTI.TTF.Taxonomy.Model.Core.PropertySet.Parser, new[]{ "Artifact", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySets), global::TTI.TTF.Taxonomy.Model.Core.PropertySets.Parser, new[]{ "PropertySet" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference), global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference.Parser, new[]{ "Reference", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Property), global::TTI.TTF.Taxonomy.Model.Core.Property.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Invocation), global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser, new[]{ "Id", "Name", "Description", "Request", "Response" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest), global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest.Parser, new[]{ "ControlMessageName", "Description", "InputParameters" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse), global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse.Parser, new[]{ "ControlMessageName", "Description", "OutputParameters" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter), global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser, new[]{ "Name", "ValueDescription" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser, new[]{ "Formula", "Definition" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Parser, new[]{ "Template" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula), global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula.Parser, new[]{ "Artifact", "TemplateType", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateFormulas), global::TTI.TTF.Taxonomy.Model.Core.TemplateFormulas.Parser, new[]{ "Templates" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBase), global::TTI.TTF.Taxonomy.Model.Core.TemplateBase.Parser, new[]{ "Base" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior), global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior.Parser, new[]{ "Behavior" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.TemplateBehaviorGroup.Parser, new[]{ "BehaviorGroup" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplatePropertySet), global::TTI.TTF.Taxonomy.Model.Core.TemplatePropertySet.Parser, new[]{ "PropertySet" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition), global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition.Parser, new[]{ "Artifact", "FormulaReference", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinitions), global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinitions.Parser, new[]{ "Definitions" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference), global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference.Parser, new[]{ "Reference", "IsExternal", "ConstructorType", "Constructor", "AppliesTo", "Invocations", "InfluenceBindings", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding), global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding.Parser, new[]{ "InfluencedId", "InfluencedInvocationId", "InfluenceType", "InfluencingInvocation", "InfluencedInvocation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenSpecification), global::TTI.TTF.Taxonomy.Model.Core.TokenSpecification.Parser, new[]{ "SpecificationHash", "Artifact", "DefinitionReference", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification.Parser, new[]{ "Artifact", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySetSpecification), global::TTI.TTF.Taxonomy.Model.Core.PropertySetSpecification.Parser, new[]{ "Artifact", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySpecification), global::TTI.TTF.Taxonomy.Model.Core.PropertySpecification.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations", "Properties" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification.Parser, new[]{ "Behaviors" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Parser, new[]{ "Influence", "InvocationStep" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence.Parser, new[]{ "InfluenceType", "InfluencingId", "InfluencingInvocationId", "InfluencedId", "InfluencedInvocationId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep.Parser, new[]{ "Invocation", "NextInvocation" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBase), global::TTI.TTF.Taxonomy.Model.Core.TokenBase.Parser, new[]{ "Base", "Values" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBehavior), global::TTI.TTF.Taxonomy.Model.Core.TokenBehavior.Parser, new[]{ "Behavior", "Values" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.TokenBehaviorGroup.Parser, new[]{ "Behavior", "Values" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet), global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet.Parser, new[]{ "PropertySet", "Values" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Base), global::TTI.TTF.Taxonomy.Model.Core.Base.Parser, new[]{ "Artifact", "TokenType", "TokenUnit", "RepresentationType", "ValueType", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Bases), global::TTI.TTF.Taxonomy.Model.Core.Bases.Parser, new[]{ "Base" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BaseReference), global::TTI.TTF.Taxonomy.Model.Core.BaseReference.Parser, new[]{ "Reference", "Name", "Symbol", "Owner", "Quantity", "Decimals", "TokenProperties", "ConstructorName", "Constructor" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Behavior), global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser, new[]{ "Artifact", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Behaviors), global::TTI.TTF.Taxonomy.Model.Core.Behaviors.Parser, new[]{ "Behavior" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup.Parser, new[]{ "Artifact", "Behaviors", "BehaviorArtifacts" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroups), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroups.Parser, new[]{ "BehaviorGroup" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupReference), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupReference.Parser, new[]{ "Reference", "BehaviorArtifacts" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySet), global::TTI.TTF.Taxonomy.Model.Core.PropertySet.Parser, new[]{ "Artifact", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySets), global::TTI.TTF.Taxonomy.Model.Core.PropertySets.Parser, new[]{ "PropertySet" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference), global::TTI.TTF.Taxonomy.Model.Core.PropertySetReference.Parser, new[]{ "Reference", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Property), global::TTI.TTF.Taxonomy.Model.Core.Property.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.Invocation), global::TTI.TTF.Taxonomy.Model.Core.Invocation.Parser, new[]{ "Id", "Name", "Description", "Request", "Response" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest), global::TTI.TTF.Taxonomy.Model.Core.InvocationRequest.Parser, new[]{ "ControlMessageName", "Description", "InputParameters" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse), global::TTI.TTF.Taxonomy.Model.Core.InvocationResponse.Parser, new[]{ "ControlMessageName", "Description", "OutputParameters" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter), global::TTI.TTF.Taxonomy.Model.Core.InvocationParameter.Parser, new[]{ "Name", "ValueDescription" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser, new[]{ "Formula", "Definition" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates), global::TTI.TTF.Taxonomy.Model.Core.TokenTemplates.Parser, new[]{ "Template" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula), global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula.Parser, new[]{ "Artifact", "TemplateType", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateFormulas), global::TTI.TTF.Taxonomy.Model.Core.TemplateFormulas.Parser, new[]{ "Templates" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBase), global::TTI.TTF.Taxonomy.Model.Core.TemplateBase.Parser, new[]{ "Base" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior), global::TTI.TTF.Taxonomy.Model.Core.TemplateBehavior.Parser, new[]{ "Behavior" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateBehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.TemplateBehaviorGroup.Parser, new[]{ "BehaviorGroup" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplatePropertySet), global::TTI.TTF.Taxonomy.Model.Core.TemplatePropertySet.Parser, new[]{ "PropertySet" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition), global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition.Parser, new[]{ "Artifact", "FormulaReference", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinitions), global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinitions.Parser, new[]{ "Definitions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference), global::TTI.TTF.Taxonomy.Model.Core.BehaviorReference.Parser, new[]{ "Reference", "IsExternal", "ConstructorType", "Constructor", "AppliesTo", "Invocations", "InfluenceBindings", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding), global::TTI.TTF.Taxonomy.Model.Core.InfluenceBinding.Parser, new[]{ "InfluencedId", "InfluencedInvocationId", "InfluenceType", "InfluencingInvocation", "InfluencedInvocation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenSpecification), global::TTI.TTF.Taxonomy.Model.Core.TokenSpecification.Parser, new[]{ "SpecificationHash", "Artifact", "DefinitionReference", "TokenBase", "Behaviors", "BehaviorGroups", "PropertySets", "ChildTokens" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification.Parser, new[]{ "Artifact", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySetSpecification), global::TTI.TTF.Taxonomy.Model.Core.PropertySetSpecification.Parser, new[]{ "Artifact", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySpecification), global::TTI.TTF.Taxonomy.Model.Core.PropertySpecification.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations", "Properties" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification.Parser, new[]{ "Behaviors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Parser, new[]{ "Influence", "InvocationStep" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence.Parser, new[]{ "InfluenceType", "InfluencingId", "InfluencingInvocationId", "InfluencedId", "InfluencedInvocationId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep.Parser, new[]{ "Invocation", "NextInvocation" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBase), global::TTI.TTF.Taxonomy.Model.Core.TokenBase.Parser, new[]{ "Base", "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBehavior), global::TTI.TTF.Taxonomy.Model.Core.TokenBehavior.Parser, new[]{ "Behavior", "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBehaviorGroup), global::TTI.TTF.Taxonomy.Model.Core.TokenBehaviorGroup.Parser, new[]{ "Behavior", "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet), global::TTI.TTF.Taxonomy.Model.Core.TokenPropertySet.Parser, new[]{ "PropertySet", "Values" }, null, null, null, null)
           }));
     }
     #endregion
@@ -314,7 +314,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "token_type" field.</summary>
     public const int TokenTypeFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenType tokenType_ = global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.TokenType TokenType {
       get { return tokenType_; }
@@ -325,7 +325,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "token_unit" field.</summary>
     public const int TokenUnitFieldNumber = 3;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit tokenUnit_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit tokenUnit_ = global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit TokenUnit {
       get { return tokenUnit_; }
@@ -336,7 +336,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "representation_type" field.</summary>
     public const int RepresentationTypeFieldNumber = 4;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType representationType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType representationType_ = global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType.Common;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType RepresentationType {
       get { return representationType_; }
@@ -347,7 +347,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "value_type" field.</summary>
     public const int ValueTypeFieldNumber = 5;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.ValueType valueType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.ValueType valueType_ = global::TTI.TTF.Taxonomy.Model.Artifact.ValueType.Intrinsic;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ValueType ValueType {
       get { return valueType_; }
@@ -429,7 +429,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     /// <summary>Field number for the "token_properties" field.</summary>
     public const int TokenPropertiesFieldNumber = 11;
     private static readonly pbc::MapField<string, string>.Codec _map_tokenProperties_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 90);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 90);
     private readonly pbc::MapField<string, string> tokenProperties_ = new pbc::MapField<string, string>();
     /// <summary>
     ///Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
@@ -500,10 +500,10 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public override int GetHashCode() {
       int hash = 1;
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
-      if (TokenType != 0) hash ^= TokenType.GetHashCode();
-      if (TokenUnit != 0) hash ^= TokenUnit.GetHashCode();
-      if (RepresentationType != 0) hash ^= RepresentationType.GetHashCode();
-      if (ValueType != 0) hash ^= ValueType.GetHashCode();
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) hash ^= TokenType.GetHashCode();
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) hash ^= TokenUnit.GetHashCode();
+      if (RepresentationType != global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType.Common) hash ^= RepresentationType.GetHashCode();
+      if (ValueType != global::TTI.TTF.Taxonomy.Model.Artifact.ValueType.Intrinsic) hash ^= ValueType.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Symbol.Length != 0) hash ^= Symbol.GetHashCode();
       if (Owner.Length != 0) hash ^= Owner.GetHashCode();
@@ -529,19 +529,19 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteRawTag(10);
         output.WriteMessage(Artifact);
       }
-      if (TokenType != 0) {
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         output.WriteRawTag(16);
         output.WriteEnum((int) TokenType);
       }
-      if (TokenUnit != 0) {
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         output.WriteRawTag(24);
         output.WriteEnum((int) TokenUnit);
       }
-      if (RepresentationType != 0) {
+      if (RepresentationType != global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType.Common) {
         output.WriteRawTag(32);
         output.WriteEnum((int) RepresentationType);
       }
-      if (ValueType != 0) {
+      if (ValueType != global::TTI.TTF.Taxonomy.Model.Artifact.ValueType.Intrinsic) {
         output.WriteRawTag(40);
         output.WriteEnum((int) ValueType);
       }
@@ -585,16 +585,16 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (artifact_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
       }
-      if (TokenType != 0) {
+      if (TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenType);
       }
-      if (TokenUnit != 0) {
+      if (TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TokenUnit);
       }
-      if (RepresentationType != 0) {
+      if (RepresentationType != global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType.Common) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RepresentationType);
       }
-      if (ValueType != 0) {
+      if (ValueType != global::TTI.TTF.Taxonomy.Model.Artifact.ValueType.Intrinsic) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ValueType);
       }
       if (Name.Length != 0) {
@@ -636,16 +636,16 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         }
         Artifact.MergeFrom(other.Artifact);
       }
-      if (other.TokenType != 0) {
+      if (other.TokenType != global::TTI.TTF.Taxonomy.Model.Artifact.TokenType.Fungible) {
         TokenType = other.TokenType;
       }
-      if (other.TokenUnit != 0) {
+      if (other.TokenUnit != global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit.Fractional) {
         TokenUnit = other.TokenUnit;
       }
-      if (other.RepresentationType != 0) {
+      if (other.RepresentationType != global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType.Common) {
         RepresentationType = other.RepresentationType;
       }
-      if (other.ValueType != 0) {
+      if (other.ValueType != global::TTI.TTF.Taxonomy.Model.Artifact.ValueType.Intrinsic) {
         ValueType = other.ValueType;
       }
       if (other.Name.Length != 0) {
@@ -995,7 +995,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     /// <summary>Field number for the "token_properties" field.</summary>
     public const int TokenPropertiesFieldNumber = 7;
     private static readonly pbc::MapField<string, string>.Codec _map_tokenProperties_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 58);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 58);
     private readonly pbc::MapField<string, string> tokenProperties_ = new pbc::MapField<string, string>();
     /// <summary>
     ///Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
@@ -1708,7 +1708,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     /// <summary>Field number for the "behavior_artifacts" field.</summary>
     public const int BehaviorArtifactsFieldNumber = 3;
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>.Codec _map_behaviorArtifacts_codec
-        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser), 26);
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser), 26);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior> behaviorArtifacts_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>();
     /// <summary>
     ///if retrieved this can be populated with the behaviors nested in the group.
@@ -3762,7 +3762,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     /// <summary>Field number for the "template" field.</summary>
     public const int TemplateFieldNumber = 1;
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec _map_template_codec
-        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser), 10);
+        = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate.Parser), 10);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> template_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TokenTemplate> Template {
@@ -3902,7 +3902,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "template_type" field.</summary>
     public const int TemplateTypeFieldNumber = 2;
-    private global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType templateType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType templateType_ = global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType TemplateType {
       get { return templateType_; }
@@ -3992,7 +3992,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public override int GetHashCode() {
       int hash = 1;
       if (artifact_ != null) hash ^= Artifact.GetHashCode();
-      if (TemplateType != 0) hash ^= TemplateType.GetHashCode();
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) hash ^= TemplateType.GetHashCode();
       if (tokenBase_ != null) hash ^= TokenBase.GetHashCode();
       hash ^= behaviors_.GetHashCode();
       hash ^= behaviorGroups_.GetHashCode();
@@ -4015,7 +4015,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteRawTag(10);
         output.WriteMessage(Artifact);
       }
-      if (TemplateType != 0) {
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         output.WriteRawTag(16);
         output.WriteEnum((int) TemplateType);
       }
@@ -4038,7 +4038,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (artifact_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
       }
-      if (TemplateType != 0) {
+      if (TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TemplateType);
       }
       if (tokenBase_ != null) {
@@ -4065,7 +4065,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         }
         Artifact.MergeFrom(other.Artifact);
       }
-      if (other.TemplateType != 0) {
+      if (other.TemplateType != global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType.SingleToken) {
         TemplateType = other.TemplateType;
       }
       if (other.tokenBase_ != null) {
@@ -5603,7 +5603,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     /// <summary>Field number for the "influence_type" field.</summary>
     public const int InfluenceTypeFieldNumber = 3;
-    private global::TTI.TTF.Taxonomy.Model.Core.InfluenceType influenceType_ = 0;
+    private global::TTI.TTF.Taxonomy.Model.Core.InfluenceType influenceType_ = global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept;
     /// <summary>
     ///override or intercept
     /// </summary>
@@ -5669,7 +5669,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       int hash = 1;
       if (InfluencedId.Length != 0) hash ^= InfluencedId.GetHashCode();
       if (InfluencedInvocationId.Length != 0) hash ^= InfluencedInvocationId.GetHashCode();
-      if (InfluenceType != 0) hash ^= InfluenceType.GetHashCode();
+      if (InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) hash ^= InfluenceType.GetHashCode();
       if (influencingInvocation_ != null) hash ^= InfluencingInvocation.GetHashCode();
       if (influencedInvocation_ != null) hash ^= InfluencedInvocation.GetHashCode();
       if (_unknownFields != null) {
@@ -5693,7 +5693,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         output.WriteRawTag(18);
         output.WriteString(InfluencedInvocationId);
       }
-      if (InfluenceType != 0) {
+      if (InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) {
         output.WriteRawTag(24);
         output.WriteEnum((int) InfluenceType);
       }
@@ -5719,7 +5719,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (InfluencedInvocationId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(InfluencedInvocationId);
       }
-      if (InfluenceType != 0) {
+      if (InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InfluenceType);
       }
       if (influencingInvocation_ != null) {
@@ -5745,7 +5745,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (other.InfluencedInvocationId.Length != 0) {
         InfluencedInvocationId = other.InfluencedInvocationId;
       }
-      if (other.InfluenceType != 0) {
+      if (other.InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) {
         InfluenceType = other.InfluenceType;
       }
       if (other.influencingInvocation_ != null) {
@@ -7119,7 +7119,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
         /// <summary>Field number for the "influence_type" field.</summary>
         public const int InfluenceTypeFieldNumber = 1;
-        private global::TTI.TTF.Taxonomy.Model.Core.InfluenceType influenceType_ = 0;
+        private global::TTI.TTF.Taxonomy.Model.Core.InfluenceType influenceType_ = global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::TTI.TTF.Taxonomy.Model.Core.InfluenceType InfluenceType {
           get { return influenceType_; }
@@ -7199,7 +7199,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (InfluenceType != 0) hash ^= InfluenceType.GetHashCode();
+          if (InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) hash ^= InfluenceType.GetHashCode();
           if (InfluencingId.Length != 0) hash ^= InfluencingId.GetHashCode();
           if (InfluencingInvocationId.Length != 0) hash ^= InfluencingInvocationId.GetHashCode();
           if (InfluencedId.Length != 0) hash ^= InfluencedId.GetHashCode();
@@ -7217,7 +7217,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (InfluenceType != 0) {
+          if (InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) {
             output.WriteRawTag(8);
             output.WriteEnum((int) InfluenceType);
           }
@@ -7245,7 +7245,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (InfluenceType != 0) {
+          if (InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InfluenceType);
           }
           if (InfluencingId.Length != 0) {
@@ -7271,7 +7271,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
           if (other == null) {
             return;
           }
-          if (other.InfluenceType != 0) {
+          if (other.InfluenceType != global::TTI.TTF.Taxonomy.Model.Core.InfluenceType.Intercept) {
             InfluenceType = other.InfluenceType;
           }
           if (other.InfluencingId.Length != 0) {
