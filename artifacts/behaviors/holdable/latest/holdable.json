@@ -14,19 +14,26 @@
       "businessDescription": "Every token instance has an owner. The Transferable behavior provides the owner the ability to transfer the ownership to another party or account. A hold specifies a payer, a payee, a maximum amount, a notary and an expiration time. When the hold is created, the specified token balance from the payer is put on hold. A held balance cannot be transferred until the hold is either executed or released. The hold can only be executed (partially or the full amount) by the notary, which triggers the transfer of the tokens from the payer to the payee. If a hold is released, either by the notary at any time, or by anyone after the expiration, no transfer is carried out and the amount is available again for the payer. This behavior is Delegable. If the token definition is Delegable, HoldFrom will be available.",
       "businessExample": "When checking in a hotel, the hotel will put a hold on the guest's account to ensure that enough balance is available to pay for the room before handing over the keys.",
       "analogies": [
-        "Holds are similar to escrows in that are firm and lead to final settlement."
+        {
+          "name": "Escrow",
+          "description": "Holds are similar to escrows in that are firm and lead to final settlement.",
+          "artifactDefinition": null
+        }
       ],
       "comments": "",
       "artifact": null
     },
     "dependencies": [
       {
-        "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
-        "type": "BEHAVIOR",
-        "visual": "<i>t</i>",
-        "tooling": "t",
-        "version": "1.0",
-        "templateValidated": false
+        "description": "Holds require transfers to be allowed",
+        "symbol": {
+          "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
+          "type": "BEHAVIOR",
+          "visual": "<i>t</i>",
+          "tooling": "t",
+          "version": "1.0",
+          "templateValidated": false
+        }
       }
     ],
     "incompatibleWithSymbols": [
@@ -110,7 +117,7 @@
         ]
       },
       "response": {
-        "controlMessageName": "Hold Response",
+        "controlMessageName": "HoldResponse",
         "description": "The response",
         "outputParameters": [
           {
@@ -125,7 +132,7 @@
       "name": "HoldFrom",
       "description": "Request the create a hold on behalf of the party or account provided in the From field in favor of to the party or account provided in the To field of the request. It specifies a notary who is responsible to either execute or release the hold.",
       "request": {
-        "controlMessageName": "TransferFromRequest",
+        "controlMessageName": "HoldFromRequest",
         "description": "The request",
         "inputParameters": [
           {
@@ -155,7 +162,7 @@
         ]
       },
       "response": {
-        "controlMessageName": "TransferFromResponse",
+        "controlMessageName": "HoldFromResponse",
         "description": "The response",
         "outputParameters": [
           {

@@ -43,6 +43,17 @@
           "version": "1.0",
           "templateValidated": false
         }
+      },
+      {
+        "description": "If Compliance is present, a CheckBurnAllowed request has to be made and verified before a Burn request or a BurnFrom request.",
+        "symbol": {
+          "id":"03dd1c48-dfdb-4ec1-86c8-69c3abac76b7",
+          "type": "BEHAVIOR",
+          "visual": "<i>c</i>",
+          "tooling": "c",
+          "version": "1.0",
+          "templateValidated": false
+        }
       }
     ],
     "artifactFiles": [
