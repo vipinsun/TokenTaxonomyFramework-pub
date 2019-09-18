@@ -43,6 +43,17 @@
           "tooling": "g",
           "version": ""
         }
+      },
+      {
+        "description": "If Compliance is present, a CheckTransferAllowed request has to be made and verified before a Transfer request or a TransferFrom request.",
+        "symbol": {
+          "id":"03dd1c48-dfdb-4ec1-86c8-69c3abac76b7",
+          "type": "BEHAVIOR",
+          "visual": "<i>c</i>",
+          "tooling": "c",
+          "version": "1.0",
+          "templateValidated": false
+        }
       }
     ],
     "artifactFiles": [
