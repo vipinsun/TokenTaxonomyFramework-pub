@@ -6,7 +6,7 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class BehaviorGroupPrinter
+    internal static class BehaviorGroupPrinter
     {
         private static readonly ILog _log;
         static BehaviorGroupPrinter()

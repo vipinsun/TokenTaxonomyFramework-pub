@@ -6,19 +6,46 @@ using Google.Protobuf.Collections;
 using log4net;
 using log4net.Config;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Xml;
 using System.Xml.Linq;
+using Org.BouncyCastle.Crypto.Digests;
 using TTI.TTF.Taxonomy.Model.Core;
 using V = DocumentFormat.OpenXml.Vml;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
+    public static class Os
+    {
+        public static bool IsWindows()
+        {
+            return RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+        }
+
+        public static bool IsMacOs()
+        {
+            return RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
+        }
+
+        public static bool IsLinux()
+        {
+            return RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
+        }
+
+        public static string WhatIs()
+        {
+            var os = (IsWindows() ? "win" : null) ??
+                     (IsMacOs() ? "mac" : null) ??
+                     (IsLinux() ? "gnu" : null);
+            return os;
+        }
+    }
     public static class Utils
     {
         private static readonly ILog _log;
@@ -27,17 +54,44 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         {
             #region logging
 
-            Utils.InitLog();
+            InitLog();
             _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
             #endregion
         }
+        
+        public static void InitLog()
+        {
+            var xmlDocument = new XmlDocument();
+            try
+            {
+                if (Os.IsWindows())
+                    xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +
+                                                   "\\log4net.config"));
+                else
+                    xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +
+                                                   "/log4net.config"));
+            }
+            catch (Exception)
+            {
+                if (Os.IsWindows())
+                    xmlDocument.Load(File.OpenRead(
+                        Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log4net.config"));
+                else
+                    xmlDocument.Load(File.OpenRead(
+                        Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/log4net.config"));
+            }
 
+            XmlConfigurator.Configure(
+                LogManager.CreateRepository(Assembly.GetEntryAssembly(),
+                    typeof(log4net.Repository.Hierarchy.Hierarchy)), xmlDocument["log4net"]);
+        }
+        
         public static Table GetNewTable(int columns)
         {
-            Table table = new Table();
+            var table = new Table();
 
-            TableProperties props = new TableProperties(
+            var props = new TableProperties(
                 new TableBorders(
                     new TopBorder
                     {
@@ -101,12 +155,20 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                     tc.Append(new Paragraph(new Run(new Text(data[i, j]))));
 
                     if (IsLabel(data[i, j]))
+                    {
+                        var width = new TableCellWidth();
+                        width.Type = TableWidthUnitValues.Pct;
+                        width.Width = "30";
                         tc.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "30" }));
+                            width));
+                    }
                     else
                     {
+                        var width = new TableCellWidth();
+                        width.Type = TableWidthUnitValues.Pct;
+                        width.Width = "70";
                         tc.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "70" }));
+                            width));
                     }
 
                     tr.Append(tc);
@@ -132,12 +194,20 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                     tc.Append(new Paragraph(new Run(new Text(data[i, j]))));
 
                     if (IsLabel(data[i, j]))
+                    {
+                        var width = new TableCellWidth();
+                        width.Type = TableWidthUnitValues.Pct;
+                        width.Width = "30";
                         tc.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "30" }));
+                            width));
+                    }
                     else
                     {
+                        var width = new TableCellWidth();
+                        width.Type = TableWidthUnitValues.Pct;
+                        width.Width = "70";
                         tc.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "70" }));
+                            width));
                     }
 
                     tr.Append(tc);
@@ -159,12 +229,18 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var tr = new TableRow();
             var tch = new TableCell();
             tch.Append(new Paragraph(new Run(new Text(col1Name))));
+            var element = new TableCellWidth();
+            element.Type = TableWidthUnitValues.Pct;
+            element.Width = "30";
             tch.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "30" }));
+                            element));
             var tch2 = new TableCell();
             tch2.Append(new Paragraph(new Run(new Text(col2Name))));
+            var width = new TableCellWidth();
+            width.Type = TableWidthUnitValues.Pct;
+            width.Width = "70";
             tch2.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "70" }));
+                            width));
             tr.Append(tch);
             tr.Append(tch2);
             table.Append(tr);
@@ -194,12 +270,18 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var tr = new TableRow();
             var tch = new TableCell();
             tch.Append(new Paragraph(new Run(new Text(col1Name))));
+            var width = new TableCellWidth();
+            width.Type = TableWidthUnitValues.Pct;
+            width.Width = "30";
             tch.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "30" }));
+                            width));
             var tch2 = new TableCell();
             tch2.Append(new Paragraph(new Run(new Text(col2Name))));
+            var element = new TableCellWidth();
+            element.Type = TableWidthUnitValues.Pct;
+            element.Width = "70";
             tch2.Append(new TableCellProperties(
-                            new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "70" }));
+                            element));
             tr.Append(tch);
             tr.Append(tch2);
             table.Append(tr);
@@ -268,6 +350,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             table.AppendChild(props);
         }
 
+        //These methods do not work with .Net Core unless the XML file is closed and reopened.
         public static bool ValidateWordDocument(WordprocessingDocument document)
         {
             try
@@ -456,6 +539,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var part =
                 document.MainDocumentPart.StyleDefinitionsPart;
 
+            /*
             // If the Styles part does not exist, add it and then add the style.
             if (part != null)
             {
@@ -474,12 +558,12 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 }
 
             }
-
+            */
             // Set the style of the paragraph.
             tTr.TableStyle = new TableStyle { Val = styleId };
 
         }
-
+        
         public static void ApplyStyleToParagraph(WordprocessingDocument document, string styleId,
             string styleName, Paragraph p, JustificationValues justification = JustificationValues.Left)
         {
@@ -499,25 +583,27 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var part =
                 document.MainDocumentPart.StyleDefinitionsPart;
 
+            /*
             // If the Styles part does not exist, add it and then add the style.
             if (part != null)
             {
                 // If the style is not in the document, add it.
-                if (IsStyleIdInDocument(document, styleId) != true)
+                if (IsStyleIdInDocument(PrintController.StylesPart, styleId) != true)
                 {
                     // No match on styleId, so let's try style name.
-                    var fromStyleName = GetStyleIdFromStyleName(document, styleName);
+                    var fromStyleName = GetStyleIdFromStyleName(PrintController.StylesPart, styleName);
                     if (fromStyleName != null)
 
                         styleId = fromStyleName;
                 }
             }
-
+*/
             // Set the style of the paragraph.
             pPr.ParagraphStyleId = new ParagraphStyleId() { Val = styleId };
         }
 
-        public static bool IsStyleIdInDocument(WordprocessingDocument document, string styleId, StyleValues styleValues = StyleValues.Paragraph)
+        //File access restriction for .net Core, skipping in this version
+        private static bool IsStyleIdInDocument(WordprocessingDocument document, string styleId, StyleValues styleValues = StyleValues.Paragraph)
         {
             // Get access to the Styles element for this document.
             var s = document.MainDocumentPart.StyleDefinitionsPart.Styles;
@@ -533,12 +619,12 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 .FirstOrDefault(st => (st.StyleId == styleId) && (st.Type == styleValues));
             return style != null;
         }
-
-
+        
         // Return styleId that matches the styleName, or null when there's no match.
-        public static string GetStyleIdFromStyleName(WordprocessingDocument document, string styleName, StyleValues styleValues = StyleValues.Paragraph)
+        // //File access restriction for .net Core, skipping in this version
+        private static string GetStyleIdFromStyleName(WordprocessingDocument document, string styleName, StyleValues styleValues = StyleValues.Paragraph)
         {
-            var stylePart = document.MainDocumentPart.StyleDefinitionsPart;
+            var stylePart = document.MainDocumentPart.StyleDefinitionsPart;;
             string styleId = stylePart.Styles.Descendants<StyleName>()
                 .Where(s => s.Val.Value.Equals(styleName) &&
                             ((Style)s.Parent).Type == styleValues)
@@ -564,11 +650,12 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 stylesPart = docPart.StyleDefinitionsPart;
 
             // If the part exists, populate it with the new styles.
-            if (stylesPart != null)
-            {
-                newStyles.Save(new StreamWriter(stylesPart.GetStream(
-                    FileMode.Create, FileAccess.Write)));
-            }
+            if (stylesPart == null) return;
+            newStyles.Save(new StreamWriter(stylesPart.GetStream(
+                FileMode.Create, FileAccess.Write)));
+            
+            //newStyles.Save(new StreamWriter(PrintController.StylesPart.GetStream(
+            //    FileMode.Create, FileAccess.Read)));
 
         }
 
@@ -607,7 +694,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 // If the part exists, read it into the XDocument.
                 if (stylesPart != null)
                 {
-                    using (var reader = XmlNodeReader.Create(
+                    using (var reader = XmlReader.Create(
                       stylesPart.GetStream(FileMode.Open, FileAccess.Read)))
                     {
                         // Create the XDocument.
@@ -619,23 +706,27 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             return styles;
         }
         #endregion
-
-        public static void InitLog()
+        public static string CalculateSha3Hash(string value)
         {
-            var xmlDocument = new XmlDocument();
-            try
-            {
-                    xmlDocument.Load(File.OpenRead(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) +
-                                                   "\\log4net.config")); 
-            }
-            catch (Exception)
-            {
-                    xmlDocument.Load(File.OpenRead(
-                        Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\log4net.config"));
-            }
-            XmlConfigurator.Configure(
-                LogManager.CreateRepository(Assembly.GetEntryAssembly(),
-                    typeof(log4net.Repository.Hierarchy.Hierarchy)), xmlDocument["log4net"]);
+            var input = Encoding.UTF8.GetBytes(value);
+            var output = CalculateSha3Hash(input);
+            return output.ToHex();
         }
+
+        private static byte[] CalculateSha3Hash(byte[] value)
+        {
+            var digest = new KeccakDigest(256);
+            var output = new byte[digest.GetDigestSize()];
+            digest.BlockUpdate(value, 0, value.Length);
+            digest.DoFinal(output, 0);
+            return output;
+        }
+
+        private static string ToHex(this byte[] value, bool prefix = false)
+        {
+            var strPrex = prefix ? "0x" : "";
+            return strPrex + string.Concat(value.Select(b => b.ToString("x2")));
+        }
+        
     }
 }

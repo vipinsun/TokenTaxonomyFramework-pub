@@ -9,7 +9,6 @@ using TTI.TTF.Taxonomy.Model;
 using TTI.TTF.Taxonomy.Model.Core;
 using TTI.TTF.Taxonomy.TypePrinters;
 
-
 namespace TTI.TTF.Taxonomy
 {
     public static class PrintController
@@ -17,55 +16,61 @@ namespace TTI.TTF.Taxonomy
         private static WordprocessingDocument _document;
         private static readonly ILog _log;
         internal static string OutputFolder = "";
-        internal static string filePath = "";
+        internal static string FilePath = "";
+
         static PrintController()
         {
             #region logging
 
             Utils.InitLog();
             _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
             #endregion
+        }
+
+        private static void InitWorkingDocument(string styleSource)
+        {
+            _document =
+                WordprocessingDocument.Create(FilePath, WordprocessingDocumentType.Document);
+            _log.Info("Artifact file: " + FilePath + " created");
+            // Add a main document part.     
+            var mainPart = _document.AddMainDocumentPart();
+
+            // Create the document structure and add some text.
+            mainPart.Document = new Document();
+
+            // Get the Styles part for this document.
+            Utils.AddStylesPartToPackage(_document);
+            var styles = Utils.ExtractStylesPart(styleSource);
+            Utils.ReplaceStylesPart(_document, styles);
+            Save();
         }
 
         public static void PrintBase(string fileName, string waterMark, string styleSource, Base baseToPrint)
         {
-     
             _log.Info("Print Controller printing Base: " + baseToPrint.Artifact.Name);
 
-            string trimName = baseToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName + ModelMap.FolderSeparator + ModelMap.BaseFolder + ModelMap.FolderSeparator +
-                trimName;
-            filePath = OutputFolder + ModelMap.FolderSeparator + trimName + ".docx";
+            var trimName = baseToPrint.Artifact.Name.Replace(" ", "");
+            OutputFolder = fileName +  ModelMap.BaseFolder + ModelMap.FolderSeparator +
+                           trimName;
+            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
                 Directory.CreateDirectory(OutputFolder);
-                _document = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document);
+                InitWorkingDocument(styleSource);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _log.Error("Artifact Output Folder: " + OutputFolder + " cannot be created.");
                 _log.Error(ex);
                 return;
             }
-            // Add a main document part. 
-            var mainPart = _document.AddMainDocumentPart();
 
-            mainPart.Document = new Document();
-            // Get the Styles part for this document.
-            Utils.AddStylesPartToPackage(_document);
-            var styles = Utils.ExtractStylesPart(styleSource);
-            Utils.ReplaceStylesPart(_document, styles);
-
-            Save();
             ArtifactPrinter.AddArtifactContent(_document, baseToPrint.Artifact, true);
             BasePrinter.AddBaseProperties(_document, baseToPrint);
             Utils.InsertCustomWatermark(_document, waterMark);
             Utils.AddFooter(_document, baseToPrint.Artifact.Name);
             Save();
-
-            if (!Utils.ValidateWordDocument(_document))
-                Utils.ValidateCorruptedWordDocument(_document);
+            
             _document.Close();
         }
 
@@ -73,14 +78,14 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Behavior: " + behaviorToPrint.Artifact.Name);
 
-            string trimName = behaviorToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName + ModelMap.FolderSeparator + ModelMap.BehaviorFolder + ModelMap.FolderSeparator +
+            var trimName = behaviorToPrint.Artifact.Name.Replace(" ", "");
+            OutputFolder = fileName +  ModelMap.BehaviorFolder + ModelMap.FolderSeparator +
                 trimName;
-            filePath = OutputFolder + ModelMap.FolderSeparator + trimName + ".docx";
+            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
                 Directory.CreateDirectory(OutputFolder);
-                _document = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document);
+                InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
@@ -88,24 +93,13 @@ namespace TTI.TTF.Taxonomy
                 _log.Error(ex);
                 return;
             }
-            // Add a main document part. 
-            var mainPart = _document.AddMainDocumentPart();
 
-            mainPart.Document = new Document();
-            // Get the Styles part for this document.
-            Utils.AddStylesPartToPackage(_document);
-            var styles = Utils.ExtractStylesPart(styleSource);
-            Utils.ReplaceStylesPart(_document, styles);
-
-            Save();
             ArtifactPrinter.AddArtifactContent(_document, behaviorToPrint.Artifact, true);
             BehaviorPrinter.AddBehaviorProperties(_document, behaviorToPrint);
             Utils.InsertCustomWatermark(_document, waterMark);
             Utils.AddFooter(_document, behaviorToPrint.Artifact.Name);
             Save();
-
-            if (!Utils.ValidateWordDocument(_document))
-                Utils.ValidateCorruptedWordDocument(_document);
+            
             _document.Close();
         }
 
@@ -113,14 +107,14 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Behavior Group: " + behaviorGroupToPrint.Artifact.Name);
 
-            string trimName = behaviorGroupToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName + ModelMap.FolderSeparator + ModelMap.BehaviorGroupFolder + ModelMap.FolderSeparator +
+            var trimName = behaviorGroupToPrint.Artifact.Name.Replace(" ", "");
+            OutputFolder = fileName +  ModelMap.BehaviorGroupFolder + ModelMap.FolderSeparator +
                 trimName;
-            filePath = OutputFolder + ModelMap.FolderSeparator + trimName + ".docx";
+            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
                 Directory.CreateDirectory(OutputFolder);
-                _document = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document);
+                InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
@@ -129,23 +123,11 @@ namespace TTI.TTF.Taxonomy
                 return;
             }
             // Add a main document part. 
-            var mainPart = _document.AddMainDocumentPart();
-
-            mainPart.Document = new Document();
-            // Get the Styles part for this document.
-            Utils.AddStylesPartToPackage(_document);
-            var styles = Utils.ExtractStylesPart(styleSource);
-            Utils.ReplaceStylesPart(_document, styles);
-
-            Save();
             ArtifactPrinter.AddArtifactContent(_document, behaviorGroupToPrint.Artifact, true);
             BehaviorGroupPrinter.AddBehaviorGroupProperties(_document, behaviorGroupToPrint);
             Utils.InsertCustomWatermark(_document, waterMark);
             Utils.AddFooter(_document, behaviorGroupToPrint.Artifact.Name);
             Save();
-
-            if (!Utils.ValidateWordDocument(_document))
-                Utils.ValidateCorruptedWordDocument(_document);
             _document.Close();
         }
 
@@ -153,14 +135,14 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Property Set: " + psToPrint.Artifact.Name);
 
-            string trimName = psToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName + ModelMap.FolderSeparator + ModelMap.PropertySetFolder + ModelMap.FolderSeparator +
+            var trimName = psToPrint.Artifact.Name.Replace(" ", "");
+            OutputFolder = fileName +  ModelMap.PropertySetFolder + ModelMap.FolderSeparator +
                 trimName;
-            filePath = OutputFolder + ModelMap.FolderSeparator + trimName + ".docx";
+            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
                 Directory.CreateDirectory(OutputFolder);
-                _document = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document);
+                InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
@@ -168,35 +150,61 @@ namespace TTI.TTF.Taxonomy
                 _log.Error(ex);
                 return;
             }
-            // Add a main document part. 
-            var mainPart = _document.AddMainDocumentPart();
-
-            mainPart.Document = new Document();
-            // Get the Styles part for this document.
-            Utils.AddStylesPartToPackage(_document);
-            var styles = Utils.ExtractStylesPart(styleSource);
-            Utils.ReplaceStylesPart(_document, styles);
-
-            Save();
+           
             ArtifactPrinter.AddArtifactContent(_document, psToPrint.Artifact, true);
             PropertySetPrinter.AddPropertySetProperties(_document, psToPrint);
             Utils.InsertCustomWatermark(_document, waterMark);
             Utils.AddFooter(_document, psToPrint.Artifact.Name);
             Save();
 
-            if (!Utils.ValidateWordDocument(_document))
-                Utils.ValidateCorruptedWordDocument(_document);
             _document.Close();
         }
 
-        internal static void PrintTTF(Model.Taxonomy ttf)
+        public static void PrintFormula(string fileName, string waterMark, string styleSource, TemplateFormula formulaToPrint)
+        {
+            _log.Info("Print Controller printing Property Set: " + formulaToPrint.Artifact.Name);
+
+            var trimName = formulaToPrint.Artifact.Name.Replace(" ", "");
+            OutputFolder = fileName +  ModelMap.TemplateFormulasFolder + ModelMap.FolderSeparator +
+                           trimName;
+            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            try
+            {
+                Directory.CreateDirectory(OutputFolder);
+                InitWorkingDocument(styleSource);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Artifact Output Folder: " + OutputFolder + " cannot be created.");
+                _log.Error(ex);
+                return;
+            }
+           
+            ArtifactPrinter.AddArtifactContent(_document, formulaToPrint.Artifact, true);
+            FormulaPrinter.AddFormulaProperties(_document, formulaToPrint);
+            Utils.InsertCustomWatermark(_document, waterMark);
+            Utils.AddFooter(_document, formulaToPrint.Artifact.Name);
+            Save();
+
+            _document.Close();
+        }
+        internal static void PrintTtf()
         {
             throw new NotImplementedException();
         }
 
-        internal static void Save()
+        internal static void Save(bool validate = false)
         {
             _document.MainDocumentPart.Document.Save();
+            _log.Info("Document saved: " + FilePath);
+            if (!validate) return;
+            _document.Close();
+            _document = WordprocessingDocument.Open(FilePath,false);
+                
+            if (!Utils.ValidateWordDocument(_document))
+                Utils.ValidateCorruptedWordDocument(_document);
+            _document.Close();
+            _document = WordprocessingDocument.Open(FilePath, true);
         }
 
     }

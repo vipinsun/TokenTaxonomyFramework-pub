@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class BehaviorPrinter
+    internal static class BehaviorPrinter
     {
         private static readonly ILog _log;
         static BehaviorPrinter()

@@ -1,14 +1,18 @@
-﻿using DocumentFormat.OpenXml;
+﻿using System;
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System.Collections.Generic;
 using TTI.TTF.Taxonomy.Model.Artifact;
 using log4net;
 using System.Reflection;
+using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Core;
+using static DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class ArtifactPrinter {
+    internal static class ArtifactPrinter {
         private static readonly ILog _log;
 
         static ArtifactPrinter()
@@ -31,7 +35,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var para = body.AppendChild(new Paragraph());
             var run = para.AppendChild(new Run());
             run.AppendChild(new Text(artifact.Name) { Space = SpaceProcessingModeValues.Preserve });
-            if (isTopArtifact)
+            if (isTopArtifact && artifact.ArtifactSymbol.Type != ArtifactType.TemplateFormula)
                 Utils.ApplyStyleToParagraph(document, "Title", "Title", para, JustificationValues.Center);
             else
                 Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", para, JustificationValues.Center);
@@ -154,9 +158,37 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
         public static void GenerateArtifactSymbol(WordprocessingDocument document, ArtifactSymbol symbol)
         {
+            string name;
+            switch (symbol.Type)
+            {
+                case ArtifactType.Base:
+                    name = ModelManager.GetArtifactById<Base>(symbol.Id).Artifact.Name;
+                    break;
+                case ArtifactType.Behavior:
+                    name = ModelManager.GetArtifactById<Model.Core.Behavior>(symbol.Id).Artifact.Name;
+                    break;
+                case ArtifactType.BehaviorGroup:
+                    name = ModelManager.GetArtifactById<BehaviorGroup>(symbol.Id).Artifact.Name;
+                    break;
+                case ArtifactType.PropertySet:
+                    name = ModelManager.GetArtifactById<PropertySet>(symbol.Id).Artifact.Name;
+                    break;
+                case ArtifactType.TemplateFormula:
+                    name = ModelManager.GetArtifactById<TemplateFormula>(symbol.Id).Artifact.Name;
+                    break;
+                case ArtifactType.TemplateDefinition:
+                    name = ModelManager.GetArtifactById<TemplateDefinition>(symbol.Id).Artifact.Name;
+                    break;
+                case ArtifactType.TokenTemplate:
+                    name = ModelManager.GetArtifactById<TokenSpecification>(symbol.Id).Artifact.Name;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
             var basicProps = new[,]
             {
                 {"Type:", symbol.Type.ToString()},
+                {"Name:", name},
                 {"Id:", symbol.Id},
                 {"Visual:", symbol.Visual},
                 {"Tooling:", symbol.Tooling},
@@ -176,16 +208,16 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             contentType1.Append(new Paragraph(new Run(new Text("Map Type"))));
             contentType1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             name1.Append(new Paragraph(new Run(new Text("Name"))));
             name1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             platform1.Append(new Paragraph(new Run(new Text("Location"))));
             platform1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "20" }));
+                new TableCellWidth { Type = Pct, Width = "20" }));
             link1.Append(new Paragraph(new Run(new Text("Description"))));
             link1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "50" }));
+                new TableCellWidth { Type = Pct, Width = "50" }));
             tr1.Append(contentType1);
             tr1.Append(name1);
             tr1.Append(platform1);
@@ -225,16 +257,16 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             contentType1.Append(new Paragraph(new Run(new Text("Map Type"))));
             contentType1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             name1.Append(new Paragraph(new Run(new Text("Name"))));
             name1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             platform1.Append(new Paragraph(new Run(new Text("Platform"))));
             platform1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             link1.Append(new Paragraph(new Run(new Text("Location"))));
             link1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "55" }));
+                new TableCellWidth { Type = Pct, Width = "55" }));
             tr1.Append(contentType1);
             tr1.Append(name1);
             tr1.Append(platform1);
@@ -275,16 +307,16 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             contentTypeH.Append(new Paragraph(new Run(new Text("Map Type"))));
             contentTypeH.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             nameH.Append(new Paragraph(new Run(new Text("Name"))));
             nameH.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             platformH.Append(new Paragraph(new Run(new Text("Platform"))));
             platformH.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             linkH.Append(new Paragraph(new Run(new Text("Location"))));
             linkH.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "55" }));
+                new TableCellWidth { Type = Pct, Width = "55" }));
             trH.Append(contentTypeH);
             trH.Append(nameH);
             trH.Append(platformH);
@@ -322,13 +354,13 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             contentType1.Append(new Paragraph(new Run(new Text("Content Type"))));
             contentType1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+                new TableCellWidth { Type = Pct, Width = "10" }));
             fileName1.Append(new Paragraph(new Run(new Text("File Name"))));
             fileName1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "25" }));
+                new TableCellWidth { Type = Pct, Width = "25" }));
             content1.Append(new Paragraph(new Run(new Text("File Content"))));
             content1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "65" }));
+                new TableCellWidth { Type = Pct, Width = "65" }));
             tr1.Append(contentType1);
             tr1.Append(fileName1);
             tr1.Append(content1);
@@ -364,13 +396,13 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             symbol1.Append(new Paragraph(new Run(new Text("Symbol"))));
             symbol1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+                new TableCellWidth { Type = Pct, Width = "10" }));
             name1.Append(new Paragraph(new Run(new Text("Description"))));
             name1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "75" }));
+                new TableCellWidth { Type = Pct, Width = "75" }));
             description1.Append(new Paragraph(new Run(new Text("Applies To"))));
             description1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "15" }));
+                new TableCellWidth { Type = Pct, Width = "15" }));
             tr1.Append(name1);
             tr1.Append(symbol1);
             tr1.Append(description1);
@@ -404,13 +436,13 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             name1.Append(new Paragraph(new Run(new Text("Artifact Type"))));
             name1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "45" }));
+                new TableCellWidth { Type = Pct, Width = "45" }));
             symbol1.Append(new Paragraph(new Run(new Text("Symbol"))));
             symbol1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+                new TableCellWidth { Type = Pct, Width = "10" }));
             description1.Append(new Paragraph(new Run(new Text("Id"))));
             description1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "45" }));
+                new TableCellWidth { Type = Pct, Width = "45" }));
             tr1.Append(name1);
             tr1.Append(symbol1);
             tr1.Append(description1);
@@ -445,13 +477,13 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             name1.Append(new Paragraph(new Run(new Text("Artifact Type"))));
             name1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "35" }));
+                new TableCellWidth { Type = Pct, Width = "35" }));
             symbol1.Append(new Paragraph(new Run(new Text("Symbol"))));
             symbol1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "10" }));
+                new TableCellWidth { Type = Pct, Width = "10" }));
             description1.Append(new Paragraph(new Run(new Text("Description"))));
             description1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "55" }));
+                new TableCellWidth { Type = Pct, Width = "55" }));
             tr1.Append(name1);
             tr1.Append(symbol1);
             tr1.Append(description1);
@@ -484,10 +516,10 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             name1.Append(new Paragraph(new Run(new Text("Name"))));
             name1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "25" }));
+                new TableCellWidth { Type = Pct, Width = "25" }));
             description1.Append(new Paragraph(new Run(new Text("Description"))));
             description1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "75" }));
+                new TableCellWidth { Type = Pct, Width = "75" }));
             tr1.Append(name1);
             tr1.Append(description1);
             analogyTable.Append(tr1);

@@ -6,7 +6,7 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class PropertySetPrinter
+    internal static class PropertySetPrinter
     {
         private static readonly ILog _log;
         static PropertySetPrinter()
