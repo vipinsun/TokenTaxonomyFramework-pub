@@ -5,11 +5,10 @@ using System.Reflection;
 using TTI.TTF.Taxonomy.Model.Core;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Google.Protobuf.Collections;
-using System;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class CommonPrinter
+    internal static class CommonPrinter
     {
         private static readonly ILog _log;
         static CommonPrinter()
@@ -230,17 +229,17 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         {
             _log.Info("Printing InvocationsTable");
             var body = document.MainDocumentPart.Document.Body;
-            var propertPara = body.AppendChild(new Paragraph());
-            var ivRun = propertPara.AppendChild(new Run());
+            var propertyPara = body.AppendChild(new Paragraph());
+            var ivRun = propertyPara.AppendChild(new Run());
             ivRun.AppendChild(new Text("Properties"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", propertPara, JustificationValues.Center);
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", propertyPara, JustificationValues.Center);
 
             foreach (var p in properties)
             {
                 var exBody = body.AppendChild(new Paragraph());
                 var exRun = exBody.AppendChild(new Run());
-                exRun.AppendChild(new Text(p.Name));
-                Utils.ApplyStyleToParagraph(document, "Subtitle", "Subtitle", exBody, JustificationValues.Center);
+                exRun.AppendChild(new Text("Name: " + p.Name));
+                Utils.ApplyStyleToParagraph(document, "Subtitle", "Subtitle", exBody);
 
                 var idBody = body.AppendChild(new Paragraph());
                 var idRun = idBody.AppendChild(new Run());

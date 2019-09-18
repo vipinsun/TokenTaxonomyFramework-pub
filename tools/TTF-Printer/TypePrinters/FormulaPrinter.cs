@@ -1,19 +1,15 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using log4net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Wordprocessing;
 using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class ForumlaPrinter
+    internal static class FormulaPrinter
     {
         private static readonly ILog _log;
-        static ForumlaPrinter()
+        static FormulaPrinter()
         {
             #region logging
 
@@ -23,9 +19,68 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddFomulaProperties(WordprocessingDocument document, TemplateFormula formula)
+        public static void AddFormulaProperties(WordprocessingDocument document, TemplateFormula formula)
         {
+            _log.Info("Printing Template Formula Properties: " + formula.Artifact.Name);
+            var body = document.MainDocumentPart.Document.Body;
 
+            var aDef = body.AppendChild(new Paragraph());
+            var adRun = aDef.AppendChild(new Run());
+            adRun.AppendChild(new Text("Template Formula"));
+            Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
+            
+            var tDef = body.AppendChild(new Paragraph());
+            var tRun = tDef.AppendChild(new Run());
+            tRun.AppendChild(new Text("Template Type: " + formula.TemplateType));
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", tDef);
+            
+            var bDef = body.AppendChild(new Paragraph());
+            var bRun = bDef.AppendChild(new Run());
+            bRun.AppendChild(new Text("Base Token"));
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bDef, JustificationValues.Center);
+            
+            ArtifactPrinter.GenerateArtifactSymbol(document, formula.TokenBase.Base);
+
+            var beDef = body.AppendChild(new Paragraph());
+            var beRun = beDef.AppendChild(new Run());
+            beRun.AppendChild(new Text("Behaviors"));
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", beDef, JustificationValues.Center);
+            foreach (var b in formula.Behaviors)
+            {
+                ArtifactPrinter.GenerateArtifactSymbol(document, b.Behavior);
+                var bbDef = body.AppendChild(new Paragraph());
+                var bbRun = bbDef.AppendChild(new Run());
+                bbRun.AppendChild(new Text("Behaviors"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
+            }
+            
+            var bgDef = body.AppendChild(new Paragraph());
+            var bgRun = bgDef.AppendChild(new Run());
+            bgRun.AppendChild(new Text("Behavior Groups"));
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bgDef, JustificationValues.Center);
+            foreach (var b in formula.BehaviorGroups)
+            {
+                ArtifactPrinter.GenerateArtifactSymbol(document, b.BehaviorGroup);
+            }
+            
+            var pDef = body.AppendChild(new Paragraph());
+            var pRun = pDef.AppendChild(new Run());
+            pRun.AppendChild(new Text("Property Sets"));
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", pDef, JustificationValues.Center);
+            foreach (var p in formula.PropertySets)
+            {
+                ArtifactPrinter.GenerateArtifactSymbol(document, p.PropertySet);
+            }
+            
+            var cDef = body.AppendChild(new Paragraph());
+            var cRun = cDef.AppendChild(new Run());
+            cRun.AppendChild(new Text("Child Tokens"));
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", cDef, JustificationValues.Center);
+            foreach (var c in formula.ChildTokens)
+            {
+                AddFormulaProperties(document, c);
+            }
+            
         }
     }
 }

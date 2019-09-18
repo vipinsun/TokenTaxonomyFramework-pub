@@ -6,7 +6,7 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class BasePrinter
+    internal static class BasePrinter
     {
         private static readonly ILog _log;
         static BasePrinter()
@@ -48,17 +48,8 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", propDef);
 
             var propsPara = body.AppendChild(new Paragraph());
-            var propsRun = propDef.AppendChild(new Run());
+            var propsRun = propsPara.AppendChild(new Run());
             propsRun.AppendChild(Utils.GetGenericPropertyTable(document, "Name", "Value", tokenBase.TokenProperties));
-            
-
-            /*
-            tokenBase.TokenProperties.ToString();
-            tokenBase.Constructor != null
-                ? tokenBase.Constructor.ToString()
-                : "constructor TBD";
-                */
-
         }
     }
 }

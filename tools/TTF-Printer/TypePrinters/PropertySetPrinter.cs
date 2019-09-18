@@ -1,16 +1,12 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using log4net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
 {
-    static class PropertySetPrinter
+    internal static class PropertySetPrinter
     {
         private static readonly ILog _log;
         static PropertySetPrinter()
@@ -25,7 +21,15 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
         public static void AddPropertySetProperties(WordprocessingDocument document, PropertySet ps)
         {
+            _log.Info("Printing Property Set Properties: " + ps.Artifact.Name);
+            var body = document.MainDocumentPart.Document.Body;
 
+            var aDef = body.AppendChild(new Paragraph());
+            var adRun = aDef.AppendChild(new Run());
+            adRun.AppendChild(new Text("Property Set"));
+            Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
+
+            CommonPrinter.BuildPropertiesTable(document, ps.Properties);
         }
     }
 }

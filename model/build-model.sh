@@ -26,6 +26,7 @@ protoc --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out=no_server:../t
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/ArtifactGenerator/Model
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TaxonomyService/TaxonomyModel
+cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Printer/Model
 
 cp ../tools/TaxonomyObjectModel/out/ts/* ../tools/TTF-Web-UI/src/model
 for f in `ls ../tools/TTF-Web-UI/src/model`

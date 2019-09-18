@@ -10,14 +10,15 @@ using TTI.TTF.Taxonomy.Model;
 
 namespace TTI.TTF.Taxonomy
 {
-    internal class Printer
+    internal static class Printer
     {
         private static IConfigurationRoot _config;
         private static ILog _log;
         private static string _gRpcHost;
         private static int _gRpcPort;
-        internal static Service.ServiceClient TaxonomyClient;
+        private static Service.ServiceClient _taxonomyClient;
         private static string _printToPath;
+        internal static ModelManager ModelManager { get; private set; }
 
         private static void Main(string[] args)
         {
@@ -51,14 +52,19 @@ namespace TTI.TTF.Taxonomy
             _printToPath = _config["printToPath"];
 
             _log.Info("Connection to TaxonomyService: " + _gRpcHost + " port: " + _gRpcPort);
-            TaxonomyClient = new Service.ServiceClient(
+            _taxonomyClient = new Service.ServiceClient(
                 new Channel(_gRpcHost, _gRpcPort, ChannelCredentials.Insecure));
 
-            var waterMark = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
-                            @"\images\TTF-bw.jpg";
+            ModelManager = new ModelManager(_taxonomyClient.GetFullTaxonomy(new TaxonomyVersion
+            {
+                Version = "1.0"
+            }));
 
-            var styleSource = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
-                            @"\templates\savon.docx";
+            var waterMark = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
+                            + "images" +ModelMap.FolderSeparator + "TTF-bw.jpg";
+
+            var styleSource = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
+                            + "templates" + ModelMap.FolderSeparator + "savon.docx";
 
             var filePath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator +
                            _printToPath + ModelMap.FolderSeparator;
@@ -66,8 +72,7 @@ namespace TTI.TTF.Taxonomy
             switch (args.Length)
             {
                 case 1 when args[0] == "-a":
-                    var ttf = TaxonomyClient.GetFullTaxonomy(new Model.TaxonomyVersion { Version = "1.0" });
-                    PrintController.PrintTTF(ttf);
+                    PrintController.PrintTtf();
                     return;
                 case 1:
                     _log.Error(GetUsage());
@@ -80,7 +85,7 @@ namespace TTI.TTF.Taxonomy
                     return;
                 case 4:
                     var id = "";
-                    ArtifactType artifactType = ArtifactType.Base;
+                    var artifactType = ArtifactType.Base;
                     var  artifactSet = false;
                     for (var i = 0; i < args.Length; i++)
                     {
@@ -106,7 +111,7 @@ namespace TTI.TTF.Taxonomy
                         switch (artifactType)
                         {
                             case ArtifactType.Base:
-                                var b = TaxonomyClient.GetBaseArtifact(new ArtifactSymbol
+                                var b = ModelManager.GetBaseArtifact(new ArtifactSymbol
                                 {
                                     Id = id
                                 });
@@ -114,11 +119,10 @@ namespace TTI.TTF.Taxonomy
                                 if (b != null)
                                 {
                                     PrintController.PrintBase(filePath, waterMark, styleSource, b);
-                                    return;
                                 }
                                 break;
                             case ArtifactType.Behavior:
-                                var behavior = TaxonomyClient.GetBehaviorArtifact(new ArtifactSymbol
+                                var behavior = ModelManager.GetBehaviorArtifact(new ArtifactSymbol
                                 {
                                     Id = id
                                 });
@@ -126,11 +130,10 @@ namespace TTI.TTF.Taxonomy
                                 if (behavior != null)
                                 {
                                     PrintController.PrintBehavior(filePath, waterMark, styleSource, behavior);
-                                    return;
                                 }
                                 break;
                             case ArtifactType.BehaviorGroup:
-                                var behaviorGroup = TaxonomyClient.GetBehaviorGroupArtifact(new ArtifactSymbol
+                                var behaviorGroup = ModelManager.GetBehaviorGroupArtifact(new ArtifactSymbol
                                 {
                                     Id = id
                                 });
@@ -138,18 +141,33 @@ namespace TTI.TTF.Taxonomy
                                 if (behaviorGroup != null)
                                 {
                                     PrintController.PrintBehaviorGroup(filePath, waterMark, styleSource, behaviorGroup);
-                                    return;
                                 }
                                 break;
                             case ArtifactType.PropertySet:
+                                var propertySet = ModelManager.GetPropertySetArtifact(new ArtifactSymbol
+                                {
+                                    Id = id
+                                });
+
+                                if (propertySet != null)
+                                {
+                                    PrintController.PrintPropertySet(filePath, waterMark, styleSource, propertySet);
+                                }
                                 break;
                             case ArtifactType.TemplateFormula:
+                                var formula = ModelManager.GetTemplateFormulaArtifact(new ArtifactSymbol
+                                {
+                                    Id = id
+                                });
+
+                                if (formula != null)
+                                {
+                                    PrintController.PrintFormula(filePath, waterMark, styleSource, formula);
+                                }
                                 break;
                             case ArtifactType.TemplateDefinition:
                                 break;
                             case ArtifactType.TokenTemplate:
-                                break;
-                            default:
                                 break;
                         }
                     }
