@@ -25,7 +25,7 @@ This paper does not provide a backgrounder on Tokens and their function, but rat
 
 A token is a digital representation of some shared value. The value can be intrinsically digital with no external physical form or be a receipt or title for a material item or property. A purely digital token represents value directly, where the other references that actual value. For example, a crypto-currency like Bitcoin is intrinsically digital, it has no referenced physical form, but 1 kg of tokenized gold would.
 
-An account or wallet (which can aggregate several accounts) represents a repository of tokens attributed to an owner. An owner is given an "address" which uniquely identifies the owner to which the owner posesses the key. A token's owner is a references to an address and a wallet is a reference to address for an owner. The wallet can provide a view into token balances in one place for the owner, much like a bank account or bank summary of accounts.
+An account or wallet (which can aggregate several accounts) represents a repository of tokens attributed to an owner. An owner is given an "address" which uniquely identifies the owner to which the owner possesses the key. A token's owner is a references to an address and a wallet is a reference to address for an owner. The wallet can provide a view into token balances in one place for the owner, much like a bank account or bank summary of accounts.
 
 See the [Token Hall](https://medium.com/tokenhall) for a backgrounder for business and technical audiences.
 
@@ -131,11 +131,11 @@ Physical cash or a crypto currency is a good example of a fungible token. These 
 
 There are currently two kinds of fungible tokens, common, sometimes called account or balance tokens, and unique, or UTXO (unspent transaction output). This distinction might seem subtle, but is important when considering how fungible tokens can be traced and what properties they can have.
 
-Common fungible tokens share a single set of properties, are not distinct from one another and balances are recorded in a central place. These tokens are simply represented as a balance or quanitity attributed to an owners address where all the balances are recorded on the same balance sheet. This balance sheet is distributed, so its not 'centralized' but rather simplified. Common tokens have the advantage of easily sharing a common value like a "SKU" where the change in the value is immediately reflected for all tokens. Like money in a bank account is represented as a balance. Common tokens cannot be individually traced, only their balances between accounts can.
+Common fungible tokens share a single set of properties, are not distinct from one another and balances are recorded in a central place. These tokens are simply represented as a balance or quantity attributed to an owners address where all the balances are recorded on the same balance sheet. This balance sheet is distributed, so its not 'centralized' but rather simplified. Common tokens have the advantage of easily sharing a common value like a "SKU" where the change in the value is immediately reflected for all tokens. Like money in a bank account is represented as a balance. Common tokens cannot be individually traced, only their balances between accounts can.
 
 A common fungible token is identified by **&tau;<sub>F</sub>**.
 
-Unique fungible tokens have their own identities and can be individually traced. Each unique token can carry unique properties that cannot be changed in one place and cascade to all and their balances must be summed. These are like bank notes, paper bills and metal coins, they are interchangable but have unique properties like a serial number.
+Unique fungible tokens have their own identities and can be individually traced. Each unique token can carry unique properties that cannot be changed in one place and cascade to all and their balances must be summed. These are like bank notes, paper bills and metal coins, they are interchangeable but have unique properties like a serial number.
 
 A unique fungible token is identified by **&tau;<sub>F'</sub>**.
 
