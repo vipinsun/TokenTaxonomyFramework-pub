@@ -177,13 +177,18 @@ namespace TTI.TTF.Taxonomy
                                 }
                                 break;
                             case ArtifactType.TokenTemplate:
-                                var spec = ModelManager.GetTokenSpecification(new TokenTemplateId
+                                var spec = _taxonomyClient.GetTokenSpecification(new TokenTemplateId
                                 {
                                     DefinitionId = id
                                 });
-
+                                
                                 if (spec != null)
                                 {
+                                    if (spec.Artifact.Name.Contains("Error:"))
+                                    {
+                                        _log.Error(spec.Artifact.Name);
+                                        return;
+                                    }
                                     PrintController.PrintSpec(filePath, waterMark, styleSource, spec);
                                 }
                                 break;

@@ -168,34 +168,36 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             "dGlvbhgCIAEoCRIWCg50ZW1wbGF0ZV92YWx1ZRgDIAEoCRJEChRwcm9wZXJ0",
             "eV9pbnZvY2F0aW9ucxgEIAMoCzImLnRheG9ub215Lm1vZGVsLmNvcmUuSW52",
             "b2NhdGlvbkJpbmRpbmcSPgoKcHJvcGVydGllcxgFIAMoCzIqLnRheG9ub215",
-            "Lm1vZGVsLmNvcmUuUHJvcGVydHlTcGVjaWZpY2F0aW9uIlgKGkJlaGF2aW9y",
-            "R3JvdXBTcGVjaWZpY2F0aW9uEjoKCWJlaGF2aW9ycxgBIAMoCzInLnRheG9u",
-            "b215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sIv4DChFJbnZvY2F0",
-            "aW9uQmluZGluZxJDCglpbmZsdWVuY2UYASABKAsyMC50YXhvbm9teS5tb2Rl",
-            "bC5jb3JlLkludm9jYXRpb25CaW5kaW5nLkluZmx1ZW5jZRJOCg9pbnZvY2F0",
-            "aW9uX3N0ZXAYAiABKAsyNS50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRp",
-            "b25CaW5kaW5nLkludm9jYXRpb25TdGVwGrsBCglJbmZsdWVuY2USOgoOaW5m",
-            "bHVlbmNlX3R5cGUYASABKA4yIi50YXhvbm9teS5tb2RlbC5jb3JlLkluZmx1",
-            "ZW5jZVR5cGUSFgoOaW5mbHVlbmNpbmdfaWQYAiABKAkSIQoZaW5mbHVlbmNp",
-            "bmdfaW52b2NhdGlvbl9pZBgDIAEoCRIVCg1pbmZsdWVuY2VkX2lkGAQgASgJ",
-            "EiAKGGluZmx1ZW5jZWRfaW52b2NhdGlvbl9pZBgFIAEoCRqVAQoOSW52b2Nh",
-            "dGlvblN0ZXASMwoKaW52b2NhdGlvbhgBIAEoCzIfLnRheG9ub215Lm1vZGVs",
-            "LmNvcmUuSW52b2NhdGlvbhJOCg9uZXh0X2ludm9jYXRpb24YAiABKAsyNS50",
-            "YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25CaW5kaW5nLkludm9jYXRp",
-            "b25TdGVwImgKCVRva2VuQmFzZRInCgRiYXNlGAEgASgLMhkudGF4b25vbXku",
-            "bW9kZWwuY29yZS5CYXNlEjIKBnZhbHVlcxgCIAEoCzIiLnRheG9ub215Lm1v",
-            "ZGVsLmNvcmUuQmFzZVJlZmVyZW5jZSJ4Cg1Ub2tlbkJlaGF2aW9yEi8KCGJl",
-            "aGF2aW9yGAEgASgLMh0udGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvchI2",
-            "CgZ2YWx1ZXMYAiABKAsyJi50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9y",
-            "UmVmZXJlbmNlIocBChJUb2tlbkJlaGF2aW9yR3JvdXASNAoIYmVoYXZpb3IY",
-            "ASABKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9yR3JvdXASOwoG",
-            "dmFsdWVzGAIgASgLMisudGF4b25vbXkubW9kZWwuY29yZS5CZWhhdmlvckdy",
-            "b3VwUmVmZXJlbmNlIoUBChBUb2tlblByb3BlcnR5U2V0EjYKDHByb3BlcnR5",
-            "X3NldBgBIAEoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJvcGVydHlTZXQS",
-            "OQoGdmFsdWVzGAIgASgLMikudGF4b25vbXkubW9kZWwuY29yZS5Qcm9wZXJ0",
-            "eVNldFJlZmVyZW5jZSosCg1JbmZsdWVuY2VUeXBlEg0KCUlOVEVSQ0VQVBAA",
-            "EgwKCE9WRVJSSURFEAFCQQofb3JnLnR0aS50dGYudGF4b25vbXkubW9kZWwu",
-            "Y29yZVABqgIbVFRJLlRURi5UYXhvbm9teS5Nb2RlbC5Db3JlYgZwcm90bzM="));
+            "Lm1vZGVsLmNvcmUuUHJvcGVydHlTcGVjaWZpY2F0aW9uIo0BChpCZWhhdmlv",
+            "ckdyb3VwU3BlY2lmaWNhdGlvbhIzCghhcnRpZmFjdBgBIAEoCzIhLnRheG9u",
+            "b215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0EjoKCWJlaGF2aW9ycxgCIAMo",
+            "CzInLnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0U3ltYm9sIv4D",
+            "ChFJbnZvY2F0aW9uQmluZGluZxJDCglpbmZsdWVuY2UYASABKAsyMC50YXhv",
+            "bm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25CaW5kaW5nLkluZmx1ZW5jZRJO",
+            "Cg9pbnZvY2F0aW9uX3N0ZXAYAiABKAsyNS50YXhvbm9teS5tb2RlbC5jb3Jl",
+            "Lkludm9jYXRpb25CaW5kaW5nLkludm9jYXRpb25TdGVwGrsBCglJbmZsdWVu",
+            "Y2USOgoOaW5mbHVlbmNlX3R5cGUYASABKA4yIi50YXhvbm9teS5tb2RlbC5j",
+            "b3JlLkluZmx1ZW5jZVR5cGUSFgoOaW5mbHVlbmNpbmdfaWQYAiABKAkSIQoZ",
+            "aW5mbHVlbmNpbmdfaW52b2NhdGlvbl9pZBgDIAEoCRIVCg1pbmZsdWVuY2Vk",
+            "X2lkGAQgASgJEiAKGGluZmx1ZW5jZWRfaW52b2NhdGlvbl9pZBgFIAEoCRqV",
+            "AQoOSW52b2NhdGlvblN0ZXASMwoKaW52b2NhdGlvbhgBIAEoCzIfLnRheG9u",
+            "b215Lm1vZGVsLmNvcmUuSW52b2NhdGlvbhJOCg9uZXh0X2ludm9jYXRpb24Y",
+            "AiABKAsyNS50YXhvbm9teS5tb2RlbC5jb3JlLkludm9jYXRpb25CaW5kaW5n",
+            "Lkludm9jYXRpb25TdGVwImgKCVRva2VuQmFzZRInCgRiYXNlGAEgASgLMhku",
+            "dGF4b25vbXkubW9kZWwuY29yZS5CYXNlEjIKBnZhbHVlcxgCIAEoCzIiLnRh",
+            "eG9ub215Lm1vZGVsLmNvcmUuQmFzZVJlZmVyZW5jZSJ4Cg1Ub2tlbkJlaGF2",
+            "aW9yEi8KCGJlaGF2aW9yGAEgASgLMh0udGF4b25vbXkubW9kZWwuY29yZS5C",
+            "ZWhhdmlvchI2CgZ2YWx1ZXMYAiABKAsyJi50YXhvbm9teS5tb2RlbC5jb3Jl",
+            "LkJlaGF2aW9yUmVmZXJlbmNlIocBChJUb2tlbkJlaGF2aW9yR3JvdXASNAoI",
+            "YmVoYXZpb3IYASABKAsyIi50YXhvbm9teS5tb2RlbC5jb3JlLkJlaGF2aW9y",
+            "R3JvdXASOwoGdmFsdWVzGAIgASgLMisudGF4b25vbXkubW9kZWwuY29yZS5C",
+            "ZWhhdmlvckdyb3VwUmVmZXJlbmNlIoUBChBUb2tlblByb3BlcnR5U2V0EjYK",
+            "DHByb3BlcnR5X3NldBgBIAEoCzIgLnRheG9ub215Lm1vZGVsLmNvcmUuUHJv",
+            "cGVydHlTZXQSOQoGdmFsdWVzGAIgASgLMikudGF4b25vbXkubW9kZWwuY29y",
+            "ZS5Qcm9wZXJ0eVNldFJlZmVyZW5jZSosCg1JbmZsdWVuY2VUeXBlEg0KCUlO",
+            "VEVSQ0VQVBAAEgwKCE9WRVJSSURFEAFCQQofb3JnLnR0aS50dGYudGF4b25v",
+            "bXkubW9kZWwuY29yZVABqgIbVFRJLlRURi5UYXhvbm9teS5Nb2RlbC5Db3Jl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Core.InfluenceType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -231,7 +233,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorSpecification.Parser, new[]{ "Artifact", "IsExternal", "ConstructorType", "Constructor", "Invocations", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySetSpecification), global::TTI.TTF.Taxonomy.Model.Core.PropertySetSpecification.Parser, new[]{ "Artifact", "Properties" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.PropertySpecification), global::TTI.TTF.Taxonomy.Model.Core.PropertySpecification.Parser, new[]{ "Name", "ValueDescription", "TemplateValue", "PropertyInvocations", "Properties" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification.Parser, new[]{ "Behaviors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification), global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroupSpecification.Parser, new[]{ "Artifact", "Behaviors" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Parser, new[]{ "Influence", "InvocationStep" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.Influence.Parser, new[]{ "InfluenceType", "InfluencingId", "InfluencingInvocationId", "InfluencedId", "InfluencedInvocationId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep), global::TTI.TTF.Taxonomy.Model.Core.InvocationBinding.Types.InvocationStep.Parser, new[]{ "Invocation", "NextInvocation" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.Model.Core.TokenBase), global::TTI.TTF.Taxonomy.Model.Core.TokenBase.Parser, new[]{ "Base", "Values" }, null, null, null, null),
@@ -6809,6 +6811,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public BehaviorGroupSpecification(BehaviorGroupSpecification other) : this() {
+      artifact_ = other.artifact_ != null ? other.artifact_.Clone() : null;
       behaviors_ = other.behaviors_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -6818,10 +6821,21 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       return new BehaviorGroupSpecification(this);
     }
 
+    /// <summary>Field number for the "artifact" field.</summary>
+    public const int ArtifactFieldNumber = 1;
+    private global::TTI.TTF.Taxonomy.Model.Artifact.Artifact artifact_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::TTI.TTF.Taxonomy.Model.Artifact.Artifact Artifact {
+      get { return artifact_; }
+      set {
+        artifact_ = value;
+      }
+    }
+
     /// <summary>Field number for the "behaviors" field.</summary>
-    public const int BehaviorsFieldNumber = 1;
+    public const int BehaviorsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol> _repeated_behaviors_codec
-        = pb::FieldCodec.ForMessage(10, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser);
+        = pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol> behaviors_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol>();
     /// <summary>
     ///the behaviors in the group
@@ -6844,6 +6858,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Artifact, other.Artifact)) return false;
       if(!behaviors_.Equals(other.behaviors_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -6851,6 +6866,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (artifact_ != null) hash ^= Artifact.GetHashCode();
       hash ^= behaviors_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -6865,6 +6881,10 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
+      if (artifact_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Artifact);
+      }
       behaviors_.WriteTo(output, _repeated_behaviors_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -6874,6 +6894,9 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (artifact_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Artifact);
+      }
       size += behaviors_.CalculateSize(_repeated_behaviors_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -6885,6 +6908,12 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public void MergeFrom(BehaviorGroupSpecification other) {
       if (other == null) {
         return;
+      }
+      if (other.artifact_ != null) {
+        if (artifact_ == null) {
+          Artifact = new global::TTI.TTF.Taxonomy.Model.Artifact.Artifact();
+        }
+        Artifact.MergeFrom(other.Artifact);
       }
       behaviors_.Add(other.behaviors_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -6899,6 +6928,13 @@ namespace TTI.TTF.Taxonomy.Model.Core {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
+            if (artifact_ == null) {
+              Artifact = new global::TTI.TTF.Taxonomy.Model.Artifact.Artifact();
+            }
+            input.ReadMessage(Artifact);
+            break;
+          }
+          case 18: {
             behaviors_.AddEntriesFrom(input, _repeated_behaviors_codec);
             break;
           }

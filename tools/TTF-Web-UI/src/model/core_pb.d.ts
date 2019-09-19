@@ -1057,6 +1057,11 @@ export namespace PropertySpecification {
 }
 
 export class BehaviorGroupSpecification extends jspb.Message {
+  getArtifact(): artifact_pb.Artifact | undefined;
+  setArtifact(value?: artifact_pb.Artifact): void;
+  hasArtifact(): boolean;
+  clearArtifact(): void;
+
   getBehaviorsList(): Array<artifact_pb.ArtifactSymbol>;
   setBehaviorsList(value: Array<artifact_pb.ArtifactSymbol>): void;
   clearBehaviorsList(): void;
@@ -1072,6 +1077,7 @@ export class BehaviorGroupSpecification extends jspb.Message {
 
 export namespace BehaviorGroupSpecification {
   export type AsObject = {
+    artifact?: artifact_pb.Artifact.AsObject,
     behaviorsList: Array<artifact_pb.ArtifactSymbol.AsObject>,
   }
 }

@@ -43,9 +43,8 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             CommonPrinter.BuildPropertiesTable(document, behavior.Properties);
 
         }
-
-
-        public static void AddBehaviorReferenceProperties(WordprocessingDocument document, Model.Core.BehaviorReference behavior)
+        
+        public static void AddBehaviorReferenceProperties(WordprocessingDocument document, BehaviorReference behavior)
         {
             _log.Info("Printing Behavior Properties: " + behavior.Reference.Id);
             var body = document.MainDocumentPart.Document.Body;
@@ -91,9 +90,11 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             var aDef = body.AppendChild(new Paragraph());
             var adRun = aDef.AppendChild(new Run());
-            adRun.AppendChild(new Text("Behavior Details"));
-            Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
+            adRun.AppendChild(new Text("Specification Behavior"));
+            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
 
+            ArtifactPrinter.AddArtifactSpecification(document, behavior.Artifact);
+            
             var basicProps = new[,]
             {
                 {"Is External:", behavior.IsExternal.ToString()},
@@ -101,7 +102,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             };
             Utils.AddTable(document, basicProps); //"PlainTable3"
 
-            CommonPrinter.BuildInvocationsTable(document, behavior.Invocations);
+            CommonPrinter.BuildInvocationBindingsTable(document, behavior.Invocations, behavior.Artifact.Name);
 
             CommonPrinter.BuildPropertiesTable(document, behavior.Properties);
 

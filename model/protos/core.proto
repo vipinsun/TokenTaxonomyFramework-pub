@@ -242,7 +242,8 @@ message PropertySpecification{
 }
 
 message BehaviorGroupSpecification{
-    repeated taxonomy.model.artifact.ArtifactSymbol behaviors = 1; //the behaviors in the group
+    taxonomy.model.artifact.Artifact artifact = 1;
+    repeated taxonomy.model.artifact.ArtifactSymbol behaviors = 2; //the behaviors in the group
 }
 
 message InvocationBinding{

@@ -8877,7 +8877,7 @@ proto.taxonomy.model.core.PropertySpecification.prototype.clearPropertiesList = 
  * @private {!Array<number>}
  * @const
  */
-proto.taxonomy.model.core.BehaviorGroupSpecification.repeatedFields_ = [1];
+proto.taxonomy.model.core.BehaviorGroupSpecification.repeatedFields_ = [2];
 
 
 
@@ -8910,6 +8910,7 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.toObject = functi
  */
 proto.taxonomy.model.core.BehaviorGroupSpecification.toObject = function(includeInstance, msg) {
   var f, obj = {
+    artifact: (f = msg.getArtifact()) && artifact_pb.Artifact.toObject(includeInstance, f),
     behaviorsList: jspb.Message.toObjectList(msg.getBehaviorsList(),
     artifact_pb.ArtifactSymbol.toObject, includeInstance)
   };
@@ -8949,6 +8950,11 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.deserializeBinaryFromReader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new artifact_pb.Artifact;
+      reader.readMessage(value,artifact_pb.Artifact.deserializeBinaryFromReader);
+      msg.setArtifact(value);
+      break;
+    case 2:
       var value = new artifact_pb.ArtifactSymbol;
       reader.readMessage(value,artifact_pb.ArtifactSymbol.deserializeBinaryFromReader);
       msg.addBehaviors(value);
@@ -8982,10 +8988,18 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.serializeBinary =
  */
 proto.taxonomy.model.core.BehaviorGroupSpecification.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getArtifact();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      artifact_pb.Artifact.serializeBinaryToWriter
+    );
+  }
   f = message.getBehaviorsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       artifact_pb.ArtifactSymbol.serializeBinaryToWriter
     );
@@ -8994,18 +9008,51 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.serializeBinaryToWriter = f
 
 
 /**
- * repeated taxonomy.model.artifact.ArtifactSymbol behaviors = 1;
+ * optional taxonomy.model.artifact.Artifact artifact = 1;
+ * @return {?proto.taxonomy.model.artifact.Artifact}
+ */
+proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.getArtifact = function() {
+  return /** @type{?proto.taxonomy.model.artifact.Artifact} */ (
+    jspb.Message.getWrapperField(this, artifact_pb.Artifact, 1));
+};
+
+
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
+proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.setArtifact = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ */
+proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.clearArtifact = function() {
+  this.setArtifact(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.hasArtifact = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated taxonomy.model.artifact.ArtifactSymbol behaviors = 2;
  * @return {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>}
  */
 proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.getBehaviorsList = function() {
   return /** @type{!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} */ (
-    jspb.Message.getRepeatedWrapperField(this, artifact_pb.ArtifactSymbol, 1));
+    jspb.Message.getRepeatedWrapperField(this, artifact_pb.ArtifactSymbol, 2));
 };
 
 
 /** @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value */
 proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.setBehaviorsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -9015,7 +9062,7 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.setBehaviorsList 
  * @return {!proto.taxonomy.model.artifact.ArtifactSymbol}
  */
 proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.addBehaviors = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.taxonomy.model.artifact.ArtifactSymbol, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.taxonomy.model.artifact.ArtifactSymbol, opt_index);
 };
 
 

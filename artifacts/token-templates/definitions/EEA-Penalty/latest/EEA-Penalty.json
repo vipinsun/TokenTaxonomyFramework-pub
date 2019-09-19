@@ -14,7 +14,7 @@
       "Non-transferable fungible"
     ],
     "artifactDefinition": {
-      "businessDescription": "The EEA Penalty token has a zero or negative balance, is non-transferable and burned after redeemed, increasing dues at the end of the cycle. EEA Penalty Tokens must be redeemed before an organization can redeem their EEA Reward Tokens.",
+      "businessDescription": "The EEA Penalty token has a zero or negative balance, is non-transferable and burned after redeemed, reducing the organization's Reward token balance 1 to 1. EEA Penalty Tokens must be redeemed before an organization can redeem their EEA Reward Tokens.",
       "businessExample": "Since EEA Tokens are issued initially as potential in a Grant contract based on a set commitment for an organization, the EEA Penalty Token serves as a dis-incentive for members signing up for a commitment and not actually following through.",
       "analogies": [
         {

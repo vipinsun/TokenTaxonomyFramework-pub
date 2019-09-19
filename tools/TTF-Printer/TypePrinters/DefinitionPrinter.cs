@@ -95,11 +95,9 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             foreach (var c in definition.ChildTokens)
             {
                 AddDefinitionProperties(document, c);
-                var bbDef = body.AppendChild(new Paragraph());
-                var bbRun = bbDef.AppendChild(new Run());
-                bbRun.AppendChild(new Text(""));
-                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
+                Utils.InsertSpacer(document);
             }
         }
+
     }
 }

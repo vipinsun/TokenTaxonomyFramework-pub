@@ -27,19 +27,25 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
         #region generic artifact
         public static void AddArtifactContent(WordprocessingDocument document, Artifact artifact,
-            bool isTopArtifact)
+            bool isForAppendix)
         {
-            _log.Info("Printing Artifact: " + artifact.Name + " is top artifact " + isTopArtifact);
+            _log.Info("Printing Artifact: " + artifact.Name + " is top artifact " + isForAppendix);
 
-            var body = isTopArtifact ? document.MainDocumentPart.Document.AppendChild(new Body()) 
-                : document.MainDocumentPart.Document.Body;
+            var body = isForAppendix ?  document.MainDocumentPart.Document.Body
+                : document.MainDocumentPart.Document.AppendChild(new Body());
             var para = body.AppendChild(new Paragraph());
             var run = para.AppendChild(new Run());
-            run.AppendChild(new Text(artifact.Name) { Space = SpaceProcessingModeValues.Preserve });
-            if (isTopArtifact && artifact.ArtifactSymbol.Type != ArtifactType.TemplateFormula)
+            
+            if (!isForAppendix && artifact.ArtifactSymbol.Type != ArtifactType.TemplateFormula)
+            {
+                run.AppendChild(new Text(artifact.Name) { Space = SpaceProcessingModeValues.Preserve });
                 Utils.ApplyStyleToParagraph(document, "Title", "Title", para, JustificationValues.Center);
+            }
             else
-                Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", para, JustificationValues.Center);
+            {
+                run.AppendChild(new Text("Base: " + artifact.Name) { Space = SpaceProcessingModeValues.Preserve });
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", para, JustificationValues.Center);
+            }
 
             GenerateArtifactSymbol(document, artifact.ArtifactSymbol);
 
@@ -74,15 +80,18 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             arRun.AppendChild(BuildAnalogies(document, artifact.ArtifactDefinition.Analogies));
             Utils.ApplyStyleToParagraph(document, "Normal", "Normal", arPara);
 
-            var coPara = body.AppendChild(new Paragraph());
-            var coRun = coPara.AppendChild(new Run());
-            coRun.AppendChild(new Text("Comments"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", coPara);
+            if (!string.IsNullOrEmpty(artifact.ArtifactDefinition.Comments))
+            {
+                var coPara = body.AppendChild(new Paragraph());
+                var coRun = coPara.AppendChild(new Run());
+                coRun.AppendChild(new Text("Comments"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", coPara);
 
-            var cmBody = body.AppendChild(new Paragraph());
-            var cmRun = cmBody.AppendChild(new Run());
-            cmRun.AppendChild(new Text(artifact.ArtifactDefinition.Comments));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cmBody);
+                var cmBody = body.AppendChild(new Paragraph());
+                var cmRun = cmBody.AppendChild(new Run());
+                cmRun.AppendChild(new Text(artifact.ArtifactDefinition.Comments));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cmBody);
+            }
 
             var dPara = body.AppendChild(new Paragraph());
             var dRun = dPara.AppendChild(new Run());
@@ -154,7 +163,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             rrRun.AppendChild(BuildReferenceTable(document, artifact.Maps.Resources));
             Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rrPara);
 
-            if(isTopArtifact)
+            if(isForAppendix)
                 PrintController.Save();
         }
         #endregion
@@ -175,22 +184,29 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             else
                 Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", para, JustificationValues.Center);
             
-            var aDef = body.AppendChild(new Paragraph());
-            var adRun = aDef.AppendChild(new Run());
-            adRun.AppendChild(new Text("Token Classification"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
-
-            var claPara = body.AppendChild(new Paragraph());
-            var claRun = claPara.AppendChild(new Run());
-            claRun.AppendChild(PresentClassification(document, classification));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", claPara);
-            
-            //here 
-            var fDef = body.AppendCild(new Paragraph());
+            var fDef = body.AppendChild(new Paragraph());
             var ff2Run = fDef.AppendChild(new Run());
             ff2Run.AppendChild(new Text("Taxonomy Formula: " + artifact.ArtifactSymbol.Tooling));
             Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", fDef);
-            
+
+            if (isTopArtifact && classification != null)
+            {
+                var asDef = body.AppendChild(new Paragraph());
+                var adsRun = asDef.AppendChild(new Run());
+                adsRun.AppendChild(new Text("Token Specification Summary"));
+                Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", asDef, JustificationValues.Center);
+                
+                var aDef = body.AppendChild(new Paragraph());
+                var adRun = aDef.AppendChild(new Run());
+                adRun.AppendChild(new Text("Token Classification"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
+
+                var claPara = body.AppendChild(new Paragraph());
+                var claRun = claPara.AppendChild(new Run());
+                claRun.AppendChild(PresentClassification(document, classification));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", claPara);
+            }
+
             var bizBody = body.AppendChild(new Paragraph());
             var bRun = bizBody.AppendChild(new Run());
             bRun.AppendChild(new Text(artifact.ArtifactDefinition.BusinessDescription));
@@ -199,7 +215,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var eDef = body.AppendChild(new Paragraph());
             var eRun = eDef.AppendChild(new Run());
             eRun.AppendChild(new Text("Example"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", eDef);
+            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", eDef);
 
             var exBody = body.AppendChild(new Paragraph());
             var exRun = exBody.AppendChild(new Run());
@@ -209,7 +225,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var aPara = body.AppendChild(new Paragraph());
             var aRun = aPara.AppendChild(new Run());
             aRun.AppendChild(new Text("Analogies"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aPara);
+            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", aPara);
 
             var arPara = body.AppendChild(new Paragraph());
             var arRun = arPara.AppendChild(new Run());
@@ -219,89 +235,60 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var coPara = body.AppendChild(new Paragraph());
             var coRun = coPara.AppendChild(new Run());
             coRun.AppendChild(new Text("Comments"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", coPara);
+            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", coPara);
 
-            var cmBody = body.AppendChild(new Paragraph());
-            var cmRun = cmBody.AppendChild(new Run());
-            cmRun.AppendChild(new Text(artifact.ArtifactDefinition.Comments));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cmBody);
-
-            var dPara = body.AppendChild(new Paragraph());
-            var dRun = dPara.AppendChild(new Run());
-            dRun.AppendChild(new Text("Dependencies"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", dPara);
-
-            var ddPara = body.AppendChild(new Paragraph());
-            var ddRun = ddPara.AppendChild(new Run());
-            ddRun.AppendChild(BuildDependencyTable(document, artifact.Dependencies));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", ddPara);
-
-            var iPara = body.AppendChild(new Paragraph());
-            var iRun = iPara.AppendChild(new Run());
-            iRun.AppendChild(new Text("Incompatible With"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", iPara);
-
-            var iiPara = body.AppendChild(new Paragraph());
-            var iiRun = iiPara.AppendChild(new Run());
-            iiRun.AppendChild(BuildIncompatibleTable(document, artifact.IncompatibleWithSymbols));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", iiPara);
-
-            var fPara = body.AppendChild(new Paragraph());
-            var fRun = fPara.AppendChild(new Run());
-            fRun.AppendChild(new Text("Influenced By"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", fPara);
-
-            var ffPara = body.AppendChild(new Paragraph());
-            var ffRun = ffPara.AppendChild(new Run());
-            ffRun.AppendChild(BuildInfluencesTable(document, artifact.InfluencedBySymbols));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", ffPara);
-
-            var fiPara = body.AppendChild(new Paragraph());
-            var fiRun = fiPara.AppendChild(new Run());
-            fiRun.AppendChild(new Text("Artifact Files"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", fiPara);
-
-            var ffiPara = body.AppendChild(new Paragraph());
-            var ffiRun = ffiPara.AppendChild(new Run());
-            ffiRun.AppendChild(BuildFilesTable(document, artifact.ArtifactFiles));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", ffiPara);
-
-            var cPara = body.AppendChild(new Paragraph());
-            var cRun = cPara.AppendChild(new Run());
-            cRun.AppendChild(new Text("Code Map"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", cPara);
-
-            var ccPara = body.AppendChild(new Paragraph(new ParagraphProperties(new ParagraphStyleId { Val = "Heading2" })));
-            var ccRun = ccPara.AppendChild(new Run());
-            ccRun.AppendChild(BuildCodeTable(document, artifact.Maps.CodeReferences));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", ccPara);
-
-            var pPara = body.AppendChild(new Paragraph());
-            var pRun = pPara.AppendChild(new Run());
-            pRun.AppendChild(new Text("Implementation Map"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", pPara);
-
-            var ppPara = body.AppendChild(new Paragraph());
-            var ppRun = ppPara.AppendChild(new Run());
-            ppRun.AppendChild(BuildImplementationTable(document, artifact.Maps.ImplementationReferences));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", ppPara);
-
-            var rPara = body.AppendChild(new Paragraph());
-            var rRun = rPara.AppendChild(new Run());
-            rRun.AppendChild(new Text("Resource Map"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", rPara);
-
-            var rrPara = body.AppendChild(new Paragraph());
-            var rrRun = rrPara.AppendChild(new Run());
-            rrRun.AppendChild(BuildReferenceTable(document, artifact.Maps.Resources));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rrPara);
+            if (!string.IsNullOrEmpty(artifact.ArtifactDefinition.Comments))
+            {
+                var cmBody = body.AppendChild(new Paragraph());
+                var cmRun = cmBody.AppendChild(new Run());
+                cmRun.AppendChild(new Text(artifact.ArtifactDefinition.Comments));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cmBody);
+            }
 
             if(isTopArtifact)
                 PrintController.Save();
         }
+
         #endregion
 
-        public static Table PresentClassification(WordprocessingDocument document, Classification classification)
+             #region child specification artifact
+
+             public static void AddChildArtifactSpecification(WordprocessingDocument document, TokenSpecification spec)
+             {
+                 _log.Info("Printing Artifact for Child Specification: " + spec.Artifact.Name);
+
+                 var body = document.MainDocumentPart.Document.Body;
+                 var para = body.AppendChild(new Paragraph());
+                 var run = para.AppendChild(new Run());
+                 run.AppendChild(new Text(spec.Artifact.Name) {Space = SpaceProcessingModeValues.Preserve});
+                 Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", para, JustificationValues.Center);
+
+                 var fDef = body.AppendChild(new Paragraph());
+                 var ff2Run = fDef.AppendChild(new Run());
+                 ff2Run.AppendChild(new Text("Taxonomy Formula: " + spec.Artifact.ArtifactSymbol.Tooling));
+                 Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", fDef);
+
+                 var classification = ModelMap.GetClassification(spec);
+                 
+                 var aDef = body.AppendChild(new Paragraph());
+                 var adRun = aDef.AppendChild(new Run());
+                 adRun.AppendChild(new Text("Token Classification"));
+                 Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
+
+                 var claPara = body.AppendChild(new Paragraph());
+                 var claRun = claPara.AppendChild(new Run());
+                 claRun.AppendChild(PresentClassification(document, classification));
+                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", claPara);
+
+                 var bizBody = body.AppendChild(new Paragraph());
+                 var bRun = bizBody.AppendChild(new Run());
+                 bRun.AppendChild(new Text(spec.Artifact.ArtifactDefinition.BusinessDescription));
+                 Utils.ApplyStyleToParagraph(document, "Quote", "Quote", bizBody);
+             }
+
+             #endregion
+        
+        internal static Table PresentClassification(WordprocessingDocument document, Classification classification)
         {
             var classificationDetails = ModelMap.GetClassificationDescription(classification);
             var classificationTable = new Table();
@@ -336,14 +323,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var tokenTypeExplained = new TableCell();
 
             tokenTypeHeader.Append(new Paragraph(new Run(new Text("Token Type:"))));
-            tokenTypeHeader.Append(new TableCellProperties(width20));
+            tokenTypeHeader.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "20"}));
             
             tokenTypeValue.Append(new Paragraph(new Run(new Text(classification.TokenType.ToString()))));
-            tokenTypeValue.Append(new TableCellProperties(width15));
+            tokenTypeValue.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "15"}));
             
             tokenTypeExplained.Append(new Paragraph(new Run(new Text(classificationDetails[classification.TokenType.ToString()].ToString()))));
            
-            tokenTypeExplained.Append(new TableCellProperties(width65));
+            tokenTypeExplained.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "65"}));
   
             tokenTypeRow.Append(tokenTypeHeader);
             tokenTypeRow.Append(tokenTypeValue);
@@ -357,14 +344,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var tokenUnitExplained = new TableCell();
 
             tokenUnitHeader.Append(new Paragraph(new Run(new Text("Token Unit:"))));
-            tokenUnitHeader.Append(new TableCellProperties(width20));
+            tokenUnitHeader.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "20"}));
             
             tokenUnitValue.Append(new Paragraph(new Run(new Text(classification.TokenUnit.ToString()))));
-            tokenUnitValue.Append(new TableCellProperties(width15));
+            tokenUnitValue.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "15"}));
             
             tokenUnitExplained.Append(new Paragraph(new Run(new Text(classificationDetails[classification.TokenUnit.ToString()].ToString()))));
            
-            tokenUnitExplained.Append(new TableCellProperties(width65));
+            tokenUnitExplained.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "65"}));
   
             tokenUnitRow.Append(tokenUnitHeader);
             tokenUnitRow.Append(tokenUnitValue);
@@ -378,14 +365,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var valueTypeExplained = new TableCell();
 
             valueTypeHeader.Append(new Paragraph(new Run(new Text("Value Type:"))));
-            valueTypeHeader.Append(new TableCellProperties(width20));
+            valueTypeHeader.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "20"}));
             
             valueTypeValue.Append(new Paragraph(new Run(new Text(classification.ValueType.ToString()))));
-            valueTypeValue.Append(new TableCellProperties(width15));
+            valueTypeValue.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "15"}));
             
             valueTypeExplained.Append(new Paragraph(new Run(new Text(classificationDetails[classification.ValueType.ToString()].ToString()))));
            
-            valueTypeExplained.Append(new TableCellProperties(width65));
+            valueTypeExplained.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "65"}));
   
             valueTypeRow.Append(valueTypeHeader);
             valueTypeRow.Append(valueTypeValue);
@@ -399,14 +386,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var repTypeExplained = new TableCell();
 
             repTypeHeader.Append(new Paragraph(new Run(new Text("Representation Type:"))));
-            repTypeHeader.Append(new TableCellProperties(width20));
+            repTypeHeader.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "20"}));
             
             repTypeValue.Append(new Paragraph(new Run(new Text(classification.RepresentationType.ToString()))));
-            repTypeValue.Append(new TableCellProperties(width15));
+            repTypeValue.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "15"}));
             
             repTypeExplained.Append(new Paragraph(new Run(new Text(classificationDetails[classification.RepresentationType.ToString()].ToString()))));
            
-            repTypeExplained.Append(new TableCellProperties(width65));
+            repTypeExplained.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "65"}));
   
             repTypeRow.Append(repTypeHeader);
             repTypeRow.Append(repTypeValue);

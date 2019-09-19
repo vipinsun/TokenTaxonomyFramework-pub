@@ -129,18 +129,18 @@ namespace TTI.TTF.Taxonomy
 			return new TemplateFormula();
 		}
 		
-		public static TemplateDefinition GetTemplateDefinitionArtifact(ArtifactSymbol formula)
+		public static TemplateDefinition GetTemplateDefinitionArtifact(ArtifactSymbol definition)
 		{
-			_log.Info("GetTemplateDefinitionArtifact: " + formula);
-			if (!string.IsNullOrEmpty(formula.Id))
+			_log.Info("GetTemplateDefinitionArtifact: " + definition);
+			if (!string.IsNullOrEmpty(definition.Id))
 			{
-				return GetArtifactById<TemplateDefinition>(formula.Id);
+				return GetArtifactById<TemplateDefinition>(definition.Id);
 			}
 
-			if (!string.IsNullOrEmpty(formula.Tooling))
+			if (!string.IsNullOrEmpty(definition.Tooling))
 			{
 				return Taxonomy.TemplateDefinitions
-					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == formula.Tooling).Value;
+					.SingleOrDefault(e => e.Value.Artifact.ArtifactSymbol.Tooling == definition.Tooling).Value;
 			}
 
 			return new TemplateDefinition();
@@ -667,6 +667,7 @@ namespace TTI.TTF.Taxonomy
 
 		private static TokenSpecification BuildSpecification(TemplateDefinition definition)
 		{
+			_log.Info("Building Token Specification from Token Token Template Id: " + definition.Artifact.ArtifactSymbol.Id);
 			var formula = GetTemplateFormulaArtifact(new ArtifactSymbol
 			{
 				Id = definition.FormulaReference.Id
@@ -687,19 +688,26 @@ namespace TTI.TTF.Taxonomy
 			
 			var retVal = new TokenSpecification
 			{
-				Artifact = definition.Artifact
+				Artifact = definition.Artifact,
+				DefinitionReference = new ArtifactReference
+				{
+					Id = definition.Artifact.ArtifactSymbol.Id,
+					Type = definition.Artifact.ArtifactSymbol.Type,
+					ReferenceNotes = definition.Artifact.ArtifactSymbol.Visual
+				}
 			};
 			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TokenTemplate;
 			
 			retVal.TokenBase = MergeBase(definition);
+			var behaviorsClone = definition.Behaviors.Clone();
 			
 			var behaviorGroups = definition.BehaviorGroups.Select(tb => GetArtifactById<BehaviorGroup>(tb.Reference.Id)).ToList();
 			foreach (var bg in definition.BehaviorGroups)
 			{
 				var behaviorGroup = behaviorGroups.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == bg.Reference.Id);
 				if (behaviorGroup == null) continue;
-				
-				var behaviorGroupSpec = new BehaviorGroupSpecification();
+
+				var behaviorGroupSpec = new BehaviorGroupSpecification {Artifact = behaviorGroup.Artifact};
 				foreach (var b in behaviorGroup.Behaviors)
 				{
 					var behavior = GetArtifactById<Behavior>(b.Reference.Id);
@@ -713,8 +721,9 @@ namespace TTI.TTF.Taxonomy
 			var mergedPs = (from ps in definition.PropertySets let propertySet = propertySets.SingleOrDefault(e => e.Artifact.ArtifactSymbol.Id == ps.Reference.Id) 
 				where propertySet != null select MergePropertySet(propertySet, ps)).ToList();
 
-			var behaviors = definition.Behaviors.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
-			var behaviorReferences = definition.Behaviors;
+	
+			var behaviors = behaviorsClone.Select(tb => GetArtifactById<Behavior>(tb.Reference.Id)).ToList();
+			var behaviorReferences = behaviorsClone;
 			foreach (var bgb in definition.BehaviorGroups)
 			{
 				foreach (var b in bgb.BehaviorArtifacts)
@@ -725,7 +734,7 @@ namespace TTI.TTF.Taxonomy
 			}
 
 			var (behaviorSpecifications, propSets) = BuildBehaviorSpecs(behaviors, behaviorReferences, mergedPs);
-				
+			
 			retVal.Behaviors.AddRange(behaviorSpecifications);
 			retVal.PropertySets.AddRange(propSets);
 			retVal.SpecificationHash = Utils.CalculateSha3Hash(retVal.ToByteString().ToBase64());
@@ -1019,7 +1028,7 @@ namespace TTI.TTF.Taxonomy
 		{
 			if (definition.TokenBase.Reference.Id != formula.TokenBase.Base.Id)
 			{
-				return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+				return "Error: validating definition id: " + definition.Artifact.ArtifactSymbol.Id
 				                                          + " against its template id: " +
 				                                          formula.Artifact.ArtifactSymbol.Id
 				                                          + " the base token does not match";
@@ -1030,7 +1039,7 @@ namespace TTI.TTF.Taxonomy
 				var tb = formula.Behaviors.SingleOrDefault(e => e.Behavior.Id == b.Reference.Id);
 				if (tb == null)
 				{
-					return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+					return "Error: validating definition id: " + definition.Artifact.ArtifactSymbol.Id
 					                                          + " against its template id: " +
 					                                          formula.Artifact.ArtifactSymbol.Id
 					                                          + " the behavior " + b.Reference.Id
@@ -1043,7 +1052,7 @@ namespace TTI.TTF.Taxonomy
 				var tbg = formula.BehaviorGroups.SingleOrDefault(e => e.BehaviorGroup.Id == bg.Reference.Id);
 				if (tbg == null)
 				{
-					return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+					return "Error: validating definition id: " + definition.Artifact.ArtifactSymbol.Id
 					                                          + " against its template id: " +
 					                                          formula.Artifact.ArtifactSymbol.Id
 					                                          + " the behaviorGroup " + bg.Reference.Id
@@ -1056,7 +1065,7 @@ namespace TTI.TTF.Taxonomy
 				var tps = formula.PropertySets.SingleOrDefault(e => e.PropertySet.Id == ps.Reference.Id);
 				if (tps == null)
 				{
-					return "Error validating definition id: " + definition.Artifact.ArtifactSymbol.Id
+					return "Error: validating definition id: " + definition.Artifact.ArtifactSymbol.Id
 					                                          + " against its template id: " +
 					                                          formula.Artifact.ArtifactSymbol.Id
 					                                          + " the propertySet " + ps.Reference.Id

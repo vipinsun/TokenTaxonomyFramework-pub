@@ -42,6 +42,8 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
             Utils.AddTable(document, baseProps);
 
+            if (tokenBase.TokenProperties.Count <= 0) return;
+            
             var propDef = body.AppendChild(new Paragraph());
             var propRun = propDef.AppendChild(new Run());
             propRun.AppendChild(new Text("Properties:"));
@@ -72,6 +74,8 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
             Utils.AddTable(document, baseProps);
 
+            if (tokenBase.TokenProperties.Count <= 0) return;
+            
             var propDef = body.AppendChild(new Paragraph());
             var propRun = propDef.AppendChild(new Run());
             propRun.AppendChild(new Text("Properties:"));
@@ -106,6 +110,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
             Utils.AddTable(document, baseProps);
 
+            if (tokenBase.TokenProperties.Count <= 0) return;
             var propDef = body.AppendChild(new Paragraph());
             var propRun = propDef.AppendChild(new Run());
             propRun.AppendChild(new Text("Properties:"));
@@ -113,7 +118,8 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             var propsPara = body.AppendChild(new Paragraph());
             var propsRun = propsPara.AppendChild(new Run());
-            propsRun.AppendChild(Utils.GetGenericPropertyTable(document, "Name", "Value", tokenBase.TokenProperties));
+            propsRun.AppendChild(
+                Utils.GetGenericPropertyTable(document, "Name", "Value", tokenBase.TokenProperties));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Specialized;
 using TTI.TTF.Taxonomy.Model.Artifact;
+using TTI.TTF.Taxonomy.Model.Core;
 using TTI.TTF.Taxonomy.TypePrinters;
 
 namespace TTI.TTF.Taxonomy.Model
@@ -66,6 +67,23 @@ namespace TTI.TTF.Taxonomy.Model
                     : "Token instances are unique having their own identities and can be individually traced. Each unique token can carry unique properties that cannot be changed in one place and their balances must be summed. These are like bank notes, paper bills and metal coins, they are interchangeable but have unique properties like a serial number.");
             
             return retVal;
+        }
+        
+        public static Classification GetClassification(TokenSpecification spec)
+        {
+            var template = ModelManager.GetTokenTemplate(new TokenTemplateId
+            {
+                DefinitionId = spec.DefinitionReference.Id
+            });
+
+            return new Classification
+            {
+                RepresentationType = spec.TokenBase.RepresentationType,
+                TemplateType = template.Formula.TemplateType,
+                ValueType = spec.TokenBase.ValueType,
+                TokenType = spec.TokenBase.TokenType,
+                TokenUnit = spec.TokenBase.TokenUnit
+            };
         }
     }
 }
