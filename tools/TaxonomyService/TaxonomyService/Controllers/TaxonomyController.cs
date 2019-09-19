@@ -16,31 +16,31 @@ namespace TTI.TTF.Taxonomy.Controllers
 	public static class TaxonomyController
 	{
 
-		private static readonly string ArtifactPath;
-		private static readonly string FolderSeparator = TxService.FolderSeparator;
-		private static readonly string Latest = TxService.Latest;
-		private static readonly ILog Log;
+		private static readonly string _artifactPath;
+		private static readonly string _folderSeparator = TxService.FolderSeparator;
+		private static readonly string _latest = TxService.Latest;
+		private static readonly ILog _log;
 
 		static TaxonomyController()
 		{
 			Utils.InitLog();
-			Log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-			ArtifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + FolderSeparator +
+			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+			_artifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + _folderSeparator +
 			               TxService.ArtifactPath;
 		}
 
 		#region load
 		internal static Model.Taxonomy Load()
 		{
-			if (!Directory.Exists(ArtifactPath))
+			if (!Directory.Exists(_artifactPath))
 			{
-				var err = "Artifact Path not found: " + ArtifactPath;
-				Log.Error(err);
+				var err = "Artifact Path not found: " + _artifactPath;
+				_log.Error(err);
 				throw new Exception(err);
 			}
 
-			Log.Info("Artifact Folder Found, loading to Taxonomy.");
-			var root = new DirectoryInfo(ArtifactPath);
+			_log.Info("Artifact Folder Found, loading to Taxonomy.");
+			var root = new DirectoryInfo(_artifactPath);
 			Model.Taxonomy taxonomy;
 			
 			var rJson = root.GetFiles("Taxonomy.json");
@@ -49,24 +49,24 @@ namespace TTI.TTF.Taxonomy.Controllers
 			{
 				taxonomy = GetArtifact<Model.Taxonomy>(rJson[0]);
 				taxonomy.FormulaGrammar = GetArtifact<FormulaGrammar>(fJson[0]);
-				Log.Info("Loaded Taxonomy Version: " + taxonomy.Version);
-				Log.Info("Taxonomy Formula Grammar loaded");
+				_log.Info("Loaded Taxonomy Version: " + taxonomy.Version);
+				_log.Info("Taxonomy Formula Grammar loaded");
 			}
 			catch (Exception e)
 			{
-				Log.Error("Failed to load Taxonomy: " + e);
+				_log.Error("Failed to load Taxonomy: " + e);
 				throw;
 			}
 
-			var aPath = ArtifactPath + FolderSeparator;
+			var aPath = _artifactPath + _folderSeparator;
 			if (Directory.Exists(aPath + ModelMap.BaseFolder))
 			{
-				Log.Info("Base Artifact Folder Found, loading to Base Token Types");
+				_log.Info("Base Artifact Folder Found, loading to Base Token Types");
 				var bases = new DirectoryInfo(aPath + ModelMap.BaseFolder);
 				foreach (var ad in bases.EnumerateDirectories())
 				{
 					Base baseType;
-					Log.Info("Loading " + ad.Name);
+					_log.Info("Loading " + ad.Name);
 					var versions = ad.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
 					if (bJson != null)
@@ -77,8 +77,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 						}
 						catch (Exception e)
 						{
-							Log.Error("Failed to load base token type: " + ad.Name);
-							Log.Error(e);
+							_log.Error("Failed to load base token type: " + ad.Name);
+							_log.Error(e);
 							continue;
 						}
 					}
@@ -93,19 +93,19 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 			else
 			{
-				Log.Error("Base artifact folder NOT found, moving on to behaviors.");
+				_log.Error("Base artifact folder NOT found, moving on to behaviors.");
 			}
 
 			if (Directory.Exists(aPath + ModelMap.BehaviorFolder))
 			{
 
-				Log.Info("Behavior Artifact Folder Found, loading to Behaviors");
+				_log.Info("Behavior Artifact Folder Found, loading to Behaviors");
 				var behaviors = new DirectoryInfo(aPath + ModelMap.BehaviorFolder);
 
 				foreach (var ad in behaviors.EnumerateDirectories())
 				{
 					Behavior behavior;
-					Log.Info("Loading " + ad.Name);
+					_log.Info("Loading " + ad.Name);
 					var versions = ad.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
 					if (bJson != null)
@@ -116,8 +116,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 						}
 						catch (Exception e)
 						{
-							Log.Error("Failed to load Behavior: " + ad.Name);
-							Log.Error(e);
+							_log.Error("Failed to load Behavior: " + ad.Name);
+							_log.Error(e);
 							continue;
 						}
 					}
@@ -134,13 +134,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 			if (Directory.Exists(aPath + ModelMap.BehaviorGroupFolder))
 			{
 
-				Log.Info("BehaviorGroup Artifact Folder Found, loading to BehaviorGroups");
+				_log.Info("BehaviorGroup Artifact Folder Found, loading to BehaviorGroups");
 				var behaviorGroups = new DirectoryInfo(aPath + ModelMap.BehaviorGroupFolder);
 				
 				foreach (var ad in behaviorGroups.EnumerateDirectories())
 				{
 					BehaviorGroup behaviorGroup;
-					Log.Info("Loading " + ad.Name);
+					_log.Info("Loading " + ad.Name);
 					var versions = ad.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
 					if (bJson != null)
@@ -152,8 +152,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 						}
 						catch (Exception e)
 						{
-							Log.Error("Failed to load BehaviorGroup: " + ad.Name);
-							Log.Error(e);
+							_log.Error("Failed to load BehaviorGroup: " + ad.Name);
+							_log.Error(e);
 							continue;
 						}
 					}
@@ -170,12 +170,12 @@ namespace TTI.TTF.Taxonomy.Controllers
 			if(Directory.Exists(aPath + ModelMap.PropertySetFolder))
 			{
 
-				Log.Info("PropertySet Artifact Folder Found, loading to PropertySets");
+				_log.Info("PropertySet Artifact Folder Found, loading to PropertySets");
 				var propertySets = new DirectoryInfo(aPath + ModelMap.PropertySetFolder);
 				foreach (var ad in propertySets.EnumerateDirectories())
 				{
 					PropertySet propertySet;
-					Log.Info("Loading " + ad.Name);
+					_log.Info("Loading " + ad.Name);
 					var versions = ad.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
 					if (bJson != null)
@@ -186,8 +186,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 						}
 						catch (Exception e)
 						{
-							Log.Error("Failed to load PropertySet: " + ad.Name);
-							Log.Error(e);
+							_log.Error("Failed to load PropertySet: " + ad.Name);
+							_log.Error(e);
 							continue;
 						}
 					}
@@ -202,13 +202,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 			if (Directory.Exists(aPath + ModelMap.TemplateFormulasFolder))
 			{
-				Log.Info("TemplateFormulas Folder Found, loading to TemplateFormulas");
+				_log.Info("TemplateFormulas Folder Found, loading to TemplateFormulas");
 				var formulaDirectory = new DirectoryInfo(aPath + ModelMap.TemplateFormulasFolder);
 				var formulaFolders = formulaDirectory.EnumerateDirectories();
 				foreach (var f in formulaFolders)
 				{
 					TemplateFormula formula;
-					Log.Info("Loading " + f.Name);
+					_log.Info("Loading " + f.Name);
 					var versions = f.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
 					if (bJson != null)
@@ -219,8 +219,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 						}
 						catch (Exception e)
 						{
-							Log.Error("Failed to load TemplateFormula: " + f.Name);
-							Log.Error(e);
+							_log.Error("Failed to load TemplateFormula: " + f.Name);
+							_log.Error(e);
 							continue;
 						}
 					}
@@ -236,13 +236,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 
 			if (Directory.Exists(aPath + ModelMap.TemplateDefinitionsFolder))
 			{
-				Log.Info("TemplateDefinitions Folder Found, loading to TemplateDefinitions");
+				_log.Info("TemplateDefinitions Folder Found, loading to TemplateDefinitions");
 				var definitionsFolder = new DirectoryInfo(aPath + ModelMap.TemplateDefinitionsFolder);
 				var definitions = definitionsFolder.EnumerateDirectories();
 				foreach (var t in definitions)
 				{
 					TemplateDefinition definition;
-					Log.Info("Loading " + t.Name);
+					_log.Info("Loading " + t.Name);
 					var versions = t.GetDirectories("latest");
 					var bJson = versions.FirstOrDefault()?.GetFiles("*.json");
 					if (bJson != null)
@@ -254,8 +254,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 						}
 						catch (Exception e)
 						{
-							Log.Error("Failed to load TemplateDefinition: " + t.Name);
-							Log.Error(e);
+							_log.Error("Failed to load TemplateDefinition: " + t.Name);
+							_log.Error(e);
 							continue;
 						}
 					}
@@ -276,7 +276,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 		
 		private static void BuildHierarchy(ref Model.Taxonomy taxonomy)
 		{
-			Log.Info("Building Template Hierarchy");
+			_log.Info("Building Template Hierarchy");
 			var hybrids = new HybridBranch
 			{
 				Fungible = new FungibleBranch()
@@ -467,26 +467,26 @@ namespace TTI.TTF.Taxonomy.Controllers
 									else if (baseType.TokenType == TokenType.NonFungible)
 										hierarchy.NonFungibles.Fractional.Templates.Template
 											.Add(id, template);
-									Log.Info("Template: " + id + " added to Single/Fungibles");
+									_log.Info("Template: " + id + " added to Single/Fungibles");
 									break;
 								case TokenUnit.Whole:
 									if (baseType.TokenType == TokenType.Fungible)
 									{
 										hierarchy.Fungibles.Whole.Templates.Template.Add(id, template);
-										Log.Info("Template: " + id + " added to Single/Fungibles");
+										_log.Info("Template: " + id + " added to Single/Fungibles");
 									}
 									else if (baseType.TokenType == TokenType.NonFungible)
 									{
 										hierarchy.NonFungibles.Whole.Templates.Template
 											.Add(id, template);
-										Log.Info("Template: " + id + " added to Single/NonFungibles");
+										_log.Info("Template: " + id + " added to Single/NonFungibles");
 									}
 
 									break;
 								case TokenUnit.Singleton:
 									hierarchy.NonFungibles.Singleton.Templates.Template
 										.Add(id, template);
-									Log.Info("Template: " + id + " added to Single/Singletons");
+									_log.Info("Template: " + id + " added to Single/Singletons");
 									break;
 								default:
 									throw new ArgumentOutOfRangeException();
@@ -501,7 +501,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 									else if (baseType.TokenType == TokenType.NonFungible)
 										hierarchy.Hybrids.NonFungible.Fractional.Templates.Template
 											.Add(id, template);
-									Log.Info("Template: " + id + " added to Hybrid/Fungibles");
+									_log.Info("Template: " + id + " added to Hybrid/Fungibles");
 									break;
 								case TokenUnit.Whole:
 									if (baseType.TokenType == TokenType.Fungible)
@@ -509,12 +509,12 @@ namespace TTI.TTF.Taxonomy.Controllers
 									else if (baseType.TokenType == TokenType.NonFungible)
 										hierarchy.Hybrids.NonFungible.Whole.Templates.Template
 											.Add(id, template);
-									Log.Info("Template: " + id + " added to Hybrid/NonFungibles");
+									_log.Info("Template: " + id + " added to Hybrid/NonFungibles");
 									break;
 								case TokenUnit.Singleton:
 									hierarchy.Hybrids.NonFungible.Singleton.Templates.Template
 										.Add(id, template);
-									Log.Info("Template: " + id + " added to Hybrid/Singletons");
+									_log.Info("Template: " + id + " added to Hybrid/Singletons");
 									break;
 								default:
 									throw new ArgumentOutOfRangeException();
@@ -545,7 +545,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 				}
 				else
 				{
-					Log.Error("Token Template with definition id: " + templateId + " does not have a paired formula or it cannot be located.");
+					_log.Error("Token Template with definition id: " + templateId + " does not have a paired formula or it cannot be located.");
 				}
 			}
 
@@ -575,7 +575,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			switch (artifactType)
 			{
 				case ArtifactType.Base:
-					Log.Info("CreateArtifact was requested to create a new base token type, which is not supported.");
+					_log.Info("CreateArtifact was requested to create a new base token type, which is not supported.");
 					break;
 				case ArtifactType.Behavior:
 					var newBehavior = artifactRequest.Artifact.Unpack<Behavior>();
@@ -701,11 +701,11 @@ namespace TTI.TTF.Taxonomy.Controllers
 				case ArtifactType.TokenTemplate:
 					break;
 				default:
-					Log.Error("No matching type found for: " + artifactType);
+					_log.Error("No matching type found for: " + artifactType);
 					throw new ArgumentOutOfRangeException();
 			}
 
-			Log.Info("Artifact Destination: " + ArtifactPath + FolderSeparator + artifactRequest.Type + " folder");
+			_log.Info("Artifact Destination: " + _artifactPath + _folderSeparator + artifactRequest.Type + " folder");
 			var formattedJson = JToken.Parse(artifactJson).ToString();
 			
 			//test to make sure formattedJson will Deserialize.
@@ -715,32 +715,32 @@ namespace TTI.TTF.Taxonomy.Controllers
 				{
 					case ArtifactType.Base:
 						var testBase = JsonParser.Default.Parse<Base>(formattedJson);
-						Log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
 						          testBase.Artifact.Name);
 						break;
 					case ArtifactType.Behavior:
 						var testBehavior = JsonParser.Default.Parse<Behavior>(formattedJson);
-						Log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
 						          testBehavior.Artifact.Name);
 						break;
 					case ArtifactType.BehaviorGroup:
 						var testBehaviorGroup = JsonParser.Default.Parse<BehaviorGroup>(formattedJson);
-						Log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
 						          testBehaviorGroup.Artifact.Name);
 						break;
 					case ArtifactType.PropertySet:
 						var testPropertySet = JsonParser.Default.Parse<PropertySet>(formattedJson);
-						Log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
 						          testPropertySet.Artifact.Name);
 						break;
 					case ArtifactType.TemplateFormula:
 						var testFormula = JsonParser.Default.Parse<TemplateFormula>(formattedJson);
-						Log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
 						          testFormula.Artifact.Name);
 						break;
 					case ArtifactType.TemplateDefinition:
 						var testDefinition = JsonParser.Default.Parse<TemplateDefinition>(formattedJson);
-						Log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
+						_log.Info("Artifact type: " + artifactType + " successfully deserialized: " +
 						          testDefinition.Artifact.Name);
 						break;
 					case ArtifactType.TokenTemplate:
@@ -751,20 +751,20 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 			catch (Exception e)
 			{
-				Log.Error("Json failed to deserialize back into: " + artifactType);
-				Log.Error(e);
+				_log.Error("Json failed to deserialize back into: " + artifactType);
+				_log.Error(e);
 				return new NewArtifactResponse();
 			}
 
-			Log.Info("Creating Artifact: " + formattedJson);
+			_log.Info("Creating Artifact: " + formattedJson);
 			if (outputFolder != null)
 			{
-				var artifactStream = File.CreateText(outputFolder.FullName + FolderSeparator + artifactName + ".json");
+				var artifactStream = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName + ".json");
 				artifactStream.Write(formattedJson);
 				artifactStream.Close();
 			}
 			
-			Log.Info("Complete");
+			_log.Info("Complete");
 			return retVal;
 		}
 		
@@ -785,7 +785,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			switch (artifactType)
 			{
 				case ArtifactType.Base:
-					Log.Info("UpdateArtifact was requested to update a base token type, which is not supported.");
+					_log.Info("UpdateArtifact was requested to update a base token type, which is not supported.");
 					break;
 				case ArtifactType.Behavior:
 					var updateBehavior = artifactRequest.ArtifactTypeObject.Unpack<Behavior>();
@@ -810,9 +810,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 					else
 					{
 						retVal.Updated = false;
-						Log.Error(messageB);
+						_log.Error(messageB);
 					}
-					Log.Info("TOM and Artifact updated.");
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				case ArtifactType.BehaviorGroup:
 					var updateBehaviorGroup = artifactRequest.ArtifactTypeObject.Unpack<BehaviorGroup>();
@@ -838,9 +838,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 					else
 					{
 						retVal.Updated = false;
-						Log.Error(messageBg);
+						_log.Error(messageBg);
 					}
-					Log.Info("TOM and Artifact updated.");
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				case ArtifactType.PropertySet:
 					var updatePropertySet = artifactRequest.ArtifactTypeObject.Unpack<PropertySet>();
@@ -866,9 +866,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 					else
 					{
 						retVal.Updated = false;
-						Log.Error(messagePs);
+						_log.Error(messagePs);
 					}
-					Log.Info("TOM and Artifact updated.");
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				case ArtifactType.TemplateFormula:
 					var updateTokenTemplate = artifactRequest.ArtifactTypeObject.Unpack<TemplateFormula>();
@@ -893,9 +893,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 					else
 					{
 						retVal.Updated = false;
-						Log.Error(messageT);
+						_log.Error(messageT);
 					}
-					Log.Info("TOM and Artifact updated.");
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				case ArtifactType.TemplateDefinition:
 					var updateTemplateDefinition = artifactRequest.ArtifactTypeObject.Unpack<TemplateDefinition>();
@@ -920,12 +920,12 @@ namespace TTI.TTF.Taxonomy.Controllers
 					else
 					{
 						retVal.Updated = false;
-						Log.Error(messageD);
+						_log.Error(messageD);
 					}
-					Log.Info("TOM and Artifact updated.");
+					_log.Info("TOM and Artifact updated.");
 					return retVal;
 				default:
-					Log.Error("No matching type found for: " + artifactType);
+					_log.Error("No matching type found for: " + artifactType);
 					throw new ArgumentOutOfRangeException();
 			}
 
@@ -935,7 +935,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 		private static bool SaveArtifact(ArtifactType type, string artifactName, string artifactJson,
 			FileSystemInfo outputFolder)
 		{
-			Log.Info("Artifact Destination: " + ArtifactPath + FolderSeparator + type + " folder");
+			_log.Info("Artifact Destination: " + _artifactPath + _folderSeparator + type + " folder");
 			var formattedJson = JToken.Parse(artifactJson).ToString();
 
 			//test to make sure formattedJson will Deserialize.
@@ -945,32 +945,32 @@ namespace TTI.TTF.Taxonomy.Controllers
 				{
 					case ArtifactType.Base:
 						var testBase = JsonParser.Default.Parse<Base>(formattedJson);
-						Log.Info("Artifact type: " + type + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testBase.Artifact.Name);
 						break;
 					case ArtifactType.Behavior:
 						var testBehavior = JsonParser.Default.Parse<Behavior>(formattedJson);
-						Log.Info("Artifact type: " + type + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testBehavior.Artifact.Name);
 						break;
 					case ArtifactType.BehaviorGroup:
 						var testBehaviorGroup = JsonParser.Default.Parse<BehaviorGroup>(formattedJson);
-						Log.Info("Artifact type: " + type + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testBehaviorGroup.Artifact.Name);
 						break;
 					case ArtifactType.PropertySet:
 						var testPropertySet = JsonParser.Default.Parse<PropertySet>(formattedJson);
-						Log.Info("Artifact type: " + type + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          testPropertySet.Artifact.Name);
 						break;
 					case ArtifactType.TemplateFormula:
 						var templateFormula = JsonParser.Default.Parse<TemplateFormula>(formattedJson);
-						Log.Info("Artifact type: " + type + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          templateFormula.Artifact.Name);
 						break;
 					case ArtifactType.TemplateDefinition:
 						var templateDefinition = JsonParser.Default.Parse<TemplateDefinition>(formattedJson);
-						Log.Info("Artifact type: " + type + " successfully deserialized: " +
+						_log.Info("Artifact type: " + type + " successfully deserialized: " +
 						          templateDefinition.Artifact.Name);
 						break;
 					default:
@@ -979,26 +979,26 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 			catch (Exception e)
 			{
-				Log.Error("Json failed to deserialize back into: " + type);
-				Log.Error(e);
+				_log.Error("Json failed to deserialize back into: " + type);
+				_log.Error(e);
 				return false;
 			}
 
-			Log.Info("Saving Artifact: " + formattedJson);
+			_log.Info("Saving Artifact: " + formattedJson);
 			if (outputFolder != null)
 			{
-				var artifactStream = File.CreateText(outputFolder.FullName + FolderSeparator + artifactName + ".json");
+				var artifactStream = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName + ".json");
 				artifactStream.Write(formattedJson);
 				artifactStream.Close();
 			}
 
-			Log.Info("Complete");
+			_log.Info("Complete");
 			return true;
 		}
 
 		internal static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
 		{
-			Log.Info("DeleteArtifact of type: " + artifactRequest.ArtifactSymbol.Type + " with Tooling symbol: " + artifactRequest.ArtifactSymbol);
+			_log.Info("DeleteArtifact of type: " + artifactRequest.ArtifactSymbol.Type + " with Tooling symbol: " + artifactRequest.ArtifactSymbol);
 			DeleteArtifactResponse response;
 			var artifactFolderName =
 				ModelManager.GetArtifactFolderNameBySymbol(artifactRequest.ArtifactSymbol.Type, artifactRequest.ArtifactSymbol
@@ -1035,8 +1035,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 			catch (Exception e)
 			{
-				Log.Error("Error attempting to delete artifact of type: " + artifactRequest.ArtifactSymbol.Type + " with Tooling symbol: " + artifactRequest.ArtifactSymbol);
-				Log.Error(e);
+				_log.Error("Error attempting to delete artifact of type: " + artifactRequest.ArtifactSymbol.Type + " with Tooling symbol: " + artifactRequest.ArtifactSymbol);
+				_log.Error(e);
 				response = new DeleteArtifactResponse
 				{
 					Deleted = false
@@ -1077,8 +1077,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 					throw new ArgumentOutOfRangeException(nameof(type), type, null);
 			}
 
-			var path = ArtifactPath + FolderSeparator + typeFolderName + FolderSeparator + artifactName + Latest;
-			return Directory.Exists(path) ? new DirectoryInfo(ArtifactPath + FolderSeparator + typeFolderName + FolderSeparator + artifactName + Latest) : Directory.CreateDirectory(path);
+			var path = _artifactPath + _folderSeparator + typeFolderName + _folderSeparator + artifactName + _latest;
+			return Directory.Exists(path) ? new DirectoryInfo(_artifactPath + _folderSeparator + typeFolderName + _folderSeparator + artifactName + _latest) : Directory.CreateDirectory(path);
 		}
 		
 		private static void DeleteArtifactFolder(string artifactTypeFolderName, string artifactFolderName)
@@ -1086,13 +1086,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 			try
 			{
 				Directory.Delete(
-					ArtifactPath + FolderSeparator + artifactTypeFolderName + FolderSeparator +
+					_artifactPath + _folderSeparator + artifactTypeFolderName + _folderSeparator +
 					artifactFolderName, true);
 			} 
 			catch (Exception e) 
 			{
-				Log.Error("Unable to Delete Artifact Folder: " + artifactTypeFolderName + FolderSeparator + artifactFolderName);
-				Log.Error(e);
+				_log.Error("Unable to Delete Artifact Folder: " + artifactTypeFolderName + _folderSeparator + artifactFolderName);
+				_log.Error(e);
 			} 
 		}
 		
@@ -1104,16 +1104,16 @@ namespace TTI.TTF.Taxonomy.Controllers
 				{
 					case ArtifactContent.Uml:
 					{
-						Log.Info("Creating Artifact MD UML File");
-						var md  = File.CreateText(outputFolder.FullName + FolderSeparator + artifactName+".md");
+						_log.Info("Creating Artifact MD UML File");
+						var md  = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName+".md");
 						md.Write(af.FileData.ToStringUtf8());
 						md.Close();
 						break;
 					}
 					case ArtifactContent.Other:
 					{
-						Log.Info("Creating Artifact Other File");
-						var other  = File.Create(outputFolder.FullName + FolderSeparator + af.FileName);
+						_log.Info("Creating Artifact Other File");
+						var other  = File.Create(outputFolder.FullName + _folderSeparator + af.FileName);
 						other.Write(af.FileData.ToByteArray());
 						other.Close();
 						break;
@@ -1121,8 +1121,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 					case ArtifactContent.Definition:
 						break;
 					case ArtifactContent.Control:
-						Log.Info("Creating Artifact Proto Control");
-						var proto  = File.CreateText(outputFolder.FullName + FolderSeparator + artifactName+".proto");
+						_log.Info("Creating Artifact Proto Control");
+						var proto  = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName+".proto");
 						proto.Write(af.FileData.ToStringUtf8());
 						proto.Close();
 						break;
@@ -1200,8 +1200,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 		{
             const string typeFolder = "base";
 			var classFolder = ModelMap.GetBaseFolderName(tokenType, tokenUnit, representationType);
-			var baseFile = File.OpenText(ArtifactPath + typeFolder + FolderSeparator + classFolder 
-			                             + FolderSeparator + TxService.Latest + FolderSeparator + classFolder+".json");
+			var baseFile = File.OpenText(_artifactPath + typeFolder + _folderSeparator + classFolder 
+			                             + _folderSeparator + TxService.Latest + _folderSeparator + classFolder+".json");
 			var json = baseFile.ReadToEnd();
 			var formattedJson = JToken.Parse(json).ToString();
 			var baseType = JsonParser.Default.Parse<Base>(formattedJson);
@@ -1286,13 +1286,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 		{
 			try
 			{
-				var latestPath = ArtifactPath + FolderSeparator + artifactTypeFolder + FolderSeparator +
-				                 artifactName + Latest;
+				var latestPath = _artifactPath + _folderSeparator + artifactTypeFolder + _folderSeparator +
+				                 artifactName + _latest;
 
 				if (string.IsNullOrEmpty(version))
 					version = "1.0";
-				var oldLatestPath = ArtifactPath + FolderSeparator + artifactTypeFolder + FolderSeparator +
-				                    artifactName + FolderSeparator + version;
+				var oldLatestPath = _artifactPath + _folderSeparator + artifactTypeFolder + _folderSeparator +
+				                    artifactName + _folderSeparator + version;
 				var (outcome, message) = CreateVersion(latestPath, oldLatestPath);
 				if (!outcome) return (false, message);
 				var outputFolder =
@@ -1302,7 +1302,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 			catch (Exception e)
 			{
-				Log.Error(e);
+				_log.Error(e);
 				return (false, e.Message);
 			}
 		}
@@ -1316,7 +1316,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			{
 				var err = "New Version could not be created, source directory does not exist or could not be found: "
 					+ sourceDirName;
-				Log.Error(err);
+				_log.Error(err);
 				return (false, err);
 			}
 
@@ -1324,14 +1324,14 @@ namespace TTI.TTF.Taxonomy.Controllers
 			// If the destination directory doesn't exist, create it.
 			if (Directory.Exists(destDirName))
 			{
-				Log.Error(destDirName + " already exists, creating a backup.");
+				_log.Error(destDirName + " already exists, creating a backup.");
 				destDirName = Utils.Randomize(destDirName);
 			}
 			if (!Directory.Exists(destDirName))
 			{
 
 				Directory.CreateDirectory(destDirName);
-				Log.Error(destDirName + " is previous Version.");
+				_log.Error(destDirName + " is previous Version.");
 			}
         
 			// Get the files in the directory and copy them to the new location.
@@ -1354,14 +1354,14 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 			catch (Exception e)
 			{
-				Log.Error("Error creating new artifact files");
-				Log.Error(e);
+				_log.Error("Error creating new artifact files");
+				_log.Error(e);
 			}
 		}
 		private static void CreateMarkdown(DirectoryInfo outputFolder, string artifactName, ArtifactType artifactType)
 		{
-			Log.Info("Creating Artifact Markdown");
-			var md = File.CreateText(outputFolder + FolderSeparator + artifactName + ".md");
+			_log.Info("Creating Artifact Markdown");
+			var md = File.CreateText(outputFolder + _folderSeparator + artifactName + ".md");
 			md.Write("# " + artifactName + " a TTF " + artifactType);
 			md.Close();
 
@@ -1369,13 +1369,13 @@ namespace TTI.TTF.Taxonomy.Controllers
 		
 		private static void CreateProto(DirectoryInfo outputFolder, string artifactName, string nameSpaceAdd)
 		{
-			Log.Info("Creating Artifact Proto");
-			var pFile = outputFolder + FolderSeparator + artifactName + ".proto";
+			_log.Info("Creating Artifact Proto");
+			var pFile = outputFolder + _folderSeparator + artifactName + ".proto";
 			
 			var proto  = File.CreateText(pFile);
 			var templateProto =
 				File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + 
-				                 FolderSeparator + "templates" + FolderSeparator + "artifact.proto");
+				                 _folderSeparator + "templates" + _folderSeparator + "artifact.proto");
 			
 			var ns = templateProto.Replace("BASE", nameSpaceAdd);
 			ns = ns.Replace("NAME", artifactName);

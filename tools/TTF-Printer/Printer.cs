@@ -166,8 +166,26 @@ namespace TTI.TTF.Taxonomy
                                 }
                                 break;
                             case ArtifactType.TemplateDefinition:
+                                var definition = ModelManager.GetTemplateDefinitionArtifact(new ArtifactSymbol
+                                {
+                                    Id = id
+                                });
+
+                                if (definition != null)
+                                {
+                                    PrintController.PrintDefinition(filePath, waterMark, styleSource, definition);
+                                }
                                 break;
                             case ArtifactType.TokenTemplate:
+                                var spec = ModelManager.GetTokenSpecification(new TokenTemplateId
+                                {
+                                    DefinitionId = id
+                                });
+
+                                if (spec != null)
+                                {
+                                    PrintController.PrintSpec(filePath, waterMark, styleSource, spec);
+                                }
                                 break;
                         }
                     }

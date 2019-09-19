@@ -35,5 +35,22 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             }
 
         }
+        
+        public static void AddBehaviorGroupSpecification(WordprocessingDocument document, BehaviorGroupSpecification bg)
+        {
+            _log.Info("Printing Behavior Grop Properties: " + bg.Artifact.Name);
+            var body = document.MainDocumentPart.Document.Body;
+
+            var aDef = body.AppendChild(new Paragraph());
+            var adRun = aDef.AppendChild(new Run());
+            adRun.AppendChild(new Text("Behavior Group Details"));
+            Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
+
+            foreach (var br in bg.Behaviors)
+            {
+                BehaviorPrinter.AddBehaviorReferenceProperties(document, br);
+            }
+
+        }
     }
 }

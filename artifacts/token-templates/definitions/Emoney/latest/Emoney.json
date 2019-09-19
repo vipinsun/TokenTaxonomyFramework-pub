@@ -65,7 +65,7 @@
     "symbol": "",
     "owner": "",
     "quantity": "0",
-    "decimals": 0,
+    "decimals": 2,
     "tokenProperties": {},
     "constructorName": "Constructor",
     "constructor": null

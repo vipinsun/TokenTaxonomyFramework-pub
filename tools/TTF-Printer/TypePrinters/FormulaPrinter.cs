@@ -50,7 +50,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 ArtifactPrinter.GenerateArtifactSymbol(document, b.Behavior);
                 var bbDef = body.AppendChild(new Paragraph());
                 var bbRun = bbDef.AppendChild(new Run());
-                bbRun.AppendChild(new Text("Behaviors"));
+                bbRun.AppendChild(new Text(""));
                 Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
             }
             
@@ -61,6 +61,10 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             foreach (var b in formula.BehaviorGroups)
             {
                 ArtifactPrinter.GenerateArtifactSymbol(document, b.BehaviorGroup);
+                var bbDef = body.AppendChild(new Paragraph());
+                var bbRun = bbDef.AppendChild(new Run());
+                bbRun.AppendChild(new Text(""));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
             }
             
             var pDef = body.AppendChild(new Paragraph());
@@ -70,6 +74,10 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             foreach (var p in formula.PropertySets)
             {
                 ArtifactPrinter.GenerateArtifactSymbol(document, p.PropertySet);
+                var bbDef = body.AppendChild(new Paragraph());
+                var bbRun = bbDef.AppendChild(new Run());
+                bbRun.AppendChild(new Text(""));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
             }
             
             var cDef = body.AppendChild(new Paragraph());
@@ -79,6 +87,10 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             foreach (var c in formula.ChildTokens)
             {
                 AddFormulaProperties(document, c);
+                var bbDef = body.AppendChild(new Paragraph());
+                var bbRun = bbDef.AppendChild(new Run());
+                bbRun.AppendChild(new Text(""));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
             }
             
         }

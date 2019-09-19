@@ -29,14 +29,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var invokes = body.AppendChild(new Paragraph());
             var ivRun = invokes.AppendChild(new Run());
             ivRun.AppendChild(new Text("Invocations"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", invokes, JustificationValues.Center);
+            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", invokes);
 
             foreach (var i in invocations) {
 
                 var exBody = body.AppendChild(new Paragraph());
                 var exRun = exBody.AppendChild(new Run());
                 exRun.AppendChild(new Text(i.Name));
-                Utils.ApplyStyleToParagraph(document, "Subtitle", "Subtitle", exBody, JustificationValues.Center);
+                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", exBody);
 
                 var idBody = body.AppendChild(new Paragraph());
                 var idRun = idBody.AppendChild(new Run());
@@ -45,13 +45,13 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
                 var iDescription = body.AppendChild(new Paragraph());
                 var iRun = iDescription.AppendChild(new Run());
-                iRun.AppendChild(new Text(i.Description));
-                Utils.ApplyStyleToParagraph(document, "Quote", "Quote", iDescription);
+                iRun.AppendChild(new Text("Description: " + i.Description));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", iDescription);
 
                 var requestBody = body.AppendChild(new Paragraph());
                 var requestRun = requestBody.AppendChild(new Run());
                 requestRun.AppendChild(new Text("Request"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", requestBody);
+                Utils.ApplyStyleToParagraph(document, "Heading5", "Heading5", requestBody);
 
                 var reqBody = body.AppendChild(new Paragraph());
                 var reqRun = reqBody.AppendChild(new Run());
@@ -66,7 +66,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 var paramsBody = body.AppendChild(new Paragraph());
                 var paramsRun = paramsBody.AppendChild(new Run());
                 paramsRun.AppendChild(new Text("Parameters"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", paramsBody);
+                Utils.ApplyStyleToParagraph(document, "Heading6", "Heading6", paramsBody);
 
                 var invokePara = body.AppendChild(new Paragraph());
                 var invokeRun = invokePara.AppendChild(new Run());
@@ -77,7 +77,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 var responseBody = body.AppendChild(new Paragraph());
                 var responseRun = responseBody.AppendChild(new Run());
                 responseRun.AppendChild(new Text("Response"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", responseBody);
+                Utils.ApplyStyleToParagraph(document, "Heading5", "Heading5", responseBody);
 
                 var resBody = body.AppendChild(new Paragraph());
                 var resRun = resBody.AppendChild(new Run());
@@ -92,7 +92,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 var ramsBody = body.AppendChild(new Paragraph());
                 var ramsRun = ramsBody.AppendChild(new Run());
                 ramsRun.AppendChild(new Text("Parameters"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", ramsBody);
+                Utils.ApplyStyleToParagraph(document, "Heading6", "Heading6", ramsBody);
 
                 var rinvokePara = body.AppendChild(new Paragraph());
                 var rinvokeRun = rinvokePara.AppendChild(new Run());
@@ -110,69 +110,68 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var invokes = body.AppendChild(new Paragraph());
             var ivRun = invokes.AppendChild(new Run());
             ivRun.AppendChild(new Text(invocation.Name));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", invokes, JustificationValues.Center);
+            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", invokes);
 
+            var idBody = body.AppendChild(new Paragraph());
+            var idRun = idBody.AppendChild(new Run());
+            idRun.AppendChild(new Text("Id: " + invocation.Id));
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", idBody);
 
-                var idBody = body.AppendChild(new Paragraph());
-                var idRun = idBody.AppendChild(new Run());
-                idRun.AppendChild(new Text("Id: " + invocation.Id));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", idBody);
+            var iDescription = body.AppendChild(new Paragraph());
+            var iRun = iDescription.AppendChild(new Run());
+            iRun.AppendChild(new Text(invocation.Description));
+            Utils.ApplyStyleToParagraph(document, "Quote", "Quote", iDescription);
 
-                var iDescription = body.AppendChild(new Paragraph());
-                var iRun = iDescription.AppendChild(new Run());
-                iRun.AppendChild(new Text(invocation.Description));
-                Utils.ApplyStyleToParagraph(document, "Quote", "Quote", iDescription);
+            var requestBody = body.AppendChild(new Paragraph());
+            var requestRun = requestBody.AppendChild(new Run());
+            requestRun.AppendChild(new Text("Request"));
+            Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", requestBody);
 
-                var requestBody = body.AppendChild(new Paragraph());
-                var requestRun = requestBody.AppendChild(new Run());
-                requestRun.AppendChild(new Text("Request"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", requestBody);
+            var reqBody = body.AppendChild(new Paragraph());
+            var reqRun = reqBody.AppendChild(new Run());
+            reqRun.AppendChild(new Text("Control Message: " + invocation.Request.ControlMessageName));
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", reqBody);
 
-                var reqBody = body.AppendChild(new Paragraph());
-                var reqRun = reqBody.AppendChild(new Run());
-                reqRun.AppendChild(new Text("Control Message: " + invocation.Request.ControlMessageName));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", reqBody);
+            var dBody = body.AppendChild(new Paragraph());
+            var dRun = dBody.AppendChild(new Run());
+            dRun.AppendChild(new Text("Description: " + invocation.Request.Description));
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", dBody);
 
-                var dBody = body.AppendChild(new Paragraph());
-                var dRun = dBody.AppendChild(new Run());
-                dRun.AppendChild(new Text("Description: " + invocation.Request.Description));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", dBody);
+            var paramsBody = body.AppendChild(new Paragraph());
+            var paramsRun = paramsBody.AppendChild(new Run());
+            paramsRun.AppendChild(new Text("Parameters"));
+            Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", paramsBody);
 
-                var paramsBody = body.AppendChild(new Paragraph());
-                var paramsRun = paramsBody.AppendChild(new Run());
-                paramsRun.AppendChild(new Text("Parameters"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", paramsBody);
+            var invokePara = body.AppendChild(new Paragraph());
+            var invokeRun = invokePara.AppendChild(new Run());
+            invokeRun.AppendChild(GetParamsTable(document, invocation.Request.InputParameters));
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", invokePara);
 
-                var invokePara = body.AppendChild(new Paragraph());
-                var invokeRun = invokePara.AppendChild(new Run());
-                invokeRun.AppendChild(GetParamsTable(document, invocation.Request.InputParameters));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", invokePara);
+            //response
+            var responseBody = body.AppendChild(new Paragraph());
+            var responseRun = responseBody.AppendChild(new Run());
+            responseRun.AppendChild(new Text("Response"));
+            Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", responseBody);
 
-                //response
-                var responseBody = body.AppendChild(new Paragraph());
-                var responseRun = responseBody.AppendChild(new Run());
-                responseRun.AppendChild(new Text("Response"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", responseBody);
+            var resBody = body.AppendChild(new Paragraph());
+            var resRun = resBody.AppendChild(new Run());
+            resRun.AppendChild(new Text("Control Message: " + invocation.Response.ControlMessageName));
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", resBody);
 
-                var resBody = body.AppendChild(new Paragraph());
-                var resRun = resBody.AppendChild(new Run());
-                resRun.AppendChild(new Text("Control Message: " + invocation.Response.ControlMessageName));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", resBody);
+            var rBody = body.AppendChild(new Paragraph());
+            var rRun = rBody.AppendChild(new Run());
+            rRun.AppendChild(new Text("Description: " + invocation.Response.Description));
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rBody);
 
-                var rBody = body.AppendChild(new Paragraph());
-                var rRun = rBody.AppendChild(new Run());
-                rRun.AppendChild(new Text("Description: " + invocation.Response.Description));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rBody);
+            var ramsBody = body.AppendChild(new Paragraph());
+            var ramsRun = ramsBody.AppendChild(new Run());
+            ramsRun.AppendChild(new Text("Parameters"));
+            Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", ramsBody);
 
-                var ramsBody = body.AppendChild(new Paragraph());
-                var ramsRun = ramsBody.AppendChild(new Run());
-                ramsRun.AppendChild(new Text("Parameters"));
-                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", ramsBody);
-
-                var rinvokePara = body.AppendChild(new Paragraph());
-                var rinvokeRun = rinvokePara.AppendChild(new Run());
-                rinvokeRun.AppendChild(GetParamsTable(document, invocation.Response.OutputParameters));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rinvokePara);
+            var rinvokePara = body.AppendChild(new Paragraph());
+            var rinvokeRun = rinvokePara.AppendChild(new Run());
+            rinvokeRun.AppendChild(GetParamsTable(document, invocation.Response.OutputParameters));
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rinvokePara);
         }
 
         internal static void BuildInfluenceBindings(WordprocessingDocument document, IEnumerable<InfluenceBinding> influenceBindings)
@@ -183,20 +182,20 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var invokes = body.AppendChild(new Paragraph());
             var ivRun = invokes.AppendChild(new Run());
             ivRun.AppendChild(new Text("Influence Bindings"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", invokes, JustificationValues.Center);
+            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", invokes);
 
             foreach (var i in influenceBindings)
             {
 
                 var idBody = body.AppendChild(new Paragraph());
                 var idRun = idBody.AppendChild(new Run());
-                idRun.AppendChild(new Text("Influneced Id: " + i.InfluencedId));
+                idRun.AppendChild(new Text("Influenced Id: " + i.InfluencedId));
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", idBody);
 
                 var influencedName = "Replace with Influenced name";
                 var indBody = body.AppendChild(new Paragraph());
                 var indRun = indBody.AppendChild(new Run());
-                indRun.AppendChild(new Text("Influneced Name: " + influencedName));
+                indRun.AppendChild(new Text("Influenced Name: " + influencedName));
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", indBody);
 
                 var iDescription = body.AppendChild(new Paragraph());
@@ -206,7 +205,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
                 var requestBody = body.AppendChild(new Paragraph());
                 var requestRun = requestBody.AppendChild(new Run());
-                requestRun.AppendChild(new Text("Influence Type: " + i.InfluenceType.ToString()));
+                requestRun.AppendChild(new Text("Influence Type: " + i.InfluenceType));
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", requestBody);
 
                 var reqBody = body.AppendChild(new Paragraph());
@@ -225,21 +224,21 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             }
         }
 
-        internal static void BuildPropertiesTable(WordprocessingDocument document, RepeatedField<Property> properties)
+        internal static void BuildPropertiesTable(WordprocessingDocument document, IEnumerable<Property> properties)
         {
             _log.Info("Printing InvocationsTable");
             var body = document.MainDocumentPart.Document.Body;
             var propertyPara = body.AppendChild(new Paragraph());
             var ivRun = propertyPara.AppendChild(new Run());
             ivRun.AppendChild(new Text("Properties"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", propertyPara, JustificationValues.Center);
+            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", propertyPara);
 
             foreach (var p in properties)
             {
                 var exBody = body.AppendChild(new Paragraph());
                 var exRun = exBody.AppendChild(new Run());
                 exRun.AppendChild(new Text("Name: " + p.Name));
-                Utils.ApplyStyleToParagraph(document, "Subtitle", "Subtitle", exBody);
+                Utils.ApplyStyleToParagraph(document, "Heading4", "Heading4", exBody);
 
                 var idBody = body.AppendChild(new Paragraph());
                 var idRun = idBody.AppendChild(new Run());
@@ -265,12 +264,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var name1 = new TableCell();
             var description1 = new TableCell();
 
-            name1.Append(new Paragraph(new Run(new Text("Artifact Type"))));
+            name1.Append(new Paragraph(new Run(new Text("Name"))));
+            var width = new TableCellWidth {Type = TableWidthUnitValues.Pct, Width = "35"};
             name1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "35" }));
-            description1.Append(new Paragraph(new Run(new Text("Description"))));
+                width));
+            description1.Append(new Paragraph(new Run(new Text("Value"))));
+            var element = new TableCellWidth {Type = TableWidthUnitValues.Pct, Width = "65"};
             description1.Append(new TableCellProperties(
-                new TableCellWidth { Type = TableWidthUnitValues.Pct, Width = "65" }));
+                element));
             tr1.Append(name1);
             tr1.Append(description1);
             paramsTable.Append(tr1);

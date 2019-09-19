@@ -507,7 +507,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             return new MemoryStream(Convert.FromBase64String(base64String));
         }
 
-        public static void SetWaterMarkPicture(string file)
+        private static void SetWaterMarkPicture(string file)
         {
             try
             {

@@ -129,7 +129,7 @@ The taxonomy uses symbols to represent token bases and possible behaviors that a
 
 Physical cash or a crypto currency is a good example of a fungible token. These tokens have interchangeable value with one another, where any quantity of them has the same value as another equal quantity as long as they are in the same class or series.
 
-There are currently two kinds of fungible tokens, common, sometimes called account or balance tokens, and unique, or UTXO (unspent transaction output). This distinction might seem subtle, but is important when considering how fungible tokens can be traced and what properties they can have. 
+There are currently two kinds of fungible tokens, common, sometimes called account or balance tokens, and unique, or UTXO (unspent transaction output). This distinction might seem subtle, but is important when considering how fungible tokens can be traced and what properties they can have.
 
 Common fungible tokens share a single set of properties, are not distinct from one another and balances are recorded in a central place. These tokens are simply represented as a balance or quanitity attributed to an owners address where all the balances are recorded on the same balance sheet. This balance sheet is distributed, so its not 'centralized' but rather simplified. Common tokens have the advantage of easily sharing a common value like a "SKU" where the change in the value is immediately reflected for all tokens. Like money in a bank account is represented as a balance. Common tokens cannot be individually traced, only their balances between accounts can.
 

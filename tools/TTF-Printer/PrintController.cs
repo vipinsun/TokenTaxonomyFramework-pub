@@ -6,6 +6,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using log4net;
 using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
 using TTI.TTF.Taxonomy.TypePrinters;
 
@@ -15,8 +16,8 @@ namespace TTI.TTF.Taxonomy
     {
         private static WordprocessingDocument _document;
         private static readonly ILog _log;
-        internal static string OutputFolder = "";
-        internal static string FilePath = "";
+        private static string _outputFolder = "";
+        private static string _filePath = "";
 
         static PrintController()
         {
@@ -30,8 +31,8 @@ namespace TTI.TTF.Taxonomy
         private static void InitWorkingDocument(string styleSource)
         {
             _document =
-                WordprocessingDocument.Create(FilePath, WordprocessingDocumentType.Document);
-            _log.Info("Artifact file: " + FilePath + " created");
+                WordprocessingDocument.Create(_filePath, WordprocessingDocumentType.Document);
+            _log.Info("Artifact file: " + _filePath + " created");
             // Add a main document part.     
             var mainPart = _document.AddMainDocumentPart();
 
@@ -50,17 +51,17 @@ namespace TTI.TTF.Taxonomy
             _log.Info("Print Controller printing Base: " + baseToPrint.Artifact.Name);
 
             var trimName = baseToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName +  ModelMap.BaseFolder + ModelMap.FolderSeparator +
+            _outputFolder = fileName +  ModelMap.BaseFolder + ModelMap.FolderSeparator +
                            trimName;
-            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            _filePath = _outputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
-                Directory.CreateDirectory(OutputFolder);
+                Directory.CreateDirectory(_outputFolder);
                 InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
-                _log.Error("Artifact Output Folder: " + OutputFolder + " cannot be created.");
+                _log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
                 _log.Error(ex);
                 return;
             }
@@ -79,17 +80,17 @@ namespace TTI.TTF.Taxonomy
             _log.Info("Print Controller printing Behavior: " + behaviorToPrint.Artifact.Name);
 
             var trimName = behaviorToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName +  ModelMap.BehaviorFolder + ModelMap.FolderSeparator +
+            _outputFolder = fileName +  ModelMap.BehaviorFolder + ModelMap.FolderSeparator +
                 trimName;
-            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            _filePath = _outputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
-                Directory.CreateDirectory(OutputFolder);
+                Directory.CreateDirectory(_outputFolder);
                 InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
-                _log.Error("Artifact Output Folder: " + OutputFolder + " cannot be created.");
+                _log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
                 _log.Error(ex);
                 return;
             }
@@ -108,17 +109,17 @@ namespace TTI.TTF.Taxonomy
             _log.Info("Print Controller printing Behavior Group: " + behaviorGroupToPrint.Artifact.Name);
 
             var trimName = behaviorGroupToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName +  ModelMap.BehaviorGroupFolder + ModelMap.FolderSeparator +
+            _outputFolder = fileName +  ModelMap.BehaviorGroupFolder + ModelMap.FolderSeparator +
                 trimName;
-            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            _filePath = _outputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
-                Directory.CreateDirectory(OutputFolder);
+                Directory.CreateDirectory(_outputFolder);
                 InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
-                _log.Error("Artifact Output Folder: " + OutputFolder + " cannot be created.");
+                _log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
                 _log.Error(ex);
                 return;
             }
@@ -136,17 +137,17 @@ namespace TTI.TTF.Taxonomy
             _log.Info("Print Controller printing Property Set: " + psToPrint.Artifact.Name);
 
             var trimName = psToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName +  ModelMap.PropertySetFolder + ModelMap.FolderSeparator +
+            _outputFolder = fileName +  ModelMap.PropertySetFolder + ModelMap.FolderSeparator +
                 trimName;
-            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            _filePath = _outputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
-                Directory.CreateDirectory(OutputFolder);
+                Directory.CreateDirectory(_outputFolder);
                 InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
-                _log.Error("Artifact Output Folder: " + OutputFolder + " cannot be created.");
+                _log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
                 _log.Error(ex);
                 return;
             }
@@ -165,17 +166,17 @@ namespace TTI.TTF.Taxonomy
             _log.Info("Print Controller printing Property Set: " + formulaToPrint.Artifact.Name);
 
             var trimName = formulaToPrint.Artifact.Name.Replace(" ", "");
-            OutputFolder = fileName +  ModelMap.TemplateFormulasFolder + ModelMap.FolderSeparator +
+            _outputFolder = fileName +  ModelMap.TemplateFormulasFolder + ModelMap.FolderSeparator +
                            trimName;
-            FilePath = OutputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            _filePath = _outputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
             try
             {
-                Directory.CreateDirectory(OutputFolder);
+                Directory.CreateDirectory(_outputFolder);
                 InitWorkingDocument(styleSource);
             }
             catch (Exception ex)
             {
-                _log.Error("Artifact Output Folder: " + OutputFolder + " cannot be created.");
+                _log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
                 _log.Error(ex);
                 return;
             }
@@ -188,6 +189,84 @@ namespace TTI.TTF.Taxonomy
 
             _document.Close();
         }
+        
+        public static void PrintDefinition(string fileName, string waterMark, string styleSource, TemplateDefinition definitionToPrint)
+        {
+            _log.Info("Print Controller printing Property Set: " + definitionToPrint.Artifact.Name);
+
+            var trimName = definitionToPrint.Artifact.Name.Replace(" ", "");
+            _outputFolder = fileName +  ModelMap.TemplateDefinitionsFolder + ModelMap.FolderSeparator +
+                           trimName;
+            _filePath = _outputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            try
+            {
+                Directory.CreateDirectory(_outputFolder);
+                InitWorkingDocument(styleSource);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
+                _log.Error(ex);
+                return;
+            }
+           
+            ArtifactPrinter.AddArtifactContent(_document, definitionToPrint.Artifact, true);
+            DefinitionPrinter.AddDefinitionProperties(_document, definitionToPrint);
+            Utils.InsertCustomWatermark(_document, waterMark);
+            Utils.AddFooter(_document, definitionToPrint.Artifact.Name);
+            Save();
+
+            _document.Close();
+        }
+        
+        public static void PrintSpec(string fileName, string waterMark, string styleSource, TokenSpecification specification)
+        {
+            _log.Info("Print Controller printing Property Set: " + specification.Artifact.Name);
+
+            var trimName = specification.Artifact.Name.Replace(" ", "");
+            _outputFolder = fileName +  ModelMap.SpecificationsFolder + ModelMap.FolderSeparator +
+                           trimName;
+            _filePath = _outputFolder + ModelMap.FolderSeparator + ModelMap.Latest + trimName + ".docx";
+            try
+            {
+                Directory.CreateDirectory(_outputFolder);
+                InitWorkingDocument(styleSource);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
+                _log.Error(ex);
+                return;
+            }
+
+            var classification = GetClassification(specification);
+                
+            ArtifactPrinter.AddArtifactSpecification(_document, specification.Artifact, classification, true);
+            SpecificationPrinter.AddSpecificationProperties(_document, specification);
+            Utils.InsertCustomWatermark(_document, waterMark);
+            Utils.AddFooter(_document, specification.Artifact.Name + " - " + specification.SpecificationHash);
+            Save();
+
+            _document.Close();
+        }
+
+        private static Classification GetClassification(TokenSpecification spec)
+        {
+            var template = ModelManager.GetTokenTemplate(new TokenTemplateId
+            {
+                DefinitionId = spec.DefinitionReference.Id
+            });
+
+            return new Classification
+            {
+                RepresentationType = spec.TokenBase.RepresentationType,
+                TemplateType = template.Formula.TemplateType,
+                ValueType = spec.TokenBase.ValueType,
+                TokenType = spec.TokenBase.TokenType,
+                TokenUnit = spec.TokenBase.TokenUnit
+            };
+        }
+
         internal static void PrintTtf()
         {
             throw new NotImplementedException();
@@ -196,15 +275,15 @@ namespace TTI.TTF.Taxonomy
         internal static void Save(bool validate = false)
         {
             _document.MainDocumentPart.Document.Save();
-            _log.Info("Document saved: " + FilePath);
+            _log.Info("Document saved: " + _filePath);
             if (!validate) return;
             _document.Close();
-            _document = WordprocessingDocument.Open(FilePath,false);
+            _document = WordprocessingDocument.Open(_filePath,false);
                 
             if (!Utils.ValidateWordDocument(_document))
                 Utils.ValidateCorruptedWordDocument(_document);
             _document.Close();
-            _document = WordprocessingDocument.Open(FilePath, true);
+            _document = WordprocessingDocument.Open(_filePath, true);
         }
 
     }
