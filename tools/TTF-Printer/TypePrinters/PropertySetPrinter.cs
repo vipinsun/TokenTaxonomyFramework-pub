@@ -19,7 +19,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddPropertySetProperties(WordprocessingDocument document, PropertySet ps)
+        public static void AddPropertySetProperties(WordprocessingDocument document, PropertySet ps, bool book)
         {
             _log.Info("Printing Property Set Properties: " + ps.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
@@ -29,7 +29,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             adRun.AppendChild(new Text("Property Set"));
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
 
-            CommonPrinter.BuildPropertiesTable(document, ps.Properties);
+            CommonPrinter.BuildPropertiesTable(document, ps.Properties, book);
         }
         
         public static void AddPropertySetSpecification(WordprocessingDocument document, PropertySetSpecification ps)

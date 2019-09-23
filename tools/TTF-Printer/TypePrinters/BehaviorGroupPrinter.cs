@@ -19,9 +19,9 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddBehaviorGroupProperties(WordprocessingDocument document, BehaviorGroup bg)
+        public static void AddBehaviorGroupProperties(WordprocessingDocument document, BehaviorGroup bg, bool book)
         {
-            _log.Info("Printing Behavior Grop Properties: " + bg.Artifact.Name);
+            _log.Info("Printing Behavior Group Properties: " + bg.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
             var aDef = body.AppendChild(new Paragraph());
@@ -33,6 +33,18 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             {
                 BehaviorPrinter.AddBehaviorReferenceProperties(document, br);
             }
+            if (!book) return;
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", pageBreak);
 
         }
         

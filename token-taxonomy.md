@@ -141,7 +141,7 @@ A unique fungible token is identified by **&tau;<sub>F'</sub>**.
 
 ### Non-fungible
 
-Every non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the title to a broken-down shack is not of the same value as a mansion.
+Non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the title to a broken-down shack is not of the same value as a mansion.
 
 A fungible token is identified by **&tau;<sub>N</sub>**.
 
@@ -173,9 +173,9 @@ Tokens are classified in their template definitions using these characteristics:
 - TokenType: Fungible or Non-Fungible
 - TokenUnit: Fractional or Whole (subdivision settings)
 - RepresentationType: Intrinsic (pure digital value) or Reference (value located elsewhere)
-- ValueType: Common (balance or account) or Unique (UTXO) non-fungibles are by default common
+- ValueType: Common (balance or account) or Unique (UTXO)
 
-The TemplateType of the classification is set in the TemplateFormula and the others are set in the BaseToken. The classification is used to build the hierarchy and can also be used to pivot branches based on various settings. For simplicity, fungibles are not separated based on their ValueType in the default view, but could be filtered by it.
+The TemplateType of the classification is set in the TemplateFormula and the others are set in the BaseToken. The classification is used to build the hierarchy and can also be used to pivot branches based on various settings. For simplicity, tokens are not separated based on their ValueType in the default view, but could be filtered by it.
 
 ## Properties
 
@@ -341,6 +341,8 @@ Token definitions start with the token base type:
 |:-------------:|:-------------:|:-------------:|
 | Fungible      |  **&tau;<sub>F</sub>** | tF |
 | Non-fungible  | **&tau;<sub>N</sub>**   |   tN |
+| Unique Fungible      |  **&tau;<sub>F'</sub>** | tF' |
+| Unique Non-fungible  | **&tau;<sub>N'</sub>**   |   tN' |
 | Hybrid – class in (,)|      |     |
 | Non-fungible with a class of fungibles|[&tau;<sub>N</sub>] (&tau;<sub>F</sub>)      |   `[tN](tF)` |
 | Fungible with a class of non-fungibles| [&tau;<sub>F</sub>] (&tau;<sub>N</sub>)      |    `[tF](tN)`|
@@ -356,7 +358,6 @@ Token definitions start with the token base type:
 - Hybrid tokens, represented as children of a base parent are added after the base's [] and contained with in parenthesis (,).  These child tokens are also contained within brackets resulting in a formula grouping like: `[]([],[])`
 - For hybrid tokens, you can apply behaviors to the entire hybrid definition by ending the formula with a list of behaviors in {,}.
 - Hybrid children with formulas are grouped within the formula's[]: i.e. **[&tau;<sub>N</sub>{s,~t}(&tau;<sub>F</sub>{~d,SC}]**
-
 
 Whole Token Formulas start with the base token type, followed by a collection of behaviors and groups within {,}, ending in any property-sets.
 
@@ -387,14 +388,14 @@ There is also a base behavior artifact that includes simple GetTokenRequest/Resp
 
 There three branches used to classify templates:
 
-- Fungible
-- Non-Fungible
+- Fungible - common and unique
+- Non-Fungible - common and unique
 - Hybrid *&tau;<sub>F</sub>(&tau;)*, *&tau;<sub>N</sub>(&tau;)*, etc.
   - Has Fungible and Non-Fungible branches for hybrids by parent.
 
 Dynamic branches can be created using the TOM like:
 
-- Fractional Fungible (sub-dividable) *&tau;<sub>F</sub>{d}*
+- Fractional Fungible (sub-dividable) *&tau;<sub>F</sub>{d}* 
 - Fractional Non-Fungible (sub-dividable) *&tau;<sub>N</sub>{d}*
 - Whole Fungible (non-sub-dividable) *&tau;<sub>F</sub>{~d}*
 - Whole Non-Fungible (non-sub-dividable) *&tau;<sub>N</sub>{~d}*
@@ -432,14 +433,16 @@ The template token definition adding the SKU property-set will be a `branch` off
 
 Output from tooling or workshops produce taxonomy definitions as a formula.  This formula, using the tooling format instead of the visual format, maps to artifact metadata in the framework GitHub structure and can pull names, descriptions and control messages from the framework to create visualizations, populate user interfaces, generate reports and even generate code.
 
-The GitHub artifact hierarchical file structure where artifact file names are the same as the name of the type described in it.  The parts in the file system are organized by folders, base, behaviors, behavior-groups and tokens.
+The GitHub artifact hierarchical file structure where artifact file names are the same as the name of the type described in it.  The parts in the file system are organized by folders, base, behaviors, behavior-groups and token-templates.
 
 - base - contains definitions for the base &tau and has a folder for fungible and non-fungible containing &tau;<sub>F</sub> and &tau;<sub>N</sub>.  Note the metadata in the artifacts uses the tooling format of tF and tN to prevent tools from escaping special characters like < and / used in the visual format.
 - behaviors - folder for each behavior.
 - behavior-groups - folder for each behavior group.
 - property-sets - folder for each non-behavioral property set.
 - token-templates - token templates contributed by workshops to the framework.
-- token-definitions - complete token definitions based of a template.
+ - formulas - complete token formula that is the foundation for a template definition.
+ - definitions - complete token definition that is based off a formula.
+ - specifications - the generated token specification from the template definition.
 
 ![HierarchicalFileStructure](images/fileHierarchy.png)
 

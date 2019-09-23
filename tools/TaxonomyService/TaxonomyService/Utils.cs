@@ -1,10 +1,12 @@
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
+using Google.Protobuf;
 using log4net;
 using log4net.Config;
 using Org.BouncyCastle.Crypto.Digests;
@@ -95,26 +97,69 @@ namespace TTI.TTF.Taxonomy
 		}
 		
 		public static string CalculateSha3Hash(string value)
-		{
-			var input = Encoding.UTF8.GetBytes(value);
-			var output = CalculateSha3Hash(input);
-			return output.ToHex();
-		}
+        {
+            var input = Encoding.UTF8.GetBytes(value);
+            var output = CalculateSha3Hash(input);
+            return output.ToHex();
+        }
+                
+        public static byte[] GetBytes(string str)
+        {
+            var bytes = new byte[str.Length * sizeof(char)];
+            Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
+        
+        public static byte[] GetSha3Hash(string value)
+        {
+            var input = Encoding.UTF8.GetBytes(value);
+            return CalculateSha3Hash(input);
+        }
+     
+        public static string ToHex(this byte[] value, bool prefix = false)
+        {
+            var strPrex = prefix ? "0x" : "";
+            return strPrex + string.Concat(value.Select(b => b.ToString("x2")));
+        }
 
-		private static byte[] CalculateSha3Hash(byte[] value)
-		{
-			var digest = new KeccakDigest(256);
-			var output = new byte[digest.GetDigestSize()];
-			digest.BlockUpdate(value, 0, value.Length);
-			digest.DoFinal(output, 0);
-			return output;
-		}
+        public static byte[] CalculateSha3Hash(byte[] value)
+        {
+            var digest = new KeccakDigest(256);
+            var output = new byte[digest.GetDigestSize()];
+            digest.BlockUpdate(value, 0, value.Length);
+            digest.DoFinal(output, 0);
+            return output;
+        }
 
-		private static string ToHex(this byte[] value, bool prefix = false)
-		{
-			var strPrex = prefix ? "0x" : "";
-			return strPrex + string.Concat(value.Select(b => b.ToString("x2")));
-		}
+        private static string RemoveHexPrefix(this string value)
+        {
+            return value.Replace("0x", "");
+        }
+
+        internal static string GetTaxonomyVersion(byte[] taxonomyBytes)
+        {
+	        var output = CalculateSha3Hash(taxonomyBytes);
+	        return ConvertToValid20ByteAddress(output.ToHex());
+        }
+        private static string ConvertToValid20ByteAddress(string address)
+        {
+            address = address.RemoveHexPrefix();
+            return address.Remove(18).EnsureHexPrefix();
+        }
+        private static bool HasHexPrefix(this string value)
+        {
+	        return value.StartsWith("0x");
+        }
+
+        private static string EnsureHexPrefix(this string value)
+        {
+	        if (value == null) return null;
+	        if (!value.HasHexPrefix())
+		        return "0x" + value;
+	        return value;
+        }
+
+		
 	}
 
 	public static class Os

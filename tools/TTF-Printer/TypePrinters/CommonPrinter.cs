@@ -225,7 +225,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.InsertSpacer(document);
         }
 
-        public static void BuildInvocationTable(WordprocessingDocument document, Invocation invocation)
+        private static void BuildInvocationTable(WordprocessingDocument document, Invocation invocation)
         {
             _log.Info("Printing InvocationTable");
             var body = document.MainDocumentPart.Document.Body;
@@ -297,7 +297,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rinvokePara);
         }
 
-        internal static void BuildInfluenceBindings(WordprocessingDocument document, IEnumerable<InfluenceBinding> influenceBindings)
+        internal static void BuildInfluenceBindings(WordprocessingDocument document, IEnumerable<InfluenceBinding> influenceBindings, ArtifactType invocationFromType)
         {
             _log.Info("Printing InvocationsTable");
             var body = document.MainDocumentPart.Document.Body;
@@ -309,13 +309,12 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             foreach (var i in influenceBindings)
             {
-
                 var idBody = body.AppendChild(new Paragraph());
                 var idRun = idBody.AppendChild(new Run());
                 idRun.AppendChild(new Text("Influenced Id: " + i.InfluencedId));
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", idBody);
 
-                var influencedName = "Replace with Influenced name";
+                var influencedName = Utils.GetNameForId(i.InfluencedId, ArtifactType.Behavior);
                 var indBody = body.AppendChild(new Paragraph());
                 var indRun = indBody.AppendChild(new Run());
                 indRun.AppendChild(new Text("Influenced Name: " + influencedName));
@@ -343,11 +342,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 resRun.AppendChild(new Text("Influenced Invocation: "));
                 Utils.ApplyStyleToParagraph(document, "Subtitle", "Subtitle", resBody, JustificationValues.Center);
 
+                if (i.InfluencedInvocation == null)
+                    i.InfluencedInvocation = Utils.GetInvocationById(i.InfluencedId, i.InfluencedInvocationId, invocationFromType);
                 BuildInvocationTable(document, i.InfluencedInvocation);
             }
         }
 
-        internal static void BuildPropertiesTable(WordprocessingDocument document, IEnumerable<Property> properties)
+        internal static void BuildPropertiesTable(WordprocessingDocument document, IEnumerable<Property> properties,
+            bool book)
         {
             _log.Info("Printing Properties Table");
             var body = document.MainDocumentPart.Document.Body;
@@ -374,11 +376,23 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", iDescription);
 
                 BuildInvocationsTable(document, p.PropertyInvocations);
-                BuildPropertiesTable(document, p.Properties);
-
+                BuildPropertiesTable(document, p.Properties, book);
             }
+
+            if (!book) return;
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", pageBreak);
         }
-        
+
         internal static void BuildPropertySpecificationTable(WordprocessingDocument document, IEnumerable<PropertySpecification> properties)
         {
             _log.Info("Printing Property Specifications Table");

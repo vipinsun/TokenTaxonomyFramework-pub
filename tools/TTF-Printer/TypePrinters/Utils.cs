@@ -16,6 +16,8 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using Org.BouncyCastle.Crypto.Digests;
+using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
 using V = DocumentFormat.OpenXml.Vml;
 
@@ -87,6 +89,89 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                     typeof(log4net.Repository.Hierarchy.Hierarchy)), xmlDocument["log4net"]);
         }
         
+        internal static string GetNameForId(string id, ArtifactType artifactType)
+        {
+            string name;
+            switch (artifactType)
+            {
+                case ArtifactType.Base:
+                    name = ModelManager.GetArtifactById<Base>(id).Artifact.Name;
+                    break;
+                case ArtifactType.Behavior:
+                    name = ModelManager.GetArtifactById<Model.Core.Behavior>(id).Artifact.Name;
+                    break;
+                case ArtifactType.BehaviorGroup:
+                    name = ModelManager.GetArtifactById<BehaviorGroup>(id).Artifact.Name;
+                    break;
+                case ArtifactType.PropertySet:
+                    name = ModelManager.GetArtifactById<PropertySet>(id).Artifact.Name;
+                    break;
+                case ArtifactType.TemplateFormula:
+                    name = ModelManager.GetArtifactById<TemplateFormula>(id).Artifact.Name;
+                    break;
+                case ArtifactType.TemplateDefinition:
+                    name = ModelManager.GetArtifactById<TemplateDefinition>(id).Artifact.Name;
+                    break;
+                case ArtifactType.TokenTemplate:
+                    name = ModelManager.GetArtifactById<TemplateDefinition>(id).Artifact.Name;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return name;
+        }
+        
+        internal static Invocation GetInvocationById(string invokedId, string invocationId, ArtifactType artifactType)
+        {
+            string name;
+            switch (artifactType)
+            {
+                case ArtifactType.Base:
+                   break;
+                case ArtifactType.Behavior:
+                    var b = ModelManager.GetArtifactById<Model.Core.Behavior>(invokedId);
+                    var bi = b.Invocations.SingleOrDefault(e => e.Id == invocationId);
+                    if(bi == null) return new Invocation
+                    {
+                        Id = invocationId
+                    };
+                    else
+                    {
+                        return bi;
+                    }
+                case ArtifactType.BehaviorGroup:
+                   
+                    break;
+                case ArtifactType.PropertySet:
+                    var p = ModelManager.GetArtifactById<PropertySet>(invokedId);
+                    foreach (var pp in p.Properties)
+                    {
+                        var pi = pp.PropertyInvocations.SingleOrDefault(e => e.Id == invocationId);
+                        if(pi == null) return new Invocation
+                        {
+                            Id = invocationId
+                        };
+                        return pi;
+                    }
+                    
+                    break;
+                case ArtifactType.TemplateFormula:
+                    
+                    break;
+                case ArtifactType.TemplateDefinition:
+                   
+                    break;
+                case ArtifactType.TokenTemplate:
+                   
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return new Invocation{ Id = invocationId};
+        }
+
         public static Table GetNewTable(int columns)
         {
             var table = new Table();

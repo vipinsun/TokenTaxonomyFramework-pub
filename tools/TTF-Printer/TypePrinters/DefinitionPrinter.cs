@@ -20,7 +20,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddDefinitionProperties(WordprocessingDocument document, TemplateDefinition definition)
+        public static void AddDefinitionProperties(WordprocessingDocument document, TemplateDefinition definition, bool book)
         {
             _log.Info("Printing Template Definition Properties: " + definition.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
@@ -34,7 +34,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var tRun = tDef.AppendChild(new Run());
 
             var formulaName =
-                ArtifactPrinter.GetNameForId(definition.FormulaReference.Id, ArtifactType.TemplateFormula);
+                Utils.GetNameForId(definition.FormulaReference.Id, ArtifactType.TemplateFormula);
             
             tRun.AppendChild(new Text("Template Formula Reference: " + formulaName));
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", tDef);
@@ -85,7 +85,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 var bbRun = bbDef.AppendChild(new Run());
                 bbRun.AppendChild(new Text(""));
                 Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
-                CommonPrinter.BuildPropertiesTable(document, p.Properties);
+                CommonPrinter.BuildPropertiesTable(document, p.Properties, false);
             }
             
             var cDef = body.AppendChild(new Paragraph());
@@ -94,9 +94,23 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", cDef, JustificationValues.Center);
             foreach (var c in definition.ChildTokens)
             {
-                AddDefinitionProperties(document, c);
+                AddDefinitionProperties(document, c, false);
                 Utils.InsertSpacer(document);
             }
+            
+            if (!book) return;
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", pageBreak);
+            
         }
 
     }

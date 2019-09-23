@@ -18,7 +18,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             #endregion
         }
-        public static void AddBaseProperties(WordprocessingDocument document, Base tokenBase)
+        public static void AddBaseProperties(WordprocessingDocument document, Base tokenBase, bool book)
         {
             _log.Info("Printing Base Properties: " + tokenBase.TokenType);
             var body = document.MainDocumentPart.Document.Body;
@@ -51,6 +51,17 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             var propsPara = body.AppendChild(new Paragraph());
             var propsRun = propsPara.AppendChild(new Run());
+
+            if (book)
+            {
+                if (propsPara.ParagraphProperties == null)
+                {
+                    propsPara.ParagraphProperties = new ParagraphProperties();
+                }
+
+                propsPara.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+            }
+
             propsRun.AppendChild(Utils.GetGenericPropertyTable(document, "Name", "Value", tokenBase.TokenProperties));
         }
         

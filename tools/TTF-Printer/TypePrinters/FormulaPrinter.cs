@@ -19,7 +19,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddFormulaProperties(WordprocessingDocument document, TemplateFormula formula)
+        public static void AddFormulaProperties(WordprocessingDocument document, TemplateFormula formula, bool book)
         {
             _log.Info("Printing Template Formula Properties: " + formula.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
@@ -86,13 +86,24 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", cDef, JustificationValues.Center);
             foreach (var c in formula.ChildTokens)
             {
-                AddFormulaProperties(document, c);
+                AddFormulaProperties(document, c, false);
                 var bbDef = body.AppendChild(new Paragraph());
                 var bbRun = bbDef.AppendChild(new Run());
                 bbRun.AppendChild(new Text(""));
                 Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", bbDef, JustificationValues.Center);
             }
-            
+            if (!book) return;
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", pageBreak);
         }
     }
 }

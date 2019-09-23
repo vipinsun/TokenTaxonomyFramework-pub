@@ -27,12 +27,20 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
         #region generic artifact
         public static void AddArtifactContent(WordprocessingDocument document, Artifact artifact,
-            bool isForAppendix)
+            bool isForBook, bool isForAppendix)
         {
             _log.Info("Printing Artifact: " + artifact.Name + " is top artifact " + isForAppendix);
 
-            var body = isForAppendix ?  document.MainDocumentPart.Document.Body
-                : document.MainDocumentPart.Document.AppendChild(new Body());
+            Body body;
+            if (isForAppendix || isForBook)
+            {
+                body = document.MainDocumentPart.Document.Body;
+            }
+            else
+            {
+                body = document.MainDocumentPart.Document.AppendChild(new Body());
+            }
+
             var para = body.AppendChild(new Paragraph());
             var run = para.AppendChild(new Run());
             
@@ -162,7 +170,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var rrRun = rrPara.AppendChild(new Run());
             rrRun.AppendChild(BuildReferenceTable(document, artifact.Maps.Resources));
             Utils.ApplyStyleToParagraph(document, "Normal", "Normal", rrPara);
-
+            
             if(isForAppendix)
                 PrintController.Save();
         }
@@ -409,7 +417,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             var body = document.MainDocumentPart.Document.Body;
             
-            var name = GetNameForId(artifactReference.Id, artifactReference.Type);
+            var name = Utils.GetNameForId(artifactReference.Id, artifactReference.Type);
             
             var para = body.AppendChild(new Paragraph());
             var run = para.AppendChild(new Run());
@@ -480,7 +488,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         
         public static void GenerateArtifactSymbol(WordprocessingDocument document, ArtifactSymbol symbol)
         {
-            var name = GetNameForId(symbol.Id, symbol.Type);
+            var name = Utils.GetNameForId(symbol.Id, symbol.Type);
             var basicProps = new[,]
             {
                 {"Type:", symbol.Type.ToString()},
@@ -493,39 +501,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.AddTable(document, basicProps);
         }
 
-        internal static string GetNameForId(string id, ArtifactType artifactType)
-        {
-            string name;
-            switch (artifactType)
-            {
-                case ArtifactType.Base:
-                    name = ModelManager.GetArtifactById<Base>(id).Artifact.Name;
-                    break;
-                case ArtifactType.Behavior:
-                    name = ModelManager.GetArtifactById<Model.Core.Behavior>(id).Artifact.Name;
-                    break;
-                case ArtifactType.BehaviorGroup:
-                    name = ModelManager.GetArtifactById<BehaviorGroup>(id).Artifact.Name;
-                    break;
-                case ArtifactType.PropertySet:
-                    name = ModelManager.GetArtifactById<PropertySet>(id).Artifact.Name;
-                    break;
-                case ArtifactType.TemplateFormula:
-                    name = ModelManager.GetArtifactById<TemplateFormula>(id).Artifact.Name;
-                    break;
-                case ArtifactType.TemplateDefinition:
-                    name = ModelManager.GetArtifactById<TemplateDefinition>(id).Artifact.Name;
-                    break;
-                case ArtifactType.TokenTemplate:
-                    name = ModelManager.GetArtifactById<TokenSpecification>(id).Artifact.Name;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
-            return name;
-        }
-
+        
         private static Table BuildReferenceTable(WordprocessingDocument document, IEnumerable<MapResourceReference> resources)
         {
             var referenceMapTable = new Table();

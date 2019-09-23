@@ -21,7 +21,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddBehaviorProperties(WordprocessingDocument document, Model.Core.Behavior behavior)
+        public static void AddBehaviorProperties(WordprocessingDocument document, Model.Core.Behavior behavior, bool book)
         {
             _log.Info("Printing Behavior Properties: " + behavior.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
@@ -40,7 +40,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             CommonPrinter.BuildInvocationsTable(document, behavior.Invocations);
 
-            CommonPrinter.BuildPropertiesTable(document, behavior.Properties);
+            CommonPrinter.BuildPropertiesTable(document, behavior.Properties, book);
 
         }
         
@@ -48,7 +48,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         {
             _log.Info("Printing Behavior Properties: " + behavior.Reference.Id);
             var body = document.MainDocumentPart.Document.Body;
-            var name = ArtifactPrinter.GetNameForId(behavior.Reference.Id, ArtifactType.Behavior);
+            var name = Utils.GetNameForId(behavior.Reference.Id, ArtifactType.Behavior);
             var aDef = body.AppendChild(new Paragraph());
             var adRun = aDef.AppendChild(new Run());
             adRun.AppendChild(new Text("Behavior Reference: " + name));
@@ -77,9 +77,9 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             CommonPrinter.BuildInvocationsTable(document, behavior.Invocations);
 
-            CommonPrinter.BuildInfluenceBindings(document, behavior.InfluenceBindings);
+            CommonPrinter.BuildInfluenceBindings(document, behavior.InfluenceBindings, ArtifactType.Behavior);
            
-            CommonPrinter.BuildPropertiesTable(document, behavior.Properties);
+            CommonPrinter.BuildPropertiesTable(document, behavior.Properties, false);
 
         }
         
@@ -104,7 +104,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             CommonPrinter.BuildInvocationBindingsTable(document, behavior.Invocations, behavior.Artifact.Name);
 
-            CommonPrinter.BuildPropertiesTable(document, behavior.Properties);
+            CommonPrinter.BuildPropertiesTable(document, behavior.Properties, false);
 
         }
 
