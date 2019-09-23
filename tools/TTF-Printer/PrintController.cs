@@ -28,7 +28,7 @@ namespace TTI.TTF.Taxonomy
             #endregion
         }
 
-        private static void InitWorkingDocument(string styleSource)
+        internal static void InitWorkingDocument(string styleSource)
         {
             _document =
                 WordprocessingDocument.Create(_filePath, WordprocessingDocumentType.Document);

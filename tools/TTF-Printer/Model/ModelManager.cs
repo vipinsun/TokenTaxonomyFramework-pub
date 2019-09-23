@@ -11,7 +11,7 @@ namespace TTI.TTF.Taxonomy.Model
 	public class ModelManager
 	{
 		private static ILog _log;
-		private static Taxonomy Taxonomy { get; set; }
+		internal static Taxonomy Taxonomy { get; set; }
 
 		public ModelManager(Taxonomy taxonomy)
 		{

@@ -16,7 +16,7 @@ namespace TTI.TTF.Taxonomy
         private static ILog _log;
         private static string _gRpcHost;
         private static int _gRpcPort;
-        private static Service.ServiceClient _taxonomyClient;
+        internal static Service.ServiceClient TaxonomyClient;
         private static string _printToPath;
         internal static ModelManager ModelManager { get; private set; }
 
@@ -52,10 +52,10 @@ namespace TTI.TTF.Taxonomy
             _printToPath = _config["printToPath"];
 
             _log.Info("Connection to TaxonomyService: " + _gRpcHost + " port: " + _gRpcPort);
-            _taxonomyClient = new Service.ServiceClient(
+            TaxonomyClient = new Service.ServiceClient(
                 new Channel(_gRpcHost, _gRpcPort, ChannelCredentials.Insecure));
 
-            ModelManager = new ModelManager(_taxonomyClient.GetFullTaxonomy(new TaxonomyVersion
+            ModelManager = new ModelManager(TaxonomyClient.GetFullTaxonomy(new TaxonomyVersion
             {
                 Version = "1.0"
             }));
@@ -177,7 +177,7 @@ namespace TTI.TTF.Taxonomy
                                 }
                                 break;
                             case ArtifactType.TokenTemplate:
-                                var spec = _taxonomyClient.GetTokenSpecification(new TokenTemplateId
+                                var spec = TaxonomyClient.GetTokenSpecification(new TokenTemplateId
                                 {
                                     DefinitionId = id
                                 });
