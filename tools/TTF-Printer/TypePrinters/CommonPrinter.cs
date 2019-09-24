@@ -3,6 +3,7 @@ using log4net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using DocumentFormat.OpenXml;
 using TTI.TTF.Taxonomy.Model.Core;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Google.Protobuf.Collections;
@@ -348,6 +349,51 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             }
         }
 
+        internal static void AddTaxonomyInfo(WordprocessingDocument document, TaxonomyVersion version)
+        {
+            _log.Info("Printing Taxonomy Info: " + version.Id );
+
+            var body = document.MainDocumentPart.Document.Body;
+            
+            var title = body.AppendChild(new Paragraph());
+            var titleRun = title.AppendChild(new Run());
+            titleRun.AppendChild(new Text("Token Taxonomy Framework") { Space = SpaceProcessingModeValues.Preserve });
+           
+            Utils.ApplyStyleToParagraph(document, "Title", "Title", title, JustificationValues.Center);
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+        }
+        
+        internal static void AddSectionPage(WordprocessingDocument document, string sectionName)
+        {
+            _log.Info("Adding Section: " + sectionName );
+
+            var body = document.MainDocumentPart.Document.Body;
+            
+            var title = body.AppendChild(new Paragraph());
+            var titleRun = title.AppendChild(new Run());
+            titleRun.AppendChild(new Text(sectionName) { Space = SpaceProcessingModeValues.Preserve });
+           
+            Utils.ApplyStyleToParagraph(document, "Title", "Title", title, JustificationValues.Center);
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+        }
+        
         internal static void BuildPropertiesTable(WordprocessingDocument document, IEnumerable<Property> properties,
             bool book)
         {

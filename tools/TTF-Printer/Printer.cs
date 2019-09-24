@@ -76,10 +76,10 @@ namespace TTI.TTF.Taxonomy
                         switch (args[0])
                         {
                             case "-a":
-                                TaxonomyPrinter.PrintAllArtifacts(filePath, waterMark, styleSource);
+                                PrintController.PrintAllArtifacts(filePath, waterMark, styleSource);
                                 break;
                             case "-b":
-                                TaxonomyPrinter.BuildTtfBook(filePath, waterMark, styleSource);
+                                PrintController.BuildTtfBook(filePath, waterMark, styleSource);
                                 break;
                         }
 
@@ -128,7 +128,6 @@ namespace TTI.TTF.Taxonomy
                                     {
                                         PrintController.PrintBase(filePath, waterMark, styleSource, b);
                                     }
-
                                     break;
                                 case ArtifactType.Behavior:
                                     var behavior = ModelManager.GetBehaviorArtifact(new ArtifactSymbol
@@ -140,7 +139,6 @@ namespace TTI.TTF.Taxonomy
                                     {
                                         PrintController.PrintBehavior(filePath, waterMark, styleSource, behavior);
                                     }
-
                                     break;
                                 case ArtifactType.BehaviorGroup:
                                     var behaviorGroup = ModelManager.GetBehaviorGroupArtifact(new ArtifactSymbol
@@ -153,7 +151,6 @@ namespace TTI.TTF.Taxonomy
                                         PrintController.PrintBehaviorGroup(filePath, waterMark, styleSource,
                                             behaviorGroup);
                                     }
-
                                     break;
                                 case ArtifactType.PropertySet:
                                     var propertySet = ModelManager.GetPropertySetArtifact(new ArtifactSymbol
@@ -165,7 +162,6 @@ namespace TTI.TTF.Taxonomy
                                     {
                                         PrintController.PrintPropertySet(filePath, waterMark, styleSource, propertySet);
                                     }
-
                                     break;
                                 case ArtifactType.TemplateFormula:
                                     var formula = ModelManager.GetTemplateFormulaArtifact(new ArtifactSymbol
@@ -177,7 +173,6 @@ namespace TTI.TTF.Taxonomy
                                     {
                                         PrintController.PrintFormula(filePath, waterMark, styleSource, formula);
                                     }
-
                                     break;
                                 case ArtifactType.TemplateDefinition:
                                     var definition = ModelManager.GetTemplateDefinitionArtifact(new ArtifactSymbol
@@ -189,7 +184,6 @@ namespace TTI.TTF.Taxonomy
                                     {
                                         PrintController.PrintDefinition(filePath, waterMark, styleSource, definition);
                                     }
-
                                     break;
                                 case ArtifactType.TokenTemplate:
                                     var spec = TaxonomyClient.GetTokenSpecification(new TokenTemplateId
@@ -207,7 +201,6 @@ namespace TTI.TTF.Taxonomy
 
                                         PrintController.PrintSpec(filePath, waterMark, styleSource, spec);
                                     }
-
                                     break;
                             }
                         }

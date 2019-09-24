@@ -6,6 +6,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using log4net;
 using TTI.TTF.Taxonomy.Model;
+using TTI.TTF.Taxonomy.Model.Artifact;
 using TTI.TTF.Taxonomy.Model.Core;
 using TTI.TTF.Taxonomy.TypePrinters;
 
@@ -27,7 +28,7 @@ namespace TTI.TTF.Taxonomy
             #endregion
         }
 
-        internal static void InitWorkingDocument(string styleSource)
+        private static void InitWorkingDocument(string styleSource)
         {
             Document =
                 WordprocessingDocument.Create(_filePath, WordprocessingDocumentType.Document);
@@ -35,9 +36,10 @@ namespace TTI.TTF.Taxonomy
             // Add a main document part.     
             var mainPart = Document.AddMainDocumentPart();
 
-            // Create the document structure and add some text.
+            // Create the document structure 
             mainPart.Document = new Document();
-
+            mainPart.Document.AppendChild(new Body());
+            
             // Get the Styles part for this document.
             Utils.AddStylesPartToPackage(Document);
             var styles = Utils.ExtractStylesPart(styleSource);
@@ -65,9 +67,7 @@ namespace TTI.TTF.Taxonomy
                 _log.Error(ex);
                 return;
             }
-
-            ArtifactPrinter.AddArtifactContent(Document, baseToPrint.Artifact, false, false);
-            BasePrinter.AddBaseProperties(Document, baseToPrint, false);
+            BasePrinter.PrintTokenBase(Document, baseToPrint, false);
             Utils.InsertCustomWatermark(Document, waterMark);
             Utils.AddFooter(Document, baseToPrint.Artifact.Name);
             Save();
@@ -95,8 +95,7 @@ namespace TTI.TTF.Taxonomy
                 return;
             }
 
-            ArtifactPrinter.AddArtifactContent(Document, behaviorToPrint.Artifact, false, false);
-            BehaviorPrinter.AddBehaviorProperties(Document, behaviorToPrint, false);
+            BehaviorPrinter.PrintBehavior(Document, behaviorToPrint, false);
             Utils.InsertCustomWatermark(Document, waterMark);
             Utils.AddFooter(Document, behaviorToPrint.Artifact.Name);
             Save();
@@ -124,8 +123,7 @@ namespace TTI.TTF.Taxonomy
                 return;
             }
             // Add a main document part. 
-            ArtifactPrinter.AddArtifactContent(Document, behaviorGroupToPrint.Artifact, false,false);
-            BehaviorGroupPrinter.AddBehaviorGroupProperties(Document, behaviorGroupToPrint, false);
+            BehaviorGroupPrinter.PrintBehaviorGroup(Document, behaviorGroupToPrint, false);
             Utils.InsertCustomWatermark(Document, waterMark);
             Utils.AddFooter(Document, behaviorGroupToPrint.Artifact.Name);
             Save();
@@ -151,8 +149,7 @@ namespace TTI.TTF.Taxonomy
                 _log.Error(ex);
                 return;
             }
-           
-            ArtifactPrinter.AddArtifactContent(Document, psToPrint.Artifact, false,false);
+
             PropertySetPrinter.AddPropertySetProperties(Document, psToPrint, false);
             Utils.InsertCustomWatermark(Document, waterMark);
             Utils.AddFooter(Document, psToPrint.Artifact.Name);
@@ -181,8 +178,7 @@ namespace TTI.TTF.Taxonomy
                 return;
             }
            
-            ArtifactPrinter.AddArtifactContent(Document, formulaToPrint.Artifact,false, false);
-            FormulaPrinter.AddFormulaProperties(Document, formulaToPrint, false);
+            FormulaPrinter.PrintFormula(Document, formulaToPrint, false);
             Utils.InsertCustomWatermark(Document, waterMark);
             Utils.AddFooter(Document, formulaToPrint.Artifact.Name);
             Save();
@@ -210,8 +206,7 @@ namespace TTI.TTF.Taxonomy
                 return;
             }
            
-            ArtifactPrinter.AddArtifactContent(Document, definitionToPrint.Artifact, false,false);
-            DefinitionPrinter.AddDefinitionProperties(Document, definitionToPrint, false);
+            DefinitionPrinter.PrintDefinition(Document, definitionToPrint, false);
             Utils.InsertCustomWatermark(Document, waterMark);
             Utils.AddFooter(Document, definitionToPrint.Artifact.Name);
             Save();
@@ -238,18 +233,153 @@ namespace TTI.TTF.Taxonomy
                 _log.Error(ex);
                 return;
             }
-
-            var classification = ModelMap.GetClassification(specification);
-                
-            ArtifactPrinter.AddArtifactSpecification(Document, specification.Artifact, classification, true);
-            SpecificationPrinter.AddSpecificationProperties(Document, specification, false);
+            
+            SpecificationPrinter.PrintSpecification(Document, specification, true);
             Utils.InsertCustomWatermark(Document, waterMark);
             Utils.AddFooter(Document, specification.Artifact.Name + " - " + specification.SpecificationHash);
             Save();
 
             Document.Close();
         }
+        
+        internal static void PrintAllArtifacts(string filePath, string waterMark, string styleSource)
+        {
+            _log.Info("Taxonomy Printer: Printing All Artifacts");
 
+            //bases
+            foreach (var baseToken in ModelManager.Taxonomy.BaseTokenTypes)
+            {
+                PrintBase(filePath, waterMark, styleSource, baseToken.Value);
+            }
+
+            foreach (var behavior in ModelManager.Taxonomy.Behaviors)
+            {
+                PrintBehavior(filePath, waterMark, styleSource, behavior.Value);
+            }
+
+            foreach (var bg in ModelManager.Taxonomy.BehaviorGroups)
+            {
+                PrintBehaviorGroup(filePath, waterMark, styleSource, bg.Value);
+            }
+
+            foreach (var ps in ModelManager.Taxonomy.PropertySets)
+            {
+                PrintPropertySet(filePath, waterMark, styleSource, ps.Value);
+            }
+
+            foreach (var f in ModelManager.Taxonomy.TemplateFormulas)
+            {
+                PrintFormula(filePath, waterMark, styleSource, f.Value);
+            }
+
+            foreach (var d in ModelManager.Taxonomy.TemplateDefinitions)
+            {
+                PrintDefinition(filePath, waterMark, styleSource, d.Value);
+                var spec = Printer.TaxonomyClient.GetTokenSpecification(new TokenTemplateId
+                {
+                    DefinitionId = d.Key
+                });
+
+                if (spec == null) continue;
+                if (spec.Artifact.Name.Contains("Error:"))
+                {
+                    _log.Error(spec.Artifact.Name);
+                    return;
+                }
+                PrintSpec(filePath, waterMark, styleSource, spec);
+            }
+        }
+        
+        /// <summary>
+        /// This will create a single OpenXML document.  After it is created, it should be opened and a new Table of Contents before printing to PDF.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="waterMark"></param>
+        /// <param name="styleSource"></param>
+        internal static void BuildTtfBook(string filePath, string waterMark, string styleSource)
+		{
+            _filePath = filePath + ModelMap.FolderSeparator + ".." + ModelMap.FolderSeparator + "TTF-Book.docx";
+			try
+			{
+				InitWorkingDocument(styleSource);
+                Document.MainDocumentPart.Document.AppendChild(new Body());
+			}
+			catch (Exception ex)
+			{
+				_log.Error("Artifact Output Folder: " + _outputFolder + " cannot be created.");
+				_log.Error(ex);
+				return;
+			}
+
+			CommonPrinter.AddTaxonomyInfo(Document, ModelManager.Taxonomy.Version);
+			
+			_log.Info("Adding Bases");
+            CommonPrinter.AddSectionPage(Document, "Base Tokens");
+			foreach (var b in ModelManager.Taxonomy.BaseTokenTypes.Values)
+			{
+				BasePrinter.PrintTokenBase(Document, b, true);
+			}
+			Save();
+            
+			_log.Info("Adding Behaviors");
+            CommonPrinter.AddSectionPage(Document, "Behaviors");
+			foreach (var b in ModelManager.Taxonomy.Behaviors.Values)
+			{
+                BehaviorPrinter.PrintBehavior(Document, b, true);
+			}
+			Save();
+            
+			_log.Info("Adding Behavior-Groups");
+            CommonPrinter.AddSectionPage(Document, "Behavior Groups");
+			foreach (var b in ModelManager.Taxonomy.BehaviorGroups.Values)
+			{
+				BehaviorGroupPrinter.PrintBehaviorGroup(Document, b, true);
+			}
+			Save();
+            
+            _log.Info("Adding Property-Sets");
+            CommonPrinter.AddSectionPage(Document, "Property Sets");
+            foreach (var ps in ModelManager.Taxonomy.PropertySets.Values)
+			{
+				PropertySetPrinter.AddPropertySetProperties(Document, ps, true);
+			}
+			Save();
+            
+			_log.Info("Adding Template Formulas");
+            CommonPrinter.AddSectionPage(Document, "Template Formulas");
+            foreach (var tf in ModelManager.Taxonomy.TemplateFormulas.Values)
+			{
+				FormulaPrinter.PrintFormula(Document, tf, true);
+			}
+			Save();
+            
+			_log.Info("Adding Template Definitions");
+            CommonPrinter.AddSectionPage(Document, "Template Definitions");
+            foreach (var td in ModelManager.Taxonomy.TemplateDefinitions.Values)
+			{
+				DefinitionPrinter.PrintDefinition(Document, td, true);
+			}
+			Save();
+            
+			_log.Info("Adding Specifications");
+            CommonPrinter.AddSectionPage(Document, "Token Specifications");
+            foreach (var tf in ModelManager.Taxonomy.TemplateDefinitions.Keys)
+			{
+				var spec = Printer.TaxonomyClient.GetTokenSpecification(new TokenTemplateId
+				{
+					DefinitionId = tf
+				});
+				if (spec == null) continue;
+				SpecificationPrinter.PrintSpecification(Document, spec, false);
+			}
+			Save();
+            
+			Utils.InsertCustomWatermark(Document, waterMark);
+			Utils.AddFooter(Document, "Token Taxonomy Framework" + " - " + ModelManager.Taxonomy.Version.Version + ": " + ModelManager.Taxonomy.Version.StateHash);
+			Save();
+            Document.Close();
+		}
+        
         internal static void Save(bool validate = false)
         {
             Document.MainDocumentPart.Document.Save();

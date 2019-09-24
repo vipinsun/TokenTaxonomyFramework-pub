@@ -124,7 +124,6 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         
         internal static Invocation GetInvocationById(string invokedId, string invocationId, ArtifactType artifactType)
         {
-            string name;
             switch (artifactType)
             {
                 case ArtifactType.Base:
@@ -506,27 +505,16 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             var footerPart = document.MainDocumentPart.AddNewPart<FooterPart>();
 
             var footerPartId = document.MainDocumentPart.GetIdOfPart(footerPart);
-
-
-            var footer1 = new Footer();
-
-            var paragraph1 = new Paragraph();
-
-            var paragraphProperties1 = new ParagraphProperties();
-            var paragraphStyleId1 = new ParagraphStyleId { Val = "Footer" };
-
-            paragraphProperties1.Append(paragraphStyleId1);
-
-            var run1 = new Run();
-            var text1 = new Text { Text = name };
-
-            run1.Append(text1);
-
-            paragraph1.Append(paragraphProperties1);
-            paragraph1.Append(run1);
-
-            footer1.Append(paragraph1);
-
+            
+            var footer1 = new Footer(
+                new Paragraph(
+                    new ParagraphProperties(
+                        new ParagraphStyleId() { Val = "Footer" }),
+                    new Run(
+                        new Text(name),
+                        // *** Adaptation: This will output the page number dynamically ***
+                        new SimpleField() { Instruction = "PAGE" })
+                ));
             footerPart.Footer = footer1;
 
             var sections = document.MainDocumentPart.Document.Body.Elements<SectionProperties>();

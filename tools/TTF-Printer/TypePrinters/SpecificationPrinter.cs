@@ -3,6 +3,7 @@ using DocumentFormat.OpenXml.Packaging;
 using log4net;
 using System.Reflection;
 using DocumentFormat.OpenXml.Wordprocessing;
+using TTI.TTF.Taxonomy.Model;
 using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.TypePrinters
@@ -20,15 +21,17 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddSpecificationProperties(WordprocessingDocument document, TokenSpecification spec, bool book)
+        public static void PrintSpecification(WordprocessingDocument document, TokenSpecification spec, bool isForAppendix = false)
         {
+            var classification = ModelMap.GetClassification(spec);
+            ArtifactPrinter.AddArtifactSpecification(document, spec.Artifact, classification, true);
             _log.Info("Printing Token Specification Properties: " + spec.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
             
             var beDef = body.AppendChild(new Paragraph());
             var beRun = beDef.AppendChild(new Run());
             beRun.AppendChild(new Text(spec.Artifact.Name + " is:"));
-            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", beDef);
+            Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", beDef);
             
             var behaviorList = spec.Behaviors.Select(b => b.Artifact.Name).ToList();
             Utils.AddBulletList(document, behaviorList);
@@ -65,7 +68,6 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             detailsRun.AppendChild(new Text(spec.Artifact.Name + " Details"));
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", detailsDef, JustificationValues.Center);
             
-            ArtifactPrinter.AddArtifactContent(document, spec.TokenBase.Artifact, false, true);
             BasePrinter.AddBaseSpecification(document, spec.TokenBase);
 
             var dDef = body.AppendChild(new Paragraph());
@@ -75,33 +77,29 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             
             foreach (var b in spec.Behaviors)
             {
-                ArtifactPrinter.AddArtifactContent(document, b.Artifact, false,true);
                 BehaviorPrinter.AddBehaviorSpecification(document, b);
             }
             
             foreach (var bg in spec.BehaviorGroups)
             {
-                ArtifactPrinter.AddArtifactContent(document, bg.Artifact, false,true);
-                BehaviorGroupPrinter.AddBehaviorGroupSpecification(document, bg);
+               BehaviorGroupPrinter.AddBehaviorGroupSpecification(document, bg);
             }
             
             foreach (var ps in spec.PropertySets)
             {
-                ArtifactPrinter.AddArtifactContent(document, ps.Artifact, false, true);
                 PropertySetPrinter.AddPropertySetSpecification(document, ps);
             }
             
             foreach (var c in spec.ChildTokens)
             {
-                ArtifactPrinter.AddArtifactSpecification(document, c.Artifact);
-                AddSpecificationProperties(document, c, false);
+                PrintSpecification(document, c, false);
                 var bbDef = body.AppendChild(new Paragraph());
                 var bbRun = bbDef.AppendChild(new Run());
                 bbRun.AppendChild(new Text(""));
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", bbDef, JustificationValues.Center);
             }
             
-            if (!book) return;
+            if (isForAppendix) return;
             var pageBreak = body.AppendChild(new Paragraph());
             var pbr = pageBreak.AppendChild(new Run());
             pbr.AppendChild(new Text(""));
@@ -110,7 +108,6 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             {
                 pageBreak.ParagraphProperties = new ParagraphProperties();
             }
-
             pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
             Utils.ApplyStyleToParagraph(document, "Normal", "Normal", pageBreak);
         }

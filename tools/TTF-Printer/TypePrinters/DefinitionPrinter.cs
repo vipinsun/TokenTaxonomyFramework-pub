@@ -20,8 +20,10 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddDefinitionProperties(WordprocessingDocument document, TemplateDefinition definition, bool book)
+        public static void PrintDefinition(WordprocessingDocument document, TemplateDefinition definition, bool book, bool isForAppendix = false)
         {
+            
+            ArtifactPrinter.AddArtifactContent(document, definition.Artifact, book,isForAppendix);
             _log.Info("Printing Template Definition Properties: " + definition.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
@@ -94,7 +96,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", cDef, JustificationValues.Center);
             foreach (var c in definition.ChildTokens)
             {
-                AddDefinitionProperties(document, c, false);
+                PrintDefinition(document, c, false);
                 Utils.InsertSpacer(document);
             }
             

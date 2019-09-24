@@ -19,8 +19,9 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddFormulaProperties(WordprocessingDocument document, TemplateFormula formula, bool book)
+        public static void PrintFormula(WordprocessingDocument document, TemplateFormula formula, bool book, bool isForAppendix = false)
         {
+            ArtifactPrinter.AddArtifactContent(document, formula.Artifact,book, isForAppendix);
             _log.Info("Printing Template Formula Properties: " + formula.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
@@ -86,7 +87,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", cDef, JustificationValues.Center);
             foreach (var c in formula.ChildTokens)
             {
-                AddFormulaProperties(document, c, false);
+                PrintFormula(document, c, false);
                 var bbDef = body.AppendChild(new Paragraph());
                 var bbRun = bbDef.AppendChild(new Run());
                 bbRun.AppendChild(new Text(""));

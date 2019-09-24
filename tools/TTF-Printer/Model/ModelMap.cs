@@ -31,17 +31,21 @@ namespace TTI.TTF.Taxonomy.Model
 
         public static ListDictionary GetClassificationDescription(Classification classification)
         {
-            var retVal = new ListDictionary();
+            var retVal = new ListDictionary
+            {
+                {
+                    classification.TemplateType.ToString(), classification.TemplateType == TemplateType.SingleToken
+                        ? "This token has no sub or child tokens."
+                        : "This token has sub or child tokens defined in the Child Tokens section below."
+                },
+                {
+                    classification.TokenType.ToString(), classification.TokenType == TokenType.Fungible
+                        ? "Tokens have interchangeable value with one another, where any quantity of them has the same value as another equal quantity if they are in the same class or series."
+                        : "This token is not interchangeable with other tokens of the same type as they have different values."
+                }
+            };
 
-            retVal.Add(classification.TemplateType.ToString(),
-                classification.TemplateType == TemplateType.SingleToken
-                    ? "This token has no sub or child tokens."
-                    : "This token has sub or child tokens defined in the Child Tokens section below.");
-            
-            retVal.Add(classification.TokenType.ToString(),
-                classification.TokenType == TokenType.Fungible
-                    ? "Tokens have interchangeable value with one another, where any quantity of them has the same value as another equal quantity as long as they are in the same class or series."
-                    : "This token is not interchangeable with other tokens of the same type as they have different values.");
+
 
             switch (classification.TokenUnit)
             {
@@ -65,7 +69,7 @@ namespace TTI.TTF.Taxonomy.Model
             
             retVal.Add(classification.RepresentationType.ToString(),
                 classification.RepresentationType == RepresentationType.Common
-                    ? "This token is simply represented as a balance or quantity attributed to an owners address where all the balances are recorded on the same balance sheet, like a bank account. All instances can easily share common properties and locating them is simple."
+                    ? "This token is simply represented as a balance or quantity attributed to an owner address where all the balances are recorded on the same balance sheet, like a bank account. All instances can easily share common properties and locating them is simple."
                     : "Token instances are unique having their own identities and can be individually traced. Each unique token can carry unique properties that cannot be changed in one place and their balances must be summed. These are like bank notes, paper bills and metal coins, they are interchangeable but have unique properties like a serial number.");
             
             return retVal;

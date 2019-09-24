@@ -21,8 +21,11 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddBehaviorProperties(WordprocessingDocument document, Model.Core.Behavior behavior, bool book)
+        public static void PrintBehavior(WordprocessingDocument document, Model.Core.Behavior behavior, bool book, bool isForAppendix = false)
         {
+            
+            ArtifactPrinter.AddArtifactContent(document, behavior.Artifact, book, isForAppendix);
+            
             _log.Info("Printing Behavior Properties: " + behavior.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
@@ -85,6 +88,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         
         public static void AddBehaviorSpecification(WordprocessingDocument document, BehaviorSpecification behavior)
         {
+            ArtifactPrinter.AddArtifactContent(document, behavior.Artifact, false,true);
             _log.Info("Printing Behavior Properties: " + behavior.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
@@ -93,7 +97,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             adRun.AppendChild(new Text("Specification Behavior"));
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
 
-            ArtifactPrinter.AddArtifactSpecification(document, behavior.Artifact);
+            ArtifactPrinter.AddBehaviorArtifactSpecification(document, behavior.Artifact);
             
             var basicProps = new[,]
             {

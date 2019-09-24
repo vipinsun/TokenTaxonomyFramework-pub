@@ -19,8 +19,10 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddBehaviorGroupProperties(WordprocessingDocument document, BehaviorGroup bg, bool book)
+        public static void PrintBehaviorGroup(WordprocessingDocument document, BehaviorGroup bg, bool book, bool isForAppendix = false)
         {
+            ArtifactPrinter.AddArtifactContent(document, bg.Artifact, book,isForAppendix);
+            
             _log.Info("Printing Behavior Group Properties: " + bg.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
@@ -50,20 +52,14 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         
         public static void AddBehaviorGroupSpecification(WordprocessingDocument document, BehaviorGroupSpecification bg)
         {
+            ArtifactPrinter.AddArtifactContent(document, bg.Artifact, false,true);
             _log.Info("Printing Behavior Group Properties: " + bg.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
-            var aDef = body.AppendChild(new Paragraph());
-            var adRun = aDef.AppendChild(new Run());
-            adRun.AppendChild(new Text("Behavior Group Details"));
-            
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef, JustificationValues.Center);
-            
             var cDef = body.AppendChild(new Paragraph());
             var dRun = cDef.AppendChild(new Run());
             dRun.AppendChild(new Text("The behaviors belonging to this group are included in the Behaviors section of this specification."));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cDef);
-
+            Utils.ApplyStyleToParagraph(document, "Quote", "Quote", cDef);
         }
     }
 }
