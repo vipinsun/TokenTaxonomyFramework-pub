@@ -23,7 +23,7 @@ protoc --csharp_out=../tools/TaxonomyObjectModel/out/csharp --java_out=../tools/
 protoc --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out=no_server:../tools/TaxonomyService/TaxonomyClient ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN
 protoc --proto_path=./protos --proto_path=$PROTO_PATH  --grpc_out=no_server:../tools/TTF-Printer/Model ./protos/service.proto --plugin=protoc-gen-grpc=$CSHARP_PLUGIN
 
-cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/ArtifactGenerator/Model
+cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/ArtifactGenerator/model
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TaxonomyService/TaxonomyModel
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Printer/Model
