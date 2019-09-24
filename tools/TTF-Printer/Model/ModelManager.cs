@@ -8,16 +8,15 @@ using TTI.TTF.Taxonomy.Model.Core;
 
 namespace TTI.TTF.Taxonomy.Model
 {
-	public class ModelManager
+	public static class ModelManager
 	{
 		private static ILog _log;
 		internal static Taxonomy Taxonomy { get; set; }
 
-		public ModelManager(Taxonomy taxonomy)
+		static ModelManager()
 		{
 			TypePrinters.Utils.InitLog();
 			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-			Taxonomy = taxonomy;
 		}
 		
 		public static Base GetBaseArtifact(ArtifactSymbol symbol)
@@ -311,6 +310,5 @@ namespace TTI.TTF.Taxonomy.Model
 			Taxonomy.TemplateDefinitions.TryGetValue(id, out var definition);
 			return (T) Convert.ChangeType(definition, typeof(T));
 		}
-	
 	}
 }

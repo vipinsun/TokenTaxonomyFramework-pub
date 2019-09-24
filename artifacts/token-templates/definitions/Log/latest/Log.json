@@ -240,7 +240,31 @@
               ]
             }
           },
-          "influencedInvocation": null
+          "influencedInvocation": {
+            "id": "00e91598-b162-47d7-8636-baac251e98e7",
+            "name": "GetEntry",
+            "description": "A request to retrieve a specific Entry by its unique identifier.",
+            "request": {
+              "controlMessageName": "GetEntryRequest",
+              "description": "Fetch a log entry by its entryId only.",
+              "inputParameters": [
+                {
+                  "name": "Identifier",
+                  "valueDescription": "Id of the Log Entry to retrieve."
+                }
+              ]
+            },
+            "response": {
+              "controlMessageName": "GetEntryResponse",
+              "description": "The matching entry response",
+              "outputParameters": [
+                {
+                  "name": "Entry",
+                  "valueDescription": "A response containing the specific log entry if found."
+                }
+              ]
+            }
+          }
         },
         {
           "influencedId": "9c8c2373-cf3c-4743-932a-03fee6a192fe",

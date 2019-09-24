@@ -19,8 +19,9 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddPropertySetProperties(WordprocessingDocument document, PropertySet ps)
+        public static void AddPropertySetProperties(WordprocessingDocument document, PropertySet ps, bool book, bool isForAppendix = false)
         {
+            ArtifactPrinter.AddArtifactContent(document, ps.Artifact, book,isForAppendix);
             _log.Info("Printing Property Set Properties: " + ps.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
@@ -29,11 +30,24 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             adRun.AppendChild(new Text("Property Set"));
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
 
-            CommonPrinter.BuildPropertiesTable(document, ps.Properties);
+            CommonPrinter.BuildPropertiesTable(document, ps.Properties, book);
+            
+            if(!book) return;
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
         }
         
         public static void AddPropertySetSpecification(WordprocessingDocument document, PropertySetSpecification ps)
         {
+            ArtifactPrinter.AddArtifactContent(document, ps.Artifact, false, true);
             _log.Info("Printing Property Set Specification Properties: " + ps.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 

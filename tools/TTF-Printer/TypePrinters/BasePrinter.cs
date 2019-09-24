@@ -18,8 +18,11 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             #endregion
         }
-        public static void AddBaseProperties(WordprocessingDocument document, Base tokenBase)
+        public static void PrintTokenBase(WordprocessingDocument document, Base tokenBase, bool book, bool isForAppendix = false)
         {
+            //print artifact stuff 1st
+            ArtifactPrinter.AddArtifactContent(document, tokenBase.Artifact, book, isForAppendix);
+            
             _log.Info("Printing Base Properties: " + tokenBase.TokenType);
             var body = document.MainDocumentPart.Document.Body;
             var baseProps = new[,]
@@ -42,16 +45,30 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", aDef, JustificationValues.Center);
             Utils.AddTable(document, baseProps);
 
-            if (tokenBase.TokenProperties.Count <= 0) return;
-            
-            var propDef = body.AppendChild(new Paragraph());
-            var propRun = propDef.AppendChild(new Run());
-            propRun.AppendChild(new Text("Properties:"));
-            Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", propDef);
+            if (tokenBase.TokenProperties.Count > 0)
+            {
+                var propDef = body.AppendChild(new Paragraph());
+                var propRun = propDef.AppendChild(new Run());
+                propRun.AppendChild(new Text("Properties:"));
+                Utils.ApplyStyleToParagraph(document, "Heading3", "Heading3", propDef);
+                
+                var propsPara = body.AppendChild(new Paragraph());
+                var propsRun = propsPara.AppendChild(new Run());
+                propsRun.AppendChild(
+                    Utils.GetGenericPropertyTable(document, "Name", "Value", tokenBase.TokenProperties));
+            }
 
-            var propsPara = body.AppendChild(new Paragraph());
-            var propsRun = propsPara.AppendChild(new Run());
-            propsRun.AppendChild(Utils.GetGenericPropertyTable(document, "Name", "Value", tokenBase.TokenProperties));
+            if (!book) return;
+            
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+            pbr.AppendChild(new Text(""));
         }
         
         public static void AddBaseReference(WordprocessingDocument document, BaseReference tokenBase)
@@ -88,6 +105,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         
         public static void AddBaseSpecification(WordprocessingDocument document,  Base tokenBase)
         {
+            ArtifactPrinter.AddArtifactContent(document, tokenBase.Artifact, false, true);
             _log.Info("Printing Biz Base Properties: " + tokenBase.TokenType);
             var body = document.MainDocumentPart.Document.Body;
             var baseProps = new[,]

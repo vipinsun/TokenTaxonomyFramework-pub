@@ -270,7 +270,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			}
 
 			BuildHierarchy(ref taxonomy);
-			
+			taxonomy.Version.StateHash = Utils.GetTaxonomyVersion(taxonomy.ToByteArray());
 			return taxonomy;
 		}
 		

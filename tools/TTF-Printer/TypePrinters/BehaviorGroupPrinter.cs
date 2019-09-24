@@ -19,9 +19,11 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             #endregion
         }
 
-        public static void AddBehaviorGroupProperties(WordprocessingDocument document, BehaviorGroup bg)
+        public static void PrintBehaviorGroup(WordprocessingDocument document, BehaviorGroup bg, bool book, bool isForAppendix = false)
         {
-            _log.Info("Printing Behavior Grop Properties: " + bg.Artifact.Name);
+            ArtifactPrinter.AddArtifactContent(document, bg.Artifact, book,isForAppendix);
+            
+            _log.Info("Printing Behavior Group Properties: " + bg.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
             var aDef = body.AppendChild(new Paragraph());
@@ -33,25 +35,31 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             {
                 BehaviorPrinter.AddBehaviorReferenceProperties(document, br);
             }
+            if (!book) return;
+            var pageBreak = body.AppendChild(new Paragraph());
+            var pbr = pageBreak.AppendChild(new Run());
+            pbr.AppendChild(new Text(""));
+
+            if (pageBreak.ParagraphProperties == null)
+            {
+                pageBreak.ParagraphProperties = new ParagraphProperties();
+            }
+
+            pageBreak.ParagraphProperties.PageBreakBefore = new PageBreakBefore();
+            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", pageBreak);
 
         }
         
         public static void AddBehaviorGroupSpecification(WordprocessingDocument document, BehaviorGroupSpecification bg)
         {
+            ArtifactPrinter.AddArtifactContent(document, bg.Artifact, false,true);
             _log.Info("Printing Behavior Group Properties: " + bg.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
-            var aDef = body.AppendChild(new Paragraph());
-            var adRun = aDef.AppendChild(new Run());
-            adRun.AppendChild(new Text("Behavior Group Details"));
-            
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef, JustificationValues.Center);
-            
             var cDef = body.AppendChild(new Paragraph());
             var dRun = cDef.AppendChild(new Run());
             dRun.AppendChild(new Text("The behaviors belonging to this group are included in the Behaviors section of this specification."));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cDef);
-
+            Utils.ApplyStyleToParagraph(document, "Quote", "Quote", cDef);
         }
     }
 }
