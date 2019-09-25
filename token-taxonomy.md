@@ -103,7 +103,7 @@ References are followed through the hierarchy and back to the Artifacts to valid
 
 ![Templates](images/formingATemplate.png)
 
-There is more to classification that is covered later.
+Classification is covered more deeply below.
 
 ### Control Messages
 
@@ -169,11 +169,20 @@ The rock concert example above could have an added "reserved" section where each
 
 Tokens are classified in their template definitions using these characteristics:
 
-- TemplateType: Single or Hybrid
 - TokenType: Fungible or Non-Fungible
-- TokenUnit: Fractional or Whole (subdivision settings)
+- TokenUnit: Fractional, Whole or Singleton (subdivision settings)
+  - Fractional – you can make change like a $1 dollar bill can be broken into 4 .25¢ coins, but you cannot subdivide past 2 decimal places or have a .249999¢.
+  - Whole – no subdivision allowed just whole numbers
+  - Singleton – no subdivision and a quantity of 1
 - RepresentationType: Intrinsic (pure digital value) or Reference (value located elsewhere)
+  - Common tokens are balances on a single distributed ledger, tokens do not have individual identities. Like the balance in a checking account.
+  - Unique tokens have their own identities, usually called an unspent transaction output or UTXO, that can have individual properties like a serial number.  Like physical money in your pocket, each bill has a unique serial number.
 - ValueType: Common (balance or account) or Unique (UTXO)
+  - Intrinsic value is where the digital token itself is valuable, a crypto currency
+  - Reference value is where the token represents a physical item like a car or house, or ‘stored elsewhere’ digital item like a photo, scanned document or bank balance.
+- TemplateType: Single or Hybrid
+  - A hybrid token has a single parent token of a classification and can have many child tokens, that `belong` or are `controlled` by the parent. But like real children, hybrids can have unique abilities to model almost any business use case.
+  - A single token does not have any children.
 
 The TemplateType of the classification is set in the TemplateFormula and the others are set in the BaseToken. The classification is used to build the hierarchy and can also be used to pivot branches based on various settings. For simplicity, tokens are not separated based on their ValueType in the default view, but could be filtered by it.
 
