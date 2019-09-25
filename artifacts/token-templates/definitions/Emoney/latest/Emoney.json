@@ -18,12 +18,12 @@
       "analogies": [
         {
           "name": "Issuing Bonds",
-          "description": "A bond is a debt security, under which the issuer owes the holders a debt and is obliged to pay them interest or to repay the principal at a later date. The issuance of bonds in in general handled by a Central Securities Depository (CSD). CSDs can use the Emoney Token to execute the whole issuing process on a blockchain.",
+          "description": "A bond is a debt security, under which the issuer owes the holders a debt and is obliged to pay them interest or to repay the principal at a later date. The issuance of bonds in in general handled by a Central Securities Depository (CSD). CSDs can use the Emoney Token to execute the whole issuing process, using real delivery vs payment, and settlement on a blockchain. This use case has been already implemented on io.cash.",
           "artifactDefinition": null
         },
         {
           "name": "Cash pooling",
-          "description": "Cash pooling is a technique to combine credit and debit positions in various accounts into one account. Entities can automate this process by using the functionality that Emoney token offers and therfore cut the cost for it.",
+          "description": "Cash pooling is a technique to combine credit and debit positions in various accounts into one account. Enabling the usage of real tokenized cash, to be used on chain, speeds up the process, decreasing costs and increases operational efficiency. This use case has been already implemented on io.cash.",
           "artifactDefinition": null
         },
         {
@@ -74,6 +74,13 @@
           "name": "Adhara",
           "description": "Contributor",
           "resourcePath": "https://adhara.io",
+          "maps": null
+        },
+        {
+          "mappingType": "RESOURCE",
+          "name": "ioCash",
+          "description": "IoCash is the world´s first B2B platform that makes it possible to operate with traditional money directly on blockchain. It is using the Emoney Token to make that possible.",
+          "resourcePath": "https://io.cash",
           "maps": null
         },
         {
