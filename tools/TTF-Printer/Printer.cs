@@ -208,6 +208,7 @@ namespace TTI.TTF.Taxonomy
                         break;
                 }
             }
+            else
             {
                 _log.Error(GetUsage());
             }

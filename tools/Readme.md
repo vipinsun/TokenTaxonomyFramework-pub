@@ -6,6 +6,8 @@
 
 - [Taxonomy Client](TaxonomyService/TaxonomyClient) is a simple command line tool that demonstrates how to interact with the Taxonomy Service to fetch the model and then apply it to any type of application for display or input.
 
+- [Taxonomy Printer](TaxonomyService/TTF-Printer) a console based application that can generate OpenXML Wordprocessing documents from artifacts in the repo. It is particularly useful for creating a presentable view of to Token Specification (template). It requires that the Taxonomy Service be running and accessible.
+
 - From your cloned copy of the repo.
 
 ```bash
@@ -21,15 +23,15 @@ This will build the Client and Service, starting the later awaiting client reque
 
 Windows & Mac:
 
-```
+```bash
 docker run -e gRpcHost=host.docker.internal txclient --f
 ```
 
 Linux:
 
-As `host.docker.internal` is currently not supported by Docker for Linux, the IP address of the docker bridge has to be retrieved first. 
+As `host.docker.internal` is currently not supported by Docker for Linux, the IP address of the docker bridge has to be retrieved first.
 
-```
+```bash
 DOCKER_BRIDGE_IP=`docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}'`
 docker run -e gRpcHost=$DOCKER_BRIDGE_IP txclient --f
 ```
@@ -68,3 +70,19 @@ dotnet factgen --p ../artifacts --n myArtifactName --type 1
 ```
 
 The above creates a folder, if it doesn't already exist, in the artifacts folder for the type of artifact and the name of the artifact.  In this folder you will find a Json definition, proto control and md for diagrams.
+
+## TTF-Printer
+
+The TTF-Printer can print a single artifact given the artifact Id using `-Id` and type `-t` where the types are 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification.  Example below prints a specification with the Id `3b557279-5400-472e-a68e-feb818930276`
+
+```bash
+dotnet TTF-Printer -id 3b557279-5400-472e-a68e-feb818930276 -t 6
+```
+
+Artifacts are printed in their respective folder with a `.docx` extension and can be edited with most Word Processing documents. If you find typos or errors, DO NOT modify the `.docx` file, but the `.json` file where the error occurs and re-print the artifact.
+
+You can print all the TTF artifacts using the `-a` switch.
+
+To print the entire TTF as a single `book`, use the `-b` switch, which will create or overwrite the `TTF-Book.docx` in the root of the repo. You will want to edit this document to add a table of contents and page numbers using the word processor of choice and then save the `book` elsewhere so it will not get overwritten.
+
+These documents can be saved as .PDF using your word processing application as well.
