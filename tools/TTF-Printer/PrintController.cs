@@ -79,7 +79,7 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Behavior: " + behaviorToPrint.Artifact.Name);
 
-            var trimName = behaviorToPrint.Artifact.Name.Replace(" ", "");
+            var trimName = behaviorToPrint.Artifact.Name.Replace(" ", "-").ToLower();
             _outputFolder = fileName +  ModelMap.BehaviorFolder + ModelMap.FolderSeparator + trimName + 
                             ModelMap.FolderSeparator + ModelMap.Latest;
             _filePath = _outputFolder + ModelMap.FolderSeparator + trimName + ".docx";
@@ -107,7 +107,7 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Behavior Group: " + behaviorGroupToPrint.Artifact.Name);
 
-            var trimName = behaviorGroupToPrint.Artifact.Name.Replace(" ", "");
+            var trimName = behaviorGroupToPrint.Artifact.Name.Replace(" ", "-").ToLower();
             _outputFolder = fileName +  ModelMap.BehaviorGroupFolder + ModelMap.FolderSeparator + trimName + 
                             ModelMap.FolderSeparator + ModelMap.Latest;
             _filePath = _outputFolder + ModelMap.FolderSeparator + trimName + ".docx";
@@ -134,7 +134,7 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Property Set: " + psToPrint.Artifact.Name);
 
-            var trimName = psToPrint.Artifact.Name.Replace(" ", "");
+            var trimName = psToPrint.Artifact.Name.Replace(" ", "-").ToLower();
             _outputFolder = fileName +  ModelMap.PropertySetFolder + ModelMap.FolderSeparator + trimName + 
                             ModelMap.FolderSeparator + ModelMap.Latest;
             _filePath = _outputFolder + ModelMap.FolderSeparator + trimName + ".docx";
@@ -190,7 +190,7 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Property Set: " + definitionToPrint.Artifact.Name);
 
-            var trimName = definitionToPrint.Artifact.Name.Replace(" ", "");
+            var trimName = definitionToPrint.Artifact.Name.Replace(" ", "-");
             _outputFolder = fileName +  ModelMap.TemplateDefinitionsFolder + ModelMap.FolderSeparator + trimName + 
                             ModelMap.FolderSeparator + ModelMap.Latest;
             _filePath = _outputFolder + ModelMap.FolderSeparator + trimName + ".docx";
@@ -218,7 +218,7 @@ namespace TTI.TTF.Taxonomy
         {
             _log.Info("Print Controller printing Property Set: " + specification.Artifact.Name);
 
-            var trimName = specification.Artifact.Name.Replace(" ", "");
+            var trimName = specification.Artifact.Name.Replace(" ", "-");
             _outputFolder = fileName +  ModelMap.SpecificationsFolder + ModelMap.FolderSeparator + trimName + 
                             ModelMap.FolderSeparator + ModelMap.Latest;
             _filePath = _outputFolder + ModelMap.FolderSeparator + trimName + "-spec.docx";

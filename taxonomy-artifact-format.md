@@ -44,7 +44,7 @@ import "artifact.proto";
 import "grammar.proto";
 
 option csharp_namespace = "TTI.TTF.Taxonomy.Model.Core";
-option java_package = "org.tti.tti.taxonomy.model.core";
+option java_package = "org.tti.ttf.taxonomy.model.core";
 option java_multiple_files = true;
 ```
 

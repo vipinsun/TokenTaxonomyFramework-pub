@@ -1237,7 +1237,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					continue;
 				}
 
-				if (af.Name.EndsWith("json", StringComparison.CurrentCulture))
+				if (af.Name.EndsWith("json", StringComparison.CurrentCulture) || af.Name.EndsWith(".DS_Store"))
 				{
 					continue;
 				}

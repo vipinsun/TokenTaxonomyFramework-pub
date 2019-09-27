@@ -18,7 +18,16 @@ namespace TTI.TTF.Taxonomy
         private static int _gRpcPort;
         internal static Service.ServiceClient TaxonomyClient;
         private static string _printToPath;
-
+        
+        private static string GetUsage()
+        {
+            const string u = "Artifact Printer Syntax - " + " 'TTF-Printer -t <TypeId> -id <Id>'";
+            const string s = "       '- TTF-Printer -a' will generate the entire TTF.";
+            const string b = "       '- TTF-Printer -b will create a single TTF Book from all artifacts'";
+            const string t = "Types - 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification";
+            return u + s + b + t;
+        }
+        
         private static void Main(string[] args)
         {
 
@@ -212,15 +221,6 @@ namespace TTI.TTF.Taxonomy
             {
                 _log.Error(GetUsage());
             }
-        }
-
-        private static string GetUsage()
-        {
-            const string u = "Artifact Printer Syntax - " + " 'TTF-Printer -t <TypeId> -id <Id>'";
-            const string s = "       '- TTF-Printer -a' will generate the entire TTF.";
-            const string b = "       '- TTF-Printer -b will create a single TTF Book from all artifacts'";
-            const string t = "Types - 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification";
-            return u + s + b + t;
         }
     }
 }

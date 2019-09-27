@@ -19,6 +19,7 @@ The folder is named after the artifact name and contains 3 files initially:
 - .json - the artifact object serialized from the model.
 - .proto - the artifact's control descriptions
 - .md - the artifact's additional documentation or UML models
+- .docx - a documentation file that is created by the [TTF-Printer](tools/Readme.md).
 
 Other files can be placed in the artifact folder and be read into the model in binary. This is turned off for now, depending on requests if this is necessary.
 
