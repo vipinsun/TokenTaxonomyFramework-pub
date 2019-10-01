@@ -54,6 +54,17 @@
           "version": "1.0",
           "templateValidated": false
         }
+      },
+      {
+        "description": "If issuable is present, an AcceptTokenRequest from the token issuer, in response to a RequestTokens, has to be made and verified before a Transfer request.",
+        "symbol": {
+          "id":"2068a5fb-90eb-4084-b5f4-1e74485e5c02",
+          "type": "BEHAVIOR",
+          "visual": "<i>i</i>",
+          "tooling": "i",
+          "version": "1.0",
+          "templateValidated": false
+        }
       }
     ],
     "artifactFiles": [

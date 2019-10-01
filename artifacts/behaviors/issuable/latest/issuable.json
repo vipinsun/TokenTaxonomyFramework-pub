@@ -25,7 +25,19 @@
       "comments": "",
       "artifact": null
     },
-    "dependencies": [],
+    "dependencies": [
+      {
+        "description": "AcceptTokenRequest delegates to transferable in the issuance process.",
+        "symbol": {
+          "id":"af119e58-6d84-4ca6-9656-75e8d312f038",
+          "type": "BEHAVIOR",
+          "visual": "<i>t</i>",
+          "tooling": "t",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      }
+    ],
     "incompatibleWithSymbols": [],
     "influencedBySymbols": [
       {
@@ -77,16 +89,20 @@
   },
   "invocations": [
     {
-      "id": "3ddf15db-c919-4f72-a57b-d089931bc901",
+      "id": "e070f88f-6fa4-4749-b417-9ffaeae7f583",
       "name": "AuthorizeInvestor",
-      "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission. Minted tokens using this invocation will be owned by the owner or token pool account. Requires a Quantity field in the request.",
+      "description": "A request to issue tokens, up to the MaxTokens, to an account that can then request the issued tokens.",
       "request": {
         "controlMessageName": "AuthorizeInvestorRequest",
         "description": "The request",
         "inputParameters": [
           {
-            "name": "Quantity",
-            "valueDescription": "Number of new tokens to create."
+            "name": "AuthorizedAccountId",
+            "valueDescription": "The account being authorized to request issued tokens."
+          },
+          {
+            "name": "MaxTokens",
+            "valueDescription": "Maximum quantity of tokens the authorized account can request."
           }
         ]
       },
@@ -102,54 +118,54 @@
       }
     },
     {
-      "id": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
-      "name": "AcceptToken",
-      "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
-      "request": {
-        "controlMessageName": "AcceptTokenRequest",
-        "description": "The request",
-        "inputParameters": [
-          {
-            "name": "ToAccount",
-            "valueDescription": "Account Id to mint the tokens to."
-          },
-          {
-            "name": "Quantity",
-            "valueDescription": "Number of new tokens to create."
-          }
-        ]
-      },
-      "response": {
-        "controlMessageName": "AcceptTokenResponse",
-        "description": "The response",
-        "outputParameters": [
-          {
-            "name": "Confirmation",
-            "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the MintTo request."
-          }
-        ]
-      }
-    },
-    {
-      "id": "70499b23-a1dd-4c87-90d6-6e45400f28b5",
+      "id": "2bf89c22-4bd4-4f1b-ad21-1bba37de13b3",
       "name": "RequestTokens",
-      "description": "A request to create new token instances in the class by the owner or a party or account in a role that is granted this permission to another party or account.  Requires a To and Quantity fields in the request.",
+      "description": "A request to receive issued tokens from the Issuer in response to an authorization.",
       "request": {
         "controlMessageName": "RequestTokensRequest",
         "description": "The request",
         "inputParameters": [
           {
-            "name": "ToAccount",
-            "valueDescription": "Account Id to mint the tokens to."
-          },
-          {
             "name": "Quantity",
-            "valueDescription": "Number of new tokens to create."
+            "valueDescription": "Number of issued tokens requested."
           }
         ]
       },
       "response": {
         "controlMessageName": "RequestTokensResponse",
+        "description": "The response",
+        "outputParameters": [
+          {
+            "name": "RequestId",
+            "valueDescription": "A confirmation receipt in the form of a RequestId that is used by the Issuer to Accept the request, correlating the request with the authorization."
+          }
+        ]
+      }
+    },
+    {
+      "id": "6a5a549a-89d4-495c-b0da-02d2e4f8127b",
+      "name": "AcceptTokenRequest",
+      "description": "Once an AuthorizeInvestor is processed and the investor sends a RequestToken, this issuer of the token needs to AcceptTokenRequest to invoke the transfer method on the token.",
+      "request": {
+        "controlMessageName": "AcceptTokenRequest",
+        "description": "The request",
+        "inputParameters": [
+          {
+            "name": "RequestId",
+            "valueDescription": "RequestId from the TokenRequest."
+          },
+          {
+            "name": "FromAccountId",
+            "valueDescription": "Account Id the TokenRequest came from."
+          },
+          {
+            "name": "Quantity",
+            "valueDescription": "Number of new tokens to issue."
+          }
+        ]
+      },
+      "response": {
+        "controlMessageName": "AcceptTokenResponse",
         "description": "The response",
         "outputParameters": [
           {
