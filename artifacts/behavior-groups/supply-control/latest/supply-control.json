@@ -22,7 +22,7 @@
           "artifactDefinition": null
         }
       ],
-      "comments": "Define a Minters role and apply the role to the Mintable behavior.",
+      "comments": "Define a Minters role and apply the role to the mintable behavior.",
       "artifact": null
     },
     "dependencies": [],

@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ttf
+  labels:
+    ppvcustomer: tti
+    deployment: 1.0.1
+    phase: develop
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ttf-service
+    spec:
+      containers:
+      - name: tti-ttf-service
+        image: ttfregistry.azurecr.io/tti/ttf/taxonomyservice:1.0
+        ports:
+        - containerPort: 8086
+        imagePullPolicy: Always
+        env:
+        - name: gRpcHost
+          value: "taxonomyservice"
+        - name: gRpcPort
+          value: "8086"
+        - name: artifactPath
+          value: "artifacts"
+      - name: tti-ttf-envoy
+        image: ttfregistry.azurecr.io/tti/ttf/envoy:1.0
+        ports:
+        - containerPort: 9808
+        imagePullPolicy: Always

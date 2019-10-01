@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpc-endpoint-service
+spec:
+# change this to the IP address of the publicIP resource you created in Azure
+  loadBalancerIP: 13.77.163.52
+  type: LoadBalancer
+  ports:
+  - port: 8086
+  selector:
+    app: service 
