@@ -45,8 +45,24 @@
       }
     ],
     "maps": {
-      "codeReferences": [],
-      "implementationReferences": [],
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Digital Asset Token Issuance",
+          "platform": "DAML",
+          "referencePath": "https://github.com/digital-asset/ex-models/blob/master/issuertoken/daml/Main.daml",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        {
+          "mappingType": "IMPLEMENTATION",
+          "name": "Digital Asset Token Issuance",
+          "platform": "DAML",
+          "referencePath": "https://github.com/digital-asset/ex-models/tree/master/issuertoken",
+          "maps": null
+        }
+      ],
       "resources": [],
       "artifact": null
     }
