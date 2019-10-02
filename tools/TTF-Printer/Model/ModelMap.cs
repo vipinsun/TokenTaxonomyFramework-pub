@@ -13,12 +13,16 @@ namespace TTI.TTF.Taxonomy.Model
         public static readonly string BehaviorFolder = "behaviors";
         public static readonly string BehaviorGroupFolder = "behavior-groups";
         public static readonly string PropertySetFolder = "property-sets";
-        public static readonly string TokenTemplatesFolder = "token-templates";
+        private static readonly string TokenTemplatesFolder = "token-templates";
         public static readonly string TemplateFormulasFolder;
         public static readonly string TemplateDefinitionsFolder;
         public static readonly string SpecificationsFolder;
-        internal static string Latest { get; private set; }
-        public static string FolderSeparator { get; private set; }
+        internal static string Latest { get; }
+        public static string FolderSeparator { get; }
+        
+        internal static string FilePath { get; set; }
+        internal static string WaterMark { get; set; }
+        internal static string StyleSource { get; set; }
 
         static ModelMap()
         {

@@ -11,6 +11,19 @@ services:
             - artifactPath=artifacts
         ports:
             - 8086:8086
+    ttf-printer:
+        image: tti/ttf/printer
+        container_name: taxonomyprinter
+        volumes:
+            - ../../artifacts:/app/artifacts
+        environment:
+            - taxonomyHost=taxonomyservice
+            - taxonomyPort=8086
+            - artifactPath=artifacts
+            - printerHost=taxonomyprinter
+            - printerPort=8088
+        ports:
+            - 8088:8088
     envoy:
         image: tti/ttf/envoy
         container_name: envoy

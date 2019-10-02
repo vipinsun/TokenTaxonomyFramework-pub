@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ttfprinter;
+import "artifact.proto";
+
+option csharp_namespace = "TTI.TTF.Taxonomy";
+option java_package = "org.tti.ttf.taxonomy";
+option java_multiple_files = true;
+
+service PrinterService {
+    rpc PrintTTFArtifact (PrintArtifact) returns (PrintResult) {}
+    rpc PrintTTF (PrintTTFOptions) returns (PrintResult) {}     
+}
+
+message PrintArtifact{
+    taxonomy.model.artifact.ArtifactType type = 1;
+    string id = 2;
+}
+
+//If Book, the all artifacts will print to a single file or book.  If not, each artifact will print into their respective folder.
+message PrintTTFOptions{
+    bool book = 1; 
+}
+
+message PrintResult{
+    string open_xml_document = 1;
+}

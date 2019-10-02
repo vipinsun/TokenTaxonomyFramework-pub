@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using TTI.TTF.Taxonomy.Model.Artifact;
+using System.Threading;
 using log4net;
 using Microsoft.Extensions.Configuration;
 using Grpc.Core;
@@ -14,20 +14,14 @@ namespace TTI.TTF.Taxonomy
     {
         private static IConfigurationRoot _config;
         private static ILog _log;
-        private static string _gRpcHost;
-        private static int _gRpcPort;
+        private static string _taxonomyService;
+        private static int _taxonomyPort;
+        private static string _printerHost;
+        private static int _printerPort;
         internal static Service.ServiceClient TaxonomyClient;
         private static string _printToPath;
-        
-        private static string GetUsage()
-        {
-            const string u = "Artifact Printer Syntax - " + " 'TTF-Printer -t <TypeId> -id <Id>'";
-            const string s = "       '- TTF-Printer -a' will generate the entire TTF.";
-            const string b = "       '- TTF-Printer -b will create a single TTF Book from all artifacts'";
-            const string t = "Types - 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification";
-            return u + s + b + t;
-        }
-        
+        private static Server _apiServer;
+
         private static void Main(string[] args)
         {
 
@@ -47,181 +41,61 @@ namespace TTI.TTF.Taxonomy
 
             #endregion
 
-            if (args.Length == 1 || args.Length == 4)
+            _log.Info("TTF-Printer printing with options: " + args);
+            _printerHost = _config["printerHost"];
+            _printerPort = Convert.ToInt32(_config["printerPort"]);
+
+            _taxonomyService = _config["taxonomyHost"];
+            _taxonomyPort = Convert.ToInt32(_config["taxonomyPort"]);
+            _printToPath = _config["printToPath"];
+
+            _log.Info("Connection to TaxonomyService: " + _taxonomyService + " port: " + _taxonomyPort);
+            TaxonomyClient = new Service.ServiceClient(
+                new Channel(_taxonomyService, _taxonomyPort, ChannelCredentials.Insecure));
+
+            ModelManager.Taxonomy = (TaxonomyClient.GetFullTaxonomy(new TaxonomyVersion
             {
+                Version = "1.0"
+            }));
 
-                _log.Info("TTF-Printer printing with options: " + args);
+            ModelMap.WaterMark = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
+                                                                                              + "images" +
+                                                                                              ModelMap.FolderSeparator +
+                                                                                              "TTF-bw.jpg";
 
-                _gRpcHost = _config["gRpcHost"];
-                _gRpcPort = Convert.ToInt32(_config["gRpcPort"]);
-                _printToPath = _config["printToPath"];
+            ModelMap.StyleSource =
+                Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
+                                                                             + "templates" +
+                                                                             ModelMap.FolderSeparator +
+                                                                             "savon.docx";
 
-                _log.Info("Connection to TaxonomyService: " + _gRpcHost + " port: " + _gRpcPort);
-                TaxonomyClient = new Service.ServiceClient(
-                    new Channel(_gRpcHost, _gRpcPort, ChannelCredentials.Insecure));
+            ModelMap.FilePath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
+                                ModelMap.FolderSeparator +
+                                _printToPath + ModelMap.FolderSeparator;
 
-                ModelManager.Taxonomy = (TaxonomyClient.GetFullTaxonomy(new TaxonomyVersion
-                {
-                    Version = "1.0"
-                }));
 
-                var waterMark = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
-                                                                                             + "images" +
-                                                                                             ModelMap.FolderSeparator +
-                                                                                             "TTF-bw.jpg";
-
-                var styleSource =
-                    Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
-                                                                                 + "templates" +
-                                                                                 ModelMap.FolderSeparator +
-                                                                                 "savon.docx";
-
-                var filePath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator +
-                               _printToPath + ModelMap.FolderSeparator;
-
-                switch (args.Length)
-                {
-                    case 1:
-                        switch (args[0])
-                        {
-                            case "-a":
-                                PrintController.PrintAllArtifacts(filePath, waterMark, styleSource);
-                                break;
-                            case "-b":
-                                PrintController.BuildTtfBook(filePath, waterMark, styleSource);
-                                break;
-                        }
-
-                        return;
-                    case 2:
-                        _log.Error(GetUsage());
-                        return;
-                    case 3:
-                        _log.Error(GetUsage());
-                        return;
-                    case 4:
-                        var id = "";
-                        var artifactType = ArtifactType.Base;
-                        var artifactSet = false;
-                        for (var i = 0; i < args.Length; i++)
-                        {
-                            switch (args[i])
-                            {
-                                case "-id":
-                                    i++;
-                                    id = args[i];
-                                    continue;
-                                case "-t":
-                                    i++;
-                                    var t = Convert.ToInt32(args[i]);
-                                    artifactType = (ArtifactType) t;
-                                    artifactSet = true;
-                                    continue;
-                                default:
-                                    continue;
-                            }
-
-                        }
-
-                        if (artifactSet && !string.IsNullOrEmpty(id))
-                        {
-                            switch (artifactType)
-                            {
-                                case ArtifactType.Base:
-                                    var b = ModelManager.GetBaseArtifact(new ArtifactSymbol
-                                    {
-                                        Id = id
-                                    });
-
-                                    if (b != null)
-                                    {
-                                        PrintController.PrintBase(filePath, waterMark, styleSource, b);
-                                    }
-                                    return;
-                                case ArtifactType.Behavior:
-                                    var behavior = ModelManager.GetBehaviorArtifact(new ArtifactSymbol
-                                    {
-                                        Id = id
-                                    });
-
-                                    if (behavior != null)
-                                    {
-                                        PrintController.PrintBehavior(filePath, waterMark, styleSource, behavior);
-                                    }
-                                    return;
-                                case ArtifactType.BehaviorGroup:
-                                    var behaviorGroup = ModelManager.GetBehaviorGroupArtifact(new ArtifactSymbol
-                                    {
-                                        Id = id
-                                    });
-
-                                    if (behaviorGroup != null)
-                                    {
-                                        PrintController.PrintBehaviorGroup(filePath, waterMark, styleSource,
-                                            behaviorGroup);
-                                    }
-                                    return;
-                                case ArtifactType.PropertySet:
-                                    var propertySet = ModelManager.GetPropertySetArtifact(new ArtifactSymbol
-                                    {
-                                        Id = id
-                                    });
-
-                                    if (propertySet != null)
-                                    {
-                                        PrintController.PrintPropertySet(filePath, waterMark, styleSource, propertySet);
-                                    }
-                                    return;
-                                case ArtifactType.TemplateFormula:
-                                    var formula = ModelManager.GetTemplateFormulaArtifact(new ArtifactSymbol
-                                    {
-                                        Id = id
-                                    });
-
-                                    if (formula != null)
-                                    {
-                                        PrintController.PrintFormula(filePath, waterMark, styleSource, formula);
-                                    }
-                                    return;
-                                case ArtifactType.TemplateDefinition:
-                                    var definition = ModelManager.GetTemplateDefinitionArtifact(new ArtifactSymbol
-                                    {
-                                        Id = id
-                                    });
-
-                                    if (definition != null)
-                                    {
-                                        PrintController.PrintDefinition(filePath, waterMark, styleSource, definition);
-                                    }
-                                    return;
-                                case ArtifactType.TokenTemplate:
-                                    var spec = TaxonomyClient.GetTokenSpecification(new TokenTemplateId
-                                    {
-                                        DefinitionId = id
-                                    });
-
-                                    if (spec != null)
-                                    {
-                                        if (spec.Artifact.Name.Contains("Error:"))
-                                        {
-                                            _log.Error(spec.Artifact.Name);
-                                            return;
-                                        }
-
-                                        PrintController.PrintSpec(filePath, waterMark, styleSource, spec);
-                                        return;
-                                    }
-                                    return;
-                            }
-                        }
-                        _log.Error(GetUsage());
-                        return;
-                }
-            }
-            else
+            _apiServer = new Server
             {
-                _log.Error(GetUsage());
-            }
+                Services = {PrinterService.BindService(new Host())},
+                Ports = {new ServerPort(_printerHost, _printerPort, ServerCredentials.Insecure)}
+            };
+            _log.Info("Taxonomy Printer listening on: " + _printerHost + " Port: " + _printerPort);
+
+            _apiServer.Start();
+            _log.Info("Printer Api open on host: " + _printerHost + " port: " + _printerPort);
+            Console.WriteLine("Printer Ready");
+            var exitEvent = new ManualResetEvent(false);
+
+            Console.CancelKeyPress += (sender, eventArgs) =>
+            {
+                eventArgs.Cancel = true;
+                exitEvent.Set();
+            };
+
+            Console.WriteLine("Press \'^C\' to close the Taxonomy.Printer.Service");
+
+            exitEvent.WaitOne();
+            _apiServer.ShutdownAsync();
         }
     }
 }

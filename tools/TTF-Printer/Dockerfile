@@ -14,5 +14,5 @@ LABEL version=ttf1.0
 WORKDIR /app
 
 COPY --from=build /app/out /app
-EXPOSE 8086/tcp
+EXPOSE 8088/tcp
 ENTRYPOINT ["dotnet", "TTF-Printer.dll"]
