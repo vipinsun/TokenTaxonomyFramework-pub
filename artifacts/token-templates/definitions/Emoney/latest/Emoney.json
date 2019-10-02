@@ -27,8 +27,8 @@
           "artifactDefinition": null
         },
         {
-          "name": "Oil barrels",
-          "description": "TODO",
+          "name": "M2M payments. Oil tanks",
+          "description": "Just in time, efficient supply chain and provider settlement is key on nowadays business scenarios. Sensors on oil tanks, cargos, can trigger just in time refill, stock management, coordinated with real delivery vs payment scenarios with tokenized money. This use case has been already implemented on io.cash",
           "artifactDefinition": null
         }
       ],
