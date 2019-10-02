@@ -797,5 +797,14 @@ namespace TTI.TTF.Taxonomy
 			
 			Log.Info(fDef);
 		}
+
+		public static void OutputPrintout(string resultOpenXmlDocument)
+		{
+			Log.Error("---------------------------------------------------");
+            			Log.Error("TTF Printer Returned:");
+            			Log.Error("---------------------------------------------------");
+                        
+            			Log.Info(resultOpenXmlDocument);
+		}
 	}
 }
