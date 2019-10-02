@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ttfprinter;
+package taxonomy.ttfprinter;
 import "artifact.proto";
 
 option csharp_namespace = "TTI.TTF.Taxonomy";
