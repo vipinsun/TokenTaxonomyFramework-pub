@@ -1,4 +1,4 @@
-#This is for a Local GitHub cloned instance.
+#This is for a HOSTED Read Only instance.
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /app
 # copy necessary files
@@ -16,5 +16,6 @@ LABEL version=ttf1.0
 WORKDIR /app
 
 COPY --from=build /app/TaxonomyService/out /app
+COPY ../../artifacts artifacts
 EXPOSE 8086/tcp
 ENTRYPOINT ["dotnet", "TaxonomyService.dll"]
