@@ -11,6 +11,20 @@ services:
             - artifactPath=artifacts
         ports:
             - 8086:8086
+    envoy:
+        image: tti/ttf/envoy
+        container_name: envoy
+        ports:
+            - "9080:9080"
+        links:
+            - "ttf-taxonomy-service"
+    ttf-ui:
+        image: tti/ttf/ui
+        container_name: ui
+        ports:
+            - "8000:80"
+        links:
+            - "envoy"
     ttf-printer:
         image: tti/ttf/printer
         container_name: taxonomyPrinter
@@ -26,17 +40,5 @@ services:
             - 8088:8088
         links:
             - "ttf-taxonomy-service"
-    envoy:
-        image: tti/ttf/envoy
-        container_name: envoy
-        ports:
-            - "9080:9080"
-        links:
+        depends_on: 
             - "ttf-taxonomy-service"
-    ttf-ui:
-        image: tti/ttf/ui
-        container_name: ui
-        ports:
-            - "8000:80"
-        links:
-            - "envoy"

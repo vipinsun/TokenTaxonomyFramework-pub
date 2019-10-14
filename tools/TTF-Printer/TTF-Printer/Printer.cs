@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Threading;
 using log4net;
@@ -41,7 +42,8 @@ namespace TTI.TTF.Taxonomy
 
             #endregion
 
-            _log.Info("TTF-Printer printing with options: " + args);
+            _log.Info("TTF-Printer boot...");
+            
             _printerHost = _config["printerHost"];
             _printerPort = Convert.ToInt32(_config["printerPort"]);
 
@@ -49,6 +51,27 @@ namespace TTI.TTF.Taxonomy
             _taxonomyPort = Convert.ToInt32(_config["taxonomyPort"]);
             _printToPath = _config["printToPath"];
 
+            #region TCP Loop
+
+            var tcpScan = new TcpClient();
+            var open = false;
+            while (!open)
+                try
+                {
+                    tcpScan.Connect(_taxonomyService, _taxonomyPort);
+                    open = true;
+                }
+                catch
+                {
+                    _log.Info("Waiting on Taxonomy Service on port: " + _taxonomyPort);
+                    Thread.Sleep(2500);
+                }
+
+            _log.Info("Connected to Taxonomy Service");
+            tcpScan.Close();
+
+            #endregion
+            
             _log.Info("Connection to TaxonomyService: " + _taxonomyService + " port: " + _taxonomyPort);
             TaxonomyClient = new Service.ServiceClient(
                 new Channel(_taxonomyService, _taxonomyPort, ChannelCredentials.Insecure));
