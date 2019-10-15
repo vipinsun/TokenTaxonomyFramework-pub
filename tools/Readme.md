@@ -24,7 +24,7 @@ This will build the Client and Service, starting the later awaiting client reque
 Windows & Mac:
 
 ```bash
-docker run -e gRpcHost=host.docker.internal txclient --f
+docker run -e gRpcHost=host.docker.internal -env printHost=host.docker.internal txclient --f
 ```
 
 Linux:
