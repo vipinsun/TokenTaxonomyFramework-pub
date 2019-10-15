@@ -33,7 +33,7 @@ As `host.docker.internal` is currently not supported by Docker for Linux, the IP
 
 ```bash
 DOCKER_BRIDGE_IP=`docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}'`
-docker run -e gRpcHost=$DOCKER_BRIDGE_IP txclient --f
+docker run -e gRpcHost=$DOCKER_BRIDGE_IP -env printHost=$DOCKER_BRIDGE_IP txclient --f
 ```
 
 if using the dotnet client using the [dotnet core runtime](https://dotnet.microsoft.com/download):
