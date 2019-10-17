@@ -492,6 +492,8 @@ namespace TTI.TTF.Taxonomy
         private static PrintResult GetPrintResult()
         {
             var retVal = new PrintResult();
+            /*
+             * We don't need a result put in just yet.
             try
             {
                 retVal.OpenXmlDocument = _document.ToFlatOpcString();
@@ -502,6 +504,7 @@ namespace TTI.TTF.Taxonomy
                 retVal.OpenXmlDocument = "";
             }
             _document.Close();
+            */
             return retVal;
         }
     }

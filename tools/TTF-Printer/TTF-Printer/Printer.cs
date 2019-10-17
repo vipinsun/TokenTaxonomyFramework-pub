@@ -23,7 +23,7 @@ namespace TTI.TTF.Taxonomy
         private static string _printToPath;
         private static Server _apiServer;
 
-        private static void Main(string[] args)
+        private static void Main()
         {
 
             #region config
