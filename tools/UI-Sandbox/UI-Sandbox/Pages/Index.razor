@@ -1,15 +1,22 @@
 @page "/"
+@page "/{artifacttype}/{artifactid}"
 @using Telerik.Blazor.Components
 @using TTI.TTF.Taxonomy.Model.Artifact
-@page "{ArtifactId:string?}"
-@page "{ArtifactType:int?}"
+
 <h1>Select a TTF Artifact</h1>
 
-<h2>Artifact: "@ArtifactId"</h2>
+<h2>@ArtifactType Artifact: @ArtifactId</h2>
 
- @code {
-     [Parameter]
-     public string ArtifactId { get; set; }
-     [Parameter]
-     public ArtifactType ArtifactType { get; set; }
- }
+@code {
+    [Parameter]
+    public string ArtifactId { get; set; }
+
+    [Parameter]
+    public string ArtifactType { get; set; }
+
+    public void RenderArtifact()
+    {
+        var aType = (ArtifactType) Enum.Parse(typeof(ArtifactType), "EnumValue");
+    }
+
+}

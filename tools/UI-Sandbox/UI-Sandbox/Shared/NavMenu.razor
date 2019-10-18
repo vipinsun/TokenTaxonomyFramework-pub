@@ -180,7 +180,7 @@
             Id = thisId,
             Text = a.Name,
             ArtifactId = a.ArtifactSymbol.Id,
-            Url = "/?" + a.ArtifactSymbol.Type + "=" + a.ArtifactSymbol.Id,
+            Url = a.ArtifactSymbol.Type + "/" + a.ArtifactSymbol.Id,
             ArtifactType = a.ArtifactSymbol.Type,
             ParentId = parentId,
             Icon = "js"
