@@ -1051,9 +1051,12 @@ proto.taxonomy.model.artifact.Classification.prototype.getTemplateType = functio
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TemplateType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.TemplateType} value
+ * @return {!proto.taxonomy.model.artifact.Classification} returns this
+ */
 proto.taxonomy.model.artifact.Classification.prototype.setTemplateType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -1066,9 +1069,12 @@ proto.taxonomy.model.artifact.Classification.prototype.getTokenType = function()
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TokenType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.TokenType} value
+ * @return {!proto.taxonomy.model.artifact.Classification} returns this
+ */
 proto.taxonomy.model.artifact.Classification.prototype.setTokenType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -1081,9 +1087,12 @@ proto.taxonomy.model.artifact.Classification.prototype.getTokenUnit = function()
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TokenUnit} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.TokenUnit} value
+ * @return {!proto.taxonomy.model.artifact.Classification} returns this
+ */
 proto.taxonomy.model.artifact.Classification.prototype.setTokenUnit = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -1096,9 +1105,12 @@ proto.taxonomy.model.artifact.Classification.prototype.getRepresentationType = f
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.RepresentationType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.RepresentationType} value
+ * @return {!proto.taxonomy.model.artifact.Classification} returns this
+ */
 proto.taxonomy.model.artifact.Classification.prototype.setRepresentationType = function(value) {
-  jspb.Message.setProto3EnumField(this, 4, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -1111,9 +1123,12 @@ proto.taxonomy.model.artifact.Classification.prototype.getValueType = function()
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ValueType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ValueType} value
+ * @return {!proto.taxonomy.model.artifact.Classification} returns this
+ */
 proto.taxonomy.model.artifact.Classification.prototype.setValueType = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -1298,9 +1313,12 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactSymbol} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1313,9 +1331,12 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getType = function() {
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactSymbol} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -1328,9 +1349,12 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getVisual = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactSymbol} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setVisual = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1343,9 +1367,12 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getTooling = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactSymbol} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setTooling = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1358,9 +1385,12 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getVersion = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactSymbol} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setVersion = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1373,9 +1403,12 @@ proto.taxonomy.model.artifact.ArtifactSymbol.prototype.getTemplateValidated = fu
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactSymbol} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactSymbol.prototype.setTemplateValidated = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -1634,17 +1667,21 @@ proto.taxonomy.model.artifact.Artifact.prototype.getArtifactSymbol = function() 
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+*/
 proto.taxonomy.model.artifact.Artifact.prototype.setArtifactSymbol = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearArtifactSymbol = function() {
-  this.setArtifactSymbol(undefined);
+  return this.setArtifactSymbol(undefined);
 };
 
 
@@ -1666,9 +1703,12 @@ proto.taxonomy.model.artifact.Artifact.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+ */
 proto.taxonomy.model.artifact.Artifact.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1681,26 +1721,31 @@ proto.taxonomy.model.artifact.Artifact.prototype.getAliasesList = function() {
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+ */
 proto.taxonomy.model.artifact.Artifact.prototype.setAliasesList = function(value) {
-  jspb.Message.setField(this, 3, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.addAliases = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearAliasesList = function() {
-  this.setAliasesList([]);
+  return this.setAliasesList([]);
 };
 
 
@@ -1714,17 +1759,21 @@ proto.taxonomy.model.artifact.Artifact.prototype.getArtifactDefinition = functio
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.ArtifactDefinition|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.ArtifactDefinition|undefined} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+*/
 proto.taxonomy.model.artifact.Artifact.prototype.setArtifactDefinition = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearArtifactDefinition = function() {
-  this.setArtifactDefinition(undefined);
+  return this.setArtifactDefinition(undefined);
 };
 
 
@@ -1747,9 +1796,12 @@ proto.taxonomy.model.artifact.Artifact.prototype.getDependenciesList = function(
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.SymbolDependency>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.SymbolDependency>} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+*/
 proto.taxonomy.model.artifact.Artifact.prototype.setDependenciesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -1765,9 +1817,10 @@ proto.taxonomy.model.artifact.Artifact.prototype.addDependencies = function(opt_
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearDependenciesList = function() {
-  this.setDependenciesList([]);
+  return this.setDependenciesList([]);
 };
 
 
@@ -1781,9 +1834,12 @@ proto.taxonomy.model.artifact.Artifact.prototype.getIncompatibleWithSymbolsList 
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+*/
 proto.taxonomy.model.artifact.Artifact.prototype.setIncompatibleWithSymbolsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -1799,9 +1855,10 @@ proto.taxonomy.model.artifact.Artifact.prototype.addIncompatibleWithSymbols = fu
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearIncompatibleWithSymbolsList = function() {
-  this.setIncompatibleWithSymbolsList([]);
+  return this.setIncompatibleWithSymbolsList([]);
 };
 
 
@@ -1815,9 +1872,12 @@ proto.taxonomy.model.artifact.Artifact.prototype.getInfluencedBySymbolsList = fu
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.SymbolInfluence>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.SymbolInfluence>} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+*/
 proto.taxonomy.model.artifact.Artifact.prototype.setInfluencedBySymbolsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -1833,9 +1893,10 @@ proto.taxonomy.model.artifact.Artifact.prototype.addInfluencedBySymbols = functi
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearInfluencedBySymbolsList = function() {
-  this.setInfluencedBySymbolsList([]);
+  return this.setInfluencedBySymbolsList([]);
 };
 
 
@@ -1848,9 +1909,12 @@ proto.taxonomy.model.artifact.Artifact.prototype.getControlUri = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+ */
 proto.taxonomy.model.artifact.Artifact.prototype.setControlUri = function(value) {
-  jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -1864,9 +1928,12 @@ proto.taxonomy.model.artifact.Artifact.prototype.getArtifactFilesList = function
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactFile>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.ArtifactFile>} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+*/
 proto.taxonomy.model.artifact.Artifact.prototype.setArtifactFilesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -1882,9 +1949,10 @@ proto.taxonomy.model.artifact.Artifact.prototype.addArtifactFiles = function(opt
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearArtifactFilesList = function() {
-  this.setArtifactFilesList([]);
+  return this.setArtifactFilesList([]);
 };
 
 
@@ -1898,17 +1966,21 @@ proto.taxonomy.model.artifact.Artifact.prototype.getMaps = function() {
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Maps|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Maps|undefined} value
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
+*/
 proto.taxonomy.model.artifact.Artifact.prototype.setMaps = function(value) {
-  jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.Artifact} returns this
  */
 proto.taxonomy.model.artifact.Artifact.prototype.clearMaps = function() {
-  this.setMaps(undefined);
+  return this.setMaps(undefined);
 };
 
 
@@ -2078,9 +2150,12 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.getControlUri = 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactReferenceValues} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.setControlUri = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2094,9 +2169,12 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.getArtifactFiles
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactFile>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.ArtifactFile>} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactReferenceValues} returns this
+*/
 proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.setArtifactFilesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -2112,9 +2190,10 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.addArtifactFiles
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.ArtifactReferenceValues} returns this
  */
 proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.clearArtifactFilesList = function() {
-  this.setArtifactFilesList([]);
+  return this.setArtifactFilesList([]);
 };
 
 
@@ -2128,17 +2207,21 @@ proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.getMaps = functi
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Maps|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Maps|undefined} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactReferenceValues} returns this
+*/
 proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.setMaps = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.ArtifactReferenceValues} returns this
  */
 proto.taxonomy.model.artifact.ArtifactReferenceValues.prototype.clearMaps = function() {
-  this.setMaps(undefined);
+  return this.setMaps(undefined);
 };
 
 
@@ -2310,9 +2393,12 @@ proto.taxonomy.model.artifact.ArtifactReference.prototype.getId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactReference} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactReference.prototype.setId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2325,9 +2411,12 @@ proto.taxonomy.model.artifact.ArtifactReference.prototype.getType = function() {
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactReference} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactReference.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -2340,9 +2429,12 @@ proto.taxonomy.model.artifact.ArtifactReference.prototype.getReferenceNotes = fu
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactReference} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactReference.prototype.setReferenceNotes = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2356,17 +2448,21 @@ proto.taxonomy.model.artifact.ArtifactReference.prototype.getValues = function()
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.ArtifactReferenceValues|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.ArtifactReferenceValues|undefined} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactReference} returns this
+*/
 proto.taxonomy.model.artifact.ArtifactReference.prototype.setValues = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.ArtifactReference} returns this
  */
 proto.taxonomy.model.artifact.ArtifactReference.prototype.clearValues = function() {
-  this.setValues(undefined);
+  return this.setValues(undefined);
 };
 
 
@@ -2536,9 +2632,12 @@ proto.taxonomy.model.artifact.SymbolInfluence.prototype.getDescription = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.SymbolInfluence} returns this
+ */
 proto.taxonomy.model.artifact.SymbolInfluence.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2552,17 +2651,21 @@ proto.taxonomy.model.artifact.SymbolInfluence.prototype.getSymbol = function() {
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
+ * @return {!proto.taxonomy.model.artifact.SymbolInfluence} returns this
+*/
 proto.taxonomy.model.artifact.SymbolInfluence.prototype.setSymbol = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.SymbolInfluence} returns this
  */
 proto.taxonomy.model.artifact.SymbolInfluence.prototype.clearSymbol = function() {
-  this.setSymbol(undefined);
+  return this.setSymbol(undefined);
 };
 
 
@@ -2585,9 +2688,12 @@ proto.taxonomy.model.artifact.SymbolInfluence.prototype.getAppliesToList = funct
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value
+ * @return {!proto.taxonomy.model.artifact.SymbolInfluence} returns this
+*/
 proto.taxonomy.model.artifact.SymbolInfluence.prototype.setAppliesToList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -2603,9 +2709,10 @@ proto.taxonomy.model.artifact.SymbolInfluence.prototype.addAppliesTo = function(
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.SymbolInfluence} returns this
  */
 proto.taxonomy.model.artifact.SymbolInfluence.prototype.clearAppliesToList = function() {
-  this.setAppliesToList([]);
+  return this.setAppliesToList([]);
 };
 
 
@@ -2744,9 +2851,12 @@ proto.taxonomy.model.artifact.SymbolDependency.prototype.getDescription = functi
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.SymbolDependency} returns this
+ */
 proto.taxonomy.model.artifact.SymbolDependency.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2760,17 +2870,21 @@ proto.taxonomy.model.artifact.SymbolDependency.prototype.getSymbol = function() 
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
+ * @return {!proto.taxonomy.model.artifact.SymbolDependency} returns this
+*/
 proto.taxonomy.model.artifact.SymbolDependency.prototype.setSymbol = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.SymbolDependency} returns this
  */
 proto.taxonomy.model.artifact.SymbolDependency.prototype.clearSymbol = function() {
-  this.setSymbol(undefined);
+  return this.setSymbol(undefined);
 };
 
 
@@ -2964,9 +3078,12 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.getBusinessDescriptio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactDefinition} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.setBusinessDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2979,9 +3096,12 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.getBusinessExample = 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactDefinition} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.setBusinessExample = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2995,9 +3115,12 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.getAnalogiesList = fu
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactAnalogy>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.ArtifactAnalogy>} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactDefinition} returns this
+*/
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.setAnalogiesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -3013,9 +3136,10 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.addAnalogies = functi
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.ArtifactDefinition} returns this
  */
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.clearAnalogiesList = function() {
-  this.setAnalogiesList([]);
+  return this.setAnalogiesList([]);
 };
 
 
@@ -3028,9 +3152,12 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.getComments = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactDefinition} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.setComments = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -3044,17 +3171,21 @@ proto.taxonomy.model.artifact.ArtifactDefinition.prototype.getArtifact = functio
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactDefinition} returns this
+*/
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.setArtifact = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.ArtifactDefinition} returns this
  */
 proto.taxonomy.model.artifact.ArtifactDefinition.prototype.clearArtifact = function() {
-  this.setArtifact(undefined);
+  return this.setArtifact(undefined);
 };
 
 
@@ -3214,9 +3345,12 @@ proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactAnalogy} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3229,9 +3363,12 @@ proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.getDescription = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactAnalogy} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3245,17 +3382,21 @@ proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.getArtifactDefinition = 
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.ArtifactDefinition|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.ArtifactDefinition|undefined} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactAnalogy} returns this
+*/
 proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.setArtifactDefinition = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.ArtifactAnalogy} returns this
  */
 proto.taxonomy.model.artifact.ArtifactAnalogy.prototype.clearArtifactDefinition = function() {
-  this.setArtifactDefinition(undefined);
+  return this.setArtifactDefinition(undefined);
 };
 
 
@@ -3427,9 +3568,12 @@ proto.taxonomy.model.artifact.ArtifactFile.prototype.getContent = function() {
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactContent} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactContent} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactFile} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactFile.prototype.setContent = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -3442,9 +3586,12 @@ proto.taxonomy.model.artifact.ArtifactFile.prototype.getFileName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactFile} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactFile.prototype.setFileName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3481,9 +3628,12 @@ proto.taxonomy.model.artifact.ArtifactFile.prototype.getFileData_asU8 = function
 };
 
 
-/** @param {!(string|Uint8Array)} value */
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactFile} returns this
+ */
 proto.taxonomy.model.artifact.ArtifactFile.prototype.setFileData = function(value) {
-  jspb.Message.setProto3BytesField(this, 3, value);
+  return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -3497,17 +3647,21 @@ proto.taxonomy.model.artifact.ArtifactFile.prototype.getArtifact = function() {
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
+ * @return {!proto.taxonomy.model.artifact.ArtifactFile} returns this
+*/
 proto.taxonomy.model.artifact.ArtifactFile.prototype.setArtifact = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.ArtifactFile} returns this
  */
 proto.taxonomy.model.artifact.ArtifactFile.prototype.clearArtifact = function() {
-  this.setArtifact(undefined);
+  return this.setArtifact(undefined);
 };
 
 
@@ -3696,9 +3850,12 @@ proto.taxonomy.model.artifact.Maps.prototype.getCodeReferencesList = function() 
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.MapReference>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.MapReference>} value
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
+*/
 proto.taxonomy.model.artifact.Maps.prototype.setCodeReferencesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -3714,9 +3871,10 @@ proto.taxonomy.model.artifact.Maps.prototype.addCodeReferences = function(opt_va
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
  */
 proto.taxonomy.model.artifact.Maps.prototype.clearCodeReferencesList = function() {
-  this.setCodeReferencesList([]);
+  return this.setCodeReferencesList([]);
 };
 
 
@@ -3730,9 +3888,12 @@ proto.taxonomy.model.artifact.Maps.prototype.getImplementationReferencesList = f
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.MapReference>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.MapReference>} value
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
+*/
 proto.taxonomy.model.artifact.Maps.prototype.setImplementationReferencesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -3748,9 +3909,10 @@ proto.taxonomy.model.artifact.Maps.prototype.addImplementationReferences = funct
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
  */
 proto.taxonomy.model.artifact.Maps.prototype.clearImplementationReferencesList = function() {
-  this.setImplementationReferencesList([]);
+  return this.setImplementationReferencesList([]);
 };
 
 
@@ -3764,9 +3926,12 @@ proto.taxonomy.model.artifact.Maps.prototype.getResourcesList = function() {
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.MapResourceReference>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.MapResourceReference>} value
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
+*/
 proto.taxonomy.model.artifact.Maps.prototype.setResourcesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -3782,9 +3947,10 @@ proto.taxonomy.model.artifact.Maps.prototype.addResources = function(opt_value, 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
  */
 proto.taxonomy.model.artifact.Maps.prototype.clearResourcesList = function() {
-  this.setResourcesList([]);
+  return this.setResourcesList([]);
 };
 
 
@@ -3798,17 +3964,21 @@ proto.taxonomy.model.artifact.Maps.prototype.getArtifact = function() {
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
+*/
 proto.taxonomy.model.artifact.Maps.prototype.setArtifact = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.Maps} returns this
  */
 proto.taxonomy.model.artifact.Maps.prototype.clearArtifact = function() {
-  this.setArtifact(undefined);
+  return this.setArtifact(undefined);
 };
 
 
@@ -3992,9 +4162,12 @@ proto.taxonomy.model.artifact.MapReference.prototype.getMappingType = function()
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.MappingType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.MappingType} value
+ * @return {!proto.taxonomy.model.artifact.MapReference} returns this
+ */
 proto.taxonomy.model.artifact.MapReference.prototype.setMappingType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -4007,9 +4180,12 @@ proto.taxonomy.model.artifact.MapReference.prototype.getName = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.MapReference} returns this
+ */
 proto.taxonomy.model.artifact.MapReference.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4022,9 +4198,12 @@ proto.taxonomy.model.artifact.MapReference.prototype.getPlatform = function() {
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TargetPlatform} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.TargetPlatform} value
+ * @return {!proto.taxonomy.model.artifact.MapReference} returns this
+ */
 proto.taxonomy.model.artifact.MapReference.prototype.setPlatform = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  return jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -4037,9 +4216,12 @@ proto.taxonomy.model.artifact.MapReference.prototype.getReferencePath = function
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.MapReference} returns this
+ */
 proto.taxonomy.model.artifact.MapReference.prototype.setReferencePath = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -4053,17 +4235,21 @@ proto.taxonomy.model.artifact.MapReference.prototype.getMaps = function() {
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Maps|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Maps|undefined} value
+ * @return {!proto.taxonomy.model.artifact.MapReference} returns this
+*/
 proto.taxonomy.model.artifact.MapReference.prototype.setMaps = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.MapReference} returns this
  */
 proto.taxonomy.model.artifact.MapReference.prototype.clearMaps = function() {
-  this.setMaps(undefined);
+  return this.setMaps(undefined);
 };
 
 
@@ -4247,9 +4433,12 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.getMappingType = fu
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.MappingType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.MappingType} value
+ * @return {!proto.taxonomy.model.artifact.MapResourceReference} returns this
+ */
 proto.taxonomy.model.artifact.MapResourceReference.prototype.setMappingType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -4262,9 +4451,12 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.getName = function(
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.MapResourceReference} returns this
+ */
 proto.taxonomy.model.artifact.MapResourceReference.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4277,9 +4469,12 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.getDescription = fu
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.MapResourceReference} returns this
+ */
 proto.taxonomy.model.artifact.MapResourceReference.prototype.setDescription = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -4292,9 +4487,12 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.getResourcePath = f
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.MapResourceReference} returns this
+ */
 proto.taxonomy.model.artifact.MapResourceReference.prototype.setResourcePath = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -4308,17 +4506,21 @@ proto.taxonomy.model.artifact.MapResourceReference.prototype.getMaps = function(
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Maps|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Maps|undefined} value
+ * @return {!proto.taxonomy.model.artifact.MapResourceReference} returns this
+*/
 proto.taxonomy.model.artifact.MapResourceReference.prototype.setMaps = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.MapResourceReference} returns this
  */
 proto.taxonomy.model.artifact.MapResourceReference.prototype.clearMaps = function() {
-  this.setMaps(undefined);
+  return this.setMaps(undefined);
 };
 
 
@@ -4466,9 +4668,12 @@ proto.taxonomy.model.artifact.NewArtifactRequest.prototype.getType = function() 
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.NewArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.NewArtifactRequest.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -4482,17 +4687,21 @@ proto.taxonomy.model.artifact.NewArtifactRequest.prototype.getArtifact = functio
 };
 
 
-/** @param {?proto.google.protobuf.Any|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.taxonomy.model.artifact.NewArtifactRequest} returns this
+*/
 proto.taxonomy.model.artifact.NewArtifactRequest.prototype.setArtifact = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.NewArtifactRequest} returns this
  */
 proto.taxonomy.model.artifact.NewArtifactRequest.prototype.clearArtifact = function() {
-  this.setArtifact(undefined);
+  return this.setArtifact(undefined);
 };
 
 
@@ -4640,9 +4849,12 @@ proto.taxonomy.model.artifact.NewArtifactResponse.prototype.getType = function()
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.NewArtifactResponse} returns this
+ */
 proto.taxonomy.model.artifact.NewArtifactResponse.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -4656,17 +4868,21 @@ proto.taxonomy.model.artifact.NewArtifactResponse.prototype.getArtifactTypeObjec
 };
 
 
-/** @param {?proto.google.protobuf.Any|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.taxonomy.model.artifact.NewArtifactResponse} returns this
+*/
 proto.taxonomy.model.artifact.NewArtifactResponse.prototype.setArtifactTypeObject = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.NewArtifactResponse} returns this
  */
 proto.taxonomy.model.artifact.NewArtifactResponse.prototype.clearArtifactTypeObject = function() {
-  this.setArtifactTypeObject(undefined);
+  return this.setArtifactTypeObject(undefined);
 };
 
 
@@ -4814,9 +5030,12 @@ proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.getType = function
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.UpdateArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -4830,17 +5049,21 @@ proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.getArtifactTypeObj
 };
 
 
-/** @param {?proto.google.protobuf.Any|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.taxonomy.model.artifact.UpdateArtifactRequest} returns this
+*/
 proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.setArtifactTypeObject = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.UpdateArtifactRequest} returns this
  */
 proto.taxonomy.model.artifact.UpdateArtifactRequest.prototype.clearArtifactTypeObject = function() {
-  this.setArtifactTypeObject(undefined);
+  return this.setArtifactTypeObject(undefined);
 };
 
 
@@ -5000,9 +5223,12 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.getType = functio
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.UpdateArtifactResponse} returns this
+ */
 proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -5015,9 +5241,12 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.getUpdated = func
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.model.artifact.UpdateArtifactResponse} returns this
+ */
 proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.setUpdated = function(value) {
-  jspb.Message.setProto3BooleanField(this, 2, value);
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -5031,17 +5260,21 @@ proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.getArtifactTypeOb
 };
 
 
-/** @param {?proto.google.protobuf.Any|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.taxonomy.model.artifact.UpdateArtifactResponse} returns this
+*/
 proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.setArtifactTypeObject = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.UpdateArtifactResponse} returns this
  */
 proto.taxonomy.model.artifact.UpdateArtifactResponse.prototype.clearArtifactTypeObject = function() {
-  this.setArtifactTypeObject(undefined);
+  return this.setArtifactTypeObject(undefined);
 };
 
 
@@ -5178,17 +5411,21 @@ proto.taxonomy.model.artifact.DeleteArtifactRequest.prototype.getArtifactSymbol 
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
+ * @return {!proto.taxonomy.model.artifact.DeleteArtifactRequest} returns this
+*/
 proto.taxonomy.model.artifact.DeleteArtifactRequest.prototype.setArtifactSymbol = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.DeleteArtifactRequest} returns this
  */
 proto.taxonomy.model.artifact.DeleteArtifactRequest.prototype.clearArtifactSymbol = function() {
-  this.setArtifactSymbol(undefined);
+  return this.setArtifactSymbol(undefined);
 };
 
 
@@ -5322,9 +5559,12 @@ proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.getDeleted = func
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.model.artifact.DeleteArtifactResponse} returns this
+ */
 proto.taxonomy.model.artifact.DeleteArtifactResponse.prototype.setDeleted = function(value) {
-  jspb.Message.setProto3BooleanField(this, 1, value);
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -5480,17 +5720,21 @@ proto.taxonomy.model.artifact.FormulaGrammar.prototype.getSingleTokenGrammar = f
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.SingleTokenGrammar|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.SingleTokenGrammar|undefined} value
+ * @return {!proto.taxonomy.model.artifact.FormulaGrammar} returns this
+*/
 proto.taxonomy.model.artifact.FormulaGrammar.prototype.setSingleTokenGrammar = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.FormulaGrammar} returns this
  */
 proto.taxonomy.model.artifact.FormulaGrammar.prototype.clearSingleTokenGrammar = function() {
-  this.setSingleTokenGrammar(undefined);
+  return this.setSingleTokenGrammar(undefined);
 };
 
 
@@ -5513,17 +5757,21 @@ proto.taxonomy.model.artifact.FormulaGrammar.prototype.getHybridGrammar = functi
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.HybridTokenGrammar|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.HybridTokenGrammar|undefined} value
+ * @return {!proto.taxonomy.model.artifact.FormulaGrammar} returns this
+*/
 proto.taxonomy.model.artifact.FormulaGrammar.prototype.setHybridGrammar = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.FormulaGrammar} returns this
  */
 proto.taxonomy.model.artifact.FormulaGrammar.prototype.clearHybridGrammar = function() {
-  this.setHybridGrammar(undefined);
+  return this.setHybridGrammar(undefined);
 };
 
 
@@ -5546,17 +5794,21 @@ proto.taxonomy.model.artifact.FormulaGrammar.prototype.getHybridWithHybridsGramm
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar|undefined} value
+ * @return {!proto.taxonomy.model.artifact.FormulaGrammar} returns this
+*/
 proto.taxonomy.model.artifact.FormulaGrammar.prototype.setHybridWithHybridsGrammar = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.FormulaGrammar} returns this
  */
 proto.taxonomy.model.artifact.FormulaGrammar.prototype.clearHybridWithHybridsGrammar = function() {
-  this.setHybridWithHybridsGrammar(undefined);
+  return this.setHybridWithHybridsGrammar(undefined);
 };
 
 
@@ -5739,17 +5991,21 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.getParent = function(
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.SingleTokenGrammar|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.SingleTokenGrammar|undefined} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenGrammar} returns this
+*/
 proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.setParent = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.HybridTokenGrammar} returns this
  */
 proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.clearParent = function() {
-  this.setParent(undefined);
+  return this.setParent(undefined);
 };
 
 
@@ -5771,9 +6027,12 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.getChildrenStart = fu
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenGrammar} returns this
+ */
 proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.setChildrenStart = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5787,9 +6046,12 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.getChildTokensList = 
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.SingleTokenGrammar>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.SingleTokenGrammar>} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenGrammar} returns this
+*/
 proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.setChildTokensList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -5805,9 +6067,10 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.addChildTokens = func
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.HybridTokenGrammar} returns this
  */
 proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.clearChildTokensList = function() {
-  this.setChildTokensList([]);
+  return this.setChildTokensList([]);
 };
 
 
@@ -5820,9 +6083,12 @@ proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.getChildrenEnd = func
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenGrammar} returns this
+ */
 proto.taxonomy.model.artifact.HybridTokenGrammar.prototype.setChildrenEnd = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -5996,17 +6262,21 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.get
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.SingleTokenGrammar|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.SingleTokenGrammar|undefined} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar} returns this
+*/
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.setParent = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar} returns this
  */
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.clearParent = function() {
-  this.setParent(undefined);
+  return this.setParent(undefined);
 };
 
 
@@ -6028,9 +6298,12 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.get
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar} returns this
+ */
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.setHybridChildrenStart = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6044,9 +6317,12 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.get
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.HybridTokenGrammar>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.HybridTokenGrammar>} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar} returns this
+*/
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.setHybridChildTokensList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -6062,9 +6338,10 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.add
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar} returns this
  */
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.clearHybridChildTokensList = function() {
-  this.setHybridChildTokensList([]);
+  return this.setHybridChildTokensList([]);
 };
 
 
@@ -6077,9 +6354,12 @@ proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.get
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar} returns this
+ */
 proto.taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar.prototype.setHybridChildrenEnd = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -6256,9 +6536,12 @@ proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.getGroupStart = funct
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.SingleTokenGrammar} returns this
+ */
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.setGroupStart = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6271,9 +6554,12 @@ proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.getBaseTokenToolingSy
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.SingleTokenGrammar} returns this
+ */
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.setBaseTokenToolingSymbol = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -6287,17 +6573,21 @@ proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.getBehaviors = functi
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.BehaviorList|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.BehaviorList|undefined} value
+ * @return {!proto.taxonomy.model.artifact.SingleTokenGrammar} returns this
+*/
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.setBehaviors = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.SingleTokenGrammar} returns this
  */
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.clearBehaviors = function() {
-  this.setBehaviors(undefined);
+  return this.setBehaviors(undefined);
 };
 
 
@@ -6320,17 +6610,21 @@ proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.getPropertySets = fun
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.PropertySetList|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.PropertySetList|undefined} value
+ * @return {!proto.taxonomy.model.artifact.SingleTokenGrammar} returns this
+*/
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.setPropertySets = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.SingleTokenGrammar} returns this
  */
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.clearPropertySets = function() {
-  this.setPropertySets(undefined);
+  return this.setPropertySets(undefined);
 };
 
 
@@ -6352,9 +6646,12 @@ proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.getGroupEnd = functio
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.SingleTokenGrammar} returns this
+ */
 proto.taxonomy.model.artifact.SingleTokenGrammar.prototype.setGroupEnd = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -6510,9 +6807,12 @@ proto.taxonomy.model.artifact.BehaviorList.prototype.getListStart = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.BehaviorList} returns this
+ */
 proto.taxonomy.model.artifact.BehaviorList.prototype.setListStart = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -6525,26 +6825,31 @@ proto.taxonomy.model.artifact.BehaviorList.prototype.getBehaviorToolingSymbolsLi
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.taxonomy.model.artifact.BehaviorList} returns this
+ */
 proto.taxonomy.model.artifact.BehaviorList.prototype.setBehaviorToolingSymbolsList = function(value) {
-  jspb.Message.setField(this, 2, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.taxonomy.model.artifact.BehaviorList} returns this
  */
 proto.taxonomy.model.artifact.BehaviorList.prototype.addBehaviorToolingSymbols = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.BehaviorList} returns this
  */
 proto.taxonomy.model.artifact.BehaviorList.prototype.clearBehaviorToolingSymbolsList = function() {
-  this.setBehaviorToolingSymbolsList([]);
+  return this.setBehaviorToolingSymbolsList([]);
 };
 
 
@@ -6557,9 +6862,12 @@ proto.taxonomy.model.artifact.BehaviorList.prototype.getListEnd = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.BehaviorList} returns this
+ */
 proto.taxonomy.model.artifact.BehaviorList.prototype.setListEnd = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -6706,9 +7014,12 @@ proto.taxonomy.model.artifact.PropertySetList.prototype.getListStart = function(
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.PropertySetList} returns this
+ */
 proto.taxonomy.model.artifact.PropertySetList.prototype.setListStart = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -6722,9 +7033,12 @@ proto.taxonomy.model.artifact.PropertySetList.prototype.getPropertySetsList = fu
 };
 
 
-/** @param {!Array<!proto.taxonomy.model.artifact.PropertySetListItem>} value */
+/**
+ * @param {!Array<!proto.taxonomy.model.artifact.PropertySetListItem>} value
+ * @return {!proto.taxonomy.model.artifact.PropertySetList} returns this
+*/
 proto.taxonomy.model.artifact.PropertySetList.prototype.setPropertySetsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -6740,9 +7054,10 @@ proto.taxonomy.model.artifact.PropertySetList.prototype.addPropertySets = functi
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.taxonomy.model.artifact.PropertySetList} returns this
  */
 proto.taxonomy.model.artifact.PropertySetList.prototype.clearPropertySetsList = function() {
-  this.setPropertySetsList([]);
+  return this.setPropertySetsList([]);
 };
 
 
@@ -6867,9 +7182,12 @@ proto.taxonomy.model.artifact.PropertySetListItem.prototype.getPropertySetSymbol
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.PropertySetListItem} returns this
+ */
 proto.taxonomy.model.artifact.PropertySetListItem.prototype.setPropertySetSymbol = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6994,9 +7312,12 @@ proto.taxonomy.model.artifact.CommitUpdatesRequest.prototype.getCommitMessage = 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.CommitUpdatesRequest} returns this
+ */
 proto.taxonomy.model.artifact.CommitUpdatesRequest.prototype.setCommitMessage = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7121,9 +7442,12 @@ proto.taxonomy.model.artifact.CommitUpdatesResponse.prototype.getResult = functi
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.CommitUpdatesResponse} returns this
+ */
 proto.taxonomy.model.artifact.CommitUpdatesResponse.prototype.setResult = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7349,9 +7673,12 @@ proto.taxonomy.model.artifact.IssuePullResponse.prototype.getResponse = function
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.IssuePullResponse} returns this
+ */
 proto.taxonomy.model.artifact.IssuePullResponse.prototype.setResponse = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7601,9 +7928,12 @@ proto.taxonomy.model.artifact.ServiceConfiguration.prototype.getReadOnly = funct
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.model.artifact.ServiceConfiguration} returns this
+ */
 proto.taxonomy.model.artifact.ServiceConfiguration.prototype.setReadOnly = function(value) {
-  jspb.Message.setProto3BooleanField(this, 1, value);
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -7616,9 +7946,12 @@ proto.taxonomy.model.artifact.ServiceConfiguration.prototype.getGitId = function
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ServiceConfiguration} returns this
+ */
 proto.taxonomy.model.artifact.ServiceConfiguration.prototype.setGitId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -7631,9 +7964,12 @@ proto.taxonomy.model.artifact.ServiceConfiguration.prototype.getGitBranch = func
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.ServiceConfiguration} returns this
+ */
 proto.taxonomy.model.artifact.ServiceConfiguration.prototype.setGitBranch = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7820,9 +8156,12 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.getArtifactType = function(
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.QueryOptions} returns this
+ */
 proto.taxonomy.model.artifact.QueryOptions.prototype.setArtifactType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -7835,9 +8174,12 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.getMaxItemReturn = function
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.taxonomy.model.artifact.QueryOptions} returns this
+ */
 proto.taxonomy.model.artifact.QueryOptions.prototype.setMaxItemReturn = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -7850,9 +8192,12 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.getLastItemIndex = function
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.taxonomy.model.artifact.QueryOptions} returns this
+ */
 proto.taxonomy.model.artifact.QueryOptions.prototype.setLastItemIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -7865,9 +8210,12 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.getByClassification = funct
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.model.artifact.QueryOptions} returns this
+ */
 proto.taxonomy.model.artifact.QueryOptions.prototype.setByClassification = function(value) {
-  jspb.Message.setProto3BooleanField(this, 4, value);
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -7881,17 +8229,21 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.getClassification = functio
 };
 
 
-/** @param {?proto.taxonomy.model.artifact.Classification|undefined} value */
+/**
+ * @param {?proto.taxonomy.model.artifact.Classification|undefined} value
+ * @return {!proto.taxonomy.model.artifact.QueryOptions} returns this
+*/
 proto.taxonomy.model.artifact.QueryOptions.prototype.setClassification = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.QueryOptions} returns this
  */
 proto.taxonomy.model.artifact.QueryOptions.prototype.clearClassification = function() {
-  this.setClassification(undefined);
+  return this.setClassification(undefined);
 };
 
 
@@ -7913,9 +8265,12 @@ proto.taxonomy.model.artifact.QueryOptions.prototype.getIncludeHybrids = functio
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.model.artifact.QueryOptions} returns this
+ */
 proto.taxonomy.model.artifact.QueryOptions.prototype.setIncludeHybrids = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -8090,9 +8445,12 @@ proto.taxonomy.model.artifact.QueryResult.prototype.getArtifactType = function()
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.QueryResult} returns this
+ */
 proto.taxonomy.model.artifact.QueryResult.prototype.setArtifactType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -8105,9 +8463,12 @@ proto.taxonomy.model.artifact.QueryResult.prototype.getFirstItemIndex = function
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.taxonomy.model.artifact.QueryResult} returns this
+ */
 proto.taxonomy.model.artifact.QueryResult.prototype.setFirstItemIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -8120,9 +8481,12 @@ proto.taxonomy.model.artifact.QueryResult.prototype.getLastItemIndex = function(
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.taxonomy.model.artifact.QueryResult} returns this
+ */
 proto.taxonomy.model.artifact.QueryResult.prototype.setLastItemIndex = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -8135,9 +8499,12 @@ proto.taxonomy.model.artifact.QueryResult.prototype.getTotalItemsInCollection = 
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.taxonomy.model.artifact.QueryResult} returns this
+ */
 proto.taxonomy.model.artifact.QueryResult.prototype.setTotalItemsInCollection = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -8151,17 +8518,21 @@ proto.taxonomy.model.artifact.QueryResult.prototype.getArtifactCollection = func
 };
 
 
-/** @param {?proto.google.protobuf.Any|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.taxonomy.model.artifact.QueryResult} returns this
+*/
 proto.taxonomy.model.artifact.QueryResult.prototype.setArtifactCollection = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.QueryResult} returns this
  */
 proto.taxonomy.model.artifact.QueryResult.prototype.clearArtifactCollection = function() {
-  this.setArtifactCollection(undefined);
+  return this.setArtifactCollection(undefined);
 };
 
 
@@ -8295,9 +8666,12 @@ proto.taxonomy.model.artifact.TokenTemplateId.prototype.getDefinitionId = functi
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.TokenTemplateId} returns this
+ */
 proto.taxonomy.model.artifact.TokenTemplateId.prototype.setDefinitionId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8422,9 +8796,12 @@ proto.taxonomy.model.artifact.Identifier.prototype.getId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.Identifier} returns this
+ */
 proto.taxonomy.model.artifact.Identifier.prototype.setId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8561,9 +8938,12 @@ proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.getTemplateFormula
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.NewTemplateDefinition} returns this
+ */
 proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.setTemplateFormulaId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8576,9 +8956,12 @@ proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.getTokenName = fun
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.NewTemplateDefinition} returns this
+ */
 proto.taxonomy.model.artifact.NewTemplateDefinition.prototype.setTokenName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8763,9 +9146,12 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.getArtifact
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.setArtifactType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -8778,9 +9164,12 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.getName = f
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -8793,9 +9182,12 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.getSymbol =
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.setSymbol = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -8808,9 +9200,12 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.getTemplate
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TemplateType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.TemplateType} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.setTemplateType = function(value) {
-  jspb.Message.setProto3EnumField(this, 4, value);
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -8823,9 +9218,12 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.getTokenTyp
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TokenType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.TokenType} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.setTokenType = function(value) {
-  jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -8838,9 +9236,12 @@ proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.getTokenUni
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.TokenUnit} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.TokenUnit} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactRequest} returns this
+ */
 proto.taxonomy.model.artifact.InitializeNewArtifactRequest.prototype.setTokenUnit = function(value) {
-  jspb.Message.setProto3EnumField(this, 6, value);
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
@@ -8979,9 +9380,12 @@ proto.taxonomy.model.artifact.InitializeNewArtifactResponse.prototype.getArtifac
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactResponse} returns this
+ */
 proto.taxonomy.model.artifact.InitializeNewArtifactResponse.prototype.setArtifactType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -8995,17 +9399,21 @@ proto.taxonomy.model.artifact.InitializeNewArtifactResponse.prototype.getArtifac
 };
 
 
-/** @param {?proto.google.protobuf.Any|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactResponse} returns this
+*/
 proto.taxonomy.model.artifact.InitializeNewArtifactResponse.prototype.setArtifact = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.taxonomy.model.artifact.InitializeNewArtifactResponse} returns this
  */
 proto.taxonomy.model.artifact.InitializeNewArtifactResponse.prototype.clearArtifact = function() {
-  this.setArtifact(undefined);
+  return this.setArtifact(undefined);
 };
 
 

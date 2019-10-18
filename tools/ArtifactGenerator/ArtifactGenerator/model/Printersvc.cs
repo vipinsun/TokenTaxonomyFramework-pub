@@ -24,14 +24,15 @@ namespace TTI.TTF.Taxonomy {
     static PrintersvcReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBwcmludGVyc3ZjLnByb3RvEgp0dGZwcmludGVyGg5hcnRpZmFjdC5wcm90",
-            "byJQCg1QcmludEFydGlmYWN0EjMKBHR5cGUYASABKA4yJS50YXhvbm9teS5t",
-            "b2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSCgoCaWQYAiABKAkiHwoPUHJp",
-            "bnRUVEZPcHRpb25zEgwKBGJvb2sYASABKAgiKAoLUHJpbnRSZXN1bHQSGQoR",
-            "b3Blbl94bWxfZG9jdW1lbnQYASABKAkyngEKDlByaW50ZXJTZXJ2aWNlEkgK",
-            "EFByaW50VFRGQXJ0aWZhY3QSGS50dGZwcmludGVyLlByaW50QXJ0aWZhY3Qa",
-            "Fy50dGZwcmludGVyLlByaW50UmVzdWx0IgASQgoIUHJpbnRUVEYSGy50dGZw",
-            "cmludGVyLlByaW50VFRGT3B0aW9ucxoXLnR0ZnByaW50ZXIuUHJpbnRSZXN1",
+            "ChBwcmludGVyc3ZjLnByb3RvEhN0YXhvbm9teS50dGZwcmludGVyGg5hcnRp",
+            "ZmFjdC5wcm90byJQCg1QcmludEFydGlmYWN0EjMKBHR5cGUYASABKA4yJS50",
+            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSCgoCaWQYAiAB",
+            "KAkiHwoPUHJpbnRUVEZPcHRpb25zEgwKBGJvb2sYASABKAgiKAoLUHJpbnRS",
+            "ZXN1bHQSGQoRb3Blbl94bWxfZG9jdW1lbnQYASABKAkywgEKDlByaW50ZXJT",
+            "ZXJ2aWNlEloKEFByaW50VFRGQXJ0aWZhY3QSIi50YXhvbm9teS50dGZwcmlu",
+            "dGVyLlByaW50QXJ0aWZhY3QaIC50YXhvbm9teS50dGZwcmludGVyLlByaW50",
+            "UmVzdWx0IgASVAoIUHJpbnRUVEYSJC50YXhvbm9teS50dGZwcmludGVyLlBy",
+            "aW50VFRGT3B0aW9ucxogLnRheG9ub215LnR0ZnByaW50ZXIuUHJpbnRSZXN1",
             "bHQiAEIrChRvcmcudHRpLnR0Zi50YXhvbm9teVABqgIQVFRJLlRURi5UYXhv",
             "bm9teWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,

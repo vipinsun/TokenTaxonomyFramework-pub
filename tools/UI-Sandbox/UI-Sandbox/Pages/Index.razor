@@ -1,0 +1,15 @@
+@page "/"
+@using Telerik.Blazor.Components
+@using TTI.TTF.Taxonomy.Model.Artifact
+@page "{ArtifactId:string?}"
+@page "{ArtifactType:int?}"
+<h1>Select a TTF Artifact</h1>
+
+<h2>Artifact: "@ArtifactId"</h2>
+
+ @code {
+     [Parameter]
+     public string ArtifactId { get; set; }
+     [Parameter]
+     public ArtifactType ArtifactType { get; set; }
+ }

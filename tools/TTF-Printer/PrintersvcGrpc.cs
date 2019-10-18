@@ -36,6 +36,22 @@ namespace TTI.TTF.Taxonomy {
       get { return global::TTI.TTF.Taxonomy.PrintersvcReflection.Descriptor.Services[0]; }
     }
 
+    /// <summary>Base class for server-side implementations of PrinterService</summary>
+    [grpc::BindServiceMethod(typeof(PrinterService), "BindService")]
+    public abstract partial class PrinterServiceBase
+    {
+      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifact(global::TTI.TTF.Taxonomy.PrintArtifact request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.PrintResult> PrintTTF(global::TTI.TTF.Taxonomy.PrintTTFOptions request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
     /// <summary>Client for PrinterService</summary>
     public partial class PrinterServiceClient : grpc::ClientBase<PrinterServiceClient>
     {
@@ -96,6 +112,25 @@ namespace TTI.TTF.Taxonomy {
       {
         return new PrinterServiceClient(configuration);
       }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    public static grpc::ServerServiceDefinition BindService(PrinterServiceBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_PrintTTFArtifact, serviceImpl.PrintTTFArtifact)
+          .AddMethod(__Method_PrintTTF, serviceImpl.PrintTTF).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, PrinterServiceBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_PrintTTFArtifact, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.PrintArtifact, global::TTI.TTF.Taxonomy.PrintResult>(serviceImpl.PrintTTFArtifact));
+      serviceBinder.AddMethod(__Method_PrintTTF, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TTI.TTF.Taxonomy.PrintTTFOptions, global::TTI.TTF.Taxonomy.PrintResult>(serviceImpl.PrintTTF));
     }
 
   }
