@@ -75,14 +75,14 @@ namespace TTI.TTF.Taxonomy
 						return;
 					case 1 when args[0] == "--a":
 						_log.Info("Printing all artifacts individually.");
-						PrinterClient.PrintTTF(new PrintTTFOptions
+						var g = PrinterClient.PrintTTF(new PrintTTFOptions
 						{
 							Book = false
 						});
 						return;
 					case 1 when args[0] == "--b":
 						_log.Info("Printing all artifacts in a Book.");
-						PrinterClient.PrintTTF(new PrintTTFOptions
+						var s = PrinterClient.PrintTTF(new PrintTTFOptions
 						{
 							Book = true
 						});

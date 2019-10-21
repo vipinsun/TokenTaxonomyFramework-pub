@@ -51,6 +51,18 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             }
 
             GenerateArtifactSymbol(document, artifact.ArtifactSymbol);
+            if (artifact.Contributors != null && artifact.Contributors.Count > 0)
+            {
+                var contPara = body.AppendChild(new Paragraph());
+                var contRun = contPara.AppendChild(new Run());
+                contRun.AppendChild(new Text("Contributors"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", contPara);
+
+                var conPara = body.AppendChild(new Paragraph());
+                var conRun = conPara.AppendChild(new Run());
+                conRun.AppendChild(AddContributorsTable(document, artifact.Contributors));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", conPara);
+            }
 
             var aDef = body.AppendChild(new Paragraph());
             var adRun = aDef.AppendChild(new Run());
@@ -620,6 +632,43 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             return referenceMapTable;
         }
 
+        private static Table AddContributorsTable(WordprocessingDocument document,
+            IEnumerable<Contributor> contributors)
+        {
+            var contributorsTable = new Table();
+            var tr1 = new TableRow();
+            var name1 = new TableCell();
+            var org1 = new TableCell();
+            name1.Append(new Paragraph(new Run(new Text("Name"))));
+            var width = new TableCellWidth {Width = "15", Type = Pct};
+            name1.Append(new TableCellProperties(
+                width));
+            org1.Append(new Paragraph(new Run(new Text("Organization"))));
+            var element = new TableCellWidth {Type = Pct, Width = "15"};
+            org1.Append(new TableCellProperties(
+                element));
+           
+            tr1.Append(name1);
+            tr1.Append(org1);
+            contributorsTable.Append(tr1);
+
+            foreach (var im in contributors)
+            {
+                var tr = new TableRow();
+                var name = new TableCell();
+                var org = new TableCell();
+              
+                name.Append(new Paragraph(new Run(new Text(im.Name))));
+                org.Append(new Paragraph(new Run(new Text(im.Organization))));
+                tr.Append(name);
+                tr.Append(org);
+                contributorsTable.Append(tr);
+            }
+
+            Utils.ApplyStyleTable(document, "GridTable4-Accent1", "GridTable4-Accent1", contributorsTable);
+            return contributorsTable;
+        }
+                
         private static Table BuildImplementationTable(WordprocessingDocument document,
             IEnumerable<MapReference> references)
         {
