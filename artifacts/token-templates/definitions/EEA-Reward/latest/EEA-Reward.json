@@ -57,7 +57,29 @@
       "implementationReferences": [],
       "resources": [],
       "artifact": null
-    }
+    },
+    "contributors": [
+      {
+        "name": "Sanjay Bakshi",
+        "organization": "Intel"
+      },
+      {
+        "name": "Andreas Freund",
+        "organization": "Consensys"
+      },
+      {
+        "name": "Marley Gray",
+        "organization": "Microsoft"
+      },
+      {
+        "name": " Niv Aviram",
+        "organization": "Consensys"
+      },
+      {
+        "name": "Daniel Norkin",
+        "organization": "Envision Blockchain"
+      }
+    ]
   },
   "formulaReference": {
     "id": "5ee615b1-56da-4783-b129-d2dea21dadef",

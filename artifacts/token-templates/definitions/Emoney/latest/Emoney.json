@@ -91,7 +91,17 @@
           "maps": null
         }
       ]
-    }
+    },
+    "contributors": [
+      {
+        "name": "Julio Faura",
+        "organization": "Adhara"
+      },
+      {
+        "name": "Daniel Lehrner",
+        "organization": "IO Builders"
+      }
+    ]
   },
   "formulaReference": {
     "id": "a46301ea-5791-4a21-aa20-e3b6aeb53343",

@@ -83,7 +83,17 @@
         }
       ],
       "artifact": null
-    }
+    },
+    "contributors": [
+      {
+        "name": "Julio Faura",
+        "organization": "Adhara"
+      },
+      {
+        "name": "Daniel Lehrner",
+        "organization": "IO Builders"
+      }
+    ]
   },
   "invocations": [
     {

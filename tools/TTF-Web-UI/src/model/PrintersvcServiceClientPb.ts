@@ -1,6 +1,6 @@
 /* eslint-disable */
 /**
- * @fileoverview gRPC-Web generated client stub for ttfprinter
+ * @fileoverview gRPC-Web generated client stub for taxonomy.ttfprinter
  * @enhanceable
  * @public
  */
@@ -51,7 +51,7 @@ export class PrinterServiceClient {
                response: PrintResult) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ttfprinter.PrinterService/PrintTTFArtifact',
+        '/taxonomy.ttfprinter.PrinterService/PrintTTFArtifact',
       request,
       metadata || {},
       this.methodInfoPrintTTFArtifact,
@@ -73,7 +73,7 @@ export class PrinterServiceClient {
                response: PrintResult) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ttfprinter.PrinterService/PrintTTF',
+        '/taxonomy.ttfprinter.PrinterService/PrintTTF',
       request,
       metadata || {},
       this.methodInfoPrintTTF,
