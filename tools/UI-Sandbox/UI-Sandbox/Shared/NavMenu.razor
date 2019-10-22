@@ -1,0 +1,191 @@
+﻿@using TTI.TTF.Taxonomy.Model.Artifact
+@using TTI.TTF.UISandbox.Models
+@inject NavigationManager NavigationManager
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">TTF UI-Sandbox</a>
+</div>
+
+<TelerikTreeView Data="@FlatData">
+  <TreeViewBindings>
+      <TreeViewBinding ParentIdField="Parent" ExpandedField="IsExpanded"></TreeViewBinding>
+  </TreeViewBindings>
+</TelerikTreeView>
+
+
+@code {
+   
+    private IEnumerable<ArtifactItem> FlatData { get; set; }
+
+    protected override void OnInitialized()
+    {
+        LoadTaxonomyNav();
+    }
+
+    private void LoadTaxonomyNav()
+    {
+        var roots = new List<ArtifactItem>();
+
+        var bases = new ArtifactItem
+        {
+            Id = 1,
+            Text = "Token Bases",
+            Items = new List<ArtifactItem>(),
+            HasChildren = true,
+            Icon = "folder"
+        };
+        var x = 7;
+        foreach (var b in TaxonomyService.Taxonomy.BaseTokenTypes.Values)
+        {
+            x++;
+            bases.Items.Add(GetArtifactItem(b.Artifact, 1, x));
+        }
+
+        roots.Add(bases);
+
+        var behaviors = new ArtifactItem
+        {
+            Id = 2,
+            Text = "Behaviors",
+            Items = new List<ArtifactItem>(),
+            HasChildren = true,
+            Icon = "folder"
+        };
+
+        foreach (var b in TaxonomyService.Taxonomy.Behaviors.Values)
+        {
+            x++;
+            behaviors.Items.Add(GetArtifactItem(b.Artifact,2, x));
+        }
+
+        roots.Add(behaviors);
+
+        var behaviorGroups = new ArtifactItem
+        {
+            Id = 3,
+            Text = "Behavior Groups",
+            Items = new List<ArtifactItem>(),
+            HasChildren = true,
+            Icon = "folder"
+        };
+
+        foreach (var b in TaxonomyService.Taxonomy.BehaviorGroups.Values)
+        {
+            x++;
+            behaviorGroups.Items.Add(GetArtifactItem(b.Artifact,3, x));
+        }
+
+        roots.Add(behaviorGroups);
+
+        var propertySets = new ArtifactItem
+        {
+            Id = 4,
+            Text = "Property Sets",
+            Items = new List<ArtifactItem>(),
+            HasChildren = true,
+            Icon = "folder"
+        };
+
+        foreach (var b in TaxonomyService.Taxonomy.PropertySets.Values)
+        {
+            x++;
+            propertySets.Items.Add(GetArtifactItem(b.Artifact,4, x));
+        }
+
+        roots.Add(propertySets);
+
+        var formulas = new ArtifactItem
+        {
+            Id = 5,
+            Text = "Template Formulas",
+            Items = new List<ArtifactItem>(),
+            HasChildren = true,
+            Icon = "folder"
+        };
+
+        foreach (var b in TaxonomyService.Taxonomy.TemplateFormulas.Values)
+        {
+            x++;
+            formulas.Items.Add(GetArtifactItem(b.Artifact,5, x));
+        }
+
+        roots.Add(formulas);
+
+        var definitions = new ArtifactItem
+        {
+            Id = 6,
+            Text = "Template Definitions",
+            Items = new List<ArtifactItem>(),
+            HasChildren = true,
+            Icon = "folder"
+        };
+
+        foreach (var b in TaxonomyService.Taxonomy.TemplateDefinitions.Values)
+        {
+            x++;
+            definitions.Items.Add(GetArtifactItem(b.Artifact, 6, x));
+        }
+
+        roots.Add(definitions);
+
+        var specs = new ArtifactItem
+        {
+            Id = 7,
+            Text = "Token Specifications",
+            Items = new List<ArtifactItem>(),
+            HasChildren = true,
+            Icon = "folder"
+        };
+
+        foreach (var b in TaxonomyService.Taxonomy.TemplateDefinitions.Values)
+        {
+            x++;
+            specs.Items.Add(GetArtifactItem(b.Artifact, 7, 8));
+        }
+
+        roots.Add(definitions);
+
+        FlatData = roots;
+    }
+
+    /*
+    private void OnMenuItemClicked(ArtifactItem item)
+    {
+        if (!string.IsNullOrEmpty(item.Url) && IsInternalPage(item.Url))
+        {
+            SelectedArtifactItem = item;
+        }
+    }
+
+    public ArtifactItem SelectedArtifactItem { get; set; }
+
+    private bool CompareCurrentPageUrl(string urlToCompare)
+    {
+        return NavigationManager.Uri.Substring(NavigationManager.BaseUri.Length - 1).Equals(urlToCompare);
+    }
+
+    private static bool IsInternalPage(string url)
+    {
+        if (string.IsNullOrEmpty(url))
+        {
+            return false;
+        }
+        return !(url.StartsWith("https://") || url.StartsWith("http://"));
+    }*/
+
+    private static ArtifactItem GetArtifactItem(Artifact a, int parentId, int thisId)
+    {
+        return new ArtifactItem
+        {
+            Id = thisId,
+            Text = a.Name,
+            ArtifactId = a.ArtifactSymbol.Id,
+            Url = a.ArtifactSymbol.Type + "/" + a.ArtifactSymbol.Id,
+            ArtifactType = a.ArtifactSymbol.Type,
+            ParentId = parentId,
+            Icon = "js"
+        };
+    }
+
+}
+}
