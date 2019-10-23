@@ -25,20 +25,20 @@ namespace TTI.TTF.Taxonomy {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChBwcmludGVyc3ZjLnByb3RvEhN0YXhvbm9teS50dGZwcmludGVyGg5hcnRp",
-            "ZmFjdC5wcm90byJQCg1QcmludEFydGlmYWN0EjMKBHR5cGUYASABKA4yJS50",
-            "YXhvbm9teS5tb2RlbC5hcnRpZmFjdC5BcnRpZmFjdFR5cGUSCgoCaWQYAiAB",
-            "KAkiHwoPUHJpbnRUVEZPcHRpb25zEgwKBGJvb2sYASABKAgiKAoLUHJpbnRS",
-            "ZXN1bHQSGQoRb3Blbl94bWxfZG9jdW1lbnQYASABKAkywgEKDlByaW50ZXJT",
-            "ZXJ2aWNlEloKEFByaW50VFRGQXJ0aWZhY3QSIi50YXhvbm9teS50dGZwcmlu",
-            "dGVyLlByaW50QXJ0aWZhY3QaIC50YXhvbm9teS50dGZwcmludGVyLlByaW50",
-            "UmVzdWx0IgASVAoIUHJpbnRUVEYSJC50YXhvbm9teS50dGZwcmludGVyLlBy",
-            "aW50VFRGT3B0aW9ucxogLnRheG9ub215LnR0ZnByaW50ZXIuUHJpbnRSZXN1",
-            "bHQiAEIrChRvcmcudHRpLnR0Zi50YXhvbm9teVABqgIQVFRJLlRURi5UYXhv",
-            "bm9teWIGcHJvdG8z"));
+            "ZmFjdC5wcm90byJSCg9BcnRpZmFjdFRvUHJpbnQSMwoEdHlwZRgBIAEoDjIl",
+            "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIKCgJpZBgC",
+            "IAEoCSIfCg9QcmludFRURk9wdGlvbnMSDAoEYm9vaxgBIAEoCCIoCgtQcmlu",
+            "dFJlc3VsdBIZChFvcGVuX3htbF9kb2N1bWVudBgBIAEoCTLEAQoOUHJpbnRl",
+            "clNlcnZpY2USXAoQUHJpbnRUVEZBcnRpZmFjdBIkLnRheG9ub215LnR0ZnBy",
+            "aW50ZXIuQXJ0aWZhY3RUb1ByaW50GiAudGF4b25vbXkudHRmcHJpbnRlci5Q",
+            "cmludFJlc3VsdCIAElQKCFByaW50VFRGEiQudGF4b25vbXkudHRmcHJpbnRl",
+            "ci5QcmludFRURk9wdGlvbnMaIC50YXhvbm9teS50dGZwcmludGVyLlByaW50",
+            "UmVzdWx0IgBCKwoUb3JnLnR0aS50dGYudGF4b25vbXlQAaoCEFRUSS5UVEYu",
+            "VGF4b25vbXliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintArtifact), global::TTI.TTF.Taxonomy.PrintArtifact.Parser, new[]{ "Type", "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ArtifactToPrint), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser, new[]{ "Type", "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintTTFOptions), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser, new[]{ "Book" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintResult), global::TTI.TTF.Taxonomy.PrintResult.Parser, new[]{ "OpenXmlDocument" }, null, null, null, null)
           }));
@@ -47,11 +47,11 @@ namespace TTI.TTF.Taxonomy {
 
   }
   #region Messages
-  public sealed partial class PrintArtifact : pb::IMessage<PrintArtifact> {
-    private static readonly pb::MessageParser<PrintArtifact> _parser = new pb::MessageParser<PrintArtifact>(() => new PrintArtifact());
+  public sealed partial class ArtifactToPrint : pb::IMessage<ArtifactToPrint> {
+    private static readonly pb::MessageParser<ArtifactToPrint> _parser = new pb::MessageParser<ArtifactToPrint>(() => new ArtifactToPrint());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<PrintArtifact> Parser { get { return _parser; } }
+    public static pb::MessageParser<ArtifactToPrint> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -64,22 +64,22 @@ namespace TTI.TTF.Taxonomy {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PrintArtifact() {
+    public ArtifactToPrint() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PrintArtifact(PrintArtifact other) : this() {
+    public ArtifactToPrint(ArtifactToPrint other) : this() {
       type_ = other.type_;
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PrintArtifact Clone() {
-      return new PrintArtifact(this);
+    public ArtifactToPrint Clone() {
+      return new ArtifactToPrint(this);
     }
 
     /// <summary>Field number for the "type" field.</summary>
@@ -106,11 +106,11 @@ namespace TTI.TTF.Taxonomy {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as PrintArtifact);
+      return Equals(other as ArtifactToPrint);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(PrintArtifact other) {
+    public bool Equals(ArtifactToPrint other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -169,7 +169,7 @@ namespace TTI.TTF.Taxonomy {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(PrintArtifact other) {
+    public void MergeFrom(ArtifactToPrint other) {
       if (other == null) {
         return;
       }

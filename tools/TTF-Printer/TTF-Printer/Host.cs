@@ -15,7 +15,7 @@ namespace TTI.TTF.Taxonomy
             _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         }
         
-        public override Task<PrintResult> PrintTTFArtifact(PrintArtifact printArtifact, ServerCallContext ctx)
+        public override Task<PrintResult> PrintTTFArtifact(ArtifactToPrint printArtifact, ServerCallContext ctx)
         {
             _log.Info("gRpc request to PrintTTFArtifact: " + printArtifact.Type + " id: " + printArtifact.Id);
             return Task.FromResult(PrintController.PrintArtifact(printArtifact));

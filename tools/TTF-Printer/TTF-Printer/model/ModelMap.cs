@@ -30,7 +30,8 @@ namespace TTI.TTF.Taxonomy.Model
             TemplateFormulasFolder = TokenTemplatesFolder + FolderSeparator + "formulas";
             TemplateDefinitionsFolder = TokenTemplatesFolder + FolderSeparator + "definitions";
             SpecificationsFolder = TokenTemplatesFolder + FolderSeparator + "specifications";
-            Latest =  "latest" + FolderSeparator;
+            Latest =  "latest";
+            Latest =  "latest";
         }
 
         public static ListDictionary GetClassificationDescription(Classification classification)

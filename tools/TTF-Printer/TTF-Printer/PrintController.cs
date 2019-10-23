@@ -28,7 +28,7 @@ namespace TTI.TTF.Taxonomy
             #endregion
         }
 
-        internal static PrintResult PrintArtifact(PrintArtifact printArtifact)
+        internal static PrintResult PrintArtifact(ArtifactToPrint printArtifact)
         {
             var id = printArtifact.Id;
             switch (printArtifact.Type)
@@ -308,7 +308,7 @@ namespace TTI.TTF.Taxonomy
         
         private static void PrintSpec(TokenSpecification specification)
         {
-            _log.Info("Print Controller printing Property Set: " + specification.Artifact.Name);
+            _log.Info("Print Controller printing Token Specification: " + specification.Artifact.Name);
 
             var trimName = specification.Artifact.Name.Replace(" ", "-");
             _outputFolder = ModelMap.FilePath +  ModelMap.SpecificationsFolder + ModelMap.FolderSeparator + trimName + 
@@ -471,7 +471,6 @@ namespace TTI.TTF.Taxonomy
 			Utils.InsertCustomWatermark(_document, waterMark);
 			Utils.AddFooter(_document, "Token Taxonomy Framework" + " - " + ModelManager.Taxonomy.Version.Version + ": " + ModelManager.Taxonomy.Version.StateHash);
 			Save();
-
             return GetPrintResult();
         }
         
@@ -505,6 +504,7 @@ namespace TTI.TTF.Taxonomy
             }
             _document.Close();
             */
+            _document.Close();
             return retVal;
         }
     }

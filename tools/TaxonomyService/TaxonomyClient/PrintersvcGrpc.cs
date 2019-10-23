@@ -12,15 +12,15 @@ namespace TTI.TTF.Taxonomy {
   {
     static readonly string __ServiceName = "taxonomy.ttfprinter.PrinterService";
 
-    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.PrintArtifact> __Marshaller_taxonomy_ttfprinter_PrintArtifact = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.PrintArtifact.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.ArtifactToPrint> __Marshaller_taxonomy_ttfprinter_ArtifactToPrint = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.PrintResult> __Marshaller_taxonomy_ttfprinter_PrintResult = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.PrintResult.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::TTI.TTF.Taxonomy.PrintTTFOptions> __Marshaller_taxonomy_ttfprinter_PrintTTFOptions = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::TTI.TTF.Taxonomy.PrintArtifact, global::TTI.TTF.Taxonomy.PrintResult> __Method_PrintTTFArtifact = new grpc::Method<global::TTI.TTF.Taxonomy.PrintArtifact, global::TTI.TTF.Taxonomy.PrintResult>(
+    static readonly grpc::Method<global::TTI.TTF.Taxonomy.ArtifactToPrint, global::TTI.TTF.Taxonomy.PrintResult> __Method_PrintTTFArtifact = new grpc::Method<global::TTI.TTF.Taxonomy.ArtifactToPrint, global::TTI.TTF.Taxonomy.PrintResult>(
         grpc::MethodType.Unary,
         __ServiceName,
         "PrintTTFArtifact",
-        __Marshaller_taxonomy_ttfprinter_PrintArtifact,
+        __Marshaller_taxonomy_ttfprinter_ArtifactToPrint,
         __Marshaller_taxonomy_ttfprinter_PrintResult);
 
     static readonly grpc::Method<global::TTI.TTF.Taxonomy.PrintTTFOptions, global::TTI.TTF.Taxonomy.PrintResult> __Method_PrintTTF = new grpc::Method<global::TTI.TTF.Taxonomy.PrintTTFOptions, global::TTI.TTF.Taxonomy.PrintResult>(
@@ -59,19 +59,19 @@ namespace TTI.TTF.Taxonomy {
       {
       }
 
-      public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTFArtifact(global::TTI.TTF.Taxonomy.PrintArtifact request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTFArtifact(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return PrintTTFArtifact(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTFArtifact(global::TTI.TTF.Taxonomy.PrintArtifact request, grpc::CallOptions options)
+      public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTFArtifact(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_PrintTTFArtifact, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifactAsync(global::TTI.TTF.Taxonomy.PrintArtifact request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifactAsync(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return PrintTTFArtifactAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifactAsync(global::TTI.TTF.Taxonomy.PrintArtifact request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifactAsync(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_PrintTTFArtifact, null, options, request);
       }

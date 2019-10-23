@@ -3,7 +3,7 @@ import * as jspb from "google-protobuf"
 
 import * as artifact_pb from './artifact_pb';
 
-export class PrintArtifact extends jspb.Message {
+export class ArtifactToPrint extends jspb.Message {
   getType(): artifact_pb.ArtifactType;
   setType(value: artifact_pb.ArtifactType): void;
 
@@ -11,14 +11,14 @@ export class PrintArtifact extends jspb.Message {
   setId(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PrintArtifact.AsObject;
-  static toObject(includeInstance: boolean, msg: PrintArtifact): PrintArtifact.AsObject;
-  static serializeBinaryToWriter(message: PrintArtifact, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PrintArtifact;
-  static deserializeBinaryFromReader(message: PrintArtifact, reader: jspb.BinaryReader): PrintArtifact;
+  toObject(includeInstance?: boolean): ArtifactToPrint.AsObject;
+  static toObject(includeInstance: boolean, msg: ArtifactToPrint): ArtifactToPrint.AsObject;
+  static serializeBinaryToWriter(message: ArtifactToPrint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ArtifactToPrint;
+  static deserializeBinaryFromReader(message: ArtifactToPrint, reader: jspb.BinaryReader): ArtifactToPrint;
 }
 
-export namespace PrintArtifact {
+export namespace ArtifactToPrint {
   export type AsObject = {
     type: artifact_pb.ArtifactType,
     id: string,

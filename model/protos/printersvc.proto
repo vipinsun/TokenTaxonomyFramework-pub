@@ -8,11 +8,11 @@ option java_package = "org.tti.ttf.taxonomy";
 option java_multiple_files = true;
 
 service PrinterService {
-    rpc PrintTTFArtifact (PrintArtifact) returns (PrintResult) {}
+    rpc PrintTTFArtifact (ArtifactToPrint) returns (PrintResult) {}
     rpc PrintTTF (PrintTTFOptions) returns (PrintResult) {}     
 }
 
-message PrintArtifact{
+message ArtifactToPrint{
     taxonomy.model.artifact.ArtifactType type = 1;
     string id = 2;
 }

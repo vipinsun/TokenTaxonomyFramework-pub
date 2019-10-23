@@ -142,7 +142,7 @@ namespace TTI.TTF.Taxonomy
 
 						if (!string.IsNullOrEmpty(_artifactId) && artifactSet)
 						{
-							var result = _printerClient.PrintTTFArtifact(new PrintArtifact
+							var result = _printerClient.PrintTTFArtifact(new ArtifactToPrint
 							{
 								Id = _artifactId,
 								Type = artifactType
