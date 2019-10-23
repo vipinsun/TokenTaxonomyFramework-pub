@@ -90,3 +90,9 @@ You can print all the TTF artifacts using the `-a` switch.
 To print the entire TTF as a single `book`, use the `-b` switch, which will create or overwrite the `TTF-Book.docx` in the root of the repo. You will want to edit this document to add a table of contents and page numbers using the word processor of choice and then save the `book` elsewhere so it will not get overwritten.
 
 These documents can be saved as .PDF using your word processing application as well.
+
+## UI Sandbox
+
+The UI Sandbox project is for prototype UI applications. The TTF Designer UX is also hosted in the 'designer' folder. You can click through the designer here:
+
+[TTF Designer](https://xd.adobe.com/view/3e19edc6-1915-41a0-70a0-2d3154a7a5eb-4828/)

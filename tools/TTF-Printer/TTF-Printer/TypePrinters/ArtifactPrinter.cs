@@ -200,6 +200,20 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             else
                 Utils.ApplyStyleToParagraph(document, "Heading1", "Heading1", para, JustificationValues.Center);
 
+            
+            if (artifact.Contributors != null && artifact.Contributors.Count > 0)
+            {
+                var contPara = body.AppendChild(new Paragraph());
+                var contRun = contPara.AppendChild(new Run());
+                contRun.AppendChild(new Text("Contributors"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", contPara);
+
+                var conPara = body.AppendChild(new Paragraph());
+                var conRun = conPara.AppendChild(new Run());
+                conRun.AppendChild(AddContributorsTable(document, artifact.Contributors));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", conPara);
+            }
+            
             var fDef = body.AppendChild(new Paragraph());
             var ff2Run = fDef.AppendChild(new Run());
             ff2Run.AppendChild(new Text("Taxonomy Formula: " + artifact.ArtifactSymbol.Tooling));
