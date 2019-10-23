@@ -21,7 +21,7 @@ namespace TTI.TTF.Taxonomy
 		private static string _printHost;
 		private static int _printPort;
 		internal static Service.ServiceClient TaxonomyClient;
-		internal static PrinterService.PrinterServiceClient PrinterClient;
+		private static PrinterService.PrinterServiceClient _printerClient;
 		private static bool _saveArtifact;
 		private static string _templateFormulaId;
 		private static string _newArtifactName = "";
@@ -65,7 +65,7 @@ namespace TTI.TTF.Taxonomy
 					new Channel(_gRpcHost, _gRpcPort, ChannelCredentials.Insecure));
 				
 				_log.Info("Connection to TTF-Printer: " + _printHost + " port: " + _printPort);
-				PrinterClient = new PrinterService.PrinterServiceClient(
+				_printerClient = new PrinterService.PrinterServiceClient(
 					new Channel(_printHost, _printPort, ChannelCredentials.Insecure));
 				
 				switch (args.Length)
@@ -75,14 +75,14 @@ namespace TTI.TTF.Taxonomy
 						return;
 					case 1 when args[0] == "--a":
 						_log.Info("Printing all artifacts individually.");
-						var g = PrinterClient.PrintTTF(new PrintTTFOptions
+						_printerClient.PrintTTF(new PrintTTFOptions
 						{
 							Book = false
 						});
 						return;
 					case 1 when args[0] == "--b":
 						_log.Info("Printing all artifacts in a Book.");
-						var s = PrinterClient.PrintTTF(new PrintTTFOptions
+						_printerClient.PrintTTF(new PrintTTFOptions
 						{
 							Book = true
 						});
@@ -142,7 +142,7 @@ namespace TTI.TTF.Taxonomy
 
 						if (!string.IsNullOrEmpty(_artifactId) && artifactSet)
 						{
-							var result = PrinterClient.PrintTTFArtifact(new PrintArtifact
+							var result = _printerClient.PrintTTFArtifact(new PrintArtifact
 							{
 								Id = _artifactId,
 								Type = artifactType
