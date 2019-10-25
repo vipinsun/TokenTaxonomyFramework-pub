@@ -31,6 +31,7 @@ namespace TTI.TTF.Taxonomy
         internal static PrintResult PrintArtifact(ArtifactToPrint printArtifact)
         {
             var id = printArtifact.Id;
+            var draft = printArtifact.Draft;
             switch (printArtifact.Type)
             {
                 case ArtifactType.Base:
@@ -41,7 +42,7 @@ namespace TTI.TTF.Taxonomy
 
                     if (b != null)
                     {
-                        PrintBase(b);
+                        PrintBase(b, draft);
                     }
 
                     break;
@@ -53,7 +54,7 @@ namespace TTI.TTF.Taxonomy
 
                     if (behavior != null)
                     {
-                        PrintBehavior(behavior);
+                        PrintBehavior(behavior, draft);
                     }
 
                     break;
@@ -65,7 +66,7 @@ namespace TTI.TTF.Taxonomy
 
                     if (behaviorGroup != null)
                     {
-                        PrintBehaviorGroup(behaviorGroup);
+                        PrintBehaviorGroup(behaviorGroup, draft);
                     }
 
                     break;
@@ -77,7 +78,7 @@ namespace TTI.TTF.Taxonomy
 
                     if (propertySet != null)
                     {
-                        PrintPropertySet(propertySet);
+                        PrintPropertySet(propertySet, draft);
                     }
 
                     break;
@@ -89,7 +90,7 @@ namespace TTI.TTF.Taxonomy
 
                     if (formula != null)
                     {
-                        PrintFormula(formula);
+                        PrintFormula(formula, draft);
                     }
 
                     break;
@@ -101,7 +102,7 @@ namespace TTI.TTF.Taxonomy
 
                     if (definition != null)
                     {
-                        PrintDefinition(definition);
+                        PrintDefinition(definition, draft);
                     }
 
                     break;
@@ -119,13 +120,12 @@ namespace TTI.TTF.Taxonomy
                             break;
                         }
 
-                        PrintSpec(spec);
+                        PrintSpec(spec, draft);
                     }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-
             return GetPrintResult();
         }
 
@@ -148,7 +148,7 @@ namespace TTI.TTF.Taxonomy
             Save();
         }
 
-        private static void PrintBase(Base baseToPrint)
+        private static void PrintBase(Base baseToPrint, bool draft)
         {
             _log.Info("Print Controller printing Base: " + baseToPrint.Artifact.Name);
 
@@ -169,12 +169,12 @@ namespace TTI.TTF.Taxonomy
                 return;
             }
             BasePrinter.PrintTokenBase(_document, baseToPrint, false);
-            Utils.InsertCustomWatermark(_document, ModelMap.WaterMark);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
             Utils.AddFooter(_document, baseToPrint.Artifact.Name);
             Save();
         }
 
-        private static void PrintBehavior(Model.Core.Behavior behaviorToPrint)
+        private static void PrintBehavior(Model.Core.Behavior behaviorToPrint, bool draft)
         {
             _log.Info("Print Controller printing Behavior: " + behaviorToPrint.Artifact.Name);
 
@@ -195,13 +195,13 @@ namespace TTI.TTF.Taxonomy
             }
 
             BehaviorPrinter.PrintBehavior(_document, behaviorToPrint, false);
-            Utils.InsertCustomWatermark(_document, ModelMap.WaterMark);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
             Utils.AddFooter(_document, behaviorToPrint.Artifact.Name);
             Save();
 
         }
 
-        private static void PrintBehaviorGroup(BehaviorGroup behaviorGroupToPrint)
+        private static void PrintBehaviorGroup(BehaviorGroup behaviorGroupToPrint, bool draft)
         {
             _log.Info("Print Controller printing Behavior Group: " + behaviorGroupToPrint.Artifact.Name);
 
@@ -222,13 +222,13 @@ namespace TTI.TTF.Taxonomy
             }
             // Add a main document part. 
             BehaviorGroupPrinter.PrintBehaviorGroup(_document, behaviorGroupToPrint, false);
-            Utils.InsertCustomWatermark(_document, ModelMap.WaterMark);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
             Utils.AddFooter(_document, behaviorGroupToPrint.Artifact.Name);
             Save();
 
         }
 
-        private static void PrintPropertySet(PropertySet psToPrint)
+        private static void PrintPropertySet(PropertySet psToPrint, bool draft)
         {
             _log.Info("Print Controller printing Property Set: " + psToPrint.Artifact.Name);
 
@@ -249,12 +249,12 @@ namespace TTI.TTF.Taxonomy
             }
 
             PropertySetPrinter.AddPropertySetProperties(_document, psToPrint, false);
-            Utils.InsertCustomWatermark(_document, ModelMap.WaterMark);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
             Utils.AddFooter(_document, psToPrint.Artifact.Name);
             Save();
         }
 
-        private static void PrintFormula(TemplateFormula formulaToPrint)
+        private static void PrintFormula(TemplateFormula formulaToPrint, bool draft)
         {
             _log.Info("Print Controller printing Property Set: " + formulaToPrint.Artifact.Name);
 
@@ -275,12 +275,12 @@ namespace TTI.TTF.Taxonomy
             }
            
             FormulaPrinter.PrintFormula(_document, formulaToPrint, false);
-            Utils.InsertCustomWatermark(_document, ModelMap.WaterMark);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
             Utils.AddFooter(_document, formulaToPrint.Artifact.Name);
             Save();
         }
         
-        private static void PrintDefinition(TemplateDefinition definitionToPrint)
+        private static void PrintDefinition(TemplateDefinition definitionToPrint, bool draft)
         {
             _log.Info("Print Controller printing Property Set: " + definitionToPrint.Artifact.Name);
 
@@ -301,12 +301,12 @@ namespace TTI.TTF.Taxonomy
             }
            
             DefinitionPrinter.PrintDefinition(_document, definitionToPrint, false);
-            Utils.InsertCustomWatermark(_document, ModelMap.WaterMark);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
             Utils.AddFooter(_document, definitionToPrint.Artifact.Name);
             Save();
         }
         
-        private static void PrintSpec(TokenSpecification specification)
+        private static void PrintSpec(TokenSpecification specification, bool draft)
         {
             _log.Info("Print Controller printing Token Specification: " + specification.Artifact.Name);
 
@@ -327,44 +327,44 @@ namespace TTI.TTF.Taxonomy
             }
             
             SpecificationPrinter.PrintSpecification(_document, specification, true);
-            Utils.InsertCustomWatermark(_document, ModelMap.WaterMark);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
             Utils.AddFooter(_document, specification.Artifact.Name + " - " + specification.SpecificationHash);
             Save();
         }
         
-        internal static PrintResult PrintAllArtifacts()
+        internal static PrintResult PrintAllArtifacts(bool draft)
         {
             _log.Info("Taxonomy Printer: Printing All Artifacts");
      
             //bases
             foreach (var baseToken in ModelManager.Taxonomy.BaseTokenTypes)
             {
-                PrintBase(baseToken.Value);
+                PrintBase(baseToken.Value, draft);
             }
 
             foreach (var behavior in ModelManager.Taxonomy.Behaviors)
             {
-                PrintBehavior(behavior.Value);
+                PrintBehavior(behavior.Value, draft);
             }
 
             foreach (var bg in ModelManager.Taxonomy.BehaviorGroups)
             {
-                PrintBehaviorGroup(bg.Value);
+                PrintBehaviorGroup(bg.Value, draft);
             }
 
             foreach (var ps in ModelManager.Taxonomy.PropertySets)
             {
-                PrintPropertySet(ps.Value);
+                PrintPropertySet(ps.Value, draft);
             }
 
             foreach (var f in ModelManager.Taxonomy.TemplateFormulas)
             {
-                PrintFormula(f.Value);
+                PrintFormula(f.Value, draft);
             }
 
             foreach (var d in ModelManager.Taxonomy.TemplateDefinitions)
             {
-                PrintDefinition(d.Value);
+                PrintDefinition(d.Value, draft);
                 var spec = Printer.TaxonomyClient.GetTokenSpecification(new TokenTemplateId
                 {
                     DefinitionId = d.Key
@@ -376,7 +376,7 @@ namespace TTI.TTF.Taxonomy
                     _log.Error(spec.Artifact.Name);
                     return new PrintResult();
                 }
-                PrintSpec(spec);
+                PrintSpec(spec, draft);
             }
 
             return GetPrintResult();
@@ -385,9 +385,8 @@ namespace TTI.TTF.Taxonomy
         /// <summary>
         /// This will create a single OpenXML document.  After it is created, it should be opened and a new Table of Contents before printing to PDF.
         /// </summary>
-        internal static PrintResult BuildTtfBook()
+        internal static PrintResult BuildTtfBook(bool draft)
 		{
-            var waterMark = ModelMap.WaterMark;
             var styleSource = ModelMap.StyleSource;
             _filePath = ModelMap.FilePath + ModelMap.FolderSeparator + ".." + ModelMap.FolderSeparator + "TTF-Book.docx";
 			try
@@ -468,8 +467,8 @@ namespace TTI.TTF.Taxonomy
 			}
 			Save();
             
-			Utils.InsertCustomWatermark(_document, waterMark);
-			Utils.AddFooter(_document, "Token Taxonomy Framework" + " - " + ModelManager.Taxonomy.Version.Version + ": " + ModelManager.Taxonomy.Version.StateHash);
+            Utils.InsertCustomWatermark(_document, draft ? ModelMap.DraftWaterMark : ModelMap.WaterMark);
+            Utils.AddFooter(_document, "Token Taxonomy Framework" + " - " + ModelManager.Taxonomy.Version.Version + ": " + ModelManager.Taxonomy.Version.StateHash);
 			Save();
             return GetPrintResult();
         }

@@ -77,14 +77,16 @@ namespace TTI.TTF.Taxonomy
 						_log.Info("Printing all artifacts individually.");
 						_printerClient.PrintTTF(new PrintTTFOptions
 						{
-							Book = false
+							Book = false,
+							Draft = true
 						});
 						return;
 					case 1 when args[0] == "--b":
 						_log.Info("Printing all artifacts in a Book.");
 						_printerClient.PrintTTF(new PrintTTFOptions
 						{
-							Book = true
+							Book = true,
+							Draft = true
 						});
 						return;
 					case 1:
@@ -145,7 +147,8 @@ namespace TTI.TTF.Taxonomy
 							var result = _printerClient.PrintTTFArtifact(new ArtifactToPrint
 							{
 								Id = _artifactId,
-								Type = artifactType
+								Type = artifactType,
+								Draft = true
 							});
 							OutputLib.OutputPrintout(result.OpenXmlDocument);
 							return;

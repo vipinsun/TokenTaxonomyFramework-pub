@@ -23,6 +23,7 @@ namespace TTI.TTF.Taxonomy.Model
         internal static string FilePath { get; set; }
         internal static string WaterMark { get; set; }
         internal static string StyleSource { get; set; }
+        public static string DraftWaterMark { get; set; }
 
         static ModelMap()
         {

@@ -24,8 +24,8 @@ namespace TTI.TTF.Taxonomy
         public override Task<PrintResult> PrintTTF(PrintTTFOptions printTtfOptions, ServerCallContext ctx)
         {
             _log.Info("gRpc request to PrintTTF, Book = " + printTtfOptions.Book);
-            return printTtfOptions.Book ? Task.FromResult(PrintController.BuildTtfBook()) 
-                : Task.FromResult(PrintController.PrintAllArtifacts());
+            return printTtfOptions.Book ? Task.FromResult(PrintController.BuildTtfBook(printTtfOptions.Draft)) 
+                : Task.FromResult(PrintController.PrintAllArtifacts(printTtfOptions.Draft));
         }
     }
 }

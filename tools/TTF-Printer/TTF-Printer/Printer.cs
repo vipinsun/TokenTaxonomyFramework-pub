@@ -85,6 +85,11 @@ namespace TTI.TTF.Taxonomy
                                                                                               + "images" +
                                                                                               ModelMap.FolderSeparator +
                                                                                               "TTF-bw.jpg";
+            
+            ModelMap.DraftWaterMark = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
+                                                                                              + "images" +
+                                                                                              ModelMap.FolderSeparator +
+                                                                                              "TTF-bw-draft.jpg";
 
             ModelMap.StyleSource =
                 Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) + ModelMap.FolderSeparator
@@ -92,10 +97,15 @@ namespace TTI.TTF.Taxonomy
                                                                              ModelMap.FolderSeparator +
                                                                              "savon.docx";
 
-            ModelMap.FilePath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
-                                ModelMap.FolderSeparator +
-                                _printToPath + ModelMap.FolderSeparator;
-
+            //If running locally, not in a container or k8s, it will have a relative path instead of a volume path.
+            if(_printToPath.Contains(".."))
+                ModelMap.FilePath = Path.GetDirectoryName(Assembly.GetEntryAssembly()?.Location) +
+                                    ModelMap.FolderSeparator +
+                                    _printToPath + ModelMap.FolderSeparator;
+            else
+            {
+                ModelMap.FilePath = _printToPath + ModelMap.FolderSeparator;
+            }
 
             _apiServer = new Server
             {

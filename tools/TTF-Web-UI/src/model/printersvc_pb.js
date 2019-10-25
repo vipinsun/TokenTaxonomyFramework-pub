@@ -114,7 +114,8 @@ proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.toObject = function(opt_incl
 proto.taxonomy.ttfprinter.ArtifactToPrint.toObject = function(includeInstance, msg) {
   var f, obj = {
     type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    id: jspb.Message.getFieldWithDefault(msg, 2, "")
+    id: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    draft: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -159,6 +160,10 @@ proto.taxonomy.ttfprinter.ArtifactToPrint.deserializeBinaryFromReader = function
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
+    case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDraft(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -202,6 +207,13 @@ proto.taxonomy.ttfprinter.ArtifactToPrint.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getDraft();
+  if (f) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -241,6 +253,24 @@ proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.setId = function(value) {
 };
 
 
+/**
+ * optional bool draft = 3;
+ * @return {boolean}
+ */
+proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.getDraft = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.ttfprinter.ArtifactToPrint} returns this
+ */
+proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.setDraft = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
 
 
 
@@ -273,7 +303,8 @@ proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.toObject = function(opt_incl
  */
 proto.taxonomy.ttfprinter.PrintTTFOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    book: jspb.Message.getBooleanFieldWithDefault(msg, 1, false)
+    book: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    draft: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
   };
 
   if (includeInstance) {
@@ -314,6 +345,10 @@ proto.taxonomy.ttfprinter.PrintTTFOptions.deserializeBinaryFromReader = function
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBook(value);
       break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDraft(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -350,6 +385,13 @@ proto.taxonomy.ttfprinter.PrintTTFOptions.serializeBinaryToWriter = function(mes
       f
     );
   }
+  f = message.getDraft();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -368,6 +410,24 @@ proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.getBook = function() {
  */
 proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.setBook = function(value) {
   return jspb.Message.setProto3BooleanField(this, 1, value);
+};
+
+
+/**
+ * optional bool draft = 2;
+ * @return {boolean}
+ */
+proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.getDraft = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.ttfprinter.PrintTTFOptions} returns this
+ */
+proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.setDraft = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 

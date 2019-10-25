@@ -5,6 +5,8 @@
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <RootNamespace>TTI.TTF.Taxonomy</RootNamespace>
         <AssemblyName>TTF-Printer</AssemblyName>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -40,6 +42,9 @@
       </None>
       <None Update="log4net.config">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="images\TTF-bw-draft.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
 

@@ -10,6 +10,9 @@ export class ArtifactToPrint extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
+  getDraft(): boolean;
+  setDraft(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ArtifactToPrint.AsObject;
   static toObject(includeInstance: boolean, msg: ArtifactToPrint): ArtifactToPrint.AsObject;
@@ -22,12 +25,16 @@ export namespace ArtifactToPrint {
   export type AsObject = {
     type: artifact_pb.ArtifactType,
     id: string,
+    draft: boolean,
   }
 }
 
 export class PrintTTFOptions extends jspb.Message {
   getBook(): boolean;
   setBook(value: boolean): void;
+
+  getDraft(): boolean;
+  setDraft(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrintTTFOptions.AsObject;
@@ -40,6 +47,7 @@ export class PrintTTFOptions extends jspb.Message {
 export namespace PrintTTFOptions {
   export type AsObject = {
     book: boolean,
+    draft: boolean,
   }
 }
 

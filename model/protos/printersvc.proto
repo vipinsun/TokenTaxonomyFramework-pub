@@ -15,11 +15,13 @@ service PrinterService {
 message ArtifactToPrint{
     taxonomy.model.artifact.ArtifactType type = 1;
     string id = 2;
+    bool draft = 3; //should it include the Draft watermark?
 }
 
 //If Book, the all artifacts will print to a single file or book.  If not, each artifact will print into their respective folder.
 message PrintTTFOptions{
     bool book = 1; 
+    bool draft = 2; //should it include the Draft watermark?
 }
 
 message PrintResult{

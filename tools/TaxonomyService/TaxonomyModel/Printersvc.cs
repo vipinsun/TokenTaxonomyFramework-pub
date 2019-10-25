@@ -25,21 +25,22 @@ namespace TTI.TTF.Taxonomy {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChBwcmludGVyc3ZjLnByb3RvEhN0YXhvbm9teS50dGZwcmludGVyGg5hcnRp",
-            "ZmFjdC5wcm90byJSCg9BcnRpZmFjdFRvUHJpbnQSMwoEdHlwZRgBIAEoDjIl",
+            "ZmFjdC5wcm90byJhCg9BcnRpZmFjdFRvUHJpbnQSMwoEdHlwZRgBIAEoDjIl",
             "LnRheG9ub215Lm1vZGVsLmFydGlmYWN0LkFydGlmYWN0VHlwZRIKCgJpZBgC",
-            "IAEoCSIfCg9QcmludFRURk9wdGlvbnMSDAoEYm9vaxgBIAEoCCIoCgtQcmlu",
-            "dFJlc3VsdBIZChFvcGVuX3htbF9kb2N1bWVudBgBIAEoCTLEAQoOUHJpbnRl",
-            "clNlcnZpY2USXAoQUHJpbnRUVEZBcnRpZmFjdBIkLnRheG9ub215LnR0ZnBy",
-            "aW50ZXIuQXJ0aWZhY3RUb1ByaW50GiAudGF4b25vbXkudHRmcHJpbnRlci5Q",
-            "cmludFJlc3VsdCIAElQKCFByaW50VFRGEiQudGF4b25vbXkudHRmcHJpbnRl",
-            "ci5QcmludFRURk9wdGlvbnMaIC50YXhvbm9teS50dGZwcmludGVyLlByaW50",
-            "UmVzdWx0IgBCKwoUb3JnLnR0aS50dGYudGF4b25vbXlQAaoCEFRUSS5UVEYu",
-            "VGF4b25vbXliBnByb3RvMw=="));
+            "IAEoCRINCgVkcmFmdBgDIAEoCCIuCg9QcmludFRURk9wdGlvbnMSDAoEYm9v",
+            "axgBIAEoCBINCgVkcmFmdBgCIAEoCCIoCgtQcmludFJlc3VsdBIZChFvcGVu",
+            "X3htbF9kb2N1bWVudBgBIAEoCTLEAQoOUHJpbnRlclNlcnZpY2USXAoQUHJp",
+            "bnRUVEZBcnRpZmFjdBIkLnRheG9ub215LnR0ZnByaW50ZXIuQXJ0aWZhY3RU",
+            "b1ByaW50GiAudGF4b25vbXkudHRmcHJpbnRlci5QcmludFJlc3VsdCIAElQK",
+            "CFByaW50VFRGEiQudGF4b25vbXkudHRmcHJpbnRlci5QcmludFRURk9wdGlv",
+            "bnMaIC50YXhvbm9teS50dGZwcmludGVyLlByaW50UmVzdWx0IgBCKwoUb3Jn",
+            "LnR0aS50dGYudGF4b25vbXlQAaoCEFRUSS5UVEYuVGF4b25vbXliBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ArtifactToPrint), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser, new[]{ "Type", "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintTTFOptions), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser, new[]{ "Book" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ArtifactToPrint), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser, new[]{ "Type", "Id", "Draft" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintTTFOptions), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser, new[]{ "Book", "Draft" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintResult), global::TTI.TTF.Taxonomy.PrintResult.Parser, new[]{ "OpenXmlDocument" }, null, null, null, null)
           }));
     }
@@ -74,6 +75,7 @@ namespace TTI.TTF.Taxonomy {
     public ArtifactToPrint(ArtifactToPrint other) : this() {
       type_ = other.type_;
       id_ = other.id_;
+      draft_ = other.draft_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -104,6 +106,20 @@ namespace TTI.TTF.Taxonomy {
       }
     }
 
+    /// <summary>Field number for the "draft" field.</summary>
+    public const int DraftFieldNumber = 3;
+    private bool draft_;
+    /// <summary>
+    ///should it include the Draft watermark?
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Draft {
+      get { return draft_; }
+      set {
+        draft_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ArtifactToPrint);
@@ -119,6 +135,7 @@ namespace TTI.TTF.Taxonomy {
       }
       if (Type != other.Type) return false;
       if (Id != other.Id) return false;
+      if (Draft != other.Draft) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -127,6 +144,7 @@ namespace TTI.TTF.Taxonomy {
       int hash = 1;
       if (Type != global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base) hash ^= Type.GetHashCode();
       if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (Draft != false) hash ^= Draft.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -148,6 +166,10 @@ namespace TTI.TTF.Taxonomy {
         output.WriteRawTag(18);
         output.WriteString(Id);
       }
+      if (Draft != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(Draft);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -161,6 +183,9 @@ namespace TTI.TTF.Taxonomy {
       }
       if (Id.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (Draft != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -179,6 +204,9 @@ namespace TTI.TTF.Taxonomy {
       if (other.Id.Length != 0) {
         Id = other.Id;
       }
+      if (other.Draft != false) {
+        Draft = other.Draft;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -196,6 +224,10 @@ namespace TTI.TTF.Taxonomy {
           }
           case 18: {
             Id = input.ReadString();
+            break;
+          }
+          case 24: {
+            Draft = input.ReadBool();
             break;
           }
         }
@@ -233,6 +265,7 @@ namespace TTI.TTF.Taxonomy {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public PrintTTFOptions(PrintTTFOptions other) : this() {
       book_ = other.book_;
+      draft_ = other.draft_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -252,6 +285,20 @@ namespace TTI.TTF.Taxonomy {
       }
     }
 
+    /// <summary>Field number for the "draft" field.</summary>
+    public const int DraftFieldNumber = 2;
+    private bool draft_;
+    /// <summary>
+    ///should it include the Draft watermark?
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Draft {
+      get { return draft_; }
+      set {
+        draft_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PrintTTFOptions);
@@ -266,6 +313,7 @@ namespace TTI.TTF.Taxonomy {
         return true;
       }
       if (Book != other.Book) return false;
+      if (Draft != other.Draft) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -273,6 +321,7 @@ namespace TTI.TTF.Taxonomy {
     public override int GetHashCode() {
       int hash = 1;
       if (Book != false) hash ^= Book.GetHashCode();
+      if (Draft != false) hash ^= Draft.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -290,6 +339,10 @@ namespace TTI.TTF.Taxonomy {
         output.WriteRawTag(8);
         output.WriteBool(Book);
       }
+      if (Draft != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Draft);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -299,6 +352,9 @@ namespace TTI.TTF.Taxonomy {
     public int CalculateSize() {
       int size = 0;
       if (Book != false) {
+        size += 1 + 1;
+      }
+      if (Draft != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -315,6 +371,9 @@ namespace TTI.TTF.Taxonomy {
       if (other.Book != false) {
         Book = other.Book;
       }
+      if (other.Draft != false) {
+        Draft = other.Draft;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -328,6 +387,10 @@ namespace TTI.TTF.Taxonomy {
             break;
           case 8: {
             Book = input.ReadBool();
+            break;
+          }
+          case 16: {
+            Draft = input.ReadBool();
             break;
           }
         }
