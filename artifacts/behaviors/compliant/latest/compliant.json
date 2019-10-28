@@ -118,7 +118,7 @@
         ]
       },
       "response": {
-        "controlMessageName": "CheckMintAllowedResponse",
+        "controlMessageName": "CheckBurnAllowedResponse",
         "description": "The response",
         "outputParameters": [
           {

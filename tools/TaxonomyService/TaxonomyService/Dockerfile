@@ -1,3 +1,4 @@
+#This is for a Local GitHub cloned instance.
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /app
 # copy necessary files

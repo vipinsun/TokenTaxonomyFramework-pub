@@ -25,8 +25,15 @@ namespace TTI.TTF.Taxonomy.Controllers
 		{
 			Utils.InitLog();
 			_log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-			_artifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + _folderSeparator +
+			
+			//If running locally, not in a container or k8s, it will have a relative path instead of a volume path.
+			if(TxService.ArtifactPath.Contains(".."))
+				_artifactPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + _folderSeparator +
 			               TxService.ArtifactPath;
+			else
+			{
+				_artifactPath = TxService.ArtifactPath;
+			}
 		}
 
 		#region load

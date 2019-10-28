@@ -18,10 +18,14 @@ namespace TTI.TTF.Taxonomy
 		private static ILog _log;
 		private static string _gRpcHost;
 		private static int _gRpcPort;
+		private static string _printHost;
+		private static int _printPort;
 		internal static Service.ServiceClient TaxonomyClient;
+		private static PrinterService.PrinterServiceClient _printerClient;
 		private static bool _saveArtifact;
 		private static string _templateFormulaId;
 		private static string _newArtifactName = "";
+		private static string _artifactId = "";
 
 		private static void Main(string[] args)
 		{
@@ -52,14 +56,38 @@ namespace TTI.TTF.Taxonomy
 			{
 				_gRpcHost = _config["gRpcHost"];
 				_gRpcPort = Convert.ToInt32(_config["gRpcPort"]);
+				
+				_printHost = _config["printHost"];
+				_printPort = Convert.ToInt32(_config["printPort"]);
 			
 				_log.Info("Connection to TaxonomyService: " + _gRpcHost + " port: " + _gRpcPort);
 				TaxonomyClient = new Service.ServiceClient(
 					new Channel(_gRpcHost, _gRpcPort, ChannelCredentials.Insecure));
+				
+				_log.Info("Connection to TTF-Printer: " + _printHost + " port: " + _printPort);
+				_printerClient = new PrinterService.PrinterServiceClient(
+					new Channel(_printHost, _printPort, ChannelCredentials.Insecure));
+				
 				switch (args.Length)
 				{
 					case 1 when args[0] == "--f":
 						GetFullTaxonomy(TaxonomyClient);
+						return;
+					case 1 when args[0] == "--a":
+						_log.Info("Printing all artifacts individually.");
+						_printerClient.PrintTTF(new PrintTTFOptions
+						{
+							Book = false,
+							Draft = true
+						});
+						return;
+					case 1 when args[0] == "--b":
+						_log.Info("Printing all artifacts in a Book.");
+						_printerClient.PrintTTF(new PrintTTFOptions
+						{
+							Book = true,
+							Draft = true
+						});
 						return;
 					case 1:
 						OutputUsage();
@@ -105,11 +133,27 @@ namespace TTI.TTF.Taxonomy
 									i++;
 									_newArtifactName = args[i];
 									continue;
+								case "--p":
+									i++;
+									_artifactId = args[i];
+									continue;
 								default:
 									continue;
 							}
 						}
 
+						if (!string.IsNullOrEmpty(_artifactId) && artifactSet)
+						{
+							var result = _printerClient.PrintTTFArtifact(new ArtifactToPrint
+							{
+								Id = _artifactId,
+								Type = artifactType,
+								Draft = true
+							});
+							OutputLib.OutputPrintout(result.OpenXmlDocument);
+							return;
+						}
+						
 						if (!string.IsNullOrEmpty(_templateFormulaId) && !string.IsNullOrEmpty(_newArtifactName))
 						{
 							var definition = CreateDefinition();
@@ -399,6 +443,15 @@ namespace TTI.TTF.Taxonomy
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --d [TEMPLATE_FORMULA_ID] --n [NEW_ARTIFACT_NAME]");
 			Console.WriteLine("	 Creates a new Taxonomy Template Definition from a Template Formula, saves it in the taxonomy and returns it after creation.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --p [ARTIFACT_ID] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet, 4 - TemplateFormula, 5 - TemplateDefinition, 6 - TokenSpecification]");
+			Console.WriteLine("	Prints all artifacts individually with the output placed in the artifacts folder.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --a");
+			Console.WriteLine("	Prints all artifacts individually with the output placed in the artifacts folder.");
+			Console.WriteLine(
+				"Usage: dotnet TaxonomyClient --b");
+			Console.WriteLine("	Prints all artifacts in a Book with the output placed in root of the repo.");
 		}
 
 		private static void GetFullTaxonomy(Service.ServiceClient taxonomyClient)

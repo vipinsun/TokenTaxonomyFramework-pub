@@ -1,4 +1,3 @@
-# Proper Docker for creating a Cryptlet or Proxy Image to be used.
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /app
 # copy necessary files

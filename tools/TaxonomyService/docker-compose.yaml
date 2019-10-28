@@ -1,36 +1,23 @@
 version: "3.5"
 services:
-    ttf-taxnomomy-service:
+    ttf-taxonomy-service:
         image: tti/ttf/taxonomyservice
-        container_name: taxonomyservice
+        container_name: taxonomyService
         volumes:
             - ../../artifacts:/app/artifacts
         environment:
-            - gRpcHost=taxonomyservice
+            - gRpcHost=taxonomyService
             - gRpcPort=8086
             - artifactPath=artifacts
         ports:
             - 8086:8086
-    ttf-printer:
-        image: tti/ttf/printer
-        container_name: taxonomyprinter
-        volumes:
-            - ../../artifacts:/app/artifacts
-        environment:
-            - taxonomyHost=taxonomyservice
-            - taxonomyPort=8086
-            - artifactPath=artifacts
-            - printerHost=taxonomyprinter
-            - printerPort=8088
-        ports:
-            - 8088:8088
     envoy:
         image: tti/ttf/envoy
         container_name: envoy
         ports:
             - "9080:9080"
         links:
-            - "ttf-taxnomomy-service"
+            - "ttf-taxonomy-service"
     ttf-ui:
         image: tti/ttf/ui
         container_name: ui
@@ -38,3 +25,20 @@ services:
             - "8000:80"
         links:
             - "envoy"
+    ttf-printer:
+        image: tti/ttf/printer
+        container_name: taxonomyPrinter
+        volumes:
+            - ../../artifacts:/app/artifacts
+        environment:
+            - taxonomyHost=taxonomyService
+            - taxonomyPort=8086
+            - artifactPath=artifacts
+            - printerHost=taxonomyPrinter
+            - printerPort=8088
+        ports:
+            - 8088:8088
+        links:
+            - "ttf-taxonomy-service"
+        depends_on: 
+            - "ttf-taxonomy-service"

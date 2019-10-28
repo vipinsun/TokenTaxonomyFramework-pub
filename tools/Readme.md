@@ -24,7 +24,7 @@ This will build the Client and Service, starting the later awaiting client reque
 Windows & Mac:
 
 ```bash
-docker run -e gRpcHost=host.docker.internal txclient --f
+docker run -e gRpcHost=host.docker.internal -env printHost=host.docker.internal txclient --f
 ```
 
 Linux:
@@ -33,7 +33,7 @@ As `host.docker.internal` is currently not supported by Docker for Linux, the IP
 
 ```bash
 DOCKER_BRIDGE_IP=`docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}'`
-docker run -e gRpcHost=$DOCKER_BRIDGE_IP txclient --f
+docker run -e gRpcHost=$DOCKER_BRIDGE_IP -env printHost=$DOCKER_BRIDGE_IP txclient --f
 ```
 
 if using the dotnet client using the [dotnet core runtime](https://dotnet.microsoft.com/download):
@@ -90,3 +90,9 @@ You can print all the TTF artifacts using the `-a` switch.
 To print the entire TTF as a single `book`, use the `-b` switch, which will create or overwrite the `TTF-Book.docx` in the root of the repo. You will want to edit this document to add a table of contents and page numbers using the word processor of choice and then save the `book` elsewhere so it will not get overwritten.
 
 These documents can be saved as .PDF using your word processing application as well.
+
+## UI Sandbox
+
+The UI Sandbox project is for prototype UI applications. The TTF Designer UX is also hosted in the 'designer' folder. You can click through the designer here:
+
+[TTF Designer](https://xd.adobe.com/view/3e19edc6-1915-41a0-70a0-2d3154a7a5eb-4828/)

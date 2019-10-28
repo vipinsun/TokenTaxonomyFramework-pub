@@ -1,6 +1,6 @@
 /* eslint-disable */
 /**
- * @fileoverview gRPC-Web generated client stub for ttfprinter
+ * @fileoverview gRPC-Web generated client stub for taxonomy.ttfprinter
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@ import * as grpcWeb from 'grpc-web';
 import * as artifact_pb from './artifact_pb';
 
 import {
-  PrintArtifact,
+  ArtifactToPrint,
   PrintResult,
   PrintTTFOptions} from './printersvc_pb';
 
@@ -38,20 +38,20 @@ export class PrinterServiceClient {
 
   methodInfoPrintTTFArtifact = new grpcWeb.AbstractClientBase.MethodInfo(
     PrintResult,
-    (request: PrintArtifact) => {
+    (request: ArtifactToPrint) => {
       return request.serializeBinary();
     },
     PrintResult.deserializeBinary
   );
 
   printTTFArtifact(
-    request: PrintArtifact,
+    request: ArtifactToPrint,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: PrintResult) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ttfprinter.PrinterService/PrintTTFArtifact',
+        '/taxonomy.ttfprinter.PrinterService/PrintTTFArtifact',
       request,
       metadata || {},
       this.methodInfoPrintTTFArtifact,
@@ -73,7 +73,7 @@ export class PrinterServiceClient {
                response: PrintResult) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/ttfprinter.PrinterService/PrintTTF',
+        '/taxonomy.ttfprinter.PrinterService/PrintTTF',
       request,
       metadata || {},
       this.methodInfoPrintTTF,

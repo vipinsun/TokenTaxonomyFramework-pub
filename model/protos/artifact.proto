@@ -96,6 +96,7 @@ message Artifact {
     string control_uri = 8;
     repeated ArtifactFile artifact_files = 9; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
     Maps maps = 10; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    repeated Contributor contributors = 11; //list of contributors to the artifact.
 }
 
 message ArtifactReferenceValues{
@@ -116,6 +117,11 @@ message SymbolInfluence{
     string description = 1; //describe how the symbol influences this artifact, like non-sub-dividable or delegable.
     ArtifactSymbol symbol = 2;
     repeated ArtifactSymbol applies_to = 3; //list of behaviors or property-sets that are influenced by this symbol.
+}
+
+message Contributor{
+    string name = 1;
+    string organization = 2;
 }
 
 message SymbolDependency{
@@ -250,7 +256,6 @@ message CommitUpdatesResponse{
 }
 
 message IssuePullRequest{
-
 }
 
 message IssuePullResponse{

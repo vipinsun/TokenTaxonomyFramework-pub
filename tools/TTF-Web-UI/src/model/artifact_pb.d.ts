@@ -122,6 +122,11 @@ export class Artifact extends jspb.Message {
   hasMaps(): boolean;
   clearMaps(): void;
 
+  getContributorsList(): Array<Contributor>;
+  setContributorsList(value: Array<Contributor>): void;
+  clearContributorsList(): void;
+  addContributors(value?: Contributor, index?: number): Contributor;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Artifact.AsObject;
   static toObject(includeInstance: boolean, msg: Artifact): Artifact.AsObject;
@@ -142,6 +147,7 @@ export namespace Artifact {
     controlUri: string,
     artifactFilesList: Array<ArtifactFile.AsObject>,
     maps?: Maps.AsObject,
+    contributorsList: Array<Contributor.AsObject>,
   }
 }
 
@@ -234,6 +240,28 @@ export namespace SymbolInfluence {
     description: string,
     symbol?: ArtifactSymbol.AsObject,
     appliesToList: Array<ArtifactSymbol.AsObject>,
+  }
+}
+
+export class Contributor extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getOrganization(): string;
+  setOrganization(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Contributor.AsObject;
+  static toObject(includeInstance: boolean, msg: Contributor): Contributor.AsObject;
+  static serializeBinaryToWriter(message: Contributor, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Contributor;
+  static deserializeBinaryFromReader(message: Contributor, reader: jspb.BinaryReader): Contributor;
+}
+
+export namespace Contributor {
+  export type AsObject = {
+    name: string,
+    organization: string,
   }
 }
 

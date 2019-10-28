@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package ttfprinter;
+package taxonomy.ttfprinter;
 import "artifact.proto";
 
 option csharp_namespace = "TTI.TTF.Taxonomy";
@@ -8,18 +8,20 @@ option java_package = "org.tti.ttf.taxonomy";
 option java_multiple_files = true;
 
 service PrinterService {
-    rpc PrintTTFArtifact (PrintArtifact) returns (PrintResult) {}
+    rpc PrintTTFArtifact (ArtifactToPrint) returns (PrintResult) {}
     rpc PrintTTF (PrintTTFOptions) returns (PrintResult) {}     
 }
 
-message PrintArtifact{
+message ArtifactToPrint{
     taxonomy.model.artifact.ArtifactType type = 1;
     string id = 2;
+    bool draft = 3; //should it include the Draft watermark?
 }
 
 //If Book, the all artifacts will print to a single file or book.  If not, each artifact will print into their respective folder.
 message PrintTTFOptions{
     bool book = 1; 
+    bool draft = 2; //should it include the Draft watermark?
 }
 
 message PrintResult{

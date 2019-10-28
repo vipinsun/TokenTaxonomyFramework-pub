@@ -100,6 +100,9 @@ export class BaseReference extends jspb.Message {
   hasReference(): boolean;
   clearReference(): void;
 
+  getValueType(): artifact_pb.ValueType;
+  setValueType(value: artifact_pb.ValueType): void;
+
   getName(): string;
   setName(value: string): void;
 
@@ -137,6 +140,7 @@ export class BaseReference extends jspb.Message {
 export namespace BaseReference {
   export type AsObject = {
     reference?: artifact_pb.ArtifactReference.AsObject,
+    valueType: artifact_pb.ValueType,
     name: string,
     symbol: string,
     owner: string,

@@ -419,38 +419,41 @@ namespace TTI.TTF.Taxonomy
 
 		private static void OutputMaps(Maps artifactMaps)
 		{
-			Log.Error("			[Maps]:");
-			Log.Warn("				-Implementation Maps:");
-			foreach (var m in artifactMaps.ImplementationReferences)
+			if (artifactMaps != null)
 			{
-				Log.Error("				---------------------------------------------------");
-				Log.Info("				-Name: " + m.Name);
-				Log.Info("				-Type: " + m.MappingType);
-				Log.Info("				-Supported Platform: " + m.Platform);
-				Log.Info("				-Reference: " + m.ReferencePath);
-				Log.Error("				---------------------------------------------------");
-			}
+				Log.Error("			[Maps]:");
+				Log.Warn("				-Implementation Maps:");
+				foreach (var m in artifactMaps.ImplementationReferences)
+				{
+					Log.Error("				---------------------------------------------------");
+					Log.Info("				-Name: " + m.Name);
+					Log.Info("				-Type: " + m.MappingType);
+					Log.Info("				-Supported Platform: " + m.Platform);
+					Log.Info("				-Reference: " + m.ReferencePath);
+					Log.Error("				---------------------------------------------------");
+				}
 
-			Log.Warn("				-Code Maps:");
-			foreach (var m in artifactMaps.CodeReferences)
-			{
-				Log.Error("				---------------------------------------------------");
-				Log.Info("				-Name: " + m.Name);
-				Log.Info("				-Type: " + m.MappingType);
-				Log.Info("				-Supported Platform: " + m.Platform);
-				Log.Info("				-Reference: " + m.ReferencePath);
-				Log.Error("				---------------------------------------------------");
-			}
+				Log.Warn("				-Code Maps:");
+				foreach (var m in artifactMaps.CodeReferences)
+				{
+					Log.Error("				---------------------------------------------------");
+					Log.Info("				-Name: " + m.Name);
+					Log.Info("				-Type: " + m.MappingType);
+					Log.Info("				-Supported Platform: " + m.Platform);
+					Log.Info("				-Reference: " + m.ReferencePath);
+					Log.Error("				---------------------------------------------------");
+				}
 
-			Log.Warn("				-Resource Maps:");
-			foreach (var m in artifactMaps.Resources)
-			{
-				Log.Error("				---------------------------------------------------");
-				Log.Info("				-Name: " + m.Name);
-				Log.Info("				-Type: " + m.MappingType);
-				Log.Info("				-Description: " + m.Description);
-				Log.Info("				-Reference: " + m.ResourcePath);
-				Log.Error("				---------------------------------------------------");
+				Log.Warn("				-Resource Maps:");
+				foreach (var m in artifactMaps.Resources)
+				{
+					Log.Error("				---------------------------------------------------");
+					Log.Info("				-Name: " + m.Name);
+					Log.Info("				-Type: " + m.MappingType);
+					Log.Info("				-Description: " + m.Description);
+					Log.Info("				-Reference: " + m.ResourcePath);
+					Log.Error("				---------------------------------------------------");
+				}
 			}
 		}
 
@@ -796,6 +799,15 @@ namespace TTI.TTF.Taxonomy
 			var fDef = JToken.Parse(tDef).ToString();
 			
 			Log.Info(fDef);
+		}
+
+		public static void OutputPrintout(string resultOpenXmlDocument)
+		{
+			Log.Error("---------------------------------------------------");
+            			Log.Error("TTF Printer Returned:");
+            			Log.Error("---------------------------------------------------");
+                        
+            			Log.Info(resultOpenXmlDocument);
 		}
 	}
 }
