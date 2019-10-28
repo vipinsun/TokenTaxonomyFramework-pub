@@ -14,7 +14,7 @@
       "Token Issuance"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Whole Fungible Token with Fixed Supply, where a central party, the issuer, is the only one able to create/transfer/destroy tokens. Other parties can inspect (only their own) holdings, but may not transfer tokens; to do this they need to request the issuer to perform the action using a `RequestTokens` message. The issuer creates this token with an initial quantity that is fixed, and belong to the issuer. The issuer can then Authorize an account or investor to request tokens up to a maximum allowed amount. After an account is Authorized, it can request tokens up to the amount from the issuer, who must then Approve the request that will then delegate/invoke transferable to transfer the tokens from the issuer's account to the authorized account.",
+      "businessDescription": "This is a Whole Fungible Token with Fixed Supply, where a central party, the issuer, is the only one able to create/transfer/destroy tokens. Other parties can inspect (only their own) wallets, but may not transfer tokens directly; to do this they need to request the issuer to perform the action using a `RequestTokens` message. The issuer creates this token with an initial quantity that is fixed, and belong to the issuer. The issuer can then Authorize a wallet to hold tokens up to a maximum allowed amount. After a wallet is Authorized, it can request tokens from the issuer, who must then Approve the request that will then delegate/invoke transferable to transfer the tokens from the issuer's account to the authorized wallet.",
       "businessExample": "Provide a business example...",
       "analogies": [
         {
@@ -166,7 +166,7 @@
         {
           "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
           "name": "Transfer",
-          "description": "Transfer is invoked by AcceptTokenRequest and is hidden from external. A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+          "description": "Transfer is invoked directly by issuers or indirectly though AcceptTokenRequest and is hidden from external. A transfer request will invoke a transfer from the owner of the token to the wallet provided in the To field of the request. This request also includes a value in the Amount field of the request to transfer more than one token of the class in a single request. The transfer will fail if the recipient's wallet amount exceeds the wallet limit.",
           "request": {
             "controlMessageName": "TransferRequest",
             "description": "The request",
@@ -236,7 +236,7 @@
         {
           "id": "e070f88f-6fa4-4749-b417-9ffaeae7f583",
           "name": "AuthorizeInvestor",
-          "description": "A request to issue tokens, up to the MaxTokens, to an account that can then request the issued tokens.",
+          "description": "A request to create a wallet limited to MaxTokens that can then request the issued tokens.",
           "request": {
             "controlMessageName": "AuthorizeInvestorRequest",
             "description": "The request",
@@ -257,7 +257,7 @@
             "outputParameters": [
               {
                 "name": "Confirmation",
-                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the mint request."
+                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the authorization request."
               }
             ]
           }
@@ -315,7 +315,7 @@
             "outputParameters": [
               {
                 "name": "Confirmation",
-                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of the MintTo request."
+                "valueDescription": "A confirmation receipt or error may be returned to the invoker based on the outcome of accepting the request."
               }
             ]
           }
