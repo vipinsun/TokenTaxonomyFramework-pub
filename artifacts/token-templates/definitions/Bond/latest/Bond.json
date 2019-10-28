@@ -49,7 +49,7 @@
       "implementationReferences": [
         {
           "mappingType": "IMPLEMENTATION",
-          "name": "Banco Santander, first end-to-end blockchain bond.",
+          "name": "Banco Santander, first end-to-end blockchain issued and settled bond.",
           "referencePath": "https://www.santander.com/csgs/Satellite/CFWCSancomQP01/en_GB/Corporate/Press-room/2019/09/12/Santander-launches-the-first-end-to-end-blockchain-bond.html",
           "maps": null
         }
@@ -378,7 +378,7 @@
           "influencingInvocation": {
             "id": "3f591127-0508-445b-b449-4adc3d8d90e9",
             "name": "CheckTransferAllowed",
-            "description": "Check to see if the account has been whitelisted, KYC, by the custodian.",
+            "description": "Check to see if the account has been whitelisted and KYC'd, by the custodian.",
             "request": {
               "controlMessageName": "CheckTransferAllowedRequest",
               "description": "Checking the whitelist.",
