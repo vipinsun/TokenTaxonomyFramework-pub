@@ -50,9 +50,7 @@ namespace TTI.TTF.Taxonomy.Model
                         : "This token is not interchangeable with other tokens of the same type as they have different values."
                 }
             };
-
-
-
+            
             switch (classification.TokenUnit)
             {
                 case TokenUnit.Fractional:
@@ -71,7 +69,7 @@ namespace TTI.TTF.Taxonomy.Model
             retVal.Add(classification.ValueType.ToString(),
                 classification.ValueType == ValueType.Intrinsic
                     ? "This token is purely a digital token represents value directly, it represents no external physical form and cannot be a receipt or title for a material item or property."
-                    : "This token is a receipt or title to a material item, property or right. The value is referenced and the token represents it and can be owned or used digitally via its token.");
+                    : "This token is a receipt or title to a material item, property or right. The token represents a reference to the value, can be owned or used digitally via its token. Sometimes referred to as a digital twin.");
             
             retVal.Add(classification.RepresentationType.ToString(),
                 classification.RepresentationType == RepresentationType.Common

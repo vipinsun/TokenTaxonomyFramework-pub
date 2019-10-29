@@ -520,7 +520,7 @@ namespace TTI.TTF.Taxonomy
 					case ArtifactType.Behavior:
 						var behaviorFolder = Taxonomy.Behaviors.Single(e =>
 							e.Value.Artifact.ArtifactSymbol.Tooling == tooling);
-						return behaviorFolder.Value.Artifact.Name;
+						return behaviorFolder.Value.Artifact.Name.ToLower();
 					case ArtifactType.BehaviorGroup:
 						var behaviorGroupFolder = Taxonomy.BehaviorGroups.Single(e =>
 							e.Value.Artifact.ArtifactSymbol.Tooling == tooling);
