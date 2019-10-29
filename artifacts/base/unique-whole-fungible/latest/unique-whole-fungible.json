@@ -15,8 +15,8 @@
       "Loyalty Point"
     ],
     "artifactDefinition": {
-      "businessDescription": "Unique, Whole Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. A whole token cannot be sub-divided so it doesn't support the notion of 'making change'. Because this token is unique, it will have its own identity and can have unique properties like a serial number.",
-      "businessExample": "An inventory item or SKU, where an item is treated as a whole because it makes no sense to own a fraction of a SKU or loyalty point.",
+      "businessDescription": "Unique, Whole Fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. A whole token cannot be sub-divided, so it doesn't support the notion of 'making change'. Because this token is unique, it will have its own identity and can have unique properties like a serial number. Implementations should support a GetBalance or List for owners to see their balances or tokens they own.",
+      "businessExample": "An inventory item or SKU, where an item is treated as a whole, because it makes no sense to own a fraction of a SKU or loyalty point.",
       "analogies": [
         {
           "name": "Loyalty Points",
@@ -25,7 +25,7 @@
         },
         {
           "name": "General Admission Movie Ticket",
-          "description": "Purchasing a general admission ticket to a movie only allows for you to have a seat, but the seat that you actually get depends on factors like when you arrive. Your not likely to want to share a seat with another adult.",
+          "description": "Purchasing a general admission ticket to a movie only allows for you to have a seat, but the seat that you get depends on factors like when you arrive. You're not likely to want to share a seat with another adult.",
           "artifactDefinition": null
         }
       ],
