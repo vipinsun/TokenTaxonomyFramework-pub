@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Google.Protobuf" Version="3.10.0" />
-      <PackageReference Include="Google.Protobuf.Tools" Version="3.10.0" />
+      <PackageReference Include="Google.Protobuf" Version="3.10.1" />
+      <PackageReference Include="Google.Protobuf.Tools" Version="3.10.1" />
     </ItemGroup>
 
 </Project>
