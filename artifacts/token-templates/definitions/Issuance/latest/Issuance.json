@@ -65,7 +65,13 @@
       ],
       "resources": [],
       "artifact": null
-    }
+    },
+    "contributors": [
+      {
+        "name": "Daniel Feichtinger",
+        "organization": "Digital Asset"
+      }
+    ]
   },
   "formulaReference": {
     "id": "0928315c-31b3-4d6e-8154-35f2a0659491",

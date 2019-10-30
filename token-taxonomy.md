@@ -1,95 +1,94 @@
-# Token Taxonomy Framework (TTF)
+# Token Taxonomy Framework (TTF) - November 2019
 
-The Token Taxonomy Framework bridges the gap between blockchain developers, line of business executives and legal/regulators allowing them to work together to model existing and define new business models and networks based on Tokens.  The blockchain space alone makes it difficult to establish common ground, but when adding Tokens to the mix they find themselves speaking completely different languages.  The framework’s purpose IS:
+The Token Taxonomy Framework bridges the gap between blockchain developers, line of business executives and legal/regulators allowing them to work together to model existing and define new business models and networks based on tokens.  The blockchain space alone makes it difficult to establish common ground, but when adding tokens to the mix they find themselves speaking completely different languages.  The framework’s purpose is to:
 
-- Educate – take a step back and CLEARLY define a token in non-technical and cross industry terms.  Using real world, everyday analogies so ANYONE can understand them using properties and behaviors to describe and define them.
-- Define a common set of concepts and terms that can be used by business, technical and regulatory participants to speak the same language.
-- Produce token definitions that have clear and understood requirements that are implementation neutral for developers to follow and standards to validate.
+- Educate – take a step back and CLEARLY define a token in non-technical and cross industry terms using real world, everyday analogies so ANYONE can understand them using properties and behaviors to describe and define them.
+- Define a common set of concepts and terms that can be used by business, technical, and regulatory participants to speak the same language.
+- Produce token definitions that have clear and understood requirements that are implementation neutral for developers to follow and standards organizations to validate.
 - Establish a base Token Classification Hierarchy (TCH) driven by metadata that is simple to understand and navigate for anyone interested in learning and discovering Tokens and underlying implementations.
-- Tooling meta-data using the TTF syntax to be able to generate visual representations of classifications and modelling tools to view and create token definitions mapped to the taxonomy.
-- Neutral to programming language and blockchain, distributed ledger or other distributed medium where tokens reside.
-- Open and collaborative workshops to  accelerate the creation of powerful vertical industry applications and innovation for platforms, start-ups and enterprises.
-- Standard artifacts and control message descriptions mapped to the taxonomy that are implementation neutral and provide base components and controls that consortia, startups, platforms or regulators can use to work together.
+- Deliver tooling meta-data using the TTF syntax that enables the generation of visual representations of classifications, and modelling tools to view and create token definitions mapped to the taxonomy.
+- Use terminology that is neutral to programming language and blockchain, distributed ledger or other distributed medium where tokens reside.
+- Encourage open and collaborative workshops to accelerate the creation of powerful vertical industry applications and innovation for platforms, start-ups, and enterprises.
+- Produce standard artifacts and control message descriptions mapped to the taxonomy that are implementation neutral and provide base components and controls that consortia, startups, platforms or regulators can use to work together.
 - Encourage differentiation and vertical specialization while maintaining an interoperable base.
-- Sandbox environment for legal and regulatory requirement discovery and input
-- Used in taxonomy workshops for defining existing or new tokens which results in a contribution back to the framework to organically grow and expand across industries for maximum re-use.
+- Include a sandbox environment for legal and regulatory requirement discovery and input
+- Be used in taxonomy workshops for defining existing or new tokens which results in a contribution back to the framework to organically grow and expand across industries for maximum re-use.
 
 It is **NOT**:
 
-- Specific to the Ethereum family but applies to any shared medium.
-- A Legal framework - but does establish common ground.
-- A Regulatory framework - also creates common ground.
-- Complete or comprehensive
+- Specific to the Ethereum family but applies to any shared medium - whether it be a blockchain or database.
+- A Legal or regulatory framework - but it does establish common ground.
+- Complete or comprehensive. It is intended to be expanded over time.
 
-This paper does not provide a backgrounder on Tokens and their function, but rather introduces taxonomy and classifications as a composition framework for creating or documenting existing token definitions. However, it is worthwhile to establish so foundational definitions for two concepts, what a token is and what is often called a wallet or an account.
+This document does not provide a background on Tokens and their function, but rather introduces the taxonomy and classifications as a composition framework for creating or documenting existing token definitions. However, it is worthwhile to establish foundational definitions for two concepts: what a token is, and what is often called a wallet or an account.
 
-A token is a digital representation of some shared value. The value can be intrinsically digital with no external physical form or be a receipt or title for a material item or property. A purely digital token represents value directly, where the other references that actual value, or at least a claim to it. For example, a crypto-currency like Bitcoin is intrinsically digital, it has no referenced physical form, but 1 kg of tokenized gold would.
+A token is a digital representation of some shared value. The value can be intrinsically digital with no external physical form or be a receipt or title for a material item or property. A purely digital token represents value directly, where the other references that actual value, or at least a claim to it. For example, a crypto currency like Bitcoin is intrinsically digital since it has no referenced physical form, but 1 kg of tokenized gold would.
 
-An account or wallet (which can aggregate several accounts) represents a repository of tokens attributed to an owner. An owner is given an "address" which uniquely identifies the owner to which the owner possesses the key. A token's owner is a references to an address and a wallet is a reference to address for an owner. The wallet can provide a view into token balances in one place for the owner, much like a bank account or bank summary of accounts.
+An account or wallet (which can aggregate several accounts) represents a repository of tokens attributed to an owner. An owner is given an "address" which uniquely identifies the owner, and the owner possesses the key to that address. A token's owner is a reference to an address and a wallet is a reference to an address for an owner. The wallet can provide a view into token balances in one place for the owner, much like a bank account or bank summary of accounts.
 
 See the [Token Hall](https://medium.com/tokenhall) for a backgrounder for business and technical audiences.
 
 ## Token Classification
 
-The TTF classifies tokens using five characteristics they possess, allowing tokens to be classified together that share the same characteristics.  This are foundational token concepts that can be applied to most tokens.
+The TTF classifies tokens using five characteristics they possess, allowing tokens that share the same characteristics to be classified together.  These are foundational token concepts that can be applied to most tokens.
 
 - Token Type: Fungible or Non-Fungible.  The difference between the two is clarified later in this document
-- Token Unit: Fractional, Whole or Singleton indicates if a token can be subdivided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a $1 bill can sub-divided by to 2 decimal places and can be broken into four .25¢ coins, or any different variation of coins and is thus fractional. Whole means no subdivision allowed just whole numbers quantities and a singleton has no subdivision and a quantity of 1.
-- Value Type: Intrinsic or Reference indicates if the token itself is value, like a crypto currency or if it references a value elsewhere, like a property title.
-- Representation Type: Common or Unique. Common tokens share a single set of properties, are not distinct from one another and balances are recorded in a central place. These tokens are simply represented as a balance or quantity attributed to an owner’s address where all the balances are recorded on the same balance sheet. A unique token has its own identity, can have unique properties and be individually traced. Common tokens are like money in a bank account and unique tokens are like money in your pocket.
+- Token Unit: Fractional, Whole or Singleton indicates if a token can be subdivided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a $1 bill can sub-divided to 2 decimal places and can be broken into four .25¢ coins (or a number of different variation of coins) and is thus Fractional. Whole means no subdivision allowed - just whole numbers quantities - and a Singleton has a quantity of 1 with no subdivision.
+- Value Type: Intrinsic or Reference indicates if the token itself is a value, like a crypto currency, or if it references a value elsewhere, like a property title.
+- Representation Type: Common or Unique. Common tokens share a single set of properties, are not distinct from one another, and balances are recorded in a central place. These tokens are simply represented as a balance or quantity attributed to an owner’s address where all the balances are recorded on the same balance sheet. A unique token has its own identity, can have unique properties, and be individually traced. Common tokens are like money in a bank account and Unique tokens are like money in your pocket.
 - Template Type: Single or Hybrid, covered later, but is an indication of any parent/child relationships or dependencies between tokens.
 
 Classification is useful when visualizing different token types and learning about the basic characteristics a token would need to have when you are using the TTF to define it.
 
 ## Common Terminology
 
-The TTF is a composition framework that breaks tokens down into basic parts.  Base token types, properties and behaviors, which are then placed into a category by type and can support grouping.  Each decomposed part is documented in a taxonomy [artifact](taxonomy-file-format.md). Composing these token parts together also generates a taxonomy artifact defining a complete token referencing its component artifacts.
+The TTF is a composition framework that breaks tokens down into basic reusable parts - base token types, properties and behaviors - which are then placed into a category by type and can support grouping. Each decomposed part is documented in a taxonomy [artifact](taxonomy-file-format.md). Composing these token parts together generates another taxonomy artifact defining a complete token by referencing its component artifacts.
 
 The taxonomy uses these terms for all tokens:
 
-- Token Template - describes a token based on its type and what capabilities or restrictions a token created from the template would have. (i.e. Fractional Fungible Template). A template has two parts:
-  - Template Formula - a set of reusable taxonomy components combined together used to classify and describe how a token would be worked with.
-  - Template Definition - is derived from a formula, filling in the details to define a token that can be used to deploy as a class. (i.e. Crypto-currency Token Definition)
-- Token Class - is an deployed token from a Template. (i.e. Bitcoin created from the crypto-currency template)
-- Token Instance - a single token in a particular token class. (i.e. satoshi balance in your crypto-currency wallet)
+- Token Template - describes a token based on its type and what capabilities or restrictions a token created from the template would have (i.e. Fractional Fungible Template). A template has two parts:
+  - Template Formula - a set of reusable taxonomy components that, when combined, is used to classify and describe how to work with a token.
+  - Template Definition - is derived from a formula, filling in the details to define a token that can be used to deploy as a class (i.e. Cryptocurrency Token Definition).
+- Token Class - is an deployed token from a Template. (i.e. Bitcoin created from the crypto-currency template).
+- Token Instance - a single token in a particular Token Class. (i.e. satoshi balance in your crypto-currency wallet).
 
-![DefinitionStructure](images/definition-structure.png)
+![DefinitionStructure](definition-structure.png)
 
 ### Template Formula and Definition
 
-A formula is a complete list of taxonomy components used by a token that is paired with a definition that fills in the details. A template is like a cake recipe. A recipe has a list of ingredients, details about the measurements of each ingredient, how to mix them together and how long to cook.  
+Templates are like recipes that have a list of ingredients, details about the measurements of each ingredient, how to mix them together, and finally how long to cook.
 
-A template formula is like the list of ingredients and the definition is the instructions and details for defining a token template.
+Templates have two parts, the first of which is the template Formula. It is like the list of ingredients for a recipe. The second part is the Definition that contains the instructions and details for defining a token, like the step by step instructions of a recipe.
 
 ![Token Template](images/formula.png)
 
+The elements of a Formula (base types, behaviors, and property sets) will be described later.
+
 ### Token Class vs. Instance
 
-A token class is a deployed template using a specific implementation or platform, i.e. blockchain.  Depending on the target blockchain platform the implementation may be a complete set of source code or a software package from a 3rd party.
+A token class is a deployed template using a specific implementation or platform, e.g. Ethereum blockchain.  Depending on the target  platform the implementation may be a complete set of source code or a software package from a 3rd party.
 
 ![Token Terms](images/templateContext.png)
 
 A token instance is an owned token of a particular class. Depending on the platform how this notion is actually implemented will vary. Instances of a token that you may own, or have in your digital wallet, represent your account balance of that token class.
 
-### Taxonomy Artifacts, Categories & Templates
+### Taxonomy Artifacts, Categories, and Templates
 
 The taxonomy is comprised of artifacts that are categorized into 5 basic types:
 
 - Base Types: the foundation of any token is its base token type.
 - Behaviors: capabilities or restrictions that can apply to a token.
-- Behavior-Groups: a bundle of behaviors that are frequently used together.
-- Property-Sets: a defined property(s) that if applied a token can be queried against and support a value for.
-- Token-Templates: a composition of other artifacts brought together to create a token template, classification and a detailed specification. There are 2 parts of a template, the formula and definition.
+- Behavior Groups: a bundle of behaviors that are frequently used together.
+- Property Sets: a defined property or set of properties that - when applied to a token - can support a value that can be queried.
+- Token Templates: a composition of  artifacts brought together to create a classification and  detailed specification. There are 2 parts of a template, the formula and definition.
 
-Artifacts themselves are just a set of files that share a common set of metadata and consistency for defining the artifact type. Artifacts are covered in more detail later in this document and in [taxonomy artifacts](taxonomy-artifact-format.md).
-
-For example, suppose we were baking a cake, using a recipe. An artifact is like an ingredient that can be used in a recipe, i.e. milk, sugar, flour. The recipe pulls together the ingredients by specifying how much of each ingredient to add, when and how long to bake. In this analogy, ingredients are Artifacts and a recipe is a Token Template.
+The TTF is comprised of  artifacts, which are just  sets of files that share a common set of metadata and consistency for defining  items and compositions in the framework. For example, suppose we were baking a cake using a recipe. An artifact is like an ingredient that can be used in the recipe, e.g. milk, sugar, flour. The recipe pulls together the ingredients by specifying how much of each ingredient to add, when and how long to cook. In this analogy, ingredients are Artifacts and a recipe is a Token Template.
 
 ### Artifact References and Templates
 
-The TTF is comprised of artifacts, a common way of defining items and compositions in the framework. An artifact is a verbose description of the TTF component it represents with place holders for settings or properties that the artifact can have when used. Every artifact has an artifact symbol, which contains a unique identifier as well as visual and tooling symbols used in the taxonomy. The artifact’s unique identifier allows for each artifact to be independently versioned. An artifact reference can be a lightweight link to the artifact’s unique identifier or a complete reference that also provides settings and values for its place holder properties.
+An artifact is a verbose description of the TTF component it represents with place holders for settings or properties that the artifact can have when used. Every artifact has an artifact symbol, which contains a unique identifier as well as visual and tooling symbols used in the taxonomy. The artifact’s unique identifier allows for each artifact to be independently versioned. An artifact reference can be a lightweight link to the artifact’s unique identifier or a complete reference that also provides settings and values for its place holder properties.
 
-To use an artifact, you simply reference the artifact and apply overlay values for the artifacts in a template definition. Artifacts are reusable definitions, like when a recipe calls for milk, you only need one definition of what milk is so you can just reference it and indicate how much milk the recipe calls for. When composing a Token Template, you are creating references to all the artifacts, i.e. ingredients, in the formula and providing details for the about each of the artifacts in the definition.
+To use an artifact, you simply reference the artifact and apply overlay values for the artifacts in a template definition. Artifacts are reusable definitions, like when a recipe calls for milk, you only need one definition of what milk is so you can just reference it and indicate how much milk the recipe calls for. When composing a Token Template, you are creating references to all the artifacts, i.e. ingredients, in the formula and providing details about each of the artifacts in the definition.
 
 When creating a Template Formula, it uses a symbol or lightweight reference, which is only a pointer to the artifact with no other values or settings.
 
@@ -97,7 +96,7 @@ A Template Definition, which is created from a formula, uses a full artifact ref
 
 ![References](images/reference.png)
 
-Using references in this way, prevents data duplication in the TTF and specification changes flow through existing Template artifacts without updating it in each one.
+Using references in this way prevents data duplication in the TTF, and specification changes flow through existing Template artifacts without updating it in each one.
 
 ### Classification Hierarchy
 
@@ -109,23 +108,23 @@ References are followed through the hierarchy and back to the Artifacts to valid
 
 ### Control Messages
 
-Behavior and Property-Sets contain `Control` message descriptions that are messages used to invoke a behavior or get/set the value of a property. These control messages are described in the artifact for the behavior or property-set. Control messages are named descriptively and come in request and response pairs. Control messages contain optional named parameters of a specific type for requests and responses.
+Behavior and Property Sets contain `Control` message descriptions that are used to invoke a behavior or get/set the value of a property. These control messages are described in the artifact for the behavior or property set. `Control` messages are named descriptively and come in request and response pairs. `Control` messages contain optional named parameters of a specific type for requests and responses.
 
 ![TransferRequest](images/txfer-request.png)
 
 ![TransferResponse](images/txfer-response.png)
 
-These messages are generic for the behavior and not specific to any blockchain implementation or programming language. Control messages described as invocations within an artifact and optionally in a separate file using Protocol Buffer syntax that can be used for TTF extensions like code generation or testing. For more detail on the specification definitions see [Token Control Messages](./token-control-messages.md).
+These messages are generic for the behavior and not specific to any blockchain implementation or programming language. Control messages are described as invocations within an artifact and optionally in a separate file using Protocol Buffer syntax that can be used for TTF extensions like code generation or testing. For more detail on the specification definitions see [Token Control Messages](./token-control-messages.md).
 
 ## Base Token Types
 
-The taxonomy is anchored by single root token that is used to define properties shared by the two implementable or base token types. Properties like a common name, a symbol or unique identifier a quantity and an owner.  When you create a token, you are initially creating a token or asset class of a specific type of token that will represent instances of the token.
+The taxonomy is anchored by a single root token that is used to define properties shared by the two implementable or base token types. Properties like a common name, a symbol or unique identifier a quantity and an owner.  When you create a token, you are initially creating a token or asset class of a specific type of token that will represent instances of the token.
 
-The root token also contains a single behavior called constructable.  This behavior provides tokens with the ability to be a template, or to create a clone of itself.  Constructable simply means that every token template will have a constructor control message to define initialization values when a clone of a template is created and is defined in the token template artifact.
+The root token also contains a single behavior called constructible.  This behavior provides tokens with the ability to be a template, or to create a clone of itself.  Constructible simply means that every token template will have a constructor control message to define initialization values when a clone of a template is created and is defined in the token template artifact.
 
-The two base types can also be used together to create hybrid token definitions. Using the taxonomy, a token template is defined that is be used to create a token or asset class. The class is essentially a mold for creating instances (printing or minting) of that token type.  An instance of a token class is the smallest unit that can be owned in that class.
+Using the taxonomy, a token template is defined that is to be used to create a token or asset class. The class is essentially a mold for creating instances (printing or minting) of that token type.  An instance of a token class is the smallest unit that can be owned in that class.
 
-The taxonomy uses symbols to represent token bases and possible behaviors that are used to create a token definition as a formula.  The symbols and token formulas can be used to create hierarchical relationships useful for visualizations and to aid in learning and design. The two base types can also be combined in different ways to create hybrid token definitions.
+The taxonomy uses symbols to represent token bases and possible behaviors that are used to create a token definition as a formula.  The symbols and token formulas can be used to create hierarchical relationships useful for visualizations, and to aid in learning and design. The two base types can also be combined in different ways to create hybrid token definitions.
 
 ### Fungible
 
@@ -134,7 +133,7 @@ A fungible token is identified by **&tau;<sub>F</sub>** symbol.
 
 ### Non-fungible
 
-Non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the title to a broken-down shack is not of the same value as a mansion.
+A non-fungible token is unique. Hence a non-fungible token is not interchangeable with other tokens of the same type as they typically have different values.  A property title is a good example of a non-fungible token where the title to a broken-down shack is not of the same value as as the title to a mansion.
 
 A fungible token is identified by **&tau;<sub>N</sub>**.
 
@@ -142,12 +141,12 @@ A fungible token is identified by **&tau;<sub>N</sub>**.
 
 Tokens can have either a common representation, sometimes called account or balance tokens, or unique representation, or UTXO (unspent transaction output). This distinction might seem subtle but is important when considering how tokens can be traced and if they can have isolated and unique properties.
 
-Common tokens share a single set of properties, are not distinct from one another and balances are recorded in a central place. These tokens are simply represented as a balance or quantity attributed to an owner address where all the balances are recorded on the same balance sheet. This balance sheet is distributed, so its not centralized,but rather simplified. Common tokens have the advantage of easily sharing a value like a "SKU" where the change in the value is immediately reflected for all tokens. Common tokens cannot be individually traced, only their balances between accounts can.
+Common tokens share a single set of properties, are not distinct from one another, and balances are recorded in a central place. These tokens are simply represented as a balance or quantity attributed to an owner address where all the balances are recorded on the same balance sheet. This balance sheet is distributed, not centralized, and rather simplified. Common tokens have the advantage of easily sharing a value like a "SKU" where the change in the value is immediately reflected for all tokens. Common tokens cannot be individually traced, only their balances between accounts can.
 
 Bank accounts are an example of a common fungible token.
 
 Unique tokens have their own identities and can be individually traced. Each unique token can carry unique properties that cannot be changed in one place and cascade to all and their balances must be summed. 
-Bank notes, paper bills and metal coins, they are interchangeable but have unique properties like a serial number are an example of a unique fungible token.
+Bank notes and paper bills are interchangeable but have unique properties like a serial number and are therefore examples of unique fungible tokens.
 
 A unique token is identified by `‘` following the type symbol, i.e. **&tau;<sub>F'</sub>**.
 
@@ -157,30 +156,30 @@ Hybrid tokens combine a parent token and one or more child token(s) to model dif
 
 #### Shared Non-fungible Parent with Fungible classes
 
-These tokens have a non-fungible parent or base token and can have multiple classes of child tokens.  An example of this hybrid is a rock concert, where the parent token represents the specific dateor showing of the concert with a fungible child for general admission and a non-fungible child for "reserved" section seating. Represented as **&tau;<sub>N</sub>**(&tau;<sub>F</sub>, &tau;<sub>N</sub>).
+These tokens have a non-fungible parent or base token and can have multiple classes of child tokens.  An example of this hybrid is a rock concert, where the parent token represents the specific date or showing of the concert with a fungible child for general admission and a non-fungible child for "reserved" section seating. Represented as **&tau;<sub>N</sub>**(&tau;<sub>F</sub>, &tau;<sub>N</sub>).
 
 The owner of an instance of this token will possess the child token that pulls along the parent and is presented at the concert gate for admission.  If the parent token date matches the current date the token is valid for admission. If the child token that is owned is in the reserved seating section, the owner has the right to sit in the seat indicated by the token.
 
 #### Fungible Parent class owns or has many non-fungible Children
 
-A token can be the parent of any number of tokens to represent the compound value of the child tokens.  For example, a **&tau;<sub>F</sub>**(&tau;<sub>N</sub>) is a fungible token parent that is the owner one or more non-fungible tokens. An owner of an instance of this parent would own a percentage of the pool of non-fungible child tokens. A mortgage backed security is a good example of this type of hybrid token.
+A token can be the parent of any number of tokens to represent the compound value of the child tokens.  For example, a **&tau;<sub>F</sub>**(&tau;<sub>N</sub>) is a fungible token parent that is the owner of one or more non-fungible tokens. An owner of an instance of this parent would own a percentage of the pool of non-fungible child tokens. A mortgage-backed security is a good example of this type of hybrid token.
 
 ## Properties
 
 Properties of a token are used to define the information or data a token contains about itself and to record its activities. Some properties are set when the token class is created from a template, like its name and owner while others are set and updated over a token’s lifetime. How a property value is set determines what type of property it is.
 
 - Behavioral Property: If a property's value must be set or read by a behavior, it is called a behavioral property.
-- Property Set: If a property can be set independently from a behavior it is a non-behavioral property or property set.
+- Non-Behavioral Property (Property Set): If a property can be set independently from a behavior it is a non-behavioral property or property set.
 
 The difference in these two types is often sematic but is key to understanding a property's overall scope.
 
-- A Behavioral property value is not determined directly but controlled by logic contained in a behavior. Setting its value is the result of calculation or logic based on an action in its controlling behavior. Visibility of its value may or may not be obtained directly from an explicit control message. A behavioral property is defined in a behavior artifact.
+- A Behavioral property value is not determined directly but controlled by logic contained in a behavior. Setting its value is the result of a calculation or logic based on an action in its controlling behavior. Visibility of its value may or may not be obtained directly from an explicit control message. A behavioral property is defined in a behavior artifact.
 - A behavioral property may not have meaning or even be visible to observers outside of a token behavior.
-- A non-behavioral property has its own "getter and setter" defined in a Property-Set artifact. Which means it will have controls for getting and setting its value directly.
+- A non-behavioral property has its own "getter and setter" defined in a Property Set artifact. Which means it will have controls for getting and setting its value directly.
 
-Non-behavioral properties can be added to a token without effecting its behavior, like a serial number, reference properties or generic tags.
+Non-behavioral properties, like a serial number, reference properties or generic tags,  can be added to a token without effecting its behavior.
 
-For example, you can create the property title token that uses a non-fungible token template and adds non-behavioral properties like a map number and plot location to create a new template. You can repeat this process for an art token that uses the same non-fungible token template and adds different non-behavioral properties need to represent it. Even though these two tokens started with a common template they expose different non-behavioral properties.
+For example, you can create a property title token that uses a non-fungible token template and adds non-behavioral properties like a map number and plot location to create a new template. You can repeat this process for an art token that uses the same non-fungible token template and adds different non-behavioral properties needed to represent it.  Even though these two tokens started with a common template, they expose different non-behavioral properties.
 
 Non-behavioral properties are defined in a property set artifact. A property set artifact can contain the definition of a single field property like a SKU or multiple field properties like a Mailing Address. A property set can represent a complex property like a Customer that contains fields like First Name, Last Name, Address (a nested property), etc.
 
@@ -190,16 +189,16 @@ Some token properties from its base may have different values or meaning dependi
 
 ## Behaviors
 
-Behaviors can be capabilities and restrictions containing logic and properties that can be common across token types. In the TTF, behaviors use the first letter of the behavior as its representation. Letter collisions can be avoided by adding additional letters from a single word name or the letter of a second word.
+Behaviors are capabilities and restrictions containing logic and properties that can be common across token types. In the TTF, behaviors use the first letter of the behavior as its representation. Letter collisions can be avoided by adding additional letters from a single word name or the letter of a second word.
 Behaviors usually have existing “non-blockchain” implementations which are well understood in business contexts. 
 
 ### Common Behaviors
 
-This is a list of some common behaviors and not comprehensive.  The TTF is a working standard where artifacts are improved and added on a regular basis.  This process is covered in more detail later in this document.
+This is a list of some common behaviors and is not intended to be comprehensive, as the TTF is a working standard where artifacts are improved and added on a regular basis.  This process is covered in more detail later in this document.
 
 ![CommonBehaviors](images/common-behaviors.png)
 
-Some of these behaviors are valid for either base type, while others only apply to one.  For example, ~t or non-transferable would not make sense for a fungible token and sub-dividable does not apply to a token representing an s or singleton.
+Some of these behaviors are valid for either base type, while others only apply to one.  For example, ~t (non-transferable) would not make sense for a fungible token, and d (sub-dividable) does not apply to a token with the s (singleton) behavior.
 
 A behavior that is not valid for a specific type or conflicts with another behavior it will include the symbol reference in its incompatible list.
 
@@ -207,39 +206,38 @@ Where hybrid tokens are being defined, behaviors can be defined that are common 
 
 > **[&tau;<sub>F</sub>{m} (&tau;<sub>N</sub>{~m}){t}]**
 
-For boolean behaviors like Sub-dividable d or Whole ~d the absence of ~d would imply d, but should usually be included for clarity.
+For boolean behaviors like Sub-dividable d or Whole ~d, the absence of ~d would imply d but should be explicitly included for clarity.
+
+Some behaviors, like Transferable t are implicit for certain token bases.  A fungible token, for example, implicitly is Transferable so the taxonomy does not require it to be included for tooling or the template  but again should be explicitly included for clarity: &tau;<sub>F</sub> = &tau;<sub>F</sub>{t}.
 
 ### Special Behaviors and Interactions
 
-Some behaviors, when applied, will affect other behaviors within the token definition.  These behaviors influence other behaviors in some way when they are combined in the same template. Examples of this are the behaviors delegable and roles.
+Some behaviors, when applied, will affect other behaviors within the token definition.  These behaviors influence other behaviors in some way when they are combined in the same template. Examples of this are the behaviors Delegable and Roles.
 
-Delegable, *g*, is the ability to delegate a behavior to another party to perform on your behalf as the token owner.  Delegable is implied or the default, so an absence of *~g* means token class and any behaviors that are influenced by its behavior will be delegable.
+Delegable, g, is the ability to delegate a behavior to another party to perform on your behalf as the token owner.  Delegable is implied (the default), so an absence of ~g means the token class and any behaviors that are influenced by its behavior will be delegable.
 
-Behaviors like `transfer` and `burn` can be defined as delegable and when they are applied to a formula that is delegable, these behaviors will enable delegated invocations like TransferFrom and BurnFrom that allows an account the owner has approved to invoke these on their behalf.
-
-Roles, *r*, allows for a role or membership check before invoking an influenced behavior in order to determine if invocation is allowed by the invoker.
+Behaviors like Transfer and Burn can be defined as Delegable, and when they are applied to a formula that is Delegable, these behaviors will enable delegated invocations like TransferFrom and BurnFrom that allows an account the owner has approved to invoke these on their behalf.
+Roles, r, allows for a role or membership check before invoking an influenced behavior in order to determine if invocation is allowed by the invoker.
 
 Potential influences are defined in an artifact and details of regarding influence is detailed in a template definition when the artifacts are brought into context with each other.
 
-Behaviors can be incompatible with each other and cause validation errors. A behavior and its opposite `~` are obviously incompatible. A behavior will indicate what behaviors it will be incompatible with, for example if `singleton`, *s* and `mintable`, *m* or `subdividable`, *d* is applied in the same token, validation will fail as a singleton can only have a quantity of 1 whole token.
+Behaviors can be incompatible with each other and cause validation errors.  A behavior and its opposite `~` are obviously incompatible. A behavior will indicate what behaviors it will be incompatible with, for example if singleton, s and mintable, m or sub-dividable, d is applied in the same token, validation will fail as a singleton can only have a quantity of 1 whole token.
 
 Some behaviors will require setup at token class creation or construction. A behavior that requires setup should have a Constructor control message that indicates how it should be setup at construction.
 
-Some behaviors, like Transferable *t* are implicit for certain token bases.  A fungible token, for example, implicitly is Transferable so the taxonomy does not require it to be included for tooling or the template but can be included for clarity: *&tau;<sub>F</sub> = &tau;<sub>F</sub>{t}*.
-
 ### Internal and External Behaviors
 
-Behaviors can be internal or external depending on what the behavior effects. An internal behavior is enabling or restricting properties on the token itself, where an external behavior is enabling or restricting the invocation of the behavior from an external actor. For example, the behavior sub-dividable means that the decimals property on the base token is > 0 and non-transferable means that Owner property is not modifiable from the initial owner that was set when the token instance was created.  
+Behaviors can be internal or external depending on what the behavior effects. An internal behavior is enabling or restricting properties on the token itself, whereas an external behavior is enabling or restricting the invocation of the behavior from an external actor. For example, the behavior sub-dividable means that the decimals property on the base token is > 0 and non-transferable means that the Owner property is not modifiable from the initial owner that was set when the token instance was created.
 
-An example of an external behavior would be something like `financeable` or `encumberable`.  This behavior would enable an external actor to invoke the behavior and the token would contain the correct behavioral properties to record the outcome when invoked. Meaning if a Loan contract where to invoke a FinanceRequest on a token instance the loan contract could expect a FinanceResponse back from the token as to the success or failure of this behavior.
+Examples of an external behavior would be something like Financeable or Encumberable.  These behaviors would enable an external actor to invoke the behavior and the token would contain the correct behavioral properties to record the outcome when invoked.  For example, if a Loan contract were to invoke FinanceRequest on a token instance, the loan contract could expect a FinanceResponse back from the token as an indication of the success or failure of this behavior.
 
-The distinction between internal and external behaviors can seem like nuance at first but is an effective way to distinguish pure token behaviors from contract behaviors and document the business logic the behavior represents.  External behaviors are primarily contract behaviors, that need a supporting token interface to allow the two to be linked together to fulfill the end-to-end functionality.  
+The distinction between internal and external behaviors can seem like nuance at first but is an effective way to distinguish pure token behaviors from contract behaviors and document the business logic the behavior represents.  External behaviors are primarily contract behaviors that need a supporting token interface to allow the two to be linked together to fulfill the end-to-end functionality.  
 
 So, external behaviors will have two parts, contract and token, that are required when describing them. Artifact authors may choose to document the corresponding contract portion of the behavior in an additional artifact file.
 
 ## Behavior Groups
 
-Behaviors can also be grouped together to describe a common set of capabilities that are used together frequently. Supply Control is a group made up of mint-able, burnable and roles for adding and removing token supply and by allowing certain accounts in a role to be able to mint new tokens within the class.
+Behaviors can also be grouped together to describe a common set of capabilities that are used together frequently. Supply Control is a group made up of Mintable, Burnable, and Roles for adding and removing token supply and by allowing certain accounts in a role to be able to mint new tokens within the class.
 
 For example, an oil token may allow oil producers to mint new tokens as they introduce a barrel of oil into the supply chain. These tokens are transferred to a refiner that will burn the token when it has been refined.
 
@@ -251,13 +249,13 @@ This artifact references include settings and property values for behaviors in t
 
 ## Template Formula
 
-Template Formulas list all a token's components together. The framework performs an initial validation of the artifacts in context with each other enforcing grammar and rules regarding incompatibilities, dependencies and influences. Formulas start with a base token type, then collections of behaviors, behavior groups and property sets.
+Template Formulas list all a token's components together. The framework performs an initial validation of the artifacts in context with each other enforcing grammar and rules regarding incompatibilities, dependencies and influences. Formulas start with a base token type, then collections of behaviors, behavior groups, and property sets.
 
 ![TokenTemplateImplementationDetail](images/templateImpl.png)
 
 The example above shows a reference to the artifact for the `phSKU` property.
 
-## From Formula to Definition
+## Template Definition
 
 Once you have created or identified an existing formula, you can use the TTF Service to create a Template Definition from it. The definition incorporates the artifacts identified in the formula as references, where the artifact being used is identified and the settings and property values for the artifact in context are established. The definition has a reference to its formula and the unique identifier given to the definition becomes the id for the Token Template and Token Specification.
 
@@ -267,33 +265,27 @@ The definition is where the final settings and property values are established f
 
 ## Token Specification
 
-The TTF can generate a Token Specification document when provided the Template Definition Id. The generation of the specification pulls the complete artifact for base, behaviors, property-sets and children into a specification and then merges the definition reference values for each artifact. This generates a full and quite verbose token specification that can be used as requirements for developers, documentation and training.
+The TTF can generate a Token Specification document when provided the Template Definition Id. The generation of the specification pulls the complete artifact for base, behaviors, property sets, and children into a specification and then merges the definition reference values for each artifact. This generates a complete and quite verbose token specification that can be used as requirements for developers, documentation and training.
 
 ![TokenSpecification](images/tokenSpec.png)
 
 ## Branch Classification
 
-A Base token type provides the foundation of a template which additional artifacts are added to in order to complete a template definition. The base token for a template is either a Single or Hybrid with a token type of either Fungible or Non-Fungible and finally its Unit is classified as fractional, whole or singleton. Classification is primarily used for creating visualization hierarchies to compare templates and understand relationships between them.
-By default, Token Templates are organized in a simple hierarchy by Fungible, Non-Fungible and Hybrid. Further classification hierarchies can be dynamically generated using the 5 classification values and the template formula.
+A Base token type provides the foundation of a template to which additional artifacts are added to in order to complete a template definition. The base token for a template is either  Single or Hybrid, with a token type of either Fungible or Non-Fungible, and finally its Unit is classified as fractional, whole or singleton. Classification is primarily used for creating visualization hierarchies to compare templates and understand relationships between them.
+
+By default, Token Templates are organized in a simple hierarchy by Fungible, Non-Fungible, and Hybrid. Further classification hierarchies can be dynamically generated using the five classification values and the template formula.
 
 ![Branches](images/branchSelection.png)
 
 ## Taxonomy Model and Artifacts
 
-Artifacts are primarily defined using a platform neutral model that provides type safety and strong schema validation as well as independence from the client display or interface.
-
-> Note, the visualizations of the taxonomy model can be viewed as relational or an object model. The image below is using a relational view for simplicity. The Taxonomy model is an object model that is very much like a ORM (object to relational model) that is native to most platforms and can serialize to binary, JSON or Sql formats.
+Artifacts are primarily defined using a platform neutral model that provides type safety and strong schema validation as well as independence from the client display or interface. The Taxonomy Object Model (TOM) is an object model that is very much like an ORM (object to relational model) that is native to most platforms and can serialize to binary or JSON formats.
 
 ![TaxonomyModel](images/taxonomy-model.png)
 
-Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior-groups, property-sets, formulas, definitions,templates placed in a hierarchy.
+Above, is a representation of the taxonomy model, where each property of the taxonomy is a list of available behaviors, behavior groups, property sets, formulas, definitions, and templates that are placed in a hierarchical structure.
 
 Below is an example of a template formula in the model showing the collection of its artifacts:
-
-- Base
-- Behavior
-- Behavior Groups
-- Property Set
 
 ![TokenTemplate](images/templateFormula.png)
 
@@ -301,7 +293,7 @@ Written in protocol buffers, the schema supports a data structure to hold artifa
 
 ![Artifact](images/artifact-hl.png)
 
-An artifact is more than just a single JSON model file, but additional files for the artifact's supporting documentation that can include protocol buffer control definitions, sequence diagrams, PowerPoint slides, paired contract behavior documentation, etc. All an artifacts documents are contained within a single folder in the file structure based on the artifact type and version.
+An artifact is more than just a single JSON model file; additional files for the artifact's supporting documentation can be added that include protocol buffer control definitions, sequence diagrams, PowerPoint slides, paired contract behavior documentation, etc. All an artifacts documents are contained within a single folder in the file structure based on the artifact type and version.
 
 ![ArtifactModel](images/artifact-model.png)
 
@@ -399,7 +391,7 @@ As an example, let’s see what a singleton token could look like with a design 
 
 When designing a token using the taxonomy, you will pick from one of these six lower branches of fungible (fractional or whole) and non-fungible (fractional, whole or singleton) or hybrid as a starting design surface.
 
-Behavior artifacts and properties appear in lists like menus you can drag and drop inside your design surface to define a new token.  The taxonomy will block behaviors or behavior combinations that conflict or not valid for the base token type you have selected.
+Behavior artifacts and properties appear in lists like menus you can drag and drop inside your design surface to define a new token.  The taxonomy will block behaviors or behavior combinations that conflict or are not valid for the base token type you have selected.
 
 You can then apply the values for settings and properties to provide the detail to the underlying artifacts in the definition. The result is a defined token that has a baseline specification to serve as a starting point for implementing a platform specific token.
 
@@ -410,13 +402,14 @@ You can then apply the values for settings and properties to provide the detail 
 If you find a token template that is already defined, but your token has specific non-behavioral properties like a `SKU` or  `CUSIP` property you can create a new token template, use the existing template formula and add your properties to create a new template and branch in the taxonomy.
 
 In this case the generic taxonomy definition: &tau;<sub>F</sub>{~d,SC} or tF{~d,SC} is named Whole Fungible Token with Supply Control and represents a branch off the Whole Fungible branch in the hierarchy.
-Adding the SKU property-set will be a branch off this branch named `Inventory Item Template`. Your new token template reuses the formula above, adding the `SKU` property-set to the formula i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
+
+Adding the SKU property set will be a branch off this branch named `Inventory Item Template`. Your new token template reuses the formula above, adding the `SKU` property set to the formula i.e. [&tau;<sub>F</sub>{~d,SC}+&phi;SKU].
 
 ![Branch-Leaf](images/branch-leaf.png)
 
 ## Tooling and Taxonomy
 
-Using the TTF to define a token you ultimately end up with a template formula and definition that defines the specification. The TTF TOM can be navigated using of the symbol tooling formats, to programmatically navigate artifact metadata to generate all sorts of useful outputs from documentation and control messages to visualizations,user interfaces, reports and even implementation code.
+Using the TTF to define a token, you ultimately end up with a template formula and definition that defines the specification. The TTF TOM can be navigated using of the symbol tooling formats, to programmatically navigate artifact metadata to generate all sorts of useful outputs from documentation and control messages to visualizations,user interfaces, reports and even implementation code.
 
 The GitHub artifact hierarchical file structure has artifact folder and file names that are the same as the name of the type described in it. The parts in the file system are organized by type folders: base, behaviors, behavior-groups and token-templates.
 
@@ -435,7 +428,7 @@ Tools use the Taxonomy Service to retrieve the TOM to update and add artifacts a
 
 Other GitHub repositories can link to the taxonomy repository to link implementation specific code to specific taxonomy symbols like a behavior or token specification.  This code is then mapped as a platform specific implementation of that artifact.
 
-For example, in the Ethereum community [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-solidity) is a popular open source repository for Solidity source code that developers use and is mapped to several artifacts in the TTF.
+For example, in the Ethereum community [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-solidity) there is a popular open source repository for Solidity source code that developers use and is mapped to several artifacts in the TTF.
 
 ![TaxonomyCodeMap](images/codeMap.png)
 
@@ -485,15 +478,15 @@ When a workshops is completed, the artifacts should be recorded, any new behavio
 
 ## Benefits of the framework
 
-TTF artifacts are not fixed, nor do they represent complete implementations with specific values until they are applied to a template definition. They do include a common set of behavior and property-set invocations as control messages. This is similar to Ethereum's  [ERC-20](https://eips.ethereum.org/EIPS/eip-20) interface standard that allows for working with tokens in a generic way and integrate them into common experiences.
+TTF artifacts are not fixed, nor do they represent complete implementations with specific values until they are applied to a template definition. They do include a common set of behavior and property set invocations as control messages. This is similar to Ethereum's  [ERC-20](https://eips.ethereum.org/EIPS/eip-20) interface standard that allows for working with tokens in a generic way and integrate them into common experiences.
 
-Having a common interaction model via generic behavior and property-set invocations allows for challenging interoperability issues to be approach from a higher level and being designing systems that allow for contracts to interact with tokens across blockchain implementations using standard control messages defined in a common way.
+Having a common interaction model via generic behavior and property set invocations allows for challenging interoperability issues to be approach from a higher level and being designing systems that allow for contracts to interact with tokens across blockchain implementations using standard control messages defined in a common way.
 
 ![ContractingInterface](images/contracting.png)
 
 ## TTF Extensions
 
-Where does the TTF end and implementation begin? Artifact Maps described above provide the extensible links to source, implementation and reference materials like legal or regulatory guidance. Using an artifact's `Map` you can reference:
+Where does the TTF end and an implementation begin? Artifact Maps described above provide the extensible links to source, implementation and reference materials like legal or regulatory guidance. Using an artifact's `Map` you can reference:
 
 - Complete source code for a platform and language (i.e. HLF/Chaincode/Go - > url)
 - A finished solution or implementation (i.e. a link to a website or marketplace offering)

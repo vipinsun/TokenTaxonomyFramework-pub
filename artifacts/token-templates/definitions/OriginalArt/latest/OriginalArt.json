@@ -68,7 +68,13 @@
       "implementationReferences": [],
       "resources": [],
       "artifact": null
-    }
+    },
+    "contributors": [
+      {
+        "name": "Marley Gray",
+        "organization": "Microsoft"
+      }
+    ]
   },
   "formulaReference": {
     "id": "89ff775c-27f1-494e-b31c-f3fb3a9527ac",

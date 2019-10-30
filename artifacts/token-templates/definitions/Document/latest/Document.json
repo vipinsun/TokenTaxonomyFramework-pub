@@ -62,7 +62,13 @@
         "artifact": null
       }
     ],
-    "maps": {}
+    "maps": {},
+    "contributors": [
+      {
+        "name": "Marley Gray",
+        "organization": "Microsoft"
+      }
+    ]
   },
   "formulaReference": {
     "id": "4c2730f5-dc5f-4949-87e3-71f3a6e6cae9",
