@@ -72,12 +72,16 @@
         "organization": "Microsoft"
       },
       {
-        "name": " Niv Aviram",
+        "name": "Niv Aviram",
         "organization": "Consensys"
       },
       {
         "name": "Daniel Norkin",
         "organization": "Envision Blockchain"
+      },
+      {
+        "name":"Lei Zhang",
+        "organization":"iExec Blockchain Tech"
       }
     ]
   },
