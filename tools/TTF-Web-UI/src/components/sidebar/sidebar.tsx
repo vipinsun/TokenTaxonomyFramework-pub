@@ -1,7 +1,7 @@
 import React from 'react';
 import {Layout, Menu} from 'antd';
 import {ClickParam} from "antd/lib/menu";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import options, {MenuOption, MenuSubOption} from './options';
 import {SidebarWrapper} from './sidebar.style';
 
@@ -68,7 +68,7 @@ class Sidebar extends React.Component<ISidebarUI> {
       return (<p>Loading...</p>);
     } else if (this.props.state === 'ERROR') {
       return (
-        <Menu.Item key='base'>
+        <Menu.Item key={Math.random()}>
           No Base
         </Menu.Item>
       );
@@ -145,11 +145,13 @@ class Sidebar extends React.Component<ISidebarUI> {
     const behaviorGroupOptions = this.generateMenuOptions("behaviorGroups", "Behavior Groups", "behaviorGroup", this.props.behaviorGroups);
     const propertySetOptions = this.generateMenuOptions("propertySets", "Property Sets", "propertySet", this.props.propertySets);
     const templateDefinitionOptions = this.generateMenuOptions("templateDefinitions", "Template Definitions", "templateDefinition", this.props.templateDefinitions);
+
     return (
       <SidebarWrapper>
+        <h1 className="title">Token Taxonomy Editor</h1>
         <Sider 
           width={240} 
-          className="sidebar" 
+          className="sidebar"
           style={{ 
             background: '#fff',
             height: "calc(100vh - 70px)"
@@ -170,7 +172,10 @@ class Sidebar extends React.Component<ISidebarUI> {
             {this.generateMenuOption(templateDefinitionOptions)}
             {options.map(singleOption =>
               this.getMenuItem(singleOption)
-            )}            
+            )}
+            <li>
+              <NavLink to="/create-behavior">create-behavior</NavLink>
+            </li>
           </Menu>
         </Sider>
       </SidebarWrapper>

@@ -41,4 +41,4 @@ static_resources:
       type: logical_dns
       http2_protocol_options: {}
       lb_policy: round_robin
-      hosts: [{ socket_address: { address: ttf-taxnomomy-service, port_value: 8086 }}]
+      hosts: [{ socket_address: { address: taxonomyService, port_value: 8086 }}]

@@ -46,6 +46,12 @@ const routes = [
       resolve: () => import('./pages/token-templates')}),
     exact: true,
   },
+  {
+    path: 'create-behavior',
+    component: asyncComponent({
+      resolve: () => import('./pages/create-behaviour')}),
+    exact: true,
+  }
 ];
 
 interface AppRouterProps {

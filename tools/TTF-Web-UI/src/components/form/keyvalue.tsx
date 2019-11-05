@@ -10,6 +10,7 @@ type KeyValueProps = {
   form: WrappedFormUtils;
   field: string;
   label: string;
+  disabled?: boolean;
 }
 
 type KeyValuePair = {
@@ -110,7 +111,7 @@ export class KeyValue {
     });
     return formItems.concat(
       <Form.Item {...formItemLayout} label={keyValues.length == 0 ? label : null} >
-        <Button type="dashed" onClick={this.add} style={{width: '60%'}}>
+        <Button type="dashed" onClick={this.add} style={{width: '60%'}} disabled={this.props.disabled} >
           <Icon type="plus" /> Add field
         </Button>
       </Form.Item>

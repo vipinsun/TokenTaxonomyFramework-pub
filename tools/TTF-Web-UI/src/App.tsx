@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import './App.css';
+import './shared/styles/global.scss';
 import { Layout } from 'antd';
 import Sidebar from './components/sidebar/sidebar';
-import Topbar from './components/topbar/Topbar'
 import AppRouter from './AppRouter';
 import {BrowserRouter} from "react-router-dom";
 
@@ -33,7 +32,6 @@ class App extends Component<AppProps> {
     return (
       <BrowserRouter>
         <Layout>
-          <Topbar/>
           <Layout style={{ flexDirection: 'row', overflowX: 'hidden' }} >
             <Sidebar />
             <Layout style={{ padding: '2px 2px 2px' }}>
@@ -76,4 +74,5 @@ const mapDispatchToProps = (dispatch: any) => {
   };
 };
 
+// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(App);
