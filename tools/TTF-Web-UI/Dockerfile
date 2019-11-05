@@ -10,7 +10,8 @@ COPY src/ src/
 COPY public/ public/
 
 RUN yarn install
-RUN yarn add --dev @typescript-eslint/eslint-plugin
+RUN yarn add --dev @typescript-eslint/eslint-plugin node-sass
+RUN yarn add @typescript-eslint/eslint-plugin node-sass
 RUN yarn build
 
 FROM nginx:alpine as final

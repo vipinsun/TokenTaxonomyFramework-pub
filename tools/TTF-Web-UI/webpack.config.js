@@ -20,9 +20,18 @@ module.exports = {
   },
   module: {
     rules: [
-      {test: /\.tsx?$/, loader: "ts-loader"}
+      {test: /\.tsx?$/, loader: "ts-loader"},
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
     ]
   },
+  devtool: 'inline-source-map',
   devServer: {
     stats: {
       assets: false,

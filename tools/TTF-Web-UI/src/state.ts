@@ -20,9 +20,8 @@ const client = new ServiceClient("http://0.0.0.0:9080", null, null);
 export const getFullTaxonomy = async (): Promise<Taxonomy> => {
   return new Promise<Taxonomy>((resolve, reject) => {
     const query = new TaxonomyVersion();
+    query.setVersion("1.0");
     client.getFullTaxonomy(query, null, (err: grpcWeb.Error, response: Taxonomy) => {
-      console.log(response);
-      console.log(response.getBaseTokenTypesMap());
       if (err !== null) {
         reject(err);
       } else {
@@ -41,7 +40,6 @@ export const getAllBases = async (): Promise<Base[]> => {
       if (artifactCollection != null) {
 
         const bases: Bases | null = artifactCollection.unpack<Bases>(Bases.deserializeBinary, 'taxonomy.model.core.Bases');
-
         if (bases != null) {
           for (const artifact of bases.getBaseList()) {
             console.log("each base text");

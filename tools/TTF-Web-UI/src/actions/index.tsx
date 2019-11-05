@@ -1,13 +1,12 @@
 import {Action, Dispatch} from 'redux';
 import {Base, Bases, Behavior, BehaviorGroup, PropertySet, TemplateDefinition} from "../model/core_pb";
+import * as jspb from "google-protobuf";
 import {
-  getAllBases,
-  getAllBehaviorGroups,
-  getAllBehaviors,
-  getAllPropertySets,
-  getAllTemplateDefinitions
+  getFullTaxonomy
 } from '../state';
 import {IEntity} from "../store/IStoreState";
+import {Taxonomy} from "../model/taxonomy_pb";
+import {Message} from "google-protobuf";
 
 
 export const FETCH_SERVER_STATE = 'FETCH_SERVER_STATE';
@@ -60,7 +59,7 @@ function dispatchFetchServerStateSuccess(bases: Base[], behaviors: Behavior[], b
     behaviors: behaviors,
     behaviorGroups: behaviorGroups,
     propertySets: propertySets,
-    templateDefinitions: templateDefinitions,
+    templateDefinitions: templateDefinitions
   };
 }
 
@@ -82,19 +81,31 @@ export function actionFetchServerState() {
   return (dispatch: Dispatch) => {
     dispatch(dispatchFetchServerStateProgress());
 
-    // TODO: getAllBases from state.tsx
-
-    return Promise.all([getAllBases(),getAllBehaviors(), getAllBehaviorGroups(), getAllPropertySets(), getAllTemplateDefinitions()])
+    return Promise.all([getFullTaxonomy()])
       .then((artifacts) => {
-        const bases: Base[] = artifacts[0];
-        const behaviors: Behavior[] = artifacts[1];
-        const behaviorGroups: BehaviorGroup[] = artifacts[2];
-        const propertySets: PropertySet[] = artifacts[3];
-        const templateDefinitions: TemplateDefinition[] = artifacts[4];
+        const taxonomy: Taxonomy = artifacts[0];
+        const bases: Base[] = mapToArray<Base>(taxonomy.getBaseTokenTypesMap());
+        const behaviors: Behavior[] = mapToArray<Behavior>(taxonomy.getBehaviorsMap());
+        const behaviorGroups: BehaviorGroup[] = mapToArray<BehaviorGroup>(taxonomy.getBehaviorGroupsMap());
+        const propertySets: PropertySet[] = mapToArray<PropertySet>(taxonomy.getPropertySetsMap());
+        const templateDefinitions: TemplateDefinition[] = mapToArray<TemplateDefinition>(taxonomy.getTemplateDefinitionsMap());
+
         return dispatch(dispatchFetchServerStateSuccess(bases, behaviors, behaviorGroups, propertySets, templateDefinitions));
       })
       .catch((e: Error) => {
         return dispatch(dispatchFetchServerStateError(e));
       });
   };
+}
+
+function mapToArray<T extends Message>(map: jspb.Map<string, T>): Array<T> {
+  const it = map.entries();
+  let entry = it.next();
+  const result = Array<T>();
+  do {
+    const value: T = entry.value[1];
+    result.push(value);
+    entry = it.next();
+  } while(!entry.done);
+  return result;
 }
