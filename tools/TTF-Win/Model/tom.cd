@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TTI.TTF.Taxonomy.Model.Hierarchy" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="6" Width="3.25" />
+    <Members>
+      <Field Name="_parser" Hidden="true" />
+      <Field Name="_unknownFields" Hidden="true" />
+      <Method Name="CalculateSize" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Property Name="Descriptor" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fungibles_" Hidden="true" />
+      <Field Name="FungiblesFieldNumber" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="Hierarchy" Hidden="true" />
+      <Field Name="hybrids_" Hidden="true" />
+      <Field Name="HybridsFieldNumber" Hidden="true" />
+      <Method Name="MergeFrom" Hidden="true" />
+      <Field Name="nonFungibles_" Hidden="true" />
+      <Field Name="NonFungiblesFieldNumber" Hidden="true" />
+      <Method Name="OnConstruction" Hidden="true" />
+      <Property Name="Parser" Hidden="true" />
+      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="WriteTo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAgAAgCAEAAASYEoAgAAAAAAEEAAIAgAAAAAQIAAVA=</HashCode>
+      <FileName>Model\Taxonomy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.HybridBranch" BaseTypeListCollapsed="true">
+    <Position X="13" Y="7.5" Width="3.25" />
+    <Members>
+      <Field Name="_parser" Hidden="true" />
+      <Field Name="_unknownFields" Hidden="true" />
+      <Method Name="CalculateSize" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Property Name="Descriptor" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fungible_" Hidden="true" />
+      <Field Name="FungibleFieldNumber" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="HybridBranch" Hidden="true" />
+      <Method Name="MergeFrom" Hidden="true" />
+      <Field Name="nonFungible_" Hidden="true" />
+      <Field Name="NonFungibleFieldNumber" Hidden="true" />
+      <Method Name="OnConstruction" Hidden="true" />
+      <Property Name="Parser" Hidden="true" />
+      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="WriteTo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABBgAAASAEAAACYEoAAAIAAAAEEAAIAgIAAAAAAAABA=</HashCode>
+      <FileName>Model\Taxonomy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.FungibleBranch" BaseTypeListCollapsed="true">
+    <Position X="13" Y="5.5" Width="2.5" />
+    <Members>
+      <Field Name="_parser" Hidden="true" />
+      <Field Name="_unknownFields" Hidden="true" />
+      <Method Name="CalculateSize" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Property Name="Descriptor" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fractional_" Hidden="true" />
+      <Field Name="FractionalFieldNumber" Hidden="true" />
+      <Method Name="FungibleBranch" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="MergeFrom" Hidden="true" />
+      <Method Name="OnConstruction" Hidden="true" />
+      <Property Name="Parser" Hidden="true" />
+      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Field Name="whole_" Hidden="true" />
+      <Field Name="WholeFieldNumber" Hidden="true" />
+      <Method Name="WriteTo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAgAAACAEAAACYUgAAABAAAAGEAAIAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Taxonomy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.NonFungibleBranch" BaseTypeListCollapsed="true">
+    <Position X="10" Y="8.25" Width="2.5" />
+    <Members>
+      <Field Name="_parser" Hidden="true" />
+      <Field Name="_unknownFields" Hidden="true" />
+      <Method Name="CalculateSize" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Property Name="Descriptor" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fractional_" Hidden="true" />
+      <Field Name="FractionalFieldNumber" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="MergeFrom" Hidden="true" />
+      <Method Name="NonFungibleBranch" Hidden="true" />
+      <Method Name="OnConstruction" Hidden="true" />
+      <Property Name="Parser" Hidden="true" />
+      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
+      <Field Name="singleton_" Hidden="true" />
+      <Field Name="SingletonFieldNumber" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Field Name="whole_" Hidden="true" />
+      <Field Name="WholeFieldNumber" Hidden="true" />
+      <Method Name="WriteTo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAgAAACAEAAACYUgAAADAAAAWEAAIEgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Taxonomy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.BranchIdentifier" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="11.75" Width="2.75" />
+    <Members>
+      <Field Name="_parser" Hidden="true" />
+      <Field Name="_unknownFields" Hidden="true" />
+      <Method Name="BranchIdentifier" Hidden="true" />
+      <Method Name="CalculateSize" Hidden="true" />
+      <Field Name="classification_" Hidden="true" />
+      <Field Name="ClassificationFieldNumber" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Property Name="Descriptor" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="formulaId_" Hidden="true" />
+      <Field Name="FormulaIdFieldNumber" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="MergeFrom" Hidden="true" />
+      <Method Name="OnConstruction" Hidden="true" />
+      <Property Name="Parser" Hidden="true" />
+      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="WriteTo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACiAAACAEAABCYEgAQAAAAAAEEAAIBgCAAAAAAAABA=</HashCode>
+      <FileName>Model\Taxonomy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.BranchRoot" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="9.25" Width="3.25" />
+    <Members>
+      <Field Name="_parser" Hidden="true" />
+      <Field Name="_repeated_branches_codec" Hidden="true" />
+      <Field Name="_unknownFields" Hidden="true" />
+      <Field Name="branches_" Hidden="true" />
+      <Field Name="BranchesFieldNumber" Hidden="true" />
+      <Field Name="branchFormula_" Hidden="true" />
+      <Field Name="BranchFormulaFieldNumber" Hidden="true" />
+      <Field Name="branchIdentifier_" Hidden="true" />
+      <Field Name="BranchIdentifierFieldNumber" Hidden="true" />
+      <Method Name="BranchRoot" Hidden="true" />
+      <Method Name="CalculateSize" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Property Name="Descriptor" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="MergeFrom" Hidden="true" />
+      <Field Name="name_" Hidden="true" />
+      <Field Name="NameFieldNumber" Hidden="true" />
+      <Method Name="OnConstruction" Hidden="true" />
+      <Field Name="parentFormulaId_" Hidden="true" />
+      <Field Name="ParentFormulaIdFieldNumber" Hidden="true" />
+      <Property Name="Parser" Hidden="true" />
+      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
+      <Field Name="templates_" Hidden="true" />
+      <Field Name="TemplatesFieldNumber" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+      <Method Name="WriteTo" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>JIAgAAACAFAACCYFgAAAAAwCgEUABJAgAEAAAACAoBA=</HashCode>
+      <FileName>Model\Taxonomy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
