@@ -1023,7 +1023,7 @@ proto.taxonomy.model.core.Base.deserializeBinaryFromReader = function(msg, reade
     case 11:
       var value = msg.getTokenPropertiesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 12:
@@ -1167,21 +1167,17 @@ proto.taxonomy.model.core.Base.prototype.getArtifact = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.Base} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.Base.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.Base} returns this
  */
 proto.taxonomy.model.core.Base.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -1203,12 +1199,9 @@ proto.taxonomy.model.core.Base.prototype.getTokenType = function() {
 };
 
 
-/**
- * @param {!proto.taxonomy.model.artifact.TokenType} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {!proto.taxonomy.model.artifact.TokenType} value */
 proto.taxonomy.model.core.Base.prototype.setTokenType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -1221,12 +1214,9 @@ proto.taxonomy.model.core.Base.prototype.getTokenUnit = function() {
 };
 
 
-/**
- * @param {!proto.taxonomy.model.artifact.TokenUnit} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {!proto.taxonomy.model.artifact.TokenUnit} value */
 proto.taxonomy.model.core.Base.prototype.setTokenUnit = function(value) {
-  return jspb.Message.setProto3EnumField(this, 3, value);
+  jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -1239,12 +1229,9 @@ proto.taxonomy.model.core.Base.prototype.getRepresentationType = function() {
 };
 
 
-/**
- * @param {!proto.taxonomy.model.artifact.RepresentationType} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {!proto.taxonomy.model.artifact.RepresentationType} value */
 proto.taxonomy.model.core.Base.prototype.setRepresentationType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 4, value);
+  jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 
@@ -1257,12 +1244,9 @@ proto.taxonomy.model.core.Base.prototype.getValueType = function() {
 };
 
 
-/**
- * @param {!proto.taxonomy.model.artifact.ValueType} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {!proto.taxonomy.model.artifact.ValueType} value */
 proto.taxonomy.model.core.Base.prototype.setValueType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  jspb.Message.setProto3EnumField(this, 5, value);
 };
 
 
@@ -1275,12 +1259,9 @@ proto.taxonomy.model.core.Base.prototype.getName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Base.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -1293,12 +1274,9 @@ proto.taxonomy.model.core.Base.prototype.getSymbol = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Base.prototype.setSymbol = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1311,12 +1289,9 @@ proto.taxonomy.model.core.Base.prototype.getOwner = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Base.prototype.setOwner = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -1329,12 +1304,9 @@ proto.taxonomy.model.core.Base.prototype.getQuantity = function() {
 };
 
 
-/**
- * @param {number} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {number} value */
 proto.taxonomy.model.core.Base.prototype.setQuantity = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
+  jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
@@ -1347,12 +1319,9 @@ proto.taxonomy.model.core.Base.prototype.getDecimals = function() {
 };
 
 
-/**
- * @param {number} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {number} value */
 proto.taxonomy.model.core.Base.prototype.setDecimals = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
+  jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
@@ -1371,11 +1340,10 @@ proto.taxonomy.model.core.Base.prototype.getTokenPropertiesMap = function(opt_no
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.core.Base} returns this
  */
 proto.taxonomy.model.core.Base.prototype.clearTokenPropertiesMap = function() {
   this.getTokenPropertiesMap().clear();
-  return this;};
+};
 
 
 /**
@@ -1387,12 +1355,9 @@ proto.taxonomy.model.core.Base.prototype.getConstructorName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Base.prototype.setConstructorName = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 
@@ -1406,21 +1371,17 @@ proto.taxonomy.model.core.Base.prototype.getConstructor = function() {
 };
 
 
-/**
- * @param {?proto.google.protobuf.Any|undefined} value
- * @return {!proto.taxonomy.model.core.Base} returns this
-*/
+/** @param {?proto.google.protobuf.Any|undefined} value */
 proto.taxonomy.model.core.Base.prototype.setConstructor = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  jspb.Message.setWrapperField(this, 13, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.Base} returns this
  */
 proto.taxonomy.model.core.Base.prototype.clearConstructor = function() {
-  return this.setConstructor(undefined);
+  this.setConstructor(undefined);
 };
 
 
@@ -1565,12 +1526,9 @@ proto.taxonomy.model.core.Bases.prototype.getBaseList = function() {
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Base>} value
- * @return {!proto.taxonomy.model.core.Bases} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Base>} value */
 proto.taxonomy.model.core.Bases.prototype.setBaseList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -1586,10 +1544,9 @@ proto.taxonomy.model.core.Bases.prototype.addBase = function(opt_value, opt_inde
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.Bases} returns this
  */
 proto.taxonomy.model.core.Bases.prototype.clearBaseList = function() {
-  return this.setBaseList([]);
+  this.setBaseList([]);
 };
 
 
@@ -1703,7 +1660,7 @@ proto.taxonomy.model.core.BaseReference.deserializeBinaryFromReader = function(m
     case 8:
       var value = msg.getTokenPropertiesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 9:
@@ -1826,21 +1783,17 @@ proto.taxonomy.model.core.BaseReference.prototype.getReference = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value */
 proto.taxonomy.model.core.BaseReference.prototype.setReference = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
  */
 proto.taxonomy.model.core.BaseReference.prototype.clearReference = function() {
-  return this.setReference(undefined);
+  this.setReference(undefined);
 };
 
 
@@ -1862,12 +1815,9 @@ proto.taxonomy.model.core.BaseReference.prototype.getValueType = function() {
 };
 
 
-/**
- * @param {!proto.taxonomy.model.artifact.ValueType} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
- */
+/** @param {!proto.taxonomy.model.artifact.ValueType} value */
 proto.taxonomy.model.core.BaseReference.prototype.setValueType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -1880,12 +1830,9 @@ proto.taxonomy.model.core.BaseReference.prototype.getName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.BaseReference.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1898,12 +1845,9 @@ proto.taxonomy.model.core.BaseReference.prototype.getSymbol = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.BaseReference.prototype.setSymbol = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1916,12 +1860,9 @@ proto.taxonomy.model.core.BaseReference.prototype.getOwner = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.BaseReference.prototype.setOwner = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1934,12 +1875,9 @@ proto.taxonomy.model.core.BaseReference.prototype.getQuantity = function() {
 };
 
 
-/**
- * @param {number} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
- */
+/** @param {number} value */
 proto.taxonomy.model.core.BaseReference.prototype.setQuantity = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -1952,12 +1890,9 @@ proto.taxonomy.model.core.BaseReference.prototype.getDecimals = function() {
 };
 
 
-/**
- * @param {number} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
- */
+/** @param {number} value */
 proto.taxonomy.model.core.BaseReference.prototype.setDecimals = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
@@ -1976,11 +1911,10 @@ proto.taxonomy.model.core.BaseReference.prototype.getTokenPropertiesMap = functi
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
  */
 proto.taxonomy.model.core.BaseReference.prototype.clearTokenPropertiesMap = function() {
   this.getTokenPropertiesMap().clear();
-  return this;};
+};
 
 
 /**
@@ -1992,12 +1926,9 @@ proto.taxonomy.model.core.BaseReference.prototype.getConstructorName = function(
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.BaseReference.prototype.setConstructorName = function(value) {
-  return jspb.Message.setProto3StringField(this, 9, value);
+  jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
@@ -2011,21 +1942,17 @@ proto.taxonomy.model.core.BaseReference.prototype.getConstructor = function() {
 };
 
 
-/**
- * @param {?proto.google.protobuf.Any|undefined} value
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
-*/
+/** @param {?proto.google.protobuf.Any|undefined} value */
 proto.taxonomy.model.core.BaseReference.prototype.setConstructor = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BaseReference} returns this
  */
 proto.taxonomy.model.core.BaseReference.prototype.clearConstructor = function() {
-  return this.setConstructor(undefined);
+  this.setConstructor(undefined);
 };
 
 
@@ -2237,21 +2164,17 @@ proto.taxonomy.model.core.Behavior.prototype.getArtifact = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.Behavior} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.Behavior.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.Behavior} returns this
  */
 proto.taxonomy.model.core.Behavior.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -2273,12 +2196,9 @@ proto.taxonomy.model.core.Behavior.prototype.getIsExternal = function() {
 };
 
 
-/**
- * @param {boolean} value
- * @return {!proto.taxonomy.model.core.Behavior} returns this
- */
+/** @param {boolean} value */
 proto.taxonomy.model.core.Behavior.prototype.setIsExternal = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
+  jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -2291,12 +2211,9 @@ proto.taxonomy.model.core.Behavior.prototype.getConstructorType = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Behavior} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Behavior.prototype.setConstructorType = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2310,21 +2227,17 @@ proto.taxonomy.model.core.Behavior.prototype.getConstructor = function() {
 };
 
 
-/**
- * @param {?proto.google.protobuf.Any|undefined} value
- * @return {!proto.taxonomy.model.core.Behavior} returns this
-*/
+/** @param {?proto.google.protobuf.Any|undefined} value */
 proto.taxonomy.model.core.Behavior.prototype.setConstructor = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.Behavior} returns this
  */
 proto.taxonomy.model.core.Behavior.prototype.clearConstructor = function() {
-  return this.setConstructor(undefined);
+  this.setConstructor(undefined);
 };
 
 
@@ -2347,12 +2260,9 @@ proto.taxonomy.model.core.Behavior.prototype.getInvocationsList = function() {
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Invocation>} value
- * @return {!proto.taxonomy.model.core.Behavior} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Invocation>} value */
 proto.taxonomy.model.core.Behavior.prototype.setInvocationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -2368,10 +2278,9 @@ proto.taxonomy.model.core.Behavior.prototype.addInvocations = function(opt_value
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.Behavior} returns this
  */
 proto.taxonomy.model.core.Behavior.prototype.clearInvocationsList = function() {
-  return this.setInvocationsList([]);
+  this.setInvocationsList([]);
 };
 
 
@@ -2385,12 +2294,9 @@ proto.taxonomy.model.core.Behavior.prototype.getPropertiesList = function() {
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Property>} value
- * @return {!proto.taxonomy.model.core.Behavior} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Property>} value */
 proto.taxonomy.model.core.Behavior.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -2406,10 +2312,9 @@ proto.taxonomy.model.core.Behavior.prototype.addProperties = function(opt_value,
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.Behavior} returns this
  */
 proto.taxonomy.model.core.Behavior.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -2545,12 +2450,9 @@ proto.taxonomy.model.core.Behaviors.prototype.getBehaviorList = function() {
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Behavior>} value
- * @return {!proto.taxonomy.model.core.Behaviors} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Behavior>} value */
 proto.taxonomy.model.core.Behaviors.prototype.setBehaviorList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -2566,10 +2468,9 @@ proto.taxonomy.model.core.Behaviors.prototype.addBehavior = function(opt_value, 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.Behaviors} returns this
  */
 proto.taxonomy.model.core.Behaviors.prototype.clearBehaviorList = function() {
-  return this.setBehaviorList([]);
+  this.setBehaviorList([]);
 };
 
 
@@ -2665,7 +2566,7 @@ proto.taxonomy.model.core.BehaviorGroup.deserializeBinaryFromReader = function(m
     case 3:
       var value = msg.getBehaviorArtifactsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.Behavior.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.Behavior());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.Behavior.deserializeBinaryFromReader, "");
          });
       break;
     default:
@@ -2730,21 +2631,17 @@ proto.taxonomy.model.core.BehaviorGroup.prototype.getArtifact = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.BehaviorGroup} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.BehaviorGroup.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BehaviorGroup} returns this
  */
 proto.taxonomy.model.core.BehaviorGroup.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -2767,12 +2664,9 @@ proto.taxonomy.model.core.BehaviorGroup.prototype.getBehaviorsList = function() 
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.BehaviorReference>} value
- * @return {!proto.taxonomy.model.core.BehaviorGroup} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.BehaviorReference>} value */
 proto.taxonomy.model.core.BehaviorGroup.prototype.setBehaviorsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -2788,10 +2682,9 @@ proto.taxonomy.model.core.BehaviorGroup.prototype.addBehaviors = function(opt_va
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorGroup} returns this
  */
 proto.taxonomy.model.core.BehaviorGroup.prototype.clearBehaviorsList = function() {
-  return this.setBehaviorsList([]);
+  this.setBehaviorsList([]);
 };
 
 
@@ -2810,11 +2703,10 @@ proto.taxonomy.model.core.BehaviorGroup.prototype.getBehaviorArtifactsMap = func
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.core.BehaviorGroup} returns this
  */
 proto.taxonomy.model.core.BehaviorGroup.prototype.clearBehaviorArtifactsMap = function() {
   this.getBehaviorArtifactsMap().clear();
-  return this;};
+};
 
 
 
@@ -2949,12 +2841,9 @@ proto.taxonomy.model.core.BehaviorGroups.prototype.getBehaviorGroupList = functi
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.BehaviorGroup>} value
- * @return {!proto.taxonomy.model.core.BehaviorGroups} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.BehaviorGroup>} value */
 proto.taxonomy.model.core.BehaviorGroups.prototype.setBehaviorGroupList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -2970,10 +2859,9 @@ proto.taxonomy.model.core.BehaviorGroups.prototype.addBehaviorGroup = function(o
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorGroups} returns this
  */
 proto.taxonomy.model.core.BehaviorGroups.prototype.clearBehaviorGroupList = function() {
-  return this.setBehaviorGroupList([]);
+  this.setBehaviorGroupList([]);
 };
 
 
@@ -3123,21 +3011,17 @@ proto.taxonomy.model.core.BehaviorGroupReference.prototype.getReference = functi
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value
- * @return {!proto.taxonomy.model.core.BehaviorGroupReference} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value */
 proto.taxonomy.model.core.BehaviorGroupReference.prototype.setReference = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BehaviorGroupReference} returns this
  */
 proto.taxonomy.model.core.BehaviorGroupReference.prototype.clearReference = function() {
-  return this.setReference(undefined);
+  this.setReference(undefined);
 };
 
 
@@ -3160,12 +3044,9 @@ proto.taxonomy.model.core.BehaviorGroupReference.prototype.getBehaviorArtifactsL
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.BehaviorReference>} value
- * @return {!proto.taxonomy.model.core.BehaviorGroupReference} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.BehaviorReference>} value */
 proto.taxonomy.model.core.BehaviorGroupReference.prototype.setBehaviorArtifactsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -3181,10 +3062,9 @@ proto.taxonomy.model.core.BehaviorGroupReference.prototype.addBehaviorArtifacts 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorGroupReference} returns this
  */
 proto.taxonomy.model.core.BehaviorGroupReference.prototype.clearBehaviorArtifactsList = function() {
-  return this.setBehaviorArtifactsList([]);
+  this.setBehaviorArtifactsList([]);
 };
 
 
@@ -3334,21 +3214,17 @@ proto.taxonomy.model.core.PropertySet.prototype.getArtifact = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.PropertySet} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.PropertySet.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.PropertySet} returns this
  */
 proto.taxonomy.model.core.PropertySet.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -3371,12 +3247,9 @@ proto.taxonomy.model.core.PropertySet.prototype.getPropertiesList = function() {
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Property>} value
- * @return {!proto.taxonomy.model.core.PropertySet} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Property>} value */
 proto.taxonomy.model.core.PropertySet.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -3392,10 +3265,9 @@ proto.taxonomy.model.core.PropertySet.prototype.addProperties = function(opt_val
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.PropertySet} returns this
  */
 proto.taxonomy.model.core.PropertySet.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -3531,12 +3403,9 @@ proto.taxonomy.model.core.PropertySets.prototype.getPropertySetList = function()
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.PropertySet>} value
- * @return {!proto.taxonomy.model.core.PropertySets} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.PropertySet>} value */
 proto.taxonomy.model.core.PropertySets.prototype.setPropertySetList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -3552,10 +3421,9 @@ proto.taxonomy.model.core.PropertySets.prototype.addPropertySet = function(opt_v
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.PropertySets} returns this
  */
 proto.taxonomy.model.core.PropertySets.prototype.clearPropertySetList = function() {
-  return this.setPropertySetList([]);
+  this.setPropertySetList([]);
 };
 
 
@@ -3705,21 +3573,17 @@ proto.taxonomy.model.core.PropertySetReference.prototype.getReference = function
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value
- * @return {!proto.taxonomy.model.core.PropertySetReference} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value */
 proto.taxonomy.model.core.PropertySetReference.prototype.setReference = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.PropertySetReference} returns this
  */
 proto.taxonomy.model.core.PropertySetReference.prototype.clearReference = function() {
-  return this.setReference(undefined);
+  this.setReference(undefined);
 };
 
 
@@ -3742,12 +3606,9 @@ proto.taxonomy.model.core.PropertySetReference.prototype.getPropertiesList = fun
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Property>} value
- * @return {!proto.taxonomy.model.core.PropertySetReference} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Property>} value */
 proto.taxonomy.model.core.PropertySetReference.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -3763,10 +3624,9 @@ proto.taxonomy.model.core.PropertySetReference.prototype.addProperties = functio
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.PropertySetReference} returns this
  */
 proto.taxonomy.model.core.PropertySetReference.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -3952,12 +3812,9 @@ proto.taxonomy.model.core.Property.prototype.getName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Property} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Property.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3970,12 +3827,9 @@ proto.taxonomy.model.core.Property.prototype.getValueDescription = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Property} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Property.prototype.setValueDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -3988,12 +3842,9 @@ proto.taxonomy.model.core.Property.prototype.getTemplateValue = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Property} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Property.prototype.setTemplateValue = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -4007,12 +3858,9 @@ proto.taxonomy.model.core.Property.prototype.getPropertyInvocationsList = functi
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Invocation>} value
- * @return {!proto.taxonomy.model.core.Property} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Invocation>} value */
 proto.taxonomy.model.core.Property.prototype.setPropertyInvocationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -4028,10 +3876,9 @@ proto.taxonomy.model.core.Property.prototype.addPropertyInvocations = function(o
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.Property} returns this
  */
 proto.taxonomy.model.core.Property.prototype.clearPropertyInvocationsList = function() {
-  return this.setPropertyInvocationsList([]);
+  this.setPropertyInvocationsList([]);
 };
 
 
@@ -4045,12 +3892,9 @@ proto.taxonomy.model.core.Property.prototype.getPropertiesList = function() {
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Property>} value
- * @return {!proto.taxonomy.model.core.Property} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Property>} value */
 proto.taxonomy.model.core.Property.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -4066,10 +3910,9 @@ proto.taxonomy.model.core.Property.prototype.addProperties = function(opt_value,
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.Property} returns this
  */
 proto.taxonomy.model.core.Property.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -4246,12 +4089,9 @@ proto.taxonomy.model.core.Invocation.prototype.getId = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Invocation} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Invocation.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4264,12 +4104,9 @@ proto.taxonomy.model.core.Invocation.prototype.getName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Invocation} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Invocation.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4282,12 +4119,9 @@ proto.taxonomy.model.core.Invocation.prototype.getDescription = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Invocation} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.Invocation.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -4301,21 +4135,17 @@ proto.taxonomy.model.core.Invocation.prototype.getRequest = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.InvocationRequest|undefined} value
- * @return {!proto.taxonomy.model.core.Invocation} returns this
-*/
+/** @param {?proto.taxonomy.model.core.InvocationRequest|undefined} value */
 proto.taxonomy.model.core.Invocation.prototype.setRequest = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.Invocation} returns this
  */
 proto.taxonomy.model.core.Invocation.prototype.clearRequest = function() {
-  return this.setRequest(undefined);
+  this.setRequest(undefined);
 };
 
 
@@ -4338,21 +4168,17 @@ proto.taxonomy.model.core.Invocation.prototype.getResponse = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.InvocationResponse|undefined} value
- * @return {!proto.taxonomy.model.core.Invocation} returns this
-*/
+/** @param {?proto.taxonomy.model.core.InvocationResponse|undefined} value */
 proto.taxonomy.model.core.Invocation.prototype.setResponse = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.Invocation} returns this
  */
 proto.taxonomy.model.core.Invocation.prototype.clearResponse = function() {
-  return this.setResponse(undefined);
+  this.setResponse(undefined);
 };
 
 
@@ -4520,12 +4346,9 @@ proto.taxonomy.model.core.InvocationRequest.prototype.getControlMessageName = fu
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationRequest} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationRequest.prototype.setControlMessageName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4538,12 +4361,9 @@ proto.taxonomy.model.core.InvocationRequest.prototype.getDescription = function(
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationRequest} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationRequest.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4557,12 +4377,9 @@ proto.taxonomy.model.core.InvocationRequest.prototype.getInputParametersList = f
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.InvocationParameter>} value
- * @return {!proto.taxonomy.model.core.InvocationRequest} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.InvocationParameter>} value */
 proto.taxonomy.model.core.InvocationRequest.prototype.setInputParametersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -4578,10 +4395,9 @@ proto.taxonomy.model.core.InvocationRequest.prototype.addInputParameters = funct
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.InvocationRequest} returns this
  */
 proto.taxonomy.model.core.InvocationRequest.prototype.clearInputParametersList = function() {
-  return this.setInputParametersList([]);
+  this.setInputParametersList([]);
 };
 
 
@@ -4740,12 +4556,9 @@ proto.taxonomy.model.core.InvocationResponse.prototype.getControlMessageName = f
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationResponse} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationResponse.prototype.setControlMessageName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4758,12 +4571,9 @@ proto.taxonomy.model.core.InvocationResponse.prototype.getDescription = function
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationResponse} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationResponse.prototype.setDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -4777,12 +4587,9 @@ proto.taxonomy.model.core.InvocationResponse.prototype.getOutputParametersList =
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.InvocationParameter>} value
- * @return {!proto.taxonomy.model.core.InvocationResponse} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.InvocationParameter>} value */
 proto.taxonomy.model.core.InvocationResponse.prototype.setOutputParametersList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -4798,10 +4605,9 @@ proto.taxonomy.model.core.InvocationResponse.prototype.addOutputParameters = fun
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.InvocationResponse} returns this
  */
 proto.taxonomy.model.core.InvocationResponse.prototype.clearOutputParametersList = function() {
-  return this.setOutputParametersList([]);
+  this.setOutputParametersList([]);
 };
 
 
@@ -4938,12 +4744,9 @@ proto.taxonomy.model.core.InvocationParameter.prototype.getName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationParameter} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationParameter.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -4956,12 +4759,9 @@ proto.taxonomy.model.core.InvocationParameter.prototype.getValueDescription = fu
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationParameter} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationParameter.prototype.setValueDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -5103,21 +4903,17 @@ proto.taxonomy.model.core.TokenTemplate.prototype.getFormula = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.TemplateFormula|undefined} value
- * @return {!proto.taxonomy.model.core.TokenTemplate} returns this
-*/
+/** @param {?proto.taxonomy.model.core.TemplateFormula|undefined} value */
 proto.taxonomy.model.core.TokenTemplate.prototype.setFormula = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenTemplate} returns this
  */
 proto.taxonomy.model.core.TokenTemplate.prototype.clearFormula = function() {
-  return this.setFormula(undefined);
+  this.setFormula(undefined);
 };
 
 
@@ -5140,21 +4936,17 @@ proto.taxonomy.model.core.TokenTemplate.prototype.getDefinition = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.TemplateDefinition|undefined} value
- * @return {!proto.taxonomy.model.core.TokenTemplate} returns this
-*/
+/** @param {?proto.taxonomy.model.core.TemplateDefinition|undefined} value */
 proto.taxonomy.model.core.TokenTemplate.prototype.setDefinition = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenTemplate} returns this
  */
 proto.taxonomy.model.core.TokenTemplate.prototype.clearDefinition = function() {
-  return this.setDefinition(undefined);
+  this.setDefinition(undefined);
 };
 
 
@@ -5239,7 +5031,7 @@ proto.taxonomy.model.core.TokenTemplates.deserializeBinaryFromReader = function(
     case 1:
       var value = msg.getTemplateMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.TokenTemplate.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.TokenTemplate());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.TokenTemplate.deserializeBinaryFromReader, "");
          });
       break;
     default:
@@ -5293,11 +5085,10 @@ proto.taxonomy.model.core.TokenTemplates.prototype.getTemplateMap = function(opt
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.core.TokenTemplates} returns this
  */
 proto.taxonomy.model.core.TokenTemplates.prototype.clearTemplateMap = function() {
   this.getTemplateMap().clear();
-  return this;};
+};
 
 
 
@@ -5517,21 +5308,17 @@ proto.taxonomy.model.core.TemplateFormula.prototype.getArtifact = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.TemplateFormula.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
  */
 proto.taxonomy.model.core.TemplateFormula.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -5553,12 +5340,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.getTemplateType = function()
 };
 
 
-/**
- * @param {!proto.taxonomy.model.artifact.TemplateType} value
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
- */
+/** @param {!proto.taxonomy.model.artifact.TemplateType} value */
 proto.taxonomy.model.core.TemplateFormula.prototype.setTemplateType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 2, value);
+  jspb.Message.setProto3EnumField(this, 2, value);
 };
 
 
@@ -5572,21 +5356,17 @@ proto.taxonomy.model.core.TemplateFormula.prototype.getTokenBase = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.TemplateBase|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
-*/
+/** @param {?proto.taxonomy.model.core.TemplateBase|undefined} value */
 proto.taxonomy.model.core.TemplateFormula.prototype.setTokenBase = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
  */
 proto.taxonomy.model.core.TemplateFormula.prototype.clearTokenBase = function() {
-  return this.setTokenBase(undefined);
+  this.setTokenBase(undefined);
 };
 
 
@@ -5609,12 +5389,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.getBehaviorsList = function(
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TemplateBehavior>} value
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TemplateBehavior>} value */
 proto.taxonomy.model.core.TemplateFormula.prototype.setBehaviorsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -5630,10 +5407,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.addBehaviors = function(opt_
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
  */
 proto.taxonomy.model.core.TemplateFormula.prototype.clearBehaviorsList = function() {
-  return this.setBehaviorsList([]);
+  this.setBehaviorsList([]);
 };
 
 
@@ -5647,12 +5423,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.getBehaviorGroupsList = func
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TemplateBehaviorGroup>} value
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TemplateBehaviorGroup>} value */
 proto.taxonomy.model.core.TemplateFormula.prototype.setBehaviorGroupsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -5668,10 +5441,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.addBehaviorGroups = function
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
  */
 proto.taxonomy.model.core.TemplateFormula.prototype.clearBehaviorGroupsList = function() {
-  return this.setBehaviorGroupsList([]);
+  this.setBehaviorGroupsList([]);
 };
 
 
@@ -5685,12 +5457,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.getPropertySetsList = functi
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TemplatePropertySet>} value
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TemplatePropertySet>} value */
 proto.taxonomy.model.core.TemplateFormula.prototype.setPropertySetsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -5706,10 +5475,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.addPropertySets = function(o
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
  */
 proto.taxonomy.model.core.TemplateFormula.prototype.clearPropertySetsList = function() {
-  return this.setPropertySetsList([]);
+  this.setPropertySetsList([]);
 };
 
 
@@ -5723,12 +5491,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.getChildTokensList = functio
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TemplateFormula>} value
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TemplateFormula>} value */
 proto.taxonomy.model.core.TemplateFormula.prototype.setChildTokensList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -5744,10 +5509,9 @@ proto.taxonomy.model.core.TemplateFormula.prototype.addChildTokens = function(op
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateFormula} returns this
  */
 proto.taxonomy.model.core.TemplateFormula.prototype.clearChildTokensList = function() {
-  return this.setChildTokensList([]);
+  this.setChildTokensList([]);
 };
 
 
@@ -5883,12 +5647,9 @@ proto.taxonomy.model.core.TemplateFormulas.prototype.getTemplatesList = function
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TemplateFormula>} value
- * @return {!proto.taxonomy.model.core.TemplateFormulas} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TemplateFormula>} value */
 proto.taxonomy.model.core.TemplateFormulas.prototype.setTemplatesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -5904,10 +5665,9 @@ proto.taxonomy.model.core.TemplateFormulas.prototype.addTemplates = function(opt
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateFormulas} returns this
  */
 proto.taxonomy.model.core.TemplateFormulas.prototype.clearTemplatesList = function() {
-  return this.setTemplatesList([]);
+  this.setTemplatesList([]);
 };
 
 
@@ -6035,21 +5795,17 @@ proto.taxonomy.model.core.TemplateBase.prototype.getBase = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateBase} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
 proto.taxonomy.model.core.TemplateBase.prototype.setBase = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateBase} returns this
  */
 proto.taxonomy.model.core.TemplateBase.prototype.clearBase = function() {
-  return this.setBase(undefined);
+  this.setBase(undefined);
 };
 
 
@@ -6186,21 +5942,17 @@ proto.taxonomy.model.core.TemplateBehavior.prototype.getBehavior = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateBehavior} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
 proto.taxonomy.model.core.TemplateBehavior.prototype.setBehavior = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateBehavior} returns this
  */
 proto.taxonomy.model.core.TemplateBehavior.prototype.clearBehavior = function() {
-  return this.setBehavior(undefined);
+  this.setBehavior(undefined);
 };
 
 
@@ -6337,21 +6089,17 @@ proto.taxonomy.model.core.TemplateBehaviorGroup.prototype.getBehaviorGroup = fun
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateBehaviorGroup} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
 proto.taxonomy.model.core.TemplateBehaviorGroup.prototype.setBehaviorGroup = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateBehaviorGroup} returns this
  */
 proto.taxonomy.model.core.TemplateBehaviorGroup.prototype.clearBehaviorGroup = function() {
-  return this.setBehaviorGroup(undefined);
+  this.setBehaviorGroup(undefined);
 };
 
 
@@ -6488,21 +6236,17 @@ proto.taxonomy.model.core.TemplatePropertySet.prototype.getPropertySet = functio
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value
- * @return {!proto.taxonomy.model.core.TemplatePropertySet} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactSymbol|undefined} value */
 proto.taxonomy.model.core.TemplatePropertySet.prototype.setPropertySet = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplatePropertySet} returns this
  */
 proto.taxonomy.model.core.TemplatePropertySet.prototype.clearPropertySet = function() {
-  return this.setPropertySet(undefined);
+  this.setPropertySet(undefined);
 };
 
 
@@ -6734,21 +6478,17 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.getArtifact = function() 
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.TemplateDefinition.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
  */
 proto.taxonomy.model.core.TemplateDefinition.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -6771,21 +6511,17 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.getFormulaReference = fun
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value */
 proto.taxonomy.model.core.TemplateDefinition.prototype.setFormulaReference = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
  */
 proto.taxonomy.model.core.TemplateDefinition.prototype.clearFormulaReference = function() {
-  return this.setFormulaReference(undefined);
+  this.setFormulaReference(undefined);
 };
 
 
@@ -6808,21 +6544,17 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.getTokenBase = function()
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.BaseReference|undefined} value
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
-*/
+/** @param {?proto.taxonomy.model.core.BaseReference|undefined} value */
 proto.taxonomy.model.core.TemplateDefinition.prototype.setTokenBase = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
  */
 proto.taxonomy.model.core.TemplateDefinition.prototype.clearTokenBase = function() {
-  return this.setTokenBase(undefined);
+  this.setTokenBase(undefined);
 };
 
 
@@ -6845,12 +6577,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.getBehaviorsList = functi
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.BehaviorReference>} value
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.BehaviorReference>} value */
 proto.taxonomy.model.core.TemplateDefinition.prototype.setBehaviorsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -6866,10 +6595,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.addBehaviors = function(o
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
  */
 proto.taxonomy.model.core.TemplateDefinition.prototype.clearBehaviorsList = function() {
-  return this.setBehaviorsList([]);
+  this.setBehaviorsList([]);
 };
 
 
@@ -6883,12 +6611,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.getBehaviorGroupsList = f
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.BehaviorGroupReference>} value
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.BehaviorGroupReference>} value */
 proto.taxonomy.model.core.TemplateDefinition.prototype.setBehaviorGroupsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -6904,10 +6629,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.addBehaviorGroups = funct
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
  */
 proto.taxonomy.model.core.TemplateDefinition.prototype.clearBehaviorGroupsList = function() {
-  return this.setBehaviorGroupsList([]);
+  this.setBehaviorGroupsList([]);
 };
 
 
@@ -6921,12 +6645,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.getPropertySetsList = fun
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.PropertySetReference>} value
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.PropertySetReference>} value */
 proto.taxonomy.model.core.TemplateDefinition.prototype.setPropertySetsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -6942,10 +6663,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.addPropertySets = functio
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
  */
 proto.taxonomy.model.core.TemplateDefinition.prototype.clearPropertySetsList = function() {
-  return this.setPropertySetsList([]);
+  this.setPropertySetsList([]);
 };
 
 
@@ -6959,12 +6679,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.getChildTokensList = func
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TemplateDefinition>} value
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TemplateDefinition>} value */
 proto.taxonomy.model.core.TemplateDefinition.prototype.setChildTokensList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -6980,10 +6697,9 @@ proto.taxonomy.model.core.TemplateDefinition.prototype.addChildTokens = function
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateDefinition} returns this
  */
 proto.taxonomy.model.core.TemplateDefinition.prototype.clearChildTokensList = function() {
-  return this.setChildTokensList([]);
+  this.setChildTokensList([]);
 };
 
 
@@ -7119,12 +6835,9 @@ proto.taxonomy.model.core.TemplateDefinitions.prototype.getDefinitionsList = fun
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TemplateDefinition>} value
- * @return {!proto.taxonomy.model.core.TemplateDefinitions} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TemplateDefinition>} value */
 proto.taxonomy.model.core.TemplateDefinitions.prototype.setDefinitionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -7140,10 +6853,9 @@ proto.taxonomy.model.core.TemplateDefinitions.prototype.addDefinitions = functio
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TemplateDefinitions} returns this
  */
 proto.taxonomy.model.core.TemplateDefinitions.prototype.clearDefinitionsList = function() {
-  return this.setDefinitionsList([]);
+  this.setDefinitionsList([]);
 };
 
 
@@ -7376,21 +7088,17 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getReference = function() 
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setReference = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.clearReference = function() {
-  return this.setReference(undefined);
+  this.setReference(undefined);
 };
 
 
@@ -7412,12 +7120,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getIsExternal = function()
 };
 
 
-/**
- * @param {boolean} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
- */
+/** @param {boolean} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setIsExternal = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
+  jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -7430,12 +7135,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getConstructorType = funct
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setConstructorType = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -7449,21 +7151,17 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getConstructor = function(
 };
 
 
-/**
- * @param {?proto.google.protobuf.Any|undefined} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
-*/
+/** @param {?proto.google.protobuf.Any|undefined} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setConstructor = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.clearConstructor = function() {
-  return this.setConstructor(undefined);
+  this.setConstructor(undefined);
 };
 
 
@@ -7486,12 +7184,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getAppliesToList = functio
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setAppliesToList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -7507,10 +7202,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.addAppliesTo = function(op
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.clearAppliesToList = function() {
-  return this.setAppliesToList([]);
+  this.setAppliesToList([]);
 };
 
 
@@ -7524,12 +7218,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getInvocationsList = funct
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Invocation>} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Invocation>} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setInvocationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -7545,10 +7236,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.addInvocations = function(
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.clearInvocationsList = function() {
-  return this.setInvocationsList([]);
+  this.setInvocationsList([]);
 };
 
 
@@ -7562,12 +7252,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getInfluenceBindingsList =
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.InfluenceBinding>} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.InfluenceBinding>} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setInfluenceBindingsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -7583,10 +7270,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.addInfluenceBindings = fun
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.clearInfluenceBindingsList = function() {
-  return this.setInfluenceBindingsList([]);
+  this.setInfluenceBindingsList([]);
 };
 
 
@@ -7600,12 +7286,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.getPropertiesList = functi
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Property>} value
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Property>} value */
 proto.taxonomy.model.core.BehaviorReference.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -7621,10 +7304,9 @@ proto.taxonomy.model.core.BehaviorReference.prototype.addProperties = function(o
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorReference} returns this
  */
 proto.taxonomy.model.core.BehaviorReference.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -7801,12 +7483,9 @@ proto.taxonomy.model.core.InfluenceBinding.prototype.getInfluencedId = function(
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InfluenceBinding} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InfluenceBinding.prototype.setInfluencedId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -7819,12 +7498,9 @@ proto.taxonomy.model.core.InfluenceBinding.prototype.getInfluencedInvocationId =
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InfluenceBinding} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InfluenceBinding.prototype.setInfluencedInvocationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -7837,12 +7513,9 @@ proto.taxonomy.model.core.InfluenceBinding.prototype.getInfluenceType = function
 };
 
 
-/**
- * @param {!proto.taxonomy.model.core.InfluenceType} value
- * @return {!proto.taxonomy.model.core.InfluenceBinding} returns this
- */
+/** @param {!proto.taxonomy.model.core.InfluenceType} value */
 proto.taxonomy.model.core.InfluenceBinding.prototype.setInfluenceType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 3, value);
+  jspb.Message.setProto3EnumField(this, 3, value);
 };
 
 
@@ -7856,21 +7529,17 @@ proto.taxonomy.model.core.InfluenceBinding.prototype.getInfluencingInvocation = 
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.Invocation|undefined} value
- * @return {!proto.taxonomy.model.core.InfluenceBinding} returns this
-*/
+/** @param {?proto.taxonomy.model.core.Invocation|undefined} value */
 proto.taxonomy.model.core.InfluenceBinding.prototype.setInfluencingInvocation = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.InfluenceBinding} returns this
  */
 proto.taxonomy.model.core.InfluenceBinding.prototype.clearInfluencingInvocation = function() {
-  return this.setInfluencingInvocation(undefined);
+  this.setInfluencingInvocation(undefined);
 };
 
 
@@ -7893,21 +7562,17 @@ proto.taxonomy.model.core.InfluenceBinding.prototype.getInfluencedInvocation = f
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.Invocation|undefined} value
- * @return {!proto.taxonomy.model.core.InfluenceBinding} returns this
-*/
+/** @param {?proto.taxonomy.model.core.Invocation|undefined} value */
 proto.taxonomy.model.core.InfluenceBinding.prototype.setInfluencedInvocation = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.InfluenceBinding} returns this
  */
 proto.taxonomy.model.core.InfluenceBinding.prototype.clearInfluencedInvocation = function() {
-  return this.setInfluencedInvocation(undefined);
+  this.setInfluencedInvocation(undefined);
 };
 
 
@@ -8150,12 +7815,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getSpecificationHash = fu
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setSpecificationHash = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -8169,21 +7831,17 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getArtifact = function() 
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -8206,21 +7864,17 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getDefinitionReference = 
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.ArtifactReference|undefined} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setDefinitionReference = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.clearDefinitionReference = function() {
-  return this.setDefinitionReference(undefined);
+  this.setDefinitionReference(undefined);
 };
 
 
@@ -8243,21 +7897,17 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getTokenBase = function()
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.Base|undefined} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
-*/
+/** @param {?proto.taxonomy.model.core.Base|undefined} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setTokenBase = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.clearTokenBase = function() {
-  return this.setTokenBase(undefined);
+  this.setTokenBase(undefined);
 };
 
 
@@ -8280,12 +7930,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getBehaviorsList = functi
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.BehaviorSpecification>} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.BehaviorSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setBehaviorsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -8301,10 +7948,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.addBehaviors = function(o
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.clearBehaviorsList = function() {
-  return this.setBehaviorsList([]);
+  this.setBehaviorsList([]);
 };
 
 
@@ -8318,12 +7964,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getBehaviorGroupsList = f
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.BehaviorGroupSpecification>} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.BehaviorGroupSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setBehaviorGroupsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -8339,10 +7982,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.addBehaviorGroups = funct
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.clearBehaviorGroupsList = function() {
-  return this.setBehaviorGroupsList([]);
+  this.setBehaviorGroupsList([]);
 };
 
 
@@ -8356,12 +7998,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getPropertySetsList = fun
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.PropertySetSpecification>} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.PropertySetSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setPropertySetsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -8377,10 +8016,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.addPropertySets = functio
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.clearPropertySetsList = function() {
-  return this.setPropertySetsList([]);
+  this.setPropertySetsList([]);
 };
 
 
@@ -8394,12 +8032,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.getChildTokensList = func
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.TokenSpecification>} value
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.TokenSpecification>} value */
 proto.taxonomy.model.core.TokenSpecification.prototype.setChildTokensList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -8415,10 +8050,9 @@ proto.taxonomy.model.core.TokenSpecification.prototype.addChildTokens = function
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.TokenSpecification} returns this
  */
 proto.taxonomy.model.core.TokenSpecification.prototype.clearChildTokensList = function() {
-  return this.setChildTokensList([]);
+  this.setChildTokensList([]);
 };
 
 
@@ -8621,21 +8255,17 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.getArtifact = function
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
  */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -8657,12 +8287,9 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.getIsExternal = functi
 };
 
 
-/**
- * @param {boolean} value
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
- */
+/** @param {boolean} value */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.setIsExternal = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
+  jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -8675,12 +8302,9 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.getConstructorType = f
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.setConstructorType = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -8694,21 +8318,17 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.getConstructor = funct
 };
 
 
-/**
- * @param {?proto.google.protobuf.Any|undefined} value
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
-*/
+/** @param {?proto.google.protobuf.Any|undefined} value */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.setConstructor = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
  */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.clearConstructor = function() {
-  return this.setConstructor(undefined);
+  this.setConstructor(undefined);
 };
 
 
@@ -8731,12 +8351,9 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.getInvocationsList = f
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.InvocationBinding>} value
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.InvocationBinding>} value */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.setInvocationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -8752,10 +8369,9 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.addInvocations = funct
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
  */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.clearInvocationsList = function() {
-  return this.setInvocationsList([]);
+  this.setInvocationsList([]);
 };
 
 
@@ -8769,12 +8385,9 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.getPropertiesList = fu
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.Property>} value
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.Property>} value */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -8790,10 +8403,9 @@ proto.taxonomy.model.core.BehaviorSpecification.prototype.addProperties = functi
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorSpecification} returns this
  */
 proto.taxonomy.model.core.BehaviorSpecification.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -8943,21 +8555,17 @@ proto.taxonomy.model.core.PropertySetSpecification.prototype.getArtifact = funct
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.PropertySetSpecification} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.PropertySetSpecification.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.PropertySetSpecification} returns this
  */
 proto.taxonomy.model.core.PropertySetSpecification.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -8980,12 +8588,9 @@ proto.taxonomy.model.core.PropertySetSpecification.prototype.getPropertiesList =
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.PropertySpecification>} value
- * @return {!proto.taxonomy.model.core.PropertySetSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.PropertySpecification>} value */
 proto.taxonomy.model.core.PropertySetSpecification.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -9001,10 +8606,9 @@ proto.taxonomy.model.core.PropertySetSpecification.prototype.addProperties = fun
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.PropertySetSpecification} returns this
  */
 proto.taxonomy.model.core.PropertySetSpecification.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -9190,12 +8794,9 @@ proto.taxonomy.model.core.PropertySpecification.prototype.getName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.PropertySpecification} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.PropertySpecification.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -9208,12 +8809,9 @@ proto.taxonomy.model.core.PropertySpecification.prototype.getValueDescription = 
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.PropertySpecification} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.PropertySpecification.prototype.setValueDescription = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -9226,12 +8824,9 @@ proto.taxonomy.model.core.PropertySpecification.prototype.getTemplateValue = fun
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.PropertySpecification} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.PropertySpecification.prototype.setTemplateValue = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -9245,12 +8840,9 @@ proto.taxonomy.model.core.PropertySpecification.prototype.getPropertyInvocations
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.InvocationBinding>} value
- * @return {!proto.taxonomy.model.core.PropertySpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.InvocationBinding>} value */
 proto.taxonomy.model.core.PropertySpecification.prototype.setPropertyInvocationsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -9266,10 +8858,9 @@ proto.taxonomy.model.core.PropertySpecification.prototype.addPropertyInvocations
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.PropertySpecification} returns this
  */
 proto.taxonomy.model.core.PropertySpecification.prototype.clearPropertyInvocationsList = function() {
-  return this.setPropertyInvocationsList([]);
+  this.setPropertyInvocationsList([]);
 };
 
 
@@ -9283,12 +8874,9 @@ proto.taxonomy.model.core.PropertySpecification.prototype.getPropertiesList = fu
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.core.PropertySpecification>} value
- * @return {!proto.taxonomy.model.core.PropertySpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.core.PropertySpecification>} value */
 proto.taxonomy.model.core.PropertySpecification.prototype.setPropertiesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -9304,10 +8892,9 @@ proto.taxonomy.model.core.PropertySpecification.prototype.addProperties = functi
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.PropertySpecification} returns this
  */
 proto.taxonomy.model.core.PropertySpecification.prototype.clearPropertiesList = function() {
-  return this.setPropertiesList([]);
+  this.setPropertiesList([]);
 };
 
 
@@ -9457,21 +9044,17 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.getArtifact = fun
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Artifact|undefined} value
- * @return {!proto.taxonomy.model.core.BehaviorGroupSpecification} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Artifact|undefined} value */
 proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.setArtifact = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.BehaviorGroupSpecification} returns this
  */
 proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.clearArtifact = function() {
-  return this.setArtifact(undefined);
+  this.setArtifact(undefined);
 };
 
 
@@ -9494,12 +9077,9 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.getBehaviorsList 
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value
- * @return {!proto.taxonomy.model.core.BehaviorGroupSpecification} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.artifact.ArtifactSymbol>} value */
 proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.setBehaviorsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -9515,10 +9095,9 @@ proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.addBehaviors = fu
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.core.BehaviorGroupSpecification} returns this
  */
 proto.taxonomy.model.core.BehaviorGroupSpecification.prototype.clearBehaviorsList = function() {
-  return this.setBehaviorsList([]);
+  this.setBehaviorsList([]);
 };
 
 
@@ -9819,12 +9398,9 @@ proto.taxonomy.model.core.InvocationBinding.Influence.prototype.getInfluenceType
 };
 
 
-/**
- * @param {!proto.taxonomy.model.core.InfluenceType} value
- * @return {!proto.taxonomy.model.core.InvocationBinding.Influence} returns this
- */
+/** @param {!proto.taxonomy.model.core.InfluenceType} value */
 proto.taxonomy.model.core.InvocationBinding.Influence.prototype.setInfluenceType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 1, value);
+  jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -9837,12 +9413,9 @@ proto.taxonomy.model.core.InvocationBinding.Influence.prototype.getInfluencingId
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationBinding.Influence} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationBinding.Influence.prototype.setInfluencingId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -9855,12 +9428,9 @@ proto.taxonomy.model.core.InvocationBinding.Influence.prototype.getInfluencingIn
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationBinding.Influence} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationBinding.Influence.prototype.setInfluencingInvocationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -9873,12 +9443,9 @@ proto.taxonomy.model.core.InvocationBinding.Influence.prototype.getInfluencedId 
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationBinding.Influence} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationBinding.Influence.prototype.setInfluencedId = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -9891,12 +9458,9 @@ proto.taxonomy.model.core.InvocationBinding.Influence.prototype.getInfluencedInv
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.InvocationBinding.Influence} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.core.InvocationBinding.Influence.prototype.setInfluencedInvocationId = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -10038,21 +9602,17 @@ proto.taxonomy.model.core.InvocationBinding.InvocationStep.prototype.getInvocati
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.Invocation|undefined} value
- * @return {!proto.taxonomy.model.core.InvocationBinding.InvocationStep} returns this
-*/
+/** @param {?proto.taxonomy.model.core.Invocation|undefined} value */
 proto.taxonomy.model.core.InvocationBinding.InvocationStep.prototype.setInvocation = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.InvocationBinding.InvocationStep} returns this
  */
 proto.taxonomy.model.core.InvocationBinding.InvocationStep.prototype.clearInvocation = function() {
-  return this.setInvocation(undefined);
+  this.setInvocation(undefined);
 };
 
 
@@ -10075,21 +9635,17 @@ proto.taxonomy.model.core.InvocationBinding.InvocationStep.prototype.getNextInvo
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.InvocationBinding.InvocationStep|undefined} value
- * @return {!proto.taxonomy.model.core.InvocationBinding.InvocationStep} returns this
-*/
+/** @param {?proto.taxonomy.model.core.InvocationBinding.InvocationStep|undefined} value */
 proto.taxonomy.model.core.InvocationBinding.InvocationStep.prototype.setNextInvocation = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.InvocationBinding.InvocationStep} returns this
  */
 proto.taxonomy.model.core.InvocationBinding.InvocationStep.prototype.clearNextInvocation = function() {
-  return this.setNextInvocation(undefined);
+  this.setNextInvocation(undefined);
 };
 
 
@@ -10112,21 +9668,17 @@ proto.taxonomy.model.core.InvocationBinding.prototype.getInfluence = function() 
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.InvocationBinding.Influence|undefined} value
- * @return {!proto.taxonomy.model.core.InvocationBinding} returns this
-*/
+/** @param {?proto.taxonomy.model.core.InvocationBinding.Influence|undefined} value */
 proto.taxonomy.model.core.InvocationBinding.prototype.setInfluence = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.InvocationBinding} returns this
  */
 proto.taxonomy.model.core.InvocationBinding.prototype.clearInfluence = function() {
-  return this.setInfluence(undefined);
+  this.setInfluence(undefined);
 };
 
 
@@ -10149,21 +9701,17 @@ proto.taxonomy.model.core.InvocationBinding.prototype.getInvocationStep = functi
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.InvocationBinding.InvocationStep|undefined} value
- * @return {!proto.taxonomy.model.core.InvocationBinding} returns this
-*/
+/** @param {?proto.taxonomy.model.core.InvocationBinding.InvocationStep|undefined} value */
 proto.taxonomy.model.core.InvocationBinding.prototype.setInvocationStep = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.InvocationBinding} returns this
  */
 proto.taxonomy.model.core.InvocationBinding.prototype.clearInvocationStep = function() {
-  return this.setInvocationStep(undefined);
+  this.setInvocationStep(undefined);
 };
 
 
@@ -10314,21 +9862,17 @@ proto.taxonomy.model.core.TokenBase.prototype.getBase = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.Base|undefined} value
- * @return {!proto.taxonomy.model.core.TokenBase} returns this
-*/
+/** @param {?proto.taxonomy.model.core.Base|undefined} value */
 proto.taxonomy.model.core.TokenBase.prototype.setBase = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenBase} returns this
  */
 proto.taxonomy.model.core.TokenBase.prototype.clearBase = function() {
-  return this.setBase(undefined);
+  this.setBase(undefined);
 };
 
 
@@ -10351,21 +9895,17 @@ proto.taxonomy.model.core.TokenBase.prototype.getValues = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.BaseReference|undefined} value
- * @return {!proto.taxonomy.model.core.TokenBase} returns this
-*/
+/** @param {?proto.taxonomy.model.core.BaseReference|undefined} value */
 proto.taxonomy.model.core.TokenBase.prototype.setValues = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenBase} returns this
  */
 proto.taxonomy.model.core.TokenBase.prototype.clearValues = function() {
-  return this.setValues(undefined);
+  this.setValues(undefined);
 };
 
 
@@ -10516,21 +10056,17 @@ proto.taxonomy.model.core.TokenBehavior.prototype.getBehavior = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.Behavior|undefined} value
- * @return {!proto.taxonomy.model.core.TokenBehavior} returns this
-*/
+/** @param {?proto.taxonomy.model.core.Behavior|undefined} value */
 proto.taxonomy.model.core.TokenBehavior.prototype.setBehavior = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenBehavior} returns this
  */
 proto.taxonomy.model.core.TokenBehavior.prototype.clearBehavior = function() {
-  return this.setBehavior(undefined);
+  this.setBehavior(undefined);
 };
 
 
@@ -10553,21 +10089,17 @@ proto.taxonomy.model.core.TokenBehavior.prototype.getValues = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.BehaviorReference|undefined} value
- * @return {!proto.taxonomy.model.core.TokenBehavior} returns this
-*/
+/** @param {?proto.taxonomy.model.core.BehaviorReference|undefined} value */
 proto.taxonomy.model.core.TokenBehavior.prototype.setValues = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenBehavior} returns this
  */
 proto.taxonomy.model.core.TokenBehavior.prototype.clearValues = function() {
-  return this.setValues(undefined);
+  this.setValues(undefined);
 };
 
 
@@ -10718,21 +10250,17 @@ proto.taxonomy.model.core.TokenBehaviorGroup.prototype.getBehavior = function() 
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.BehaviorGroup|undefined} value
- * @return {!proto.taxonomy.model.core.TokenBehaviorGroup} returns this
-*/
+/** @param {?proto.taxonomy.model.core.BehaviorGroup|undefined} value */
 proto.taxonomy.model.core.TokenBehaviorGroup.prototype.setBehavior = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenBehaviorGroup} returns this
  */
 proto.taxonomy.model.core.TokenBehaviorGroup.prototype.clearBehavior = function() {
-  return this.setBehavior(undefined);
+  this.setBehavior(undefined);
 };
 
 
@@ -10755,21 +10283,17 @@ proto.taxonomy.model.core.TokenBehaviorGroup.prototype.getValues = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.BehaviorGroupReference|undefined} value
- * @return {!proto.taxonomy.model.core.TokenBehaviorGroup} returns this
-*/
+/** @param {?proto.taxonomy.model.core.BehaviorGroupReference|undefined} value */
 proto.taxonomy.model.core.TokenBehaviorGroup.prototype.setValues = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenBehaviorGroup} returns this
  */
 proto.taxonomy.model.core.TokenBehaviorGroup.prototype.clearValues = function() {
-  return this.setValues(undefined);
+  this.setValues(undefined);
 };
 
 
@@ -10920,21 +10444,17 @@ proto.taxonomy.model.core.TokenPropertySet.prototype.getPropertySet = function()
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.PropertySet|undefined} value
- * @return {!proto.taxonomy.model.core.TokenPropertySet} returns this
-*/
+/** @param {?proto.taxonomy.model.core.PropertySet|undefined} value */
 proto.taxonomy.model.core.TokenPropertySet.prototype.setPropertySet = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenPropertySet} returns this
  */
 proto.taxonomy.model.core.TokenPropertySet.prototype.clearPropertySet = function() {
-  return this.setPropertySet(undefined);
+  this.setPropertySet(undefined);
 };
 
 
@@ -10957,21 +10477,17 @@ proto.taxonomy.model.core.TokenPropertySet.prototype.getValues = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.PropertySetReference|undefined} value
- * @return {!proto.taxonomy.model.core.TokenPropertySet} returns this
-*/
+/** @param {?proto.taxonomy.model.core.PropertySetReference|undefined} value */
 proto.taxonomy.model.core.TokenPropertySet.prototype.setValues = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.core.TokenPropertySet} returns this
  */
 proto.taxonomy.model.core.TokenPropertySet.prototype.clearValues = function() {
-  return this.setValues(undefined);
+  this.setValues(undefined);
 };
 
 

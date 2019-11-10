@@ -1197,4 +1197,5 @@ export enum TargetPlatform {
   CHAINCODE_NODE = 3,
   CORDA = 4,
   DAML = 5,
+  OTHER_PLATFORM = 6,
 }

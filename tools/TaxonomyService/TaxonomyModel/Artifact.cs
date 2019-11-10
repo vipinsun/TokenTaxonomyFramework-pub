@@ -170,11 +170,12 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
             "EgoOVE9LRU5fVEVNUExBVEUQBipCCg9BcnRpZmFjdENvbnRlbnQSDgoKREVG",
             "SU5JVElPThAAEgsKB0NPTlRST0wQARIHCgNVTUwQAhIJCgVPVEhFUhADKkAK",
             "C01hcHBpbmdUeXBlEg8KC1NPVVJDRV9DT0RFEAASEgoOSU1QTEVNRU5UQVRJ",
-            "T04QARIMCghSRVNPVVJDRRACKnYKDlRhcmdldFBsYXRmb3JtEhUKEUVUSEVS",
-            "RVVNX1NPTElESVRZEAASEAoMQ0hBSU5DT0RFX0dPEAESEgoOQ0hBSU5DT0RF",
-            "X0pBVkEQAhISCg5DSEFJTkNPREVfTk9ERRADEgkKBUNPUkRBEAQSCAoEREFN",
-            "TBAFQkkKI29yZy50dGkudHRmLnRheG9ub215Lm1vZGVsLmFydGlmYWN0UAGq",
-            "Ah9UVEkuVFRGLlRheG9ub215Lk1vZGVsLkFydGlmYWN0YgZwcm90bzM="));
+            "T04QARIMCghSRVNPVVJDRRACKooBCg5UYXJnZXRQbGF0Zm9ybRIVChFFVEhF",
+            "UkVVTV9TT0xJRElUWRAAEhAKDENIQUlOQ09ERV9HTxABEhIKDkNIQUlOQ09E",
+            "RV9KQVZBEAISEgoOQ0hBSU5DT0RFX05PREUQAxIJCgVDT1JEQRAEEggKBERB",
+            "TUwQBRISCg5PVEhFUl9QTEFURk9STRAGQkkKI29yZy50dGkudHRmLnRheG9u",
+            "b215Lm1vZGVsLmFydGlmYWN0UAGqAh9UVEkuVFRGLlRheG9ub215Lk1vZGVs",
+            "LkFydGlmYWN0YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TemplateType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.RepresentationType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ValueType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TokenUnit), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.MappingType), typeof(global::TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -224,6 +225,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
   }
   #region Enums
+  /// <summary>
+  ///Token Templates can contain a single token definition or a hybrid, where the are nested tokens within the template.
+  /// </summary>
   public enum TemplateType {
     [pbr::OriginalName("SINGLE_TOKEN")] SingleToken = 0,
     [pbr::OriginalName("HYBRID")] Hybrid = 1,
@@ -275,9 +279,6 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
   }
 
   public enum ArtifactType {
-    /// <summary>
-    ///from core.Type
-    /// </summary>
     [pbr::OriginalName("BASE")] Base = 0,
     [pbr::OriginalName("BEHAVIOR")] Behavior = 1,
     [pbr::OriginalName("BEHAVIOR_GROUP")] BehaviorGroup = 2,
@@ -289,11 +290,11 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
   public enum ArtifactContent {
     /// <summary>
-    ///html, MD, etc.
+    ///json serialized from proto
     /// </summary>
     [pbr::OriginalName("DEFINITION")] Definition = 0,
     /// <summary>
-    ///proto
+    ///proto source
     /// </summary>
     [pbr::OriginalName("CONTROL")] Control = 1,
     /// <summary>
@@ -301,7 +302,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// </summary>
     [pbr::OriginalName("UML")] Uml = 2,
     /// <summary>
-    ///any
+    ///any, pptx, docx, pdf
     /// </summary>
     [pbr::OriginalName("OTHER")] Other = 3,
   }
@@ -322,11 +323,18 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     [pbr::OriginalName("CHAINCODE_NODE")] ChaincodeNode = 3,
     [pbr::OriginalName("CORDA")] Corda = 4,
     [pbr::OriginalName("DAML")] Daml = 5,
+    /// <summary>
+    ///instead of adding to this list, this can catch all lanugages and platforms not present at launch.
+    /// </summary>
+    [pbr::OriginalName("OTHER_PLATFORM")] OtherPlatform = 6,
   }
 
   #endregion
 
   #region Messages
+  /// <summary>
+  ///classification uses these variable settings at runtime to determine what classification a token template or specification is in. These values are pulled from the TemplateFormula and TemplateDefintion.BaseToken
+  /// </summary>
   public sealed partial class Classification : pb::IMessage<Classification> {
     private static readonly pb::MessageParser<Classification> _parser = new pb::MessageParser<Classification>(() => new Classification());
     private pb::UnknownFieldSet _unknownFields;
@@ -568,6 +576,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
 
   }
 
+  /// <summary>
+  ///applied to each artifact
+  /// </summary>
   public sealed partial class ArtifactSymbol : pb::IMessage<ArtifactSymbol> {
     private static readonly pb::MessageParser<ArtifactSymbol> _parser = new pb::MessageParser<ArtifactSymbol>(() => new ArtifactSymbol());
     private pb::UnknownFieldSet _unknownFields;
@@ -610,6 +621,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
+    /// <summary>
+    ///unique identifier GUID/UUID - should be generated when the artifact is created. Must be unique throughout the framework.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
       get { return id_; }
@@ -660,6 +674,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 5;
     private string version_ = "";
+    /// <summary>
+    ///for visualization, not guaranteed to be accurate.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Version {
       get { return version_; }
@@ -896,6 +913,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// <summary>Field number for the "artifact_symbol" field.</summary>
     public const int ArtifactSymbolFieldNumber = 1;
     private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol artifactSymbol_;
+    /// <summary>
+    ///contains the unique identifier for the artifact.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol ArtifactSymbol {
       get { return artifactSymbol_; }
@@ -907,6 +927,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 2;
     private string name_ = "";
+    /// <summary>
+    ///this is the display and folder name for the artifact
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
@@ -920,6 +943,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     private static readonly pb::FieldCodec<string> _repeated_aliases_codec
         = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> aliases_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    ///list other names this artifact is know by in other industry contexts.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> Aliases {
       get { return aliases_; }
@@ -929,7 +955,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     public const int ArtifactDefinitionFieldNumber = 4;
     private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition artifactDefinition_;
     /// <summary>
-    ///Base, Behavior or Behavior group type indicated by ArtifactType
+    ///Descriptive meta data about the artifact
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition ArtifactDefinition {
@@ -945,7 +971,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         = pb::FieldCodec.ForMessage(42, global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency> dependencies_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency>();
     /// <summary>
-    ///Typically used for a behavior that has a dependency on a property-set.
+    ///Typically used for a BehaviorGroups or Behaviors that have a dependency on other artifacts.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency> Dependencies {
@@ -958,7 +984,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         = pb::FieldCodec.ForMessage(50, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol> incompatibleWithSymbols_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol>();
     /// <summary>
-    ///for behaviors that have opposites, or if another behavior or property-set
+    ///for behaviors that have opposites, or if the base token, behavior or property-sets with conflicts.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol> IncompatibleWithSymbols {
@@ -970,6 +996,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence> _repeated_influencedBySymbols_codec
         = pb::FieldCodec.ForMessage(58, global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence> influencedBySymbols_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence>();
+    /// <summary>
+    ///list know influences for behaviors that are primarly influence behaviors. Like Roles or Delegable.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence> InfluencedBySymbols {
       get { return influencedBySymbols_; }
@@ -978,6 +1007,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// <summary>Field number for the "control_uri" field.</summary>
     public const int ControlUriFieldNumber = 8;
     private string controlUri_ = "";
+    /// <summary>
+    ///optional source code uri used for codegen tools
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ControlUri {
       get { return controlUri_; }
@@ -992,7 +1024,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
         = pb::FieldCodec.ForMessage(74, global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile> artifactFiles_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile>();
     /// <summary>
-    ///Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    ///includes proto, markdown or other files located in the artifact version folder.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile> ArtifactFiles {
@@ -1475,6 +1507,9 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
+    /// <summary>
+    ///this is to another Artifact's ArtifactSymbol.Id
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
       get { return id_; }

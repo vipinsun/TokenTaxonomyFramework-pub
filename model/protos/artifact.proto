@@ -7,6 +7,7 @@ option csharp_namespace = "TTI.TTF.Taxonomy.Model.Artifact";
 option java_package = "org.tti.ttf.taxonomy.model.artifact";
 option java_multiple_files = true;
 
+//Token Templates can contain a single token definition or a hybrid, where the are nested tokens within the template.
 enum TemplateType{
     SINGLE_TOKEN = 0;
     HYBRID = 1;
@@ -17,16 +18,19 @@ enum TokenType {
     NON_FUNGIBLE = 1;
 }
 
+//Tokens can have either a common representation, sometimes called account or balance tokens, or unique representation, or UTXO (unspent transaction output). This distinction might seem subtle but is important when considering how tokens can be traced and if they can have isolated and unique properties.
 enum RepresentationType {
     COMMON = 0; //account or balance, non-fungible are always common
     UNIQUE = 1; //UTXO
 }
 
+//Intrinsic or Reference indicates if the token itself is a value, like a crypto currency, or if it references a value elsewhere, like a property title.
 enum ValueType {
     INTRINSIC = 0; //pure digital
     REFERENCE = 1; //digital representation of value elsewhere
 }
-//classification for Templates, parent and any child tokens. 
+
+//Fractional, Whole or Singleton indicates if a token can be subdivided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a $1 bill can sub-divided to 2 decimal places and can be broken into four .25¢ coins (or a number of different variation of coins) and is thus Fractional. Whole means no subdivision allowed - just whole numbers quantities - and a Singleton has a quantity of 1 with no subdivision.
 enum TokenUnit{
     FRACTIONAL = 0; //tF{d} or tN{d}
     WHOLE = 1; //tF{~d} or tN{~d}
@@ -34,7 +38,7 @@ enum TokenUnit{
 }
 
 enum ArtifactType{
-    BASE = 0; //from core.Type
+    BASE = 0; 
     BEHAVIOR = 1; 
     BEHAVIOR_GROUP = 2;
     PROPERTY_SET = 3;
@@ -44,10 +48,10 @@ enum ArtifactType{
 }
 
 enum ArtifactContent {
-    DEFINITION = 0; //html, MD, etc.
-    CONTROL = 1; //proto
+    DEFINITION = 0; //json serialized from proto
+    CONTROL = 1; //proto source
     UML = 2; //md or other host UML
-    OTHER = 3; //any
+    OTHER = 3; //any, pptx, docx, pdf
 }
 
 enum MappingType{
@@ -63,10 +67,10 @@ enum TargetPlatform{
     CHAINCODE_NODE = 3;
     CORDA = 4;
     DAML = 5;
+    OTHER_PLATFORM = 6; //instead of adding to this list, this can catch all lanugages and platforms not present at launch.
 }
 
-//types 
-
+//classification uses these variable settings at runtime to determine what classification a token template or specification is in. These values are pulled from the TemplateFormula and TemplateDefintion.BaseToken
 message Classification{
     TemplateType template_type = 1;
     TokenType token_type = 2;
@@ -75,26 +79,27 @@ message Classification{
     ValueType value_type = 5;  
 }
 
+//applied to each artifact
 message ArtifactSymbol{
-    string id = 1;
+    string id = 1; //unique identifier GUID/UUID - should be generated when the artifact is created. Must be unique throughout the framework.
     ArtifactType type = 2;
     string visual = 3; //symbol for single artifact and formula for templates
     string tooling = 4; //symbol for single artifact and formula for templates
-    string version = 5;
+    string version = 5; //for visualization, not guaranteed to be accurate.
     bool template_validated = 6; //for templates only
 }
 
 //contains artifact metadata structure
 message Artifact {
-    ArtifactSymbol artifact_symbol = 1;
-    string name = 2;
-    repeated string aliases = 3;
-    ArtifactDefinition artifact_definition = 4; //Base, Behavior or Behavior group type indicated by ArtifactType
-    repeated SymbolDependency dependencies = 5; //Typically used for a behavior that has a dependency on a property-set.
-    repeated ArtifactSymbol incompatible_with_symbols = 6; //for behaviors that have opposites, or if another behavior or property-set
-    repeated SymbolInfluence influenced_by_symbols = 7;
-    string control_uri = 8;
-    repeated ArtifactFile artifact_files = 9; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
+    ArtifactSymbol artifact_symbol = 1; //contains the unique identifier for the artifact.
+    string name = 2; //this is the display and folder name for the artifact
+    repeated string aliases = 3; //list other names this artifact is know by in other industry contexts.
+    ArtifactDefinition artifact_definition = 4; //Descriptive meta data about the artifact
+    repeated SymbolDependency dependencies = 5; //Typically used for a BehaviorGroups or Behaviors that have a dependency on other artifacts.
+    repeated ArtifactSymbol incompatible_with_symbols = 6; //for behaviors that have opposites, or if the base token, behavior or property-sets with conflicts.
+    repeated SymbolInfluence influenced_by_symbols = 7; //list know influences for behaviors that are primarly influence behaviors. Like Roles or Delegable.
+    string control_uri = 8; //optional source code uri used for codegen tools
+    repeated ArtifactFile artifact_files = 9; //includes proto, markdown or other files located in the artifact version folder.
     Maps maps = 10; //Can be overriden by ArtifactReferenceValues loop through the files and read them in as bytes to produce a complete artifact object model instance.
     repeated Contributor contributors = 11; //list of contributors to the artifact.
 }
@@ -107,7 +112,7 @@ message ArtifactReferenceValues{
 
 //a reference to another artifact, either TemplateBranch to TemplateBranch, or ArtifactInstance to Artifact.
 message ArtifactReference{
-    string id = 1; 
+    string id = 1; //this is to another Artifact's ArtifactSymbol.Id
     ArtifactType type = 2;
     string reference_notes = 3;
     ArtifactReferenceValues values = 4;

@@ -3,7 +3,7 @@
 #For Go, install the go plugin: https://github.com/golang/protobuf
 #For ts, install the ts plugin: https://github.com/improbable-eng/ts-protoc-gen
 PROTO_PATH="${PROTO_PATH:-../../../.nuget/packages/google.protobuf.tools/3.10.1/tools}"
-CSHARP_PLUGIN="${CSHARP_PLUGIN:-../../../.nuget/packages/grpc.tools/2.24.0/tools/macosx_x64/grpc_csharp_plugin}"
+CSHARP_PLUGIN="${CSHARP_PLUGIN:-../../../.nuget/packages/grpc.tools/2.25.0/tools/macosx_x64/grpc_csharp_plugin}"
 echo "paths:"
 echo $PROTO_PATH
 echo $CSHARP_PLUGIN
