@@ -108,3 +108,41 @@ A TokenSpecification uses a Typed Specification, like a BehaviorSpecification or
 A Token Specification is generated using a TemplateDefinition by merging the artifact referenced in the Typed Reference in the definition and merging the values with the Artifact referenced into a Typed Specification artifact like a BehaviorSpecification. Values set in the ArtifactReference become the values set in the specification.
 
 ![Typed Specification](../images/typedSpec.png)
+
+## Working locally with the TOM
+
+The TOM is designed for composition, specifically to design new token templates from the collections of artifact types. Existing artifacts can be edited simply by updating any of their properties, except for the Artifact.Id which should not be changed unless there is a conflict with another artifact in the TOM.
+
+Updating the text value of any of the properties will only reside within your local TOM until it is submitted to the TaxonomyService for updating the underlying json maintained in the git repo. These updates are stored on your local git branch and can be pushed to the git repo and submitted using a pull request to be included in the TOM globally. This isolates any changes made to the TOM locally and those changes are tracked locally and remotely using git. So if any mistakes are made, the changes can be rolled back. Regular git `commit` will allow you to modify safely with incremental updates and rollbacks if needed.
+
+### New Artifacts
+
+You can create any new artifact simply by creating a new object instance of the type. Any new type should be assigned a `type.Artifact.ArtifactSymbol.Id` GUID/UUID before being committed or pulled and a unique Visual and Tooling symbol based on their type and a common name, see [taxonomy](../token-taxonomy.md) for details on names and symbols.
+
+New artifacts can should be submitted to the TaxonomyService to be persisted to the artifacts repo to be saved periodically to prevent data loss in memory if the application creating the object becomes unresponsive.
+
+## Single and Compound Artifacts
+
+Single artifacts, TokenBase, Behavior and PropertySet, are the simplest artifacts and are not concerned with other artifacts, other than listing dependencies, incompatibilities and influences which are just ArtifactSymbol references indicating that a relationship with the other artifact exists.
+
+Compound artifacts like BehaviorGroup, TemplateFormula and TemplateDefinition are more complex. Of these the TemplateFormula has the least detail, but many references.
+
+## TemplateFormula
+
+A TemplateFormula is a collection of artifact ingredients that are mixed together to provide the potential functionality of any definition based off of. It is primarily used to perform ingredient level validation ensuring that conflicting symbols are not allowed using the taxonomy rules. This prevents TemplateDefinitions based off the formula from introducing artifacts that are not listed in the TemplateFormula that would not be valid. 
+
+Creating a new TemplateFormula is just like creating any other new artifact, giving it a unique Id and name, but your may wait until after design to determine the symbol as it is a compound formula. A TemplateFormula can be a Single or Hybrid token and for each token it defines a TemplateBase, a Base token type, then the individual artifacts from the collections of behaviors, groups and property sets. These are recorded in the template using ArtifactSymbol references, which do not have any detail about how the reference is used, just that it is an ingredient.
+
+From this list of artifacts included, a `TemplateFormula.Artifact.ArtifactSymbol.Tooling` symbol and it corresponding Visual symbol can be built and validated using the [taxonomy rules](../token-taxonomy.md).
+
+Submit the formula for persistance to the TaxonomyService before proceeding to defining a TemplateDefinition.
+
+## TemplateDefinition
+
+A TemplateDefinition must be created using a TemplateFormula. The TaxonomyService will create and initialized a TemplateDefinition when provided with the `TemplateFormula.Artifact.ArtifactSymbol.Id` source formula and return it to you as a TemplateDefinition object. The TaxonomyService builds the TemplateDefinition object from the references in the formula and the referenced artifact values and settings that can be altered in the TemplateDefinition.
+
+Modify and add property values in the TemplateDefinition to complete the definition of the TokenTemplate that is used to create the TokenSpecification. This is the last part of the composition where specific token settings like decimal places, role names, influences and invocations can be customized for the specific token. The TemplateDefinition will preserve the parent TemplateFormula reference.
+
+The `TemplateDefinition.Artifact.ArtifactSymbol.Id` is also the TokenSpecification id and the `TemplateDefinition.Artifact.Name` becomes the name for the TokenSpecification and Template.
+
+Send the updated object to the TaxonomyService to persist it to local storage. You can then print the TokenSpecification from the TaxonomyPrinter using the `TemplateDefinition.Artifact.ArtifactSymbol.Id` as input and it will generate the openXML output for your specification to review. To update the specification, you must update and persist the TemplateDefinition. Updates to the openXML document will be overwritten when the definition is printed again.
