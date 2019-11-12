@@ -316,7 +316,7 @@ message QueryResult{
 /**
  * Taxonomy Formula Grammar
 */
-//Object representation of a TemplateFormula's grammer.
+//Object representation of a TemplateFormula's ß.
 message FormulaGrammar{
     SingleTokenGrammar single_token_grammar = 1; //Grammar for single token templates.
     HybridTokenGrammar hybrid_grammar = 2; //Grammar for hybrid token templates.
@@ -331,7 +331,7 @@ message HybridTokenGrammar{
     string children_end = 4; // ")"
 }
 
-//Nested Hybrid Grammer
+//Nested Hybrid grammar
 message HybridTokenWithHybridChildrenGrammar{
     SingleTokenGrammar parent = 1; //Parent token
     string hybrid_children_start = 2; // "("

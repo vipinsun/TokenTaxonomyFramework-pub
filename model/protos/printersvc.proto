@@ -9,8 +9,11 @@ option java_multiple_files = true;
 
 //Service to Print Artifacts to OpenXML format.
 service PrinterService {
-    rpc PrintTTFArtifact (ArtifactToPrint) returns (PrintResult) {} //Print an artifact by Type and Id.
-    rpc PrintTTF (PrintTTFOptions) returns (PrintResult) {} //Print all artifacts in either multiple artifact files in their repective artifact folders or a single TTF Book file.
+    //Print an artifact by Type and Id.
+    rpc PrintTTFArtifact (ArtifactToPrint) returns (PrintResult) {} 
+
+    //Print all artifacts in either multiple artifact files in their repective artifact folders or a single TTF Book file.
+    rpc PrintTTF (PrintTTFOptions) returns (PrintResult) {} 
 }
 
 message ArtifactToPrint{

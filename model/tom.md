@@ -151,7 +151,7 @@ Send the updated object to the TaxonomyService to persist it to local storage. Y
 
 ## Table of Contents
 
-- [artifact.proto](#artifact.proto)
+- [TTI.TTF.Taxonomy.Model.Artifact](#artifact.proto)
     - [Artifact](#taxonomy.model.artifact.Artifact)
     - [ArtifactAnalogy](#taxonomy.model.artifact.ArtifactAnalogy)
     - [ArtifactDefinition](#taxonomy.model.artifact.ArtifactDefinition)
@@ -204,7 +204,7 @@ Send the updated object to the TaxonomyService to persist it to local storage. Y
     - [ValueType](#taxonomy.model.artifact.ValueType)
   
 
-- [core.proto](#core.proto)
+- [TTI.TTF.Taxonomy.Model.Core](#core.proto)
     - [Base](#taxonomy.model.core.Base)
     - [Base.TokenPropertiesEntry](#taxonomy.model.core.Base.TokenPropertiesEntry)
     - [BaseReference](#taxonomy.model.core.BaseReference)
@@ -253,7 +253,7 @@ Send the updated object to the TaxonomyService to persist it to local storage. Y
     - [InfluenceType](#taxonomy.model.core.InfluenceType)
 
   
-- [taxonomy.proto](#taxonomy.proto)
+- [TTI.TTF.Taxonomy.Model](#taxonomy.proto)
     - [BranchIdentifier](#taxonomy.model.BranchIdentifier)
     - [BranchRoot](#taxonomy.model.BranchRoot)
     - [FungibleBranch](#taxonomy.model.FungibleBranch)
@@ -277,7 +277,7 @@ Send the updated object to the TaxonomyService to persist it to local storage. Y
 <a name="artifact.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## artifact.proto
+## TTI.TTF.Taxonomy.Model.Artifact
 
 
 
@@ -540,7 +540,7 @@ Expected response from the DeleteArtifactRequest.
 <a name="taxonomy.model.artifact.FormulaGrammar"></a>
 
 ### FormulaGrammar
-Object representation of a TemplateFormula&#39;s grammer.
+Object representation of a TemplateFormula&#39;s grammar.
 
 
 | Field | Type | Label | Description |
@@ -575,7 +575,7 @@ Hybrid Token Grammar
 <a name="taxonomy.model.artifact.HybridTokenWithHybridChildrenGrammar"></a>
 
 ### HybridTokenWithHybridChildrenGrammar
-Nested Hybrid Grammer
+Nested Hybrid grammar
 
 
 | Field | Type | Label | Description |
@@ -1091,7 +1091,7 @@ Intrinsic or Reference indicates if the token itself is a value, like a crypto c
 <a name="core.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## core.proto
+## TTI.TTF.Taxonomy.Model.Core
 
 
 
@@ -1875,7 +1875,7 @@ Influence types for behaviors that can influence other behaviors or properties.
 <a name="taxonomy.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## taxonomy.proto
+## TTI.TTF.Taxonomy.Model
 
 
 
