@@ -637,6 +637,310 @@ export namespace DeleteArtifactResponse {
   }
 }
 
+export class TokenTemplateId extends jspb.Message {
+  getDefinitionId(): string;
+  setDefinitionId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TokenTemplateId.AsObject;
+  static toObject(includeInstance: boolean, msg: TokenTemplateId): TokenTemplateId.AsObject;
+  static serializeBinaryToWriter(message: TokenTemplateId, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TokenTemplateId;
+  static deserializeBinaryFromReader(message: TokenTemplateId, reader: jspb.BinaryReader): TokenTemplateId;
+}
+
+export namespace TokenTemplateId {
+  export type AsObject = {
+    definitionId: string,
+  }
+}
+
+export class Identifier extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Identifier.AsObject;
+  static toObject(includeInstance: boolean, msg: Identifier): Identifier.AsObject;
+  static serializeBinaryToWriter(message: Identifier, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Identifier;
+  static deserializeBinaryFromReader(message: Identifier, reader: jspb.BinaryReader): Identifier;
+}
+
+export namespace Identifier {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class NewTemplateDefinition extends jspb.Message {
+  getTemplateFormulaId(): string;
+  setTemplateFormulaId(value: string): void;
+
+  getTokenName(): string;
+  setTokenName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NewTemplateDefinition.AsObject;
+  static toObject(includeInstance: boolean, msg: NewTemplateDefinition): NewTemplateDefinition.AsObject;
+  static serializeBinaryToWriter(message: NewTemplateDefinition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NewTemplateDefinition;
+  static deserializeBinaryFromReader(message: NewTemplateDefinition, reader: jspb.BinaryReader): NewTemplateDefinition;
+}
+
+export namespace NewTemplateDefinition {
+  export type AsObject = {
+    templateFormulaId: string,
+    tokenName: string,
+  }
+}
+
+export class InitializeNewArtifactRequest extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getSymbol(): string;
+  setSymbol(value: string): void;
+
+  getTemplateType(): TemplateType;
+  setTemplateType(value: TemplateType): void;
+
+  getTokenType(): TokenType;
+  setTokenType(value: TokenType): void;
+
+  getTokenUnit(): TokenUnit;
+  setTokenUnit(value: TokenUnit): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InitializeNewArtifactRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: InitializeNewArtifactRequest): InitializeNewArtifactRequest.AsObject;
+  static serializeBinaryToWriter(message: InitializeNewArtifactRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactRequest;
+  static deserializeBinaryFromReader(message: InitializeNewArtifactRequest, reader: jspb.BinaryReader): InitializeNewArtifactRequest;
+}
+
+export namespace InitializeNewArtifactRequest {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    name: string,
+    symbol: string,
+    templateType: TemplateType,
+    tokenType: TokenType,
+    tokenUnit: TokenUnit,
+  }
+}
+
+export class InitializeNewArtifactResponse extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getArtifact(): google_protobuf_any_pb.Any | undefined;
+  setArtifact(value?: google_protobuf_any_pb.Any): void;
+  hasArtifact(): boolean;
+  clearArtifact(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InitializeNewArtifactResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: InitializeNewArtifactResponse): InitializeNewArtifactResponse.AsObject;
+  static serializeBinaryToWriter(message: InitializeNewArtifactResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactResponse;
+  static deserializeBinaryFromReader(message: InitializeNewArtifactResponse, reader: jspb.BinaryReader): InitializeNewArtifactResponse;
+}
+
+export namespace InitializeNewArtifactResponse {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    artifact?: google_protobuf_any_pb.Any.AsObject,
+  }
+}
+
+export class CommitUpdatesRequest extends jspb.Message {
+  getCommitMessage(): string;
+  setCommitMessage(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitUpdatesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitUpdatesRequest): CommitUpdatesRequest.AsObject;
+  static serializeBinaryToWriter(message: CommitUpdatesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitUpdatesRequest;
+  static deserializeBinaryFromReader(message: CommitUpdatesRequest, reader: jspb.BinaryReader): CommitUpdatesRequest;
+}
+
+export namespace CommitUpdatesRequest {
+  export type AsObject = {
+    commitMessage: string,
+  }
+}
+
+export class CommitUpdatesResponse extends jspb.Message {
+  getResult(): string;
+  setResult(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CommitUpdatesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CommitUpdatesResponse): CommitUpdatesResponse.AsObject;
+  static serializeBinaryToWriter(message: CommitUpdatesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CommitUpdatesResponse;
+  static deserializeBinaryFromReader(message: CommitUpdatesResponse, reader: jspb.BinaryReader): CommitUpdatesResponse;
+}
+
+export namespace CommitUpdatesResponse {
+  export type AsObject = {
+    result: string,
+  }
+}
+
+export class IssuePullRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IssuePullRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: IssuePullRequest): IssuePullRequest.AsObject;
+  static serializeBinaryToWriter(message: IssuePullRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IssuePullRequest;
+  static deserializeBinaryFromReader(message: IssuePullRequest, reader: jspb.BinaryReader): IssuePullRequest;
+}
+
+export namespace IssuePullRequest {
+  export type AsObject = {
+  }
+}
+
+export class IssuePullResponse extends jspb.Message {
+  getResponse(): string;
+  setResponse(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): IssuePullResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: IssuePullResponse): IssuePullResponse.AsObject;
+  static serializeBinaryToWriter(message: IssuePullResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): IssuePullResponse;
+  static deserializeBinaryFromReader(message: IssuePullResponse, reader: jspb.BinaryReader): IssuePullResponse;
+}
+
+export namespace IssuePullResponse {
+  export type AsObject = {
+    response: string,
+  }
+}
+
+export class ConfigurationRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConfigurationRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ConfigurationRequest): ConfigurationRequest.AsObject;
+  static serializeBinaryToWriter(message: ConfigurationRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConfigurationRequest;
+  static deserializeBinaryFromReader(message: ConfigurationRequest, reader: jspb.BinaryReader): ConfigurationRequest;
+}
+
+export namespace ConfigurationRequest {
+  export type AsObject = {
+  }
+}
+
+export class ServiceConfiguration extends jspb.Message {
+  getReadOnly(): boolean;
+  setReadOnly(value: boolean): void;
+
+  getGitId(): string;
+  setGitId(value: string): void;
+
+  getGitBranch(): string;
+  setGitBranch(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServiceConfiguration.AsObject;
+  static toObject(includeInstance: boolean, msg: ServiceConfiguration): ServiceConfiguration.AsObject;
+  static serializeBinaryToWriter(message: ServiceConfiguration, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServiceConfiguration;
+  static deserializeBinaryFromReader(message: ServiceConfiguration, reader: jspb.BinaryReader): ServiceConfiguration;
+}
+
+export namespace ServiceConfiguration {
+  export type AsObject = {
+    readOnly: boolean,
+    gitId: string,
+    gitBranch: string,
+  }
+}
+
+export class QueryOptions extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getMaxItemReturn(): number;
+  setMaxItemReturn(value: number): void;
+
+  getLastItemIndex(): number;
+  setLastItemIndex(value: number): void;
+
+  getByClassification(): boolean;
+  setByClassification(value: boolean): void;
+
+  getClassification(): Classification | undefined;
+  setClassification(value?: Classification): void;
+  hasClassification(): boolean;
+  clearClassification(): void;
+
+  getIncludeHybrids(): boolean;
+  setIncludeHybrids(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryOptions.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryOptions): QueryOptions.AsObject;
+  static serializeBinaryToWriter(message: QueryOptions, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryOptions;
+  static deserializeBinaryFromReader(message: QueryOptions, reader: jspb.BinaryReader): QueryOptions;
+}
+
+export namespace QueryOptions {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    maxItemReturn: number,
+    lastItemIndex: number,
+    byClassification: boolean,
+    classification?: Classification.AsObject,
+    includeHybrids: boolean,
+  }
+}
+
+export class QueryResult extends jspb.Message {
+  getArtifactType(): ArtifactType;
+  setArtifactType(value: ArtifactType): void;
+
+  getFirstItemIndex(): number;
+  setFirstItemIndex(value: number): void;
+
+  getLastItemIndex(): number;
+  setLastItemIndex(value: number): void;
+
+  getTotalItemsInCollection(): number;
+  setTotalItemsInCollection(value: number): void;
+
+  getArtifactCollection(): google_protobuf_any_pb.Any | undefined;
+  setArtifactCollection(value?: google_protobuf_any_pb.Any): void;
+  hasArtifactCollection(): boolean;
+  clearArtifactCollection(): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QueryResult.AsObject;
+  static toObject(includeInstance: boolean, msg: QueryResult): QueryResult.AsObject;
+  static serializeBinaryToWriter(message: QueryResult, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QueryResult;
+  static deserializeBinaryFromReader(message: QueryResult, reader: jspb.BinaryReader): QueryResult;
+}
+
+export namespace QueryResult {
+  export type AsObject = {
+    artifactType: ArtifactType,
+    firstItemIndex: number,
+    lastItemIndex: number,
+    totalItemsInCollection: number,
+    artifactCollection?: google_protobuf_any_pb.Any.AsObject,
+  }
+}
+
 export class FormulaGrammar extends jspb.Message {
   getSingleTokenGrammar(): SingleTokenGrammar | undefined;
   setSingleTokenGrammar(value?: SingleTokenGrammar): void;
@@ -842,310 +1146,6 @@ export class PropertySetListItem extends jspb.Message {
 export namespace PropertySetListItem {
   export type AsObject = {
     propertySetSymbol: string,
-  }
-}
-
-export class CommitUpdatesRequest extends jspb.Message {
-  getCommitMessage(): string;
-  setCommitMessage(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CommitUpdatesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CommitUpdatesRequest): CommitUpdatesRequest.AsObject;
-  static serializeBinaryToWriter(message: CommitUpdatesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CommitUpdatesRequest;
-  static deserializeBinaryFromReader(message: CommitUpdatesRequest, reader: jspb.BinaryReader): CommitUpdatesRequest;
-}
-
-export namespace CommitUpdatesRequest {
-  export type AsObject = {
-    commitMessage: string,
-  }
-}
-
-export class CommitUpdatesResponse extends jspb.Message {
-  getResult(): string;
-  setResult(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CommitUpdatesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CommitUpdatesResponse): CommitUpdatesResponse.AsObject;
-  static serializeBinaryToWriter(message: CommitUpdatesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CommitUpdatesResponse;
-  static deserializeBinaryFromReader(message: CommitUpdatesResponse, reader: jspb.BinaryReader): CommitUpdatesResponse;
-}
-
-export namespace CommitUpdatesResponse {
-  export type AsObject = {
-    result: string,
-  }
-}
-
-export class IssuePullRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): IssuePullRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: IssuePullRequest): IssuePullRequest.AsObject;
-  static serializeBinaryToWriter(message: IssuePullRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): IssuePullRequest;
-  static deserializeBinaryFromReader(message: IssuePullRequest, reader: jspb.BinaryReader): IssuePullRequest;
-}
-
-export namespace IssuePullRequest {
-  export type AsObject = {
-  }
-}
-
-export class IssuePullResponse extends jspb.Message {
-  getResponse(): string;
-  setResponse(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): IssuePullResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: IssuePullResponse): IssuePullResponse.AsObject;
-  static serializeBinaryToWriter(message: IssuePullResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): IssuePullResponse;
-  static deserializeBinaryFromReader(message: IssuePullResponse, reader: jspb.BinaryReader): IssuePullResponse;
-}
-
-export namespace IssuePullResponse {
-  export type AsObject = {
-    response: string,
-  }
-}
-
-export class ConfigurationRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConfigurationRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ConfigurationRequest): ConfigurationRequest.AsObject;
-  static serializeBinaryToWriter(message: ConfigurationRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConfigurationRequest;
-  static deserializeBinaryFromReader(message: ConfigurationRequest, reader: jspb.BinaryReader): ConfigurationRequest;
-}
-
-export namespace ConfigurationRequest {
-  export type AsObject = {
-  }
-}
-
-export class ServiceConfiguration extends jspb.Message {
-  getReadOnly(): boolean;
-  setReadOnly(value: boolean): void;
-
-  getGitId(): string;
-  setGitId(value: string): void;
-
-  getGitBranch(): string;
-  setGitBranch(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ServiceConfiguration.AsObject;
-  static toObject(includeInstance: boolean, msg: ServiceConfiguration): ServiceConfiguration.AsObject;
-  static serializeBinaryToWriter(message: ServiceConfiguration, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ServiceConfiguration;
-  static deserializeBinaryFromReader(message: ServiceConfiguration, reader: jspb.BinaryReader): ServiceConfiguration;
-}
-
-export namespace ServiceConfiguration {
-  export type AsObject = {
-    readOnly: boolean,
-    gitId: string,
-    gitBranch: string,
-  }
-}
-
-export class QueryOptions extends jspb.Message {
-  getArtifactType(): ArtifactType;
-  setArtifactType(value: ArtifactType): void;
-
-  getMaxItemReturn(): number;
-  setMaxItemReturn(value: number): void;
-
-  getLastItemIndex(): number;
-  setLastItemIndex(value: number): void;
-
-  getByClassification(): boolean;
-  setByClassification(value: boolean): void;
-
-  getClassification(): Classification | undefined;
-  setClassification(value?: Classification): void;
-  hasClassification(): boolean;
-  clearClassification(): void;
-
-  getIncludeHybrids(): boolean;
-  setIncludeHybrids(value: boolean): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): QueryOptions.AsObject;
-  static toObject(includeInstance: boolean, msg: QueryOptions): QueryOptions.AsObject;
-  static serializeBinaryToWriter(message: QueryOptions, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): QueryOptions;
-  static deserializeBinaryFromReader(message: QueryOptions, reader: jspb.BinaryReader): QueryOptions;
-}
-
-export namespace QueryOptions {
-  export type AsObject = {
-    artifactType: ArtifactType,
-    maxItemReturn: number,
-    lastItemIndex: number,
-    byClassification: boolean,
-    classification?: Classification.AsObject,
-    includeHybrids: boolean,
-  }
-}
-
-export class QueryResult extends jspb.Message {
-  getArtifactType(): ArtifactType;
-  setArtifactType(value: ArtifactType): void;
-
-  getFirstItemIndex(): number;
-  setFirstItemIndex(value: number): void;
-
-  getLastItemIndex(): number;
-  setLastItemIndex(value: number): void;
-
-  getTotalItemsInCollection(): number;
-  setTotalItemsInCollection(value: number): void;
-
-  getArtifactCollection(): google_protobuf_any_pb.Any | undefined;
-  setArtifactCollection(value?: google_protobuf_any_pb.Any): void;
-  hasArtifactCollection(): boolean;
-  clearArtifactCollection(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): QueryResult.AsObject;
-  static toObject(includeInstance: boolean, msg: QueryResult): QueryResult.AsObject;
-  static serializeBinaryToWriter(message: QueryResult, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): QueryResult;
-  static deserializeBinaryFromReader(message: QueryResult, reader: jspb.BinaryReader): QueryResult;
-}
-
-export namespace QueryResult {
-  export type AsObject = {
-    artifactType: ArtifactType,
-    firstItemIndex: number,
-    lastItemIndex: number,
-    totalItemsInCollection: number,
-    artifactCollection?: google_protobuf_any_pb.Any.AsObject,
-  }
-}
-
-export class TokenTemplateId extends jspb.Message {
-  getDefinitionId(): string;
-  setDefinitionId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TokenTemplateId.AsObject;
-  static toObject(includeInstance: boolean, msg: TokenTemplateId): TokenTemplateId.AsObject;
-  static serializeBinaryToWriter(message: TokenTemplateId, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TokenTemplateId;
-  static deserializeBinaryFromReader(message: TokenTemplateId, reader: jspb.BinaryReader): TokenTemplateId;
-}
-
-export namespace TokenTemplateId {
-  export type AsObject = {
-    definitionId: string,
-  }
-}
-
-export class Identifier extends jspb.Message {
-  getId(): string;
-  setId(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Identifier.AsObject;
-  static toObject(includeInstance: boolean, msg: Identifier): Identifier.AsObject;
-  static serializeBinaryToWriter(message: Identifier, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Identifier;
-  static deserializeBinaryFromReader(message: Identifier, reader: jspb.BinaryReader): Identifier;
-}
-
-export namespace Identifier {
-  export type AsObject = {
-    id: string,
-  }
-}
-
-export class NewTemplateDefinition extends jspb.Message {
-  getTemplateFormulaId(): string;
-  setTemplateFormulaId(value: string): void;
-
-  getTokenName(): string;
-  setTokenName(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NewTemplateDefinition.AsObject;
-  static toObject(includeInstance: boolean, msg: NewTemplateDefinition): NewTemplateDefinition.AsObject;
-  static serializeBinaryToWriter(message: NewTemplateDefinition, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NewTemplateDefinition;
-  static deserializeBinaryFromReader(message: NewTemplateDefinition, reader: jspb.BinaryReader): NewTemplateDefinition;
-}
-
-export namespace NewTemplateDefinition {
-  export type AsObject = {
-    templateFormulaId: string,
-    tokenName: string,
-  }
-}
-
-export class InitializeNewArtifactRequest extends jspb.Message {
-  getArtifactType(): ArtifactType;
-  setArtifactType(value: ArtifactType): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getSymbol(): string;
-  setSymbol(value: string): void;
-
-  getTemplateType(): TemplateType;
-  setTemplateType(value: TemplateType): void;
-
-  getTokenType(): TokenType;
-  setTokenType(value: TokenType): void;
-
-  getTokenUnit(): TokenUnit;
-  setTokenUnit(value: TokenUnit): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InitializeNewArtifactRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: InitializeNewArtifactRequest): InitializeNewArtifactRequest.AsObject;
-  static serializeBinaryToWriter(message: InitializeNewArtifactRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactRequest;
-  static deserializeBinaryFromReader(message: InitializeNewArtifactRequest, reader: jspb.BinaryReader): InitializeNewArtifactRequest;
-}
-
-export namespace InitializeNewArtifactRequest {
-  export type AsObject = {
-    artifactType: ArtifactType,
-    name: string,
-    symbol: string,
-    templateType: TemplateType,
-    tokenType: TokenType,
-    tokenUnit: TokenUnit,
-  }
-}
-
-export class InitializeNewArtifactResponse extends jspb.Message {
-  getArtifactType(): ArtifactType;
-  setArtifactType(value: ArtifactType): void;
-
-  getArtifact(): google_protobuf_any_pb.Any | undefined;
-  setArtifact(value?: google_protobuf_any_pb.Any): void;
-  hasArtifact(): boolean;
-  clearArtifact(): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): InitializeNewArtifactResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: InitializeNewArtifactResponse): InitializeNewArtifactResponse.AsObject;
-  static serializeBinaryToWriter(message: InitializeNewArtifactResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): InitializeNewArtifactResponse;
-  static deserializeBinaryFromReader(message: InitializeNewArtifactResponse, reader: jspb.BinaryReader): InitializeNewArtifactResponse;
-}
-
-export namespace InitializeNewArtifactResponse {
-  export type AsObject = {
-    artifactType: ArtifactType,
-    artifact?: google_protobuf_any_pb.Any.AsObject,
   }
 }
 

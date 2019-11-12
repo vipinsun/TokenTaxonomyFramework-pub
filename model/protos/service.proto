@@ -9,30 +9,32 @@ option csharp_namespace = "TTI.TTF.Taxonomy";
 option java_package = "org.tti.ttf.taxonomy";
 option java_multiple_files = true;
 
+//Taxonomy Service - Create, Read, Update, Delete for the Taxonomy Object Model
 service Service {
-    //gets
-    rpc GetFullTaxonomy (taxonomy.model.TaxonomyVersion) returns (taxonomy.model.Taxonomy) {}
-    rpc GetLiteTaxonomy (taxonomy.model.TaxonomyVersion) returns (taxonomy.model.Taxonomy) {} 
-    rpc GetBaseArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.Base) {}
-    rpc GetBehaviorArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.Behavior) {}
-    rpc GetBehaviorGroupArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.BehaviorGroup) {}
-    rpc GetPropertySetArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.PropertySet) {}
-    rpc GetTemplateFormulaArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.TemplateFormula) {}
-    rpc GetTemplateDefinitionArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.TemplateDefinition) {}
-    rpc GetTokenTemplate (taxonomy.model.artifact.TokenTemplateId) returns (taxonomy.model.core.TokenTemplate) {}
-    rpc GetTokenSpecification (taxonomy.model.artifact.TokenTemplateId) returns (taxonomy.model.core.TokenSpecification) {}
+    
+    rpc GetFullTaxonomy (taxonomy.model.TaxonomyVersion) returns (taxonomy.model.Taxonomy) {} //Get the a complete TOM in a single request. Preferred method for applications when the TOM is local.
+    rpc GetLiteTaxonomy (taxonomy.model.TaxonomyVersion) returns (taxonomy.model.Taxonomy) {} //Get a partial TOM with references only to artifacts.
+    rpc GetBaseArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.Base) {} //Get a Token Base artifact by Id.
+    rpc GetBehaviorArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.Behavior) {} //Get a Behavior by Id.
+    rpc GetBehaviorGroupArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.BehaviorGroup) {} //Get a BehaviorGroup by Id.
+    rpc GetPropertySetArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.PropertySet) {} //Get a PropertySet by Id.
+    rpc GetTemplateFormulaArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.TemplateFormula) {} //Get a TemplateFormula by Id.
+    rpc GetTemplateDefinitionArtifact (taxonomy.model.artifact.ArtifactSymbol) returns (taxonomy.model.core.TemplateDefinition) {} //Get a TemplateDefinition by Id.
+    rpc GetTokenTemplate (taxonomy.model.artifact.TokenTemplateId) returns (taxonomy.model.core.TokenTemplate) {} //Get a Token Template by TokenDefinition.Id.
+    rpc GetTokenSpecification (taxonomy.model.artifact.TokenTemplateId) returns (taxonomy.model.core.TokenSpecification) {} // Get a Token Specification by TokenDefinition.Id.
    
 
-    rpc GetArtifactsOfType (taxonomy.model.artifact.QueryOptions) returns (taxonomy.model.artifact.QueryResult) {}
-    rpc InitializeNewArtifact (taxonomy.model.artifact.InitializeNewArtifactRequest) returns (taxonomy.model.artifact.InitializeNewArtifactResponse) {}
-    //sets
-    rpc CreateArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactResponse) {}
-    rpc UpdateArtifact (taxonomy.model.artifact.UpdateArtifactRequest) returns (taxonomy.model.artifact.UpdateArtifactResponse) {}
-    rpc DeleteArtifact (taxonomy.model.artifact.DeleteArtifactRequest) returns (taxonomy.model.artifact.DeleteArtifactResponse) {}
-    rpc CreateTemplateDefinition (taxonomy.model.artifact.NewTemplateDefinition) returns (taxonomy.model.core.TemplateDefinition) {}
+    rpc GetArtifactsOfType (taxonomy.model.artifact.QueryOptions) returns (taxonomy.model.artifact.QueryResult) {} //Get artifacts by type using query options.
+    rpc InitializeNewArtifact (taxonomy.model.artifact.InitializeNewArtifactRequest) returns (taxonomy.model.artifact.InitializeNewArtifactResponse) {} //Initialize a new artifact object and return it for updating. Assigns a unique identifier for the type.
+    
+    
+    rpc CreateArtifact (taxonomy.model.artifact.NewArtifactRequest) returns (taxonomy.model.artifact.NewArtifactResponse) {} //Submit a newly created artifact object to be saved.
+    rpc UpdateArtifact (taxonomy.model.artifact.UpdateArtifactRequest) returns (taxonomy.model.artifact.UpdateArtifactResponse) {} //Submit an updated artifact object to be saved.
+    rpc DeleteArtifact (taxonomy.model.artifact.DeleteArtifactRequest) returns (taxonomy.model.artifact.DeleteArtifactResponse) {} //Delete an artifact by Id.
+    rpc CreateTemplateDefinition (taxonomy.model.artifact.NewTemplateDefinition) returns (taxonomy.model.core.TemplateDefinition) {} //Create a TemplateDefinition from a TemplateFormula.
 
-    rpc CommitLocalUpdates(taxonomy.model.artifact.CommitUpdatesRequest) returns (taxonomy.model.artifact.CommitUpdatesResponse) {}
-    rpc PullRequest(taxonomy.model.artifact.IssuePullRequest) returns (taxonomy.model.artifact.IssuePullResponse){}
-    rpc GetConfig(taxonomy.model.artifact.ConfigurationRequest) returns (taxonomy.model.artifact.ServiceConfiguration) {}
+    rpc CommitLocalUpdates(taxonomy.model.artifact.CommitUpdatesRequest) returns (taxonomy.model.artifact.CommitUpdatesResponse) {} //Issue a commit for updates made to the local git.
+    rpc PullRequest(taxonomy.model.artifact.IssuePullRequest) returns (taxonomy.model.artifact.IssuePullResponse){} //Issue a pull request from the local clone to the global source.
+    rpc GetConfig(taxonomy.model.artifact.ConfigurationRequest) returns (taxonomy.model.artifact.ServiceConfiguration) {} //Retrieve service configuration.
 }
 

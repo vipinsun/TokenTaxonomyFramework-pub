@@ -93,7 +93,7 @@ namespace TTI.TTF.Taxonomy.Model {
   }
   #region Messages
   /// <summary>
-  ///each collection defined in a map with the index being the symbol of the artifact for the collection.
+  ///The Taxonomy contains collections of artifacts where each collection is defined in a map with the index being the symbol of the artifact for the collection.
   /// </summary>
   public sealed partial class Taxonomy : pb::IMessage<Taxonomy> {
     private static readonly pb::MessageParser<Taxonomy> _parser = new pb::MessageParser<Taxonomy>(() => new Taxonomy());
@@ -140,6 +140,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 1;
     private global::TTI.TTF.Taxonomy.Model.TaxonomyVersion version_;
+    /// <summary>
+    ///Version of the TOM
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.TaxonomyVersion Version {
       get { return version_; }
@@ -153,6 +156,9 @@ namespace TTI.TTF.Taxonomy.Model {
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base>.Codec _map_baseTokenTypes_codec
         = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.Base.Parser), 18);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base> baseTokenTypes_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base>();
+    /// <summary>
+    ///Collection of Token Bases
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Base> BaseTokenTypes {
       get { return baseTokenTypes_; }
@@ -163,6 +169,9 @@ namespace TTI.TTF.Taxonomy.Model {
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>.Codec _map_behaviors_codec
         = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.Behavior.Parser), 26);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior> behaviors_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior>();
+    /// <summary>
+    ///Collection of Behaviors
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.Behavior> Behaviors {
       get { return behaviors_; }
@@ -173,6 +182,9 @@ namespace TTI.TTF.Taxonomy.Model {
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>.Codec _map_behaviorGroups_codec
         = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup.Parser), 34);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> behaviorGroups_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup>();
+    /// <summary>
+    ///Collection of BehaviorGroups
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.BehaviorGroup> BehaviorGroups {
       get { return behaviorGroups_; }
@@ -183,6 +195,9 @@ namespace TTI.TTF.Taxonomy.Model {
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet>.Codec _map_propertySets_codec
         = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.PropertySet.Parser), 42);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet> propertySets_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet>();
+    /// <summary>
+    ///Collection of ProperySets
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.PropertySet> PropertySets {
       get { return propertySets_; }
@@ -193,6 +208,9 @@ namespace TTI.TTF.Taxonomy.Model {
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula>.Codec _map_templateFormulas_codec
         = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula.Parser), 50);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula> templateFormulas_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula>();
+    /// <summary>
+    ///Collection of TemplateFormulas
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateFormula> TemplateFormulas {
       get { return templateFormulas_; }
@@ -203,6 +221,9 @@ namespace TTI.TTF.Taxonomy.Model {
     private static readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>.Codec _map_templateDefinitions_codec
         = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition.Parser), 58);
     private readonly pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> templateDefinitions_ = new pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition>();
+    /// <summary>
+    ///Collection of TemplateDefinitions
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, global::TTI.TTF.Taxonomy.Model.Core.TemplateDefinition> TemplateDefinitions {
       get { return templateDefinitions_; }
@@ -211,6 +232,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "token_template_hierarchy" field.</summary>
     public const int TokenTemplateHierarchyFieldNumber = 8;
     private global::TTI.TTF.Taxonomy.Model.Hierarchy tokenTemplateHierarchy_;
+    /// <summary>
+    ///Visual or logical hierarchy of Templates.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Hierarchy TokenTemplateHierarchy {
       get { return tokenTemplateHierarchy_; }
@@ -222,6 +246,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "formula_grammar" field.</summary>
     public const int FormulaGrammarFieldNumber = 9;
     private global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar formulaGrammar_;
+    /// <summary>
+    ///Global grammar for formula objects.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar FormulaGrammar {
       get { return formulaGrammar_; }
@@ -418,6 +445,9 @@ namespace TTI.TTF.Taxonomy.Model {
 
   }
 
+  /// <summary>
+  ///Support for multiple versions - future use.
+  /// </summary>
   public sealed partial class TaxonomyVersion : pb::IMessage<TaxonomyVersion> {
     private static readonly pb::MessageParser<TaxonomyVersion> _parser = new pb::MessageParser<TaxonomyVersion>(() => new TaxonomyVersion());
     private pb::UnknownFieldSet _unknownFields;
@@ -457,6 +487,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
+    /// <summary>
+    ///Unique GUID/UUID of the TOM
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
       get { return id_; }
@@ -468,6 +501,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 2;
     private string version_ = "";
+    /// <summary>
+    ///Simple version
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Version {
       get { return version_; }
@@ -479,6 +515,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "state_hash" field.</summary>
     public const int StateHashFieldNumber = 3;
     private string stateHash_ = "";
+    /// <summary>
+    ///SHA3 Hashed version
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string StateHash {
       get { return stateHash_; }
@@ -603,6 +642,9 @@ namespace TTI.TTF.Taxonomy.Model {
 
   }
 
+  /// <summary>
+  ///Logical hierarchy of branches and token templates.
+  /// </summary>
   public sealed partial class Hierarchy : pb::IMessage<Hierarchy> {
     private static readonly pb::MessageParser<Hierarchy> _parser = new pb::MessageParser<Hierarchy>(() => new Hierarchy());
     private pb::UnknownFieldSet _unknownFields;
@@ -642,6 +684,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "fungibles" field.</summary>
     public const int FungiblesFieldNumber = 1;
     private global::TTI.TTF.Taxonomy.Model.FungibleBranch fungibles_;
+    /// <summary>
+    ///Fungible root branch
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.FungibleBranch Fungibles {
       get { return fungibles_; }
@@ -653,6 +698,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "non_fungibles" field.</summary>
     public const int NonFungiblesFieldNumber = 2;
     private global::TTI.TTF.Taxonomy.Model.NonFungibleBranch nonFungibles_;
+    /// <summary>
+    ///non-fungible root branch
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.NonFungibleBranch NonFungibles {
       get { return nonFungibles_; }
@@ -664,6 +712,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "hybrids" field.</summary>
     public const int HybridsFieldNumber = 3;
     private global::TTI.TTF.Taxonomy.Model.HybridBranch hybrids_;
+    /// <summary>
+    ///Hybrid root branch
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.HybridBranch Hybrids {
       get { return hybrids_; }
@@ -1347,6 +1398,9 @@ namespace TTI.TTF.Taxonomy.Model {
 
   }
 
+  /// <summary>
+  ///Uses classification to represent a branch
+  /// </summary>
   public sealed partial class BranchIdentifier : pb::IMessage<BranchIdentifier> {
     private static readonly pb::MessageParser<BranchIdentifier> _parser = new pb::MessageParser<BranchIdentifier>(() => new BranchIdentifier());
     private pb::UnknownFieldSet _unknownFields;
@@ -1396,6 +1450,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "formula_id" field.</summary>
     public const int FormulaIdFieldNumber = 2;
     private string formulaId_ = "";
+    /// <summary>
+    ///Good for visualizations
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FormulaId {
       get { return formulaId_; }
@@ -1563,6 +1620,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "parent_formula_id" field.</summary>
     public const int ParentFormulaIdFieldNumber = 2;
     private string parentFormulaId_ = "";
+    /// <summary>
+    ///Parent formula idea for walking the tree.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ParentFormulaId {
       get { return parentFormulaId_; }
@@ -1574,6 +1634,9 @@ namespace TTI.TTF.Taxonomy.Model {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 3;
     private string name_ = "";
+    /// <summary>
+    ///Name of the branch.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
@@ -1609,6 +1672,9 @@ namespace TTI.TTF.Taxonomy.Model {
     private static readonly pb::FieldCodec<global::TTI.TTF.Taxonomy.Model.BranchRoot> _repeated_branches_codec
         = pb::FieldCodec.ForMessage(50, global::TTI.TTF.Taxonomy.Model.BranchRoot.Parser);
     private readonly pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.BranchRoot> branches_ = new pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.BranchRoot>();
+    /// <summary>
+    ///Nested branches
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::TTI.TTF.Taxonomy.Model.BranchRoot> Branches {
       get { return branches_; }
