@@ -25,8 +25,8 @@ Other files can be placed in the artifact folder and be read into the model in b
 
 ## TOM - Taxonomy Object Model
 
-The object model provides the structured data for the 5 types of artifacts along with extensible metadata for the artifact.  It serializes to JSON and de-serializes into a native object model using Protocol Buffers, proto3, for all major platforms.
+The object model provides the structured data for artifacts that is extensible via metadata for each artifact.  It serializes to JSON and de-serializes into a native object model using Protocol Buffers, proto3, for all major platforms.
 
 ![TOM](images/taxonomy-model.png)
 
-For a detailed overview of the model see [TTF - Technical Overview](presentations/TTF-Technical.pptx).
+For a detailed overview of the model see [TOM](model/tom.md).

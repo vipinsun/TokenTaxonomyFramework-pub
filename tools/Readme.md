@@ -2,11 +2,11 @@
 
 ## Taxonomy Service
 
-- [Taxonomy Service](TaxonomyService/TaxonomyService) is a gRpc service that provides CRUD (create, read, update and delete) capabilities for the repo.  You can run this service from your local clone or use the published service from the [TTI Site](http://tokentaxonomy.org) once it is published. When the service starts, it is passed the path to the artifacts folder and then reads the taxonomy folder structure and files into the [Taxonomy Model](./taxonomy-model.md).  
+- [Taxonomy Service](TaxonomyService/TaxonomyService) is a gRpc service that provides CRUD (create, read, update and delete) capabilities for the repo.  You can run this service from your local clone or use the published service from the [TTI Site](http://tokentaxonomy.org) once it is published. When the service starts, it is passed the path to the artifacts folder and then reads the taxonomy folder structure and files into the [Taxonomy Model](../model/tom.md). Full documentation for the [TaxonomyService](../model/taxonomyServices.md)
 
 - [Taxonomy Client](TaxonomyService/TaxonomyClient) is a simple command line tool that demonstrates how to interact with the Taxonomy Service to fetch the model and then apply it to any type of application for display or input.
 
-- [Taxonomy Printer](TaxonomyService/TTF-Printer) a console based application that can generate OpenXML Wordprocessing documents from artifacts in the repo. It is particularly useful for creating a presentable view of to Token Specification (template). It requires that the Taxonomy Service be running and accessible.
+- [Taxonomy Printer](TaxonomyService/TTF-Printer) a console based application that can generate OpenXML Wordprocessing documents from artifacts in the repo. It is particularly useful for creating a presentable view of to Token Specification (template). It requires that the Taxonomy Service be running and accessible. Full documentation for the [TTF-Printer](../model/taxonomyServices.md)
 
 - From your cloned copy of the repo.
 
@@ -75,7 +75,7 @@ The above creates a folder, if it doesn't already exist, in the artifacts folder
 
 The TTF-Printer runs as a service and uses the Taxonomy Service to create OpenXml Word Processing documents for Microsoft Word, Goggle Docs, etc.
 
-It can print individual artifacts, which it creates in the artifacts folder or overwrite to a .docx file. You can also print all TTF artifacts which will create print out OpenXml in each artifacts folder or create/overwrite a TTF-Book.docx in the root of the repo.
+It can print individual artifacts, which it creates in the artifacts folder or overwrite to a `.docx` file. You can also print all TTF artifacts which will create print out OpenXml in each artifacts folder or create/overwrite a TTF-Book.docx in the root of the repo.
 
 The TTF-Printer can be tested using the TaxonomyClient to print a single artifact given the artifact Id using `-Id` and type `-t` where the types are 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification.  Example below prints a specification with the Id `3b557279-5400-472e-a68e-feb818930276`
 

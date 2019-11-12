@@ -8,6 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace TTI.TTF.Taxonomy {
+  /// <summary>
+  ///Service to Print Artifacts to OpenXML format.
+  /// </summary>
   public static partial class PrinterService
   {
     static readonly string __ServiceName = "taxonomy.ttfprinter.PrinterService";
