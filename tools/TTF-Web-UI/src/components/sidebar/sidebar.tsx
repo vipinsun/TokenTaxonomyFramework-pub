@@ -173,9 +173,16 @@ class Sidebar extends React.Component<ISidebarUI> {
             {options.map(singleOption =>
               this.getMenuItem(singleOption)
             )}
-            <li>
-              <NavLink to="/create-behavior">create-behavior</NavLink>
-            </li>
+
+            <Menu.Item className="custom-menu-item">
+              <Link to={`/create-behavior`}>
+                <span className="menuHolder" >
+                  <span className="nav-text">
+                    Create Behavior
+                  </span>
+                </span>
+              </Link>
+            </Menu.Item>
           </Menu>
         </Sider>
       </SidebarWrapper>
