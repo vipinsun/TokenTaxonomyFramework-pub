@@ -7,7 +7,7 @@ option csharp_namespace = "TTI.TTF.Taxonomy.Model.Artifact";
 option java_package = "org.tti.ttf.taxonomy.model.artifact";
 option java_multiple_files = true;
 
-//Token Templates can contain a single token definition or a hybrid, where the are nested tokens within the template.
+//Token Templates can contain a single token definition or a hybrid, where they are nested tokens within the template.
 enum TemplateType{
     SINGLE_TOKEN = 0;
     HYBRID = 1;
