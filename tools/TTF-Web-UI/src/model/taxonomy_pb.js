@@ -278,37 +278,37 @@ proto.taxonomy.model.Taxonomy.deserializeBinaryFromReader = function(msg, reader
     case 2:
       var value = msg.getBaseTokenTypesMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.Base.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.Base());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.Base.deserializeBinaryFromReader, "");
          });
       break;
     case 3:
       var value = msg.getBehaviorsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.Behavior.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.Behavior());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.Behavior.deserializeBinaryFromReader, "");
          });
       break;
     case 4:
       var value = msg.getBehaviorGroupsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.BehaviorGroup.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.BehaviorGroup());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.BehaviorGroup.deserializeBinaryFromReader, "");
          });
       break;
     case 5:
       var value = msg.getPropertySetsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.PropertySet.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.PropertySet());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.PropertySet.deserializeBinaryFromReader, "");
          });
       break;
     case 6:
       var value = msg.getTemplateFormulasMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.TemplateFormula.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.TemplateFormula());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.TemplateFormula.deserializeBinaryFromReader, "");
          });
       break;
     case 7:
       var value = msg.getTemplateDefinitionsMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.TemplateDefinition.deserializeBinaryFromReader, "", new proto.taxonomy.model.core.TemplateDefinition());
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.taxonomy.model.core.TemplateDefinition.deserializeBinaryFromReader, "");
          });
       break;
     case 8:
@@ -411,21 +411,17 @@ proto.taxonomy.model.Taxonomy.prototype.getVersion = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.TaxonomyVersion|undefined} value
- * @return {!proto.taxonomy.model.Taxonomy} returns this
-*/
+/** @param {?proto.taxonomy.model.TaxonomyVersion|undefined} value */
 proto.taxonomy.model.Taxonomy.prototype.setVersion = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearVersion = function() {
-  return this.setVersion(undefined);
+  this.setVersion(undefined);
 };
 
 
@@ -453,11 +449,10 @@ proto.taxonomy.model.Taxonomy.prototype.getBaseTokenTypesMap = function(opt_noLa
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearBaseTokenTypesMap = function() {
   this.getBaseTokenTypesMap().clear();
-  return this;};
+};
 
 
 /**
@@ -475,11 +470,10 @@ proto.taxonomy.model.Taxonomy.prototype.getBehaviorsMap = function(opt_noLazyCre
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearBehaviorsMap = function() {
   this.getBehaviorsMap().clear();
-  return this;};
+};
 
 
 /**
@@ -497,11 +491,10 @@ proto.taxonomy.model.Taxonomy.prototype.getBehaviorGroupsMap = function(opt_noLa
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearBehaviorGroupsMap = function() {
   this.getBehaviorGroupsMap().clear();
-  return this;};
+};
 
 
 /**
@@ -519,11 +512,10 @@ proto.taxonomy.model.Taxonomy.prototype.getPropertySetsMap = function(opt_noLazy
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearPropertySetsMap = function() {
   this.getPropertySetsMap().clear();
-  return this;};
+};
 
 
 /**
@@ -541,11 +533,10 @@ proto.taxonomy.model.Taxonomy.prototype.getTemplateFormulasMap = function(opt_no
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearTemplateFormulasMap = function() {
   this.getTemplateFormulasMap().clear();
-  return this;};
+};
 
 
 /**
@@ -563,11 +554,10 @@ proto.taxonomy.model.Taxonomy.prototype.getTemplateDefinitionsMap = function(opt
 
 /**
  * Clears values from the map. The map will be non-null.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearTemplateDefinitionsMap = function() {
   this.getTemplateDefinitionsMap().clear();
-  return this;};
+};
 
 
 /**
@@ -580,21 +570,17 @@ proto.taxonomy.model.Taxonomy.prototype.getTokenTemplateHierarchy = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.Hierarchy|undefined} value
- * @return {!proto.taxonomy.model.Taxonomy} returns this
-*/
+/** @param {?proto.taxonomy.model.Hierarchy|undefined} value */
 proto.taxonomy.model.Taxonomy.prototype.setTokenTemplateHierarchy = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearTokenTemplateHierarchy = function() {
-  return this.setTokenTemplateHierarchy(undefined);
+  this.setTokenTemplateHierarchy(undefined);
 };
 
 
@@ -617,21 +603,17 @@ proto.taxonomy.model.Taxonomy.prototype.getFormulaGrammar = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.FormulaGrammar|undefined} value
- * @return {!proto.taxonomy.model.Taxonomy} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.FormulaGrammar|undefined} value */
 proto.taxonomy.model.Taxonomy.prototype.setFormulaGrammar = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.Taxonomy} returns this
  */
 proto.taxonomy.model.Taxonomy.prototype.clearFormulaGrammar = function() {
-  return this.setFormulaGrammar(undefined);
+  this.setFormulaGrammar(undefined);
 };
 
 
@@ -789,12 +771,9 @@ proto.taxonomy.model.TaxonomyVersion.prototype.getId = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.TaxonomyVersion} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.TaxonomyVersion.prototype.setId = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -807,12 +786,9 @@ proto.taxonomy.model.TaxonomyVersion.prototype.getVersion = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.TaxonomyVersion} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.TaxonomyVersion.prototype.setVersion = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -825,12 +801,9 @@ proto.taxonomy.model.TaxonomyVersion.prototype.getStateHash = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.TaxonomyVersion} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.TaxonomyVersion.prototype.setStateHash = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -986,21 +959,17 @@ proto.taxonomy.model.Hierarchy.prototype.getFungibles = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.FungibleBranch|undefined} value
- * @return {!proto.taxonomy.model.Hierarchy} returns this
-*/
+/** @param {?proto.taxonomy.model.FungibleBranch|undefined} value */
 proto.taxonomy.model.Hierarchy.prototype.setFungibles = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.Hierarchy} returns this
  */
 proto.taxonomy.model.Hierarchy.prototype.clearFungibles = function() {
-  return this.setFungibles(undefined);
+  this.setFungibles(undefined);
 };
 
 
@@ -1023,21 +992,17 @@ proto.taxonomy.model.Hierarchy.prototype.getNonFungibles = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.NonFungibleBranch|undefined} value
- * @return {!proto.taxonomy.model.Hierarchy} returns this
-*/
+/** @param {?proto.taxonomy.model.NonFungibleBranch|undefined} value */
 proto.taxonomy.model.Hierarchy.prototype.setNonFungibles = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.Hierarchy} returns this
  */
 proto.taxonomy.model.Hierarchy.prototype.clearNonFungibles = function() {
-  return this.setNonFungibles(undefined);
+  this.setNonFungibles(undefined);
 };
 
 
@@ -1060,21 +1025,17 @@ proto.taxonomy.model.Hierarchy.prototype.getHybrids = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.HybridBranch|undefined} value
- * @return {!proto.taxonomy.model.Hierarchy} returns this
-*/
+/** @param {?proto.taxonomy.model.HybridBranch|undefined} value */
 proto.taxonomy.model.Hierarchy.prototype.setHybrids = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.Hierarchy} returns this
  */
 proto.taxonomy.model.Hierarchy.prototype.clearHybrids = function() {
-  return this.setHybrids(undefined);
+  this.setHybrids(undefined);
 };
 
 
@@ -1225,21 +1186,17 @@ proto.taxonomy.model.HybridBranch.prototype.getFungible = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.FungibleBranch|undefined} value
- * @return {!proto.taxonomy.model.HybridBranch} returns this
-*/
+/** @param {?proto.taxonomy.model.FungibleBranch|undefined} value */
 proto.taxonomy.model.HybridBranch.prototype.setFungible = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.HybridBranch} returns this
  */
 proto.taxonomy.model.HybridBranch.prototype.clearFungible = function() {
-  return this.setFungible(undefined);
+  this.setFungible(undefined);
 };
 
 
@@ -1262,21 +1219,17 @@ proto.taxonomy.model.HybridBranch.prototype.getNonFungible = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.NonFungibleBranch|undefined} value
- * @return {!proto.taxonomy.model.HybridBranch} returns this
-*/
+/** @param {?proto.taxonomy.model.NonFungibleBranch|undefined} value */
 proto.taxonomy.model.HybridBranch.prototype.setNonFungible = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.HybridBranch} returns this
  */
 proto.taxonomy.model.HybridBranch.prototype.clearNonFungible = function() {
-  return this.setNonFungible(undefined);
+  this.setNonFungible(undefined);
 };
 
 
@@ -1427,21 +1380,17 @@ proto.taxonomy.model.FungibleBranch.prototype.getFractional = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.BranchRoot|undefined} value
- * @return {!proto.taxonomy.model.FungibleBranch} returns this
-*/
+/** @param {?proto.taxonomy.model.BranchRoot|undefined} value */
 proto.taxonomy.model.FungibleBranch.prototype.setFractional = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.FungibleBranch} returns this
  */
 proto.taxonomy.model.FungibleBranch.prototype.clearFractional = function() {
-  return this.setFractional(undefined);
+  this.setFractional(undefined);
 };
 
 
@@ -1464,21 +1413,17 @@ proto.taxonomy.model.FungibleBranch.prototype.getWhole = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.BranchRoot|undefined} value
- * @return {!proto.taxonomy.model.FungibleBranch} returns this
-*/
+/** @param {?proto.taxonomy.model.BranchRoot|undefined} value */
 proto.taxonomy.model.FungibleBranch.prototype.setWhole = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.FungibleBranch} returns this
  */
 proto.taxonomy.model.FungibleBranch.prototype.clearWhole = function() {
-  return this.setWhole(undefined);
+  this.setWhole(undefined);
 };
 
 
@@ -1643,21 +1588,17 @@ proto.taxonomy.model.NonFungibleBranch.prototype.getFractional = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.BranchRoot|undefined} value
- * @return {!proto.taxonomy.model.NonFungibleBranch} returns this
-*/
+/** @param {?proto.taxonomy.model.BranchRoot|undefined} value */
 proto.taxonomy.model.NonFungibleBranch.prototype.setFractional = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.NonFungibleBranch} returns this
  */
 proto.taxonomy.model.NonFungibleBranch.prototype.clearFractional = function() {
-  return this.setFractional(undefined);
+  this.setFractional(undefined);
 };
 
 
@@ -1680,21 +1621,17 @@ proto.taxonomy.model.NonFungibleBranch.prototype.getWhole = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.BranchRoot|undefined} value
- * @return {!proto.taxonomy.model.NonFungibleBranch} returns this
-*/
+/** @param {?proto.taxonomy.model.BranchRoot|undefined} value */
 proto.taxonomy.model.NonFungibleBranch.prototype.setWhole = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.NonFungibleBranch} returns this
  */
 proto.taxonomy.model.NonFungibleBranch.prototype.clearWhole = function() {
-  return this.setWhole(undefined);
+  this.setWhole(undefined);
 };
 
 
@@ -1717,21 +1654,17 @@ proto.taxonomy.model.NonFungibleBranch.prototype.getSingleton = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.BranchRoot|undefined} value
- * @return {!proto.taxonomy.model.NonFungibleBranch} returns this
-*/
+/** @param {?proto.taxonomy.model.BranchRoot|undefined} value */
 proto.taxonomy.model.NonFungibleBranch.prototype.setSingleton = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.NonFungibleBranch} returns this
  */
 proto.taxonomy.model.NonFungibleBranch.prototype.clearSingleton = function() {
-  return this.setSingleton(undefined);
+  this.setSingleton(undefined);
 };
 
 
@@ -1880,21 +1813,17 @@ proto.taxonomy.model.BranchIdentifier.prototype.getClassification = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.artifact.Classification|undefined} value
- * @return {!proto.taxonomy.model.BranchIdentifier} returns this
-*/
+/** @param {?proto.taxonomy.model.artifact.Classification|undefined} value */
 proto.taxonomy.model.BranchIdentifier.prototype.setClassification = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.BranchIdentifier} returns this
  */
 proto.taxonomy.model.BranchIdentifier.prototype.clearClassification = function() {
-  return this.setClassification(undefined);
+  this.setClassification(undefined);
 };
 
 
@@ -1916,12 +1845,9 @@ proto.taxonomy.model.BranchIdentifier.prototype.getFormulaId = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.BranchIdentifier} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.BranchIdentifier.prototype.setFormulaId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2123,21 +2049,17 @@ proto.taxonomy.model.BranchRoot.prototype.getBranchIdentifier = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.BranchIdentifier|undefined} value
- * @return {!proto.taxonomy.model.BranchRoot} returns this
-*/
+/** @param {?proto.taxonomy.model.BranchIdentifier|undefined} value */
 proto.taxonomy.model.BranchRoot.prototype.setBranchIdentifier = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.BranchRoot} returns this
  */
 proto.taxonomy.model.BranchRoot.prototype.clearBranchIdentifier = function() {
-  return this.setBranchIdentifier(undefined);
+  this.setBranchIdentifier(undefined);
 };
 
 
@@ -2159,12 +2081,9 @@ proto.taxonomy.model.BranchRoot.prototype.getParentFormulaId = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.BranchRoot} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.BranchRoot.prototype.setParentFormulaId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2177,12 +2096,9 @@ proto.taxonomy.model.BranchRoot.prototype.getName = function() {
 };
 
 
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.BranchRoot} returns this
- */
+/** @param {string} value */
 proto.taxonomy.model.BranchRoot.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2196,21 +2112,17 @@ proto.taxonomy.model.BranchRoot.prototype.getBranchFormula = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.TemplateFormula|undefined} value
- * @return {!proto.taxonomy.model.BranchRoot} returns this
-*/
+/** @param {?proto.taxonomy.model.core.TemplateFormula|undefined} value */
 proto.taxonomy.model.BranchRoot.prototype.setBranchFormula = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.BranchRoot} returns this
  */
 proto.taxonomy.model.BranchRoot.prototype.clearBranchFormula = function() {
-  return this.setBranchFormula(undefined);
+  this.setBranchFormula(undefined);
 };
 
 
@@ -2233,21 +2145,17 @@ proto.taxonomy.model.BranchRoot.prototype.getTemplates = function() {
 };
 
 
-/**
- * @param {?proto.taxonomy.model.core.TokenTemplates|undefined} value
- * @return {!proto.taxonomy.model.BranchRoot} returns this
-*/
+/** @param {?proto.taxonomy.model.core.TokenTemplates|undefined} value */
 proto.taxonomy.model.BranchRoot.prototype.setTemplates = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.taxonomy.model.BranchRoot} returns this
  */
 proto.taxonomy.model.BranchRoot.prototype.clearTemplates = function() {
-  return this.setTemplates(undefined);
+  this.setTemplates(undefined);
 };
 
 
@@ -2270,12 +2178,9 @@ proto.taxonomy.model.BranchRoot.prototype.getBranchesList = function() {
 };
 
 
-/**
- * @param {!Array<!proto.taxonomy.model.BranchRoot>} value
- * @return {!proto.taxonomy.model.BranchRoot} returns this
-*/
+/** @param {!Array<!proto.taxonomy.model.BranchRoot>} value */
 proto.taxonomy.model.BranchRoot.prototype.setBranchesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -2291,10 +2196,9 @@ proto.taxonomy.model.BranchRoot.prototype.addBranches = function(opt_value, opt_
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.taxonomy.model.BranchRoot} returns this
  */
 proto.taxonomy.model.BranchRoot.prototype.clearBranchesList = function() {
-  return this.setBranchesList([]);
+  this.setBranchesList([]);
 };
 
 

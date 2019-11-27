@@ -49,7 +49,7 @@ const routes = [
   {
     path: 'create-behavior',
     component: asyncComponent({
-      resolve: () => import('./pages/create-behaviour')}),
+      resolve: () => import('./pages/create-behaviour-page')}),
     exact: true,
   }
 ];

@@ -8,6 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace TTI.TTF.Taxonomy {
+  /// <summary>
+  ///Taxonomy Service - Create, Read, Update, Delete for the Taxonomy Object Model
+  /// </summary>
   public static partial class Service
   {
     static readonly string __ServiceName = "taxonomy.Service";
@@ -185,12 +188,6 @@ namespace TTI.TTF.Taxonomy {
     [grpc::BindServiceMethod(typeof(Service), "BindService")]
     public abstract partial class ServiceBase
     {
-      /// <summary>
-      ///gets
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetFullTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -251,12 +248,6 @@ namespace TTI.TTF.Taxonomy {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      /// <summary>
-      ///sets
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse> CreateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -317,46 +308,18 @@ namespace TTI.TTF.Taxonomy {
       {
       }
 
-      /// <summary>
-      ///gets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.Model.Taxonomy GetFullTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetFullTaxonomy(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      ///gets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.Model.Taxonomy GetFullTaxonomy(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetFullTaxonomy, null, options, request);
       }
-      /// <summary>
-      ///gets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetFullTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetFullTaxonomyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      ///gets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Taxonomy> GetFullTaxonomyAsync(global::TTI.TTF.Taxonomy.Model.TaxonomyVersion request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetFullTaxonomy, null, options, request);
@@ -537,46 +500,18 @@ namespace TTI.TTF.Taxonomy {
       {
         return CallInvoker.AsyncUnaryCall(__Method_InitializeNewArtifact, null, options, request);
       }
-      /// <summary>
-      ///sets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse CreateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateArtifact(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      ///sets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse CreateArtifact(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_CreateArtifact, null, options, request);
       }
-      /// <summary>
-      ///sets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse> CreateArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return CreateArtifactAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      ///sets
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse> CreateArtifactAsync(global::TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_CreateArtifact, null, options, request);

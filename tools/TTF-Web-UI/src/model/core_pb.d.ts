@@ -218,6 +218,64 @@ export namespace Behaviors {
   }
 }
 
+export class BehaviorReference extends jspb.Message {
+  getReference(): artifact_pb.ArtifactReference | undefined;
+  setReference(value?: artifact_pb.ArtifactReference): void;
+  hasReference(): boolean;
+  clearReference(): void;
+
+  getIsExternal(): boolean;
+  setIsExternal(value: boolean): void;
+
+  getConstructorType(): string;
+  setConstructorType(value: string): void;
+
+  getConstructor(): google_protobuf_any_pb.Any | undefined;
+  setConstructor(value?: google_protobuf_any_pb.Any): void;
+  hasConstructor(): boolean;
+  clearConstructor(): void;
+
+  getAppliesToList(): Array<artifact_pb.ArtifactSymbol>;
+  setAppliesToList(value: Array<artifact_pb.ArtifactSymbol>): void;
+  clearAppliesToList(): void;
+  addAppliesTo(value?: artifact_pb.ArtifactSymbol, index?: number): artifact_pb.ArtifactSymbol;
+
+  getInvocationsList(): Array<Invocation>;
+  setInvocationsList(value: Array<Invocation>): void;
+  clearInvocationsList(): void;
+  addInvocations(value?: Invocation, index?: number): Invocation;
+
+  getInfluenceBindingsList(): Array<InfluenceBinding>;
+  setInfluenceBindingsList(value: Array<InfluenceBinding>): void;
+  clearInfluenceBindingsList(): void;
+  addInfluenceBindings(value?: InfluenceBinding, index?: number): InfluenceBinding;
+
+  getPropertiesList(): Array<Property>;
+  setPropertiesList(value: Array<Property>): void;
+  clearPropertiesList(): void;
+  addProperties(value?: Property, index?: number): Property;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BehaviorReference.AsObject;
+  static toObject(includeInstance: boolean, msg: BehaviorReference): BehaviorReference.AsObject;
+  static serializeBinaryToWriter(message: BehaviorReference, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BehaviorReference;
+  static deserializeBinaryFromReader(message: BehaviorReference, reader: jspb.BinaryReader): BehaviorReference;
+}
+
+export namespace BehaviorReference {
+  export type AsObject = {
+    reference?: artifact_pb.ArtifactReference.AsObject,
+    isExternal: boolean,
+    constructorType: string,
+    constructor?: google_protobuf_any_pb.Any.AsObject,
+    appliesToList: Array<artifact_pb.ArtifactSymbol.AsObject>,
+    invocationsList: Array<Invocation.AsObject>,
+    influenceBindingsList: Array<InfluenceBinding.AsObject>,
+    propertiesList: Array<Property.AsObject>,
+  }
+}
+
 export class BehaviorGroup extends jspb.Message {
   getArtifact(): artifact_pb.Artifact | undefined;
   setArtifact(value?: artifact_pb.Artifact): void;
@@ -791,64 +849,6 @@ export class TemplateDefinitions extends jspb.Message {
 export namespace TemplateDefinitions {
   export type AsObject = {
     definitionsList: Array<TemplateDefinition.AsObject>,
-  }
-}
-
-export class BehaviorReference extends jspb.Message {
-  getReference(): artifact_pb.ArtifactReference | undefined;
-  setReference(value?: artifact_pb.ArtifactReference): void;
-  hasReference(): boolean;
-  clearReference(): void;
-
-  getIsExternal(): boolean;
-  setIsExternal(value: boolean): void;
-
-  getConstructorType(): string;
-  setConstructorType(value: string): void;
-
-  getConstructor(): google_protobuf_any_pb.Any | undefined;
-  setConstructor(value?: google_protobuf_any_pb.Any): void;
-  hasConstructor(): boolean;
-  clearConstructor(): void;
-
-  getAppliesToList(): Array<artifact_pb.ArtifactSymbol>;
-  setAppliesToList(value: Array<artifact_pb.ArtifactSymbol>): void;
-  clearAppliesToList(): void;
-  addAppliesTo(value?: artifact_pb.ArtifactSymbol, index?: number): artifact_pb.ArtifactSymbol;
-
-  getInvocationsList(): Array<Invocation>;
-  setInvocationsList(value: Array<Invocation>): void;
-  clearInvocationsList(): void;
-  addInvocations(value?: Invocation, index?: number): Invocation;
-
-  getInfluenceBindingsList(): Array<InfluenceBinding>;
-  setInfluenceBindingsList(value: Array<InfluenceBinding>): void;
-  clearInfluenceBindingsList(): void;
-  addInfluenceBindings(value?: InfluenceBinding, index?: number): InfluenceBinding;
-
-  getPropertiesList(): Array<Property>;
-  setPropertiesList(value: Array<Property>): void;
-  clearPropertiesList(): void;
-  addProperties(value?: Property, index?: number): Property;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BehaviorReference.AsObject;
-  static toObject(includeInstance: boolean, msg: BehaviorReference): BehaviorReference.AsObject;
-  static serializeBinaryToWriter(message: BehaviorReference, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BehaviorReference;
-  static deserializeBinaryFromReader(message: BehaviorReference, reader: jspb.BinaryReader): BehaviorReference;
-}
-
-export namespace BehaviorReference {
-  export type AsObject = {
-    reference?: artifact_pb.ArtifactReference.AsObject,
-    isExternal: boolean,
-    constructorType: string,
-    constructor?: google_protobuf_any_pb.Any.AsObject,
-    appliesToList: Array<artifact_pb.ArtifactSymbol.AsObject>,
-    invocationsList: Array<Invocation.AsObject>,
-    influenceBindingsList: Array<InfluenceBinding.AsObject>,
-    propertiesList: Array<Property.AsObject>,
   }
 }
 

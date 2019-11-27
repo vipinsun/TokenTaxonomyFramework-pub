@@ -1,23 +1,14 @@
 # TTF Model
 
-The Model is a prototype object model and simple api for creating and consuming the TTF metadata and content as well as building user interfaces for controlled user input to ensure valid content submission before pull requests to merge into the TTF after a workshop.
+The Taxonomy Object Model (TOM) is a Protocol Buffers (Protobuf) based object model for the artifacts, metadata and content, that make up the TTF. The TOM should be the primary means for interacting with artifacts and the TTF using applications build for web, model and desktop based applications.
 
-Additionally, the Model can be used to dynamically generate TTF maps to implementation source code, implementations or other frameworks. i.e. legal, regulatory.
+The TTF's artifacts are stored in the [artifacts](../artifacts) folder as JSON files. The TOM serializes and de-serializes to these files, using the [Taxonomy Service](../tools/TaxonomyService) that can perform all create, read, update and delete operations on the TOM and saving it to the artifacts folder structure.
 
-This model could be used to represent an artifact's metadata and serialized and saved as json in the artifact folder instead of sprinkling metadata around in html tags or json within artifact documents.
+You can modify an artifact's JSON file directly, but references and symbols to other artifacts will need to be manually checked.
 
-Consuming an artifact folder to generate a artifact from the model would populate the object model with the metadata and the collection of files in the folder.
-
-## Model of Artifacts
-
-The model is used in conjunction with the artifact folders.
+- Documentation of the [TOM](tom.md)
+- Documentation for the gRpc [Taxonomy Services](taxonomyServices.md)
 
 ## Prerequisites
 
-- install the protoc [gRpcWeb](https://github.com/grpc/grpc-web/releases) extension and [install](https://github.com/grpc/grpc-web).  OSX:
-
-```bash
-sudo mv ~/Downloads/protoc-gen-grpc-web-1.0.4-darwin-x86_64 \
-  /usr/local/bin/protoc-gen-grpc-web
-chmod +x /usr/local/bin/protoc-gen-grpc-web
-```
+- install the protoc [gRpcWeb](https://github.com/grpc/grpc-web/releases) extension and [install](https://github.com/grpc/grpc-web).

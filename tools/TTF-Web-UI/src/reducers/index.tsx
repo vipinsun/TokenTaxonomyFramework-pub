@@ -6,6 +6,8 @@ import {
 } from './baseList';
 import {Action} from 'redux';
 import {BehaviorGroup, PropertySet, TemplateDefinition} from "../model/core_pb";
+import IBehaviourForm from "./behaviour-form-reducer/model";
+import {behaviourFormReducer, defaultBehaviourFormState} from "./behaviour-form-reducer";
 
 export interface AppState {
   entities: {
@@ -18,6 +20,9 @@ export interface AppState {
   ui: {
     sidebarUI: BaseListState;
   };
+  forms: {
+    behaviourForm: IBehaviourForm.ModelState
+  }
 }
 
 // initial State
@@ -33,6 +38,9 @@ export function defaultState() {
     ui: {
       sidebarUI: defaultBaseListState()
     },
+    forms: {
+      behaviourForm: defaultBehaviourFormState()
+    }
   };
 }
 
@@ -48,6 +56,9 @@ export function mainReducer(state: AppState = defaultState(), action: Action): A
     ui: {
       sidebarUI: baseListReducer(state.ui.sidebarUI, action),
     },
+    forms: {
+      behaviourForm: behaviourFormReducer(state.forms.behaviourForm, action)
+    }
   };
 }
 
