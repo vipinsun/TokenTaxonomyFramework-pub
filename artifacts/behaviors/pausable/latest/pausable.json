@@ -14,7 +14,7 @@
       "halt trading"
     ],
     "artifactDefinition": {
-      "businessDescription": "Pausible is an influencing behavior that can be applied to other behaviors in the Token. Pausible will have an applies toA token class that implements this behavior will halt trades and free all transfers, handy if there is a bug found in the token implementation.",
+      "businessDescription": "Pausible is an influencing behavior that can be applied to other behaviors in the Token. Pausible will have an applies to A token class that implements this behavior will halt trades and free all transfers, handy if there is a bug found in the token implementation.",
       "businessExample": "There may be a run or a crash in the market that may require the halting of trades for this token. This is like the big red button.",
       "analogies": [
         {
