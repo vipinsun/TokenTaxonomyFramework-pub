@@ -52,23 +52,9 @@
           "platform": "ETHEREUM_SOLIDITY",
           "referencePath": "https://github.com/EntEthAlliance/Trusted-Token/blob/develop/contracts/ReputationToken.sol",
           "maps": null
-        },
-        {
-          "mappingType": "SOURCE_CODE",
-          "name": "Open Zeppelin - ERC-777",
-          "platform": "ETHEREUM_SOLIDITY",
-          "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC777/ERC777.sol",
-          "maps": null
         }
       ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Open Zeppelin - ERC-777",
-          "referencePath": "https://docs.openzeppelin.com/contracts/2.x/tokens#ERC777",
-          "maps": null
-        }
-      ],
+      "implementationReferences": [],
       "resources": [],
       "artifact": null
     },

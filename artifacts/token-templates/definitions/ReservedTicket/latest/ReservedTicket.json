@@ -55,14 +55,12 @@
         }
       ],
       "implementationReferences": [
-        [
           {
             "mappingType": "IMPLEMENTATION",
             "name": "Open Zeppelin - ERC-751",
             "referencePath": "https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#ERC721Full",
             "maps": null
           }
-        ]
       ],
       "resources": [],
       "artifact": null
