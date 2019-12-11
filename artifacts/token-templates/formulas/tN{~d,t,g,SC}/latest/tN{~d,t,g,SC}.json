@@ -44,8 +44,25 @@
       }
     ],
     "maps": {
-      "codeReferences": [],
-      "implementationReferences": [],
+      "codeReferences": [
+        {
+          "mappingType": "SOURCE_CODE",
+          "name": "Open Zeppelin - ERC-751",
+          "platform": "ETHEREUM_SOLIDITY",
+          "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Full.sol",
+          "maps": null
+        }
+      ],
+      "implementationReferences": [
+        [
+          {
+            "mappingType": "IMPLEMENTATION",
+            "name": "Open Zeppelin - ERC-751",
+            "referencePath": "https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#ERC721Full",
+            "maps": null
+          }
+        ]
+      ],
       "resources": [],
       "artifact": null
     }
