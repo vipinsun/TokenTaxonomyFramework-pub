@@ -43,11 +43,23 @@ namespace TTI.TTF.Taxonomy {
     [grpc::BindServiceMethod(typeof(PrinterService), "BindService")]
     public abstract partial class PrinterServiceBase
     {
+      /// <summary>
+      ///Print an artifact by Type and Id.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifact(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      /// <summary>
+      ///Print all artifacts in either multiple artifact files in their repective artifact folders or a single TTF Book file.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::TTI.TTF.Taxonomy.PrintResult> PrintTTF(global::TTI.TTF.Taxonomy.PrintTTFOptions request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -78,34 +90,90 @@ namespace TTI.TTF.Taxonomy {
       {
       }
 
+      /// <summary>
+      ///Print an artifact by Type and Id.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTFArtifact(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return PrintTTFArtifact(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
+      /// <summary>
+      ///Print an artifact by Type and Id.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTFArtifact(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_PrintTTFArtifact, null, options, request);
       }
+      /// <summary>
+      ///Print an artifact by Type and Id.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifactAsync(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return PrintTTFArtifactAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
+      /// <summary>
+      ///Print an artifact by Type and Id.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFArtifactAsync(global::TTI.TTF.Taxonomy.ArtifactToPrint request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_PrintTTFArtifact, null, options, request);
       }
+      /// <summary>
+      ///Print all artifacts in either multiple artifact files in their repective artifact folders or a single TTF Book file.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTF(global::TTI.TTF.Taxonomy.PrintTTFOptions request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return PrintTTF(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
+      /// <summary>
+      ///Print all artifacts in either multiple artifact files in their repective artifact folders or a single TTF Book file.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
       public virtual global::TTI.TTF.Taxonomy.PrintResult PrintTTF(global::TTI.TTF.Taxonomy.PrintTTFOptions request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_PrintTTF, null, options, request);
       }
+      /// <summary>
+      ///Print all artifacts in either multiple artifact files in their repective artifact folders or a single TTF Book file.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFAsync(global::TTI.TTF.Taxonomy.PrintTTFOptions request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return PrintTTFAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
+      /// <summary>
+      ///Print all artifacts in either multiple artifact files in their repective artifact folders or a single TTF Book file.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
       public virtual grpc::AsyncUnaryCall<global::TTI.TTF.Taxonomy.PrintResult> PrintTTFAsync(global::TTI.TTF.Taxonomy.PrintTTFOptions request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_PrintTTF, null, options, request);
