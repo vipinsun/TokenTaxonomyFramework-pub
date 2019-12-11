@@ -98,7 +98,7 @@
         {
           "mappingType": "SOURCE_CODE",
           "name": "FabToken",
-          "platform": "ETHEREUM_SOLIDITY",
+          "platform": "CHAINCODE_GO",
           "referencePath": "https://github.com/hyperledger/fabric/blob/v2.0.0-alpha/token/cmd/redeem.go",
           "maps": null
         }

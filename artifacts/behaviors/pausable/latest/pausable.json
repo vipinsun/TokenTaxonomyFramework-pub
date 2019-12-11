@@ -59,21 +59,20 @@
       "codeReferences": [
         {
           "mappingType": "SOURCE_CODE",
-          "name": "Open Zeppelin",
+          "name": "Open Zeppelin ERC-20",
           "platform": "ETHEREUM_SOLIDITY",
           "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20Pausable.sol",
           "maps": null
-        }
-      ],
-      "resources": [
+        },
         {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
+          "mappingType": "SOURCE_CODE",
+          "name": "Open Zeppelin ERC-751",
+          "platform": "ETHEREUM_SOLIDITY",
+          "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721Pausable.sol",
           "maps": null
         }
       ],
+      "resources": [],
       "artifact": null
     }
   },
