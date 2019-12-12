@@ -226,9 +226,12 @@ proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.getType = function() {
 };
 
 
-/** @param {!proto.taxonomy.model.artifact.ArtifactType} value */
+/**
+ * @param {!proto.taxonomy.model.artifact.ArtifactType} value
+ * @return {!proto.taxonomy.ttfprinter.ArtifactToPrint} returns this
+ */
 proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.setType = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  return jspb.Message.setProto3EnumField(this, 1, value);
 };
 
 
@@ -241,9 +244,12 @@ proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.getId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.ttfprinter.ArtifactToPrint} returns this
+ */
 proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.setId = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -256,9 +262,12 @@ proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.getDraft = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.ttfprinter.ArtifactToPrint} returns this
+ */
 proto.taxonomy.ttfprinter.ArtifactToPrint.prototype.setDraft = function(value) {
-  jspb.Message.setProto3BooleanField(this, 3, value);
+  return jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
@@ -395,9 +404,12 @@ proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.getBook = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.ttfprinter.PrintTTFOptions} returns this
+ */
 proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.setBook = function(value) {
-  jspb.Message.setProto3BooleanField(this, 1, value);
+  return jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -410,9 +422,12 @@ proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.getDraft = function() {
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.taxonomy.ttfprinter.PrintTTFOptions} returns this
+ */
 proto.taxonomy.ttfprinter.PrintTTFOptions.prototype.setDraft = function(value) {
-  jspb.Message.setProto3BooleanField(this, 2, value);
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -537,9 +552,12 @@ proto.taxonomy.ttfprinter.PrintResult.prototype.getOpenXmlDocument = function() 
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.ttfprinter.PrintResult} returns this
+ */
 proto.taxonomy.ttfprinter.PrintResult.prototype.setOpenXmlDocument = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

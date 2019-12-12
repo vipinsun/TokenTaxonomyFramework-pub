@@ -81,15 +81,7 @@
           "maps": null
         }
       ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
+      "resources": [],
       "artifact": null
     }
   },

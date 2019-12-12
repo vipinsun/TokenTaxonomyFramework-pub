@@ -47,31 +47,15 @@
       "codeReferences": [
         {
           "mappingType": "SOURCE_CODE",
-          "name": "Code 1",
-          "platform": "DAML",
-          "referencePath": "",
+          "name": "Open Zeppelin - Roles",
+          "platform": "ETHEREUM_SOLIDITY",
+          "referencePath": "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Roles.sol",
           "maps": null
         }
       ],
-      "implementationReferences": [
-        {
-          "mappingType": "IMPLEMENTATION",
-          "name": "Implementation 1",
-          "platform": "CHAINCODE_GO",
-          "referencePath": "",
-          "maps": null
-        }
-      ],
-      "resources": [
-        {
-          "mappingType": "RESOURCE",
-          "name": "Regulation Reference 1",
-          "description": "",
-          "resourcePath": "",
-          "maps": null
-        }
-      ],
+      "resources": [],
       "artifact": null
+    
     }
   },
   "isExternal": true,
