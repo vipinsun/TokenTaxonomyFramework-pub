@@ -854,9 +854,19 @@
   }
 }
 .ant-select-dropdown{
+  box-shadow: none !important;
+  border: 1px solid #DCDCDC;
+
   ul{
     li{
       padding: 1.4rem 1.2rem !important;
+
+      &.ant-select-dropdown-menu-item-selected{
+        background: transparent;
+      }
+      &:hover{
+        background: fade_out($blue, 0.9) !important;
+      }
     }
   }
 }
