@@ -47,6 +47,18 @@ const routes = [
     exact: true,
   },
   {
+    path: 'definitions',
+    component: asyncComponent({
+      resolve: () => import('./pages/definitions')}),
+    exact: true,
+  },
+  {
+    path: 'formulas',
+    component: asyncComponent({
+      resolve: () => import('./pages/formulas')}),
+    exact: true,
+  },
+  {
     path: 'create-behavior',
     component: asyncComponent({
       resolve: () => import('./pages/create-behaviour-page')}),
