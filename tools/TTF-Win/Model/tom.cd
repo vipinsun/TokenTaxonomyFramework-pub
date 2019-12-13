@@ -1,185 +1,450 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
-  <Class Name="TTI.TTF.Taxonomy.Model.Hierarchy" BaseTypeListCollapsed="true">
-    <Position X="9.5" Y="6" Width="3.25" />
-    <Members>
-      <Field Name="_parser" Hidden="true" />
-      <Field Name="_unknownFields" Hidden="true" />
-      <Method Name="CalculateSize" Hidden="true" />
-      <Method Name="Clone" Hidden="true" />
-      <Property Name="Descriptor" Hidden="true" />
-      <Method Name="Equals" Hidden="true" />
-      <Field Name="fungibles_" Hidden="true" />
-      <Field Name="FungiblesFieldNumber" Hidden="true" />
-      <Method Name="GetHashCode" Hidden="true" />
-      <Method Name="Hierarchy" Hidden="true" />
-      <Field Name="hybrids_" Hidden="true" />
-      <Field Name="HybridsFieldNumber" Hidden="true" />
-      <Method Name="MergeFrom" Hidden="true" />
-      <Field Name="nonFungibles_" Hidden="true" />
-      <Field Name="NonFungiblesFieldNumber" Hidden="true" />
-      <Method Name="OnConstruction" Hidden="true" />
-      <Property Name="Parser" Hidden="true" />
-      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
-      <Method Name="ToString" Hidden="true" />
-      <Method Name="WriteTo" Hidden="true" />
-    </Members>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAgAAgCAEAAASYEoAgAAAAAAEEAAIAgAAAAAQIAAVA=</HashCode>
-      <FileName>Model\Taxonomy.cs</FileName>
+      <HashCode>AAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.Classification" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAAACAFAALCcEgAAAAEAACEEAAJAgIAIAAAAAEhg=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="TTI.TTF.Taxonomy.Model.HybridBranch" BaseTypeListCollapsed="true">
-    <Position X="13" Y="7.5" Width="3.25" />
-    <Members>
-      <Field Name="_parser" Hidden="true" />
-      <Field Name="_unknownFields" Hidden="true" />
-      <Method Name="CalculateSize" Hidden="true" />
-      <Method Name="Clone" Hidden="true" />
-      <Property Name="Descriptor" Hidden="true" />
-      <Method Name="Equals" Hidden="true" />
-      <Field Name="fungible_" Hidden="true" />
-      <Field Name="FungibleFieldNumber" Hidden="true" />
-      <Method Name="GetHashCode" Hidden="true" />
-      <Method Name="HybridBranch" Hidden="true" />
-      <Method Name="MergeFrom" Hidden="true" />
-      <Field Name="nonFungible_" Hidden="true" />
-      <Field Name="NonFungibleFieldNumber" Hidden="true" />
-      <Method Name="OnConstruction" Hidden="true" />
-      <Property Name="Parser" Hidden="true" />
-      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
-      <Method Name="ToString" Hidden="true" />
-      <Method Name="WriteTo" Hidden="true" />
-    </Members>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactSymbol" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABBgAAASAEAAACYEoAAAIAAAAEEAAIAgIAAAAAAAABA=</HashCode>
-      <FileName>Model\Taxonomy.cs</FileName>
+      <HashCode>YAAiBAACAGAAADcUoAKAAAAAAEEAAIAgAQgAAMAAAhA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="TTI.TTF.Taxonomy.Model.FungibleBranch" BaseTypeListCollapsed="true">
-    <Position X="13" Y="5.5" Width="2.5" />
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.Artifact" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="2.25" />
     <Members>
       <Field Name="_parser" Hidden="true" />
+      <Field Name="_repeated_aliases_codec" Hidden="true" />
+      <Field Name="_repeated_artifactFiles_codec" Hidden="true" />
+      <Field Name="_repeated_contributors_codec" Hidden="true" />
+      <Field Name="_repeated_dependencies_codec" Hidden="true" />
+      <Field Name="_repeated_incompatibleWithSymbols_codec" Hidden="true" />
+      <Field Name="_repeated_influencedBySymbols_codec" Hidden="true" />
       <Field Name="_unknownFields" Hidden="true" />
-      <Method Name="CalculateSize" Hidden="true" />
-      <Method Name="Clone" Hidden="true" />
-      <Property Name="Descriptor" Hidden="true" />
-      <Method Name="Equals" Hidden="true" />
-      <Field Name="fractional_" Hidden="true" />
-      <Field Name="FractionalFieldNumber" Hidden="true" />
-      <Method Name="FungibleBranch" Hidden="true" />
-      <Method Name="GetHashCode" Hidden="true" />
-      <Method Name="MergeFrom" Hidden="true" />
-      <Method Name="OnConstruction" Hidden="true" />
-      <Property Name="Parser" Hidden="true" />
-      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
-      <Method Name="ToString" Hidden="true" />
-      <Field Name="whole_" Hidden="true" />
-      <Field Name="WholeFieldNumber" Hidden="true" />
-      <Method Name="WriteTo" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>AIAgAAACAEAAACYUgAAABAAAAGEAAIAgAAAAAAAAABA=</HashCode>
-      <FileName>Model\Taxonomy.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="TTI.TTF.Taxonomy.Model.NonFungibleBranch" BaseTypeListCollapsed="true">
-    <Position X="10" Y="8.25" Width="2.5" />
-    <Members>
-      <Field Name="_parser" Hidden="true" />
-      <Field Name="_unknownFields" Hidden="true" />
-      <Method Name="CalculateSize" Hidden="true" />
-      <Method Name="Clone" Hidden="true" />
-      <Property Name="Descriptor" Hidden="true" />
-      <Method Name="Equals" Hidden="true" />
-      <Field Name="fractional_" Hidden="true" />
-      <Field Name="FractionalFieldNumber" Hidden="true" />
-      <Method Name="GetHashCode" Hidden="true" />
-      <Method Name="MergeFrom" Hidden="true" />
-      <Method Name="NonFungibleBranch" Hidden="true" />
-      <Method Name="OnConstruction" Hidden="true" />
-      <Property Name="Parser" Hidden="true" />
-      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
-      <Field Name="singleton_" Hidden="true" />
-      <Field Name="SingletonFieldNumber" Hidden="true" />
-      <Method Name="ToString" Hidden="true" />
-      <Field Name="whole_" Hidden="true" />
-      <Field Name="WholeFieldNumber" Hidden="true" />
-      <Method Name="WriteTo" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>AIAgAAACAEAAACYUgAAADAAAAWEAAIEgAAAAAAAAABA=</HashCode>
-      <FileName>Model\Taxonomy.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="TTI.TTF.Taxonomy.Model.BranchIdentifier" BaseTypeListCollapsed="true">
-    <Position X="17.5" Y="11.75" Width="2.75" />
-    <Members>
-      <Field Name="_parser" Hidden="true" />
-      <Field Name="_unknownFields" Hidden="true" />
-      <Method Name="BranchIdentifier" Hidden="true" />
-      <Method Name="CalculateSize" Hidden="true" />
-      <Field Name="classification_" Hidden="true" />
-      <Field Name="ClassificationFieldNumber" Hidden="true" />
-      <Method Name="Clone" Hidden="true" />
-      <Property Name="Descriptor" Hidden="true" />
-      <Method Name="Equals" Hidden="true" />
-      <Field Name="formulaId_" Hidden="true" />
-      <Field Name="FormulaIdFieldNumber" Hidden="true" />
-      <Method Name="GetHashCode" Hidden="true" />
-      <Method Name="MergeFrom" Hidden="true" />
-      <Method Name="OnConstruction" Hidden="true" />
-      <Property Name="Parser" Hidden="true" />
-      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
-      <Method Name="ToString" Hidden="true" />
-      <Method Name="WriteTo" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>AACiAAACAEAABCYEgAQAAAAAAEEAAIBgCAAAAAAAABA=</HashCode>
-      <FileName>Model\Taxonomy.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="TTI.TTF.Taxonomy.Model.BranchRoot" BaseTypeListCollapsed="true">
-    <Position X="16.25" Y="9.25" Width="3.25" />
-    <Members>
-      <Field Name="_parser" Hidden="true" />
-      <Field Name="_repeated_branches_codec" Hidden="true" />
-      <Field Name="_unknownFields" Hidden="true" />
-      <Field Name="branches_" Hidden="true" />
-      <Field Name="BranchesFieldNumber" Hidden="true" />
-      <Field Name="branchFormula_" Hidden="true" />
-      <Field Name="BranchFormulaFieldNumber" Hidden="true" />
-      <Field Name="branchIdentifier_" Hidden="true" />
-      <Field Name="BranchIdentifierFieldNumber" Hidden="true" />
-      <Method Name="BranchRoot" Hidden="true" />
-      <Method Name="CalculateSize" Hidden="true" />
-      <Method Name="Clone" Hidden="true" />
-      <Property Name="Descriptor" Hidden="true" />
-      <Method Name="Equals" Hidden="true" />
-      <Method Name="GetHashCode" Hidden="true" />
-      <Method Name="MergeFrom" Hidden="true" />
+      <Field Name="aliases_" Hidden="true" />
+      <Field Name="AliasesFieldNumber" Hidden="true" />
+      <Field Name="artifactDefinition_" Hidden="true" />
+      <Field Name="ArtifactDefinitionFieldNumber" Hidden="true" />
+      <Field Name="artifactFiles_" Hidden="true" />
+      <Field Name="ArtifactFilesFieldNumber" Hidden="true" />
+      <Field Name="artifactSymbol_" Hidden="true" />
+      <Field Name="ArtifactSymbolFieldNumber" Hidden="true" />
+      <Field Name="contributors_" Hidden="true" />
+      <Field Name="ContributorsFieldNumber" Hidden="true" />
+      <Field Name="controlUri_" Hidden="true" />
+      <Field Name="ControlUriFieldNumber" Hidden="true" />
+      <Field Name="dependencies_" Hidden="true" />
+      <Field Name="DependenciesFieldNumber" Hidden="true" />
+      <Field Name="incompatibleWithSymbols_" Hidden="true" />
+      <Field Name="IncompatibleWithSymbolsFieldNumber" Hidden="true" />
+      <Field Name="influencedBySymbols_" Hidden="true" />
+      <Field Name="InfluencedBySymbolsFieldNumber" Hidden="true" />
+      <Field Name="maps_" Hidden="true" />
+      <Field Name="MapsFieldNumber" Hidden="true" />
       <Field Name="name_" Hidden="true" />
       <Field Name="NameFieldNumber" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIByBQACEEGAACaEhQEAiCxAAeNAAoghoAACAASQIBg=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactReferenceValues" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAiAQACAEEAACYEhAAAgAAAAGEAAIAgAAAAAASAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactReference" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAiACACAGAAACYEoAAAAAABAEEEAIAgAQAgAAABAhA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.SymbolInfluence" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAoAAACAEAghCYEoAAAAAAAAGEAAIAgABAAAAAACBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.Contributor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgCAACAEAAACYEgAAAAAwAAEEAAIAgAAAAAAAAIBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.SymbolDependency" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAoAAACAEAgBCYEoAAAAAAAAEEAAIAgABAAAAAACBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactDefinition" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="7.5" Width="2.5" />
+    <Members>
+      <Field Name="_parser" Hidden="true" />
+      <Field Name="_repeated_analogies_codec" Hidden="true" />
+      <Field Name="_unknownFields" Hidden="true" />
+      <Field Name="analogies_" Hidden="true" />
+      <Field Name="AnalogiesFieldNumber" Hidden="true" />
+      <Field Name="artifact_" Hidden="true" />
+      <Method Name="ArtifactDefinition" Hidden="true" />
+      <Field Name="ArtifactFieldNumber" Hidden="true" />
+      <Field Name="businessDescription_" Hidden="true" />
+      <Field Name="BusinessDescriptionFieldNumber" Hidden="true" />
+      <Field Name="businessExample_" Hidden="true" />
+      <Field Name="BusinessExampleFieldNumber" Hidden="true" />
+      <Method Name="CalculateSize" Hidden="true" />
+      <Method Name="Clone" Hidden="true" />
+      <Field Name="comments_" Hidden="true" />
+      <Field Name="CommentsFieldNumber" Hidden="true" />
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="MergeFrom" Hidden="true" />
       <Method Name="OnConstruction" Hidden="true" />
-      <Field Name="parentFormulaId_" Hidden="true" />
-      <Field Name="ParentFormulaIdFieldNumber" Hidden="true" />
-      <Property Name="Parser" Hidden="true" />
-      <Property Name="pb::IMessage.Descriptor" Hidden="true" />
-      <Field Name="templates_" Hidden="true" />
-      <Field Name="TemplatesFieldNumber" Hidden="true" />
       <Method Name="ToString" Hidden="true" />
       <Method Name="WriteTo" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>JIAgAAACAFAACCYFgAAAAAwCgEUABJAgAEAAAACAoBA=</HashCode>
-      <FileName>Model\Taxonomy.cs</FileName>
+      <HashCode>AQIgBMAiAECAACYEwAAAAAAEQEEAAKAgCAEAAAAIIBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.263" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactAnalogy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAEAgACYEoAAACAwAAEEAAoAgABAAAAAQIBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactFile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAgAIICAkCAACYEggUAAAAAAEEAAIAgAEEAAABAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.Maps" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgAIACMEiAACYcgAAAAgAAAEFAAIAgAAEAgEAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.MapReference" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAACAEEAECYEhAAACAwAAEkAAIAgCAEAgAiAIBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.MapResourceReference" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAABCAEGgACYEpAAACAwAAEkAAIAgABAAAADAIBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.NewArtifactRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAIACAGCAACYEoAAAAAAAAEEAAIAgAQEAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.NewArtifactResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAggAACAGgAACYEoAAAAAAAAEEAAIAgAQAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAggAACAGgAACYEoAAAAAAAAEEAAIAgAQAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.UpdateArtifactResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgoAACAGgAACYEoAAAAAAAIEEAAIAgQQAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwAAACEEAAACYEgAAAAAAAAEEAAIAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.DeleteArtifactResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAEAAACYEgAAAEAAAgkEAAIAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.TokenTemplateId" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAEAAICYEgAAAAAAAEEEAAIAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.Identifier" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAiAAACAEAAACYEgAAAAAAAAEEAAIAgAAAAAAAAAhA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.NewTemplateDefinition" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARgAAACAEAgACYEgAAAAAAAAEkEAoAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAoAAACAkAALCcEgAAAAE0AAEEAAIAgIAIAAAAAKxg=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.InitializeNewArtifactResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAIACAkCAACYEgAAAAAEAAEEAAIAgAAEAAAAAARA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAEAAACYEgAAAAAAAAEEAIIAgAAEAAAAAQBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.CommitUpdatesResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAEAAACYEgAAAAAQAAEEAAIAggAAEAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.IssuePullRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAEAAACYEgAAAAAAAAEEAAIAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.IssuePullResponse" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEACAEBAACYEgAAAAAAAAEEAAIAgAAAAAAAAIBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ConfigurationRequest" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAACAEAAACYEgAAAAAAAAEEAAIAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.ServiceConfiguration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAoAAACCEAAACYEgAAAAAAAAEEEAYAgBgAIAAAACBA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.QueryOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIiAAACAkAABCaEgAQAAAEEQEEBAMEgAAAAQIgAARA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.QueryResult" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggEACAkAAACYEgAAAEAEEAEEAAIGgAIQAAAgAARA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.FormulaGrammar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAACCAEIAACYMgAAAAAQAAEUAAIAwAAABAAAAAFA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.HybridTokenGrammar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAggAACAEAAACYEgAAIQAEAAUEBAIEgIAAEAAAQAFA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.HybridTokenWithHybridChildrenGrammar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQghAAGAEAAACYFgAAAQAAAAEEAAKAgQAgAYAAAAFA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.SingleTokenGrammar" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAggAAADAEAAASaEiBAAAAAEAEEIgIAgAIQAAAAEAJA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.BehaviorList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAhACAEAAACYEgAASAAAAgEEAAIIgAAAAgAgAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.PropertySetList" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABACAEAAACYEgAAAgAAAAEEAgIAgAIAAgAgAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TTI.TTF.Taxonomy.Model.Artifact.PropertySetListItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAgCAEAAACYEgAAAAAABAEEAAYAgAAAAAAAAABA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.TemplateType" Collapsed="true">
+    <Position X="11.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.TokenType" Collapsed="true">
+    <Position X="13.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.RepresentationType" Collapsed="true">
+    <Position X="8" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.ValueType" Collapsed="true">
+    <Position X="4.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.TokenUnit" Collapsed="true">
+    <Position X="2.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAABAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactType" Collapsed="true">
+    <Position X="4.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAGAAAQAAAAEAAAAAAAIAAAAAAQAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.ArtifactContent" Collapsed="true">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAFAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.MappingType" Collapsed="true">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TTI.TTF.Taxonomy.Model.Artifact.TargetPlatform" Collapsed="true">
+    <Position X="9.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAACAAAAAAAAAAIAAAgAKAAAAAAI=</HashCode>
+      <FileName>Model\Artifact.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

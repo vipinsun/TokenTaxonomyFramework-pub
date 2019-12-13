@@ -38,10 +38,10 @@ namespace TTI.TTF.Taxonomy {
             "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ArtifactToPrint), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser, new[]{ "Type", "Id", "Draft" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintTTFOptions), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser, new[]{ "Book", "Draft" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintResult), global::TTI.TTF.Taxonomy.PrintResult.Parser, new[]{ "OpenXmlDocument" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ArtifactToPrint), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser, new[]{ "Type", "Id", "Draft" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintTTFOptions), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser, new[]{ "Book", "Draft" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintResult), global::TTI.TTF.Taxonomy.PrintResult.Parser, new[]{ "OpenXmlDocument" }, null, null, null)
           }));
     }
     #endregion
@@ -87,6 +87,9 @@ namespace TTI.TTF.Taxonomy {
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
     private global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType type_ = global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType.Base;
+    /// <summary>
+    ///ArtifactType to print.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactType Type {
       get { return type_; }
@@ -98,6 +101,9 @@ namespace TTI.TTF.Taxonomy {
     /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 2;
     private string id_ = "";
+    /// <summary>
+    ///Id of the artifact to print.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Id {
       get { return id_; }
@@ -110,7 +116,7 @@ namespace TTI.TTF.Taxonomy {
     public const int DraftFieldNumber = 3;
     private bool draft_;
     /// <summary>
-    ///should it include the Draft watermark?
+    ///Should it include the Draft watermark?
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Draft {
@@ -277,6 +283,9 @@ namespace TTI.TTF.Taxonomy {
     /// <summary>Field number for the "book" field.</summary>
     public const int BookFieldNumber = 1;
     private bool book_;
+    /// <summary>
+    ///If true, print a single book file.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Book {
       get { return book_; }
@@ -289,7 +298,7 @@ namespace TTI.TTF.Taxonomy {
     public const int DraftFieldNumber = 2;
     private bool draft_;
     /// <summary>
-    ///should it include the Draft watermark?
+    ///Should it include the Draft watermark?
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Draft {
@@ -399,6 +408,9 @@ namespace TTI.TTF.Taxonomy {
 
   }
 
+  /// <summary>
+  ///Expected Output from Print Request.
+  /// </summary>
   public sealed partial class PrintResult : pb::IMessage<PrintResult> {
     private static readonly pb::MessageParser<PrintResult> _parser = new pb::MessageParser<PrintResult>(() => new PrintResult());
     private pb::UnknownFieldSet _unknownFields;
@@ -436,6 +448,9 @@ namespace TTI.TTF.Taxonomy {
     /// <summary>Field number for the "open_xml_document" field.</summary>
     public const int OpenXmlDocumentFieldNumber = 1;
     private string openXmlDocument_ = "";
+    /// <summary>
+    ///May include a string containing openXML content.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OpenXmlDocument {
       get { return openXmlDocument_; }
