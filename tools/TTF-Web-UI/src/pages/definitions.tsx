@@ -32,9 +32,17 @@ class Definitions extends React.Component<any> {
                             <p>Select Template Formula to create your definition</p>
                             <Form.Item label="Formula" className="custom-select">
                                 <Select defaultValue="1">
-                                    <Option value="1">{"[tF{~d,SC}]+phSKU"}</Option>
-                                    <Option value="2">{"[tF{~d,SC}]+phSKU"}</Option>
-                                    <Option value="3">{"[tF{~d,SC}]+phSKU"}</Option>
+                                    <Option value="1">{"tN{s,t}"}</Option>
+                                    <Option value="2">{"[tF{~d,t,g,SC}+phSKU]"}</Option>
+                                    <Option value="3">{"tF{~d,~t,g,SC}"}</Option>
+                                    <Option value="4">{"tN{~d,t,b,g}"}</Option>
+                                    <Option value="5">{"tF{d,t,g,h,c,SC}"}</Option>
+                                    <Option value="6">{"tN{~d,t,g,SC}"}</Option>
+                                    <Option value="7">{"tF{~d,t,g,SC}"}</Option>
+                                    <Option value="8">{"tN{s,~t,a}"}</Option>
+                                    <Option value="9">{"[tN{~d,t,s,e,b}+phFile]"}</Option>
+                                    <Option value="10">{"tN{~t,~d,b,s,r,l}"}</Option>
+                                    <Option value="11">{"tF{d,t,b}"}</Option>
                                 </Select>
                             </Form.Item>
                         </div>

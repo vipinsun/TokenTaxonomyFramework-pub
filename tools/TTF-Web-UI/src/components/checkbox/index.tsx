@@ -11,7 +11,7 @@ interface IState {
 class Checkbox extends React.Component<IProps, IState> {
 
   state: IState = {
-    isChecked: false
+    isChecked: true
   };
 
   private checkboxHandler = () => {

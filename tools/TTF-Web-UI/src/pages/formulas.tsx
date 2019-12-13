@@ -50,26 +50,28 @@ class Definitions extends React.Component<any> {
                   </Select>
               </Form.Item>
               <Form.Item label="Template Type" className="custom-select">
-                  <Select defaultValue="Hybrids">
-                      <Option value="Hybrids">Hybrids</Option>
-                      <Option value="Fungible">Fungible</Option>
-                      <Option value="Non-fungible">Non-fungible</Option>
+                  <Select defaultValue="1">
+                      <Option value="1">Fractional Non-Fungible</Option>
+                      <Option value="2">Non-Fungible</Option>
+                      <Option value="3">Singleton</Option>
+                      <Option value="4">Whole Non-Fungible</Option>
+                      <Option value="5">Fractional Fungible</Option>
+                      <Option value="6">Unique Fractional Fungible</Option>
+                      <Option value="7">Unique Whole Fungible</Option>
+                      <Option value="8">Whole Fungible</Option>
                   </Select>
               </Form.Item>
               <div className="checkbox-wrapper">
                   <p>Behaviors</p>
                   <div className="checkbox-area">
-                      <Scrollbars autoHeight autoHeightMin={100}>
-                          <Checkbox label="attestable"/>
-                          <Checkbox label="burnable"/>
-                          <Checkbox label="creator"/>
-                          <Checkbox label="delegable"/>
-                          <Checkbox label="encumberable"/>
-                          <Checkbox label="attestable"/>
-                          <Checkbox label="burnable"/>
-                          <Checkbox label="creator"/>
-                          <Checkbox label="delegable"/>
-                          <Checkbox label="encumberable"/>
+                      <Scrollbars autoHeight autoHeightMin={88}>
+                          <Checkbox label="Unique Whole Fungible"/>
+                          <Checkbox label="Whole Non-Fungible Token"/>
+                          <Checkbox label="Unique Fractional Fungible"/>
+                          <Checkbox label="Singleton"/>
+                          <Checkbox label="Fractional Non-Fungible Token"/>
+                          <Checkbox label="Fractional Fungible"/>
+                          <Checkbox label="Whole Fungible"/>
                       </Scrollbars>
                   </div>
               </div>
@@ -83,34 +85,17 @@ class Definitions extends React.Component<any> {
                 <div className="checkbox-wrapper">
                     <p>Behaviors Group</p>
                     <div className="checkbox-area">
-                        <Scrollbars autoHeight autoHeightMin={100}>
-                            <Checkbox label="attestable"/>
-                            <Checkbox label="burnable"/>
-                            <Checkbox label="creator"/>
-                            <Checkbox label="delegable"/>
-                            <Checkbox label="encumberable"/>
-                            <Checkbox label="attestable"/>
-                            <Checkbox label="burnable"/>
-                            <Checkbox label="creator"/>
-                            <Checkbox label="delegable"/>
-                            <Checkbox label="encumberable"/>
+                        <Scrollbars autoHeight autoHeightMin={88}>
+                            <Checkbox label="Supply Control"/>
                         </Scrollbars>
                     </div>
                 </div>
                 <div className="checkbox-wrapper">
                     <p>Property Sets</p>
                     <div className="checkbox-area">
-                        <Scrollbars autoHeight autoHeightMin={100}>
-                            <Checkbox label="attestable"/>
-                            <Checkbox label="burnable"/>
-                            <Checkbox label="creator"/>
-                            <Checkbox label="delegable"/>
-                            <Checkbox label="encumberable"/>
-                            <Checkbox label="attestable"/>
-                            <Checkbox label="burnable"/>
-                            <Checkbox label="creator"/>
-                            <Checkbox label="delegable"/>
-                            <Checkbox label="encumberable"/>
+                        <Scrollbars autoHeight autoHeightMin={88}>
+                            <Checkbox label="File"/>
+                            <Checkbox label="SKU"/>
                         </Scrollbars>
                     </div>
                 </div>
