@@ -1,5 +1,9 @@
 # TTF Tools
 
+The TTF tools are of optional use for using the TTF. You may browse and read the TTF artifacts directly [here](https://entethalliance.github.io/TokenTaxonomyFramework/artifacts/) and modify the JSON files directly in a new branch and then issue a pull request.
+
+These tools provide the TTF Object Model (TOM) and the service that can populate its structure and classes via a gRpc service and native platform objects. These services can update the artifacts via the gRpc service in a branch you create and then issue a pull request, just like manually editing the artifacts. The TOM provides a richer experience that allows for new types of tools for modeling, verification and code generation.
+
 ## Taxonomy Service
 
 - [Taxonomy Service](TaxonomyService/TaxonomyService) is a gRpc service that provides CRUD (create, read, update and delete) capabilities for the repo.  You can run this service from your local clone or use the published service from the [TTI Site](http://tokentaxonomy.org) once it is published. When the service starts, it is passed the path to the artifacts folder and then reads the taxonomy folder structure and files into the [Taxonomy Model](../model/tom.md). Full documentation for the [TaxonomyService](../model/taxonomyServices.md)
