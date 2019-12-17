@@ -2,6 +2,8 @@
 
 ©2019 Token Taxonomy Initiative Inc. (“EEA”).  All Rights Reserved. EEA Proprietary and Confidential. This Github repository has been set up as a collaboration site for its users and by accessing this GitHub repository or using it in any way, you are consenting to be bound by the [Token Taxonomy Initiative Terms and Conditions of Use](TERMS-OF-USE) of GitHub Repository.
 
+[View this site as a web page.](https://entethalliance.github.io/TokenTaxonomyFramework/)
+
 ## Project Scope
 
 The TTF repo contains all of the artifacts for each component that can be used to create a token specification. It also contains tools and an object model that are used to create more sophisticated business level applications for various platforms to design tokens.
