@@ -13,6 +13,7 @@
 .idea/**/shelf
 .vscode/**/settings.json
 .DS_Store
+.docx
 
 # Generated files
 .idea/**/contentModel.xml
@@ -444,3 +445,4 @@ tools/ArtifactGenerator/.idea/.idea.artifactGenerator/.idea/sqldialects.xml
 tools/artifactGenerator/.idea/.idea.artifactGenerator/riderModule.iml
 samples/Thumbs.db
 tools/TTF-Win/Model/tom.cd
+tools/TaxonomyObjectModel/out/
