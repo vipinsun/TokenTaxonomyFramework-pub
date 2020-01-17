@@ -1,5 +1,5 @@
 import {Action, Dispatch} from 'redux';
-import {Base, Bases, Behavior, BehaviorGroup, PropertySet, TemplateDefinition} from "../model/core_pb";
+import {Base, Behavior, BehaviorGroup, PropertySet, TemplateDefinition} from "../model/core_pb";
 import * as jspb from "google-protobuf";
 import {
   getFullTaxonomy

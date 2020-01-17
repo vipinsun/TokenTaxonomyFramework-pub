@@ -1,12 +1,10 @@
 import React from 'react';
 import {Layout, Menu} from 'antd';
-import {ClickParam} from "antd/lib/menu";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import options, {MenuOption, MenuSubOption} from './options';
 import {SidebarWrapper} from './sidebar.style';
 
 import {connect} from 'react-redux';
-import {Base, Bases} from "../../model/core_pb";
 
 import { actionSelectEntity } from '../../actions';
 import {ISidebarUI, IStoreState} from "../../store/IStoreState";
@@ -128,7 +126,7 @@ class Sidebar extends React.Component<ISidebarUI> {
     } else {
       for (const base of bases) {
         const baseObj = base.toObject();
-        if (baseObj.artifact != undefined) {
+        if (baseObj.artifact !== undefined) {
           baseOption.children.push({
             key: prefix + "/" + baseObj.artifact.artifactSymbol.id,
             label: baseObj.artifact.name,

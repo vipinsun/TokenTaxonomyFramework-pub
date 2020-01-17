@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {Dispatch} from "redux";
 import IBehaviourForm from "../../../reducers/behaviour-form-reducer/model";
 import {AppState} from "../../../reducers";
-import {Form, Input} from "antd";
 import TemporaryStorageForHandleFields from "../../../utils/temporary-storage-for-handle-fields";
 import ITemporaryStorageForHandleFields from "../../../utils/temporary-storage-for-handle-fields/model";
 import AdvancedInput from "../../../components/advanced-input";
@@ -37,7 +36,7 @@ class CreateBehaviourFormStep1 extends React.Component<IProps, IState> {
   };
 
   render() {
-    const {behaviorName,symbol, description, otherAliases } = this.props.step1;
+    const {behaviorName,symbol, description } = this.props.step1;
 
     return (
       <div className="inputs-wrapper">

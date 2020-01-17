@@ -3,10 +3,8 @@ import {connect} from 'react-redux';
 import {Dispatch} from "redux";
 import IBehaviourForm from "../../../reducers/behaviour-form-reducer/model";
 import {AppState} from "../../../reducers";
-import {Form, Input} from "antd";
 import {
   createBehaviourFormAddAnalogy,
-  createBehaviourFormSaveStep1,
   createBehaviourFormSaveStep2
 } from "../../../actions/create-behaviour-form";
 import {EventEmitter} from "events";

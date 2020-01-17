@@ -1,26 +1,14 @@
-import React, {Component} from "react";
+import React from "react";
 import { connect } from 'react-redux';
 import {
   Form,
   Input,
-  Tooltip,
-  Icon,
-  Cascader,
-  Select,
-  Row,
-  Col,
-  Checkbox,
   Button,
-  AutoComplete,
 } from 'antd';
-import {render} from "react-dom";
-import {Taxonomy} from "../model/taxonomy_pb";
-import {FormProps} from "antd/lib/form";
 import KeyValue from "../components/form/keyvalue";
 import {WrappedFormUtils} from "antd/lib/form/Form";
 import {FormComponentProps} from "antd/es/form";
-import {IEntity, ISidebarUI, IStoreState} from "../store/IStoreState";
-import {Base} from "../model/core_pb";
+import {IStoreState} from "../store/IStoreState";
 import {Artifact} from "../model/artifact_pb";
 
 const editable: boolean = true;
@@ -40,9 +28,6 @@ interface BaseFormProps extends FormComponentProps {
 }
 
 class BaseForm extends React.Component<BaseFormProps, any> {
-  constructor(props: BaseFormProps) {
-    super(props);
-  }
 
   public render() {
     const {getFieldDecorator} = this.props.form;
@@ -166,24 +151,24 @@ export default connect(
     const currentLocation = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
     // @ts-ignore
     let selected = state.entities.bases.byId.get(currentLocation);
-    if (selected == undefined) {
+    if (selected === undefined) {
       // @ts-ignore
       selected = state.entities.behaviors.byId.get(currentLocation);
     }
-    if (selected == undefined) {
+    if (selected === undefined) {
       // @ts-ignore
       selected = state.entities.behaviorGroups.byId.get(currentLocation);
     }
-    if (selected == undefined) {
+    if (selected === undefined) {
       // @ts-ignore
       selected = state.entities.propertySets.byId.get(currentLocation);
     }
-    if (selected == undefined) {
+    if (selected === undefined) {
       // @ts-ignore
       selected = state.entities.templateDefinitions.byId.get(currentLocation);
     }
 
-    if (selected == undefined) {
+    if (selected === undefined) {
       throw "should not be there";
     }
     return {

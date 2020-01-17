@@ -3,10 +3,9 @@ import {connect} from 'react-redux';
 import {Dispatch} from "redux";
 import IBehaviourForm from "../../../reducers/behaviour-form-reducer/model";
 import {AppState} from "../../../reducers";
-import {Form, Input} from "antd";
 import {
   createBehaviourFormAddPropertyMain,
-  createBehaviourFormAddPropertySecond, createBehaviourFormSaveStep3, createBehaviourFormSaveStep4
+  createBehaviourFormAddPropertySecond, createBehaviourFormSaveStep4
 } from "../../../actions/create-behaviour-form";
 import CreateBehaviourFormPropertiesMain from "../create-behaviour-form-properties-main";
 import {EventEmitter} from "events";

@@ -1,7 +1,7 @@
 import * as grpcWeb from 'grpc-web';
 import {ServiceClient} from './model/ServiceServiceClientPb';
 import {Taxonomy} from "./model/taxonomy_pb";
-import {Artifact, ArtifactType, QueryOptions, QueryResult} from "./model/artifact_pb";
+import {ArtifactType, QueryOptions, QueryResult} from "./model/artifact_pb";
 import {
   Base,
   Bases,
@@ -41,11 +41,6 @@ export const getAllBases = async (): Promise<Base[]> => {
 
         const bases: Bases | null = artifactCollection.unpack<Bases>(Bases.deserializeBinary, 'taxonomy.model.core.Bases');
         if (bases != null) {
-          for (const artifact of bases.getBaseList()) {
-            console.log("each base text");
-            //let text = JSON.stringify(artifact, undefined, 2)
-            //console.log(text);
-          }
           if (err !== null) {
             reject(err);
           } else {

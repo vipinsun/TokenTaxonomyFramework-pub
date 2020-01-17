@@ -1,8 +1,7 @@
 // @ts-ignore
-import React, {Component} from "react";
+import React from "react";
 import { Scrollbars } from "react-custom-scrollbars";
-import { connect } from 'react-redux';
-import {Button, Form, Input, Select} from "antd";
+import {Button, Form, Select} from "antd";
 import Checkbox from "../components/checkbox";
 
 const { Option } = Select;

@@ -7,12 +7,8 @@ import {} from '../../actions';
 import {
   Table, 
 } from 'antd';
-import {FormProps, WrappedFormUtils} from "antd/lib/form/Form";
 
-import KeyValue from '../../components/form/keyvalue';
-import Base from '../baseForm';
 import {IStoreState} from "../../store/IStoreState";
-import {FormComponentProps} from "antd/es/form";
 
 class BaseTable extends Component {
 

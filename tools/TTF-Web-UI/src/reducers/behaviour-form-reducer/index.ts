@@ -14,7 +14,6 @@ import {
   CREATE_BEHAVIOUR_SAVE_STEP_3,
   CREATE_BEHAVIOUR_SAVE_STEP_4
 } from "../../actions/types";
-import {act} from "react-dom/test-utils";
 import ITemporaryStorageForHandleFields from "../../utils/temporary-storage-for-handle-fields/model";
 import {shapeFieldValue} from "../../helpers/shape-field-value";
 

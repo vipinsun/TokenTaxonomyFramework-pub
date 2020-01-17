@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Form, Input} from "antd";
+import {Form} from "antd";
 import ITemporaryStorageForHandleFields from "../../utils/temporary-storage-for-handle-fields/model";
 
 interface IProps {
