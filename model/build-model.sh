@@ -33,7 +33,7 @@ cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/ArtifactGenerator/Artifact
 
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TaxonomyService/TaxonomyModel
 cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Printer/TTF-Printer/Model
-cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Win/Model
+#cp ../tools/TaxonomyObjectModel/out/csharp/* ../tools/TTF-Win/Model
 
 cp ../tools/TaxonomyObjectModel/out/ts/* ../tools/TTF-Web-UI/src/model
 for f in `ls ../tools/TTF-Web-UI/src/model`
