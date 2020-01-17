@@ -12,7 +12,7 @@
     "ttfweb": "./bin/ttfweb"
   },
   "preferGlobal": true,
-  "homepage": "./",
+  "homepage": "/",
   "scripts": {
     "build": "react-scripts build",
     "check-types": "tsc --noEmit",

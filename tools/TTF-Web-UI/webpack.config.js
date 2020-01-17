@@ -12,7 +12,7 @@ module.exports = {
       path.resolve(__dirname, 'src'),
     ],
   },
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
