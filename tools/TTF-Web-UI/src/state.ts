@@ -15,7 +15,16 @@ import {
 import {Any} from "google-protobuf/google/protobuf/any_pb";
 import {TaxonomyVersion} from "./model/taxonomy_pb";
 
-const client = new ServiceClient("http://0.0.0.0:9080", null, null);
+let backendHost = document.cookie.replace(/(?:(?:^|.*;\s*)BACKEND_HOST\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+if (backendHost === undefined || backendHost === "") {
+  console.log("Backend default value used");
+  backendHost = "http://0.0.0.0:9080";
+} else {
+  console.log(`Backend set to ${backendHost}`);
+}
+
+const client = new ServiceClient(backendHost, null, null);
 
 export const getFullTaxonomy = async (): Promise<Taxonomy> => {
   return new Promise<Taxonomy>((resolve, reject) => {

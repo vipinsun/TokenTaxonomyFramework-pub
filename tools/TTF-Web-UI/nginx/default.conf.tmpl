@@ -2,13 +2,13 @@ server {
     listen       80;
     server_name  localhost;
 
+    add_header Set-Cookie "BACKEND_HOST=$BACKEND_HOST";
     error_log /dev/stdout info;
     access_log /dev/stdout;
 
     location / {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
-        add_header Set-Cookie "BACKEND_HOST=$BACKEND_HOST";
     }
 
     error_page  404              /index.html;
