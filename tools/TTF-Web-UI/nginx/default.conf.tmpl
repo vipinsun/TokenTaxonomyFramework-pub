@@ -8,6 +8,7 @@ server {
     location / {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
+        add_header Set-Cookie "BACKEND_HOST=$BACKEND_HOST";
     }
 
     error_page  404              /index.html;
