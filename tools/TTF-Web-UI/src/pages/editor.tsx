@@ -25,7 +25,8 @@ const formItemLayout = {
 
 interface BaseFormProps extends FormComponentProps {
   state: IStoreState,
-  currentEntity: string
+  currentEntity: string,
+  dataState: any
 }
 
 class BaseForm extends React.Component<BaseFormProps, any> {
@@ -163,6 +164,27 @@ const Editor = Form.create<BaseFormProps>({
     } else {
       // @ts-ignore
       const symbol = selected.getArtifactSymbol().getVisual();
+
+      function getCurrentArtifact(el: any)  {
+        if (el) {
+          const artifact = el.getArtifact();
+          if (artifact) {
+            const symbol = artifact.getArtifactSymbol()
+            if (symbol && symbol.getId() === currentID) {
+              return el
+            }
+          }
+        }
+      }
+
+      let quantity, decimals;
+      // @ts-ignore
+      if (props && props.match.path === '/base/*') {
+        const data = props.dataState.bases.find(getCurrentArtifact);
+          quantity = data.getQuantity();
+          decimals = data.getDecimals();
+      }
+
       return {
         name: Form.createFormField({
           name: selected.getName(),
@@ -171,6 +193,14 @@ const Editor = Form.create<BaseFormProps>({
         symbol: Form.createFormField({
           name: symbol,
           value: symbol,
+        }),
+        quantity: Form.createFormField({
+          name: quantity,
+          value: quantity,
+        }),
+        decimals: Form.createFormField({
+          name: decimals,
+          value: decimals,
         })
       };
     }
@@ -180,10 +210,12 @@ const Editor = Form.create<BaseFormProps>({
 export default connect(
   (state: IStoreState) => {
     const currentID = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+    const dataState = state.ui.sidebarUI;
 
     return {
       currentEntity: currentID,
-      state: state
+      state: state,
+      dataState: dataState
     }
   },
   { },

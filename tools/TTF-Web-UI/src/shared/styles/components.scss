@@ -256,6 +256,15 @@
     max-width: 72.8rem;
     margin: 0 auto;
 
+    .ant-form-item{
+      .ant-form-item-control-wrapper{
+        width: 100%;
+        input{
+          margin-bottom: 0;
+        }
+      }
+    }
+
     .ant-form-item-children{
       display: block;
       width: 100%;
