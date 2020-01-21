@@ -10,6 +10,12 @@ namespace TTI.TTF.Taxonomy
 {
 	public static class Utils
 	{
+		public static bool IsValidGuid(string str)
+		{
+			Guid guid;
+			return Guid.TryParse(str, out guid);
+		}
+		
 		public static void InitLog()
 		{
 			var xmlDocument = new XmlDocument();
