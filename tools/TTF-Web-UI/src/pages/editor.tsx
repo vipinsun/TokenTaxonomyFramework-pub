@@ -26,7 +26,6 @@ const formItemLayout = {
 interface BaseFormProps extends FormComponentProps {
   state: IStoreState,
   currentEntity: string,
-  dataState: any
 }
 
 class BaseForm extends React.Component<BaseFormProps, any> {
@@ -180,9 +179,9 @@ const Editor = Form.create<BaseFormProps>({
       let quantity, decimals;
       // @ts-ignore
       if (props && props.match.path === '/base/*') {
-        const data = props.dataState.bases.find(getCurrentArtifact);
-          quantity = data.getQuantity();
-          decimals = data.getDecimals();
+        const data = props.state.ui.sidebarUI.bases.find(getCurrentArtifact);
+          quantity = data && data.getQuantity();
+          decimals = data && data.getDecimals();
       }
 
       return {
@@ -210,12 +209,10 @@ const Editor = Form.create<BaseFormProps>({
 export default connect(
   (state: IStoreState) => {
     const currentID = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-    const dataState = state.ui.sidebarUI;
 
     return {
       currentEntity: currentID,
       state: state,
-      dataState: dataState
     }
   },
   { },
