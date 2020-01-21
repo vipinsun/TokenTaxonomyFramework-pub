@@ -14,7 +14,7 @@ import { actionFetchServerState } from './actions';
 import 'antd/dist/antd.css';
 
 
-const { Content, Header } = Layout;
+const { Content } = Layout;
 
 class App extends Component<AppProps> {
 

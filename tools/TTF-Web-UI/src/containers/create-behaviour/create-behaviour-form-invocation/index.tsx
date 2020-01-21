@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
-import {Dispatch} from "redux";
 import IBehaviourForm from "../../../reducers/behaviour-form-reducer/model";
-import {AppState} from "../../../reducers";
-import {Form, Input} from "antd";
-import {
-  createBehaviourFormAddParameterToRequest,
-  createBehaviourFormAddParameterToResponse
-} from "../../../actions/create-behaviour-form";
 import ITemporaryStorageForHandleFields from "../../../utils/temporary-storage-for-handle-fields/model";
 import AdvancedInput from "../../../components/advanced-input";
 import AdvancedTextArea from "../../../components/advanced-textarea";

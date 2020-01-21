@@ -3,10 +3,7 @@ import {connect} from 'react-redux';
 import {Dispatch} from "redux";
 import IBehaviourForm from "../../../reducers/behaviour-form-reducer/model";
 import {AppState} from "../../../reducers";
-import {Form, Input} from "antd";
-import {
-  createBehaviourFormAddParameterToRequest,
-  createBehaviourFormAddParameterToResponse, createBehaviourFormAddProperty
+import {createBehaviourFormAddProperty
 } from "../../../actions/create-behaviour-form";
 import CreateBehaviourFormPropertiesSecond from "../create-behaviour-form-properties-second";
 import ITemporaryStorageForHandleFields from "../../../utils/temporary-storage-for-handle-fields/model";

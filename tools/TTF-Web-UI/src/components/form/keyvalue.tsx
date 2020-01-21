@@ -1,10 +1,6 @@
-import {Form, Input, Icon, Button, Layout} from 'antd';
-import React, {Component} from "react";
-import {FormProps} from "antd/lib/form";
+import {Form, Input, Icon, Button} from 'antd';
+import React from "react";
 import {WrappedFormUtils} from "antd/lib/form/Form";
-import {clone} from "@babel/types";
-
-const id = 0;
 
 type KeyValueProps = {
   form: WrappedFormUtils;
@@ -74,8 +70,6 @@ export class KeyValue {
     getFieldDecorator(field, {initialValue: []});
     const keyValues = getFieldValue(field);
     const formItems = keyValues.map((kv: KeyValuePair, index: number) => {
-      const k = kv.key;
-      const v = kv.value;
       return <Form.Item
         {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)}
         label={index === 0 ? label : ''}
@@ -110,7 +104,7 @@ export class KeyValue {
       </Form.Item>;
     });
     return formItems.concat(
-      <Form.Item {...formItemLayout} label={keyValues.length == 0 ? label : null} >
+      <Form.Item {...formItemLayout} label={keyValues.length === 0 ? label : null} >
         <Button type="dashed" onClick={this.add} style={{width: '60%'}} disabled={this.props.disabled} >
           <Icon type="plus" /> Add field
         </Button>

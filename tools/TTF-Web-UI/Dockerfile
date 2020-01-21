@@ -16,4 +16,7 @@ RUN yarn build
 
 FROM nginx:alpine as final
 COPY --from=built /build/build /usr/share/nginx/html
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/default.conf.tmpl /etc/nginx/conf.d/default.conf.tmpl
+COPY nginx/start.sh /usr/start.sh
+
+CMD /usr/start.sh

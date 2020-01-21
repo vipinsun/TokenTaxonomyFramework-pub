@@ -19,13 +19,13 @@
     "new-parens": "error",
     "no-caller": "error",
     "no-bitwise": "off",
-    "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": false,
-    "object-literal-sort-keys": false,
-    "no-console": "warn",
+    "no-conditional-assignment": 0,
+    "no-consecutive-blank-lines": 0,
+    "object-literal-sort-keys": 0,
+    "no-console": 0,
     "semi": ["warn", "always"],
     "max-len": ["warn", {
-      "code": 100
+      "code": 140
     }],
     "object-curly-spacing": ["warn", "never"]
   }

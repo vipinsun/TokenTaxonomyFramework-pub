@@ -2,6 +2,7 @@ server {
     listen       80;
     server_name  localhost;
 
+    add_header Set-Cookie "BACKEND_HOST=$BACKEND_HOST";
     error_log /dev/stdout info;
     access_log /dev/stdout;
 

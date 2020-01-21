@@ -1,7 +1,7 @@
 import * as grpcWeb from 'grpc-web';
 import {ServiceClient} from './model/ServiceServiceClientPb';
 import {Taxonomy} from "./model/taxonomy_pb";
-import {Artifact, ArtifactType, QueryOptions, QueryResult} from "./model/artifact_pb";
+import {ArtifactType, QueryOptions, QueryResult} from "./model/artifact_pb";
 import {
   Base,
   Bases,
@@ -15,7 +15,16 @@ import {
 import {Any} from "google-protobuf/google/protobuf/any_pb";
 import {TaxonomyVersion} from "./model/taxonomy_pb";
 
-const client = new ServiceClient("http://0.0.0.0:9080", null, null);
+let backendHost = document.cookie.replace(/(?:(?:^|.*;\s*)BACKEND_HOST\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+if (backendHost === undefined || backendHost === "") {
+  console.log("Backend default value used");
+  backendHost = "http://0.0.0.0:9080";
+} else {
+  console.log(`Backend set to ${backendHost}`);
+}
+
+const client = new ServiceClient(backendHost, null, null);
 
 export const getFullTaxonomy = async (): Promise<Taxonomy> => {
   return new Promise<Taxonomy>((resolve, reject) => {
@@ -41,11 +50,6 @@ export const getAllBases = async (): Promise<Base[]> => {
 
         const bases: Bases | null = artifactCollection.unpack<Bases>(Bases.deserializeBinary, 'taxonomy.model.core.Bases');
         if (bases != null) {
-          for (const artifact of bases.getBaseList()) {
-            console.log("each base text");
-            //let text = JSON.stringify(artifact, undefined, 2)
-            //console.log(text);
-          }
           if (err !== null) {
             reject(err);
           } else {

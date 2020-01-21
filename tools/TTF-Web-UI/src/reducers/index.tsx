@@ -5,7 +5,6 @@ import {
   basesDictReducer, ArtifactDict, defaultArtifactDict,
 } from './baseList';
 import {Action} from 'redux';
-import {BehaviorGroup, PropertySet, TemplateDefinition} from "../model/core_pb";
 import IBehaviourForm from "./behaviour-form-reducer/model";
 import {behaviourFormReducer, defaultBehaviourFormState} from "./behaviour-form-reducer";
 

@@ -256,6 +256,29 @@
     max-width: 72.8rem;
     margin: 0 auto;
 
+    .ant-form-item-children{
+      display: block;
+      width: 100%;
+
+      input{
+        width: 100% !important;
+        margin-right: 0 !important;
+        padding: .8rem 1.2rem .8rem;
+        height: auto !important;
+        font-size: 1.4rem !important;
+        line-height: 2.2rem !important;
+        border: 1px solid #DCDCDC;
+        border-radius: .4rem;
+        margin-bottom: 1.2rem;
+      }
+
+      i.dynamic-delete-button{
+        position: absolute;
+        top: 7rem;
+        right: .8rem;
+      }
+    }
+
     h2{
       font-size: 3.2rem !important;
       line-height: 3.2rem !important;
@@ -446,27 +469,7 @@
         .ant-form-item-with-help{
           margin-bottom: 3.8rem;
         }
-        .ant-form-item-children{
-          display: block;
 
-          input{
-            width: 100% !important;
-            margin-right: 0 !important;
-            padding: .8rem 1.2rem .8rem;
-            height: auto !important;
-            font-size: 1.4rem !important;
-            line-height: 2.2rem !important;
-            border: 1px solid #DCDCDC;
-            border-radius: .4rem;
-            margin-bottom: 1.8rem;
-          }
-
-          i.dynamic-delete-button{
-            position: absolute;
-            top: 7rem;
-            right: .8rem;
-          }
-        }
         .ant-form-explain{
           top: -1.8rem;
         }

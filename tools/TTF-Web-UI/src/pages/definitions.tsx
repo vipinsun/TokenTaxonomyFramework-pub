@@ -1,7 +1,6 @@
 // @ts-ignore
-import React, {Component} from "react";
-import { connect } from 'react-redux';
-import {Button, Form, Input, Select} from "antd";
+import React from "react";
+import {Button, Form, Select} from "antd";
 
 const { Option } = Select;
 const formItemLayout = {

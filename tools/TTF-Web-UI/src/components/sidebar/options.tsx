@@ -1,5 +1,3 @@
-import {IEntity} from "../../store/IStoreState";
-
 export interface MenuSubOption {
   key: string;
   label: string;
