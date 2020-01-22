@@ -145,7 +145,7 @@ class Sidebar extends React.Component<ISidebarUI> {
     const templateDefinitionOptions = this.generateMenuOptions("templateDefinitions", "Template Definitions", "templateDefinition", this.props.templateDefinitions);
 
     return (
-      <SidebarWrapper>
+      <SidebarWrapper className={'sidebar'}>
         <h1 className="title">Token Taxonomy Editor</h1>
         <Sider 
           width={240} 

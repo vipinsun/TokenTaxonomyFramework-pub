@@ -247,7 +247,7 @@
 
   .ant-layout-content{
     background: #F5F5F5 !important;
-    padding: 4rem 3.2rem 3.2rem !important;
+    padding: 4rem 3.2rem  3.2rem calc(3.2rem + 36rem) !important;
     height: auto !important;
   }
 
@@ -975,4 +975,16 @@
       }
     }
   }
+}
+
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: max-content;
+  z-index: 10;
+  height: 100vh;
+  background: rgb(51, 51, 51);
+  overflow-y: auto;
+  overflow-x: hidden;
 }

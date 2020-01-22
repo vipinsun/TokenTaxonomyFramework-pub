@@ -308,6 +308,7 @@ const Editor = Form.create<BaseFormProps>({
     } else {
       // @ts-ignore
       const symbol = selected.getArtifactSymbol().getVisual();
+      const name = selected.getName();
       let data, quantity, decimals, owner, constructorName;
       let isExternal, constructorType, invocationList, propertiesList;
 
@@ -333,8 +334,8 @@ const Editor = Form.create<BaseFormProps>({
 
           return {
             name: Form.createFormField({
-              name: selected.getName(),
-              value: selected.getName(),
+              name: name,
+              value: name,
             }),
             symbol: Form.createFormField({
               name: symbol,
@@ -365,8 +366,8 @@ const Editor = Form.create<BaseFormProps>({
 
           return {
             name: Form.createFormField({
-              name: selected.getName(),
-              value: selected.getName(),
+              name: name,
+              value: name,
             }),
             symbol: Form.createFormField({
               name: symbol,
@@ -386,8 +387,8 @@ const Editor = Form.create<BaseFormProps>({
           data = props.state.ui.sidebarUI.behaviorGroups.find(getCurrentArtifact);
           return {
             name: Form.createFormField({
-              name: selected.getName(),
-              value: selected.getName(),
+              name: name,
+              value: name,
             }),
             symbol: Form.createFormField({
               name: symbol,
@@ -399,8 +400,8 @@ const Editor = Form.create<BaseFormProps>({
           data = props.state.ui.sidebarUI.propertySets.find(getCurrentArtifact);
           return {
             name: Form.createFormField({
-              name: selected.getName(),
-              value: selected.getName(),
+              name: name,
+              value: name,
             }),
             symbol: Form.createFormField({
               name: symbol,
@@ -412,8 +413,8 @@ const Editor = Form.create<BaseFormProps>({
           data = props.state.ui.sidebarUI.templateDefinitions.find(getCurrentArtifact);
           return {
             name: Form.createFormField({
-              name: selected.getName(),
-              value: selected.getName(),
+              name: name,
+              value: name,
             }),
             symbol: Form.createFormField({
               name: symbol,
