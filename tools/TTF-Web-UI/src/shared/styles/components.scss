@@ -977,14 +977,17 @@
   }
 }
 
-.sidebar{
+.sidebar-custom{
   position: fixed;
   left: 0;
   top: 0;
   width: max-content;
   z-index: 10;
   height: 100vh;
-  background: rgb(51, 51, 51);
   overflow-y: auto;
   overflow-x: hidden;
+
+  &>.sidebar>.ant-layout-sider-children{
+    min-height: calc(100vh - 7.2rem);
+  }
 }
