@@ -256,15 +256,6 @@
     max-width: 72.8rem;
     margin: 0 auto;
 
-    .ant-form-item{
-      .ant-form-item-control-wrapper{
-        width: 100%;
-        input{
-          margin-bottom: 0;
-        }
-      }
-    }
-
     .ant-form-item-children{
       display: block;
       width: 100%;
@@ -480,7 +471,7 @@
         }
 
         .ant-form-explain{
-          top: -1.8rem;
+          top: -1rem;
         }
         .ant-form-item-control-wrapper{
           margin: 0;
@@ -970,5 +961,18 @@
     -moz-user-select: text;      /* Firefox */
     -ms-user-select: text;       /* Internet Explorer/Edge */
     user-select: text;
+  }
+
+
+}
+
+.inputs-wrapper{
+  .ant-form-item{
+    .ant-form-item-control-wrapper{
+      width: 100%;
+      input{
+        margin-bottom: 0;
+      }
+    }
   }
 }
