@@ -9,6 +9,7 @@ import KeyValue from "../components/form/keyvalue";
 import {WrappedFormUtils} from "antd/lib/form/Form";
 import {FormComponentProps} from "antd/es/form";
 import {IStoreState} from "../store/IStoreState";
+import TextArea from "antd/es/input/TextArea";
 
 const editable: boolean = true;
 const formItemLayout = {
@@ -170,7 +171,26 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                       ],
                     })(<Input disabled={!editable}/>)}
                   </Form.Item>
-
+                  <Form.Item label="Invocation list">
+                    {getFieldDecorator('invocationList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token invocation list',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Properties list">
+                    {getFieldDecorator('behaviorPropertiesList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token properties list',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
                 </div>
               </React.Fragment>
           );
@@ -198,6 +218,16 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                       ],
                     })(<Input disabled={!editable}/>)}
                   </Form.Item>
+                  <Form.Item label="Behaviors list">
+                    {getFieldDecorator('behaviorsList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token behaviors list',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
                 </div>
               </React.Fragment>
           );
@@ -221,6 +251,16 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                         {
                           required: true,
                           message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<Input disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Properties list">
+                    {getFieldDecorator('propertySetPropertiesList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token properties list',
                         },
                       ],
                     })(<Input disabled={!editable}/>)}
@@ -251,6 +291,16 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                         },
                       ],
                     })(<Input disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Properties list">
+                    {getFieldDecorator('templateDefinitionPropertiesList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
                   </Form.Item>
                 </div>
               </React.Fragment>
@@ -290,7 +340,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
       </div>
     }
   }
-};
+}
 
 const Editor = Form.create<BaseFormProps>({
   mapPropsToFields: (props: BaseFormProps) => {
@@ -310,7 +360,8 @@ const Editor = Form.create<BaseFormProps>({
       const symbol = selected.getArtifactSymbol().getVisual();
       const name = selected.getName();
       let data, quantity, decimals, owner, constructorName;
-      let isExternal, constructorType, invocationList, propertiesList;
+      let isExternal, constructorType, invocationList, behaviorPropertiesList;
+      let behaviorsList, propertySetPropertiesList, templateDefinitionPropertiesList;
 
       function getCurrentArtifact(el: any)  {
         if (el) {
@@ -363,6 +414,8 @@ const Editor = Form.create<BaseFormProps>({
           data = props.state.ui.sidebarUI.behaviors.find(getCurrentArtifact);
           isExternal = data && data.getIsExternal();
           constructorType = data && data.getConstructorType();
+          invocationList = data && data.getInvocationsList();
+          behaviorPropertiesList = data && data.getPropertiesList();
 
           return {
             name: Form.createFormField({
@@ -381,10 +434,20 @@ const Editor = Form.create<BaseFormProps>({
               name: constructorType,
               value: constructorType
             }),
+            invocationList: Form.createFormField ({
+              name: invocationList,
+              value: invocationList
+            }),
+            behaviorPropertiesList: Form.createFormField ({
+              name: behaviorPropertiesList,
+              value: behaviorPropertiesList
+            })
           };
 
         case '/behaviorGroup/*':
           data = props.state.ui.sidebarUI.behaviorGroups.find(getCurrentArtifact);
+          behaviorsList = data && data.getBehaviorsList();
+
           return {
             name: Form.createFormField({
               name: name,
@@ -393,11 +456,17 @@ const Editor = Form.create<BaseFormProps>({
             symbol: Form.createFormField({
               name: symbol,
               value: symbol,
+            }),
+            behaviorsList: Form.createFormField({
+              name: behaviorsList,
+              value: behaviorsList,
             }),
           };
 
         case '/propertySet/*':
           data = props.state.ui.sidebarUI.propertySets.find(getCurrentArtifact);
+          propertySetPropertiesList = data && data.getPropertiesList();
+
           return {
             name: Form.createFormField({
               name: name,
@@ -406,11 +475,16 @@ const Editor = Form.create<BaseFormProps>({
             symbol: Form.createFormField({
               name: symbol,
               value: symbol,
+            }),
+            propertySetPropertiesList: Form.createFormField({
+              name: propertySetPropertiesList,
+              value: propertySetPropertiesList,
             }),
           };
 
         case '/templateDefinition/*':
           data = props.state.ui.sidebarUI.templateDefinitions.find(getCurrentArtifact);
+          templateDefinitionPropertiesList = data && data.getPropertySetsList();
           return {
             name: Form.createFormField({
               name: name,
@@ -419,6 +493,10 @@ const Editor = Form.create<BaseFormProps>({
             symbol: Form.createFormField({
               name: symbol,
               value: symbol,
+            }),
+            templateDefinitionPropertiesList: Form.createFormField({
+              name: templateDefinitionPropertiesList,
+              value: templateDefinitionPropertiesList,
             }),
           };
 
