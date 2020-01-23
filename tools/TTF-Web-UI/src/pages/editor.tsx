@@ -322,16 +322,6 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                       ],
                     })(<TextArea disabled={!editable}/>)}
                   </Form.Item>
-                  <Form.Item label="Behaviors list">
-                    {getFieldDecorator('templateDefinitionBehaviorsList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
                   <Form.Item label="Behavior groups list">
                     {getFieldDecorator('templateDefinitionBehaviorGroupsList', {
                       rules: [
