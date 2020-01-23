@@ -429,11 +429,11 @@ namespace TTI.TTF.Taxonomy
 				"Usage: dotnet TaxonomyClient --spec");
 			Console.WriteLine("	Retrieves a generated specification with the required argument that is the template definition Id.");
 			Console.WriteLine(
-				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
-			Console.WriteLine("	 Retrieves the Taxonomy Artifact by Tooling Symbol and writes it to the console.");
+				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL_OR_ID] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+			Console.WriteLine("	 Retrieves the Taxonomy Artifact by Tooling Symbol or Id and writes it to the console.");
 			Console.WriteLine(
-				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL] --s --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
-			Console.WriteLine("	 Retrieves the Taxonomy Artifact by Tooling Symbol and SAVES it locally in a folder and writes it to the console.");
+				"Usage: dotnet TaxonomyClient --ts [TOOLING_SYMBOL_OR_Id] --s --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
+			Console.WriteLine("	 Retrieves the Taxonomy Artifact by Tooling Symbol or Id and SAVES it locally in a folder and writes it to the console.");
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --u [UPDATE_ARTIFACT_FOLDER] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate]");
 			Console.WriteLine("	 Updates an artifact edited locally if updated from a saved query using --s.");
@@ -577,11 +577,16 @@ namespace TTI.TTF.Taxonomy
 				return;
 			}
 
-			var symbolQuery = new ArtifactSymbol
+			var symbolQuery = new ArtifactSymbol();
+			if (Utils.IsValidGuid(symbol))
 			{
-				Tooling = symbol
-			};
-
+				symbolQuery.Id = symbol;
+			}
+			else
+			{
+				symbolQuery.Tooling = symbol;
+			}
+			
 			_log.Error("Taxonomy Artifact Symbol Query for Type: " + artifactType);
 			if (artifactType == ArtifactType.TokenTemplate)
 			{
@@ -627,10 +632,7 @@ namespace TTI.TTF.Taxonomy
 					OutputLib.SaveArtifact(artifactType, propertySet.Artifact.Name, typedPropertySetJson);
 					return;
 				case ArtifactType.TemplateFormula:
-					var tokenTemplate = TaxonomyClient.GetTemplateFormulaArtifact(new ArtifactSymbol()
-					{
-						Tooling = symbol
-					});
+					var tokenTemplate = TaxonomyClient.GetTemplateFormulaArtifact(symbolQuery);
 					OutputLib.OutputTemplateFormula(symbol, tokenTemplate);
 					if (!_saveArtifact) return;
 					var typedTemplateJson = jsf.Format(tokenTemplate);
@@ -640,6 +642,5 @@ namespace TTI.TTF.Taxonomy
 					throw new ArgumentOutOfRangeException();
 			}
 		}
-
 	}
 }
