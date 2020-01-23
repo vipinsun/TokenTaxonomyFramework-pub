@@ -219,7 +219,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                     })(<Input disabled={!editable}/>)}
                   </Form.Item>
                   <Form.Item label="Behaviors list">
-                    {getFieldDecorator('behaviorsList', {
+                    {getFieldDecorator('behaviorGroupBehaviorsList', {
                       rules: [
                         {
                           required: true,
@@ -302,6 +302,66 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                       ],
                     })(<TextArea disabled={!editable}/>)}
                   </Form.Item>
+                  <Form.Item label="Formula reference">
+                    {getFieldDecorator('formulaReference', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Behaviors list">
+                    {getFieldDecorator('templateDefinitionBehaviorsList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Behaviors list">
+                    {getFieldDecorator('templateDefinitionBehaviorsList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Behavior groups list">
+                    {getFieldDecorator('templateDefinitionBehaviorGroupsList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Child tokens list">
+                    {getFieldDecorator('templateDefinitionChildTokensList', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
+                  <Form.Item label="Token base">
+                    {getFieldDecorator('templateDefinitionTokenBase', {
+                      rules: [
+                        {
+                          required: true,
+                          message: 'Please input a token symbol',
+                        },
+                      ],
+                    })(<TextArea disabled={!editable}/>)}
+                  </Form.Item>
                 </div>
               </React.Fragment>
           );
@@ -361,7 +421,9 @@ const Editor = Form.create<BaseFormProps>({
       const name = selected.getName();
       let data, quantity, decimals, owner, constructorName;
       let isExternal, constructorType, invocationList, behaviorPropertiesList;
-      let behaviorsList, propertySetPropertiesList, templateDefinitionPropertiesList;
+      let behaviorGroupBehaviorsList, propertySetPropertiesList;
+      let templateDefinitionPropertiesList, formulaReference, templateDefinitionBehaviorsList,
+          templateDefinitionBehaviorGroupsList, templateDefinitionChildTokensList, templateDefinitionTokenBase;
 
       function getCurrentArtifact(el: any)  {
         if (el) {
@@ -446,7 +508,7 @@ const Editor = Form.create<BaseFormProps>({
 
         case '/behaviorGroup/*':
           data = props.state.ui.sidebarUI.behaviorGroups.find(getCurrentArtifact);
-          behaviorsList = data && data.getBehaviorsList();
+          behaviorGroupBehaviorsList = data && data.getBehaviorsList();
 
           return {
             name: Form.createFormField({
@@ -457,9 +519,9 @@ const Editor = Form.create<BaseFormProps>({
               name: symbol,
               value: symbol,
             }),
-            behaviorsList: Form.createFormField({
-              name: behaviorsList,
-              value: behaviorsList,
+            behaviorGroupBehaviorsList: Form.createFormField({
+              name: behaviorGroupBehaviorsList,
+              value: behaviorGroupBehaviorsList,
             }),
           };
 
@@ -485,6 +547,13 @@ const Editor = Form.create<BaseFormProps>({
         case '/templateDefinition/*':
           data = props.state.ui.sidebarUI.templateDefinitions.find(getCurrentArtifact);
           templateDefinitionPropertiesList = data && data.getPropertySetsList();
+
+          formulaReference = data && data.getFormulaReference();
+          templateDefinitionBehaviorsList = data && data.getBehaviorsList();
+          templateDefinitionBehaviorGroupsList = data && data.getBehaviorGroupsList();
+          templateDefinitionChildTokensList = data && data.getChildTokensList();
+          templateDefinitionTokenBase = data && data.getTokenBase();
+
           return {
             name: Form.createFormField({
               name: name,
@@ -497,6 +566,26 @@ const Editor = Form.create<BaseFormProps>({
             templateDefinitionPropertiesList: Form.createFormField({
               name: templateDefinitionPropertiesList,
               value: templateDefinitionPropertiesList,
+            }),
+            formulaReference: Form.createFormField({
+              name: formulaReference,
+              value: formulaReference,
+            }),
+            templateDefinitionBehaviorsList: Form.createFormField({
+              name: templateDefinitionBehaviorsList,
+              value: templateDefinitionBehaviorsList,
+            }),
+            templateDefinitionBehaviorGroupsList: Form.createFormField({
+              name: templateDefinitionBehaviorGroupsList,
+              value: templateDefinitionBehaviorGroupsList,
+            }),
+            templateDefinitionChildTokensList: Form.createFormField({
+              name: templateDefinitionChildTokensList,
+              value: templateDefinitionChildTokensList,
+            }),
+            templateDefinitionTokenBase: Form.createFormField({
+              name: templateDefinitionTokenBase,
+              value: templateDefinitionTokenBase,
             }),
           };
 
