@@ -247,7 +247,7 @@
 
   .ant-layout-content{
     background: #F5F5F5 !important;
-    padding: 4rem 3.2rem 3.2rem !important;
+    padding: 4rem 3.2rem  3.2rem calc(3.2rem + 36rem) !important;
     height: auto !important;
   }
 
@@ -471,7 +471,7 @@
         }
 
         .ant-form-explain{
-          top: -1.8rem;
+          top: -1rem;
         }
         .ant-form-item-control-wrapper{
           margin: 0;
@@ -961,5 +961,33 @@
     -moz-user-select: text;      /* Firefox */
     -ms-user-select: text;       /* Internet Explorer/Edge */
     user-select: text;
+  }
+
+
+}
+
+.inputs-wrapper{
+  .ant-form-item{
+    .ant-form-item-control-wrapper{
+      width: 100%;
+      input{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.sidebar-custom{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: max-content;
+  z-index: 10;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &>.sidebar>.ant-layout-sider-children{
+    min-height: calc(100vh - 7.2rem);
   }
 }
