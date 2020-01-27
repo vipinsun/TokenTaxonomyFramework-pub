@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import {
   Form,
   Input,
@@ -11,356 +11,40 @@ import {FormComponentProps} from "antd/es/form";
 import {IStoreState} from "../store/IStoreState";
 import TextArea from "antd/es/input/TextArea";
 
-const editable: boolean = true;
+const editable = true;
 const formItemLayout = {
   labelCol: {
-    xs: { span: 3 },
-    sm: { span: 8 },
+    xs: {span: 3},
+    sm: {span: 8},
   },
   wrapperCol: {
-    xs: { span: 24 },
-    sm: { span: 16 },
+    xs: {span: 24},
+    sm: {span: 16},
   },
 };
 
 interface BaseFormProps extends FormComponentProps {
-  state: IStoreState,
-  currentEntity: string,
+  state: IStoreState;
+  entityType: string | null;
+  currentEntity: string | null;
 }
 
 class BaseForm extends React.Component<BaseFormProps, any> {
 
   public render() {
-    const {getFieldDecorator} = this.props.form;
     const form: WrappedFormUtils = this.props.form;
     const state = this.props.state;
     const currentID = this.props.currentEntity;
-    // @ts-ignore
-    const currentUrl = this.props.match.path;
-    let selected = state.entities.bases.byId.get(currentID) ||
+    const entityType = this.props.entityType;
+    const selected = currentID === null ? undefined : state.entities.bases.byId.get(currentID) ||
       state.entities.behaviors.byId.get(currentID) ||
       state.entities.behaviorGroups.byId.get(currentID) ||
       state.entities.propertySets.byId.get(currentID) ||
       state.entities.templateDefinitions.byId.get(currentID);
 
-    function createForm() {
-      switch (currentUrl) {
-        case '/base/*':
-          return (
-            <React.Fragment>
-              <div className="inputs-wrapper">
-                <Form.Item label="Name">
-                  {getFieldDecorator('name', {
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input a token name',
-                      },
-                    ],
-                  })(<Input disabled={!editable}/>)}
-                </Form.Item>
-                <Form.Item label="Symbol">
-                  {getFieldDecorator('symbol', {
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input a token symbol',
-                      },
-                    ],
-                  })(<Input disabled={!editable}/>)}
-                </Form.Item>
-                <Form.Item label="Owner">
-                  {getFieldDecorator('owner', {
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input a token owner',
-                      },
-                    ],
-                  })(<Input disabled={!editable}/>)}
-                </Form.Item>
-                <Form.Item label="Quantity">
-                  {getFieldDecorator('quantity', {
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please enter a quantity',
-                      },
-                    ],
-                  })(<Input disabled={!editable}/>)}
-                </Form.Item>
-                <Form.Item label="Decimals">
-                  {getFieldDecorator('decimals', {
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please enter the number of decimals allowed',
-                      },
-                    ],
-                  })(<Input disabled={!editable}/>)}
-                </Form.Item>
-                <Form.Item label="Constructor name">
-                  {getFieldDecorator('constructor_name', {
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please enter the name of the constructor',
-                      },
-                    ],
-                  })(<Input disabled={!editable}/>)}
-                </Form.Item>
-              </div>
-              <div className="add-wrapper">
-                <Form.Item
-                    wrapperCol={{
-                      xs: {span: 24, offset: 8},
-                      sm: {span: 20, offset: 5},
-                    }}
-                >
-                  {new KeyValue({
-                    field: "token_properties",
-                    form: form,
-                    label: "Token properties",
-                    disabled: !editable
-                  }).render()}
-                </Form.Item>
-              </div>
-            </React.Fragment>
-          );
-        case '/behavior/*':
-          return (
-              <React.Fragment>
-                <div className="inputs-wrapper">
-                  <Form.Item label="Name">
-                    {getFieldDecorator('name', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token name',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Symbol">
-                    {getFieldDecorator('symbol', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Is external">
-                    {getFieldDecorator('isExternal', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token is external',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Constructor type">
-                    {getFieldDecorator('constructorType', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token constructor type',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Invocation list">
-                    {getFieldDecorator('invocationList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token invocation list',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Properties list">
-                    {getFieldDecorator('behaviorPropertiesList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token properties list',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                </div>
-              </React.Fragment>
-          );
-        case '/behaviorGroup/*':
-          return (
-              <React.Fragment>
-                <div className="inputs-wrapper">
-                  <Form.Item label="Name">
-                    {getFieldDecorator('name', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token name',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Symbol">
-                    {getFieldDecorator('symbol', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Behaviors list">
-                    {getFieldDecorator('behaviorGroupBehaviorsList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token behaviors list',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                </div>
-              </React.Fragment>
-          );
-        case '/propertySet/*':
-          return (
-              <React.Fragment>
-                <div className="inputs-wrapper">
-                  <Form.Item label="Name">
-                    {getFieldDecorator('name', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token name',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Symbol">
-                    {getFieldDecorator('symbol', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Properties list">
-                    {getFieldDecorator('propertySetPropertiesList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token properties list',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                </div>
-              </React.Fragment>
-          );
-        case '/templateDefinition/*':
-          return (
-              <React.Fragment>
-                <div className="inputs-wrapper">
-                  <Form.Item label="Name">
-                    {getFieldDecorator('name', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token name',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Symbol">
-                    {getFieldDecorator('symbol', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<Input disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Properties list">
-                    {getFieldDecorator('templateDefinitionPropertiesList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Formula reference">
-                    {getFieldDecorator('formulaReference', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Behaviors list">
-                    {getFieldDecorator('templateDefinitionBehaviorsList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Behavior groups list">
-                    {getFieldDecorator('templateDefinitionBehaviorGroupsList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Child tokens list">
-                    {getFieldDecorator('templateDefinitionChildTokensList', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                  <Form.Item label="Token base">
-                    {getFieldDecorator('templateDefinitionTokenBase', {
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input a token symbol',
-                        },
-                      ],
-                    })(<TextArea disabled={!editable}/>)}
-                  </Form.Item>
-                </div>
-              </React.Fragment>
-          );
-        default: return
-      }
-    }
 
-    if (selected === undefined) {
-      return <div/>
+    if (selected === undefined || entityType === null) {
+      return <div/>;
     } else {
       const formName = selected.getName();
 
@@ -370,10 +54,9 @@ class BaseForm extends React.Component<BaseFormProps, any> {
           <div className="form-wrapper">
             <h3 dangerouslySetInnerHTML={{
               __html: "Edit " +
-                // @ts-ignore
-                selected.getArtifactSymbol().getVisual()
+                selected.getArtifactSymbol()!.getVisual()
             }}/>
-            {createForm()}
+            {this.renderForm()}
             {editable ?
               <div className="submit-wrapper">
                 <Form.Item
@@ -387,7 +70,327 @@ class BaseForm extends React.Component<BaseFormProps, any> {
               </div> : null}
           </div>
         </Form>
-      </div>
+      </div>;
+    }
+  }
+
+
+  private renderForm() {
+    const form = this.props.form;
+    const {getFieldDecorator} = this.props.form;
+    const entityType = this.props.entityType;
+    switch (entityType) {
+      case 'base':
+        return (
+          <React.Fragment>
+            <div className="inputs-wrapper">
+              <Form.Item label="Name">
+                {getFieldDecorator('name', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token name',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Symbol">
+                {getFieldDecorator('symbol', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Owner">
+                {getFieldDecorator('owner', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token owner',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Quantity">
+                {getFieldDecorator('quantity', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please enter a quantity',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Decimals">
+                {getFieldDecorator('decimals', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please enter the number of decimals allowed',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Constructor name">
+                {getFieldDecorator('constructor_name', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please enter the name of the constructor',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+            </div>
+            <div className="add-wrapper">
+              <Form.Item
+                wrapperCol={{
+                  xs: {span: 24, offset: 8},
+                  sm: {span: 20, offset: 5},
+                }}
+              >
+                {new KeyValue({
+                  field: "token_properties",
+                  form: form,
+                  label: "Token properties",
+                  disabled: !editable
+                }).render()}
+              </Form.Item>
+            </div>
+          </React.Fragment>
+        );
+      case 'behavior':
+        return (
+          <React.Fragment>
+            <div className="inputs-wrapper">
+              <Form.Item label="Name">
+                {getFieldDecorator('name', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token name',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Symbol">
+                {getFieldDecorator('symbol', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Is external">
+                {getFieldDecorator('isExternal', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token is external',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Constructor type">
+                {getFieldDecorator('constructorType', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token constructor type',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Invocation list">
+                {getFieldDecorator('invocationList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token invocation list',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Properties list">
+                {getFieldDecorator('behaviorPropertiesList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token properties list',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+            </div>
+          </React.Fragment>
+        );
+      case 'behaviorGroup':
+        return (
+          <React.Fragment>
+            <div className="inputs-wrapper">
+              <Form.Item label="Name">
+                {getFieldDecorator('name', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token name',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Symbol">
+                {getFieldDecorator('symbol', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Behaviors list">
+                {getFieldDecorator('behaviorGroupBehaviorsList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token behaviors list',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+            </div>
+          </React.Fragment>
+        );
+      case 'propertySet':
+        return (
+          <React.Fragment>
+            <div className="inputs-wrapper">
+              <Form.Item label="Name">
+                {getFieldDecorator('name', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token name',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Symbol">
+                {getFieldDecorator('symbol', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Properties list">
+                {getFieldDecorator('propertySetPropertiesList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token properties list',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+            </div>
+          </React.Fragment>
+        );
+      case 'templateDefinition':
+        return (
+          <React.Fragment>
+            <div className="inputs-wrapper">
+              <Form.Item label="Name">
+                {getFieldDecorator('name', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token name',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Symbol">
+                {getFieldDecorator('symbol', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<Input disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Properties list">
+                {getFieldDecorator('templateDefinitionPropertiesList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Formula reference">
+                {getFieldDecorator('formulaReference', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Behaviors list">
+                {getFieldDecorator('templateDefinitionBehaviorsList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Behavior groups list">
+                {getFieldDecorator('templateDefinitionBehaviorGroupsList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Child tokens list">
+                {getFieldDecorator('templateDefinitionChildTokensList', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+              <Form.Item label="Token base">
+                {getFieldDecorator('templateDefinitionTokenBase', {
+                  rules: [
+                    {
+                      required: false,
+                      message: 'Please input a token symbol',
+                    },
+                  ],
+                })(<TextArea disabled={!editable}/>)}
+              </Form.Item>
+            </div>
+          </React.Fragment>
+        );
+      default: return;
     }
   }
 }
@@ -396,9 +399,8 @@ const Editor = Form.create<BaseFormProps>({
   mapPropsToFields: (props: BaseFormProps) => {
     const state = props.state;
     const currentID = props.currentEntity;
-    // @ts-ignore
-    const currentUrl = props.match.path;
-    let selected = state.entities.bases.byId.get(currentID) ||
+    const entityType = props.entityType;
+    const selected = currentID === null ? undefined : state.entities.bases.byId.get(currentID) ||
       state.entities.behaviors.byId.get(currentID) ||
       state.entities.behaviorGroups.byId.get(currentID) ||
       state.entities.propertySets.byId.get(currentID) ||
@@ -406,29 +408,28 @@ const Editor = Form.create<BaseFormProps>({
     if (selected === undefined) {
       return {};
     } else {
-      // @ts-ignore
-      const symbol = selected.getArtifactSymbol().getVisual();
+      const symbol = selected.getArtifactSymbol()!.getVisual();
       const name = selected.getName();
       let data, quantity, decimals, owner, constructorName;
       let isExternal, constructorType, invocationList, behaviorPropertiesList;
       let behaviorGroupBehaviorsList, propertySetPropertiesList;
       let templateDefinitionPropertiesList, formulaReference, templateDefinitionBehaviorsList,
-          templateDefinitionBehaviorGroupsList, templateDefinitionChildTokensList, templateDefinitionTokenBase;
+        templateDefinitionBehaviorGroupsList, templateDefinitionChildTokensList, templateDefinitionTokenBase;
 
       function getCurrentArtifact(el: any)  {
         if (el) {
           const artifact = el.getArtifact();
           if (artifact) {
-            const symbol = artifact.getArtifactSymbol()
+            const symbol = artifact.getArtifactSymbol();
             if (symbol && symbol.getId() === currentID) {
-              return el
+              return el;
             }
           }
         }
       }
 
-      switch (currentUrl) {
-        case '/base/*':
+      switch (entityType) {
+        case 'base':
           data = props.state.ui.sidebarUI.bases.find(getCurrentArtifact);
           quantity = data && data.getQuantity();
           decimals = data && data.getDecimals();
@@ -456,13 +457,13 @@ const Editor = Form.create<BaseFormProps>({
               name: owner,
               value: owner,
             }),
-            constructor_name: Form.createFormField({
+            constructorName: Form.createFormField({
               name: constructorName,
               value: constructorName,
             })
           };
 
-        case '/behavior/*':
+        case 'behavior':
           data = props.state.ui.sidebarUI.behaviors.find(getCurrentArtifact);
           isExternal = data && data.getIsExternal();
           constructorType = data && data.getConstructorType();
@@ -496,7 +497,7 @@ const Editor = Form.create<BaseFormProps>({
             })
           };
 
-        case '/behaviorGroup/*':
+        case 'behaviorGroup':
           data = props.state.ui.sidebarUI.behaviorGroups.find(getCurrentArtifact);
           behaviorGroupBehaviorsList = data && data.getBehaviorsList();
 
@@ -515,7 +516,7 @@ const Editor = Form.create<BaseFormProps>({
             }),
           };
 
-        case '/propertySet/*':
+        case 'propertySet':
           data = props.state.ui.sidebarUI.propertySets.find(getCurrentArtifact);
           propertySetPropertiesList = data && data.getPropertiesList();
 
@@ -534,7 +535,7 @@ const Editor = Form.create<BaseFormProps>({
             }),
           };
 
-        case '/templateDefinition/*':
+        case 'templateDefinition':
           data = props.state.ui.sidebarUI.templateDefinitions.find(getCurrentArtifact);
           templateDefinitionPropertiesList = data && data.getPropertySetsList();
 
@@ -579,7 +580,7 @@ const Editor = Form.create<BaseFormProps>({
             }),
           };
 
-        default: break
+        default: break;
       }
     }
   }
@@ -587,10 +588,19 @@ const Editor = Form.create<BaseFormProps>({
 
 export default connect(
   (state: IStoreState) => {
-    const currentID = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
-    return {
-      currentEntity: currentID,
-      state: state,
+    const urlSegments = window.location.href.split('/');
+    if (urlSegments.length < 2) {
+      return {
+        state: state,
+        currentEntity: null,
+        entityType: null,
+      };
+    } else {
+      return {
+        entityType: urlSegments[urlSegments.length -2],
+        currentEntity: urlSegments[urlSegments.length -1],
+        state: state,
+      };
     }
   },
   { },

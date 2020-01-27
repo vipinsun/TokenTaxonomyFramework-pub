@@ -146,7 +146,7 @@ class Sidebar extends React.Component<ISidebarUI> {
 
     return (
       <SidebarWrapper className={'sidebar-custom'}>
-        <h1 className="title">Token Taxonomy Editor</h1>
+        <a href="/"><h1 className="title">Token Taxonomy Editor</h1></a>
         <Sider 
           width={240} 
           className="sidebar"

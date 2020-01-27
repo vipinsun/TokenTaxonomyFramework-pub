@@ -4,6 +4,13 @@ import {asyncComponent} from "react-async-component";
 
 const routes = [
   {
+    path: '/',
+    component: asyncComponent({
+      resolve: () => import('./pages/index')
+    }),
+    exact: true,
+  },
+  {
     path: 'basetable',
     component: asyncComponent({
       resolve: () => import('./containers/Page/BaseTable')
