@@ -10,6 +10,10 @@ import {WrappedFormUtils} from "antd/lib/form/Form";
 import {FormComponentProps} from "antd/es/form";
 import {IStoreState} from "../store/IStoreState";
 import TextArea from "antd/es/input/TextArea";
+import {Artifact, ArtifactType, UpdateArtifactRequest} from "../model/artifact_pb";
+import {Any} from "google-protobuf/google/protobuf/any_pb";
+import {BinaryWriter} from "google-protobuf";
+import {client} from "../state";
 
 const editable = true;
 const formItemLayout = {
@@ -29,7 +33,54 @@ interface BaseFormProps extends FormComponentProps {
   currentEntity: string | null;
 }
 
+function getCurrentArtifact(artifact: Artifact, id: string)  {
+    if (artifact) {
+      const symbol = artifact.getArtifactSymbol();
+      if (symbol && symbol.getId() === id) {
+        return true;
+      }
+    } else {
+      return false;
+    }
+}
+
 class BaseForm extends React.Component<BaseFormProps, any> {
+
+  constructor(props: BaseFormProps) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  public handleSubmit() {
+    const form = this.props.form;
+    const entityType = this.props.entityType;
+    switch (entityType) {
+      case "behavior":
+        const behavior = this.props.state.ui.sidebarUI.behaviors
+          .find((el) => getCurrentArtifact(el.getArtifact()!!, this.props.currentEntity!!));
+
+        if (!behavior) {
+          return
+        }
+
+        // edit
+
+        const request = new UpdateArtifactRequest();
+        request.setType(ArtifactType.BEHAVIOR);
+
+        const serialized = behavior.serializeBinary();
+
+        const any = new Any();
+        any.pack(serialized, "proto.taxonomy.model.core.Behavior");
+
+        request.setArtifactTypeObject(any);
+
+        client.updateArtifact(request, null, (err, response) => {
+          console.log('err - ', err);
+          console.log('resp - ', response);
+        });
+    }
+  }
 
   public render() {
     const form: WrappedFormUtils = this.props.form;
@@ -65,7 +116,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                     sm: {span: 16, offset: 8},
                   }}
                 >
-                  <Button type="primary" htmlType="submit" className="submit">Submit</Button>
+                  <Button type="primary" htmlType="submit" onClick={this.handleSubmit} className="submit">Submit</Button>
                 </Form.Item>
               </div> : null}
           </div>

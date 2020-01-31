@@ -24,7 +24,7 @@ if (backendHost === undefined || backendHost === "") {
   console.log(`Backend set to ${backendHost}`);
 }
 
-const client = new ServiceClient(backendHost, null, null);
+export const client = new ServiceClient(backendHost, null, null);
 
 export const getFullTaxonomy = async (): Promise<Taxonomy> => {
   return new Promise<Taxonomy>((resolve, reject) => {
