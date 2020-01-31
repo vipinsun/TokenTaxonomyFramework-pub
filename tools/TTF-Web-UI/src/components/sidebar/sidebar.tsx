@@ -173,10 +173,10 @@ class Sidebar extends React.Component<ISidebarUI> {
             )}
 
             <Menu.Item className="custom-menu-item">
-              <Link to={`/create-behavior`}>
+              <Link to={`/create-artifact`}>
                 <span className="menuHolder" >
                   <span className="nav-text">
-                    Create Behavior
+                    Create Artifact
                   </span>
                 </span>
               </Link>
