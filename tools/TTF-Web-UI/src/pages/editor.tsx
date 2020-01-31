@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {
   Form,
   Input,
-  Button
+  Button, Tabs
 } from 'antd';
 import KeyValue from "../components/form/keyvalue";
 import {WrappedFormUtils} from "antd/lib/form/Form";
@@ -98,6 +98,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
       return <div/>;
     } else {
       const formName = selected.getName();
+      const {TabPane} = Tabs;
 
       return <div className={"form"}>
         <Form {...formItemLayout}>
@@ -107,7 +108,15 @@ class BaseForm extends React.Component<BaseFormProps, any> {
               __html: "Edit " +
                 selected.getArtifactSymbol()!.getVisual()
             }}/>
-            {this.renderForm()}
+            <Tabs defaultActiveKey="1">
+              <TabPane tab="General" key="1">
+                {this.renderForm()}
+              </TabPane>
+              <TabPane tab="Artifact Definition" key="2">
+                {this.renderArtifact()}
+              </TabPane>
+            </Tabs>
+
             {editable ?
               <div className="submit-wrapper">
                 <Form.Item
@@ -123,6 +132,47 @@ class BaseForm extends React.Component<BaseFormProps, any> {
         </Form>
       </div>;
     }
+  }
+
+  private renderArtifact() {
+    const form = this.props.form;
+    const {getFieldDecorator} = this.props.form;
+    const entityType = this.props.entityType;
+    return (
+      <React.Fragment>
+        <div className="inputs-wrapper">
+          <Form.Item label="Business Description">
+            {getFieldDecorator('businessDescription', {
+              rules: [
+                {
+                  required: false,
+                },
+              ],
+            })(<TextArea disabled={!editable}/>)}
+          </Form.Item>
+          <Form.Item label="Business Example">
+            {getFieldDecorator('businessExample', {
+              rules: [
+                {
+                  required: false,
+                },
+              ],
+            })(<TextArea disabled={!editable}/>)}
+          </Form.Item>
+          {// TODO add analogies list
+          }
+          <Form.Item label="Comments">
+            {getFieldDecorator('comments', {
+              rules: [
+                {
+                  required: false,
+                },
+              ],
+            })(<TextArea disabled={!editable}/>)}
+          </Form.Item>
+        </div>
+      </React.Fragment>
+    );
   }
 
 
@@ -479,6 +529,26 @@ const Editor = Form.create<BaseFormProps>({
         }
       }
 
+      const artifactValues = {
+        businessDescription: Form.createFormField({
+          name: 'BusinessDescription',
+          value: selected.getArtifactDefinition()!.getBusinessDescription(),
+        }),
+        businessExample: Form.createFormField({
+          name: 'BusinessExample',
+          value: selected.getArtifactDefinition()!.getBusinessExample(),
+        }),
+        // TODO use a list editor
+        analogies: Form.createFormField({
+          name: 'Analogies',
+          value: selected.getArtifactDefinition()!.getAnalogiesList(),
+        }),
+        comments: Form.createFormField({
+          name: 'Comments',
+          value: selected.getArtifactDefinition()!.getComments(),
+        })
+      };
+
       switch (entityType) {
         case 'base':
           data = props.state.ui.sidebarUI.bases.find(getCurrentArtifact);
@@ -487,7 +557,7 @@ const Editor = Form.create<BaseFormProps>({
           owner = data && data.getOwner();
           constructorName = data && data.getConstructorName();
 
-          return {
+          return {...artifactValues,
             name: Form.createFormField({
               name: name,
               value: name,
@@ -521,7 +591,7 @@ const Editor = Form.create<BaseFormProps>({
           invocationList = data && data.getInvocationsList();
           behaviorPropertiesList = data && data.getPropertiesList();
 
-          return {
+          return {...artifactValues,
             name: Form.createFormField({
               name: name,
               value: name,
@@ -552,7 +622,7 @@ const Editor = Form.create<BaseFormProps>({
           data = props.state.ui.sidebarUI.behaviorGroups.find(getCurrentArtifact);
           behaviorGroupBehaviorsList = data && data.getBehaviorsList();
 
-          return {
+          return {...artifactValues,
             name: Form.createFormField({
               name: name,
               value: name,
@@ -571,7 +641,7 @@ const Editor = Form.create<BaseFormProps>({
           data = props.state.ui.sidebarUI.propertySets.find(getCurrentArtifact);
           propertySetPropertiesList = data && data.getPropertiesList();
 
-          return {
+          return {...artifactValues,
             name: Form.createFormField({
               name: name,
               value: name,
@@ -596,7 +666,7 @@ const Editor = Form.create<BaseFormProps>({
           templateDefinitionChildTokensList = data && data.getChildTokensList();
           templateDefinitionTokenBase = data && data.getTokenBase();
 
-          return {
+          return {...artifactValues,
             name: Form.createFormField({
               name: name,
               value: name,
