@@ -74,5 +74,4 @@ const mapDispatchToProps = (dispatch: any) => {
   };
 };
 
-// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(App);

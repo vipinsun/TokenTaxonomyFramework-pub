@@ -66,7 +66,7 @@ const routes = [
     exact: true,
   },
   {
-    path: 'create-behavior',
+    path: 'create-artifact',
     component: asyncComponent({
       resolve: () => import('./pages/create-behaviour-page')}),
     exact: true,
