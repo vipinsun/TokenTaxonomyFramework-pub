@@ -16,7 +16,8 @@ import {BinaryWriter} from "google-protobuf";
 import {client} from "../state";
 import '../shared/styles/global.scss';
 
-const editable = true;
+const editable = document.cookie.replace(/(?:(?:^|.*;\s*)EDITABLE\s*\=\s*([^;]*).*$)|^.*$/, "$1") === 'true';
+
 const formItemLayout = {
   labelCol: {
     xs: {span: 3},
@@ -540,7 +541,6 @@ const Editor = Form.create<BaseFormProps>({
         ...influencedSymbolsFields,
         ...artifactFilesFields
       };
-
       const artifactValues = {
         businessDescription: Form.createFormField({
           name: 'BusinessDescription',
