@@ -34,6 +34,7 @@ let countDependenciesFields = 0;
 let countIncompatibleSymbols = 0;
 let countInfluencedSymbols = 0;
 let countArtifactFiles = 0;
+let isBasesArtifact = false;
 
 interface BaseFormProps extends FormComponentProps {
   state: IStoreState;
@@ -100,7 +101,6 @@ class BaseForm extends React.Component<BaseFormProps, any> {
       state.entities.behaviorGroups.byId.get(currentID) ||
       state.entities.propertySets.byId.get(currentID) ||
       state.entities.templateDefinitions.byId.get(currentID);
-
 
     if (selected === undefined || entityType === null) {
       return <div/>;
@@ -192,6 +192,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
     const arrayIncompatibleFields = [];
     const arrayInfluencedFields = [];
     const arrayArtifactFiles = [];
+    const arrayBaseAdditionalFields = [];
 
     if (countAliasesFields) {
       for (let i = 0; i < countAliasesFields; i++){
@@ -330,6 +331,54 @@ class BaseForm extends React.Component<BaseFormProps, any> {
       }
     }
 
+    if (isBasesArtifact) {
+      const tokenType =
+        <Form.Item label="Token Type">
+          {getFieldDecorator(`tokenType`, {
+            rules: [
+              {
+                required: false,
+              },
+            ],
+          })(<Input disabled={!editable}/>)}
+        </Form.Item>;
+
+      const tokenUnit =
+        <Form.Item label="Token Unit">
+          {getFieldDecorator(`tokenUnit`, {
+            rules: [
+              {
+                required: false,
+              },
+            ],
+          })(<Input disabled={!editable}/>)}
+        </Form.Item>;
+
+      const representationType =
+        <Form.Item label="Representation Type">
+          {getFieldDecorator(`representationType`, {
+            rules: [
+              {
+                required: false,
+              },
+            ],
+          })(<Input disabled={!editable}/>)}
+        </Form.Item>;
+
+      const valueType =
+        <Form.Item label="Value Type">
+          {getFieldDecorator(`valueType`, {
+            rules: [
+              {
+                required: false,
+              },
+            ],
+          })(<Input disabled={!editable}/>)}
+        </Form.Item>;
+
+      arrayBaseAdditionalFields.push(tokenType, tokenUnit, representationType, valueType);
+    }
+
     return (
       <React.Fragment>
         <div className="inputs-wrapper">
@@ -355,6 +404,12 @@ class BaseForm extends React.Component<BaseFormProps, any> {
               ],
             })(<Input disabled={!editable}/>)}
           </Form.Item>
+
+          {
+            arrayBaseAdditionalFields.length !== 0 && arrayBaseAdditionalFields.map((field: any, index: number) => {
+              return <li className={'form-item'} key={index}>{field}</li>;
+            })
+          }
 
           {
             arrayAliasesFields.length !== 0 && <h1>Aliases</h1>
@@ -445,6 +500,47 @@ const Editor = Form.create<BaseFormProps>({
       let incompatibleFields = {};
       let influencedSymbolsFields = {};
       let artifactFilesFields = {};
+      let baseAdditionalFields = {};
+
+      isBasesArtifact = false;
+
+      if (entityType === 'base') {
+        const baseArray = props.state.ui.sidebarUI.bases;
+        const currentArtifactName = selected.getName();
+
+        const baseArtifact = baseArray.find((artifact: any) => {
+          return artifact.getArtifact()!.getName() === currentArtifactName;
+        });
+
+        if (baseArtifact) {
+          isBasesArtifact = true;
+
+          const tokenType = baseArtifact.getTokenType();
+          const tokenUnit = baseArtifact.getTokenUnit();
+          const representationType = baseArtifact.getRepresentationType();
+          const valueType = baseArtifact.getValueType();
+
+          baseAdditionalFields = {
+            tokenType: Form.createFormField({
+              name: tokenType,
+              value: tokenType,
+            }),
+            tokenUnit: Form.createFormField({
+              name: tokenUnit,
+              value: tokenUnit,
+            }),
+            representationType: Form.createFormField({
+              name: representationType,
+              value: representationType,
+            }),
+            valueType: Form.createFormField({
+              name: valueType,
+              value: valueType,
+            }),
+          };
+        }
+      }
+
 
       aliases.forEach((name: string, index: number) => {
         aliasesFields = {
@@ -539,7 +635,8 @@ const Editor = Form.create<BaseFormProps>({
         ...dependenciesFields,
         ...incompatibleFields,
         ...influencedSymbolsFields,
-        ...artifactFilesFields
+        ...artifactFilesFields,
+        ...baseAdditionalFields
       };
       const artifactValues = {
         businessDescription: Form.createFormField({
