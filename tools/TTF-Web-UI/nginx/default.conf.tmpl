@@ -3,6 +3,8 @@ server {
     server_name  localhost;
 
     add_header Set-Cookie "BACKEND_HOST=$BACKEND_HOST";
+    add_header Set-Cookie "EDITABLE=$EDITABLE";
+
     error_log /dev/stdout info;
     access_log /dev/stdout;
 

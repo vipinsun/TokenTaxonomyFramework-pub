@@ -16,7 +16,8 @@ import {BinaryWriter} from "google-protobuf";
 import {client} from "../state";
 import '../shared/styles/global.scss';
 
-const editable = true;
+const editable = document.cookie.replace(/(?:(?:^|.*;\s*)EDITABLE\s*\=\s*([^;]*).*$)|^.*$/, "$1") === 'true';
+
 const formItemLayout = {
   labelCol: {
     xs: {span: 3},
@@ -41,21 +42,21 @@ interface BaseFormProps extends FormComponentProps {
 }
 
 function getCurrentArtifact(artifact: Artifact, id: string)  {
-    if (artifact) {
-      const symbol = artifact.getArtifactSymbol();
-      if (symbol && symbol.getId() === id) {
-        return true;
-      }
-    } else {
-      return false;
+  if (artifact) {
+    const symbol = artifact.getArtifactSymbol();
+    if (symbol && symbol.getId() === id) {
+      return true;
     }
+  } else {
+    return false;
+  }
 }
 
 class BaseForm extends React.Component<BaseFormProps, any> {
 
   constructor(props: BaseFormProps) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   public handleSubmit() {
@@ -67,7 +68,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
           .find((el) => getCurrentArtifact(el.getArtifact()!!, this.props.currentEntity!!));
 
         if (!behavior) {
-          return
+          return;
         }
 
         // edit
@@ -132,7 +133,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
                     sm: {span: 16, offset: 8},
                   }}
                 >
-                <Button type="primary" htmlType="submit" onClick={this.handleSubmit} className="submit">Submit</Button>
+                  <Button type="primary" htmlType="submit" onClick={this.handleSubmit} className="submit">Submit</Button>
                 </Form.Item>
               </div> : null}
           </div>
@@ -186,11 +187,11 @@ class BaseForm extends React.Component<BaseFormProps, any> {
   private renderForm() {
     const {getFieldDecorator} = this.props.form;
 
-    let arrayAliasesFields = [];
-    let arrayDescriptionFields = [];
-    let arrayIncompatibleFields = [];
-    let arrayInfluencedFields = [];
-    let arrayArtifactFiles = [];
+    const arrayAliasesFields = [];
+    const arrayDescriptionFields = [];
+    const arrayIncompatibleFields = [];
+    const arrayInfluencedFields = [];
+    const arrayArtifactFiles = [];
 
     if (countAliasesFields) {
       for (let i = 0; i < countAliasesFields; i++){
@@ -361,7 +362,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
 
           {
             arrayAliasesFields.length !== 0 && arrayAliasesFields.map((field: any, index: number) => {
-              return <li className={'form-item'} key={index}>{field}</li>
+              return <li className={'form-item'} key={index}>{field}</li>;
             })
           }
 
@@ -371,7 +372,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
 
           {
             arrayDescriptionFields.length !== 0 && arrayDescriptionFields.map((field: any, index: number) => {
-              return <li className={'form-item'} key={index}>{field}</li>
+              return <li className={'form-item'} key={index}>{field}</li>;
             })
           }
 
@@ -381,7 +382,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
 
           {
             arrayIncompatibleFields.length !== 0 && arrayIncompatibleFields.map((field: any, index: number) => {
-              return <li className={'form-item'} key={index}>{field}</li>
+              return <li className={'form-item'} key={index}>{field}</li>;
             })
           }
 
@@ -391,7 +392,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
 
           {
             arrayInfluencedFields.length !== 0 && arrayInfluencedFields.map((field: any, index: number) => {
-              return <li className={'form-item'} key={index}>{field}</li>
+              return <li className={'form-item'} key={index}>{field}</li>;
             })
           }
 
@@ -401,7 +402,7 @@ class BaseForm extends React.Component<BaseFormProps, any> {
 
           {
             arrayArtifactFiles.length !== 0 && arrayArtifactFiles.map((field: any, index: number) => {
-              return <li className={'form-item'} key={index}>{field}</li>
+              return <li className={'form-item'} key={index}>{field}</li>;
             })
           }
 
@@ -469,7 +470,7 @@ const Editor = Form.create<BaseFormProps>({
             name: description,
             value: description,
           }),
-        }
+        };
       });
 
       incompatibleSymbols.forEach((incompatible: any, index: number) => {
@@ -496,7 +497,7 @@ const Editor = Form.create<BaseFormProps>({
             name: visual,
             value: visual,
           }),
-        }
+        };
       });
 
       influencedSymbols.forEach((influenced: any, index: number) => {
@@ -509,7 +510,7 @@ const Editor = Form.create<BaseFormProps>({
             name: description,
             value: description,
           }),
-        }
+        };
       });
 
       artifactFiles.forEach((file: any, index: number) => {
@@ -522,7 +523,7 @@ const Editor = Form.create<BaseFormProps>({
             name: fileName,
             value: fileName,
           }),
-        }
+        };
       });
 
       const generalValues = {
@@ -540,7 +541,6 @@ const Editor = Form.create<BaseFormProps>({
         ...influencedSymbolsFields,
         ...artifactFilesFields
       };
-
       const artifactValues = {
         businessDescription: Form.createFormField({
           name: 'BusinessDescription',
