@@ -15,7 +15,7 @@
       "Limited Edition"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Fixed Supply Non-Fungible where the total supply is set at creation using the Quantity property of the Base token. The tokens in this class will be of the same series, sharing those properties, but also have unique values like serial number. It is Whole by setting the Decimals property on the subdividable behavior = 0. A token instance can be burned.",
+      "businessDescription": "This is a Fixed Supply Non-Fungible where the total supply is set at creation using the Quantity property of the Base token. The tokens in this class will be of the same series, sharing those properties, but also have unique values like serial number. It is Whole by setting the Decimals property on the dividable behavior = 0. A token instance can be burned.",
       "businessExample": "This token can be used to represent a limited edition item where only a certain quantity is issue, but each issue has a set of shared and unique properties within the class.",
       "analogies": [
         {

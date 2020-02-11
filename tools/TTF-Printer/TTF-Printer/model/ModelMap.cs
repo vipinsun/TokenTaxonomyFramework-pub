@@ -57,10 +57,10 @@ namespace TTI.TTF.Taxonomy.Model
                     retVal.Add(classification.TokenUnit.ToString(), "This token can be sub-divided or split into smaller units or parts based on a certain number of decimal places.");
                     break;
                 case TokenUnit.Singleton:
-                    retVal.Add(classification.TokenUnit.ToString(), "There is only one instance of this token and it cannot be subdivided.");
+                    retVal.Add(classification.TokenUnit.ToString(), "There is only one instance of this token and it cannot be divided.");
                     break;
                 case TokenUnit.Whole:
-                    retVal.Add(classification.TokenUnit.ToString(), "There can be many instances of this token, but they cannot be subdivided.");
+                    retVal.Add(classification.TokenUnit.ToString(), "There can be many instances of this token, but they cannot be divided.");
                     break;
                 default:
                     return retVal;

@@ -15,12 +15,12 @@
       "Cash"
     ],
     "artifactDefinition": {
-      "businessDescription": "Unique, fractional fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token that is sub-dividable. Because this token is unique, it will have its own identity and can have unique properties like a serial number. Implementations should support a GetBalance or List for owners to see their balances or tokens they own.",
-      "businessExample": "Fiat currency is the most widely understood example of a fractional fungible item. A fractional fungible is sub-dividable, so you can 'make change'.",
+      "businessDescription": "Unique, fractional fungible tokens have interchangeable value with each other, where any owned sum of them from a class has the same value as another owned sum from the same class. Similar to physical cash money, a crypto-currency is an example of a fungible token that is divisible. Because this token is unique, it will have its own identity and can have unique properties like a serial number. Implementations should support a GetBalance or List for owners to see their balances or tokens they own.",
+      "businessExample": "Fiat currency is the most widely understood example of a fractional fungible item. A fractional fungible is divisible, so you can 'make change'.",
       "analogies": [
         {
           "name": "Physical Money or Cash",
-          "description": "Cash, or fiat money, is freely accepted between parties and can have varying denominations. Money has a face value, on a coin or bill, and can be summed together to represent higher value.  It can be subdivided, making change, and consolidated from many smaller denominations to larger ones and still have the same value. ",
+          "description": "Cash, or fiat money, is freely accepted between parties and can have varying denominations. Money has a face value, on a coin or bill, and can be summed together to represent higher value.  It can be divided, making change, and consolidated from many smaller denominations to larger ones and still have the same value. ",
           "artifactDefinition": null
         },
         {

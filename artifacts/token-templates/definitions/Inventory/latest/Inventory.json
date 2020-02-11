@@ -14,7 +14,7 @@
       "Inventory"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the subdividable behavior = 0. This token has the SKU PropertySet added to add specific SKU information to the Token Class. This token is delegable, meaning the owner of a token(s) can allow another party to transfer or burn token instances on their behalf.",
+      "businessDescription": "This is a Whole Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is Whole by setting the Decimals property on the dividable behavior = 0. This token has the SKU PropertySet added to add specific SKU information to the Token Class. This token is delegable, meaning the owner of a token(s) can allow another party to transfer or burn token instances on their behalf.",
       "businessExample": "Inventory tokens to represent items in a SKU are a common use of this type of token. Representing inventory using fractional amounts like `.081231` does not make sense, so a point is just that a single whole unit. Tracing ownership or the token and its removal from circulation when it used is.",
       "analogies": [
         {
@@ -215,7 +215,7 @@
         {
           "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
           "name": "Transfer",
-          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or dividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
           "request": {
             "controlMessageName": "TransferRequest",
             "description": "The request",
@@ -244,7 +244,7 @@
         {
           "id": "516b4e2f-4a14-4c4f-a6f2-1419d4af35c6",
           "name": "TransferFrom",
-          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or dividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
           "request": {
             "controlMessageName": "TransferFromRequest",
             "description": "The request",

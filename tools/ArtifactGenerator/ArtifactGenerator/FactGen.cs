@@ -277,7 +277,7 @@ namespace ArtifactGenerator
 					artifactBase.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
 					{
 						Description =
-							"Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is non-sub-dividable, the decimals value should be 0.",
+							"Whether or not the token class will be divisible will influence the decimals value of this token. If it is non-divisible, the decimals value should be 0.",
 						Symbol = new ArtifactSymbol
 						{
 							Id = "d5807a8e-879b-4885-95fa-f09ba2a22172",
@@ -290,7 +290,7 @@ namespace ArtifactGenerator
 					artifactBase.Artifact.InfluencedBySymbols.Add(new SymbolInfluence
 					{
 						Description =
-							"Whether or not the token class will be sub-dividable will influence the decimals value of this token. If it is sub-dividable, the decimals value should be greater than 0.",
+							"Whether or not the token class will be divisible will influence the decimals value of this token. If it is divisible, the decimals value should be greater than 0.",
 						Symbol = new ArtifactSymbol
 						{
 							Id = "6e3501dc-5800-4c71-b59e-ad11418a998c",

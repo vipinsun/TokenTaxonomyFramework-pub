@@ -886,7 +886,7 @@ An artifact may have a dependency, if listed it will be validated and included i
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| description | [string](#string) |  | Describe how the symbol influences this artifact, like non-sub-dividable or delegable. |
+| description | [string](#string) |  | Describe how the symbol influences this artifact, like non-divisible or delegable. |
 | symbol | [ArtifactSymbol](#taxonomy.model.artifact.ArtifactSymbol) |  | Symbol of the dependency. |
 
 
@@ -902,7 +902,7 @@ Reference to influencing artifact
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| description | [string](#string) |  | Describe how the symbol influences this artifact, like non-sub-dividable or delegable. |
+| description | [string](#string) |  | Describe how the symbol influences this artifact, like non-divisible or delegable. |
 | symbol | [ArtifactSymbol](#taxonomy.model.artifact.ArtifactSymbol) |  | The ArtifactSymbol of the influencer. |
 | applies_to | [ArtifactSymbol](#taxonomy.model.artifact.ArtifactSymbol) | repeated | List of behaviors or property-sets that are influenced by this symbol. |
 
@@ -1061,13 +1061,13 @@ Fungible or Non-Fungible Token Base
 <a name="taxonomy.model.artifact.TokenUnit"></a>
 
 ### TokenUnit
-Fractional, Whole or Singleton indicates if a token can be subdivided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a 1 dollar bill can sub-divided to 2 decimal places and can be broken into four .25 cent coins, or a number of different variation of coins, and is thus Fractional. Whole means no subdivision allowed, just whole numbers quantities, and a Singleton has a quantity of 1 with no subdivision.
+Fractional, Whole or Singleton indicates if a token can be divided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a 1 dollar bill can sub-divided to 2 decimal places and can be broken into four .25 cent coins, or a number of different variation of coins, and is thus Fractional. Whole means no subdivision allowed, just whole numbers quantities, and a Singleton has a quantity of 1 with no subdivision.
 
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | FRACTIONAL | 0 | Supports subdivision |
-| WHOLE | 1 | Not sub-dividable |
-| SINGLETON | 2 | Not sub-dividable and quantity of 1 |
+| WHOLE | 1 | Not divisible |
+| SINGLETON | 2 | Not divisible and quantity of 1 |
 
 
 
@@ -1100,7 +1100,7 @@ Intrinsic or Reference indicates if the token itself is a value, like a crypto c
 <a name="taxonomy.model.core.Base"></a>
 
 ### Base
-All tokens inherit from the base and implicitly support construction. The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
+All tokens inherit from the base and implicitly support construction. The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token dividable.
 
 
 | Field | Type | Label | Description |
@@ -1114,7 +1114,7 @@ All tokens inherit from the base and implicitly support construction. The proper
 | symbol | [string](#string) |  | This is a optional deployment value which is a unique symbol or identifier, not all tokens will have a symbol |
 | owner | [string](#string) |  | This is a deployemnt value with a reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier. |
 | quantity | [int64](#int64) |  | This is a deployemnt value, Base64 encoded ByteString - can represent the initial quantity created or the total minted or issued for the class. |
-| decimals | [int32](#int32) |  | This is a deployemnt value, a number of decimal places a single token can be subdivided into. A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned. |
+| decimals | [int32](#int32) |  | This is a deployemnt value, a number of decimal places a single token can be divided into. A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned. |
 | token_properties | [Base.TokenPropertiesEntry](#taxonomy.model.core.Base.TokenPropertiesEntry) | repeated | This is a deployemnt value, contains generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each. |
 | constructor_name | [string](#string) |  | A template must have a constructor, the name is the proto3 message name in the implemented token base definition. The default is Constructor. |
 | constructor | [google.protobuf.Any](#google.protobuf.Any) |  | The constructor type defined in the token template artifact. |
@@ -1154,7 +1154,7 @@ A Reference is used in the TemplateDefinition to provide property values to thos
 | symbol | [string](#string) |  | An optionally unique symbol or identifier |
 | owner | [string](#string) |  | A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier. |
 | quantity | [int64](#int64) |  | Can represent the initial quantity created or the total minted or issued for the class. |
-| decimals | [int32](#int32) |  | A number of decimal places a single token can be subdivided into. A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned. |
+| decimals | [int32](#int32) |  | A number of decimal places a single token can be divided into. A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned. |
 | token_properties | [BaseReference.TokenPropertiesEntry](#taxonomy.model.core.BaseReference.TokenPropertiesEntry) | repeated | Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each. |
 | constructor_name | [string](#string) |  | A template must have a constructor, the name is the proto3 message name in the implemented token base definition. The default is Constructor. |
 | constructor | [google.protobuf.Any](#google.protobuf.Any) |  | The constructor type defined in the token template artifact. |

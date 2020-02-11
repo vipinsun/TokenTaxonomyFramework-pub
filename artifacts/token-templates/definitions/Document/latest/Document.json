@@ -121,7 +121,7 @@
       "reference": {
         "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
         "type": "BEHAVIOR",
-        "referenceNotes": "non-subdividable",
+        "referenceNotes": "non-dividable",
         "values": null
       },
       "isExternal": true,

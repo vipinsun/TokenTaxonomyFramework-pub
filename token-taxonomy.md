@@ -33,7 +33,7 @@ See the [Token Hall](https://medium.com/tokenhall) for a backgrounder for busine
 The TTF classifies tokens using five characteristics they possess, allowing tokens that share the same characteristics to be classified together.  These are foundational token concepts that can be applied to most tokens.
 
 - Token Type: Fungible or Non-Fungible.  The difference between the two is clarified later in this document
-- Token Unit: Fractional, Whole or Singleton indicates if a token can be subdivided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a $1 bill can sub-divided to 2 decimal places and can be broken into four .25¢ coins (or a number of different variation of coins) and is thus Fractional. Whole means no subdivision allowed - just whole numbers quantities - and a Singleton has a quantity of 1 with no subdivision.
+- Token Unit: Fractional, Whole or Singleton indicates if a token can be divided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a $1 bill can sub-divided to 2 decimal places and can be broken into four .25¢ coins (or a number of different variation of coins) and is thus Fractional. Whole means no subdivision allowed - just whole numbers quantities - and a Singleton has a quantity of 1 with no subdivision.
 - Value Type: Intrinsic or Reference indicates if the token itself is a value, like a crypto currency, or if it references a value elsewhere, like a property title.
 - Representation Type: Common or Unique. Common tokens share a single set of properties, are not distinct from one another, and balances are recorded in a central place. These tokens are simply represented as a balance or quantity attributed to an owner’s address where all the balances are recorded on the same balance sheet. A unique token has its own identity, can have unique properties, and be individually traced. Common tokens are like money in a bank account and Unique tokens are like money in your pocket.
 - Template Type: Single or Hybrid, covered later, but is an indication of any parent/child relationships or dependencies between tokens.
@@ -198,7 +198,7 @@ This is a list of some common behaviors and is not intended to be comprehensive,
 
 ![CommonBehaviors](images/common-behaviors.png)
 
-Some of these behaviors are valid for either base type, while others only apply to one.  For example, ~t (non-transferable) would not make sense for a fungible token, and d (sub-dividable) does not apply to a token with the s (singleton) behavior.
+Some of these behaviors are valid for either base type, while others only apply to one.  For example, ~t (non-transferable) would not make sense for a fungible token, and d (divisible) does not apply to a token with the s (singleton) behavior.
 
 A behavior that is not valid for a specific type or conflicts with another behavior it will include the symbol reference in its incompatible list.
 
@@ -206,7 +206,7 @@ Where hybrid tokens are being defined, behaviors can be defined that are common 
 
 > **[&tau;<sub>F</sub>{m} (&tau;<sub>N</sub>{~m}){t}]**
 
-For boolean behaviors like Sub-dividable d or Whole ~d, the absence of ~d would imply d but should be explicitly included for clarity.
+For boolean behaviors like Divisible d or Whole ~d, the absence of ~d would imply d but should be explicitly included for clarity.
 
 Some behaviors, like Transferable t are implicit for certain token bases.  A fungible token, for example, implicitly is Transferable so the taxonomy does not require it to be included for tooling or the template  but again should be explicitly included for clarity: &tau;<sub>F</sub> = &tau;<sub>F</sub>{t}.
 
@@ -221,13 +221,13 @@ Roles, r, allows for a role or membership check before invoking an influenced be
 
 Potential influences are defined in an artifact and details of regarding influence is detailed in a template definition when the artifacts are brought into context with each other.
 
-Behaviors can be incompatible with each other and cause validation errors.  A behavior and its opposite `~` are obviously incompatible. A behavior will indicate what behaviors it will be incompatible with, for example if singleton, s and mintable, m or sub-dividable, d is applied in the same token, validation will fail as a singleton can only have a quantity of 1 whole token.
+Behaviors can be incompatible with each other and cause validation errors.  A behavior and its opposite `~` are obviously incompatible. A behavior will indicate what behaviors it will be incompatible with, for example if singleton, s and mintable, m or divisible, d is applied in the same token, validation will fail as a singleton can only have a quantity of 1 whole token.
 
 Some behaviors will require setup at token class creation or construction. A behavior that requires setup should have a Constructor control message that indicates how it should be setup at construction.
 
 ### Internal and External Behaviors
 
-Behaviors can be internal or external depending on what the behavior effects. An internal behavior is enabling or restricting properties on the token itself, whereas an external behavior is enabling or restricting the invocation of the behavior from an external actor. For example, the behavior sub-dividable means that the decimals property on the base token is > 0 and non-transferable means that the Owner property is not modifiable from the initial owner that was set when the token instance was created.
+Behaviors can be internal or external depending on what the behavior effects. An internal behavior is enabling or restricting properties on the token itself, whereas an external behavior is enabling or restricting the invocation of the behavior from an external actor. For example, the behavior divisible means that the decimals property on the base token is > 0 and non-transferable means that the Owner property is not modifiable from the initial owner that was set when the token instance was created.
 
 Examples of an external behavior would be something like Financeable or Encumberable.  These behaviors would enable an external actor to invoke the behavior and the token would contain the correct behavioral properties to record the outcome when invoked.  For example, if a Loan contract were to invoke FinanceRequest on a token instance, the loan contract could expect a FinanceResponse back from the token as an indication of the success or failure of this behavior.
 
@@ -371,10 +371,10 @@ There three root branches used to classify templates:
 
 Each root branch has a branch by Token Unit:
 
-- Fractional Fungible (sub-dividable) *&tau;<sub>F</sub>{d}*
-- Fractional Non-Fungible (sub-dividable) *&tau;<sub>N</sub>{d}*
-- Whole Fungible (non-sub-dividable) *&tau;<sub>F</sub>{~d}*
-- Whole Non-Fungible (non-sub-dividable) *&tau;<sub>N</sub>{~d}*
+- Fractional Fungible (divisible) *&tau;<sub>F</sub>{d}*
+- Fractional Non-Fungible (divisible) *&tau;<sub>N</sub>{d}*
+- Whole Fungible (indivisible) *&tau;<sub>F</sub>{~d}*
+- Whole Non-Fungible (indivisible) *&tau;<sub>N</sub>{~d}*
 - Singleton *&tau;<sub>N</sub>{s}* (s implies ~d)
   
 ![Hierarchy](images/hierarchy.png)

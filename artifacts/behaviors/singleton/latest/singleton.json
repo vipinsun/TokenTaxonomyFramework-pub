@@ -14,7 +14,7 @@
       "One and Only"
     ],
     "artifactDefinition": {
-      "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not subdividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
+      "businessDescription": "A restriction on the token in that there can only be 1 whole token in the class and is not dividable. This behavior is only available to non-fungible base types.  By definition, a Singleton cannot be mintable.",
       "businessExample": "",
       "analogies": [
         {
@@ -39,7 +39,7 @@
         }
       },
       {
-        "description": "Singleton requires non-sub-dividable.",
+        "description": "Singleton requires non-divisible.",
         "symbol": {
           "id":"d5807a8e-879b-4885-95fa-f09ba2a22172",
           "type": "BEHAVIOR",

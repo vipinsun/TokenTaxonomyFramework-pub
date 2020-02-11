@@ -16,7 +16,7 @@
       "CryptoKitty"
     ],
     "artifactDefinition": {
-      "businessDescription": "A singleton is a non-subdividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-subdividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is transferable",
+      "businessDescription": "A singleton is a non-dividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-dividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is transferable",
       "businessExample": "This token could be used to represent an original work of art like a painting.",
       "analogies": [
         {

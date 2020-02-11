@@ -24,7 +24,7 @@
         },
         {
           "name": "Art",
-          "description": "The valuable painting or other unique piece of art may not share any property values with other paintings, unless the artist is extremely prolific in generating tens of thousands of pieces of art, it would make sense to define each piece of art as its own class. Meaning there would be only a single piece of art represented by the token class. If the art cannot be sub-divided, meaning there can be no fractional owners, this token class can be a singleton if the quantity in the class is set to 1. A singleton has only one instance in the class, essentially meaning the class is the instance, and not be sub-dividable and no new tokens can be minted in the class.",
+          "description": "The valuable painting or other unique piece of art may not share any property values with other paintings, unless the artist is extremely prolific in generating tens of thousands of pieces of art, it would make sense to define each piece of art as its own class. Meaning there would be only a single piece of art represented by the token class. If the art cannot be sub-divided, meaning there can be no fractional owners, this token class can be a singleton if the quantity in the class is set to 1. A singleton has only one instance in the class, essentially meaning the class is the instance, and not be divisible and no new tokens can be minted in the class.",
           "artifactDefinition": null
         }
       ],
