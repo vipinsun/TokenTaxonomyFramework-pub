@@ -14,7 +14,7 @@
       "Fixed Supply Whole Fungible"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Fixed Supply Whole Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is fractional by setting the Decimals property on the subdividable behavior. A token instance can be burned.",
+      "businessDescription": "This is a Fixed Supply Whole Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be burned.",
       "businessExample": "Fixed denomination, fungible, transferable off-chain security.",
       "analogies": [
         {

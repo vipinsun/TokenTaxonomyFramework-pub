@@ -265,7 +265,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
 
   #region Messages
   /// <summary>
-  ///All tokens inherit from the base and implicitly support construction. The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token subdividable.
+  ///All tokens inherit from the base and implicitly support construction. The properties represent non-behavioral properties, with the exception of Decimals which is used by the Subdividable or Non-Subdividable behavior where any value greater than 0 makes the token dividable.
   /// </summary>
   public sealed partial class Base : pb::IMessage<Base> {
     private static readonly pb::MessageParser<Base> _parser = new pb::MessageParser<Base>(() => new Base());
@@ -443,7 +443,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public const int DecimalsFieldNumber = 10;
     private int decimals_;
     /// <summary>
-    ///This is a deployemnt value, a number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    ///This is a deployemnt value, a number of decimal places a single token can be divided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Decimals {
@@ -1033,7 +1033,7 @@ namespace TTI.TTF.Taxonomy.Model.Core {
     public const int DecimalsFieldNumber = 7;
     private int decimals_;
     /// <summary>
-    ///A number of decimal places a single token can be subdivided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    ///A number of decimal places a single token can be divided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Decimals {

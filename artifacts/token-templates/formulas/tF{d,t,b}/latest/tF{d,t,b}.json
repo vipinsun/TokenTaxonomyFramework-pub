@@ -15,7 +15,7 @@
       "Fixed Supply Fractional Fungible"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Fixed Supply Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is fractional by setting the Decimals property on the subdividable behavior. A token instance can be burned.",
+      "businessDescription": "This is a Fixed Supply Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be burned.",
       "businessExample": "Typically used to represent an Initial Coin offering with a fixed supply.",
       "analogies": [
         {

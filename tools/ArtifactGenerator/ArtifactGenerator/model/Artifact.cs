@@ -270,7 +270,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
   }
 
   /// <summary>
-  ///Fractional, Whole or Singleton indicates if a token can be subdivided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a 1 dollar bill can sub-divided to 2 decimal places and can be broken into four .25 cent coins, or a number of different variation of coins, and is thus Fractional. Whole means no subdivision allowed, just whole numbers quantities, and a Singleton has a quantity of 1 with no subdivision.
+  ///Fractional, Whole or Singleton indicates if a token can be divided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a 1 dollar bill can sub-divided to 2 decimal places and can be broken into four .25 cent coins, or a number of different variation of coins, and is thus Fractional. Whole means no subdivision allowed, just whole numbers quantities, and a Singleton has a quantity of 1 with no subdivision.
   /// </summary>
   public enum TokenUnit {
     /// <summary>
@@ -278,11 +278,11 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     /// </summary>
     [pbr::OriginalName("FRACTIONAL")] Fractional = 0,
     /// <summary>
-    ///Not sub-dividable
+    ///Not divisible
     /// </summary>
     [pbr::OriginalName("WHOLE")] Whole = 1,
     /// <summary>
-    ///Not sub-dividable and quantity of 1
+    ///Not divisible and quantity of 1
     /// </summary>
     [pbr::OriginalName("SINGLETON")] Singleton = 2,
   }
@@ -1780,7 +1780,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     public const int DescriptionFieldNumber = 1;
     private string description_ = "";
     /// <summary>
-    ///Describe how the symbol influences this artifact, like non-sub-dividable or delegable.
+    ///Describe how the symbol influences this artifact, like non-divisible or delegable.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {
@@ -2140,7 +2140,7 @@ namespace TTI.TTF.Taxonomy.Model.Artifact {
     public const int DescriptionFieldNumber = 1;
     private string description_ = "";
     /// <summary>
-    ///Describe how the symbol influences this artifact, like non-sub-dividable or delegable.
+    ///Describe how the symbol influences this artifact, like non-divisible or delegable.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Description {

@@ -15,7 +15,7 @@
       "Certification"
     ],
     "artifactDefinition": {
-      "businessDescription": "A singleton is a non-subdividable whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies non-subdividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is non-transferable and attestable.",
+      "businessDescription": "A singleton is a indivisible whole token with a quantity of 1. Generally used to represent digital or physical items where there will be a single owner. A singleton implies indivisible, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is non-transferable and attestable.",
       "businessExample": "A educational diploma issued to a student, is not valid to transfer to someone else.",
       "analogies": [
         {

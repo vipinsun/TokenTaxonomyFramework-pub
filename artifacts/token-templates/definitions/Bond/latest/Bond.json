@@ -14,7 +14,7 @@
       "Fixed Supply Whole Fungible"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Fixed Supply Whole Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is fractional by setting the Decimals property on the subdividable behavior. A token instance can be burned.",
+      "businessDescription": "This is a Fixed Supply Whole Fungible where the total supply is set at creation using the Quantity property of the Base token.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be burned.",
       "businessExample": "Fixed denomination, fungible, transferable off-chain security.",
       "analogies": [
         {
@@ -185,7 +185,7 @@
         {
           "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
           "name": "Transfer",
-          "description": "A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+          "description": "A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or dividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
           "request": {
             "controlMessageName": "TransferRequest",
             "description": "The request",
@@ -214,7 +214,7 @@
         {
           "id": "516b4e2f-4a14-4c4f-a6f2-1419d4af35c6",
           "name": "TransferFrom",
-          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or dividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
           "request": {
             "controlMessageName": "TransferFromRequest",
             "description": "The request",
@@ -411,7 +411,7 @@
           "influencedInvocation": {
             "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
             "name": "Transfer",
-            "description": "A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+            "description": "A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or dividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
             "request": {
               "controlMessageName": "TransferRequest",
               "description": "The request",

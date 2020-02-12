@@ -14,7 +14,7 @@
       "Airline Ticket"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Variable Supply Whole Non-Fungible where the total supply can vary. The tokens in this class will be of the same series, sharing those properties, but also have unique values like seat number. It is Whole by setting the Decimals property on the subdividable behavior = 0. A token instance can be burned.",
+      "businessDescription": "This is a Variable Supply Whole Non-Fungible where the total supply can vary. The tokens in this class will be of the same series, sharing those properties, but also have unique values like seat number. It is Whole by setting the Decimals property on the dividable behavior = 0. A token instance can be burned.",
       "businessExample": "This token can be used to represent a unique item in a shared context, like a reserved seat at a concert.",
       "analogies": [
         {

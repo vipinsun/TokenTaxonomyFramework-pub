@@ -13,7 +13,7 @@
       "Emoney"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is fractional by setting the Decimals property on the subdividable behavior. A token instance can be burned or minted. Before executing transfer, burn or mint operation check it is checked if they are within the compliance regulations. A token can be put on hold to ensure future transfer.",
+      "businessDescription": "This is a Token with Variable Supply Fungible where an initial supply can set at creation and then supply can be added and removed from the total based on need.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be burned or minted. Before executing transfer, burn or mint operation check it is checked if they are within the compliance regulations. A token can be put on hold to ensure future transfer.",
       "businessExample": "Enables the issuance of regulated electronic money and its practical usage in real financial applications.",
       "analogies": [],
       "comments": "",

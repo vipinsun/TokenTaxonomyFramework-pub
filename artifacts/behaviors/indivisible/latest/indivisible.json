@@ -8,13 +8,14 @@
       "version": "1.0",
       "templateValidated": false
     },
-    "name": "Non-Subdividable",
+    "name": "Indivisible",
     "aliases": [
-      "Whole"
+      "Whole",
+      "Non-Subdividable"
     ],
     "artifactDefinition": {
-      "businessDescription": "An ability or restriction on the token where it cannot be subdivided from a single whole token into fractions. Sets the base token Decimals property to 0 which will make the token non-sub-dividable and a whole token is the smallest ownable unit of the token.",
-      "businessExample": "Non-subdividable is common for items where subdivision does not make sense, like a property title, inventory item or invoice.",
+      "businessDescription": "An ability or restriction on the token where it cannot be divided from a single whole token into fractions. Sets the base token Decimals property to 0 which will make the token indivisible and a whole token is the smallest ownable unit of the token.",
+      "businessExample": "Indivisible is common for items where division does not make sense, like a property title, inventory item or invoice.",
       "analogies": [
         {
           "name": "Non-Fractional",
@@ -23,7 +24,7 @@
         },
         {
           "name": "Barrel of Oil",
-          "description": "Barrels of Oil don't make sense to subdivide.",
+          "description": "Barrels of Oil don't make sense to divide.",
           "artifactDefinition": null
         }
       ],
@@ -45,13 +46,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "non-subdividable.proto",
+        "fileName": "indivisible.proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "non-subdividable.md",
+        "fileName": "indivisible.md",
         "fileData": "",
         "artifact": null
       }
@@ -67,7 +68,7 @@
   "properties": [
     {
       "name": "Decimals",
-      "valueDescription": "Set to Zero, not allowing any subdivision, usually this is applied to the base token.",
+      "valueDescription": "Set to Zero, not allowing any division, usually this is applied to the base token.",
       "templateValue": "0",
       "propertyInvocations": [
         {

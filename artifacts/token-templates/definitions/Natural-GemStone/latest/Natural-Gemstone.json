@@ -16,7 +16,7 @@
       "Natural Emerald"
     ],
     "artifactDefinition": {
-      "businessDescription": "Natural Gemstones are physically mined from the Earth and are not lab grown (manufactured). Each Natural Gemstone is whole and one of a kind and therefore considered to be a singleton as well as a non-sub-dividable whole token with a quantity of 1. A Natural Gemstone can now be represented digitally in this capacity allowing for only one single owner to possess this token at a time. A singleton implies non-sub-dividable, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is transferable.",
+      "businessDescription": "Natural Gemstones are physically mined from the Earth and are not lab grown (manufactured). Each Natural Gemstone is whole and one of a kind and therefore considered to be a singleton as well as a non-divisible whole token with a quantity of 1. A Natural Gemstone can now be represented digitally in this capacity allowing for only one single owner to possess this token at a time. A singleton implies non-divisible, so the decimal value for the base token should be 0 and a total Quantity be 1, both are established upon creation. This singleton is transferable.",
       "businessExample": "Natural Gemstones are a good use of this type of token. This tokens value type is a direct reference to a Natural Gemstone. Natural Gemstones are whole and one of a kind making each a singleton and transferable. There are several different types of Natural Gemstones such as Natural Diamonds, Natural Rubies, Natural Sapphires, and Natural Emeralds. Natural Gemstones are physically mined from the Earth and are not lab grown (manufactured). There are various traits gemologists use in order to differentiate and value every Natural Gemstone individually. Some example traits include: Composition (ex. Diamonds are to carbon vs. Rubies are to corundum), Carat Weight, Cut (shape of the stone and dimensions which impact a stones brilliance), Color (color intensity), and Clarity. These varying traits define the differences between each type of Natural Gemstone making each of them unique (Singleton). Natural Gemstones, such as Diamonds, can be recut and re-polished changing its physical characteristics. Although the corresponding token definition and formula remain the same.",
       "analogies": [
         {
@@ -282,7 +282,7 @@
         {
           "id": "5d4b8f10-7857-4a2f-9b8c-d61e367a6bcc",
           "name": "Transfer",
-          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or dividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
           "request": {
             "controlMessageName": "TransferRequest",
             "description": "The request",
@@ -311,7 +311,7 @@
         {
           "id": "516b4e2f-4a14-4c4f-a6f2-1419d4af35c6",
           "name": "TransferFrom",
-          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or subdividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
+          "description": ">A transfer request will invoke a transfer from the owner of the token to the party or account provided in the To field of the request. For fungible or dividable non-fungible tokens, this request may also include value in the Amount field of the request to transfer more than one token of the class in a single request.",
           "request": {
             "controlMessageName": "TransferFromRequest",
             "description": "The request",
