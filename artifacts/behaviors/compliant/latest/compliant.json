@@ -11,8 +11,8 @@
     "name": "Compliant",
     "aliases": [],
     "artifactDefinition": {
-      "businessDescription": "A regulated token needs to comply with several legal requirements, especially KYC and AML. If the necessary checks have to be made off-chain the token transfer becomes centralized. Further the transfer in this case takes longer to complete as it can not be done in one transaction, but requires a second confirmation step. A compliant token fulfills all legal requirements on-chain without interaction from an off-chain entity",
-      "businessExample": "When doing a bank transfer the transaction is checked by the involved banks according to legal requirements. A compliant token can ",
+      "businessDescription": "A regulated token needs to comply with several legal requirements, especially KYC and AML. If the necessary checks have to be made off-chain the token transfer becomes centralized. Further the transfer in this case takes longer to complete as it can not be done in one transaction, but requires a second confirmation step. A compliant token fulfills all legal requirements on-chain without interaction from an off-chain entity.",
+      "businessExample": "When doing a bank transfer the transaction is checked by the involved banks according to legal requirements.",
       "analogies": [],
       "comments": "",
       "artifact": null
