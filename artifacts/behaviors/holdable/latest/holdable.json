@@ -16,7 +16,7 @@
       "analogies": [
         {
           "name": "Escrow",
-          "description": "Holds are similar to escrows in that are firm and lead to final settlement.",
+          "description": "Holds are similar to escrows in that they are firm and lead to final settlement.",
           "artifactDefinition": null
         }
       ],
