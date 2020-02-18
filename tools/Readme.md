@@ -105,7 +105,7 @@ The UI Sandbox project is for prototype UI applications. The TTF Designer UX is 
 
 The [Epirus Blockchain Explorer](https://www.web3labs.com/epirus) by Web3 Labs is a useful tool for monitoring and visualising your tokens on real blockchain networks. 
 
-The [Epirus Overview](EpirusExplorer/Epirus\ Overview.pdf) document provides screenshots of the application running on a live network, including view of fungible and non-fungible tokens.
+The [Epirus Overview](EpirusExplorer/EpirusOverview.pdf) document provides screenshots of the application running on a live network, including view of fungible and non-fungible tokens.
 
 Epirus has dedicated views of:
 
