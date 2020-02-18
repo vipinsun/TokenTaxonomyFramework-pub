@@ -100,3 +100,33 @@ These documents can be saved as .PDF using your word processing application as w
 The UI Sandbox project is for prototype UI applications. The TTF Designer UX is also hosted in the 'designer' folder. You can click through the designer here:
 
 [TTF Designer](https://xd.adobe.com/view/3e19edc6-1915-41a0-70a0-2d3154a7a5eb-4828/)
+
+## Epirus Blockchain Explorer
+
+The [Epirus Blockchain Explorer](https://www.web3labs.com/epirus) by Web3 Labs is a useful tool for monitoring and visualising your tokens on real blockchain networks. 
+
+The [Epirus Overview](EpirusExplorer/Epirus\ Overview.pdf) document provides screenshots of the application running on a live network, including view of fungible and non-fungible tokens.
+
+Epirus has dedicated views of:
+
+- Tokens
+- Smart contracts
+- Transactions
+- Blocks
+- Network peers
+
+It also has a dashboard with high level metrics such as the proportions of fungible or non-fungible tokens deployed to the network.
+
+Its filtering and sorting capatilities make it straight forwards to query for the most active tokens over a set period of time.
+
+There is also a RESTful API for bespoke reporting.
+
+At present it supports the following blockchain deployments:
+
+- Azure Blockchain Service
+- Hyperledger Besu
+- Quorum
+- Public and private Ethereum networks
+
+Corda support is coming end of Q1 2020.
+
