@@ -38,10 +38,10 @@ namespace TTI.TTF.Taxonomy {
             "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TTI.TTF.Taxonomy.Model.Artifact.ArtifactReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ArtifactToPrint), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser, new[]{ "Type", "Id", "Draft" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintTTFOptions), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser, new[]{ "Book", "Draft" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintResult), global::TTI.TTF.Taxonomy.PrintResult.Parser, new[]{ "OpenXmlDocument" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.ArtifactToPrint), global::TTI.TTF.Taxonomy.ArtifactToPrint.Parser, new[]{ "Type", "Id", "Draft" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintTTFOptions), global::TTI.TTF.Taxonomy.PrintTTFOptions.Parser, new[]{ "Book", "Draft" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TTI.TTF.Taxonomy.PrintResult), global::TTI.TTF.Taxonomy.PrintResult.Parser, new[]{ "OpenXmlDocument" }, null, null, null, null)
           }));
     }
     #endregion
