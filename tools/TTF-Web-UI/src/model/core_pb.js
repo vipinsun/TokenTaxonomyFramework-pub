@@ -935,13 +935,14 @@ proto.taxonomy.model.core.Base.toObject = function(includeInstance, msg) {
     tokenUnit: jspb.Message.getFieldWithDefault(msg, 3, 0),
     representationType: jspb.Message.getFieldWithDefault(msg, 4, 0),
     valueType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    symbol: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    owner: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    quantity: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    decimals: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    supply: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    symbol: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    owner: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    quantity: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    decimals: jspb.Message.getFieldWithDefault(msg, 11, 0),
     tokenPropertiesMap: (f = msg.getTokenPropertiesMap()) ? f.toObject(includeInstance, undefined) : [],
-    constructorName: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    constructorName: jspb.Message.getFieldWithDefault(msg, 13, ""),
     constructor: (f = msg.getConstructor()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
 
@@ -1001,36 +1002,40 @@ proto.taxonomy.model.core.Base.deserializeBinaryFromReader = function(msg, reade
       msg.setValueType(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      var value = /** @type {!proto.taxonomy.model.artifact.Supply} */ (reader.readEnum());
+      msg.setSupply(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSymbol(value);
+      msg.setName(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOwner(value);
+      msg.setSymbol(value);
       break;
     case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOwner(value);
+      break;
+    case 10:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setQuantity(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDecimals(value);
       break;
-    case 11:
+    case 12:
       var value = msg.getTokenPropertiesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 12:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setConstructorName(value);
       break;
-    case 13:
+    case 14:
       var value = new google_protobuf_any_pb.Any;
       reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
       msg.setConstructor(value);
@@ -1100,56 +1105,63 @@ proto.taxonomy.model.core.Base.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getSupply();
+  if (f !== 0.0) {
+    writer.writeEnum(
       6,
       f
     );
   }
-  f = message.getSymbol();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getOwner();
+  f = message.getSymbol();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
+  f = message.getOwner();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
   f = message.getQuantity();
   if (f !== 0) {
     writer.writeInt64(
-      9,
+      10,
       f
     );
   }
   f = message.getDecimals();
   if (f !== 0) {
     writer.writeInt32(
-      10,
+      11,
       f
     );
   }
   f = message.getTokenPropertiesMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(12, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getConstructorName();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      13,
       f
     );
   }
   f = message.getConstructor();
   if (f != null) {
     writer.writeMessage(
-      13,
+      14,
       f,
       google_protobuf_any_pb.Any.serializeBinaryToWriter
     );
@@ -1267,28 +1279,28 @@ proto.taxonomy.model.core.Base.prototype.setValueType = function(value) {
 
 
 /**
- * optional string name = 6;
+ * optional taxonomy.model.artifact.Supply supply = 6;
+ * @return {!proto.taxonomy.model.artifact.Supply}
+ */
+proto.taxonomy.model.core.Base.prototype.getSupply = function() {
+  return /** @type {!proto.taxonomy.model.artifact.Supply} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {!proto.taxonomy.model.artifact.Supply} value
+ * @return {!proto.taxonomy.model.core.Base} returns this
+ */
+proto.taxonomy.model.core.Base.prototype.setSupply = function(value) {
+  return jspb.Message.setProto3EnumField(this, 6, value);
+};
+
+
+/**
+ * optional string name = 7;
  * @return {string}
  */
 proto.taxonomy.model.core.Base.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
-proto.taxonomy.model.core.Base.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string symbol = 7;
- * @return {string}
- */
-proto.taxonomy.model.core.Base.prototype.getSymbol = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -1297,16 +1309,16 @@ proto.taxonomy.model.core.Base.prototype.getSymbol = function() {
  * @param {string} value
  * @return {!proto.taxonomy.model.core.Base} returns this
  */
-proto.taxonomy.model.core.Base.prototype.setSymbol = function(value) {
+proto.taxonomy.model.core.Base.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string owner = 8;
+ * optional string symbol = 8;
  * @return {string}
  */
-proto.taxonomy.model.core.Base.prototype.getOwner = function() {
+proto.taxonomy.model.core.Base.prototype.getSymbol = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -1315,34 +1327,34 @@ proto.taxonomy.model.core.Base.prototype.getOwner = function() {
  * @param {string} value
  * @return {!proto.taxonomy.model.core.Base} returns this
  */
-proto.taxonomy.model.core.Base.prototype.setOwner = function(value) {
+proto.taxonomy.model.core.Base.prototype.setSymbol = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional int64 quantity = 9;
+ * optional string owner = 9;
+ * @return {string}
+ */
+proto.taxonomy.model.core.Base.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.taxonomy.model.core.Base} returns this
+ */
+proto.taxonomy.model.core.Base.prototype.setOwner = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional int64 quantity = 10;
  * @return {number}
  */
 proto.taxonomy.model.core.Base.prototype.getQuantity = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.taxonomy.model.core.Base} returns this
- */
-proto.taxonomy.model.core.Base.prototype.setQuantity = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
-};
-
-
-/**
- * optional int32 decimals = 10;
- * @return {number}
- */
-proto.taxonomy.model.core.Base.prototype.getDecimals = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -1351,20 +1363,38 @@ proto.taxonomy.model.core.Base.prototype.getDecimals = function() {
  * @param {number} value
  * @return {!proto.taxonomy.model.core.Base} returns this
  */
-proto.taxonomy.model.core.Base.prototype.setDecimals = function(value) {
+proto.taxonomy.model.core.Base.prototype.setQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * map<string, string> token_properties = 11;
+ * optional int32 decimals = 11;
+ * @return {number}
+ */
+proto.taxonomy.model.core.Base.prototype.getDecimals = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.taxonomy.model.core.Base} returns this
+ */
+proto.taxonomy.model.core.Base.prototype.setDecimals = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * map<string, string> token_properties = 12;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.taxonomy.model.core.Base.prototype.getTokenPropertiesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 12, opt_noLazyCreate,
       null));
 };
 
@@ -1379,11 +1409,11 @@ proto.taxonomy.model.core.Base.prototype.clearTokenPropertiesMap = function() {
 
 
 /**
- * optional string constructor_name = 12;
+ * optional string constructor_name = 13;
  * @return {string}
  */
 proto.taxonomy.model.core.Base.prototype.getConstructorName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
@@ -1392,17 +1422,17 @@ proto.taxonomy.model.core.Base.prototype.getConstructorName = function() {
  * @return {!proto.taxonomy.model.core.Base} returns this
  */
 proto.taxonomy.model.core.Base.prototype.setConstructorName = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional google.protobuf.Any constructor = 13;
+ * optional google.protobuf.Any constructor = 14;
  * @return {?proto.google.protobuf.Any}
  */
 proto.taxonomy.model.core.Base.prototype.getConstructor = function() {
   return /** @type{?proto.google.protobuf.Any} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 13));
+    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 14));
 };
 
 
@@ -1411,7 +1441,7 @@ proto.taxonomy.model.core.Base.prototype.getConstructor = function() {
  * @return {!proto.taxonomy.model.core.Base} returns this
 */
 proto.taxonomy.model.core.Base.prototype.setConstructor = function(value) {
-  return jspb.Message.setWrapperField(this, 13, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
@@ -1429,7 +1459,7 @@ proto.taxonomy.model.core.Base.prototype.clearConstructor = function() {
  * @return {boolean}
  */
 proto.taxonomy.model.core.Base.prototype.hasConstructor = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

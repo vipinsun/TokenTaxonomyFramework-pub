@@ -54,6 +54,7 @@ goog.exportSymbol('proto.taxonomy.model.artifact.QueryResult', null, global);
 goog.exportSymbol('proto.taxonomy.model.artifact.RepresentationType', null, global);
 goog.exportSymbol('proto.taxonomy.model.artifact.ServiceConfiguration', null, global);
 goog.exportSymbol('proto.taxonomy.model.artifact.SingleTokenGrammar', null, global);
+goog.exportSymbol('proto.taxonomy.model.artifact.Supply', null, global);
 goog.exportSymbol('proto.taxonomy.model.artifact.SymbolDependency', null, global);
 goog.exportSymbol('proto.taxonomy.model.artifact.SymbolInfluence', null, global);
 goog.exportSymbol('proto.taxonomy.model.artifact.TargetPlatform', null, global);
@@ -940,7 +941,8 @@ proto.taxonomy.model.artifact.Classification.toObject = function(includeInstance
     tokenType: jspb.Message.getFieldWithDefault(msg, 2, 0),
     tokenUnit: jspb.Message.getFieldWithDefault(msg, 3, 0),
     representationType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    valueType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    valueType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    supply: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -996,6 +998,10 @@ proto.taxonomy.model.artifact.Classification.deserializeBinaryFromReader = funct
     case 5:
       var value = /** @type {!proto.taxonomy.model.artifact.ValueType} */ (reader.readEnum());
       msg.setValueType(value);
+      break;
+    case 6:
+      var value = /** @type {!proto.taxonomy.model.artifact.Supply} */ (reader.readEnum());
+      msg.setSupply(value);
       break;
     default:
       reader.skipField();
@@ -1058,6 +1064,13 @@ proto.taxonomy.model.artifact.Classification.serializeBinaryToWriter = function(
   if (f !== 0.0) {
     writer.writeEnum(
       5,
+      f
+    );
+  }
+  f = message.getSupply();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      6,
       f
     );
   }
@@ -1151,6 +1164,24 @@ proto.taxonomy.model.artifact.Classification.prototype.getValueType = function()
  */
 proto.taxonomy.model.artifact.Classification.prototype.setValueType = function(value) {
   return jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+/**
+ * optional Supply supply = 6;
+ * @return {!proto.taxonomy.model.artifact.Supply}
+ */
+proto.taxonomy.model.artifact.Classification.prototype.getSupply = function() {
+  return /** @type {!proto.taxonomy.model.artifact.Supply} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {!proto.taxonomy.model.artifact.Supply} value
+ * @return {!proto.taxonomy.model.artifact.Classification} returns this
+ */
+proto.taxonomy.model.artifact.Classification.prototype.setSupply = function(value) {
+  return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
 
@@ -9700,6 +9731,16 @@ proto.taxonomy.model.artifact.TokenUnit = {
   FRACTIONAL: 0,
   WHOLE: 1,
   SINGLETON: 2
+};
+
+/**
+ * @enum {number}
+ */
+proto.taxonomy.model.artifact.Supply = {
+  FIXED: 0,
+  CAPPED_VARIABLE: 1,
+  GATED: 2,
+  INFINITE: 3
 };
 
 /**
