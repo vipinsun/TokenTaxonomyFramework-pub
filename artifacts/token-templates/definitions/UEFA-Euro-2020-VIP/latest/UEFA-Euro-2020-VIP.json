@@ -91,6 +91,7 @@
       }
     },
     "valueType": "INTRINSIC",
+    "supply": "FIXED",
     "name": "",
     "symbol": "",
     "owner": "",

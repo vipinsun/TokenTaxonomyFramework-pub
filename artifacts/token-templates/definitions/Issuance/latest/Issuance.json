@@ -96,6 +96,7 @@
       }
     },
     "valueType": "INTRINSIC",
+    "supply": "CAPPED_VARIABLE",
     "name": "",
     "symbol": "",
     "owner": "",

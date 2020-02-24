@@ -112,6 +112,7 @@
       }
     },
     "valueType": "REFERENCE",
+    "supply": "INFINITE",
     "name": "",
     "symbol": "",
     "owner": "",

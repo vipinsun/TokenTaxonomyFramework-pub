@@ -76,6 +76,7 @@
   "tokenUnit": "FRACTIONAL",
   "representationType": "UNIQUE",
   "valueType": "INTRINSIC",
+  "supply": "GATED",
   "name": "",
   "symbol": "",
   "owner": "",

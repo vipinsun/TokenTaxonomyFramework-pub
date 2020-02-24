@@ -493,6 +493,28 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             repTypeRow.Append(repTypeValue);
             repTypeRow.Append(repTypeExplained);
             classificationTable.Append(repTypeRow);
+            
+            //supply Row
+            var repSupplyRow = new TableRow();
+            var repSupplyHeader = new TableCell();
+            var repSupplyValue = new TableCell();
+            var repSupplyExplained = new TableCell();
+
+            repSupplyHeader.Append(new Paragraph(new Run(new Text("Supply:"))));
+            repSupplyHeader.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "20"}));
+
+            repSupplyValue.Append(new Paragraph(new Run(new Text(classification.Supply.ToString()))));
+            repSupplyValue.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "15"}));
+
+            repSupplyExplained.Append(new Paragraph(new Run(
+                new Text(classificationDetails[classification.Supply.ToString()].ToString()))));
+
+            repSupplyExplained.Append(new TableCellProperties(new TableCellWidth {Type = Pct, Width = "65"}));
+
+            repSupplyRow.Append(repSupplyHeader);
+            repSupplyRow.Append(repSupplyValue);
+            repSupplyRow.Append(repSupplyExplained);
+            classificationTable.Append(repSupplyRow);
 
             Utils.ApplyStyleTable(document, "GridTable4-Accent1", "GridTable4-Accent1", classificationTable);
             return classificationTable;

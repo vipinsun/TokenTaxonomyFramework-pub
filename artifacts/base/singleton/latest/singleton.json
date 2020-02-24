@@ -102,6 +102,7 @@
   "tokenUnit": "SINGLETON",
   "representationType": "COMMON",
   "valueType": "INTRINSIC",
+  "supply": "FIXED",
   "name": "",
   "symbol": "",
   "owner": "",

@@ -69,5 +69,10 @@
       }
     ],
     "maps": {}
-  }
+  },
+  "tokenType": "FUNGIBLE",
+  "tokenUnit": "WHOLE",
+  "representationType": "COMMON",
+  "valueType": "INTRINSIC",
+  "supply": "INFINITE"
 }
