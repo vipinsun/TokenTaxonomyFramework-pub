@@ -197,7 +197,7 @@ Some token properties from its base may have different values or meaning dependi
 ## Behaviors
 
 Behaviors are capabilities and restrictions containing logic and properties that can be common across token types. In the TTF, behaviors use the first letter of the behavior as its representation. Letter collisions can be avoided by adding additional letters from a single word name or the letter of a second word.
-Behaviors usually have existing “non-blockchain” implementations which are well understood in business contexts. 
+Behaviors usually have existing “non-blockchain” implementations which are well understood in business contexts.
 
 ### Common Behaviors
 
