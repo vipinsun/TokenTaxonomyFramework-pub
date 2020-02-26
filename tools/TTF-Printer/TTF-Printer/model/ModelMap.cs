@@ -76,6 +76,23 @@ namespace TTI.TTF.Taxonomy.Model
                     ? "This token is simply represented as a balance or quantity attributed to an owner address where all the balances are recorded on the same balance sheet, like a bank account. All instances can easily share common properties and locating them is simple."
                     : "Token instances are unique having their own identities and can be individually traced. Each unique token can carry unique properties that cannot be changed in one place and their balances must be summed. These are like bank notes, paper bills and metal coins, they are interchangeable but have unique properties like a serial number.");
             
+            switch (classification.Supply)
+            {
+                case Supply.Fixed:
+                    retVal.Add(classification.Supply.ToString(), "This token may issue an initial quantity upon creation, tokens cannot be removed or added to the supply.");
+                    break;
+                case Supply.CappedVariable:
+                    retVal.Add(classification.Supply.ToString(), "There is a maximum number of tokens that may exist at any given time, with quantities added and removed within the quantity cap.");
+                    break;
+                case Supply.Gated:
+                    retVal.Add(classification.Supply.ToString(), "Token quantities are added in tranches at certain points in time or specified events. Quantities in each tranche and when the tranche is issued are pre-defined that will represent the total quantity for the class, like a cap.");
+                    break;
+                case Supply.Infinite:
+                    retVal.Add(classification.Supply.ToString(), "Infinite supply indicates that tokens in the class can be created and removed with no cap and also potentially reflect negative supply for certain business cases.");
+                    break;
+                default:
+                    return retVal;
+            }
             return retVal;
         }
         
@@ -92,7 +109,8 @@ namespace TTI.TTF.Taxonomy.Model
                 TemplateType = template.Formula.TemplateType,
                 ValueType = spec.TokenBase.ValueType,
                 TokenType = spec.TokenBase.TokenType,
-                TokenUnit = spec.TokenBase.TokenUnit
+                TokenUnit = spec.TokenBase.TokenUnit,
+                Supply = spec.TokenBase.Supply
             };
         }
         

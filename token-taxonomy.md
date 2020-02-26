@@ -1,4 +1,4 @@
-# Token Taxonomy Framework (TTF) - November 2019
+# Token Taxonomy Framework (TTF) - February 2020
 
 The Token Taxonomy Framework bridges the gap between blockchain developers, line of business executives and legal/regulators allowing them to work together to model existing and define new business models and networks based on tokens.  The blockchain space alone makes it difficult to establish common ground, but when adding tokens to the mix they find themselves speaking completely different languages.  The framework’s purpose is to:
 
@@ -33,9 +33,10 @@ See the [Token Hall](https://medium.com/tokenhall) for a backgrounder for busine
 The TTF classifies tokens using five characteristics they possess, allowing tokens that share the same characteristics to be classified together.  These are foundational token concepts that can be applied to most tokens.
 
 - Token Type: Fungible or Non-Fungible.  The difference between the two is clarified later in this document
-- Token Unit: Fractional, Whole or Singleton indicates if a token can be divided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a $1 bill can sub-divided to 2 decimal places and can be broken into four .25¢ coins (or a number of different variation of coins) and is thus Fractional. Whole means no subdivision allowed - just whole numbers quantities - and a Singleton has a quantity of 1 with no subdivision.
+- Token Unit: Fractional, Whole or Singleton indicates if a token can be divided into smaller fractions, usually represented as decimals, or if there can be a quantity greater than 1. For example, a $1 bill can sub-divided to 2 decimal places and can be broken into four .25¢ coins (or a number of different variation of coins) and is thus Fractional. Whole means no subdivision allowed - just whole numbers quantities - and a Singleton has a quantity of 1, is indivisible and is the only token in the class.
 - Value Type: Intrinsic or Reference indicates if the token itself is a value, like a crypto currency, or if it references a value elsewhere, like a property title.
 - Representation Type: Common or Unique. Common tokens share a single set of properties, are not distinct from one another, and balances are recorded in a central place. These tokens are simply represented as a balance or quantity attributed to an owner’s address where all the balances are recorded on the same balance sheet. A unique token has its own identity, can have unique properties, and be individually traced. Common tokens are like money in a bank account and Unique tokens are like money in your pocket.
+- Supply: Fixed, Capped-Variable, Gated or Infinite. Supply indicates how many token instances, usually counted as whole instances, a token class can have during its lifetime. A token class that is fixed may issue an initial quantity upon creation, tokens cannot be removed or added to the supply. A capped-variable supply will allow for a maximum number of tokens to exist at any given time, with quantities added and removed within the quantity cap. A gated supply is common in crypto-currencies, where tranches of tokens are issued at certain points in time or events. A gated supply indicates up front the quantities in each tranche and when the tranche is issued that will represent the total quantity for the class, like a cap. Infinite supply indicates that tokens in the class can be created and removed with no cap and also potentially reflect negative supply for certain business cases.
 - Template Type: Single or Hybrid, covered later, but is an indication of any parent/child relationships or dependencies between tokens.
 
 Classification is useful when visualizing different token types and learning about the basic characteristics a token would need to have when you are using the TTF to define it.
@@ -49,7 +50,7 @@ The taxonomy uses these terms for all tokens:
 - Token Template - describes a token based on its type and what capabilities or restrictions a token created from the template would have (i.e. Fractional Fungible Template). A template has two parts:
   - Template Formula - a set of reusable taxonomy components that, when combined, is used to classify and describe how to work with a token.
   - Template Definition - is derived from a formula, filling in the details to define a token that can be used to deploy as a class (i.e. Cryptocurrency Token Definition).
-- Token Class - is an deployed token from a Template. (i.e. Bitcoin created from the crypto-currency template).
+- Token Class - is an deployed token from a Template. (i.e. Bitcoin created from the crypto-currency template). A token class can have one or more token instances.
 - Token Instance - a single token in a particular Token Class. (i.e. satoshi balance in your crypto-currency wallet).
 
 ![DefinitionStructure](images/definition-structure.png)
@@ -137,6 +138,12 @@ A non-fungible token is unique. Hence a non-fungible token is not interchangeabl
 
 A non-fungible token is identified by **&tau;<sub>N</sub>**.
 
+Non-fungible tokens can be whole, fractional or singleton. Whole and fractional non-fungibles of the same type can be deployed in the same class, where each instance of a token in the class can share some property values with other tokens in the class AND have distinctly unique values between them.
+
+A singleton, is where there is only one instance in the deployed token class with and that instance is indivisible. Singletons are useful if there is an asset or object to be tokenized that shares no properties or values with any other object.
+
+> A Singleton is a class unto itself.
+
 ### Representation Type
 
 Tokens can have either a common representation, sometimes called account or balance tokens, or unique representation, or UTXO (unspent transaction output). This distinction might seem subtle but is important when considering how tokens can be traced and if they can have isolated and unique properties.
@@ -190,7 +197,7 @@ Some token properties from its base may have different values or meaning dependi
 ## Behaviors
 
 Behaviors are capabilities and restrictions containing logic and properties that can be common across token types. In the TTF, behaviors use the first letter of the behavior as its representation. Letter collisions can be avoided by adding additional letters from a single word name or the letter of a second word.
-Behaviors usually have existing “non-blockchain” implementations which are well understood in business contexts. 
+Behaviors usually have existing “non-blockchain” implementations which are well understood in business contexts.
 
 ### Common Behaviors
 

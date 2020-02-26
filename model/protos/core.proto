@@ -22,14 +22,15 @@ message Base{
     taxonomy.model.artifact.TokenUnit token_unit = 3; //Token Unit
     taxonomy.model.artifact.RepresentationType representation_type = 4; //Representation Type
     taxonomy.model.artifact.ValueType value_type = 5; //Override this from the default of Intrinsic in the BaseReference for a TemplateDefinition to Reference type if needed.
-    string name = 6;  //This is a deployment value that is a common, well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
-    string symbol = 7; //This is a optional deployment value which is a unique symbol or identifier, not all tokens will have a symbol
-    string owner = 8; //This is a deployemnt value with a reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
-    int64 quantity = 9; //This is a deployemnt value, Base64 encoded ByteString - can represent the initial quantity created or the total minted or issued for the class.
-    int32 decimals = 10; //This is a deployemnt value, a number of decimal places a single token can be divided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
-    map<string, string> token_properties = 11; //This is a deployemnt value, contains generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
-    string constructor_name = 12; //A template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
-    google.protobuf.Any constructor = 13; //The constructor type defined in the token template artifact.
+    taxonomy.model.artifact.Supply supply = 6; //Override this from the default of Intrinsic in the BaseReference for a TemplateDefinition to Reference type if needed.
+    string name = 7;  //This is a deployment value that is a common, well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    string symbol = 8; //This is a optional deployment value which is a unique symbol or identifier, not all tokens will have a symbol
+    string owner = 9; //This is a deployemnt value with a reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    int64 quantity = 10; //This is a deployemnt value, Base64 encoded ByteString - can represent the initial quantity created or the total minted or issued for the class.
+    int32 decimals = 11; //This is a deployemnt value, a number of decimal places a single token can be divided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    map<string, string> token_properties = 12; //This is a deployemnt value, contains generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    string constructor_name = 13; //A template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+    google.protobuf.Any constructor = 14; //The constructor type defined in the token template artifact.
 }
 
 //Collection of base token types
@@ -41,14 +42,15 @@ message Bases{
 message BaseReference {
     taxonomy.model.artifact.ArtifactReference reference = 1; //Artifact Reference
     taxonomy.model.artifact.ValueType value_type = 2; //Set this to change from the default of intrinsic if it is a reference value token.
-    string name = 3;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
-    string symbol = 4; //An optionally unique symbol or identifier
-    string owner = 5; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
-    int64 quantity = 6; //Can represent the initial quantity created or the total minted or issued for the class.
-    int32 decimals = 7; //A number of decimal places a single token can be divided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
-    map<string, string> token_properties = 8; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
-    string constructor_name = 9; //A template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
-    google.protobuf.Any constructor = 10; //The constructor type defined in the token template artifact.
+    taxonomy.model.artifact.Supply supply = 3; //Set this to change from the default supply type from the base.
+    string name = 4;  //A common well understood name that represents the Token Class.  All instances, or tokens, within this class will be referred to by their class name.
+    string symbol = 5; //An optionally unique symbol or identifier
+    string owner = 6; //A reference to the owner of the token class or instance which can be a blockchain address, public key or other unique identifier.
+    int64 quantity = 7; //Can represent the initial quantity created or the total minted or issued for the class.
+    int32 decimals = 8; //A number of decimal places a single token can be divided into.  A typical fiat currency has a value of 2, i.e. $100.53. A value of 0 means that subdivision is not supported and a whole token is the smallest unit of the token that can be owned.
+    map<string, string> token_properties = 9; //Generic non-behavioral properties as a list of simple `name, value` pairs that can be implemented without property invocations for each.
+    string constructor_name = 10; //A template must have a constructor, the name is the proto3 message name in the implemented token base definition.  The default is Constructor.
+    google.protobuf.Any constructor = 11; //The constructor type defined in the token template artifact.
 }
 
 //Behavior artifact type

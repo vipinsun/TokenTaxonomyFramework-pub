@@ -76,6 +76,7 @@
   "tokenUnit": "FRACTIONAL",
   "representationType": "COMMON",
   "valueType": "INTRINSIC",
+  "supply": "INFINITE",
   "name": "",
   "symbol": "",
   "owner": "",

@@ -445,10 +445,10 @@ namespace TTI.TTF.Taxonomy
 			Console.WriteLine("	 Creates a new Taxonomy Template Definition from a Template Formula, saves it in the taxonomy and returns it after creation.");
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --p [ARTIFACT_ID] --t [ARTIFACT_TYPE: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet, 4 - TemplateFormula, 5 - TemplateDefinition, 6 - TokenSpecification]");
-			Console.WriteLine("	Prints all artifacts individually with the output placed in the artifacts folder.");
+			Console.WriteLine("	Prints an artifact individually with the output placed in the artifact's folder.");
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --a");
-			Console.WriteLine("	Prints all artifacts individually with the output placed in the artifacts folder.");
+			Console.WriteLine("	Prints all artifacts individually with the output placed in the artifact's folder.");
 			Console.WriteLine(
 				"Usage: dotnet TaxonomyClient --b");
 			Console.WriteLine("	Prints all artifacts in a Book with the output placed in root of the repo.");

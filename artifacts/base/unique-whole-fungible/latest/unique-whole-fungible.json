@@ -76,6 +76,7 @@
   "tokenUnit": "WHOLE",
   "representationType": "UNIQUE",
   "valueType": "INTRINSIC",
+  "supply": "INFINITE",
   "name": "",
   "symbol": "",
   "owner": "",

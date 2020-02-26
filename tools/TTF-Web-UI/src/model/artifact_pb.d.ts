@@ -19,6 +19,9 @@ export class Classification extends jspb.Message {
   getValueType(): ValueType;
   setValueType(value: ValueType): void;
 
+  getSupply(): Supply;
+  setSupply(value: Supply): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Classification.AsObject;
   static toObject(includeInstance: boolean, msg: Classification): Classification.AsObject;
@@ -34,6 +37,7 @@ export namespace Classification {
     tokenUnit: TokenUnit,
     representationType: RepresentationType,
     valueType: ValueType,
+    supply: Supply,
   }
 }
 
@@ -1169,6 +1173,12 @@ export enum TokenUnit {
   FRACTIONAL = 0,
   WHOLE = 1,
   SINGLETON = 2,
+}
+export enum Supply { 
+  FIXED = 0,
+  CAPPED_VARIABLE = 1,
+  GATED = 2,
+  INFINITE = 3,
 }
 export enum ArtifactType { 
   BASE = 0,

@@ -38,6 +38,14 @@ enum TokenUnit{
     SINGLETON = 2; //Not divisible and quantity of 1
 }
 
+//Supply indicates how many token instances, usually counted as whole instances, a token class can have during its lifetime. 
+enum Supply{
+    FIXED = 0; //A token class that is fixed may issue an initial quantity upon creation, tokens cannot be removed or added to the supply.
+    CAPPED_VARIABLE = 1; //A capped-variable supply will allow for a maximum number of tokens to exist at any given time, with quantities added and removed within the quantity cap. 
+    GATED = 2; //A gated supply is common in crypto-currencies, where tranches of tokens are issued at certain points in time or events. A gated supply indicates up front the quantities in each tranche and when the tranche is issued that will represent the total quantity for the class, like a cap.
+    INFINITE = 3;  //Infinite supply indicates that tokens in the class can be created and removed with no cap and also potentially reflect negative supply for certain business cases.
+}
+
 //Available ArtifactTypes
 enum ArtifactType{
     BASE = 0; 
@@ -81,7 +89,8 @@ message Classification{
     TokenType token_type = 2;
     TokenUnit token_unit = 3;
     RepresentationType representation_type = 4;
-    ValueType value_type = 5;  
+    ValueType value_type = 5;
+    Supply supply = 6; 
 }
 
 //Applied to each artifact

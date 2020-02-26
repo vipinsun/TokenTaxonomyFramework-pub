@@ -95,6 +95,7 @@
       }
     },
     "valueType": "REFERENCE",
+    "supply": "FIXED",
     "name": "",
     "symbol": "",
     "owner": "",
