@@ -1,0 +1,143 @@
+{
+  "artifact": {
+    "artifactSymbol": {
+      "id":"3e1e9bc1-0f99-4db7-9831-1eaa6f4f45cb",
+      "type": "PROPERTY_SET",
+      "visual": "&phi;<i>CEGO</i>",
+      "tooling": "phCEGO",
+      "version": "1.0",
+      "templateValidated": false
+    },
+    "name": "Carbon Emission Generator Object",
+    "aliases": [
+      "Carbon Emission Object"
+    ],
+    "controlUri": "../../../../../../artifacts/property-sets/cego/cego.proto",
+    "artifactDefinition": {
+      "businessDescription": "A token class that implements this property set will have a Carbon Emission Generator Object (CEGO) property or field with a Read/Query and Set control. A CEGO property has multiple fields that are used to identify the object that the carbon emission is attributed to. The property can contain multiple entries for tokens that represent composite objects that contain other CEGO entries.",
+      "businessExample": "Items in a supply chain generate carbon related tokens upon their creation. A supplier may create a product 'foo' that generates an emission token that the supplier will link with the 'foo' product. When the 'foo' is delivered to the buyer, the carbon emission token is transferred along with it. If the buyer of 'foo' uses it to create another product called 'bar', which also creates a carbon emission token, this token can include the CEGO for 'foo' as well as its CEGO to be able to account for the total carbon emissions for 'bar'.",
+      "analogies": [
+        {
+          "name": "Track and Trace",
+          "description": "Supply chain track and trace for commodities and finished goods.",
+          "artifactDefinition": null
+        }
+      ],
+      "comments": "",
+      "artifact": null
+    },
+    "dependencies": [],
+    "incompatibleWithSymbols": [],
+    "influencedBySymbols": [
+      {
+        "description": "Roles should be used to control what accounts can set the CEGO Property.",
+        "symbol": {
+          "id":"c32726da-9787-4dd8-8de3-d07d1733d0f6",
+          "type": "BEHAVIOR",
+          "visual": "<i>r</i>",
+          "tooling": "r",
+          "version": "1.0",
+          "templateValidated": false
+        }
+      }
+    ],
+    "artifactFiles": [
+      {
+        "content": "CONTROL",
+        "fileName": "cego.proto",
+        "fileData": "",
+        "artifact": null
+      },
+      {
+        "content": "UML",
+        "fileName": "cego.md",
+        "fileData": "",
+        "artifact": null
+      }
+    ],
+    "maps": {
+      "codeReferences": [],
+      "implementationReferences": [],
+      "resources": [],
+      "artifact": null
+    }
+  },
+  "properties": [
+    {
+      "name": "CEGOS",
+      "valueDescription": "Contains one or more CEGO composite property.",
+      "templateValue": "",
+      "propertyInvocations": [
+        {
+          "name": "GetCEGOS",
+          "description": "Request the list of the CEGOS.",
+          "request": {
+            "controlMessageName": "GetCEGOSRequest",
+            "inputParameters": [],
+            "description": "The request"
+          },
+          "response": {
+            "controlMessageName": "GetCEGOSResponse",
+            "outputParameters": [
+              {
+                "name": "CEGOS",
+                "valueDescription": "Returning the list of CEGOS."
+              }
+            ],
+            "description": "The response"
+          }
+        },
+        {
+          "name": "AddSEGO",
+          "description": "Add a SEGO entry into the list of the Property, note if Roles should be applied to the Setter.",
+          "request": {
+            "controlMessageName": "AddSEGORequest",
+            "inputParameters": [
+              {
+                "name": "NewSEGO",
+                "valueDescription": "The SEGO data element to add to the list."
+              }
+            ],
+            "description": "The request"
+          },
+          "response": {
+            "controlMessageName": "AddCEGOResponse",
+            "outputParameters": [
+              {
+                "name": "Confirmation",
+                "valueDescription": "Returning the CEGO of the set request."
+              }
+            ],
+            "description": "The response"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "CEGO",
+          "valueDescription": "Contains one CEGO property, of which there can potentially be many,",
+          "templateValue": "",
+          "properties":
+          [
+            {
+              "name": "OrgId",
+              "valueDescription": "Id or name of the organization that created the CEGO.",
+              "templateValue": ""
+            },
+            {
+              "name": "CEGOId",
+              "valueDescription": "Unique identifier for the object, can be a GUID/UUID or a DiD",
+              "templateValue": ""
+            },
+            {
+              "name": "Description",
+              "valueDescription": "Description of the CEGO i.e. 'pallet of steel', etc.",
+              "templateValue": ""
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}

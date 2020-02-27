@@ -1016,6 +1016,7 @@ namespace TTI.TTF.Taxonomy
 			var baseToken = GetArtifactById<Base>(validated.TokenBase.Reference.Id).Clone();
 			baseToken.Artifact.Maps.MergeFrom(validated.Artifact.Maps);
 			baseToken.ValueType = validated.TokenBase.ValueType;
+			baseToken.Supply = validated.TokenBase.Supply;
 			baseToken.Decimals = validated.TokenBase.Decimals;
 			baseToken.Name = validated.TokenBase.Name;
 			baseToken.Owner = validated.TokenBase.Owner;
