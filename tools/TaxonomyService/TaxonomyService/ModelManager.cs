@@ -1163,10 +1163,20 @@ namespace TTI.TTF.Taxonomy
 			var newFiles = ConvertArtifactFiles(retVal.Artifact.ArtifactFiles, name);
 			retVal.Artifact.ArtifactFiles.Clear();
 			retVal.Artifact.ArtifactFiles.AddRange(newFiles);
-	
+			
 			retVal.Artifact.Name = name;
 			retVal.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
 			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TemplateDefinition;
+
+			if (retVal.Artifact.Contributors == null)
+			{
+				retVal.Artifact.Contributors?.Add(new Contributor
+				{
+					Name = "",
+					Organization = ""
+				});
+			}
+			
 			retVal.FormulaReference = new ArtifactReference
 			{
 				Id = formula.Artifact.ArtifactSymbol.Id,
@@ -1526,7 +1536,16 @@ namespace TTI.TTF.Taxonomy
 						Name = "Analogy 1",
 						Description = name + " analogy 1 description"
 					}}
-				}
+				},
+				Maps = new Maps(),
+				Contributors = { new Contributor
+				{
+					Name = "",
+					Organization = ""
+				}},
+				ControlUri = ""
+				
+				
 			};
 
 			return artifact;
