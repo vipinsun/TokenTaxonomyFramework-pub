@@ -13,7 +13,7 @@
       "Carbon Emission Token"
     ],
     "artifactDefinition": {
-      "businessDescription": "This token represents 1 metric ton of carbon or green house gas (GHG) that is emitted into the atmosphere. This token is fractional or dividable up to 8 decimal places. It is a unique token so that it may be issued in quantities of a fraction or numbers larger than 1. Meaning, if in the production of an item that a supplier creates generates 1.242 tons of carbon a token can be created with the same amount. This token also has the Carbon Emission Generator Object property that allows the creator of the token to specify what item the carbon is related to, which is helpful for track and trace supply chain requirements.",
+      "businessDescription": "This token represents representing a specified volume of metric tons of green house gas (GHG) emissions. This token is fractional or dividable up to 8 decimal places. It is a unique token so that it may be issued in quantities of a fraction or numbers larger than 1. Meaning, if in the production of an item that a supplier creates generates 1.242 tons of carbon a token can be created with the same amount. This token also has the Carbon Emission Generator Object property that allows the creator of the token to specify what item the carbon is related to, which is helpful for track and trace supply chain requirements.",
       "businessExample": "CET tokens are useful for tracking carbon within a supply chain as it allow for CETs to follow items through the supply chain between parties. This allows for carbon tracing for commodities and total carbon for finished goods to be calculated and traced to sources.",
       "analogies": [
         {
@@ -512,26 +512,26 @@
       },
       "properties": [
         {
-          "name": "CEGOS",
-          "valueDescription": "Contains one or more CEGO composite property.",
+          "name": "EGOS",
+          "valueDescription": "Contains one or more EGO composite property.",
           "templateValue": "",
           "propertyInvocations": [
             {
               "id": "",
-              "name": "GetCEGOS",
-              "description": "Request the list of the CEGOS.",
+              "name": "GetEGOS",
+              "description": "Request the list of the EGOS.",
               "request": {
-                "controlMessageName": "GetCEGOSRequest",
+                "controlMessageName": "GetEGOSRequest",
                 "description": "The request",
                 "inputParameters": []
               },
               "response": {
-                "controlMessageName": "GetCEGOSResponse",
+                "controlMessageName": "GetEGOSResponse",
                 "description": "The response",
                 "outputParameters": [
                   {
-                    "name": "CEGOS",
-                    "valueDescription": "Returning the list of CEGOS."
+                    "name": "EGOS",
+                    "valueDescription": "Returning the list of EGOS."
                   }
                 ]
               }
@@ -551,12 +551,12 @@
                 ]
               },
               "response": {
-                "controlMessageName": "AddCEGOResponse",
+                "controlMessageName": "AddEGOResponse",
                 "description": "The response",
                 "outputParameters": [
                   {
                     "name": "Confirmation",
-                    "valueDescription": "Returning the CEGO of the set request."
+                    "valueDescription": "Returning the EGO of the set request."
                   }
                 ]
               }
@@ -564,20 +564,20 @@
           ],
           "properties": [
             {
-              "name": "CEGO",
-              "valueDescription": "Contains one CEGO property, of which there can potentially be many,",
+              "name": "EGO",
+              "valueDescription": "Contains one EGO property, of which there can potentially be many,",
               "templateValue": "",
               "propertyInvocations": [],
               "properties": [
                 {
                   "name": "OrgId",
-                  "valueDescription": "Id or name of the organization that created the CEGO.",
+                  "valueDescription": "Id or name of the organization that created the EGO.",
                   "templateValue": "",
                   "propertyInvocations": [],
                   "properties": []
                 },
                 {
-                  "name": "CEGOId",
+                  "name": "EGOId",
                   "valueDescription": "Unique identifier for the object, can be a GUID/UUID or a DiD",
                   "templateValue": "",
                   "propertyInvocations": [],
@@ -585,7 +585,7 @@
                 },
                 {
                   "name": "Description",
-                  "valueDescription": "Description of the CEGO i.e. 'pallet of steel', etc.",
+                  "valueDescription": "Description of the EGO i.e. 'pallet of steel', etc.",
                   "templateValue": "",
                   "propertyInvocations": [],
                   "properties": []

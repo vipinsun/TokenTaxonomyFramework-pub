@@ -13,7 +13,7 @@
       "Infinite supply, Unique Fractional Fungible"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Infinite Supply Fractional Fungible.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be minted if the requesting party is in the minters role and it cannot be burned. This template contains the CEGO property set as well.",
+      "businessDescription": "This is a Infinite Supply Fractional Fungible.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be minted if the requesting party is in the minters role and it cannot be burned. This template contains the EGO property set as well.",
       "businessExample": "Typically used to represent an carbon emissions token.",
       "analogies": [
         {
@@ -31,13 +31,13 @@
     "artifactFiles": [
       {
         "content": "CONTROL",
-        "fileName": "[tF’{d,t,m,r}+phCEGO].proto",
+        "fileName": "[tF’{d,t,m,r}+phEGO].proto",
         "fileData": "",
         "artifact": null
       },
       {
         "content": "UML",
-        "fileName": "[tF’{d,t,m,r}+phCEGO].md",
+        "fileName": "[tF’{d,t,m,r}+phEGO].md",
         "fileData": "",
         "artifact": null
       }
@@ -108,8 +108,8 @@
       "propertySet":{
         "id":"3e1e9bc1-0f99-4db7-9831-1eaa6f4f45cb",
         "type": "PROPERTY_SET",
-        "visual": "&phi;<i>CEGO</i>",
-        "tooling": "phCEGO",
+        "visual": "&phi;<i>EGO</i>",
+        "tooling": "phEGO",
         "version": "1.0",
         "templateValidated": false
       }
