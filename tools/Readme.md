@@ -48,13 +48,14 @@ if using the dotnet client using the [dotnet core runtime](https://dotnet.micros
 
 - `--f`: must be used as a single argument and fetches the entire Taxonomy Model and writes it to the console.
 - `--ts`: option indicating the artifact symbol. Value should be the letter or acronym for the artifact.
-- `--t`: option for the artifact type. Valid values are 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate
+- `--t`: option for the artifact type. Valid values are 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet, 4 = TemplateFormula, 5 = TemplateDefinition or 6 = Specification
 - `--s`: option to save a queried artifact so you may edit it locally. No value is set after the option
 - `--u`: option to update a saved local artifact to the taxonomy. Value is the name of the folder to be used for the update. This is the folder created by the --s option and should be a relative path from where you are executing the command.
 - `--c`: option to create a new artifact. Value is a proposed symbol for the artifact.
-- `--n`: option for the name of a new artifact, used with --c.  Value is the name of the artifact.
-- `--d`: create a template definition from a template formula, requires `--n`
-- `--s id`: retrieves a TokenSpecification from a Template Definition Id from the Service.
+- `--n <name>`: option for the name of a new artifact, used with --c.  Value is the name of the artifact.
+- `--d <formula id>`: create a template definition from a template formula, requires `--n`
+- `--s <definition id>`: retrieves a TokenSpecification from a Template Definition Id from the Service.
+- `--p <id>`: prints an artifact, must be paired with the --t for the artifact type.
 
 Examples:
 
@@ -64,6 +65,7 @@ Examples:
 - `--u roles --t 1` will update the artifact from the roles folder saved in the previous example.
 - `--c phSKU --n sku --t 3` will create a new artifact, a behavior-set, called `sku` with a symbol phSKU.
 - `--d 89ff775c-27f1-494e-b31c-f3fb3a9527ac --n InvoiceToken` will create a template definition called InvoiceToken from the template formula with the UUID/Guid after the `--d`.
+- `--p 16729af5-8bce-44d9-9d8f-986e69cd3bc8 --t 6` will print the specification with this Id.
 
 ## Artifact Generator
 
@@ -81,10 +83,10 @@ The TTF-Printer runs as a service and uses the Taxonomy Service to create OpenXm
 
 It can print individual artifacts, which it creates in the artifacts folder or overwrite to a `.docx` file. You can also print all TTF artifacts which will create print out OpenXml in each artifacts folder or create/overwrite a TTF-Book.docx in the root of the repo.
 
-The TTF-Printer can be tested using the TaxonomyClient to print a single artifact given the artifact Id using `-Id` and type `-t` where the types are 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification.  Example below prints a specification with the Id `3b557279-5400-472e-a68e-feb818930276`
+The TTF-Printer can be tested using the TaxonomyClient to print a single artifact given the artifact Id using `--p` and type `--t` where the types are 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification.  Example below prints a specification with the definition Id `3b557279-5400-472e-a68e-feb818930276`
 
 ```bash
-dotnet TTF-Printer -id 3b557279-5400-472e-a68e-feb818930276 -t 6
+dotnet txclient.dll --p 3b557279-5400-472e-a68e-feb818930276 --t 6
 ```
 
 Artifacts are printed in their respective folder with a `.docx` extension and can be edited with most Word Processing documents. If you find typos or errors, DO NOT modify the `.docx` file, but the `.json` file where the error occurs and re-print the artifact.

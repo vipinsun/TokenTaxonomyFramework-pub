@@ -1016,6 +1016,7 @@ namespace TTI.TTF.Taxonomy
 			var baseToken = GetArtifactById<Base>(validated.TokenBase.Reference.Id).Clone();
 			baseToken.Artifact.Maps.MergeFrom(validated.Artifact.Maps);
 			baseToken.ValueType = validated.TokenBase.ValueType;
+			baseToken.Supply = validated.TokenBase.Supply;
 			baseToken.Decimals = validated.TokenBase.Decimals;
 			baseToken.Name = validated.TokenBase.Name;
 			baseToken.Owner = validated.TokenBase.Owner;
@@ -1162,10 +1163,20 @@ namespace TTI.TTF.Taxonomy
 			var newFiles = ConvertArtifactFiles(retVal.Artifact.ArtifactFiles, name);
 			retVal.Artifact.ArtifactFiles.Clear();
 			retVal.Artifact.ArtifactFiles.AddRange(newFiles);
-	
+			
 			retVal.Artifact.Name = name;
 			retVal.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
 			retVal.Artifact.ArtifactSymbol.Type = ArtifactType.TemplateDefinition;
+
+			if (retVal.Artifact.Contributors == null)
+			{
+				retVal.Artifact.Contributors?.Add(new Contributor
+				{
+					Name = "",
+					Organization = ""
+				});
+			}
+			
 			retVal.FormulaReference = new ArtifactReference
 			{
 				Id = formula.Artifact.ArtifactSymbol.Id,
@@ -1525,7 +1536,16 @@ namespace TTI.TTF.Taxonomy
 						Name = "Analogy 1",
 						Description = name + " analogy 1 description"
 					}}
-				}
+				},
+				Maps = new Maps(),
+				Contributors = { new Contributor
+				{
+					Name = "",
+					Organization = ""
+				}},
+				ControlUri = ""
+				
+				
 			};
 
 			return artifact;

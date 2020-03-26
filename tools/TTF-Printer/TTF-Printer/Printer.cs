@@ -106,6 +106,7 @@ namespace TTI.TTF.Taxonomy
             {
                 ModelMap.FilePath = _printToPath + ModelMap.FolderSeparator;
             }
+            _log.Info("Printer PrintToPath: " + ModelMap.FilePath);
 
             _apiServer = new Server
             {
