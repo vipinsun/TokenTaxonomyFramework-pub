@@ -426,3 +426,4 @@ tools/artifactGenerator/.idea/.idea.artifactGenerator/riderModule.iml
 samples/Thumbs.db
 tools/TTF-Win/Model/tom.cd
 tools/TaxonomyObjectModel/out/
+tools/TaxonomyService/netstat

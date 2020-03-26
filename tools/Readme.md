@@ -19,7 +19,7 @@ cd tools/TaxonomyService
 ./docker-build.sh
  ```
 
-This will build the Client and Service, starting the later awaiting client requests.  You can now start testing out the taxonomy.
+This will build the Client and Service, starting the latter awaiting client requests.  You can now start testing out the taxonomy.
 
 ### Test the Taxonomy
 
@@ -28,7 +28,7 @@ This will build the Client and Service, starting the later awaiting client reque
 Windows & Mac:
 
 ```bash
-docker run -e gRpcHost=host.docker.internal -env printHost=host.docker.internal txclient --f
+docker run -e gRpcHost=host.docker.internal -e printHost=host.docker.internal txclient --f
 ```
 
 Linux:
@@ -37,7 +37,7 @@ As `host.docker.internal` is currently not supported by Docker for Linux, the IP
 
 ```bash
 DOCKER_BRIDGE_IP=`docker network inspect bridge --format='{{(index .IPAM.Config 0).Gateway}}'`
-docker run -e gRpcHost=$DOCKER_BRIDGE_IP -env printHost=$DOCKER_BRIDGE_IP txclient --f
+docker run -e gRpcHost=$DOCKER_BRIDGE_IP --env printHost=$DOCKER_BRIDGE_IP txclient --f
 ```
 
 if using the dotnet client using the [dotnet core runtime](https://dotnet.microsoft.com/download):
@@ -77,7 +77,7 @@ The above creates a folder, if it doesn't already exist, in the artifacts folder
 
 ## TTF-Printer
 
-The TTF-Printer runs as a service and uses the Taxonomy Service to create OpenXml Word Processing documents for Microsoft Word, Goggle Docs, etc.
+The TTF-Printer runs as a service and uses the Taxonomy Service to create OpenXml Word Processing documents for Microsoft Word, Google Docs, etc.
 
 It can print individual artifacts, which it creates in the artifacts folder or overwrite to a `.docx` file. You can also print all TTF artifacts which will create print out OpenXml in each artifacts folder or create/overwrite a TTF-Book.docx in the root of the repo.
 
