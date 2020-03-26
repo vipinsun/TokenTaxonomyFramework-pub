@@ -36,7 +36,7 @@ services:
         environment:
             - taxonomyHost=taxonomyService
             - taxonomyPort=8086
-            - artifactPath=artifacts
+            - printToPath=artifacts
             - printerHost=taxonomyPrinter
             - printerPort=8088
         ports:
