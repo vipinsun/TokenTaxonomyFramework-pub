@@ -422,7 +422,8 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", iDescription);
 
                 BuildInvocationsTable(document, p.PropertyInvocations);
-                BuildPropertiesTable(document, p.Properties, book);
+                if(p.Properties.Any())
+                    BuildPropertiesTable(document, p.Properties, book);
             }
 
             if (!book) return;

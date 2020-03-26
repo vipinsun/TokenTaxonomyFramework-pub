@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Packaging;
+﻿using System.Linq;
+using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
 using log4net;
@@ -42,8 +43,8 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.AddTable(document, basicProps); //"PlainTable3"
 
             CommonPrinter.BuildInvocationsTable(document, behavior.Invocations);
-
-            CommonPrinter.BuildPropertiesTable(document, behavior.Properties, book);
+            if(behavior.Properties.Any())
+                CommonPrinter.BuildPropertiesTable(document, behavior.Properties, book);
 
         }
         
@@ -82,13 +83,13 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             CommonPrinter.BuildInfluenceBindings(document, behavior.InfluenceBindings, ArtifactType.Behavior);
            
-            CommonPrinter.BuildPropertiesTable(document, behavior.Properties, false);
+            if(behavior.Properties.Any())
+                CommonPrinter.BuildPropertiesTable(document, behavior.Properties, false);
 
         }
         
         public static void AddBehaviorSpecification(WordprocessingDocument document, BehaviorSpecification behavior)
         {
-            ArtifactPrinter.AddArtifactContent(document, behavior.Artifact, false,true);
             _log.Info("Printing Behavior Properties: " + behavior.Artifact.Name);
             var body = document.MainDocumentPart.Document.Body;
 
@@ -98,6 +99,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
 
             ArtifactPrinter.AddBehaviorArtifactSpecification(document, behavior.Artifact);
+            ArtifactPrinter.AddArtifactContent(document, behavior.Artifact, false,false, true);
             
             var basicProps = new[,]
             {
@@ -108,7 +110,9 @@ namespace TTI.TTF.Taxonomy.TypePrinters
 
             CommonPrinter.BuildInvocationBindingsTable(document, behavior.Invocations, behavior.Artifact.Name);
 
-            CommonPrinter.BuildPropertiesTable(document, behavior.Properties, false);
+            var bProps = behavior.Properties.ToArray();
+            if(bProps.Length > 0)
+                CommonPrinter.BuildPropertiesTable(document, behavior.Properties, false);
 
         }
 
