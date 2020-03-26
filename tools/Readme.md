@@ -81,7 +81,7 @@ The TTF-Printer runs as a service and uses the Taxonomy Service to create OpenXm
 
 It can print individual artifacts, which it creates in the artifacts folder or overwrite to a `.docx` file. You can also print all TTF artifacts which will create print out OpenXml in each artifacts folder or create/overwrite a TTF-Book.docx in the root of the repo.
 
-The TTF-Printer can be tested using the TaxonomyClient to print a single artifact given the artifact Id using `-Id` and type `-t` where the types are 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification.  Example below prints a specification with the Id `3b557279-5400-472e-a68e-feb818930276`
+The TTF-Printer can be tested using the TaxonomyClient to print a single artifact given the artifact Id using `-Id` and type `-t` where the types are 0=Base, 1=Behavior, 2-BehaviorGroup, 3=PropertySet, 4=TemplateFormula, 5=TemplateDefinition, 6=TokenTemplate/Specification.  Example below prints a specification with the definition Id `3b557279-5400-472e-a68e-feb818930276`
 
 ```bash
 dotnet TTF-Printer -id 3b557279-5400-472e-a68e-feb818930276 -t 6
