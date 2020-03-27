@@ -1,7 +1,7 @@
 {
   "artifact": {
     "artifactSymbol": {
-      "id": "3a0817d0-c9e0-40bd-9f46-9b77a3b1e653",
+      "id": "85a354d1-cc3a-4397-abc2-5a9c401c874e",
       "type": "TEMPLATE_DEFINITION",
       "visual": "&tau;<sub>F</sub>{<i>d,t,p,c,SC</i>}",
       "tooling": "tF{d,t,p,c,SC}",
@@ -37,13 +37,13 @@
         "artifact": null
       }
     ],
-  "maps": {
+    "maps": {
       "codeReferences": [],
       "implementationReferences": [],
       "resources": [],
       "artifact": null
     },
-  "contributors": [
+    "contributors": [
       {
         "name": "Vipin Bharathan",
         "organization": "dlt.nyc"
@@ -52,8 +52,8 @@
         "name": "Mani Pillai",
         "organization": "SwapsHub"
       }
-    ]
 
+    ]
   },
   "formulaReference": {
     "id": "1ed9e758-905b-4868-b615-ab3b2195e76a",
@@ -83,7 +83,7 @@
     "symbol": "",
     "owner": "",
     "quantity": "0",
-    "decimals": 4,
+    "decimals": 0,
     "tokenProperties": {},
     "constructorName": "Constructor",
     "constructor": null
@@ -123,7 +123,7 @@
               "description": "Return the value",
               "request": {
                 "controlMessageName": "GetDecimalsRequest",
-                "description": "Must return 4",
+                "description": "",
                 "inputParameters": []
               },
               "response": {
