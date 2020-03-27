@@ -19,7 +19,7 @@ cd tools/TaxonomyService
 ./docker-build.sh
  ```
 
-This will build the Client and Service, starting the latter awaiting client requests.  You can now start testing out the taxonomy.
+This will build the Client and Service, starting both later awaiting client requests.  You can now start testing out the taxonomy.
 
 ### Test the Taxonomy
 
