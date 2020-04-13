@@ -166,7 +166,7 @@
       "reference": {
         "id": "d5807a8e-879b-4885-95fa-f09ba2a22172",
         "type": "BEHAVIOR",
-        "referenceNotes": "Non-Subdividable",
+        "referenceNotes": "Indivisible",
         "values": {
           "controlUri": "",
           "artifactFiles": [],
@@ -211,7 +211,7 @@
       "properties": [
         {
           "name": "Decimals",
-          "valueDescription": "Set to Zero, not allowing any subdivision, usually this is applied to the base token.",
+          "valueDescription": "Set to Zero, not allowing any division, usually this is applied to the base token.",
           "templateValue": "0",
           "propertyInvocations": [
             {
