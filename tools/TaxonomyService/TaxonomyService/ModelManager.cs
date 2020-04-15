@@ -365,8 +365,8 @@ namespace TTI.TTF.Taxonomy
 					var templateFormula = artifact.Unpack<TemplateFormula>();
 					try
 					{
-						Taxonomy.TemplateFormulas.Remove(templateFormula.Artifact.ArtifactSymbol.Tooling);
-						Taxonomy.TemplateFormulas.Add(templateFormula.Artifact.ArtifactSymbol.Tooling, templateFormula);
+						Taxonomy.TemplateFormulas.Remove(templateFormula.Artifact.ArtifactSymbol.Id);
+						Taxonomy.TemplateFormulas.Add(templateFormula.Artifact.ArtifactSymbol.Id, templateFormula);
 					}
 					catch (Exception)
 					{

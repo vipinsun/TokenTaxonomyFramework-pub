@@ -883,8 +883,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 					var templateFormulaArtifact =
 						ModelManager.GetTemplateFormulaArtifact(updateTokenTemplate.Artifact.ArtifactSymbol);
 					existingVersion = templateFormulaArtifact.Artifact.ArtifactSymbol.Version;
-					templateFormulaArtifact.MergeFrom(updateTokenTemplate);
-					templateFormulaArtifact.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
+					templateFormulaArtifact = updateTokenTemplate; // templateFormulaArtifact.MergeFrom(updateTokenTemplate); <- this duplicates all sequences and does not allow removal
+					// templateFormulaArtifact.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString(); <-- this causes multiple values in 'Taxonomy.TemplateFormulas' to have the same 'Tooling' property which causes exceptions when looking up a formula by tooling
 					artifactName = updateTokenTemplate.Artifact.Name.ToLower();
 					
 					artifactJson = jsf.Format(templateFormulaArtifact);
@@ -1331,8 +1331,8 @@ namespace TTI.TTF.Taxonomy.Controllers
 			// If the destination directory doesn't exist, create it.
 			if (Directory.Exists(destDirName))
 			{
-				_log.Error(destDirName + " already exists, creating a backup.");
-				destDirName = Utils.Randomize(destDirName);
+				_log.Error(destDirName + " already exists, overwriting.");
+				// destDirName = Utils.Randomize(destDirName);
 			}
 			if (!Directory.Exists(destDirName))
 			{
@@ -1346,7 +1346,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			foreach (var file in files)
 			{
 				var tempPath = Path.Combine(destDirName, file.Name);
-				file.CopyTo(tempPath, false);
+				file.CopyTo(tempPath, true);
 			}
 
 			return (true, "");
