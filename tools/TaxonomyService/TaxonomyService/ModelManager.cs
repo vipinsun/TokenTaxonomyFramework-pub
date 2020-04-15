@@ -602,7 +602,7 @@ namespace TTI.TTF.Taxonomy
 			Log.Info("CheckForUniqueTemplateFormula: " + name);
 			try
 			{
-				if(string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(ArtifactType.TemplateFormula, formula)))
+				if(!string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(ArtifactType.TemplateFormula, formula)))
 					throw new Exception("Tooling Symbol Found.");
 			}
 			catch (Exception)
