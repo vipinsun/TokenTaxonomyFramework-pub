@@ -673,6 +673,17 @@ namespace TTI.TTF.Taxonomy.Controllers
 					if (string.IsNullOrEmpty(templateFormula.Artifact.ArtifactSymbol.Id))
 						templateFormula.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
+
+					// Artifact name must also be unique, otherwise an existing artifact might get overwritten (and this won't get noticed
+					// until after a service restart because the in-memory map of formulas is keyed off of the tooling formula)
+					int uniqueCounter = 0;
+					while (outputFolder.Exists && (outputFolder.GetFiles().Length > 0)) {
+						uniqueCounter++;
+						templateFormula.Artifact.Name = artifactName + uniqueCounter;
+						outputFolder = GetArtifactFolder(artifactType, templateFormula.Artifact.Name);
+					}
+					artifactName = templateFormula.Artifact.Name;
+
 					if(templateFormula.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(templateFormula.Artifact.ArtifactFiles, outputFolder, artifactName);
 					else
