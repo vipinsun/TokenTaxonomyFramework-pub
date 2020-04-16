@@ -769,6 +769,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 				var artifactStream = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName + ".json");
 				artifactStream.Write(formattedJson);
 				artifactStream.Close();
+				ModelManager.AddOrUpdateInMemoryArtifact(retVal.Type, retVal.ArtifactTypeObject);
 			}
 			
 			_log.Info("Complete");
