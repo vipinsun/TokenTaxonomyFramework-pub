@@ -695,7 +695,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					break;
 				case ArtifactType.TemplateDefinition:
 					var templateDefinition = artifactRequest.Artifact.Unpack<TemplateDefinition>();
-					if (ModelManager.CheckForUniqueTemplateFormula(templateDefinition.Artifact.Name, templateDefinition.Artifact.ArtifactSymbol.Tooling))
+					if (!ModelManager.CheckForUniqueTemplateFormula(templateDefinition.Artifact.Name, templateDefinition.Artifact.ArtifactSymbol.Tooling))
 					{
 						var newName = ModelManager.MakeUniqueDefinitionName(templateDefinition.Artifact.Name);
 						templateDefinition.Artifact.Name = newName;
@@ -707,6 +707,17 @@ namespace TTI.TTF.Taxonomy.Controllers
 						templateDefinition.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
+
+					// Artifact name must also be unique, otherwise an existing artifact might get overwritten (and this won't get noticed
+					// until after a service restart because the in-memory map of formulas is keyed off of the tooling formula)
+					uniqueCounter = 0;
+					while (outputFolder.Exists && (outputFolder.GetFiles().Length > 0)) {
+						uniqueCounter++;
+						templateDefinition.Artifact.Name = artifactName + uniqueCounter;
+						outputFolder = GetArtifactFolder(artifactType, templateDefinition.Artifact.Name);
+					}
+					artifactName = templateDefinition.Artifact.Name;
+
 					if(templateDefinition.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(templateDefinition.Artifact.ArtifactFiles, outputFolder, artifactName);
 					else

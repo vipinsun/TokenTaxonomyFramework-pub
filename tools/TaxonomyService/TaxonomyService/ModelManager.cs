@@ -379,14 +379,14 @@ namespace TTI.TTF.Taxonomy
 					var templateDefinition = artifact.Unpack<TemplateDefinition>();
 					try
 					{
-						Taxonomy.TemplateDefinitions.Remove(templateDefinition.Artifact.ArtifactSymbol.Tooling);
-						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Tooling, templateDefinition);
+						Taxonomy.TemplateDefinitions.Remove(templateDefinition.Artifact.ArtifactSymbol.Id);
+						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Id, templateDefinition);
 					}
 					catch (Exception)
 					{
 						Log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + templateDefinition.Artifact.ArtifactSymbol.Tooling);
 						Log.Info("Adding artifact to Taxonomy.");
-						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Tooling, templateDefinition);
+						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Id, templateDefinition);
 					}
 					return true;
 
