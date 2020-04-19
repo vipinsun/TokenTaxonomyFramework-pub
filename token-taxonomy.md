@@ -131,9 +131,9 @@ The taxonomy uses symbols to represent token bases and possible behaviors that a
 
 Fungibility as we often define things in the token world seems to have more to do with "Financial Fungibility" and methods of accounting for an asset OR it has to do with characteristics related to the usage of the asset rather than a pure native built-in fungibility characteristic.
 
-Per Merriam-Webster: Fungible is defined as: being something (such as money or a commodity) of such a nature that one part or quantity may be replaced by another equal part or quantity in paying a debt or settling an account OR capable of mutual substitution : INTERCHANGEABLE
+> Per Merriam-Webster: Fungible is defined as: being something (such as money or a commodity) of such a nature that one part or quantity may be replaced by another equal part or quantity in paying a debt or settling an account OR capable of mutual substitution : INTERCHANGEABLE
 
-### Hypothesis & Proposal to Define & Determine Fungibility
+### Determining Fungibility
 
 Hypothesis: it is difficult for people to say what something is and for people to agree on that definition without first analyzing and describing the properties and behaviors of what it is they’re defining.
 
@@ -145,9 +145,7 @@ Starting with the very first question "Is it Fungible or Non-fungible?" This is 
 - Do all instances have precisely the same form and fit properties?
 - Does every single instance exhibit the same exact built-in or "native/natural" behavior (properties that don't depend on how it is being used)?
 
-### Fungibility vs Non-Fungibility Tests of the Hypothesis:
-
-Below are some examples to test the hypothesis.
+### Fungibility vs Non-Fungibility Examples
 
 #### Printed & Digitally Native Currency
 
@@ -187,15 +185,12 @@ Similarities - It is generally acceptable to track a bushel of wheat or corn as 
 
 Differences - If, however, it is determined that wheat or corn from a certain country or farm has a different form or function or maybe has been found to have an issue affecting public health, we might need to track it in many ways as a non-fungible asset.
 
-### Conclusion on New Ways to Define & Determine Fungibility Characteristics
+### Determining Fungibility Characteristics
 
-In reality it seems that most assets that we are looking to represent by Tokens in the Enterprise Token Ecosystem are going to be Hybrid Tokens. It seems that we might be able to more easily define and more importantly agree on definitions of tokens if we:
+In reality, many assets in the Enterprise Token Ecosystem are going to be Hybrid Tokens. Determining the best token representation is more complicated and requires collaboration and discussion. Steps to focus the discussion might include:
 
-- First seek to understand the properties of the asset we are trying to represent via a Digital Token
-- We separate natively/naturally properties of a Token vs the behavior and usage of the Token
-- We break things down deeper than purely Fungible vs Non-fungible by defining it as Financially Fungible, Form or Fit Fungible or Functionally Fungible
-
-This of course is likely to impact the form and structure of the TTF tools and formulas so it is recognized that this proposal might be considered too disruptive to the current state of the TTF. However, it is the belief of the proposer that we are still very early in defining these standards and it is still good timing to consider it before systems become fully implemented.
+1. Seek to understand the properties of the asset to be represented via a Digital Token. Separate natively/naturally properties of a Token vs the behavior and usage of the Token
+2. Break things down deeper than purely Fungible vs Non-fungible. A tF', unique fungible would be able to have a unique serial number and also be financially fungible. Consider possible categories of fungibility (for example Financially Fungible, Form or Fit Fungible or Functionally Fungible)
 
 ### Fungible
 
