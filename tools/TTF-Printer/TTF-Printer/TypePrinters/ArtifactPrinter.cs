@@ -30,7 +30,7 @@ namespace TTI.TTF.Taxonomy.TypePrinters
         #region generic artifact
 
         public static void AddArtifactContent(WordprocessingDocument document, Artifact artifact,
-            bool isForBook, bool isForAppendix)
+            bool isForBook, bool isForAppendix, bool isForSpec = false)
         {
             _log.Info("Printing Artifact: " + artifact.Name + " is top artifact " + isForAppendix);
 
@@ -38,16 +38,18 @@ namespace TTI.TTF.Taxonomy.TypePrinters
             
             var para = body.AppendChild(new Paragraph());
             var run = para.AppendChild(new Run());
-
-            if (!isForAppendix)
+            if (!isForSpec)
             {
-                run.AppendChild(new Text(artifact.Name) {Space = SpaceProcessingModeValues.Preserve});
-                Utils.ApplyStyleToParagraph(document, "Title", "Title", para, JustificationValues.Center);
-            }
-            else
-            {
-                run.AppendChild(new Text(artifact.Name) {Space = SpaceProcessingModeValues.Preserve});
-                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", para, JustificationValues.Center);
+                if (!isForAppendix)
+                {
+                    run.AppendChild(new Text(artifact.Name) {Space = SpaceProcessingModeValues.Preserve});
+                    Utils.ApplyStyleToParagraph(document, "Title", "Title", para, JustificationValues.Center);
+                }
+                else
+                {
+                    run.AppendChild(new Text(artifact.Name) {Space = SpaceProcessingModeValues.Preserve});
+                    Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", para, JustificationValues.Center);
+                }
             }
 
             GenerateArtifactSymbol(document, artifact.ArtifactSymbol);
@@ -64,47 +66,50 @@ namespace TTI.TTF.Taxonomy.TypePrinters
                 Utils.ApplyStyleToParagraph(document, "Normal", "Normal", conPara);
             }
 
-            var aDef = body.AppendChild(new Paragraph());
-            var adRun = aDef.AppendChild(new Run());
-            adRun.AppendChild(new Text("Definition"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
-            
-            var bizBody = body.AppendChild(new Paragraph());
-            var bRun = bizBody.AppendChild(new Run());
-            bRun.AppendChild(new Text(artifact.ArtifactDefinition.BusinessDescription));
-            Utils.ApplyStyleToParagraph(document, "Quote", "Quote", bizBody);
-
-            var eDef = body.AppendChild(new Paragraph());
-            var eRun = eDef.AppendChild(new Run());
-            eRun.AppendChild(new Text("Example"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", eDef);
-
-            var exBody = body.AppendChild(new Paragraph());
-            var exRun = exBody.AppendChild(new Run());
-            exRun.AppendChild(new Text(artifact.ArtifactDefinition.BusinessExample));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", exBody);
-
-            var aPara = body.AppendChild(new Paragraph());
-            var aRun = aPara.AppendChild(new Run());
-            aRun.AppendChild(new Text("Analogies"));
-            Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aPara);
-
-            var arPara = body.AppendChild(new Paragraph());
-            var arRun = arPara.AppendChild(new Run());
-            arRun.AppendChild(BuildAnalogies(document, artifact.ArtifactDefinition.Analogies));
-            Utils.ApplyStyleToParagraph(document, "Normal", "Normal", arPara);
-
-            if (!string.IsNullOrEmpty(artifact.ArtifactDefinition.Comments))
+            if (!isForSpec)
             {
-                var coPara = body.AppendChild(new Paragraph());
-                var coRun = coPara.AppendChild(new Run());
-                coRun.AppendChild(new Text("Comments"));
-                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", coPara);
+                var aDef = body.AppendChild(new Paragraph());
+                var adRun = aDef.AppendChild(new Run());
+                adRun.AppendChild(new Text("Definition"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aDef);
 
-                var cmBody = body.AppendChild(new Paragraph());
-                var cmRun = cmBody.AppendChild(new Run());
-                cmRun.AppendChild(new Text(artifact.ArtifactDefinition.Comments));
-                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cmBody);
+                var bizBody = body.AppendChild(new Paragraph());
+                var bRun = bizBody.AppendChild(new Run());
+                bRun.AppendChild(new Text(artifact.ArtifactDefinition.BusinessDescription));
+                Utils.ApplyStyleToParagraph(document, "Quote", "Quote", bizBody);
+
+                var eDef = body.AppendChild(new Paragraph());
+                var eRun = eDef.AppendChild(new Run());
+                eRun.AppendChild(new Text("Example"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", eDef);
+
+                var exBody = body.AppendChild(new Paragraph());
+                var exRun = exBody.AppendChild(new Run());
+                exRun.AppendChild(new Text(artifact.ArtifactDefinition.BusinessExample));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", exBody);
+
+                var aPara = body.AppendChild(new Paragraph());
+                var aRun = aPara.AppendChild(new Run());
+                aRun.AppendChild(new Text("Analogies"));
+                Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", aPara);
+
+                var arPara = body.AppendChild(new Paragraph());
+                var arRun = arPara.AppendChild(new Run());
+                arRun.AppendChild(BuildAnalogies(document, artifact.ArtifactDefinition.Analogies));
+                Utils.ApplyStyleToParagraph(document, "Normal", "Normal", arPara);
+
+                if (!string.IsNullOrEmpty(artifact.ArtifactDefinition.Comments))
+                {
+                    var coPara = body.AppendChild(new Paragraph());
+                    var coRun = coPara.AppendChild(new Run());
+                    coRun.AppendChild(new Text("Comments"));
+                    Utils.ApplyStyleToParagraph(document, "Heading2", "Heading2", coPara);
+
+                    var cmBody = body.AppendChild(new Paragraph());
+                    var cmRun = cmBody.AppendChild(new Run());
+                    cmRun.AppendChild(new Text(artifact.ArtifactDefinition.Comments));
+                    Utils.ApplyStyleToParagraph(document, "Normal", "Normal", cmBody);
+                }
             }
 
             var dPara = body.AppendChild(new Paragraph());

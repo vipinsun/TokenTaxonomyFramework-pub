@@ -4,7 +4,10 @@ services:
         image: tti/ttf/taxonomyservice
         container_name: taxonomyService
         volumes:
-            - ../../artifacts:/app/artifacts
+            #for linux you need this
+         - ../../artifacts:/app/artifacts
+            #for windoze you need this
+        #    - ../../artifacts:c:/app/artifacts
         environment:
             - gRpcHost=taxonomyService
             - gRpcPort=8086
@@ -32,11 +35,14 @@ services:
         image: tti/ttf/printer
         container_name: taxonomyPrinter
         volumes:
-            - ../../artifacts:/app/artifacts
+            #for linux you need this
+         - ../../artifacts:/app/artifacts
+            #for windoze you need this
+        #    - ../../artifacts:c:/app/artifacts
         environment:
             - taxonomyHost=taxonomyService
             - taxonomyPort=8086
-            - artifactPath=artifacts
+            - printToPath=artifacts
             - printerHost=taxonomyPrinter
             - printerPort=8088
         ports:

@@ -210,7 +210,7 @@ A non-fungible token is identified by **&tau;<sub>N</sub>**.
 
 Non-fungible tokens can be whole, fractional or singleton. Whole and fractional non-fungibles of the same type can be deployed in the same class, where each instance of a token in the class can share some property values with other tokens in the class AND have distinctly unique values between them.
 
-A singleton, is where there is only one instance in the deployed token class with and that instance is indivisible. Singletons are useful if there is an asset or object to be tokenized that shares no properties or values with any other object.
+A singleton, is where there is only one instance in the deployed token class and that instance is indivisible. Singletons are useful if there is an asset or object to be tokenized that shares no properties or values with any other object.
 
 > A Singleton is a class unto itself.
 
