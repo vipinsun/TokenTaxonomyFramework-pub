@@ -673,6 +673,15 @@ namespace TTI.TTF.Taxonomy.Controllers
 					if (string.IsNullOrEmpty(templateFormula.Artifact.ArtifactSymbol.Id))
 						templateFormula.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
+
+					int uniqueCounter = 0;
+					while (outputFolder.Exists && (outputFolder.GetFiles().Length > 0)) {
+						uniqueCounter++;
+						templateFormula.Artifact.Name = artifactName + uniqueCounter;
+						outputFolder = GetArtifactFolder(artifactType, templateFormula.Artifact.Name);
+					}
+					artifactName = templateFormula.Artifact.Name;
+
 					if(templateFormula.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(templateFormula.Artifact.ArtifactFiles, outputFolder, artifactName);
 					else
@@ -684,7 +693,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					break;
 				case ArtifactType.TemplateDefinition:
 					var templateDefinition = artifactRequest.Artifact.Unpack<TemplateDefinition>();
-					if (ModelManager.CheckForUniqueTemplateFormula(templateDefinition.Artifact.Name, templateDefinition.Artifact.ArtifactSymbol.Tooling))
+					if (!ModelManager.CheckForUniqueTemplateFormula(templateDefinition.Artifact.Name, templateDefinition.Artifact.ArtifactSymbol.Tooling))
 					{
 						var newName = ModelManager.MakeUniqueDefinitionName(templateDefinition.Artifact.Name);
 						templateDefinition.Artifact.Name = newName;
@@ -696,6 +705,15 @@ namespace TTI.TTF.Taxonomy.Controllers
 						templateDefinition.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
+
+					uniqueCounter = 0;
+					while (outputFolder.Exists && (outputFolder.GetFiles().Length > 0)) {
+						uniqueCounter++;
+						templateDefinition.Artifact.Name = artifactName + uniqueCounter;
+						outputFolder = GetArtifactFolder(artifactType, templateDefinition.Artifact.Name);
+					}
+					artifactName = templateDefinition.Artifact.Name;
+
 					if(templateDefinition.Artifact.ArtifactFiles.Count > 0)
 						CreateArtifactFiles(templateDefinition.Artifact.ArtifactFiles, outputFolder, artifactName);
 					else
@@ -769,6 +787,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 				var artifactStream = File.CreateText(outputFolder.FullName + _folderSeparator + artifactName + ".json");
 				artifactStream.Write(formattedJson);
 				artifactStream.Close();
+				ModelManager.AddOrUpdateInMemoryArtifact(retVal.Type, retVal.ArtifactTypeObject);
 			}
 			
 			_log.Info("Complete");
@@ -883,8 +902,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					var templateFormulaArtifact =
 						ModelManager.GetTemplateFormulaArtifact(updateTokenTemplate.Artifact.ArtifactSymbol);
 					existingVersion = templateFormulaArtifact.Artifact.ArtifactSymbol.Version;
-					templateFormulaArtifact.MergeFrom(updateTokenTemplate);
-					templateFormulaArtifact.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
+					templateFormulaArtifact = updateTokenTemplate;
 					artifactName = updateTokenTemplate.Artifact.Name.ToLower();
 					
 					artifactJson = jsf.Format(templateFormulaArtifact);
@@ -1331,8 +1349,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			// If the destination directory doesn't exist, create it.
 			if (Directory.Exists(destDirName))
 			{
-				_log.Error(destDirName + " already exists, creating a backup.");
-				destDirName = Utils.Randomize(destDirName);
+				_log.Error(destDirName + " already exists, overwriting.");
 			}
 			if (!Directory.Exists(destDirName))
 			{
@@ -1346,7 +1363,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 			foreach (var file in files)
 			{
 				var tempPath = Path.Combine(destDirName, file.Name);
-				file.CopyTo(tempPath, false);
+				file.CopyTo(tempPath, true);
 			}
 
 			return (true, "");

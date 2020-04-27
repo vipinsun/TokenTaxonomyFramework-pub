@@ -365,8 +365,8 @@ namespace TTI.TTF.Taxonomy
 					var templateFormula = artifact.Unpack<TemplateFormula>();
 					try
 					{
-						Taxonomy.TemplateFormulas.Remove(templateFormula.Artifact.ArtifactSymbol.Tooling);
-						Taxonomy.TemplateFormulas.Add(templateFormula.Artifact.ArtifactSymbol.Tooling, templateFormula);
+						Taxonomy.TemplateFormulas.Remove(templateFormula.Artifact.ArtifactSymbol.Id);
+						Taxonomy.TemplateFormulas.Add(templateFormula.Artifact.ArtifactSymbol.Id, templateFormula);
 					}
 					catch (Exception)
 					{
@@ -379,14 +379,14 @@ namespace TTI.TTF.Taxonomy
 					var templateDefinition = artifact.Unpack<TemplateDefinition>();
 					try
 					{
-						Taxonomy.TemplateDefinitions.Remove(templateDefinition.Artifact.ArtifactSymbol.Tooling);
-						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Tooling, templateDefinition);
+						Taxonomy.TemplateDefinitions.Remove(templateDefinition.Artifact.ArtifactSymbol.Id);
+						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Id, templateDefinition);
 					}
 					catch (Exception)
 					{
 						Log.Info("AddOrUpdateInMemoryArtifact did not find an existing: " + type + " with a Tooling Symbol of: " + templateDefinition.Artifact.ArtifactSymbol.Tooling);
 						Log.Info("Adding artifact to Taxonomy.");
-						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Tooling, templateDefinition);
+						Taxonomy.TemplateDefinitions.Add(templateDefinition.Artifact.ArtifactSymbol.Id, templateDefinition);
 					}
 					return true;
 
@@ -602,7 +602,7 @@ namespace TTI.TTF.Taxonomy
 			Log.Info("CheckForUniqueTemplateFormula: " + name);
 			try
 			{
-				if(string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(ArtifactType.TemplateFormula, formula)))
+				if(!string.IsNullOrEmpty(GetArtifactFolderNameBySymbol(ArtifactType.TemplateFormula, formula)))
 					throw new Exception("Tooling Symbol Found.");
 			}
 			catch (Exception)

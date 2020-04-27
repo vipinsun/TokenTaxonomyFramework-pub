@@ -84,16 +84,15 @@ namespace TTI.TTF.Taxonomy
 
 		public static string Randomize(string input)
 		{
+			string result = input + "-";
 			const string chars = "abcdefghijklmnopqrstuvwxyz0123456789";
-			var stringChars = new char[1];
 			var random = new Random();
-
-			for (int i = 0; i < stringChars.Length; i++)
+			for (int i = 0; i < 4; i++)
 			{
-				stringChars[i] = chars[random.Next(chars.Length)];
+				result += chars[random.Next(chars.Length)];
 			}
 
-			return new string(input+stringChars);
+			return result;
 		}
 		
 		public static string CalculateSha3Hash(string value)
