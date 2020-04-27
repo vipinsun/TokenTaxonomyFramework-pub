@@ -674,8 +674,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 						templateFormula.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString().ToLower();
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 
-					// Artifact name must also be unique, otherwise an existing artifact might get overwritten (and this won't get noticed
-					// until after a service restart because the in-memory map of formulas is keyed off of the tooling formula)
 					int uniqueCounter = 0;
 					while (outputFolder.Exists && (outputFolder.GetFiles().Length > 0)) {
 						uniqueCounter++;
@@ -708,8 +706,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 					
 					outputFolder = GetArtifactFolder(artifactType, artifactName);
 
-					// Artifact name must also be unique, otherwise an existing artifact might get overwritten (and this won't get noticed
-					// until after a service restart because the in-memory map of formulas is keyed off of the tooling formula)
 					uniqueCounter = 0;
 					while (outputFolder.Exists && (outputFolder.GetFiles().Length > 0)) {
 						uniqueCounter++;
@@ -906,8 +902,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					var templateFormulaArtifact =
 						ModelManager.GetTemplateFormulaArtifact(updateTokenTemplate.Artifact.ArtifactSymbol);
 					existingVersion = templateFormulaArtifact.Artifact.ArtifactSymbol.Version;
-					templateFormulaArtifact = updateTokenTemplate; // templateFormulaArtifact.MergeFrom(updateTokenTemplate); <- this duplicates all sequences and does not allow removal
-					// templateFormulaArtifact.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString(); <-- this causes multiple values in 'Taxonomy.TemplateFormulas' to have the same 'Tooling' property which causes exceptions when looking up a formula by tooling
+					templateFormulaArtifact = updateTokenTemplate;
 					artifactName = updateTokenTemplate.Artifact.Name.ToLower();
 					
 					artifactJson = jsf.Format(templateFormulaArtifact);
@@ -1355,7 +1350,6 @@ namespace TTI.TTF.Taxonomy.Controllers
 			if (Directory.Exists(destDirName))
 			{
 				_log.Error(destDirName + " already exists, overwriting.");
-				// destDirName = Utils.Randomize(destDirName);
 			}
 			if (!Directory.Exists(destDirName))
 			{
