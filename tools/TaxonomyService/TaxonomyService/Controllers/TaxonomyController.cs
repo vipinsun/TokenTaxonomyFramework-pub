@@ -928,8 +928,7 @@ namespace TTI.TTF.Taxonomy.Controllers
 					var templateDefinitionArtifact =
 						ModelManager.GetTemplateDefinitionArtifact(updateTemplateDefinition.Artifact.ArtifactSymbol);
 					existingVersion = templateDefinitionArtifact.Artifact.ArtifactSymbol.Version;
-					templateDefinitionArtifact.MergeFrom(updateTemplateDefinition);
-					templateDefinitionArtifact.Artifact.ArtifactSymbol.Id = Guid.NewGuid().ToString();
+					templateDefinitionArtifact = updateTemplateDefinition;
 					artifactName = updateTemplateDefinition.Artifact.Name.ToLower();
 					
 					artifactJson = jsf.Format(templateDefinitionArtifact);
