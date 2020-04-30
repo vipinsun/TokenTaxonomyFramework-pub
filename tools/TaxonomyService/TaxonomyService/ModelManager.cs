@@ -506,6 +506,50 @@ namespace TTI.TTF.Taxonomy
 			}
 		}
 
+		internal static string GetArtifactFolderNameById(ArtifactType artifactType, string id)
+		{
+			Log.Info("GetArtifactFolderNameById: " + artifactType +": " + id);
+			try
+			{
+				switch (artifactType)
+				{
+					case ArtifactType.Base:
+						var baseFolder = Taxonomy.BaseTokenTypes.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Id == id);
+						return baseFolder.Value.Artifact.Name;
+					case ArtifactType.Behavior:
+						var behaviorFolder = Taxonomy.Behaviors.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Id == id);
+						return behaviorFolder.Value.Artifact.Name.ToLower();
+					case ArtifactType.BehaviorGroup:
+						var behaviorGroupFolder = Taxonomy.BehaviorGroups.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Id == id);
+						return behaviorGroupFolder.Value.Artifact.Name;
+					case ArtifactType.PropertySet:
+						var propertySetFolder = Taxonomy.PropertySets.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Id == id);
+						return propertySetFolder.Value.Artifact.Name;
+					case ArtifactType.TemplateFormula:
+						var tokenTemplateFolder = Taxonomy.TemplateFormulas.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Id == id);
+						return tokenTemplateFolder.Value.Artifact.Name;
+					case ArtifactType.TemplateDefinition:
+						var templateDefinitionFolder = Taxonomy.TemplateDefinitions.Single(e =>
+							e.Value.Artifact.ArtifactSymbol.Id == id);
+						return templateDefinitionFolder.Value.Artifact.Name;
+					case ArtifactType.TokenTemplate:
+                              return "";
+					default:
+						throw new ArgumentOutOfRangeException(nameof(artifactType), artifactType, null);
+				}
+			}
+			catch (Exception)
+			{
+				Log.Info("No matching artifact folder of type: " + artifactType + " with ID: " + id);
+				return "";
+			}
+		}
+
 		internal static string GetArtifactFolderNameBySymbol(ArtifactType artifactType, string tooling)
 		{
 			Log.Info("GetArtifactFolderNameBySymbol: " + artifactType +": " + tooling);
