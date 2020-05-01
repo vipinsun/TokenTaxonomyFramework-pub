@@ -1025,8 +1025,9 @@ namespace TTI.TTF.Taxonomy.Controllers
 			_log.Info("DeleteArtifact of type: " + artifactRequest.ArtifactSymbol.Type + " with Tooling symbol: " + artifactRequest.ArtifactSymbol);
 			DeleteArtifactResponse response;
 			var artifactFolderName =
-				ModelManager.GetArtifactFolderNameBySymbol(artifactRequest.ArtifactSymbol.Type, artifactRequest.ArtifactSymbol
-					.Tooling);
+				string.IsNullOrEmpty(artifactRequest.ArtifactSymbol.Tooling) ?
+					ModelManager.GetArtifactFolderNameById(artifactRequest.ArtifactSymbol.Type, artifactRequest.ArtifactSymbol.Id) :
+					ModelManager.GetArtifactFolderNameBySymbol(artifactRequest.ArtifactSymbol.Type, artifactRequest.ArtifactSymbol.Tooling);
 			try
 			{
 				switch (artifactRequest.ArtifactSymbol.Type)
