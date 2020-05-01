@@ -298,7 +298,33 @@ namespace TTI.TTF.Taxonomy
 		public static DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest artifactRequest)
 		{
 			Log.Info("DeleteArtifact: " + artifactRequest.ArtifactSymbol.Tooling);
-			return TaxonomyController.DeleteArtifact(artifactRequest);
+			var result = TaxonomyController.DeleteArtifact(artifactRequest);
+			if (result.Deleted) {
+				switch (artifactRequest.ArtifactSymbol.Type)
+				{
+					case ArtifactType.Base:
+						Taxonomy.BaseTokenTypes.Remove(artifactRequest.ArtifactSymbol.Tooling);
+						break;
+					case ArtifactType.Behavior:
+						Taxonomy.Behaviors.Remove(artifactRequest.ArtifactSymbol.Tooling);
+						break;
+					case ArtifactType.BehaviorGroup:
+						Taxonomy.BehaviorGroups.Remove(artifactRequest.ArtifactSymbol.Tooling);
+						break;
+					case ArtifactType.PropertySet:
+						Taxonomy.PropertySets.Remove(artifactRequest.ArtifactSymbol.Tooling);
+						break;
+					case ArtifactType.TemplateFormula:
+						Taxonomy.TemplateFormulas.Remove(artifactRequest.ArtifactSymbol.Id);
+						break;
+					case ArtifactType.TemplateDefinition:
+						Taxonomy.TemplateDefinitions.Remove(artifactRequest.ArtifactSymbol.Id);
+						break;
+					default:
+						throw new ArgumentOutOfRangeException();
+				}
+			}
+			return result;
 		}
 
 		public static bool AddOrUpdateInMemoryArtifact(ArtifactType type, Any artifact)
