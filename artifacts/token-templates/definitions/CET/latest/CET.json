@@ -14,7 +14,7 @@
     ],
     "artifactDefinition": {
       "businessDescription": "This a reference token which represents a specified volume of metric tons of green house gas (GHG) emissions. This token is fractional or divisible up to 8 decimal places. It is a unique token so that it may be issued in quantities of a fraction or numbers larger than 1. Meaning, if in the production of an item that a supplier creates generates 1.242 tons of carbon a token can be created with the same amount. This token also has the Carbon Emission Generator Object property that allows the creator of the token to specify what item the carbon is related to, which is helpful for track and trace supply chain requirements.",
-      "businessExample": "CET tokens are useful for tracking carbon emmissions within a supply chain as it allow for CETs to follow items through the supply chain between parties. This allows for carbon tracing for commodities and an enables accounting for total carbon emmissions for finished goods to be calculated and traced to sources.",
+      "businessExample": "CET tokens are useful for tracking carbon emissions within a supply chain as it allow for CETs to follow items through the supply chain between parties. This allows for carbon tracing for commodities and an enables accounting for total carbon emissions for finished goods to be calculated and traced to sources.",
       "analogies": [
         {
           "name": "Carbon Emissions Token",
@@ -53,7 +53,7 @@
       {
         "name": "Marley Gray",
         "organization": "Microsoft"
-      }
+      },
       {
         "name": "Jason Pancis",
         "organization": "Envision Blockchain"

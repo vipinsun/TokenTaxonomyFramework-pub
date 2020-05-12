@@ -114,7 +114,7 @@ namespace TTI.TTF.Taxonomy
 
                     if (spec != null)
                     {
-                        if (spec.Artifact.Name.Contains("Error:"))
+                        if (spec.Artifact.Name==null || spec.Artifact.Name.Contains("Error:"))
                         {
                             _log.Error(spec.Artifact.Name);
                             break;
