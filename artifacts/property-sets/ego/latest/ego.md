@@ -1,1 +1,1 @@
-# sku a TTF PropertySet
+# ego a TTF PropertySet

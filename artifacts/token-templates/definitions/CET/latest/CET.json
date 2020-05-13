@@ -3,8 +3,8 @@
     "artifactSymbol": {
       "id": "16729af5-8bce-44d9-9d8f-986e69cd3bc8",
       "type": "TEMPLATE_DEFINITION",
-      "visual": "[&tau;<sub>F'</sub>{<i>d,t,m,r</i>}+&ph;EGO]",
-      "tooling": "tF’{d,t,m,r}+phEGO",
+      "visual": "[&tau;<sub>F'</sub>{<i>d,t,m,r</i>}+&ph;EGO+&ph;GGPSC]",
+      "tooling": "[tF’{d,t,m,r}+phEGO+phGGPSC]",
       "version": "1.0",
       "templateValidated": false
     },
@@ -13,7 +13,7 @@
       "Carbon Emission Token"
     ],
     "artifactDefinition": {
-      "businessDescription": "This a reference token which represents a specified volume of metric tons of green house gas (GHG) emissions. This token is fractional or divisible up to 8 decimal places. It is a unique token so that it may be issued in quantities of a fraction or numbers larger than 1. Meaning, if in the production of an item that a supplier creates generates 1.242 tons of carbon a token can be created with the same amount. This token also has the Carbon Emission Generator Object property that allows the creator of the token to specify what item the carbon is related to, which is helpful for track and trace supply chain requirements.",
+      "businessDescription": "This a reference token which represents a specified volume of metric tons of greenhouse gas (GHG) emissions. This token is fractional or divisible up to 8 decimal places. It is a unique token so that it may be issued in quantities of a fraction or numbers larger than 1. Meaning, if in the production of an item that a supplier creates generates 1.242 tons of carbon a token can be created with the same amount. The token has the Greenhouse Gas Protocol Scope and Category property set as well as the Carbon Emission Generator Object property set that allows the creator of the token to specify what item the carbon is related to, which is helpful for track and trace supply chain requirements.",
       "businessExample": "CET tokens are useful for tracking carbon emissions within a supply chain as it allow for CETs to follow items through the supply chain between parties. This allows for carbon tracing for commodities and an enables accounting for total carbon emissions for finished goods to be calculated and traced to sources.",
       "analogies": [
         {
@@ -593,6 +593,104 @@
                   "templateValue": "",
                   "propertyInvocations": [],
                   "properties": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reference": {
+        "id": "e5b66a04-3a2e-440e-8d02-e8b7a7db9b4b",
+        "type": "PROPERTY_SET",
+        "referenceNotes": "Greenhouse Gas Protocol Scope & Category",
+        "values": {
+          "controlUri": "",
+          "artifactFiles": [],
+          "maps": {
+            "codeReferences": [],
+            "implementationReferences": [],
+            "resources": [],
+            "artifact": null
+          }
+        }
+      },
+      "properties": [
+        {
+          "name": "GGPSC",
+          "valueDescription": "Contains the reported emission scope and it's category from pick list, see ggbsc.proto.",
+          "templateValue": "",
+          "propertyInvocations": [
+            {
+              "name": "GetGGPSC",
+              "description": "Request the list of the GGPSC.",
+              "request": {
+                "controlMessageName": "GetGGPSCRequest",
+                "inputParameters": [],
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "GetGGPSCResponse",
+                "outputParameters": [
+                  {
+                    "name": "Scope",
+                    "valueDescription": "Returning the scope."
+                  },
+                  {
+                    "name": "Category",
+                    "valueDescription": "Returning category."
+                  }
+                ],
+                "description": "The response"
+              }
+            },
+            {
+              "name": "SetGGBSC",
+              "description": "Add a SEGO entry into the list of the Property, note if Roles should be applied to the Setter. This property should validate that the category submitted is valid for the scope.",
+              "request": {
+                "controlMessageName": "SetGGBSCRequest",
+                "inputParameters": [
+                  {
+                    "name": "Scope",
+                    "valueDescription": "The Scope number for the emission."
+                  },
+                  {
+                    "name":"Category",
+                    "valueDescription": "The value description number from the pick list."
+                  }
+    
+                ],
+                "description": "The request"
+              },
+              "response": {
+                "controlMessageName": "SetGGBSCResponse",
+                "outputParameters": [
+                  {
+                    "name": "Confirmation",
+                    "valueDescription": "Returning the GGBSC of the set request."
+                  }
+                ],
+                "description": "The response"
+              }
+            }
+          ],
+          "properties": [
+            {
+              "name": "GGBSC",
+              "valueDescription": "Contains the SetGGBSC property values.",
+              "templateValue": "",
+              "properties":
+              [
+                {
+                  "name": "Scope",
+                  "valueDescription": "1, 2 or 3.",
+                  "templateValue": ""
+                },
+                {
+                  "name": "Category",
+                  "valueDescription": "Picked from the category list for the scope.",
+                  "templateValue": ""
                 }
               ]
             }

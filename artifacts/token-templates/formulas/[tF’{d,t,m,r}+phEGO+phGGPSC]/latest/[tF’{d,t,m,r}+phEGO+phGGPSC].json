@@ -3,17 +3,17 @@
     "artifactSymbol": {
       "id": "7983368b-9d1a-478c-85f5-688a1899b707",
       "type": "TEMPLATE_FORMULA",
-      "visual": "[&tau;<sub>F'</sub>{<i>d,t,m,r</i>}+&ph;EGO]",
-      "tooling": "tF’{d,t,m,r}+phEGO",
+      "visual": "[&tau;<sub>F'</sub>{<i>d,t,m,r</i>}+&ph;EGO+&ph;GGPSC]",
+      "tooling": "[tF’{d,t,m,r}+phEGO+phGGPSC]",
       "version": "1.0",
       "templateValidated": false
     },
-    "name": "tF’{d,t,m,r}+phEGO",
+    "name": "[tF’{d,t,m,r}+phEGO+phGGPSC]",
     "aliases": [
       "Infinite supply, Unique Fractional Fungible"
     ],
     "artifactDefinition": {
-      "businessDescription": "This is a Infinite Supply Fractional Fungible.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be minted if the requesting party is in the minters role and it cannot be burned. This template contains the EGO property set as well.",
+      "businessDescription": "This is a Infinite Supply Fractional Fungible.  It is fractional by setting the Decimals property on the dividable behavior. A token instance can be minted if the requesting party is in the minters role and it cannot be burned. This template contains the EGO and GGPSC property sets as well.",
       "businessExample": "Typically used to represent an carbon emissions token.",
       "analogies": [
         {
@@ -113,7 +113,17 @@
         "version": "1.0",
         "templateValidated": false
       }
+    },
+    {
+      "propertySet":{
+      "id":"e5b66a04-3a2e-440e-8d02-e8b7a7db9b4b",
+      "type": "PROPERTY_SET",
+      "visual": "&phi;<i>GGBSC</i>",
+      "tooling": "phGGBSC",
+      "version": "1.0",
+      "templateValidated": false
     }
+  }
   ],
   "childTokens": []
 }

@@ -14,7 +14,7 @@
     ],
     "controlUri": "../../../../../../artifacts/property-sets/ego/ego.proto",
     "artifactDefinition": {
-      "businessDescription": "A token class that implements this property set will have a Carbon Emission Generator Object (EGO) property or field with a Read/Query and Set control. A EGO property has multiple fields that are used to identify the object that the carbon emission is attributed to. The property can contain multiple entries for tokens that represent composite objects that contain other EGO entries.",
+      "businessDescription": "A token class that implements this property set will have a Carbon Emission Generator Object (EGO) property or field with a Read/Query and Set control. A EGO property has multiple fields that are used to identify the object that the carbon emission is attributed to. This is useful when transferring or accounting for fractional CET in Category 3 emissions for supply chains to be attributed to a specific workload or asset transferring ownership. The property can contain multiple entries for tokens that represent composite objects that contain other EGO entries.",
       "businessExample": "Items in a supply chain generate carbon related tokens upon their creation. A supplier may create a product 'foo' that generates an emission token that the supplier will link with the 'foo' product. When the 'foo' is delivered to the buyer, the carbon emission token is transferred along with it. If the buyer of 'foo' uses it to create another product called 'bar', which also creates a carbon emission token, this token can include the EGO for 'foo' as well as its EGO to be able to account for the total carbon emissions for 'bar'.",
       "analogies": [
         {
