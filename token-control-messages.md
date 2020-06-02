@@ -163,4 +163,3 @@ Message headers are very useful when placed consistently in a specific position 
 
 The [proto definitions located in their respective artifact folder](artifacts) are not complete or comprehensive and are a starting point in the standardization process.  The Taxonomy standard will generally apply to well understood base token types and behaviors and groups.
 
-As the EEA Special Interest [Groups](https://entethalliance.org/participate/working-groups/) begin working to define their specific token properties and behaviors that may be extensions of base standards or net new, the Taxonomy Framework will provide the tools necessary for creating a standards compliant, industry specific token that can be implemented by any platform, vendor or customer.
