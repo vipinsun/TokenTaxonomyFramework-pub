@@ -572,4 +572,4 @@ This can be done for an individual behavior to have a mapping to a `code snippit
 
 The Token Taxonomy Framework is just the beginning of a cross platform and cross vertical industry collaborative effort to foster an increased understanding and use of tokens as well as drive standards for interoperability.
 
-The Token Taxonomy Initiative (TTI) encourages and will help kick start special interest groups for Financial Services, Insurance Healthcare, Energy, Real Estate, Telecommunications and Supply Chain to start defining the tokens most relevant and important for their industry and encourage cross industry integration.
+The InterWork Alliance (IWA) encourages and will help kick start business working groups for Financial Services, Insurance Healthcare, Energy, Real Estate, Telecommunications and Supply Chain to start defining the tokens most relevant and important for their industry and encourage cross industry integration.
