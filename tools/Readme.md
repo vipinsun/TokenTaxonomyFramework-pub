@@ -10,7 +10,7 @@ These tools provide the TTF Object Model (TOM) and the service that can populate
 
 - [Taxonomy Client](TaxonomyService/TaxonomyClient) is a simple command line tool that demonstrates how to interact with the Taxonomy Service to fetch the model and then apply it to any type of application for display or input.
 
-- [Taxonomy Printer](TaxonomyService/TTF-Printer) a console based application that can generate OpenXML Wordprocessing documents from artifacts in the repo. It is particularly useful for creating a presentable view of to Token Specification (template). It requires that the Taxonomy Service be running and accessible. Full documentation for the [TTF-Printer](../model/taxonomyServices.md)
+- [Taxonomy Printer](https://github.com/InterWorkAlliance/TokenTaxonomyFramework/tree/master/tools/TTF-Printer) a console based application that can generate OpenXML Wordprocessing documents from artifacts in the repo. It is particularly useful for creating a presentable view of to Token Specification (template). It requires that the Taxonomy Service be running and accessible. Full documentation for the [TTF-Printer](../model/taxonomyServices.md)
 
 - From your cloned copy of the repo.
 
