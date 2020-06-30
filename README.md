@@ -27,4 +27,4 @@ The contents of this repo contain the Token Taxonomy Framework (TTF) comprised o
 
 Welcome to the InterWork Alliance (“IWA”).
 
-By accessing and/or using this GitHub repository, you agree to abide by the terms of the agreement in the LICENSE file.
+By accessing and/or using this GitHub repository, you agree to abide by the terms of the agreement in the [LICENSE](LICENSE) file.
