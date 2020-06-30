@@ -41,7 +41,7 @@ message TransferResponse {
 }
 ```
 
-Transferable also has a `TransferFromRequest` and `TransferFromResponse` pair. See the sample [Transferable Control](control/transferable/transferable.proto) messages for more detail.
+Transferable also has a `TransferFromRequest` and `TransferFromResponse` pair. See the sample [Transferable Control](https://github.com/InterWorkAlliance/TokenTaxonomyFramework/tree/master/artifacts/behaviors/transferable) messages for more detail.
 
 Proto messages allow for missing properties needed for a specific blockchain implementation to be added to the end without breaking the messaging interface.  Changing the order number for the base messages will break compatibility.
 
