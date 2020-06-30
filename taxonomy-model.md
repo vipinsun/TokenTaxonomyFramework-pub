@@ -6,7 +6,7 @@ However, Github and the file formats used for taxonomy artifacts is not designed
 
 To create a good programable experience and easy integration, a Taxonomy Model is used to represent that backend for consumption and update from any sort of application. The TTF has no "rendering or UI" out of the box, by design. But by providing a [gRpc](https://grpc.io/) interface, which can also have a REST facade, anyone can build a "client" for the taxonomy using the model.
 
-The [TaxonomyService](tools/readme.md) provides CRUD capabilities for the backend Github (local clone only for now) to be able to interact with the taxonomy without having to program against the Github API directly.
+The [TaxonomyService](https://github.com/InterWorkAlliance/TokenTaxonomyFramework/blob/master/model/taxonomyServices.md) provides CRUD capabilities for the backend Github (local clone only for now) to be able to interact with the taxonomy without having to program against the Github API directly.
 
 ![TTF Architecture](images/TaxonomyService.png)
 
