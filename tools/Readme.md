@@ -69,7 +69,7 @@ Examples:
 
 ## Artifact Generator
 
-[Artifact Generator](artifactGenerator) is a simple artifact generator to create stubbed artifacts of a particular type.  This is a console based application that takes 3 arguments, a relative path to the TTF [artifacts](../artifacts) folder, an artifact name and artifact type.  Artifact types are: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate
+[Artifact Generator](https://github.com/InterWorkAlliance/TokenTaxonomyFramework/tree/master/tools/ArtifactGenerator) is a simple artifact generator to create stubbed artifacts of a particular type.  This is a console based application that takes 3 arguments, a relative path to the TTF [artifacts](../artifacts) folder, an artifact name and artifact type.  Artifact types are: 0 = Base, 1 = Behavior, 2 = BehaviorGroup, 3 = PropertySet or 4 - TokenTemplate
 
 ```bash
 dotnet factgen --p ../artifacts --n myArtifactName --type 1
